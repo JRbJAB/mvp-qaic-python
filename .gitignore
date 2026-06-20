@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+*.secret
+credentials*.json
+token*.json
+secrets/
+exports/
+reports/
+
+# MVP QAIC local/runtime exclusions
+MVP_QAIC_PY_BENCHMARK_LAYER/
+05_EXPORTS/
+*.pyc

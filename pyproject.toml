@@ -1,0 +1,15 @@
+[project]
+name = "mvp-qaic-py-benchmark-layer"
+version = "0.1.0"
+description = "MVP QAIC Python benchmark layer - one-tab Sheets cockpit"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-p no:cacheprovider"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
