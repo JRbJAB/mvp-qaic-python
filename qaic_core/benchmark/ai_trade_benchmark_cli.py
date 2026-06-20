@@ -12,7 +12,11 @@ from typing import Sequence
 
 from .ai_trade_benchmark_model import BenchmarkRun, SafetyContract
 from .ai_trade_benchmark_seed import baseline_tools
-from .ai_trade_benchmark_sheets import ALLOWED_TAB, build_apply_payload, build_sheets_dry_run_plan
+from .ai_trade_benchmark_sheets import (
+    ALLOWED_TAB,
+    build_google_sheets_apply_plan,
+    build_sheets_dry_run_plan,
+)
 
 
 def create_run(run_id: str | None = None) -> BenchmarkRun:
@@ -93,10 +97,13 @@ def build_parser() -> argparse.ArgumentParser:
     apply_cmd = commands.add_parser("sheets-apply")
     apply_cmd.add_argument("--spreadsheet-id", required=True)
     apply_cmd.add_argument("--run-id", required=True)
-    apply_cmd.add_argument("--backup", required=True)
     apply_cmd.add_argument("--tab", default=ALLOWED_TAB)
     apply_cmd.add_argument("--apply", action="store_true", default=False)
     apply_cmd.add_argument("--human-go", action="store_true", default=False)
+    apply_cmd.add_argument("--backup-confirmed", action="store_true", default=False)
+    credentials = apply_cmd.add_mutually_exclusive_group()
+    credentials.add_argument("--credentials-path")
+    credentials.add_argument("--credentials-ref")
     apply_cmd.add_argument("--output")
     return parser
 
@@ -126,13 +133,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "sheets-dry-run":
         _emit(build_sheets_dry_run_plan(args.spreadsheet_id, run), args.output)
         return 0
-    payload = build_apply_payload(
+    payload = build_google_sheets_apply_plan(
         spreadsheet_id=args.spreadsheet_id,
         run=run,
-        backup_path=args.backup,
-        tab=args.tab,
+        allowed_tab_name=args.tab,
+        run_id=args.run_id,
+        backup_confirmed=args.backup_confirmed,
         apply=args.apply,
         human_go=args.human_go,
+        dry_run=not args.apply,
+        credentials_path=args.credentials_path,
+        credentials_ref=args.credentials_ref,
     )
     _emit(payload, args.output)
     return 0
