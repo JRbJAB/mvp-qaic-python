@@ -2,6 +2,11 @@
 
 Status: `OK_P100B_REAL_METRIC_READERS_COCKPIT_UI_LIVE_WRITE_VERIFIED`
 
+P100B-R1 repair note:
+- P100B initial commit/tag was pushed after failing tests on markdown evidence.
+- P100B-R1 fixes the evidence renderer so `cockpit_ui_format_written` appears in exported Markdown.
+- This repair performs no live Sheet write and no data mutation.
+
 Live writes already executed from ChatGPT connector after explicit GO:
 - values written to `QAIC_RUNTIME_COCKPIT_VIEW!A1:J22`
 - UI formatting applied to the cockpit view
