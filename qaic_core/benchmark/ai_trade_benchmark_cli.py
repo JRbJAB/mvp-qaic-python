@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
+
+from qaic_core.benchmark.ai_trade_benchmark_export import (
+    build_benchmark_export_bundle,
+    build_benchmark_export_payload,
+)
+
 import argparse
 import csv
 import json
@@ -151,3 +158,54 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+def _coerce_cli_export_records(records: object) -> list[object]:
+    if isinstance(records, Mapping):
+        return [records]
+    if isinstance(records, (str, bytes, bytearray)):
+        return [records]
+    try:
+        return list(records)  # type: ignore[arg-type]
+    except TypeError:
+        return [records]
+
+
+def build_cli_benchmark_export_payload(
+    records: object,
+    *,
+    run_id: str = "CLI_BENCHMARK_EXPORT",
+    generated_at: str = "CLI_EXPORT_UNSPECIFIED_TIME",
+    source: str = "cli",
+) -> dict[str, object]:
+    """Build a local-only benchmark export payload for CLI-facing flows.
+
+    This helper is deliberately data-only:
+    - no file write
+    - no Google live write
+    - no broker/order/sizing
+    """
+
+    return build_benchmark_export_payload(
+        _coerce_cli_export_records(records),
+        run_id=run_id,
+        generated_at=generated_at,
+        source=source,
+    )
+
+
+def build_cli_benchmark_export_bundle(
+    records: object,
+    *,
+    run_id: str = "CLI_BENCHMARK_EXPORT",
+    generated_at: str = "CLI_EXPORT_UNSPECIFIED_TIME",
+    source: str = "cli",
+) -> dict[str, str]:
+    """Build JSON/CSV/Markdown strings for CLI-facing local benchmark export."""
+
+    return build_benchmark_export_bundle(
+        _coerce_cli_export_records(records),
+        run_id=run_id,
+        generated_at=generated_at,
+        source=source,
+    )
