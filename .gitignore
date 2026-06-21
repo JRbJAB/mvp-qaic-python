@@ -1,4 +1,4 @@
-__pycache__/
+﻿__pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
@@ -17,3 +17,20 @@ reports/
 MVP_QAIC_PY_BENCHMARK_LAYER/
 05_EXPORTS/
 *.pyc
+
+# MVP QAIC PY — local-only hygiene
+desktop.ini
+Thumbs.db
+.DS_Store
+# Local-only generated outputs / archives
+06_REPORTS/
+07_ARCHIVES/
+99_SANDBOX_NO_LIVE/
+04_PYTHON_STAGING/
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.bz2
+*.zip.sha256.txt
