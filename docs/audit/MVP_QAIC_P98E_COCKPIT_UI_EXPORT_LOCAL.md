@@ -2,6 +2,8 @@
 
 Status: `OK_P98E_COCKPIT_UI_EXPORT_LOCAL_READY`
 
+P98E-R1 repairs the invalid first P98E module that contained unterminated string literals around local join operations.
+
 Scope:
 - export the P98D extended cockpit as local static artifacts
 - produce JSON, Markdown, and HTML

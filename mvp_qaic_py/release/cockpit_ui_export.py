@@ -12,6 +12,7 @@ from mvp_qaic_py.release.runtime_cockpit_extended_module import (
 
 P98E_STATUS = "OK_P98E_COCKPIT_UI_EXPORT_LOCAL_READY"
 NEXT_STEP = "P99_MVP_FREEZE_RELEASE_HANDOFF"
+NL = chr(10)
 
 
 def _escape(value: object) -> str:
@@ -110,8 +111,7 @@ def render_cockpit_ui_export_markdown(payload: dict[str, Any]) -> str:
             card = _card_by_id(cards, card_id)
             lines.append(f"- `{card['card_id']}` - {card['state']} - `{card['sheet_name']}`")
         lines.append("")
-    return "
-".join(
+    return NL.join(
         [
             "# MVP QAIC - P98E Cockpit UI Export Local",
             "",
@@ -160,13 +160,9 @@ def render_cockpit_ui_export_html(payload: dict[str, Any]) -> str:
         sections_html.append(
             "<section>"
             f"<h2>{_escape(section['title'])}</h2>"
-            "<div class='grid'>"
-            + "
-".join(card_blocks)
-            + "</div></section>"
+            "<div class='grid'>" + NL.join(card_blocks) + "</div></section>"
         )
-    return "
-".join(
+    return NL.join(
         [
             "<!doctype html>",
             "<html lang='fr'>",
