@@ -3,7 +3,9 @@ from __future__ import annotations
 import pytest
 
 from qaic_core.trade_plan.runtime_contract import (
+    CONTRACT_VERSION,
     REQUIRED_OUTPUT_FIELDS,
+    REQUIRED_RISK_GUARDS,
     SAFETY_MARKERS,
     evaluate_trade_plan_request,
     trade_plan_result_to_dict,
@@ -12,6 +14,8 @@ from qaic_core.trade_plan.runtime_contract import (
 
 def complete_trade_plan_request() -> dict[str, object]:
     return {
+        "signal_id": "SIG-BTC-001",
+        "risk_guard": "HUMAN_REVIEW_ONLY,NO_BROKER,NO_ORDER,NO_SIZING",
         "asset": "BTC",
         "current_price": 68000,
         "entry_price": 67200,
@@ -27,6 +31,7 @@ def test_complete_trade_plan_remains_human_review_only() -> None:
     result = evaluate_trade_plan_request(complete_trade_plan_request())
     payload = trade_plan_result_to_dict(result)
 
+    assert payload["contract_version"] == CONTRACT_VERSION
     assert payload["decision_status"] == "REVIEW_REQUIRED"
     assert payload["missing_data"] == []
     assert payload["blockers"] == []
@@ -48,6 +53,8 @@ def test_missing_critical_data_returns_review_required_without_invention() -> No
     payload = trade_plan_result_to_dict(result)
 
     assert payload["decision_status"] == "REVIEW_REQUIRED"
+    assert "signal_id" in payload["missing_data"]
+    assert "risk_guard" in payload["missing_data"]
     assert "tp1" in payload["missing_data"]
     assert "tp2" in payload["missing_data"]
     assert "tp3" in payload["missing_data"]
@@ -57,6 +64,26 @@ def test_missing_critical_data_returns_review_required_without_invention() -> No
     assert payload["human_decision_only"] is True
     assert payload["no_order_no_sizing"] is True
     assert "NO_INVENTED_PRICE_TP_SL_TRAILING" in payload["safety_markers"]
+
+
+def test_incomplete_risk_guard_is_blocked() -> None:
+    request = complete_trade_plan_request()
+    request["risk_guard"] = "HUMAN_REVIEW_ONLY,NO_BROKER"
+
+    result = evaluate_trade_plan_request(request)
+    payload = trade_plan_result_to_dict(result)
+
+    assert payload["decision_status"] == "BLOCKED"
+    assert "RISK_GUARD_INCOMPLETE" in payload["blockers"]
+
+
+def test_required_risk_guards_contract_is_explicit() -> None:
+    assert REQUIRED_RISK_GUARDS == (
+        "HUMAN_REVIEW_ONLY",
+        "NO_BROKER",
+        "NO_ORDER",
+        "NO_SIZING",
+    )
 
 
 def test_forbidden_automatic_trailing_order_is_blocked() -> None:
@@ -83,6 +110,41 @@ def test_forbidden_boolean_order_flag_is_blocked() -> None:
 
     assert payload["decision_status"] == "BLOCKED"
     assert "FORBIDDEN_AUTO_ORDER_REQUEST" in payload["blockers"]
+
+
+def test_forbidden_sizing_request_is_blocked() -> None:
+    request = complete_trade_plan_request()
+    request["requested_action"] = "Calculate position size and quantity to buy."
+
+    result = evaluate_trade_plan_request(request)
+    payload = trade_plan_result_to_dict(result)
+
+    assert payload["decision_status"] == "BLOCKED"
+    assert "FORBIDDEN_SIZING_REQUEST" in payload["blockers"]
+    assert payload["no_order_no_sizing"] is True
+
+
+def test_forbidden_boolean_sizing_flag_is_blocked() -> None:
+    request = complete_trade_plan_request()
+    request["auto_sizing"] = True
+
+    result = evaluate_trade_plan_request(request)
+    payload = trade_plan_result_to_dict(result)
+
+    assert payload["decision_status"] == "BLOCKED"
+    assert "FORBIDDEN_SIZING_REQUEST" in payload["blockers"]
+
+
+def test_invalid_numeric_field_is_missing_data() -> None:
+    request = complete_trade_plan_request()
+    request["tp1"] = "not-a-number"
+
+    result = evaluate_trade_plan_request(request)
+    payload = trade_plan_result_to_dict(result)
+
+    assert payload["decision_status"] == "REVIEW_REQUIRED"
+    assert "tp1" in payload["missing_data"]
+    assert "MISSING_CRITICAL_DATA" in payload["blockers"]
 
 
 def test_required_output_contract_keys_are_present() -> None:

@@ -5,6 +5,8 @@ from dataclasses import dataclass, field
 from numbers import Real
 from typing import Any, Mapping
 
+CONTRACT_VERSION = "mvp_qaic.trade_plan_runtime.v2"
+
 SAFETY_MARKERS: tuple[str, ...] = (
     "HUMAN_REVIEW_ONLY",
     "NO_BROKER",
@@ -15,7 +17,16 @@ SAFETY_MARKERS: tuple[str, ...] = (
     "NO_INVENTED_PRICE_TP_SL_TRAILING",
 )
 
+REQUIRED_RISK_GUARDS: tuple[str, ...] = (
+    "HUMAN_REVIEW_ONLY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_SIZING",
+)
+
 REQUIRED_INPUT_FIELDS: tuple[str, ...] = (
+    "signal_id",
+    "risk_guard",
     "asset",
     "current_price",
     "entry_price",
@@ -27,11 +38,13 @@ REQUIRED_INPUT_FIELDS: tuple[str, ...] = (
 )
 
 REQUIRED_OUTPUT_FIELDS: tuple[str, ...] = (
+    "contract_version",
     "decision_status",
     "missing_data",
     "blockers",
     "human_decision_only",
     "no_order_no_sizing",
+    "safety_markers",
 )
 
 NUMERIC_INPUT_FIELDS: tuple[str, ...] = (
@@ -42,6 +55,12 @@ NUMERIC_INPUT_FIELDS: tuple[str, ...] = (
     "tp3",
     "stop_loss",
     "invalidation_level",
+)
+
+TEXT_INPUT_FIELDS: tuple[str, ...] = (
+    "signal_id",
+    "risk_guard",
+    "asset",
 )
 
 FORBIDDEN_ACTION_FIELDS: tuple[str, ...] = (
@@ -66,6 +85,18 @@ FORBIDDEN_AUTO_ORDER_TOKENS: tuple[str, ...] = (
     "sell automatically",
 )
 
+FORBIDDEN_SIZING_TOKENS: tuple[str, ...] = (
+    "position size",
+    "size position",
+    "sizing",
+    "calculate size",
+    "how much to buy",
+    "quantity to buy",
+    "qty to buy",
+    "amount to buy",
+    "order quantity",
+)
+
 
 @dataclass(frozen=True)
 class TradePlanResult:
@@ -75,6 +106,7 @@ class TradePlanResult:
     human_decision_only: bool = True
     no_order_no_sizing: bool = True
     safety_markers: tuple[str, ...] = SAFETY_MARKERS
+    contract_version: str = CONTRACT_VERSION
     notes: tuple[str, ...] = field(default_factory=tuple)
 
 
@@ -108,9 +140,10 @@ def _is_number_like(value: object) -> bool:
 def _missing_critical_data(record: Mapping[str, Any]) -> tuple[str, ...]:
     missing: list[str] = []
 
-    asset = record.get("asset")
-    if not isinstance(asset, str) or not asset.strip():
-        missing.append("asset")
+    for field_name in TEXT_INPUT_FIELDS:
+        value = record.get(field_name)
+        if not isinstance(value, str) or not value.strip():
+            missing.append(field_name)
 
     for field_name in NUMERIC_INPUT_FIELDS:
         if not _is_number_like(record.get(field_name)):
@@ -128,7 +161,22 @@ def _request_text(record: Mapping[str, Any]) -> str:
     return " ".join(chunks).lower()
 
 
-def _forbidden_order_blockers(record: Mapping[str, Any]) -> tuple[str, ...]:
+def _risk_guard_blockers(record: Mapping[str, Any]) -> tuple[str, ...]:
+    risk_guard = record.get("risk_guard")
+    if not isinstance(risk_guard, str) or not risk_guard.strip():
+        return ()
+    normalized = {
+        part.strip().upper()
+        for part in risk_guard.replace("|", ",").replace(";", ",").split(",")
+        if part.strip()
+    }
+    missing = [guard for guard in REQUIRED_RISK_GUARDS if guard not in normalized]
+    if missing:
+        return ("RISK_GUARD_INCOMPLETE",)
+    return ()
+
+
+def _forbidden_action_blockers(record: Mapping[str, Any]) -> tuple[str, ...]:
     text = _request_text(record)
     blockers: list[str] = []
 
@@ -142,7 +190,7 @@ def _forbidden_order_blockers(record: Mapping[str, Any]) -> tuple[str, ...]:
             "broker_order",
         )
     )
-    token_hit = any(token in text for token in FORBIDDEN_AUTO_ORDER_TOKENS)
+    order_token_hit = any(token in text for token in FORBIDDEN_AUTO_ORDER_TOKENS)
     order_with_execution_language = "order" in text and any(
         token in text
         for token in (
@@ -156,11 +204,25 @@ def _forbidden_order_blockers(record: Mapping[str, Any]) -> tuple[str, ...]:
         )
     )
 
-    if explicit_order_flag or token_hit or order_with_execution_language:
+    if explicit_order_flag or order_token_hit or order_with_execution_language:
         blockers.append("FORBIDDEN_AUTO_ORDER_REQUEST")
 
     if "trailing" in text or record.get("auto_trailing_order") is True:
         blockers.append("NO_AUTO_TRAILING_ORDER")
+
+    explicit_sizing_flag = any(
+        record.get(flag_name) is True
+        for flag_name in (
+            "auto_sizing",
+            "sizing",
+            "calculate_position_size",
+            "position_sizing",
+        )
+    )
+    sizing_token_hit = any(token in text for token in FORBIDDEN_SIZING_TOKENS)
+
+    if explicit_sizing_flag or sizing_token_hit:
+        blockers.append("FORBIDDEN_SIZING_REQUEST")
 
     return tuple(dict.fromkeys(blockers))
 
@@ -174,15 +236,15 @@ def evaluate_trade_plan_request(request: Mapping[str, Any]) -> TradePlanResult:
 
     record = _as_record(request)
     missing_data = _missing_critical_data(record)
-    blockers = _forbidden_order_blockers(record)
+    blockers = (*_risk_guard_blockers(record), *_forbidden_action_blockers(record))
 
     if blockers:
         return TradePlanResult(
             decision_status="BLOCKED",
             missing_data=missing_data,
-            blockers=blockers,
+            blockers=tuple(dict.fromkeys(blockers)),
             notes=(
-                "Forbidden automatic order request detected.",
+                "Blocking safety rule detected.",
                 "Human review only; no broker/order/sizing action is permitted.",
             ),
         )
@@ -211,6 +273,7 @@ def evaluate_trade_plan_request(request: Mapping[str, Any]) -> TradePlanResult:
 
 def trade_plan_result_to_dict(result: TradePlanResult) -> dict[str, object]:
     return {
+        "contract_version": result.contract_version,
         "decision_status": result.decision_status,
         "missing_data": list(result.missing_data),
         "blockers": list(result.blockers),
