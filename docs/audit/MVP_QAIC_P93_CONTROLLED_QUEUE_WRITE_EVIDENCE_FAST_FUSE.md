@@ -2,7 +2,7 @@
 
 Status: `OK_P93_CONTROLLED_QUEUE_WRITE_ROW_VERIFIED`
 
-Live write:
+Live write already verified:
 - target: `📤 JOURNAL_APPEND_QUEUE!A9:Z9`
 - journal_queue_id: `P93-CQW-20260621-200001`
 - human_review_decision: `DO_NOT_APPEND`
