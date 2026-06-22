@@ -1,0 +1,30 @@
+﻿{
+    "step":  "P112_GEM_PORTFOLIO_PROMPT_USUAL_MODULE_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "source_file":  "mvp_qaic_py/gem_portfolio_prompt_module.py",
+    "test_file":  "tests/test_gem_portfolio_prompt_module_p112.py",
+    "outputs":  [
+                    "P112_GEM_PORTFOLIO_PROMPT_PAYLOAD_SAMPLE.json",
+                    "P112_GEM_READY_PORTFOLIO_PROMPT.md",
+                    "P112_GEM_PORTFOLIO_PROMPT_SUMMARY.json"
+                ],
+    "supported_portfolio_input_modes":  [
+                                            "NONE",
+                                            "PASTED_TEXT",
+                                            "STRUCTURED",
+                                            "IMAGE_REVIEW_REQUIRED"
+                                        ],
+    "safety":  {
+                   "no_ocr_claim":  true,
+                   "human_review_only":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_sizing":  true,
+                   "no_revolutx_real_access":  true,
+                   "no_sheet_write":  true,
+                   "no_apps_script_execution":  true,
+                   "no_clasp":  true,
+                   "no_public_deploy":  true
+               },
+    "next":  "P113_PORTFOLIO_INPUT_NORMALIZER_AND_IMAGE_REVIEW_WORKFLOW"
+}

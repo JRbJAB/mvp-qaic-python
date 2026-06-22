@@ -1,0 +1,24 @@
+﻿# P112 — GEM Portfolio Prompt Usual Module
+
+## Status
+CREATED_LOCAL_PENDING_GATE
+
+## Goal
+Operational prompt module for first GEM portfolio tests.
+
+## Input modes
+- NONE
+- PASTED_TEXT
+- STRUCTURED
+- IMAGE_REVIEW_REQUIRED
+
+## Safety
+- NO_OCR_CLAIM
+- HUMAN_REVIEW_ONLY
+- NO_BROKER
+- NO_ORDER
+- NO_SIZING
+- NO_REVOLUTX_REAL_ACCESS
+
+## Next
+P113_PORTFOLIO_INPUT_NORMALIZER_AND_IMAGE_REVIEW_WORKFLOW

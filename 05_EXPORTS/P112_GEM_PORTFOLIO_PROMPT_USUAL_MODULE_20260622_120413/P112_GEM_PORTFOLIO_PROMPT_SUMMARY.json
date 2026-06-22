@@ -1,0 +1,9 @@
+{
+  "prompt_id": "P112_GEM_PORTFOLIO_PROMPT_USUAL_MODULE",
+  "portfolio_input_mode": "IMAGE_REVIEW_REQUIRED",
+  "missing_data_count": 2,
+  "blocker_count": 0,
+  "human_decision_only": true,
+  "no_order_no_sizing": true,
+  "next": "P113_PORTFOLIO_INPUT_NORMALIZER_AND_IMAGE_REVIEW_WORKFLOW"
+}

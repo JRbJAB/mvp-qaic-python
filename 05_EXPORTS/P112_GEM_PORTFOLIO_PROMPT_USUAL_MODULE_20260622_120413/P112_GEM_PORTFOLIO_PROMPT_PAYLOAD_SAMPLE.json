@@ -1,0 +1,68 @@
+{
+  "prompt_id": "P112_GEM_PORTFOLIO_PROMPT_USUAL_MODULE",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "user_goal": "Review my crypto portfolio from an uploaded capture and ask for missing confirmations before analysis.",
+  "portfolio_input_mode": "IMAGE_REVIEW_REQUIRED",
+  "portfolio_input": {
+    "portfolio_input_mode": "IMAGE_REVIEW_REQUIRED",
+    "pasted_text": "",
+    "structured_positions": [],
+    "image_reference": "portfolio_capture_example.png",
+    "missing_data": [
+      "portfolio_image_visual_extraction"
+    ],
+    "blockers": [],
+    "review_notes": [
+      "Image/capture supplied: visual extraction must be reviewed by a human or external OCR tool."
+    ],
+    "ocr_performed": false,
+    "human_review_required": true
+  },
+  "market_context": "User may paste market context manually. Do not fetch private broker data.",
+  "risk_profile": "UNSPECIFIED",
+  "missing_data": [
+    "portfolio_image_visual_extraction",
+    "risk_profile"
+  ],
+  "blockers": [],
+  "review_questions": [
+    "Confirm the assets, quantities, values and prices visible in the capture before analysis.",
+    "What is the intended risk profile: conservative, balanced, aggressive, or custom?"
+  ],
+  "expected_output_schema": {
+    "decision_status": "REVIEW_REQUIRED | BLOCKED | INFORMATIONAL_REVIEW_ONLY",
+    "analysis_level": "INSUFFICIENT_DATA | PARTIAL_PORTFOLIO_REVIEW | PORTFOLIO_REVIEW_READY",
+    "portfolio_summary": {
+      "detected_assets": "list[str]",
+      "exposure_notes": "list[str]",
+      "concentration_flags": "list[str]"
+    },
+    "missing_data": "list[str]",
+    "blockers": "list[str]",
+    "questions_for_user": "list[str]",
+    "human_decision_only": true,
+    "no_order_no_sizing": true
+  },
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "human_review_only": true,
+    "gem_ready_prompt_only": true,
+    "no_ocr_claim": true,
+    "no_image_visual_extraction_without_human": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "human_decision_only": true,
+  "no_order_no_sizing": true,
+  "next": "P113_PORTFOLIO_INPUT_NORMALIZER_AND_IMAGE_REVIEW_WORKFLOW"
+}
