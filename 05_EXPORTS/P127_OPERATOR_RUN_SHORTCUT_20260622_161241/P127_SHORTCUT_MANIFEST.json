@@ -1,0 +1,40 @@
+{
+  "file_count": 7,
+  "files": [
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241\\P127_OPERATOR_RUN_SHORTCUT.ps1",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241\\P127_ONE_COMMAND_OPERATOR_GUIDE.md",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241\\P127_OPERATOR_DAILY_RUNBOOK.md",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241\\P127_SHORTCUT_CHECKLIST.csv",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241\\P127_SHORTCUT_CONTRACT.json",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241\\P127_README.md"
+  ],
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "human_review_only": true,
+  "next": "REAL_GEM_TEST_OR_P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW",
+  "no_auto_apply_gem_response": true,
+  "no_order_no_sizing": true,
+  "no_sheet_write": true,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241",
+  "run_id": "P127-OPERATOR-RUN-SHORTCUT-20260622",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "OPERATOR_SHORTCUT_ONLY",
+    "HUMAN_REVIEW_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "shortcut_ready": true,
+  "status": "OPERATOR_RUN_SHORTCUT_READY",
+  "step": "P127_OPERATOR_RUN_SHORTCUT_LOCAL_ONLY",
+  "version": "MVP_QAIC_P127_OPERATOR_RUN_SHORTCUT_LOCAL_ONLY_0_1_1_ZIP_SAFE"
+}

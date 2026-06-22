@@ -1,0 +1,6 @@
+﻿step,name,required,safety,status
+1,Create local P124 folder,YES,LOCAL_ONLY,READY
+2,Fill portfolio_input.txt manually,YES,HUMAN_REVIEW_ONLY,OPERATOR_ACTION
+3,Paste GEM answer into gem_response.txt,YES,NO_AUTO_APPLY_GEM_RESPONSE,OPERATOR_ACTION
+4,Run P125 review UX,YES,NO_SHEET_WRITE,READY
+5,Run P126 local registry,YES,REGISTRY_ONLY,READY

@@ -1,0 +1,51 @@
+{
+  "contract": "P127_OPERATOR_RUN_SHORTCUT_LOCAL_ONLY",
+  "does_not": [
+    "run Apps Script",
+    "write Google Sheets",
+    "push clasp",
+    "deploy public web app",
+    "execute broker operation",
+    "place order",
+    "cancel order",
+    "replace order",
+    "auto-size position",
+    "access Revolut X real account from MVP",
+    "auto-apply GEM response"
+  ],
+  "operator_boundaries": [
+    "portfolio_input.txt is filled manually",
+    "GEM prompt is pasted manually",
+    "GEM response is pasted manually",
+    "all outputs remain local"
+  ],
+  "outputs": [
+    "P127_OPERATOR_RUN_SHORTCUT.ps1",
+    "P127_ONE_COMMAND_OPERATOR_GUIDE.md",
+    "P127_OPERATOR_DAILY_RUNBOOK.md",
+    "P127_SHORTCUT_CHECKLIST.csv",
+    "P127_SHORTCUT_CONTRACT.json",
+    "P127_SHORTCUT_MANIFEST.json",
+    "P127_README.md"
+  ],
+  "purpose": "Provide one local operator shortcut to prepare P124 input, run P125 review, and refresh P126 registry.",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "OPERATOR_SHORTCUT_ONLY",
+    "HUMAN_REVIEW_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "SHORTCUT_READY",
+  "version": "MVP_QAIC_P127_OPERATOR_RUN_SHORTCUT_LOCAL_ONLY_0_1_1_ZIP_SAFE"
+}
