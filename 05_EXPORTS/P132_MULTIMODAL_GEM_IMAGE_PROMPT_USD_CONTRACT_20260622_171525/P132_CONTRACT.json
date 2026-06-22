@@ -1,0 +1,62 @@
+{
+  "allowed": [
+    "attach Revolut X image directly in GEM",
+    "paste optional Revolut X copied text in the same prompt",
+    "ask GEM for one final structured portfolio review",
+    "require proof that the image was used",
+    "require USD output schema",
+    "require human review before any use"
+  ],
+  "architecture_decision": "The Revolut X image is attached directly to the main GEM portfolio prompt. There is no separate preliminary image-reading step.",
+  "contract": "P132_MULTIMODAL_GEM_IMAGE_PROMPT_USD_CONTRACT",
+  "forbidden": [
+    "separate first-pass GEM extraction as mandatory workflow",
+    "invented_portfolio_data",
+    "auto_apply_gem_response",
+    "broker_execution",
+    "order_execution",
+    "auto_sizing",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "revolutx_real_access_from_mvp"
+  ],
+  "outputs": [
+    "P132_GEM_MULTIMODAL_PORTFOLIO_PROMPT.md",
+    "P132_EXPECTED_GEM_OUTPUT_SCHEMA.json",
+    "P132_COPY_PASTE_TEXT_OPTIONAL_TEMPLATE.md",
+    "P132_IMAGE_ATTACHMENT_GUIDE.md",
+    "P132_RESPONSE_IMAGE_USAGE_GATE_CHECKLIST.csv",
+    "P132_REFERENCE_PROMPTS_CORRECTION_PLAN.md",
+    "P132_TODAY_FUNCTIONAL_RUNBOOK.md",
+    "P132_CONTRACT.json",
+    "P132_MANIFEST.json",
+    "P132_README.md"
+  ],
+  "reference_currency": "USD",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "GEM_MULTIMODAL_IMAGE_INPUT_ALLOWED",
+    "IMAGE_INCLUDED_IN_MAIN_PROMPT",
+    "NO_PRELIMINARY_IMAGE_EXTRACTION_STEP",
+    "IMAGE_USAGE_EVIDENCE_REQUIRED",
+    "USD_REFERENCE_CURRENCY",
+    "HUMAN_REVIEW_REQUIRED",
+    "NO_INVENTED_PORTFOLIO_DATA",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "MULTIMODAL_PROMPT_CONTRACT_READY",
+  "version": "MVP_QAIC_P132_MULTIMODAL_GEM_IMAGE_PROMPT_USD_CONTRACT_0_1_0_SAFE"
+}
