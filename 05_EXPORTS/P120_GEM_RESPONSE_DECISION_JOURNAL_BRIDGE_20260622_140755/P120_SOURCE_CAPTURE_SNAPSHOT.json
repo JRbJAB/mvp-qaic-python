@@ -1,0 +1,29 @@
+{
+  "blockers": [],
+  "decision_status": "REVIEW_REQUIRED",
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "missing_data": [
+    "human_confirmed_asset_symbols",
+    "current_prices",
+    "portfolio_total_value_eur"
+  ],
+  "response_run_id": "P119-R3-SAMPLE-20260622",
+  "review_queue_rows": [
+    {
+      "queue_id": "MISSING-001"
+    },
+    {
+      "queue_id": "MISSING-002"
+    },
+    {
+      "queue_id": "MISSING-003"
+    }
+  ],
+  "source_prompt_run_id": "P118-SAMPLE-20260622",
+  "status": "REVIEW_REQUIRED",
+  "step": "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+  "structured_response": {
+    "summary": "Sample P119 response capture bridged to P120 local decision journal entry."
+  },
+  "version": "MVP_QAIC_P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE_0_1_0_SAFE"
+}

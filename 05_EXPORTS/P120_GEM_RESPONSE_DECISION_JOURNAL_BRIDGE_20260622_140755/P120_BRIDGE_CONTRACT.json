@@ -1,0 +1,47 @@
+{
+  "contract": "P120_GEM_RESPONSE_TO_DECISION_JOURNAL_BRIDGE_LOCAL_ONLY",
+  "forbidden": [
+    "auto_apply_gem_response",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "cancel_order",
+    "replace_order",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "input": "P119_RESPONSE_CAPTURE.json",
+  "outputs": [
+    "P120_DECISION_JOURNAL_ENTRY.json",
+    "P120_DECISION_JOURNAL_ENTRY.csv",
+    "P120_SOURCE_CAPTURE_SNAPSHOT.json",
+    "P120_BRIDGE_CONTRACT.json",
+    "P120_BRIDGE_MANIFEST.json",
+    "P120_BRIDGE_REPORT.md"
+  ],
+  "purpose": "Convert P119 GEM response capture into a local decision journal entry candidate.",
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "DECISION_JOURNAL_BRIDGE_LOCAL_ONLY",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "LOCAL_ONLY_HUMAN_REVIEW_READY",
+  "version": "MVP_QAIC_P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_0_1_0_SAFE"
+}
