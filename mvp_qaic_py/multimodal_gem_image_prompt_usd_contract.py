@@ -7,7 +7,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-VERSION = "MVP_QAIC_P132_MULTIMODAL_GEM_IMAGE_PROMPT_USD_CONTRACT_0_1_0_SAFE"
+VERSION = (
+    "MVP_QAIC_P132_MULTIMODAL_GEM_IMAGE_PROMPT_USD_CONTRACT_0_1_1_FRENCH_RESPONSE_JSON_STABLE_SAFE"
+)
 
 REFERENCE_CURRENCY = "USD"
 
@@ -18,6 +20,8 @@ SAFETY_MARKERS = (
     "NO_PRELIMINARY_IMAGE_EXTRACTION_STEP",
     "IMAGE_USAGE_EVIDENCE_REQUIRED",
     "USD_REFERENCE_CURRENCY",
+    "FRENCH_RESPONSE_VALUES_ALLOWED",
+    "JSON_KEYS_STABLE_ENGLISH",
     "HUMAN_REVIEW_REQUIRED",
     "NO_INVENTED_PORTFOLIO_DATA",
     "NO_INDEX_EDIT",
@@ -197,6 +201,8 @@ def build_contract() -> dict[str, Any]:
         "version": VERSION,
         "status": "MULTIMODAL_PROMPT_CONTRACT_READY",
         "reference_currency": REFERENCE_CURRENCY,
+        "response_language": "fr",
+        "json_keys_language": "en_stable",
         "architecture_decision": "The Revolut X image is attached directly to the main GEM portfolio prompt. There is no separate preliminary image-reading step.",
         "allowed": [
             "attach Revolut X image directly in GEM",
@@ -238,6 +244,14 @@ You will receive:
 2. Optional copied text from the same interface.
 
 The image is part of this main prompt. Do not ask for or create a separate preliminary step where you only read the image. Perform the portfolio extraction and review in this single response.
+
+## Langue de réponse
+
+- Réponds en français pour tous les textes rédigés, explications, résumés, commentaires et notes.
+- Conserve exactement les noms de champs JSON, les statuts techniques, les enums, les booléens et les marqueurs de sécurité définis dans le schéma.
+- Ne traduis pas les clés JSON.
+- Si la réponse est en JSON, les valeurs textuelles peuvent être en français, mais la structure technique doit rester strictement conforme au schéma.
+- Les valeurs des enums techniques doivent rester exactes, par exemple `IMAGE_USED`, `REVIEW_REQUIRED`, `OK`, `BLOCKED`, `HIGH`, `MEDIUM`, `LOW`, `REVIEW`.
 
 ## Hard rules
 
@@ -435,6 +449,8 @@ Get a functional real GEM test today without another pre-extraction step.
    - assets contain `value_usd`
    - `human_review_required=true`
    - `no_order_no_sizing=true`
+   - les valeurs textuelles rédigées sont en français
+   - les clés JSON restent inchangées en anglais
 
 ## Block if
 
@@ -502,6 +518,10 @@ def write_multimodal_gem_image_prompt_usd_contract(
         "p131_dir": str(p131_dir) if p131_dir else None,
         "p131_dir_valid": bool(p131_dir and str(p131_dir) != "G" and p131_dir.exists()),
         "reference_currency": REFERENCE_CURRENCY,
+        "response_language": "fr",
+        "json_keys_language": "en_stable",
+        "french_response_values_allowed": True,
+        "json_keys_stable_english": True,
         "gem_multimodal_image_input_allowed": True,
         "image_included_in_main_prompt": True,
         "no_preliminary_image_extraction_step": True,
