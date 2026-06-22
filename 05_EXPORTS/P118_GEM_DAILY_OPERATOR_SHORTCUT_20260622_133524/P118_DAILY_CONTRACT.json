@@ -1,0 +1,49 @@
+{
+  "contract": "P118_PROMPT_GEM_DAILY_OPERATOR_SHORTCUT",
+  "daily_output": "P118_RUNTIME_PACK/P116_GEM_PROMPT_COPY_PASTE.md",
+  "forbidden": [
+    "ocr_claim",
+    "automated_visual_extraction",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "cancel_order",
+    "replace_order",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "operator_steps": [
+    "Put portfolio text in a local input file or provide an image reference.",
+    "Run the daily shortcut command.",
+    "Open P118_RUNTIME_PACK/P116_GEM_PROMPT_COPY_PASTE.md.",
+    "Copy manually into GEM.",
+    "Paste GEM response into the next review queue."
+  ],
+  "primary_command": "python -m mvp_qaic_py.gem_prompt_daily_shortcut",
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "DAILY_OPERATOR_SHORTCUT",
+    "COPY_PASTE_TO_GEM_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_OCR_CLAIM",
+    "NO_AUTOMATED_VISUAL_EXTRACTION",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "LOCAL_ONLY_READY_FOR_DAILY_MANUAL_USE",
+  "version": "MVP_QAIC_P118_PROMPT_GEM_DAILY_OPERATOR_SHORTCUT_0_1_0_SAFE"
+}

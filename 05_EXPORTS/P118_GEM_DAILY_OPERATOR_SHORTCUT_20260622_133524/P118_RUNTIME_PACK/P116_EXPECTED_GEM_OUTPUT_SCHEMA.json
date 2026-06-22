@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blockers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "decision_status": {
+      "enum": [
+        "REVIEW_REQUIRED",
+        "BLOCKED",
+        "HUMAN_REVIEW_ONLY"
+      ],
+      "type": "string"
+    },
+    "human_decision_only": {
+      "const": true,
+      "type": "boolean"
+    },
+    "missing_data": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "no_order_no_sizing": {
+      "const": true,
+      "type": "boolean"
+    },
+    "portfolio_review": {
+      "type": "object"
+    },
+    "questions_for_human": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "risk_notes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "safety_markers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "decision_status",
+    "missing_data",
+    "blockers",
+    "human_decision_only",
+    "no_order_no_sizing",
+    "safety_markers"
+  ],
+  "title": "MVP QAIC P114 Expected GEM Portfolio Review Output",
+  "type": "object"
+}

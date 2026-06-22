@@ -1,0 +1,1 @@
+BTC 0.10 value EUR 6500; ETH 1.20 value EUR 4200; USDC 1000 value EUR 920; source=daily_manual_placeholder; human_review_required=true; prices_not_verified=true.
