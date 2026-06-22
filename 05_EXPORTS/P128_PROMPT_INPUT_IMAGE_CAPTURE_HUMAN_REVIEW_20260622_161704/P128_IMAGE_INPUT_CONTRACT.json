@@ -1,0 +1,62 @@
+{
+  "allowed": [
+    "register local image path",
+    "store image in local inbox",
+    "write human visual notes",
+    "write manual transcription",
+    "use manual transcription as P124 portfolio input"
+  ],
+  "contract": "P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW",
+  "forbidden": [
+    "ocr_claim",
+    "automated_visual_extraction",
+    "invented_portfolio_data",
+    "auto_apply_gem_response",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp"
+  ],
+  "manual_transcription_required": true,
+  "no_automated_visual_extraction": true,
+  "no_ocr_claim": true,
+  "outputs": [
+    "P128_IMAGE_CAPTURE_GUIDE.md",
+    "P128_OPERATOR_VISUAL_NOTES_TEMPLATE.md",
+    "P128_MANUAL_TRANSCRIPTION_TEMPLATE.md",
+    "P128_IMAGE_CAPTURE_CHECKLIST.csv",
+    "P128_IMAGE_INPUT_CONTRACT.json",
+    "P128_IMAGE_CAPTURE_MANIFEST.json",
+    "P128_README.md",
+    "P128_IMAGE_CAPTURE_INBOX/README.md",
+    "P128_IMAGE_CAPTURE_INBOX/.gitkeep"
+  ],
+  "purpose": "Prepare local capture folder and manual transcription templates for portfolio screenshots/images.",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "IMAGE_CAPTURE_ONLY",
+    "HUMAN_REVIEW_ONLY",
+    "MANUAL_TRANSCRIPTION_REQUIRED",
+    "NO_OCR_CLAIM",
+    "NO_AUTOMATED_VISUAL_EXTRACTION",
+    "NO_INVENTED_PORTFOLIO_DATA",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "IMAGE_CAPTURE_CONTRACT_READY",
+  "version": "MVP_QAIC_P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_0_1_0_SAFE"
+}

@@ -1,0 +1,7 @@
+﻿step,name,required,safety,status
+1,Place screenshot/image in P128_IMAGE_CAPTURE_INBOX,YES,LOCAL_ONLY,OPERATOR_ACTION
+2,Write visual notes manually,YES,HUMAN_REVIEW_ONLY,OPERATOR_ACTION
+3,Transcribe portfolio data manually,YES,MANUAL_TRANSCRIPTION_REQUIRED,OPERATOR_ACTION
+4,Do not claim OCR or automated extraction,YES,NO_OCR_CLAIM,READY
+5,Do not invent missing portfolio values,YES,NO_INVENTED_PORTFOLIO_DATA,READY
+6,Use manual transcription as P124 portfolio input,YES,NO_AUTO_APPLY_GEM_RESPONSE,READY
