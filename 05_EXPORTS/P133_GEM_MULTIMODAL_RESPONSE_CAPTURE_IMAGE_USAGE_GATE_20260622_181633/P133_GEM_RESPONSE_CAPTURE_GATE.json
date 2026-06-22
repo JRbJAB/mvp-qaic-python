@@ -1,0 +1,67 @@
+{
+  "status": "GEM_MULTIMODAL_RESPONSE_CAPTURE_GATE_READY",
+  "gate_status": "PASS_WITH_HUMAN_REVIEW",
+  "version": "MVP_QAIC_P133_GEM_MULTIMODAL_RESPONSE_CAPTURE_GATE_0_1_0_SAFE",
+  "run_id": "P133-GEM-MULTIMODAL-RESPONSE-CAPTURE-GATE-20260622",
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "response_text_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P133_GEM_MULTIMODAL_RESPONSE_CAPTURE_IMAGE_USAGE_GATE_20260622_181633\\P133_SAMPLE_GEM_RESPONSE_INPUT_MINIFIED.json",
+  "source_image_path": null,
+  "reference_currency": "USD",
+  "response_language_expected": "fr",
+  "json_keys_language": "en_stable",
+  "human_readable_summary_required": true,
+  "pretty_json_required": true,
+  "no_minified_json_for_operator_review": true,
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "HUMAN_REVIEW_REQUIRED",
+    "GEM_RESPONSE_CAPTURE_ONLY",
+    "IMAGE_USAGE_EVIDENCE_REQUIRED",
+    "REFERENCE_CURRENCY_USD",
+    "JSON_KEYS_STABLE_ENGLISH",
+    "FRENCH_HUMAN_READABLE_REPORT",
+    "PRETTY_JSON_REQUIRED",
+    "NO_MINIFIED_JSON_FOR_OPERATOR_REVIEW",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_SIZING",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP",
+    "NO_SHEET_WRITE"
+  ],
+  "validation": {
+    "gate_status": "PASS_WITH_HUMAN_REVIEW",
+    "failures": [],
+    "advisory": [
+      "no_auto_apply_root_field_missing_future_schema_recommendation",
+      "gem_response_json_minified_single_line_operator_unfriendly"
+    ],
+    "warnings": [],
+    "arithmetic": {
+      "asset_value_sum_usd": 655.66,
+      "portfolio_total_value_usd": 655.66,
+      "value_delta_usd": 0.0,
+      "allocation_sum_pct": 100.0,
+      "allocation_delta_pct": 0.0,
+      "asset_pnl_sum_usd": -117.63,
+      "portfolio_unrealized_pnl_usd": -117.63,
+      "pnl_delta_usd": 0.0
+    },
+    "detected": {
+      "response_language_expected": "fr",
+      "json_keys_language_expected": "en_stable",
+      "pretty_json_required": true,
+      "minified_json_detected": true,
+      "source_type": "image",
+      "reference_currency": "USD",
+      "image_used": true,
+      "image_evidence_status": "IMAGE_USED",
+      "human_review_required": true,
+      "no_order_no_sizing": true,
+      "no_auto_apply_in_blockers": true,
+      "no_auto_apply_root": null
+    }
+  }
+}

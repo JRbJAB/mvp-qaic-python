@@ -1,0 +1,71 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "source_type": "image",
+  "reference_currency": "USD",
+  "image_used": true,
+  "copy_paste_text_used": false,
+  "image_usage_evidence": {
+    "status": "IMAGE_USED",
+    "visual_evidence_summary": "L’image montre une interface de portefeuille crypto en USD avec une valeur totale visible de 655,66 $, une variation de -117,63 $ et -15.21%, ainsi que les lignes US Dollar, Bitcoin et USDC.",
+    "visible_platform_or_context": "Interface type Revolut X / portefeuille crypto en USD",
+    "blockers": [
+      "HUMAN_REVIEW_REQUIRED",
+      "NO_BROKER",
+      "NO_ORDER",
+      "NO_SIZING",
+      "NO_AUTO_APPLY"
+    ]
+  },
+  "portfolio": {
+    "total_value_usd": 655.66,
+    "unrealized_pnl_usd": -117.63,
+    "unrealized_pnl_pct": -15.21,
+    "cash_usd_value": 39.99,
+    "cash_allocation_pct": 6.1
+  },
+  "assets": [
+    {
+      "symbol": "USD",
+      "asset_name": "US Dollar",
+      "quantity": 39.99,
+      "price_usd": 1.0,
+      "value_usd": 39.99,
+      "allocation_pct": 6.1,
+      "unrealized_pnl_usd": null,
+      "unrealized_pnl_pct": null,
+      "confidence": "HIGH",
+      "notes": "Ligne Espèces visible. Le PnL affiche un tiret, donc aucune valeur PnL n’est déduite."
+    },
+    {
+      "symbol": "BTC",
+      "asset_name": "Bitcoin",
+      "quantity": 0.00644955,
+      "price_usd": 64644.62,
+      "value_usd": 416.92,
+      "allocation_pct": 63.59,
+      "unrealized_pnl_usd": -117.69,
+      "unrealized_pnl_pct": -22.01,
+      "confidence": "HIGH",
+      "notes": "Ligne Bitcoin visible dans la section Crypto-monnaies."
+    },
+    {
+      "symbol": "USDC",
+      "asset_name": "USDC",
+      "quantity": 198.756267,
+      "price_usd": 1.0,
+      "value_usd": 198.75,
+      "allocation_pct": 30.31,
+      "unrealized_pnl_usd": 0.06,
+      "unrealized_pnl_pct": 0.03,
+      "confidence": "HIGH",
+      "notes": "Ligne USDC visible dans la section Crypto-monnaies."
+    }
+  ],
+  "missing_data": [],
+  "unclear_data": [
+    "Le PnL de la ligne US Dollar est affiché comme un tiret.",
+    "Les valeurs proviennent de la capture d’écran et doivent rester soumises à revue humaine."
+  ],
+  "human_review_required": true,
+  "no_order_no_sizing": true
+}
