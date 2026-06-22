@@ -1,0 +1,46 @@
+{
+  "contract": "P115_MODULE_MIGRATION_BOUNDARY_CONTRACT",
+  "index_policy": "DO_NOT_EDIT_OR_MIGRATE_NOW_SEPARATE_BATCH_REQUIRED",
+  "mvp_allowed_scope": [
+    "lexique",
+    "webapp_static_data_packs",
+    "prompts",
+    "methods",
+    "benchmark",
+    "portfolio_review_human_review_only",
+    "decision_review_exports"
+  ],
+  "mvp_forbidden_scope": [
+    "revolutx_real_access",
+    "broker_execution",
+    "order_execution",
+    "auto_sizing",
+    "secret_storage",
+    "public_deploy_in_this_batch",
+    "apps_script_live_execution",
+    "sheet_write",
+    "clasp_push"
+  ],
+  "qaic_private_scope": [
+    "risk_engine",
+    "revolutx_adapter",
+    "broker_contracts",
+    "execution_capable_but_locked",
+    "private_backend"
+  ],
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP",
+    "QAIC_BACKEND_PRIVATE_SEPARATE"
+  ],
+  "version": "MVP_QAIC_P115_MODULE_MIGRATION_INVENTORY_0_1_0_SAFE"
+}
