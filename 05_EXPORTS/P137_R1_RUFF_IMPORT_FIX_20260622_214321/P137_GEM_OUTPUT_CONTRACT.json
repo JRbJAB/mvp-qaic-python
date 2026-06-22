@@ -1,0 +1,51 @@
+{
+  "contract_id": "P137_GEM_OUTPUT_CONTRACT",
+  "gem_id": "GEM_GENERAL_REVIEW",
+  "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+  "language": "fr",
+  "required_response_shape": {
+    "human_summary_first": true,
+    "json_fenced_block_required": true,
+    "json_pretty_required": true,
+    "technical_keys_keep_english": true
+  },
+  "required_json_keys": [
+    "status",
+    "gem_id",
+    "prompt_profile",
+    "reference_currency",
+    "image_used",
+    "image_usage_evidence",
+    "portfolio_extract",
+    "missing_data",
+    "blockers",
+    "human_review_required",
+    "no_order_no_sizing",
+    "safety"
+  ],
+  "required_enums": {
+    "status": [
+      "OK",
+      "REVIEW_REQUIRED",
+      "BLOCKED"
+    ],
+    "image_used": [
+      "IMAGE_USED",
+      "IMAGE_NOT_USED",
+      "REVIEW_REQUIRED"
+    ],
+    "risk_level": [
+      "LOW",
+      "MEDIUM",
+      "HIGH",
+      "REVIEW"
+    ]
+  },
+  "hard_safety": {
+    "human_review_required": true,
+    "no_order_no_sizing": true,
+    "no_broker_execution": true,
+    "no_auto_apply": true,
+    "no_invented_portfolio_data": true
+  }
+}

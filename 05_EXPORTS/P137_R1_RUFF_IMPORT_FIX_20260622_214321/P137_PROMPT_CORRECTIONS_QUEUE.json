@@ -1,0 +1,65 @@
+[
+  {
+    "correction_id": "P137_GEM_001",
+    "priority": "HIGH",
+    "status": "APPLIED_TO_LOCAL_DRAFT",
+    "scope": "OUTPUT_FORMAT",
+    "issue": "La réponse GEM doit être lisible humainement puis fournir un JSON pretty fenced.",
+    "applied_rule": "Imposer un résumé court puis un bloc ```json strict.",
+    "gem_id": "GEM_GENERAL_REVIEW"
+  },
+  {
+    "correction_id": "P137_GEM_002",
+    "priority": "HIGH",
+    "status": "APPLIED_TO_LOCAL_DRAFT",
+    "scope": "IMAGE_USAGE_EVIDENCE",
+    "issue": "La preuve d'utilisation de l'image doit être explicite.",
+    "applied_rule": "Ajouter `image_used` et `image_usage_evidence` obligatoires.",
+    "gem_id": "GEM_GENERAL_REVIEW"
+  },
+  {
+    "correction_id": "P137_GEM_003",
+    "priority": "HIGH",
+    "status": "APPLIED_TO_LOCAL_DRAFT",
+    "scope": "USD_REFERENCE",
+    "issue": "La devise de référence doit rester verrouillée sur USD pour Revolut X.",
+    "applied_rule": "Ajouter `reference_currency=USD` et champs `*_usd`.",
+    "gem_id": "GEM_GENERAL_REVIEW"
+  },
+  {
+    "correction_id": "P137_GEM_004",
+    "priority": "HIGH",
+    "status": "APPLIED_TO_LOCAL_DRAFT",
+    "scope": "SAFETY_GUARDS",
+    "issue": "Le GEM ne doit jamais produire d'ordre, sizing ou auto-apply.",
+    "applied_rule": "Exiger `no_order_no_sizing=true`, `human_review_required=true`.",
+    "gem_id": "GEM_GENERAL_REVIEW"
+  },
+  {
+    "correction_id": "P137_GEM_005",
+    "priority": "HIGH",
+    "status": "APPLIED_TO_LOCAL_DRAFT",
+    "scope": "MISSING_DATA",
+    "issue": "Les données manquantes doivent bloquer ou passer en review, jamais être inventées.",
+    "applied_rule": "Ajouter `missing_data`, `blockers`, `status=REVIEW_REQUIRED|BLOCKED`.",
+    "gem_id": "GEM_GENERAL_REVIEW"
+  },
+  {
+    "correction_id": "P137_GEM_006",
+    "priority": "MEDIUM",
+    "status": "APPLIED_TO_LOCAL_DRAFT",
+    "scope": "P133_COMPATIBILITY",
+    "issue": "La sortie GEM doit rester compatible avec la gate P133.",
+    "applied_rule": "Ajouter marqueurs et clés attendus par capture gate.",
+    "gem_id": "GEM_GENERAL_REVIEW"
+  },
+  {
+    "correction_id": "P137_GEM_007",
+    "priority": "MEDIUM",
+    "status": "APPLIED_TO_LOCAL_DRAFT",
+    "scope": "GEM_RUNTIME_PROFILE",
+    "issue": "La correction doit tenir compte du GEM actif.",
+    "applied_rule": "Injecter `gem_id`, `prompt_profile`, capacités et limites dans l'en-tête.",
+    "gem_id": "GEM_GENERAL_REVIEW"
+  }
+]

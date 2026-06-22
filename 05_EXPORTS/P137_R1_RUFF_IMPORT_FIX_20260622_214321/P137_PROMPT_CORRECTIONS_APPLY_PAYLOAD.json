@@ -1,0 +1,206 @@
+{
+  "step": "P137_PROMPT_CORRECTIONS_APPLY_QUEUE",
+  "version": "MVP_QAIC_P137_PROMPT_CORRECTIONS_APPLY_QUEUE_20260622",
+  "status": "P137_PROMPT_CORRECTIONS_READY_FOR_HUMAN_REVIEW",
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "run_id": "P137-R1-RUFF-IMPORT-FIX-20260622",
+  "selected_gem": {
+    "gem_id": "GEM_GENERAL_REVIEW",
+    "label": "GEM General Review",
+    "status": "ACTIVE",
+    "default": true,
+    "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+    "description": "Profil standard pour extraction portefeuille Revolut X / USD avec résumé lisible + JSON pretty."
+  },
+  "active_gem_ids": [
+    "GEM_GENERAL_REVIEW",
+    "GEM_PORTFOLIO_REVIEW",
+    "GEM_RISK_GUARD_REVIEW"
+  ],
+  "active_gem_profiles": [
+    {
+      "gem_id": "GEM_GENERAL_REVIEW",
+      "label": "GEM General Review",
+      "status": "ACTIVE",
+      "default": true,
+      "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+      "description": "Profil standard pour extraction portefeuille Revolut X / USD avec résumé lisible + JSON pretty."
+    },
+    {
+      "gem_id": "GEM_PORTFOLIO_REVIEW",
+      "label": "GEM Portfolio Review",
+      "status": "ACTIVE",
+      "default": false,
+      "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+      "description": "Profil centré sur inventaire positions, allocations, PnL et cohérences arithmétiques."
+    },
+    {
+      "gem_id": "GEM_RISK_GUARD_REVIEW",
+      "label": "GEM Risk Guard Review",
+      "status": "ACTIVE",
+      "default": false,
+      "prompt_profile": "P132_R2_RISK_GUARD_REVIEW",
+      "description": "Profil centré blockers, incertitudes, human review et garde-fous no order/no sizing."
+    }
+  ],
+  "source_prompt": {
+    "path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P136C_R1_TEST_IMPORT_FIX_20260622_211016\\P136_PROMPT_CORRECTIONS_QUEUE.md",
+    "found": true,
+    "sha256": "2bb9a8985e2440e9fd8d34c43b0ead4ff918e39deaa2227b4b6d9317a9e0b6ec",
+    "char_count": 1233
+  },
+  "corrected_prompt": {
+    "output_file": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P137_R1_RUFF_IMPORT_FIX_20260622_214321\\P137_CORRECTED_GEM_PROMPT.md",
+    "sha256": "99e5efab46ca5aa9ecdc1883260dc13c30fe84aeb08e87a943a99b8ee70ba3ed",
+    "char_count": 4287,
+    "local_draft_only": true,
+    "source_overwritten": false
+  },
+  "prompt_corrections_queue": [
+    {
+      "correction_id": "P137_GEM_001",
+      "priority": "HIGH",
+      "status": "APPLIED_TO_LOCAL_DRAFT",
+      "scope": "OUTPUT_FORMAT",
+      "issue": "La réponse GEM doit être lisible humainement puis fournir un JSON pretty fenced.",
+      "applied_rule": "Imposer un résumé court puis un bloc ```json strict.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P137_GEM_002",
+      "priority": "HIGH",
+      "status": "APPLIED_TO_LOCAL_DRAFT",
+      "scope": "IMAGE_USAGE_EVIDENCE",
+      "issue": "La preuve d'utilisation de l'image doit être explicite.",
+      "applied_rule": "Ajouter `image_used` et `image_usage_evidence` obligatoires.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P137_GEM_003",
+      "priority": "HIGH",
+      "status": "APPLIED_TO_LOCAL_DRAFT",
+      "scope": "USD_REFERENCE",
+      "issue": "La devise de référence doit rester verrouillée sur USD pour Revolut X.",
+      "applied_rule": "Ajouter `reference_currency=USD` et champs `*_usd`.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P137_GEM_004",
+      "priority": "HIGH",
+      "status": "APPLIED_TO_LOCAL_DRAFT",
+      "scope": "SAFETY_GUARDS",
+      "issue": "Le GEM ne doit jamais produire d'ordre, sizing ou auto-apply.",
+      "applied_rule": "Exiger `no_order_no_sizing=true`, `human_review_required=true`.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P137_GEM_005",
+      "priority": "HIGH",
+      "status": "APPLIED_TO_LOCAL_DRAFT",
+      "scope": "MISSING_DATA",
+      "issue": "Les données manquantes doivent bloquer ou passer en review, jamais être inventées.",
+      "applied_rule": "Ajouter `missing_data`, `blockers`, `status=REVIEW_REQUIRED|BLOCKED`.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P137_GEM_006",
+      "priority": "MEDIUM",
+      "status": "APPLIED_TO_LOCAL_DRAFT",
+      "scope": "P133_COMPATIBILITY",
+      "issue": "La sortie GEM doit rester compatible avec la gate P133.",
+      "applied_rule": "Ajouter marqueurs et clés attendus par capture gate.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P137_GEM_007",
+      "priority": "MEDIUM",
+      "status": "APPLIED_TO_LOCAL_DRAFT",
+      "scope": "GEM_RUNTIME_PROFILE",
+      "issue": "La correction doit tenir compte du GEM actif.",
+      "applied_rule": "Injecter `gem_id`, `prompt_profile`, capacités et limites dans l'en-tête.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    }
+  ],
+  "output_contract": {
+    "contract_id": "P137_GEM_OUTPUT_CONTRACT",
+    "gem_id": "GEM_GENERAL_REVIEW",
+    "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+    "language": "fr",
+    "required_response_shape": {
+      "human_summary_first": true,
+      "json_fenced_block_required": true,
+      "json_pretty_required": true,
+      "technical_keys_keep_english": true
+    },
+    "required_json_keys": [
+      "status",
+      "gem_id",
+      "prompt_profile",
+      "reference_currency",
+      "image_used",
+      "image_usage_evidence",
+      "portfolio_extract",
+      "missing_data",
+      "blockers",
+      "human_review_required",
+      "no_order_no_sizing",
+      "safety"
+    ],
+    "required_enums": {
+      "status": [
+        "OK",
+        "REVIEW_REQUIRED",
+        "BLOCKED"
+      ],
+      "image_used": [
+        "IMAGE_USED",
+        "IMAGE_NOT_USED",
+        "REVIEW_REQUIRED"
+      ],
+      "risk_level": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "REVIEW"
+      ]
+    },
+    "hard_safety": {
+      "human_review_required": true,
+      "no_order_no_sizing": true,
+      "no_broker_execution": true,
+      "no_auto_apply": true,
+      "no_invented_portfolio_data": true
+    }
+  },
+  "safety_markers": [
+    "LOCAL_PRIVATE_ONLY",
+    "P137_PROMPT_CORRECTIONS_APPLY_QUEUE",
+    "PROMPT_CORRECTIONS_LOCAL_DRAFT_ONLY",
+    "NO_PROMPT_SOURCE_OVERWRITE",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_TUNNEL",
+    "NO_REMOTE_ACCESS",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_SIZING",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP",
+    "NO_SHEET_WRITE",
+    "NO_BIGQUERY_WRITE",
+    "HUMAN_REVIEW_REQUIRED",
+    "P133_COMPATIBLE"
+  ],
+  "features": {
+    "prompt_corrections_apply_queue": true,
+    "corrected_prompt_local_draft": true,
+    "source_prompt_copy_exported": true,
+    "no_prompt_source_overwrite": true,
+    "p133_compatible": true,
+    "human_review_required": true,
+    "no_broker_execution": true,
+    "no_order": true,
+    "no_sizing": true,
+    "no_auto_apply": true
+  }
+}
