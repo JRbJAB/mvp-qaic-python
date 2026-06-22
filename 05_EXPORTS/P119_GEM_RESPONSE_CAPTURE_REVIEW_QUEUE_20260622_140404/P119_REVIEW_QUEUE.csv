@@ -1,0 +1,4 @@
+﻿queue_id,priority,review_status,item_type,item_value,required_action,human_review_only,no_order_no_sizing
+MISSING-001,P1,REVIEW_REQUIRED,missing_data,human_confirmed_asset_symbols,Provide missing data or keep decision_status=REVIEW_REQUIRED.,TRUE,TRUE
+MISSING-002,P1,REVIEW_REQUIRED,missing_data,current_prices,Provide missing data or keep decision_status=REVIEW_REQUIRED.,TRUE,TRUE
+MISSING-003,P1,REVIEW_REQUIRED,missing_data,portfolio_total_value_eur,Provide missing data or keep decision_status=REVIEW_REQUIRED.,TRUE,TRUE
