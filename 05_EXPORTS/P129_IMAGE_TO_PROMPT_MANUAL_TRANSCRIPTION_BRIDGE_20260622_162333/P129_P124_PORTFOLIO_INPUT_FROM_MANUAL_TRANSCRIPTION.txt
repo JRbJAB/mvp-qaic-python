@@ -1,0 +1,18 @@
+# P129 P124 Portfolio Input From Manual Image Transcription
+
+Status: BLOCKED_REVIEW_REQUIRED
+
+Safety:
+- HUMAN_REVIEW_ONLY
+- MANUAL_TRANSCRIPTION_REQUIRED
+- NO_OCR_CLAIM
+- NO_AUTOMATED_VISUAL_EXTRACTION
+- NO_INVENTED_PORTFOLIO_DATA
+- NO_BROKER
+- NO_ORDER
+- NO_SIZING
+- NO_AUTO_APPLY_GEM_RESPONSE
+
+Use this text as P124 `portfolio_input.txt` only after human review.
+
+## Manual transcription payload
