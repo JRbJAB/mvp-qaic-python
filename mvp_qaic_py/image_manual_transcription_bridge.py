@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-VERSION = "MVP_QAIC_P129_IMAGE_TO_PROMPT_MANUAL_TRANSCRIPTION_BRIDGE_0_1_0_SAFE"
+VERSION = "MVP_QAIC_P129_IMAGE_TO_PROMPT_MANUAL_TRANSCRIPTION_BRIDGE_0_1_1_RUNTIME_FIX_SAFE"
 
 SAFETY_MARKERS = (
     "LOCAL_ONLY",
@@ -41,6 +41,8 @@ OUTPUT_FILES = (
     "P129_README.md",
 )
 
+P128_EXPORT_PATTERN = "P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_*"
+
 FORBIDDEN_AUTOMATION_TERMS = (
     "ocr extracted",
     "ocr-extracted",
@@ -58,6 +60,7 @@ class ImageManualTranscriptionBridgeRequest:
     output_dir: str | Path
     p128_dir: str | Path | None = None
     manual_transcription_path: str | Path | None = None
+    exports_dir: str | Path | None = None
     run_id: str = "P129-IMAGE-MANUAL-TRANSCRIPTION-BRIDGE"
     generated_at_utc: str | None = None
     notes: str | None = None
@@ -81,19 +84,49 @@ def _read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8-sig")
 
 
+def discover_p128_dirs(exports_dir: str | Path) -> list[Path]:
+    root = Path(exports_dir)
+    if not root.exists():
+        return []
+    candidates = [path for path in root.glob(P128_EXPORT_PATTERN) if path.is_dir()]
+    return sorted(
+        candidates,
+        key=lambda path: (path.stat().st_mtime_ns, str(path)),
+        reverse=True,
+    )
+
+
+def discover_latest_p128_dir(exports_dir: str | Path) -> Path | None:
+    dirs = discover_p128_dirs(exports_dir)
+    return dirs[0] if dirs else None
+
+
 def _default_transcription_path(p128_dir: str | Path | None) -> Path | None:
     if not p128_dir:
         return None
     return Path(p128_dir) / "P128_MANUAL_TRANSCRIPTION_TEMPLATE.md"
 
 
+def _resolve_p128_dir(
+    p128_dir: str | Path | None,
+    exports_dir: str | Path | None,
+) -> Path | None:
+    if p128_dir:
+        return Path(p128_dir)
+    if exports_dir:
+        return discover_latest_p128_dir(exports_dir)
+    return None
+
+
 def _resolve_transcription_path(
     p128_dir: str | Path | None,
     manual_transcription_path: str | Path | None,
-) -> Path | None:
+    exports_dir: str | Path | None = None,
+) -> tuple[Path | None, Path | None]:
+    resolved_p128_dir = _resolve_p128_dir(p128_dir, exports_dir)
     if manual_transcription_path:
-        return Path(manual_transcription_path)
-    return _default_transcription_path(p128_dir)
+        return resolved_p128_dir, Path(manual_transcription_path)
+    return resolved_p128_dir, _default_transcription_path(resolved_p128_dir)
 
 
 def _field_has_value(text: str, prefix: str) -> bool:
@@ -127,7 +160,7 @@ def _review_rows(text: str, path: Path | None) -> tuple[str, list[dict[str, str]
             {
                 "severity": "BLOCKER",
                 "code": "MISSING_TRANSCRIPTION_PATH",
-                "message": "No manual transcription path was provided.",
+                "message": "No manual transcription path was provided and no P128 folder was discovered.",
             }
         )
         return "BLOCKED_REVIEW_REQUIRED", rows
@@ -207,7 +240,9 @@ def build_bridge_contract() -> dict[str, Any]:
         "version": VERSION,
         "status": "BRIDGE_CONTRACT_READY",
         "purpose": "Transform a manually filled P128 transcription file into P124-compatible portfolio input.",
+        "runtime_fix": "latest P128 discovery is handled as a Path list, not a PowerShell scalar string.",
         "allowed": [
+            "discover latest local P128 export folder",
             "read local manual transcription text",
             "write local P124-compatible input text",
             "write review CSV",
@@ -236,11 +271,14 @@ def build_bridge_contract() -> dict[str, Any]:
     }
 
 
-def _report(status: str, rows: list[dict[str, str]], transcription_path: Path | None) -> str:
+def _report(
+    status: str, rows: list[dict[str, str]], transcription_path: Path | None, p128_dir: Path | None
+) -> str:
     lines = [
         "# P129 Image To Prompt Manual Transcription Bridge Report",
         "",
         f"- status: `{status}`",
+        f"- p128_dir: `{p128_dir or ''}`",
         f"- manual_transcription_path: `{transcription_path or ''}`",
         "- human_review_only: `true`",
         "- manual_transcription_required: `true`",
@@ -274,9 +312,13 @@ def _next_actions(status: str) -> str:
 
 def _readme() -> str:
     return """
-# P129 Image To Prompt Manual Transcription Bridge
+# P129-R1 Image To Prompt Manual Transcription Bridge
 
 P129 bridges P128 manual transcription into a P124-compatible portfolio input file.
+
+Runtime fix:
+- Latest P128 discovery is done inside Python using Path objects.
+- It cannot degrade to `LATEST_P128_DIR=G`.
 
 It does not OCR images.
 It does not automatically extract visual data.
@@ -290,9 +332,10 @@ def write_image_manual_transcription_bridge(
     out = Path(request.output_dir)
     out.mkdir(parents=True, exist_ok=True)
 
-    transcription_path = _resolve_transcription_path(
+    p128_dir, transcription_path = _resolve_transcription_path(
         request.p128_dir,
         request.manual_transcription_path,
+        request.exports_dir,
     )
     transcription_text = _read_text(transcription_path) if transcription_path else ""
     status, review_rows = _review_rows(transcription_text, transcription_path)
@@ -306,7 +349,7 @@ def write_image_manual_transcription_bridge(
     readme_path = out / "P129_README.md"
 
     _write(p124_input_path, _p124_input_text(transcription_text, status))
-    _write(report_path, _report(status, review_rows, transcription_path))
+    _write(report_path, _report(status, review_rows, transcription_path, p128_dir))
     _write_review_csv(review_csv_path, review_rows)
     _write_json(contract_path, build_bridge_contract())
     _write(next_actions_path, _next_actions(status))
@@ -322,8 +365,10 @@ def write_image_manual_transcription_bridge(
         "run_id": request.run_id,
         "generated_at_utc": request.generated_at_utc,
         "output_dir": str(out),
-        "p128_dir": str(request.p128_dir) if request.p128_dir else None,
+        "p128_dir": str(p128_dir) if p128_dir else None,
+        "latest_p128_dir_valid": bool(p128_dir and str(p128_dir) != "G" and p128_dir.exists()),
         "manual_transcription_path": str(transcription_path) if transcription_path else None,
+        "manual_transcription_exists": bool(transcription_path and transcription_path.exists()),
         "p124_input_path": str(p124_input_path),
         "p124_input_ready": status == "P124_PORTFOLIO_INPUT_READY",
         "review_row_count": len(review_rows),
@@ -361,6 +406,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--p128-dir")
     parser.add_argument("--manual-transcription-path")
+    parser.add_argument("--exports-dir")
     parser.add_argument("--run-id", default="P129-IMAGE-MANUAL-TRANSCRIPTION-BRIDGE")
     parser.add_argument("--generated-at-utc")
     parser.add_argument("--notes")
@@ -374,6 +420,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             output_dir=args.output_dir,
             p128_dir=args.p128_dir,
             manual_transcription_path=args.manual_transcription_path,
+            exports_dir=args.exports_dir,
             run_id=args.run_id,
             generated_at_utc=args.generated_at_utc,
             notes=args.notes,
@@ -383,6 +430,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(result["p124_input_ready"])
     print(result["blocker_count"])
     print(result["missing_data_count"])
+    print(result["latest_p128_dir_valid"])
+    print(result["p128_dir"])
     print(result["output_dir"])
     return 0
 

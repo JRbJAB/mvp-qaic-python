@@ -1,0 +1,2 @@
+﻿severity,code,message
+MISSING_DATA,MANUAL_TRANSCRIPTION_PENDING,"Fill symbol, quantity, and value_eur manually before using the P124 input."

@@ -2,11 +2,13 @@ import csv
 import json
 import subprocess
 import sys
+import time
 
 from mvp_qaic_py.image_manual_transcription_bridge import (
     SAFETY_MARKERS,
     ImageManualTranscriptionBridgeRequest,
     build_bridge_contract,
+    discover_latest_p128_dir,
     write_image_manual_transcription_bridge,
 )
 
@@ -26,6 +28,13 @@ HUMAN_REVIEW_ONLY
 NO_OCR_CLAIM
 NO_AUTOMATED_VISUAL_EXTRACTION
 """
+
+
+def _make_p128(exports, name, text):
+    p128 = exports / name
+    p128.mkdir(parents=True)
+    (p128 / "P128_MANUAL_TRANSCRIPTION_TEMPLATE.md").write_text(text, encoding="utf-8")
+    return p128
 
 
 def test_p129_ready_when_manual_transcription_has_asset_fields(tmp_path):
@@ -64,6 +73,46 @@ ASSET_1:
     assert result["status"] == "MANUAL_TRANSCRIPTION_PENDING"
     assert result["p124_input_ready"] is False
     assert result["missing_data_count"] == 1
+    assert result["latest_p128_dir_valid"] is True
+
+
+def test_p129_discovers_latest_p128_dir_without_scalar_string_bug(tmp_path):
+    exports = tmp_path / "05_EXPORTS"
+    older = _make_p128(
+        exports,
+        "P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_000001",
+        _transcription_text("BTC", "0.1", "6500"),
+    )
+    time.sleep(0.01)
+    newer = _make_p128(
+        exports,
+        "P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_000002",
+        "ASSET_1:\n- symbol:\n- quantity:\n- value_eur:\n",
+    )
+
+    latest = discover_latest_p128_dir(exports)
+
+    assert latest == newer
+    assert str(latest) != "G"
+    assert latest != older
+
+
+def test_p129_exports_dir_auto_discovers_latest_p128_and_pending_status(tmp_path):
+    exports = tmp_path / "05_EXPORTS"
+    p128 = _make_p128(
+        exports,
+        "P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_000002",
+        "ASSET_1:\n- symbol:\n- quantity:\n- value_eur:\n",
+    )
+
+    result = write_image_manual_transcription_bridge(
+        ImageManualTranscriptionBridgeRequest(output_dir=tmp_path / "out", exports_dir=exports)
+    )
+
+    assert result["status"] == "MANUAL_TRANSCRIPTION_PENDING"
+    assert result["p128_dir"] == str(p128)
+    assert result["latest_p128_dir_valid"] is True
+    assert result["manual_transcription_exists"] is True
 
 
 def test_p129_blocks_automation_claims(tmp_path):
@@ -149,7 +198,7 @@ def test_p129_review_csv_records_ok_status(tmp_path):
     assert rows[0]["code"] == "P124_PORTFOLIO_INPUT_READY"
 
 
-def test_p129_contract_has_hard_boundaries():
+def test_p129_contract_has_hard_boundaries_and_runtime_fix():
     contract = build_bridge_contract()
     forbidden = set(contract["forbidden"])
     assert "ocr_claim" in forbidden
@@ -157,12 +206,17 @@ def test_p129_contract_has_hard_boundaries():
     assert "invented_portfolio_data" in forbidden
     assert "broker_execution" in forbidden
     assert "sheet_write" in forbidden
+    assert "Path list" in contract["runtime_fix"]
     assert contract["manual_transcription_required"] is True
 
 
-def test_p129_cli_generates_bridge(tmp_path):
-    transcription = tmp_path / "manual.md"
-    transcription.write_text(_transcription_text(), encoding="utf-8")
+def test_p129_cli_generates_bridge_from_exports_dir(tmp_path):
+    exports = tmp_path / "05_EXPORTS"
+    _make_p128(
+        exports,
+        "P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_000002",
+        "ASSET_1:\n- symbol:\n- quantity:\n- value_eur:\n",
+    )
 
     completed = subprocess.run(
         [
@@ -171,8 +225,8 @@ def test_p129_cli_generates_bridge(tmp_path):
             "mvp_qaic_py.image_manual_transcription_bridge",
             "--output-dir",
             str(tmp_path / "out"),
-            "--manual-transcription-path",
-            str(transcription),
+            "--exports-dir",
+            str(exports),
             "--run-id",
             "P129-CLI",
         ],
@@ -181,7 +235,8 @@ def test_p129_cli_generates_bridge(tmp_path):
         capture_output=True,
     )
 
-    assert "P124_PORTFOLIO_INPUT_READY" in completed.stdout
+    assert "MANUAL_TRANSCRIPTION_PENDING" in completed.stdout
+    assert "True" in completed.stdout
     assert (tmp_path / "out" / "P129_BRIDGE_MANIFEST.json").exists()
 
 
