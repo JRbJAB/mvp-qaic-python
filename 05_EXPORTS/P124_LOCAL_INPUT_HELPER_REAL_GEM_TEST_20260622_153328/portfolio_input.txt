@@ -1,0 +1,21 @@
+# Portfolio input for MVP QAIC GEM manual test
+
+Paste or type the portfolio snapshot here.
+
+Required minimum:
+- assets/tickers
+- quantity or exposure
+- current value if known
+- source date/time
+- notes on uncertainty
+
+Example:
+BTC: quantity=0.10; value_eur=6500; price_source=manual; confidence=REVIEW
+ETH: quantity=1.20; value_eur=4200; price_source=manual; confidence=REVIEW
+
+Safety:
+HUMAN_REVIEW_ONLY
+NO_BROKER
+NO_ORDER
+NO_SIZING
+NO_REVOLUTX_REAL_ACCESS_FROM_MVP

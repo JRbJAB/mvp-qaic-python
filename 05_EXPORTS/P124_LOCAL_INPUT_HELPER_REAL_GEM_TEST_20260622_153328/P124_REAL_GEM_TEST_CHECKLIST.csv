@@ -1,0 +1,7 @@
+﻿check_id,priority,check_name,expected_state,operator_action,safety_marker
+P124-CHECK-001,P0,Portfolio input completed,"portfolio_input.txt contains assets, values and uncertainty notes.",Fill or paste the real portfolio snapshot manually.,HUMAN_REVIEW_ONLY
+P124-CHECK-002,P0,Prompt generated locally,P118 creates P116_GEM_PROMPT_COPY_PASTE.md.,Run the P118 command from P124_OPERATOR_COMMANDS.md.,LOCAL_ONLY
+P124-CHECK-003,P0,GEM used manually,Operator manually pastes prompt into GEM.,"No API, no hidden automation, no browser control.",REAL_GEM_MANUAL_TEST_PREP_ONLY
+P124-CHECK-004,P0,GEM response captured locally,gem_response.txt contains the GEM answer.,"Paste GEM answer manually, then run P119.",NO_AUTO_APPLY_GEM_RESPONSE
+P124-CHECK-005,P0,Decision journal candidate local only,P120 creates local CSV/JSON only.,Review manually; do not write Sheets.,NO_SHEET_WRITE
+P124-CHECK-006,P0,No trading execution,"No broker, no order, no sizing.",Keep all decisions human-only.,NO_BROKER_NO_ORDER_NO_SIZING

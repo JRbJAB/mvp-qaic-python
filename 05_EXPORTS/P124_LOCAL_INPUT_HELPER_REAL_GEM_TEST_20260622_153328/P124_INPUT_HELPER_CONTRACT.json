@@ -1,0 +1,47 @@
+{
+  "contract": "P124_LOCAL_INPUT_HELPER_REAL_GEM_TEST",
+  "creates": [
+    "portfolio_input.txt",
+    "gem_response.txt",
+    "run_notes.md",
+    "P124_OPERATOR_COMMANDS.md",
+    "P124_REAL_GEM_TEST_CHECKLIST.csv",
+    "P124_INPUT_HELPER_CONTRACT.json",
+    "P124_INPUT_HELPER_MANIFEST.json",
+    "P124_README.md"
+  ],
+  "forbidden": [
+    "auto_apply_gem_response",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "cancel_order",
+    "replace_order",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "purpose": "Prepare a local run folder for the first real manual GEM test after P123 final docs.",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "HUMAN_REVIEW_ONLY",
+    "REAL_GEM_MANUAL_TEST_PREP_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "LOCAL_INPUT_HELPER_READY",
+  "version": "MVP_QAIC_P124_LOCAL_INPUT_HELPER_REAL_GEM_TEST_0_1_1_SAFE"
+}
