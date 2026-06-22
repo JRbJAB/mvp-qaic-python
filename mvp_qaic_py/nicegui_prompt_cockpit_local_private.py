@@ -36,6 +36,12 @@ SAFETY_MARKERS = (
     "P133_RESPONSE_CAPTURE_GATE_COMPATIBLE",
     "EXPLICIT_NICEGUI_ROOT_PAGE",
     "FAVICON_204_ROUTE",
+    "NO_BROWSER_CLIPBOARD_REQUIRED",
+    "P135_R2_P134_COMPAT_EXPORTS",
+    "P133_COMMAND_PREVIEW",
+    "GEM_RESPONSE_LOCAL_SAVE",
+    "PROMPT_COPY_BUTTON",
+    "P135_OPERATOR_POLISH",
 )
 
 
@@ -266,13 +272,118 @@ def write_prompt_cockpit_pack(request: PromptCockpitRequest) -> dict[str, Any]:
     return payload
 
 
-def build_nicegui_app(payload: dict[str, Any]) -> Any:
-    """Build NiceGUI app lazily with an explicit root page.
+def build_p133_capture_command(
+    response_file: Path,
+    output_dir: Path,
+    run_id: str,
+    generated_at_utc: str | None = None,
+) -> str:
+    """Return a copy-paste PowerShell command for the local P133 gate."""
 
-    P134A fix: NiceGUI must expose an explicit `/` page. Without it, opening the
-    browser can trigger the framework's script-run fallback on 404 handling and
-    terminate `python -m ... --launch`.
+    generated_at = generated_at_utc or _utc_now_iso()
+    response_file_str = str(response_file)
+    output_dir_str = str(output_dir)
+    return (
+        '$ErrorActionPreference = "Stop"\n'
+        "chcp 65001 | Out-Null\n"
+        "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8\n"
+        "$OutputEncoding = [System.Text.Encoding]::UTF8\n\n"
+        f'$responseText = "{response_file_str}"\n'
+        f'$outputDir = "{output_dir_str}"\n'
+        "New-Item -ItemType Directory -Path $outputDir -Force | Out-Null\n\n"
+        "python -m mvp_qaic_py.gem_multimodal_response_capture_gate `\n"
+        "  --response-text $responseText `\n"
+        "  --output-dir $outputDir `\n"
+        f'  --run-id "{run_id}" `\n'
+        f'  --generated-at-utc "{generated_at}"\n\n'
+        'Write-Host "P133_OUTPUT_DIR=$outputDir"\n'
+        "Write-Host \"OPEN_FIRST=$(Join-Path $outputDir 'P133_GEM_RESPONSE_HUMAN_REVIEW.md')\"\n"
+        "Write-Host \"OPEN_JSON=$(Join-Path $outputDir 'P133_GEM_RESPONSE_PRETTY.json')\"\n"
+    )
+
+
+def build_operator_polish_payload(request: PromptCockpitRequest) -> dict[str, Any]:
+    payload = build_prompt_cockpit_payload(request)
+    response_file = request.output_dir / "P135_GEM_RESPONSE_INPUT.md"
+    p133_output_dir = request.output_dir / "P133_FROM_P135_OPERATOR_POLISH"
+    p133_run_id = f"{request.run_id}-P133-GATE"
+    payload["p135_operator_polish"] = {
+        "status": "OPERATOR_POLISH_READY",
+        "response_file": str(response_file),
+        "p133_output_dir": str(p133_output_dir),
+        "p133_run_id": p133_run_id,
+        "p133_command_preview": build_p133_capture_command(
+            response_file=response_file,
+            output_dir=p133_output_dir,
+            run_id=p133_run_id,
+            generated_at_utc=request.generated_at_utc,
+        ),
+        "ux_features": {
+            "prompt_copy_button": True,
+            "gem_response_textarea": True,
+            "save_response_local_file": True,
+            "p133_command_preview": True,
+            "no_clipboard_roundtrip_required": True,
+            "manual_human_review_flow": True,
+        },
+    }
+    return payload
+
+
+def write_operator_polish_pack(request: PromptCockpitRequest) -> dict[str, Any]:
+    """Write P134-compatible files and P135 operator polish files together.
+
+    P135-R2 fix: P135 is additive. The historical P134 dry-run contract files
+    remain part of the CLI output so P134 tests and operator habits keep working.
     """
+
+    write_prompt_cockpit_pack(request)
+    payload = build_operator_polish_payload(request)
+    _ensure_dir(request.output_dir)
+
+    (request.output_dir / "P135_OPERATOR_POLISH_CONTRACT.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=False) + "\n",
+        encoding="utf-8",
+    )
+    (request.output_dir / "P135_P133_CAPTURE_COMMAND.ps1").write_text(
+        payload["p135_operator_polish"]["p133_command_preview"],
+        encoding="utf-8-sig",
+    )
+    (request.output_dir / "P135_GEM_RESPONSE_INPUT.md").write_text(
+        "# Colle ici la réponse GEM complète puis sauvegarde ce fichier.\n",
+        encoding="utf-8",
+    )
+    (request.output_dir / "P135_OPERATOR_POLISH_RUNBOOK.md").write_text(
+        _operator_polish_runbook(payload),
+        encoding="utf-8",
+    )
+    return payload
+
+
+def _operator_polish_runbook(payload: dict[str, Any]) -> str:
+    p135 = payload["p135_operator_polish"]
+    return (
+        "# P135 — NiceGUI Prompt Cockpit Operator Polish\n\n"
+        "## Objectif\n\n"
+        "Rendre le cockpit utilisable sans jongler avec le presse-papier : prompt copiable, "
+        "réponse GEM sauvegardable localement, commande P133 prête.\n\n"
+        "## Fichiers\n\n"
+        f"- Réponse GEM locale : `{p135['response_file']}`\n"
+        f"- Output P133 : `{p135['p133_output_dir']}`\n"
+        "- Commande P133 : `P135_P133_CAPTURE_COMMAND.ps1`\n\n"
+        "## Sécurité\n\n"
+        "- Local privé uniquement.\n"
+        "- Aucun ordre, sizing, broker, auto-apply.\n"
+        "- Aucun write Sheet/BigQuery/Apps Script.\n\n"
+        "## Commande P133\n\n"
+        "```powershell\n"
+        f"{p135['p133_command_preview']}"
+        "```\n"
+    )
+
+
+def build_nicegui_app(payload: dict[str, Any]) -> Any:
+    """Build NiceGUI app lazily with P135 operator polish."""
 
     try:
         from nicegui import app, ui
@@ -292,38 +403,59 @@ def build_nicegui_app(payload: dict[str, Any]) -> Any:
 
     @ui.page("/")
     def p134_home() -> None:
-        ui.page_title("P134 MVP QAIC Prompt Cockpit")
+        ui.page_title("P134/P135 MVP QAIC Prompt Cockpit")
 
         with ui.header().classes("items-center justify-between"):
-            ui.label("P134 — NiceGUI Prompt Cockpit Local Private")
+            ui.label("P135 — MVP QAIC Prompt Cockpit")
             ui.label("LOCAL_PRIVATE_ONLY · NO_PUBLIC_DEPLOY · NO_BROKER")
 
         with ui.column().classes("w-full gap-4"):
             ui.markdown(
-                "## Cockpit local privé\n"
+                "## Cockpit opérateur local privé\n"
                 f"- URL: `{payload['local_url']}`\n"
-                "- Host autorisé: `127.0.0.1` / `localhost`\n"
+                "- Flux: P132-R2 prompt → GEM avec image → P133 gate local\n"
                 "- Sécurité: human review, no order, no sizing, no auto apply"
             )
 
-            ui.markdown("## Sources")
-            ui.code(json.dumps(sources, ensure_ascii=False, indent=2), language="json")
+            with ui.card().classes("w-full"):
+                ui.markdown("### 1) Sources détectées")
+                ui.code(json.dumps(sources, ensure_ascii=False, indent=2), language="json")
 
-            ui.markdown("## Prompt P132-R2 à copier dans GEM")
-            prompt_area = ui.textarea(value=prompt_text).props("readonly").classes("w-full")
-            prompt_area.props("rows=24")
+            with ui.card().classes("w-full"):
+                ui.markdown("### 2) Prompt P132-R2")
+                prompt_area = ui.textarea(value=prompt_text).props("readonly").classes("w-full")
+                prompt_area.props("rows=24")
+                ui.button(
+                    "Copier le prompt",
+                    on_click=lambda: ui.run_javascript(
+                        "navigator.clipboard.writeText("
+                        + json.dumps(prompt_text, ensure_ascii=False)
+                        + ")"
+                    ),
+                )
 
-            ui.markdown(
-                "## Réponse GEM\n"
-                "Colle ici la réponse GEM puis sauvegarde-la via ton workflow local/P133. "
-                "Le cockpit ne fait aucun appel provider et n’applique rien automatiquement."
-            )
-            ui.textarea(placeholder="Coller ici la réponse GEM...").classes("w-full").props(
-                "rows=18"
-            )
+            with ui.card().classes("w-full"):
+                ui.markdown("### 3) Réponse GEM")
+                ui.markdown(
+                    "Colle ici la réponse GEM. Pour P135, la sauvegarde fiable reste locale fichier/runbook ; "
+                    "le cockpit évite les appels externes et n’applique rien automatiquement."
+                )
+                ui.textarea(placeholder="Coller ici la réponse GEM...").classes("w-full").props(
+                    "rows=18"
+                )
 
-            ui.markdown("## Sécurité")
-            ui.code("\n".join(SAFETY_MARKERS))
+            with ui.card().classes("w-full"):
+                ui.markdown("### 4) Commande P133 locale")
+                p135 = payload.get("p135_operator_polish", {})
+                command = p135.get(
+                    "p133_command_preview",
+                    "Génère le pack P135 dry-run pour obtenir la commande P133.",
+                )
+                ui.code(command, language="powershell")
+
+            with ui.card().classes("w-full"):
+                ui.markdown("### Sécurité")
+                ui.code("\n".join(SAFETY_MARKERS))
 
     return ui
 
@@ -363,7 +495,7 @@ def main(argv: list[str] | None = None) -> int:
         launch_cockpit(request)
         return 0
 
-    payload = write_prompt_cockpit_pack(request)
+    payload = write_operator_polish_pack(request)
     print(payload["status"])
     print(payload["local_url"])
     print(payload["sources"]["prompt_exists"])
