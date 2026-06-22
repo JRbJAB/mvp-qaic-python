@@ -1,0 +1,42 @@
+{
+  "contract": "P117_PROMPT_GEM_RUNTIME_USABILITY_PACK",
+  "forbidden": [
+    "ocr_claim",
+    "automated_visual_extraction",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "primary_command": "python -m mvp_qaic_py.gem_prompt_runtime_cli",
+  "purpose": "Make P116 GEM prompt runtime usable for daily manual portfolio reviews.",
+  "recommended_input_modes": [
+    "PASTED_TEXT_DRAFT",
+    "IMAGE_REVIEW_REQUIRED",
+    "STRUCTURED"
+  ],
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "COPY_PASTE_TO_GEM_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_OCR_CLAIM",
+    "NO_AUTOMATED_VISUAL_EXTRACTION",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "LOCAL_ONLY_READY_FOR_OPERATOR_REVIEW",
+  "version": "MVP_QAIC_P117_PROMPT_GEM_RUNTIME_USABILITY_PACK_0_1_0_SAFE"
+}

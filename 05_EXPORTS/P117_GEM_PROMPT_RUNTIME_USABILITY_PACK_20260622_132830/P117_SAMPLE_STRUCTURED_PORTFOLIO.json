@@ -1,0 +1,25 @@
+{
+  "human_review_only": true,
+  "notes": "Sample only. Do not infer live price, PnL, broker state, order, or sizing.",
+  "positions": [
+    {
+      "asset": "BTC",
+      "confidence": "manual",
+      "quantity": "0.10",
+      "value_eur": "6500"
+    },
+    {
+      "asset": "ETH",
+      "confidence": "manual",
+      "quantity": "1.20",
+      "value_eur": "4200"
+    },
+    {
+      "asset": "USDC",
+      "confidence": "manual",
+      "quantity": "1000",
+      "value_eur": "920"
+    }
+  ],
+  "source": "manual_sample"
+}
