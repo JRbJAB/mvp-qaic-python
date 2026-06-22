@@ -1,0 +1,4 @@
+﻿kind,code,severity,detail,operator_action
+missing_data,PORTFOLIO_INPUT_NOT_FILLED,REVIEW,portfolio_input.txt is missing or still looks like the default template.,Fill portfolio_input.txt with the real portfolio snapshot.
+missing_data,GEM_RESPONSE_NOT_FILLED,REVIEW,gem_response.txt is missing or still looks like the default template.,Paste the real GEM response into gem_response.txt.
+blocker,FORBIDDEN_TERM_REVIEW:execute order,BLOCKING,Potential forbidden execution wording detected in input or GEM response.,"Review manually and remove any request for order, sizing, broker or Revolut X real access."

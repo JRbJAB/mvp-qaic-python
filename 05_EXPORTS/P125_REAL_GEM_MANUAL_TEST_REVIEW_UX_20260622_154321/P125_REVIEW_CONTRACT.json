@@ -1,0 +1,51 @@
+{
+  "contract": "P125_REAL_GEM_MANUAL_TEST_REVIEW_UX_PACK",
+  "forbidden": [
+    "auto_apply_gem_response",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "cancel_order",
+    "replace_order",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "inputs": [
+    "P124 folder",
+    "portfolio_input.txt",
+    "gem_response.txt",
+    "P124_OPERATOR_COMMANDS.md"
+  ],
+  "outputs": [
+    "P125_OPERATOR_REVIEW_DASHBOARD.md",
+    "P125_REAL_GEM_TEST_SUMMARY.md",
+    "P125_MISSING_DATA_AND_BLOCKERS.csv",
+    "P125_NEXT_ACTIONS.md",
+    "P125_REVIEW_CONTRACT.json",
+    "P125_RUN_MANIFEST.json"
+  ],
+  "purpose": "Review a P124 local input helper folder and prepare operator dashboard for real GEM manual test.",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "HUMAN_REVIEW_ONLY",
+    "REVIEW_UX_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "REVIEW_UX_READY",
+  "version": "MVP_QAIC_P125_REAL_GEM_MANUAL_TEST_REVIEW_UX_0_1_0_SAFE"
+}
