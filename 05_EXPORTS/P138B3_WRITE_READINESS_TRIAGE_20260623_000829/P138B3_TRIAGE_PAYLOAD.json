@@ -1,0 +1,100 @@
+{
+  "step": "P138B3_WRITE_READINESS_TRIAGE_BEFORE_P138C",
+  "version": "MVP_QAIC_P138B3_WRITE_READINESS_TRIAGE_20260622",
+  "status": "P138B3_TRIAGE_DONE_SAFE_PARTIAL_SCOPE_READY",
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "run_id": "P138B3-WRITE-READINESS-TRIAGE-20260622",
+  "source_p138b_export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P138B_R2_SELF_CONTAINED_RUFF_PATH_FIX_20260622_235443",
+  "source_p138b_status": "P138B_VALIDATION_DONE_WRITE_PLAN_READY_FOR_REVIEW",
+  "candidate_count": 36,
+  "safe_partial_write_ready_count": 9,
+  "blocked_review_count": 18,
+  "duplicate_review_count": 4,
+  "protected_reference_count": 5,
+  "other_review_count": 0,
+  "p138c_safe_partial_scope_ready": true,
+  "p138c_full_scope_ready": false,
+  "p138c_write_mode_recommendation": "SAFE_PARTIAL_WRITE_READY_AFTER_GO",
+  "p138c_excluded_count": 27,
+  "decision_counts": {
+    "BLOCKED_REVIEW": 18,
+    "READY_FOR_CANONICAL_WRITE_REVIEW": 2,
+    "REVIEW_DUPLICATE_PROMPT_ID": 4,
+    "PROTECT_LOCKED_REFERENCE": 5,
+    "READY_FOR_VARIANT_WRITE_REVIEW": 7
+  },
+  "write_action_counts": {
+    "NO_WRITE_BLOCKED": 18,
+    "UPSERT_BY_PROMPT_ID_AFTER_GO": 2,
+    "NO_WRITE_UNTIL_DUPLICATE_DECISION": 4,
+    "NO_OVERWRITE_REFERENCE_CREATE_VARIANT_ONLY_IF_CORRECTED": 5,
+    "APPEND_OR_UPSERT_VARIANT_AFTER_GO": 7
+  },
+  "buckets": [
+    {
+      "name": "SAFE_PARTIAL_WRITE_READY",
+      "count": 9,
+      "write_allowed_in_p138c_after_go": true,
+      "description": "Rows that can enter a partial P138C write scope after explicit human GO."
+    },
+    {
+      "name": "BLOCKED_REVIEW",
+      "count": 18,
+      "write_allowed_in_p138c_after_go": false,
+      "description": "Rows excluded from write until blockers are resolved."
+    },
+    {
+      "name": "DUPLICATE_REVIEW",
+      "count": 4,
+      "write_allowed_in_p138c_after_go": false,
+      "description": "Rows excluded from write until duplicate arbitration is done."
+    },
+    {
+      "name": "PROTECTED_REFERENCE_NO_WRITE",
+      "count": 5,
+      "write_allowed_in_p138c_after_go": false,
+      "description": "Locked/reference rows protected from overwrite."
+    },
+    {
+      "name": "OTHER_REVIEW",
+      "count": 0,
+      "write_allowed_in_p138c_after_go": false,
+      "description": "Rows requiring manual review before any write."
+    }
+  ],
+  "sheets_write_policy": {
+    "p138b3_sheets_write": false,
+    "p138c_sheets_write_after_explicit_go": true,
+    "safe_partial_write_only": true,
+    "full_scope_write_allowed": false,
+    "blocked_rows_excluded": true,
+    "duplicate_rows_excluded": true,
+    "locked_references_excluded": true,
+    "no_blind_overwrite": true
+  },
+  "safety_markers": [
+    "P138B3_WRITE_READINESS_TRIAGE_BEFORE_P138C",
+    "NO_SHEETS_WRITE_IN_P138B3",
+    "WRITE_IN_SHEETS_ONLY_AFTER_VALIDATION_GO",
+    "SAFE_PARTIAL_WRITE_READY_SCOPE_ONLY",
+    "BLOCKED_ROWS_EXCLUDED_FROM_WRITE",
+    "DUPLICATES_REVIEW_EXCLUDED_FROM_WRITE",
+    "LOCKED_REFERENCES_PROTECTED",
+    "VARIANTS_WRITTEN_AS_VARIANTS_ONLY",
+    "NO_PROMPT_SOURCE_OVERWRITE",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "HUMAN_REVIEW_REQUIRED"
+  ],
+  "outputs": {
+    "safe_partial_write_ready": "P138B3_SAFE_PARTIAL_WRITE_READY.csv",
+    "blocked_review": "P138B3_BLOCKED_REVIEW.csv",
+    "duplicate_review": "P138B3_DUPLICATE_REVIEW.csv",
+    "protected_references": "P138B3_PROTECTED_REFERENCES.csv",
+    "triage_payload": "P138B3_TRIAGE_PAYLOAD.json",
+    "p138c_scope": "P138B3_P138C_WRITE_SCOPE.md",
+    "prewrite_checklist": "P138B3_P138C_PREWRITE_CHECKLIST.md"
+  }
+}
