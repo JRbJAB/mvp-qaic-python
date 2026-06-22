@@ -1,0 +1,71 @@
+{
+  "runtime": "MVP_QAIC_CANONICAL_INDEX_CONFIRMATION_SEAL_AFTER_P112",
+  "version": "P111_R1_CANONICAL_INDEX_CONFIRMATION_SEAL_AFTER_P112_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "decision_status": "CONFIRMED_CANONICAL_TARGET_CONTRACT_READY",
+  "human_decision": "ACCEPT_TOP_CANDIDATE_AS_CANONICAL",
+  "confirmed_canonical_candidate": {
+    "root_id": "mvp_qaic_drive_root",
+    "root_role": "mvp qaic root webapp apps script",
+    "root_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+    "relative_path": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+    "full_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\03_DEV\\APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750\\CAND_001\\MVPQAIC_Index.html",
+    "file_name": "MVPQAIC_Index.html",
+    "size_bytes": 5169160,
+    "allowed_to_edit": false,
+    "candidate_role": "probable_canonical_apps_script_mirror",
+    "canonical_score": 95,
+    "reason": "Apps Script mirror in DEV area; strongest local candidate for validated WebApp shell."
+  },
+  "binding_target_contract": {
+    "target_relative_path": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+    "target_full_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\03_DEV\\APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750\\CAND_001\\MVPQAIC_Index.html",
+    "target_role": "probable_canonical_apps_script_mirror",
+    "target_score": 95,
+    "allowed_to_edit_now": false,
+    "patch_allowed_now": false,
+    "future_patch_requires_separate_batch": true,
+    "reconciled_after_p112": true
+  },
+  "blockers": [],
+  "reviews": [
+    "P111_R1_RECONCILE_AFTER_P112_ALREADY_SEALED"
+  ],
+  "allowed_next_actions": [
+    "CONTINUE_WITH_P113_PORTFOLIO_INPUT_NORMALIZER_AND_IMAGE_REVIEW_WORKFLOW",
+    "KEEP_P112_AS_ALREADY_SEALED_PROMPT_MODULE",
+    "PREPARE_FUTURE_BINDING_PATCH_PLAN_ONLY"
+  ],
+  "forbidden_next_actions": [
+    "ROLLBACK_P112_WITHOUT_REASON",
+    "EDIT_INDEX_HTML_NOW",
+    "OVERWRITE_INDEX_HTML",
+    "GENERATE_PUBLIC_INDEX_HTML",
+    "CLASP_PUSH",
+    "APPS_SCRIPT_EXECUTION",
+    "PUBLIC_DEPLOY_WITHOUT_APPROVAL",
+    "BROKER_OR_TRADING_EXECUTION"
+  ],
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "canonical_index_confirmation_only": true,
+    "binding_target_contract_only": true,
+    "after_p112_reconcile": true,
+    "no_index_html_edit": true,
+    "no_index_html_generation": true,
+    "no_source_patch_apply": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "next": "P113_PORTFOLIO_INPUT_NORMALIZER_AND_IMAGE_REVIEW_WORKFLOW"
+}

@@ -1,0 +1,23 @@
+﻿{
+    "step":  "P111_R1_CANONICAL_INDEX_CONFIRMATION_SEAL_AFTER_P112_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "source_p110b_pack":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P110B_HUMAN_CONFIRM_CANONICAL_INDEX_PATCH_PLAN_20260622_115305\\P110B_CONFIRMATION_PACK.json",
+    "source_file":  "mvp_qaic_py/webapp_canonical_index_confirmation_seal.py",
+    "test_file":  "tests/test_webapp_canonical_index_confirmation_seal_p111.py",
+    "human_decision":  "ACCEPT_TOP_CANDIDATE_AS_CANONICAL",
+    "after_p112_reconcile":  true,
+    "rollback_p112":  false,
+    "patch_allowed_now":  false,
+    "apply_now":  false,
+    "safety":  {
+                   "no_index_html_edit":  true,
+                   "no_index_html_generation":  true,
+                   "no_source_patch_apply":  true,
+                   "no_public_deploy":  true,
+                   "no_clasp":  true,
+                   "no_apps_script_execution":  true,
+                   "no_sheet_write":  true,
+                   "no_broker_order_sizing":  true
+               },
+    "next":  "P113_PORTFOLIO_INPUT_NORMALIZER_AND_IMAGE_REVIEW_WORKFLOW"
+}

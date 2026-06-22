@@ -1,0 +1,10 @@
+﻿field,value
+decision_status,CONFIRMED_CANONICAL_TARGET_CONTRACT_READY
+human_decision,ACCEPT_TOP_CANDIDATE_AS_CANONICAL
+target_relative_path,03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html
+target_full_path,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\03_DEV\APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750\CAND_001\MVPQAIC_Index.html
+target_score,95
+allowed_to_edit_now,FALSE
+patch_allowed_now,FALSE
+reconciled_after_p112,TRUE
+public_deploy,BLOCKED
