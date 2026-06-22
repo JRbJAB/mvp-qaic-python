@@ -1,0 +1,27 @@
+﻿{
+    "step":  "P108_UI_POLISH_CANONICAL_INDEX_DECISION_GATE_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "depends_on":  "P107_R1_CANONICAL_WEBAPP_BINDING_ADMIN",
+    "source_file":  "mvp_qaic_py/webapp_ui_polish_decision_gate.py",
+    "test_file":  "tests/test_webapp_ui_polish_decision_gate_p108.py",
+    "decision_file":  "P108_UI_POLISH_DECISION_PACK.json",
+    "requirements_file":  "P108_UI_POLISH_REQUIREMENTS.md",
+    "canonical_index_policy":  "DO_NOT_OVERWRITE_FROM_PYTHON",
+    "ui_polish_mode":  "DECISION_GATE_ONLY",
+    "public_deploy":  "BLOCKED_UNTIL_EXPLICIT_APPROVAL",
+    "safety":  {
+                   "no_index_html_edit":  true,
+                   "no_revolutx_real_access":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_cancel":  true,
+                   "no_replace_order":  true,
+                   "no_auto_sizing":  true,
+                   "no_secret_log":  true,
+                   "no_sheet_write":  true,
+                   "no_apps_script_execution":  true,
+                   "no_clasp":  true,
+                   "no_public_deploy":  true
+               },
+    "next":  "P109_CANONICAL_INDEX_READONLY_AUDIT_OR_UI_POLISH_PATCH_PLAN"
+}
