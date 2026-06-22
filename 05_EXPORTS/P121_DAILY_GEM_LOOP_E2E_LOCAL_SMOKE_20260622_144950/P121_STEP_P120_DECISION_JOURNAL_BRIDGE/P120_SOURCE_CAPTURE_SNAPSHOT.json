@@ -1,0 +1,193 @@
+{
+  "blockers": [],
+  "contract": {
+    "accepted_inputs": [
+      "raw_response",
+      "response_text_file",
+      "response_json_file"
+    ],
+    "contract": "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+    "forbidden": [
+      "auto_apply_gem_response",
+      "apps_script_execution",
+      "sheet_write",
+      "clasp_push",
+      "public_deploy",
+      "broker_execution",
+      "order_execution",
+      "cancel_order",
+      "replace_order",
+      "auto_sizing",
+      "revolutx_real_access_from_mvp",
+      "secret_logging"
+    ],
+    "purpose": "Capture GEM response and convert it into a local human review queue.",
+    "safety_markers": [
+      "MVP_PUBLIC_SCOPE",
+      "HUMAN_REVIEW_ONLY",
+      "LOCAL_ONLY",
+      "GEM_RESPONSE_CAPTURE_ONLY",
+      "NO_AUTO_APPLY_GEM_RESPONSE",
+      "NO_INDEX_EDIT",
+      "NO_CLASP",
+      "NO_APPS_SCRIPT_EXECUTION",
+      "NO_SHEET_WRITE",
+      "NO_PUBLIC_DEPLOY",
+      "NO_BROKER",
+      "NO_ORDER",
+      "NO_CANCEL",
+      "NO_REPLACE_ORDER",
+      "NO_AUTO_SIZING",
+      "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+    ],
+    "status": "LOCAL_ONLY_CAPTURE_AND_REVIEW",
+    "version": "MVP_QAIC_P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE_0_1_0_SAFE"
+  },
+  "decision_status": "REVIEW_REQUIRED",
+  "expected_gem_output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": true,
+    "properties": {
+      "blockers": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "decision_status": {
+        "enum": [
+          "REVIEW_REQUIRED",
+          "BLOCKED",
+          "HUMAN_REVIEW_ONLY"
+        ],
+        "type": "string"
+      },
+      "human_decision_only": {
+        "const": true,
+        "type": "boolean"
+      },
+      "missing_data": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "no_order_no_sizing": {
+        "const": true,
+        "type": "boolean"
+      },
+      "portfolio_review": {
+        "type": "object"
+      },
+      "questions_for_human": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "risk_notes": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "safety_markers": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      }
+    },
+    "required": [
+      "decision_status",
+      "missing_data",
+      "blockers",
+      "human_decision_only",
+      "no_order_no_sizing",
+      "safety_markers"
+    ],
+    "title": "MVP QAIC P114 Expected GEM Portfolio Review Output",
+    "type": "object"
+  },
+  "forbidden_action_blockers": [],
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "human_review_only": true,
+  "missing_data": [
+    "human_confirmed_asset_symbols",
+    "current_prices",
+    "portfolio_total_value_eur"
+  ],
+  "no_auto_apply_gem_response": true,
+  "no_order_no_sizing": true,
+  "notes": "P121-R2 sample end-to-end local smoke. P119 blocker dedupe verified. No Sheet write.",
+  "raw_response": "{\n  \"blockers\": [],\n  \"decision_status\": \"REVIEW_REQUIRED\",\n  \"human_decision_only\": true,\n  \"missing_data\": [\n    \"human_confirmed_asset_symbols\",\n    \"current_prices\",\n    \"portfolio_total_value_eur\"\n  ],\n  \"no_order_no_sizing\": true,\n  \"summary\": \"P121 sample GEM response. Manual review required before any journal acceptance.\"\n}",
+  "raw_response_available": true,
+  "response_run_id": "P121-R2-SAMPLE-20260622-P119",
+  "review_queue_rows": [
+    {
+      "human_review_only": "TRUE",
+      "item_type": "missing_data",
+      "item_value": "human_confirmed_asset_symbols",
+      "no_order_no_sizing": "TRUE",
+      "priority": "P1",
+      "queue_id": "MISSING-001",
+      "required_action": "Provide missing data or keep decision_status=REVIEW_REQUIRED.",
+      "review_status": "REVIEW_REQUIRED"
+    },
+    {
+      "human_review_only": "TRUE",
+      "item_type": "missing_data",
+      "item_value": "current_prices",
+      "no_order_no_sizing": "TRUE",
+      "priority": "P1",
+      "queue_id": "MISSING-002",
+      "required_action": "Provide missing data or keep decision_status=REVIEW_REQUIRED.",
+      "review_status": "REVIEW_REQUIRED"
+    },
+    {
+      "human_review_only": "TRUE",
+      "item_type": "missing_data",
+      "item_value": "portfolio_total_value_eur",
+      "no_order_no_sizing": "TRUE",
+      "priority": "P1",
+      "queue_id": "MISSING-003",
+      "required_action": "Provide missing data or keep decision_status=REVIEW_REQUIRED.",
+      "review_status": "REVIEW_REQUIRED"
+    }
+  ],
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "GEM_RESPONSE_CAPTURE_ONLY",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "source_prompt_run_id": "P121-R2-SAMPLE-20260622-P118",
+  "status": "REVIEW_REQUIRED",
+  "step": "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+  "structured_response": {
+    "blockers": [],
+    "decision_status": "REVIEW_REQUIRED",
+    "human_decision_only": true,
+    "missing_data": [
+      "human_confirmed_asset_symbols",
+      "current_prices",
+      "portfolio_total_value_eur"
+    ],
+    "no_order_no_sizing": true,
+    "summary": "P121 sample GEM response. Manual review required before any journal acceptance."
+  },
+  "structured_response_available": true,
+  "version": "MVP_QAIC_P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE_0_1_0_SAFE"
+}

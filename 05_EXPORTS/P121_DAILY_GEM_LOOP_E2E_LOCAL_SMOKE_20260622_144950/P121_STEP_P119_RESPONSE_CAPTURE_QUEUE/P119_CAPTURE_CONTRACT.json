@@ -1,0 +1,43 @@
+{
+  "accepted_inputs": [
+    "raw_response",
+    "response_text_file",
+    "response_json_file"
+  ],
+  "contract": "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+  "forbidden": [
+    "auto_apply_gem_response",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "cancel_order",
+    "replace_order",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "purpose": "Capture GEM response and convert it into a local human review queue.",
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "GEM_RESPONSE_CAPTURE_ONLY",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "LOCAL_ONLY_CAPTURE_AND_REVIEW",
+  "version": "MVP_QAIC_P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE_0_1_0_SAFE"
+}

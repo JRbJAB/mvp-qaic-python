@@ -211,6 +211,18 @@ def build_review_queue_rows(capture: Mapping[str, Any]) -> list[dict[str, Any]]:
     return rows
 
 
+def _dedupe_preserve_order(items: list[str]) -> list[str]:
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for item in items:
+        normalized = str(item)
+        if normalized in seen:
+            continue
+        seen.add(normalized)
+        deduped.append(normalized)
+    return deduped
+
+
 def build_response_capture(request: GemResponseCaptureRequest) -> dict[str, Any]:
     raw_from_file = _read_text(request.response_text_file)
     structured_from_file = _read_json(request.response_json_file)
@@ -240,7 +252,7 @@ def build_response_capture(request: GemResponseCaptureRequest) -> dict[str, Any]
     payload_blockers = _list_from_payload(structured_response or {}, "blockers")
     payload_decision_status = (structured_response or {}).get("decision_status")
 
-    blockers = [*payload_blockers, *forbidden_blockers]
+    blockers = _dedupe_preserve_order([*payload_blockers, *forbidden_blockers])
     decision_status = "BLOCKED" if blockers else "REVIEW_REQUIRED"
     if (
         isinstance(payload_decision_status, str)

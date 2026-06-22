@@ -101,6 +101,28 @@ def test_p119_forbidden_action_detector_terms():
     assert "FORBIDDEN_ACTION_TERM:broker execution" in blockers
 
 
+def test_p119_deduplicates_forbidden_blocker_already_in_payload(tmp_path):
+    response = json.dumps(
+        {
+            "decision_status": "BLOCKED",
+            "missing_data": [],
+            "blockers": ["FORBIDDEN_ACTION_TERM:place order"],
+        }
+    )
+
+    capture = build_response_capture(
+        GemResponseCaptureRequest(
+            output_dir=tmp_path,
+            raw_response=response,
+            response_run_id="P119-DEDUPE",
+        )
+    )
+
+    assert capture["decision_status"] == "BLOCKED"
+    assert capture["blockers"] == ["FORBIDDEN_ACTION_TERM:place order"]
+    assert len(capture["review_queue_rows"]) == 1
+
+
 def test_p119_contract_forbids_live_actions():
     contract = build_capture_contract()
     forbidden = set(contract["forbidden"])

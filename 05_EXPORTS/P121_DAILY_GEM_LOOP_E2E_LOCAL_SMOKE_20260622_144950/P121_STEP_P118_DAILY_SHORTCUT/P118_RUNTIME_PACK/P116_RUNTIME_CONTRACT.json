@@ -1,0 +1,59 @@
+{
+  "contract": "P116_PROMPT_GEM_RUNTIME_MINI_CLI",
+  "forbidden": [
+    "ocr_claim",
+    "automated_visual_extraction",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "cancel_order",
+    "replace_order",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "output_files": [
+    "P116_RUNTIME_PAYLOAD.json",
+    "P116_GEM_PROMPT_COPY_PASTE.md",
+    "P116_EXPECTED_GEM_OUTPUT_SCHEMA.json",
+    "P116_RUNTIME_CONTRACT.json",
+    "P116_RUNTIME_REPORT.md"
+  ],
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "NO_OCR_CLAIM",
+    "NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN",
+    "NO_INVENTED_POSITION",
+    "NO_INVENTED_PRICE",
+    "NO_INVENTED_VALUE",
+    "NO_REVOLUTX_REAL_ACCESS",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_SECRET_LOG",
+    "NO_SHEET_WRITE",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_CLASP",
+    "NO_PUBLIC_DEPLOY",
+    "P116_MINI_CLI_LOCAL_ONLY",
+    "NO_LIVE_PROVIDER_CALL",
+    "NO_IMAGE_OCR_RUNTIME",
+    "NO_AUTOMATED_VISUAL_EXTRACTION",
+    "COPY_PASTE_TO_GEM_ONLY"
+  ],
+  "status": "LOCAL_ONLY_HUMAN_REVIEW",
+  "supported_input_modes": [
+    "NONE",
+    "PASTED_TEXT",
+    "PASTED_TEXT_DRAFT",
+    "STRUCTURED",
+    "IMAGE_REVIEW_REQUIRED"
+  ],
+  "version": "MVP_QAIC_P116_PROMPT_GEM_RUNTIME_MINI_CLI_0_1_0_SAFE"
+}

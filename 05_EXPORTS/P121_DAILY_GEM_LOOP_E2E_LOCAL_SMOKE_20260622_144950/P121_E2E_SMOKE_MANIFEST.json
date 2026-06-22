@@ -1,0 +1,95 @@
+{
+  "contract": {
+    "contract": "P121_DAILY_GEM_LOOP_END_TO_END_LOCAL_SMOKE",
+    "forbidden": [
+      "auto_apply_gem_response",
+      "apps_script_execution",
+      "sheet_write",
+      "clasp_push",
+      "public_deploy",
+      "broker_execution",
+      "order_execution",
+      "cancel_order",
+      "replace_order",
+      "auto_sizing",
+      "revolutx_real_access_from_mvp",
+      "secret_logging"
+    ],
+    "purpose": "Verify P118 -> P119 -> P120 local GEM loop in one reproducible smoke run.",
+    "safety_markers": [
+      "MVP_PUBLIC_SCOPE",
+      "HUMAN_REVIEW_ONLY",
+      "LOCAL_ONLY",
+      "E2E_LOCAL_SMOKE_ONLY",
+      "PROMPT_TO_GEM_TO_CAPTURE_TO_JOURNAL_LOCAL_LOOP",
+      "NO_AUTO_APPLY_GEM_RESPONSE",
+      "NO_INDEX_EDIT",
+      "NO_CLASP",
+      "NO_APPS_SCRIPT_EXECUTION",
+      "NO_SHEET_WRITE",
+      "NO_PUBLIC_DEPLOY",
+      "NO_BROKER",
+      "NO_ORDER",
+      "NO_CANCEL",
+      "NO_REPLACE_ORDER",
+      "NO_AUTO_SIZING",
+      "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+    ],
+    "status": "LOCAL_ONLY_E2E_SMOKE",
+    "steps": [
+      "P118_DAILY_OPERATOR_SHORTCUT",
+      "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+      "P120_DECISION_JOURNAL_BRIDGE_LOCAL_ONLY"
+    ],
+    "version": "MVP_QAIC_P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_0_1_0_SAFE"
+  },
+  "human_review_only": true,
+  "no_auto_apply_gem_response": true,
+  "no_order_no_sizing": true,
+  "no_sheet_write": true,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950",
+  "p118": {
+    "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950\\P121_STEP_P118_DAILY_SHORTCUT",
+    "runtime_prompt": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950\\P121_STEP_P118_DAILY_SHORTCUT\\P118_RUNTIME_PACK\\P116_GEM_PROMPT_COPY_PASTE.md",
+    "status": "EXPORTED"
+  },
+  "p119": {
+    "blocker_count": 0,
+    "decision_status": "REVIEW_REQUIRED",
+    "missing_data_count": 3,
+    "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950\\P121_STEP_P119_RESPONSE_CAPTURE_QUEUE",
+    "queue_rows": 3,
+    "status": "EXPORTED"
+  },
+  "p120": {
+    "blocker_count": 0,
+    "decision_status": "REVIEW_REQUIRED",
+    "journal_status": "REVIEW_REQUIRED",
+    "missing_data_count": 3,
+    "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950\\P121_STEP_P120_DECISION_JOURNAL_BRIDGE",
+    "status": "EXPORTED"
+  },
+  "run_id": "P121-R2-SAMPLE-20260622",
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "E2E_LOCAL_SMOKE_ONLY",
+    "PROMPT_TO_GEM_TO_CAPTURE_TO_JOURNAL_LOCAL_LOOP",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "PASS",
+  "step": "P121_DAILY_GEM_LOOP_END_TO_END_LOCAL_SMOKE",
+  "version": "MVP_QAIC_P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_0_1_0_SAFE"
+}
