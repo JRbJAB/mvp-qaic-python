@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pathlib import Path
 import json
 import subprocess
 import sys
@@ -61,6 +62,9 @@ def test_p136_stitch_ui_logic_spec_is_local_only():
     assert spec["target_runtime"] == "NiceGUI local private"
     assert spec["screens"]
     assert any(screen["screen_id"] == "response_import" for screen in spec["screens"])
+    assert any(screen["screen_id"] == "p133_gate" for screen in spec["screens"])
+    assert spec["layout_rules"]["primary_layout"] == "left_workflow_center_tabs_right_decision"
+    assert spec["layout_rules"]["json_debug_collapsed_by_default"] is True
     assert "no_broker" in spec["forbidden_behaviors"]
     assert "no_order" in spec["forbidden_behaviors"]
     assert "no_sizing" in spec["forbidden_behaviors"]
@@ -76,9 +80,13 @@ def test_p136_write_pack_without_response_file_creates_template(tmp_path):
         )
     )
 
-    assert payload["status"] == "P136_REAL_RESPONSE_IMPORT_READY"
+    assert payload["status"] == "P136C_OPERATOR_UI_REBUILD_READY"
     assert payload["selected_gem"]["gem_id"] == "GEM_GENERAL_REVIEW"
     assert payload["features"]["stitch_ui_logic_integrated"] is True
+    assert payload["features"]["operator_ui_rebuild"] is True
+    assert payload["features"]["real_save_button"] is True
+    assert payload["features"]["save_response_to_local_file_from_ui"] is True
+    assert payload["features"]["json_debug_collapsed_by_default"] is True
     assert payload["stitch_ui_logic"]["status"] == "STITCH_UI_BLUEPRINT_READY"
     assert payload["response_import"]["source_response_file_exists"] is False
     assert (out / "P136_IMPORTED_GEM_RESPONSE.md").exists()
@@ -121,7 +129,8 @@ def test_p136_write_pack_with_real_response_file(tmp_path):
     assert contract["features"]["active_gem_selection"] is True
     assert contract["features"]["prompt_corrections_queue"] is True
     assert contract["features"]["stitch_ui_logic_integrated"] is True
-    assert "P136_R1_STITCH_UI_LOGIC_INTEGRATED" in contract["safety_markers"]
+    assert contract["features"]["operator_ui_rebuild"] is True
+    assert "P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD" in contract["safety_markers"]
 
 
 def test_p136_cli_dry_run_export(tmp_path):
@@ -145,7 +154,7 @@ def test_p136_cli_dry_run_export(tmp_path):
         text=True,
     )
 
-    assert "P136_REAL_RESPONSE_IMPORT_READY" in completed.stdout
+    assert "P136C_OPERATOR_UI_REBUILD_READY" in completed.stdout
     assert "GEM_RISK_GUARD_REVIEW" in completed.stdout
     assert (tmp_path / "out" / "P136_REAL_RESPONSE_FILE_IMPORT_CONTRACT.json").exists()
     assert (tmp_path / "out" / "P136_P133_CAPTURE_COMMAND.ps1").exists()
@@ -165,3 +174,18 @@ def test_p136_payload_safety_flags(tmp_path):
     assert payload["features"]["no_order"] is True
     assert payload["features"]["no_sizing"] is True
     assert payload["features"]["no_auto_apply"] is True
+    assert payload["decision_panel"]["human_review_required"] is True
+    assert payload["decision_panel"]["no_order_no_sizing"] is True
+
+
+def test_p136c_source_contains_operator_rebuild_ui_patterns():
+    source = Path("mvp_qaic_py/p136_p133_real_response_file_import.py").read_text(encoding="utf-8")
+
+    assert "qaic-grid" in source
+    assert "Workflow" in source
+    assert "Décision opérateur" in source
+    assert "Sauvegarder localement" in source
+    assert "Copier commande P133" in source
+    assert "JSON payload complet" in source
+    assert "ui.expansion" in source
+    assert "P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD" in source

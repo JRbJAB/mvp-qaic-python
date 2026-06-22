@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -10,9 +11,9 @@ from pathlib import Path
 from typing import Any
 
 
-P136_VERSION = "MVP_QAIC_P136_R1_STITCH_UI_LOGIC_FIX_20260622"
+P136_VERSION = "MVP_QAIC_P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD_20260622"
 
-DEFAULT_RUN_ID = "P136-R1-P133-REAL-RESPONSE-FILE-IMPORT"
+DEFAULT_RUN_ID = "P136C-NICEGUI-STITCH-OPERATOR-UI-REBUILD"
 DEFAULT_GEM_ID = "GEM_GENERAL_REVIEW"
 
 ACTIVE_GEM_PROFILES: tuple[dict[str, Any], ...] = (
@@ -46,6 +47,11 @@ SAFETY_MARKERS: tuple[str, ...] = (
     "LOCAL_PRIVATE_ONLY",
     "P136_P133_REAL_RESPONSE_FILE_IMPORT",
     "P136_R1_STITCH_UI_LOGIC_INTEGRATED",
+    "P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD",
+    "STITCH_RENDERED_AS_UI_STEPS",
+    "REAL_SAVE_BUTTON",
+    "SAVE_RESPONSE_TO_LOCAL_FILE_FROM_UI",
+    "JSON_DEBUG_COLLAPSED_BY_DEFAULT",
     "ACTIVE_GEM_SELECTION_LIST",
     "PROMPT_CORRECTIONS_QUEUE",
     "STITCH_UI_BLUEPRINT_EXPORT",
@@ -65,9 +71,9 @@ SAFETY_MARKERS: tuple[str, ...] = (
 )
 
 
-DEFAULT_RESPONSE_TEMPLATE = """# P136 — Réponse GEM à importer
+DEFAULT_RESPONSE_TEMPLATE = """# P136C — Réponse GEM à importer
 
-Colle ici la réponse GEM complète, puis relance P136 avec --response-file ou utilise la commande P133 générée.
+Colle ici la réponse GEM complète depuis le cockpit NiceGUI, puis clique sur le bouton de sauvegarde locale.
 
 Contraintes attendues :
 - réponse en français ;
@@ -109,6 +115,22 @@ def _sha256_text(text: str) -> str:
 
 def _ps_quote(value: str | Path) -> str:
     return "'" + str(value).replace("'", "''") + "'"
+
+
+def _write_text_file(path: Path, text: str, encoding: str = "utf-8") -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding=encoding)
+
+
+def _open_local_folder(path: Path) -> bool:
+    try:
+        folder = path if path.is_dir() else path.parent
+        if sys.platform.startswith("win"):
+            os.startfile(str(folder))  # noqa: S606
+            return True
+    except OSError:
+        return False
+    return False
 
 
 def get_active_gem_profiles() -> list[dict[str, Any]]:
@@ -197,10 +219,9 @@ def build_stitch_ui_logic_spec(gem_profile: dict[str, Any]) -> dict[str, Any]:
         "screens": [
             {
                 "screen_id": "prompt_cockpit",
-                "title": "MVP QAIC — GEM Portfolio Prompt Cockpit",
+                "title": "Prompt",
                 "goal": "Préparer le prompt, choisir le GEM actif, copier vers GEM et suivre les garde-fous.",
                 "components": [
-                    "header_status_badges",
                     "active_gem_select",
                     "prompt_copy_panel",
                     "gemini_open_button",
@@ -209,18 +230,29 @@ def build_stitch_ui_logic_spec(gem_profile: dict[str, Any]) -> dict[str, Any]:
             },
             {
                 "screen_id": "response_import",
-                "title": "P136 — Réponse GEM réelle",
-                "goal": "Importer une réponse GEM depuis fichier local et préparer le P133 gate.",
+                "title": "Réponse GEM",
+                "goal": "Coller et sauvegarder localement une réponse GEM réelle.",
                 "components": [
                     "response_file_status",
-                    "response_text_preview",
+                    "response_textarea",
+                    "save_response_to_local_file_button",
+                    "response_hash_status",
+                ],
+            },
+            {
+                "screen_id": "p133_gate",
+                "title": "P133 Gate",
+                "goal": "Préparer la commande locale de validation P133 sans exécution automatique.",
+                "components": [
                     "p133_command_preview",
+                    "copy_p133_command_button",
+                    "open_export_folder_button",
                     "human_review_warning",
                 ],
             },
             {
                 "screen_id": "prompt_corrections",
-                "title": "Corrections prompts",
+                "title": "Corrections",
                 "goal": "Lister les corrections prompts candidates avant application future.",
                 "components": [
                     "prompt_corrections_table",
@@ -229,14 +261,25 @@ def build_stitch_ui_logic_spec(gem_profile: dict[str, Any]) -> dict[str, Any]:
                     "next_action_panel",
                 ],
             },
+            {
+                "screen_id": "audit",
+                "title": "Audit",
+                "goal": "Masquer par défaut les JSON et specs techniques, accessibles uniquement si nécessaire.",
+                "components": [
+                    "collapsed_json_debug",
+                    "stitch_spec_collapsed",
+                    "safety_markers_collapsed",
+                ],
+            },
         ],
         "layout_rules": {
             "density": "operator_dense_but_readable",
             "theme": "dark_professional",
-            "primary_layout": "two_column_desktop_single_column_mobile",
+            "primary_layout": "left_workflow_center_tabs_right_decision",
             "no_empty_rows": True,
             "badges_for_safety": True,
             "monospace_for_prompt_and_json": True,
+            "json_debug_collapsed_by_default": True,
         },
         "forbidden_behaviors": [
             "no_public_deploy",
@@ -288,6 +331,15 @@ def _prompt_corrections_queue(gem_profile: dict[str, Any]) -> list[dict[str, Any
             "proposed_fix": "Synchroniser les écrans prompt, import réponse, P133 gate et corrections dans une spec UI unique.",
             "gem_id": gem_profile["gem_id"],
         },
+        {
+            "correction_id": "P136C_UI_001",
+            "priority": "HIGH",
+            "status": "DONE",
+            "scope": "NICEGUI_OPERATOR_UI",
+            "issue": "Le rendu P136-R1 était trop technique et dominé par des JSON dumps.",
+            "proposed_fix": "Remplacer la page par un cockpit avec workflow gauche, tabs centraux, décision droite et debug caché.",
+            "gem_id": gem_profile["gem_id"],
+        },
     ]
 
 
@@ -314,9 +366,9 @@ def build_p136_payload(request: P136Request) -> dict[str, Any]:
     stitch_spec = build_stitch_ui_logic_spec(gem_profile)
 
     return {
-        "step": "P136_P133_REAL_RESPONSE_FILE_IMPORT",
+        "step": "P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD",
         "version": P136_VERSION,
-        "status": "P136_REAL_RESPONSE_IMPORT_READY",
+        "status": "P136C_OPERATOR_UI_REBUILD_READY",
         "generated_at_utc": generated_at,
         "run_id": request.run_id,
         "local_url": f"http://{request.host}:{request.port}",
@@ -340,11 +392,25 @@ def build_p136_payload(request: P136Request) -> dict[str, Any]:
             "human_review_required": True,
         },
         "prompt_corrections_queue": _prompt_corrections_queue(gem_profile),
+        "decision_panel": {
+            "image_used_expected": "IMAGE_USED",
+            "human_review_required": True,
+            "no_order_no_sizing": True,
+            "blockers_visible": True,
+            "next_action": "SAVE_GEM_RESPONSE_THEN_RUN_P133_GATE",
+        },
         "safety_markers": list(SAFETY_MARKERS),
         "features": {
             "real_response_file_import": True,
             "active_gem_selection": True,
             "stitch_ui_logic_integrated": True,
+            "stitch_rendered_as_ui_steps": True,
+            "operator_ui_rebuild": True,
+            "real_save_button": True,
+            "save_response_to_local_file_from_ui": True,
+            "copy_p133_command": True,
+            "open_export_folder": True,
+            "json_debug_collapsed_by_default": True,
             "prompt_corrections_queue": True,
             "p133_command_preview": True,
             "local_private_only": True,
@@ -359,7 +425,7 @@ def build_p136_payload(request: P136Request) -> dict[str, Any]:
 def _write_prompt_corrections_md(path: Path, payload: dict[str, Any]) -> None:
     rows = payload["prompt_corrections_queue"]
     lines = [
-        "# P136 — Prompt Corrections Queue",
+        "# P136C — Prompt Corrections Queue",
         "",
         f"Selected GEM: `{payload['selected_gem']['gem_id']}`",
         "",
@@ -380,7 +446,7 @@ def _write_prompt_corrections_md(path: Path, payload: dict[str, Any]) -> None:
 def _write_stitch_spec_md(path: Path, payload: dict[str, Any]) -> None:
     stitch = payload["stitch_ui_logic"]
     lines = [
-        "# P136-R1 — Stitch UI Logic Spec",
+        "# P136C — Stitch Operator UI Spec",
         "",
         f"Status: `{stitch['status']}`",
         f"Handoff mode: `{stitch['handoff_mode']}`",
@@ -398,6 +464,11 @@ def _write_stitch_spec_md(path: Path, payload: dict[str, Any]) -> None:
         for component in screen["components"]:
             lines.append(f"- `{component}`")
         lines.append("")
+    lines.append("## Layout rules")
+    lines.append("")
+    for key, value in stitch["layout_rules"].items():
+        lines.append(f"- `{key}`: `{value}`")
+    lines.append("")
     lines.append("## Forbidden behaviors")
     lines.append("")
     for behavior in stitch["forbidden_behaviors"]:
@@ -406,11 +477,11 @@ def _write_stitch_spec_md(path: Path, payload: dict[str, Any]) -> None:
 
 
 def _write_runbook(path: Path, payload: dict[str, Any]) -> None:
-    text = f"""# P136-R1 — P133 Real Response File Import + Stitch UI Logic
+    text = f"""# P136C — NiceGUI Stitch Operator UI Rebuild
 
 ## Objectif
 
-Importer proprement une réponse GEM réelle depuis fichier local, choisir le GEM actif depuis une liste contrôlée, préparer la commande P133, et exposer une logique UI Stitch/NiceGUI locale.
+Remplacer le rendu technique P136-R1 par un cockpit opérateur réellement utilisable.
 
 ## GEM sélectionné
 
@@ -418,17 +489,22 @@ Importer proprement une réponse GEM réelle depuis fichier local, choisir le GE
 - label: `{payload["selected_gem"]["label"]}`
 - prompt_profile: `{payload["selected_gem"]["prompt_profile"]}`
 
-## Stitch UI logic
+## UI
 
-- status: `{payload["stitch_ui_logic"]["status"]}`
-- handoff_mode: `{payload["stitch_ui_logic"]["handoff_mode"]}`
-- file: `P136_STITCH_UI_LOGIC_SPEC.json`
+- workflow gauche
+- tabs centrales
+- panneau décision à droite
+- JSON debug caché par défaut
+- bouton sauvegarde réponse GEM locale
+- bouton copie commande P133
+- bouton ouverture dossier export local
 
 ## Fichiers
 
 - Réponse importée: `{payload["response_import"]["imported_response_file"]}`
 - Commande P133: `{payload["p133_gate"]["command_file"]}`
 - Output P133: `{payload["p133_gate"]["output_dir"]}`
+- Stitch spec: `P136_STITCH_UI_LOGIC_SPEC.json`
 - Corrections prompts: `P136_PROMPT_CORRECTIONS_QUEUE.md`
 
 ## Commande P133
@@ -482,6 +558,14 @@ def write_p136_import_pack(request: P136Request) -> dict[str, Any]:
     return payload
 
 
+def _priority_class(priority: str) -> str:
+    if priority == "HIGH":
+        return "qaic-badge qaic-warn"
+    if priority == "MEDIUM":
+        return "qaic-badge qaic-info"
+    return "qaic-badge"
+
+
 def build_nicegui_app(payload: dict[str, Any]) -> Any:
     try:
         from nicegui import app, ui
@@ -489,88 +573,285 @@ def build_nicegui_app(payload: dict[str, Any]) -> Any:
     except ImportError as exc:  # pragma: no cover
         raise RuntimeError("NiceGUI is required only for --launch mode.") from exc
 
+    response_file = Path(payload["response_import"]["imported_response_file"])
+    output_dir = response_file.parent
+    p133_command = payload["p133_gate"]["command_preview"]
+    selected_gem_id = payload["selected_gem"]["gem_id"]
+    active_options = {
+        profile["gem_id"]: f"{profile['gem_id']} — {profile['label']}"
+        for profile in payload["active_gem_profiles"]
+    }
+
     @app.get("/favicon.ico")
     async def p136_favicon() -> Response:
         return Response(status_code=204)
 
     @ui.page("/")
     def p136_home() -> None:
-        ui.page_title("MVP QAIC — P136 GEM Response Import")
+        ui.page_title("MVP QAIC — P136C Operator Cockpit")
         ui.add_head_html(
             """
             <style>
-              body { background: #0b1020; color: #e5e7eb; }
+              :root {
+                --qaic-bg: #070b14;
+                --qaic-panel: rgba(17, 24, 39, .92);
+                --qaic-panel-soft: rgba(31, 41, 55, .82);
+                --qaic-border: #263249;
+                --qaic-text: #e5e7eb;
+                --qaic-muted: #9ca3af;
+                --qaic-blue: #60a5fa;
+                --qaic-green: #34d399;
+                --qaic-orange: #f59e0b;
+                --qaic-red: #f87171;
+              }
+              body {
+                background:
+                  radial-gradient(circle at top left, rgba(96,165,250,.12), transparent 30%),
+                  linear-gradient(135deg, #050816 0%, #0b1020 45%, #111827 100%);
+                color: var(--qaic-text);
+              }
               .q-page { background: transparent; }
-              .p136-shell { width: min(1450px, calc(100vw - 32px)); margin: 0 auto; padding: 18px 0 40px; }
-              .p136-card { border: 1px solid #263249; background: rgba(17,24,39,.92); border-radius: 16px; padding: 16px; }
-              .p136-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-              @media (max-width: 1050px) { .p136-grid { grid-template-columns: 1fr; } }
-              .p136-pill { border: 1px solid #263249; border-radius: 999px; padding: 5px 10px; font-size: 12px; }
-              .p136-good { color: #34d399; }
-              textarea { font-family: ui-monospace, Consolas, monospace; }
+              .qaic-shell { width: min(1640px, calc(100vw - 28px)); margin: 0 auto; padding: 14px 0 34px; }
+              .qaic-hero, .qaic-card, .qaic-side, .qaic-decision {
+                border: 1px solid var(--qaic-border);
+                background: var(--qaic-panel);
+                border-radius: 18px;
+                box-shadow: 0 14px 38px rgba(0,0,0,.26);
+              }
+              .qaic-hero { padding: 18px; }
+              .qaic-card, .qaic-side, .qaic-decision { padding: 14px; }
+              .qaic-grid {
+                display: grid;
+                grid-template-columns: 280px minmax(560px, 1fr) 340px;
+                gap: 14px;
+                align-items: start;
+              }
+              @media (max-width: 1250px) { .qaic-grid { grid-template-columns: 1fr; } }
+              .qaic-title { font-size: 25px; font-weight: 900; letter-spacing: .2px; }
+              .qaic-subtitle { color: var(--qaic-muted); font-size: 13px; }
+              .qaic-badge {
+                display: inline-flex; align-items: center; gap: 6px;
+                border: 1px solid var(--qaic-border); border-radius: 999px;
+                background: var(--qaic-panel-soft); padding: 5px 10px; font-size: 12px;
+              }
+              .qaic-good { color: var(--qaic-green); border-color: rgba(52,211,153,.45); }
+              .qaic-warn { color: var(--qaic-orange); border-color: rgba(245,158,11,.48); }
+              .qaic-danger { color: var(--qaic-red); border-color: rgba(248,113,113,.48); }
+              .qaic-info { color: var(--qaic-blue); border-color: rgba(96,165,250,.45); }
+              .qaic-step {
+                border: 1px solid var(--qaic-border); border-radius: 14px;
+                padding: 10px 12px; background: rgba(15,23,42,.82); margin-bottom: 9px;
+              }
+              .qaic-step strong { display:block; font-size: 13px; }
+              .qaic-step span { display:block; color: var(--qaic-muted); font-size: 12px; margin-top: 3px; }
+              .qaic-textarea textarea {
+                min-height: 460px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+                font-size: 12px; line-height: 1.42; background: #050816 !important; color: #e5e7eb !important;
+              }
+              .qaic-mini textarea {
+                min-height: 240px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+                font-size: 12px; background: #050816 !important; color: #e5e7eb !important;
+              }
+              .qaic-code pre { max-height: 360px; overflow: auto; border-radius: 12px; }
+              .qaic-small { color: var(--qaic-muted); font-size: 12px; }
+              .qaic-action-row { gap: 8px; flex-wrap: wrap; }
             </style>
             """
         )
 
-        active_options = {
-            profile["gem_id"]: f"{profile['gem_id']} — {profile['label']}"
-            for profile in payload["active_gem_profiles"]
-        }
+        with ui.column().classes("qaic-shell gap-4"):
+            with ui.row().classes("qaic-hero w-full items-center justify-between"):
+                with ui.column().classes("gap-1"):
+                    ui.label("MVP QAIC — Operator Cockpit").classes("qaic-title")
+                    ui.label(
+                        "P136C : GEM actif → réponse réelle → sauvegarde locale → P133 gate → corrections prompts"
+                    ).classes("qaic-subtitle")
+                with ui.row().classes("qaic-action-row"):
+                    ui.label("LOCAL_PRIVATE_ONLY").classes("qaic-badge qaic-good")
+                    ui.label(selected_gem_id).classes("qaic-badge qaic-info")
+                    ui.label("NO_ORDER / NO_SIZING").classes("qaic-badge qaic-warn")
+                    ui.label("DEBUG_JSON_COLLAPSED").classes("qaic-badge")
 
-        with ui.column().classes("p136-shell gap-4"):
-            with ui.card().classes("p136-card w-full"):
-                ui.markdown("## P136-R1 — GEM Response Import → P133 Gate")
-                with ui.row().classes("gap-2"):
-                    ui.label("LOCAL_PRIVATE_ONLY").classes("p136-pill p136-good")
-                    ui.label("ACTIVE_GEM_SELECTION_LIST").classes("p136-pill")
-                    ui.label("STITCH_UI_BLUEPRINT_EXPORT").classes("p136-pill")
-                    ui.label("NO_BROKER / NO_ORDER / NO_SIZING").classes("p136-pill")
-                ui.markdown(
-                    "Choisis le Gem actif, importe/sauvegarde la réponse GEM en fichier local, "
-                    "prépare P133, puis garde la logique UI Stitch/NiceGUI alignée."
-                )
-
-            with ui.element("div").classes("p136-grid"):
-                with ui.card().classes("p136-card w-full"):
-                    ui.markdown("### 1) Choix du Gem actif")
+            with ui.element("div").classes("qaic-grid"):
+                with ui.column().classes("qaic-side"):
+                    ui.markdown("### Workflow")
+                    steps = [
+                        ("1. Prompt", "Choisir le GEM actif et préparer le prompt."),
+                        ("2. Réponse GEM", "Coller puis sauvegarder la réponse réelle."),
+                        ("3. P133 Gate", "Copier/lancer la commande locale."),
+                        ("4. Corrections", "Suivre les corrections prompts candidates."),
+                        ("5. Audit", "Voir JSON/Spécifications si nécessaire."),
+                    ]
+                    for title, subtitle in steps:
+                        with ui.element("div").classes("qaic-step"):
+                            ui.html(f"<strong>{title}</strong><span>{subtitle}</span>")
+                    ui.separator()
+                    ui.markdown("### GEM actif")
                     ui.select(
-                        options=active_options,
-                        value=payload["selected_gem"]["gem_id"],
-                        label="Gem actif",
+                        options=active_options, value=selected_gem_id, label="Gem actif"
                     ).classes("w-full")
-                    ui.code(
-                        json.dumps(payload["active_gem_profiles"], ensure_ascii=False, indent=2),
-                        language="json",
-                    )
-
-                with ui.card().classes("p136-card w-full"):
-                    ui.markdown("### 2) Réponse GEM réelle")
                     ui.markdown(
-                        f"Fichier cible local : `{payload['response_import']['imported_response_file']}`"
+                        "Le changement visuel ne relance pas automatiquement le module. Pour changer réellement, relancer avec `--gem-id`."
+                    ).classes("qaic-small")
+
+                with ui.column().classes("gap-4"):
+                    with ui.card().classes("qaic-card w-full"):
+                        with ui.tabs().classes("w-full") as tabs:
+                            prompt_tab = ui.tab("Prompt")
+                            response_tab = ui.tab("Réponse GEM")
+                            p133_tab = ui.tab("P133 Gate")
+                            corrections_tab = ui.tab("Corrections")
+                            audit_tab = ui.tab("Audit")
+
+                        with ui.tab_panels(tabs, value=response_tab).classes("w-full"):
+                            with ui.tab_panel(prompt_tab):
+                                ui.markdown("### Prompt / GEM actif")
+                                ui.markdown(payload["selected_gem"]["description"])
+                                ui.code(
+                                    json.dumps(
+                                        {
+                                            "selected_gem": payload["selected_gem"],
+                                            "active_gem_ids": payload["active_gem_ids"],
+                                        },
+                                        ensure_ascii=False,
+                                        indent=2,
+                                    ),
+                                    language="json",
+                                ).classes("qaic-code")
+
+                            with ui.tab_panel(response_tab):
+                                ui.markdown("### Réponse GEM réelle")
+                                ui.markdown(
+                                    f"Fichier local cible : `{payload['response_import']['imported_response_file']}`"
+                                ).classes("qaic-small")
+                                initial_response = ""
+                                if response_file.exists():
+                                    initial_response = response_file.read_text(
+                                        encoding="utf-8", errors="replace"
+                                    )
+                                response_box = (
+                                    ui.textarea(
+                                        value=initial_response,
+                                        placeholder="Colle ici la réponse GEM complète, puis clique sur Sauvegarder localement.",
+                                    )
+                                    .props("outlined")
+                                    .classes("qaic-textarea w-full")
+                                )
+
+                                def save_response() -> None:
+                                    text = response_box.value or ""
+                                    _write_text_file(response_file, text)
+                                    ui.notify(
+                                        f"Réponse sauvegardée localement ({len(text)} caractères).",
+                                        type="positive",
+                                    )
+
+                                with ui.row().classes("qaic-action-row"):
+                                    ui.button("Sauvegarder localement", on_click=save_response)
+                                    ui.button(
+                                        "Ouvrir dossier export",
+                                        on_click=lambda: ui.notify(
+                                            "Dossier ouvert."
+                                            if _open_local_folder(output_dir)
+                                            else str(output_dir),
+                                            type="positive",
+                                        ),
+                                    )
+                                    ui.button(
+                                        "Copier chemin fichier",
+                                        on_click=lambda: ui.run_javascript(
+                                            "navigator.clipboard.writeText("
+                                            + json.dumps(str(response_file), ensure_ascii=False)
+                                            + ")"
+                                        ),
+                                    )
+
+                            with ui.tab_panel(p133_tab):
+                                ui.markdown("### Commande P133 locale")
+                                ui.markdown(
+                                    "Copie cette commande après sauvegarde de la réponse GEM."
+                                )
+                                ui.code(p133_command, language="powershell").classes("qaic-code")
+                                with ui.row().classes("qaic-action-row"):
+                                    ui.button(
+                                        "Copier commande P133",
+                                        on_click=lambda: ui.run_javascript(
+                                            "navigator.clipboard.writeText("
+                                            + json.dumps(p133_command, ensure_ascii=False)
+                                            + ")"
+                                        ),
+                                    )
+                                    ui.button(
+                                        "Ouvrir dossier export",
+                                        on_click=lambda: ui.notify(
+                                            "Dossier ouvert."
+                                            if _open_local_folder(output_dir)
+                                            else str(output_dir),
+                                            type="positive",
+                                        ),
+                                    )
+
+                            with ui.tab_panel(corrections_tab):
+                                ui.markdown("### Corrections prompts")
+                                for row in payload["prompt_corrections_queue"]:
+                                    with ui.card().classes("w-full"):
+                                        with ui.row().classes("items-center gap-2"):
+                                            ui.label(row["correction_id"]).classes("qaic-badge")
+                                            ui.label(row["priority"]).classes(
+                                                _priority_class(row["priority"])
+                                            )
+                                            ui.label(row["status"]).classes("qaic-badge qaic-info")
+                                        ui.markdown(f"**Scope** : `{row['scope']}`")
+                                        ui.markdown(row["issue"])
+                                        ui.markdown(f"**Correction** : {row['proposed_fix']}")
+
+                            with ui.tab_panel(audit_tab):
+                                ui.markdown("### Audit / Debug")
+                                with ui.expansion("JSON payload complet", value=False):
+                                    ui.code(
+                                        json.dumps(payload, ensure_ascii=False, indent=2),
+                                        language="json",
+                                    ).classes("qaic-code")
+                                with ui.expansion("Stitch UI logic spec", value=False):
+                                    ui.code(
+                                        json.dumps(
+                                            payload["stitch_ui_logic"], ensure_ascii=False, indent=2
+                                        ),
+                                        language="json",
+                                    ).classes("qaic-code")
+                                with ui.expansion("Safety markers", value=False):
+                                    ui.code("\n".join(payload["safety_markers"]), language="text")
+
+                with ui.column().classes("qaic-decision"):
+                    ui.markdown("### Décision opérateur")
+                    decision = payload["decision_panel"]
+                    ui.label("HUMAN_REVIEW_REQUIRED").classes("qaic-badge qaic-warn")
+                    ui.label(f"image_used attendu : {decision['image_used_expected']}").classes(
+                        "qaic-badge qaic-info"
                     )
-                    ui.textarea(
-                        value="",
-                        placeholder="Coller ici la réponse GEM pour inspection visuelle. La sauvegarde fiable reste le fichier local P136_IMPORTED_GEM_RESPONSE.md.",
-                    ).props("rows=20 outlined").classes("w-full")
-
-                with ui.card().classes("p136-card w-full"):
-                    ui.markdown("### 3) Commande P133")
-                    ui.code(payload["p133_gate"]["command_preview"], language="powershell")
-
-                with ui.card().classes("p136-card w-full"):
-                    ui.markdown("### 4) Stitch UI logic")
-                    ui.code(
-                        json.dumps(payload["stitch_ui_logic"], ensure_ascii=False, indent=2),
-                        language="json",
+                    ui.label("NO_ORDER / NO_SIZING").classes("qaic-badge qaic-danger")
+                    ui.separator()
+                    ui.markdown("#### Next action")
+                    ui.markdown(f"`{decision['next_action']}`")
+                    ui.separator()
+                    ui.markdown("#### Statut fichiers")
+                    ui.markdown(
+                        f"""
+                        - Réponse source détectée : `{payload["response_import"]["source_response_file_exists"]}`
+                        - Caractères réponse : `{payload["response_import"]["response_char_count"]}`
+                        - Output P133 : `{payload["p133_gate"]["output_dir"]}`
+                        """
                     )
-
-                with ui.card().classes("p136-card w-full"):
-                    ui.markdown("### 5) Corrections prompts")
-                    ui.code(
-                        json.dumps(
-                            payload["prompt_corrections_queue"], ensure_ascii=False, indent=2
-                        ),
-                        language="json",
+                    ui.separator()
+                    ui.markdown("#### Sécurité")
+                    ui.markdown(
+                        """
+                        - Aucun broker
+                        - Aucun ordre
+                        - Aucun sizing
+                        - Aucun auto-apply
+                        - Aucun accès Revolut X réel depuis MVP
+                        """
                     )
 
     return ui
@@ -583,7 +864,7 @@ def launch_p136(request: P136Request) -> None:
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="P136 P133 real GEM response file import")
+    parser = argparse.ArgumentParser(description="P136C NiceGUI Stitch operator UI rebuild")
     parser.add_argument(
         "--output-dir", type=Path, default=Path("05_EXPORTS/P136_P133_REAL_RESPONSE_FILE_IMPORT")
     )

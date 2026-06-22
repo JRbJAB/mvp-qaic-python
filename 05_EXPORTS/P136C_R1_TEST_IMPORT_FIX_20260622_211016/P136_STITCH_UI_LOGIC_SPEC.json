@@ -1,0 +1,81 @@
+{
+  "status": "STITCH_UI_BLUEPRINT_READY",
+  "handoff_mode": "LOCAL_SPEC_ONLY",
+  "target_runtime": "NiceGUI local private",
+  "selected_gem_id": "GEM_GENERAL_REVIEW",
+  "design_intent": "Cockpit opérateur clair pour prompt GEM, réponse GEM réelle, gate P133 et corrections prompts.",
+  "screens": [
+    {
+      "screen_id": "prompt_cockpit",
+      "title": "Prompt",
+      "goal": "Préparer le prompt, choisir le GEM actif, copier vers GEM et suivre les garde-fous.",
+      "components": [
+        "active_gem_select",
+        "prompt_copy_panel",
+        "gemini_open_button",
+        "safety_guardrails_panel"
+      ]
+    },
+    {
+      "screen_id": "response_import",
+      "title": "Réponse GEM",
+      "goal": "Coller et sauvegarder localement une réponse GEM réelle.",
+      "components": [
+        "response_file_status",
+        "response_textarea",
+        "save_response_to_local_file_button",
+        "response_hash_status"
+      ]
+    },
+    {
+      "screen_id": "p133_gate",
+      "title": "P133 Gate",
+      "goal": "Préparer la commande locale de validation P133 sans exécution automatique.",
+      "components": [
+        "p133_command_preview",
+        "copy_p133_command_button",
+        "open_export_folder_button",
+        "human_review_warning"
+      ]
+    },
+    {
+      "screen_id": "prompt_corrections",
+      "title": "Corrections",
+      "goal": "Lister les corrections prompts candidates avant application future.",
+      "components": [
+        "prompt_corrections_table",
+        "priority_badges",
+        "scope_filter",
+        "next_action_panel"
+      ]
+    },
+    {
+      "screen_id": "audit",
+      "title": "Audit",
+      "goal": "Masquer par défaut les JSON et specs techniques, accessibles uniquement si nécessaire.",
+      "components": [
+        "collapsed_json_debug",
+        "stitch_spec_collapsed",
+        "safety_markers_collapsed"
+      ]
+    }
+  ],
+  "layout_rules": {
+    "density": "operator_dense_but_readable",
+    "theme": "dark_professional",
+    "primary_layout": "left_workflow_center_tabs_right_decision",
+    "no_empty_rows": true,
+    "badges_for_safety": true,
+    "monospace_for_prompt_and_json": true,
+    "json_debug_collapsed_by_default": true
+  },
+  "forbidden_behaviors": [
+    "no_public_deploy",
+    "no_tunnel",
+    "no_broker",
+    "no_order",
+    "no_sizing",
+    "no_auto_apply",
+    "no_revolutx_real_access_from_mvp"
+  ]
+}

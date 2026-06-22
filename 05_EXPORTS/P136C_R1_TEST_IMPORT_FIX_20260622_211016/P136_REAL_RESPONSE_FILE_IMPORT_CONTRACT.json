@@ -1,0 +1,242 @@
+{
+  "step": "P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD",
+  "version": "MVP_QAIC_P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD_20260622",
+  "status": "P136C_OPERATOR_UI_REBUILD_READY",
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "run_id": "P136C-R1-TEST-IMPORT-FIX-20260622",
+  "local_url": "http://127.0.0.1:8088",
+  "selected_gem": {
+    "gem_id": "GEM_GENERAL_REVIEW",
+    "label": "GEM General Review",
+    "status": "ACTIVE",
+    "default": true,
+    "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+    "description": "Profil standard pour extraction portefeuille Revolut X / USD avec résumé lisible + JSON pretty."
+  },
+  "active_gem_ids": [
+    "GEM_GENERAL_REVIEW",
+    "GEM_PORTFOLIO_REVIEW",
+    "GEM_RISK_GUARD_REVIEW"
+  ],
+  "active_gem_profiles": [
+    {
+      "gem_id": "GEM_GENERAL_REVIEW",
+      "label": "GEM General Review",
+      "status": "ACTIVE",
+      "default": true,
+      "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+      "description": "Profil standard pour extraction portefeuille Revolut X / USD avec résumé lisible + JSON pretty."
+    },
+    {
+      "gem_id": "GEM_PORTFOLIO_REVIEW",
+      "label": "GEM Portfolio Review",
+      "status": "ACTIVE",
+      "default": false,
+      "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+      "description": "Profil centré sur inventaire positions, allocations, PnL et cohérences arithmétiques."
+    },
+    {
+      "gem_id": "GEM_RISK_GUARD_REVIEW",
+      "label": "GEM Risk Guard Review",
+      "status": "ACTIVE",
+      "default": false,
+      "prompt_profile": "P132_R2_RISK_GUARD_REVIEW",
+      "description": "Profil centré blockers, incertitudes, human review et garde-fous no order/no sizing."
+    }
+  ],
+  "stitch_ui_logic": {
+    "status": "STITCH_UI_BLUEPRINT_READY",
+    "handoff_mode": "LOCAL_SPEC_ONLY",
+    "target_runtime": "NiceGUI local private",
+    "selected_gem_id": "GEM_GENERAL_REVIEW",
+    "design_intent": "Cockpit opérateur clair pour prompt GEM, réponse GEM réelle, gate P133 et corrections prompts.",
+    "screens": [
+      {
+        "screen_id": "prompt_cockpit",
+        "title": "Prompt",
+        "goal": "Préparer le prompt, choisir le GEM actif, copier vers GEM et suivre les garde-fous.",
+        "components": [
+          "active_gem_select",
+          "prompt_copy_panel",
+          "gemini_open_button",
+          "safety_guardrails_panel"
+        ]
+      },
+      {
+        "screen_id": "response_import",
+        "title": "Réponse GEM",
+        "goal": "Coller et sauvegarder localement une réponse GEM réelle.",
+        "components": [
+          "response_file_status",
+          "response_textarea",
+          "save_response_to_local_file_button",
+          "response_hash_status"
+        ]
+      },
+      {
+        "screen_id": "p133_gate",
+        "title": "P133 Gate",
+        "goal": "Préparer la commande locale de validation P133 sans exécution automatique.",
+        "components": [
+          "p133_command_preview",
+          "copy_p133_command_button",
+          "open_export_folder_button",
+          "human_review_warning"
+        ]
+      },
+      {
+        "screen_id": "prompt_corrections",
+        "title": "Corrections",
+        "goal": "Lister les corrections prompts candidates avant application future.",
+        "components": [
+          "prompt_corrections_table",
+          "priority_badges",
+          "scope_filter",
+          "next_action_panel"
+        ]
+      },
+      {
+        "screen_id": "audit",
+        "title": "Audit",
+        "goal": "Masquer par défaut les JSON et specs techniques, accessibles uniquement si nécessaire.",
+        "components": [
+          "collapsed_json_debug",
+          "stitch_spec_collapsed",
+          "safety_markers_collapsed"
+        ]
+      }
+    ],
+    "layout_rules": {
+      "density": "operator_dense_but_readable",
+      "theme": "dark_professional",
+      "primary_layout": "left_workflow_center_tabs_right_decision",
+      "no_empty_rows": true,
+      "badges_for_safety": true,
+      "monospace_for_prompt_and_json": true,
+      "json_debug_collapsed_by_default": true
+    },
+    "forbidden_behaviors": [
+      "no_public_deploy",
+      "no_tunnel",
+      "no_broker",
+      "no_order",
+      "no_sizing",
+      "no_auto_apply",
+      "no_revolutx_real_access_from_mvp"
+    ]
+  },
+  "response_import": {
+    "source_response_file": null,
+    "source_response_file_exists": false,
+    "imported_response_file": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P136C_R1_TEST_IMPORT_FIX_20260622_211016\\P136_IMPORTED_GEM_RESPONSE.md",
+    "response_char_count": 378,
+    "response_line_count": 11,
+    "response_sha256": "675c9a5f681fdc84ec39c1db24fe2ec854554b4713f20aa5b9a25fbae40e5316"
+  },
+  "p133_gate": {
+    "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P136C_R1_TEST_IMPORT_FIX_20260622_211016\\P133_FROM_P136_REAL_RESPONSE_IMPORT",
+    "command_file": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P136C_R1_TEST_IMPORT_FIX_20260622_211016\\P136_P133_CAPTURE_COMMAND.ps1",
+    "command_preview": "$ErrorActionPreference = \"Stop\"\nchcp 65001 | Out-Null\n[Console]::OutputEncoding = [System.Text.Encoding]::UTF8\n$OutputEncoding = [System.Text.Encoding]::UTF8\n\n$GitExe = (Get-Command git.exe -ErrorAction SilentlyContinue).Source\n$RepoRoot = $null\n\nif ($GitExe) {\n  try {\n    $maybeRoot = (& $GitExe rev-parse --show-toplevel 2>$null)\n    if ($LASTEXITCODE -eq 0 -and $maybeRoot) {\n      $maybeRoot = $maybeRoot.Trim()\n      if ((Split-Path -Leaf $maybeRoot) -eq \"MVP_QAIC_PY\") {\n        $RepoRoot = $maybeRoot\n      }\n    }\n  } catch {}\n}\n\nif (-not $RepoRoot) {\n  $people = [string]::Concat([char]0xD83D, [char]0xDC65)\n  $chart  = [string]::Concat([char]0xD83D, [char]0xDCC8)\n  $RepoRoot = \"G:\\Mon Drive\\$people JULIEN [Perso]\\$chart Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\"\n}\n\nif (-not (Test-Path -LiteralPath $RepoRoot)) {\n  throw \"Repo introuvable: $RepoRoot\"\n}\n\nSet-Location -LiteralPath $RepoRoot\n\n$responseText = 'G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P136C_R1_TEST_IMPORT_FIX_20260622_211016\\P136_IMPORTED_GEM_RESPONSE.md'\n$outputDir = 'G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P136C_R1_TEST_IMPORT_FIX_20260622_211016\\P133_FROM_P136_REAL_RESPONSE_IMPORT'\nNew-Item -ItemType Directory -Path $outputDir -Force | Out-Null\n\npython -m mvp_qaic_py.gem_multimodal_response_capture_gate `\n  --response-text $responseText `\n  --output-dir $outputDir `\n  --run-id 'P136C-R1-TEST-IMPORT-FIX-20260622-P133-GATE' `\n  --generated-at-utc '2026-06-22T00:00:00Z'\n\nWrite-Host \"P133_OUTPUT_DIR=$outputDir\"\nWrite-Host \"OPEN_FIRST=$(Join-Path $outputDir 'P133_GEM_RESPONSE_HUMAN_REVIEW.md')\"\nWrite-Host \"OPEN_JSON=$(Join-Path $outputDir 'P133_GEM_RESPONSE_PRETTY.json')\"\n",
+    "executes_automatically": false,
+    "human_review_required": true
+  },
+  "prompt_corrections_queue": [
+    {
+      "correction_id": "P136_PROMPT_001",
+      "priority": "HIGH",
+      "status": "TODO",
+      "scope": "GEM_SELECTION",
+      "issue": "Le cockpit doit permettre le choix contrôlé du Gem actif.",
+      "proposed_fix": "Utiliser uniquement gem_id depuis ACTIVE_GEM_PROFILES.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P136_PROMPT_002",
+      "priority": "HIGH",
+      "status": "TODO",
+      "scope": "P132_R2_OUTPUT_FORMAT",
+      "issue": "Renforcer la sortie résumé lisible + JSON pretty fenced.",
+      "proposed_fix": "Ajouter un garde-fou de format dans la prochaine correction de prompt.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P136_PROMPT_003",
+      "priority": "MEDIUM",
+      "status": "TODO",
+      "scope": "IMAGE_USAGE_EVIDENCE",
+      "issue": "Rendre la preuve d'utilisation image plus visible pour human review.",
+      "proposed_fix": "Exiger un court champ/texte d'évidence image_used avant JSON.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P136_PROMPT_004",
+      "priority": "MEDIUM",
+      "status": "TODO",
+      "scope": "STITCH_UI_LOGIC",
+      "issue": "Aligner les prompts avec la logique UI Stitch/NiceGUI.",
+      "proposed_fix": "Synchroniser les écrans prompt, import réponse, P133 gate et corrections dans une spec UI unique.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    },
+    {
+      "correction_id": "P136C_UI_001",
+      "priority": "HIGH",
+      "status": "DONE",
+      "scope": "NICEGUI_OPERATOR_UI",
+      "issue": "Le rendu P136-R1 était trop technique et dominé par des JSON dumps.",
+      "proposed_fix": "Remplacer la page par un cockpit avec workflow gauche, tabs centraux, décision droite et debug caché.",
+      "gem_id": "GEM_GENERAL_REVIEW"
+    }
+  ],
+  "decision_panel": {
+    "image_used_expected": "IMAGE_USED",
+    "human_review_required": true,
+    "no_order_no_sizing": true,
+    "blockers_visible": true,
+    "next_action": "SAVE_GEM_RESPONSE_THEN_RUN_P133_GATE"
+  },
+  "safety_markers": [
+    "LOCAL_PRIVATE_ONLY",
+    "P136_P133_REAL_RESPONSE_FILE_IMPORT",
+    "P136_R1_STITCH_UI_LOGIC_INTEGRATED",
+    "P136C_NICEGUI_STITCH_OPERATOR_UI_REBUILD",
+    "STITCH_RENDERED_AS_UI_STEPS",
+    "REAL_SAVE_BUTTON",
+    "SAVE_RESPONSE_TO_LOCAL_FILE_FROM_UI",
+    "JSON_DEBUG_COLLAPSED_BY_DEFAULT",
+    "ACTIVE_GEM_SELECTION_LIST",
+    "PROMPT_CORRECTIONS_QUEUE",
+    "STITCH_UI_BLUEPRINT_EXPORT",
+    "STITCH_HANDOFF_LOCAL_SPEC_ONLY",
+    "P133_COMMAND_PREVIEW",
+    "NO_PUBLIC_DEPLOY",
+    "NO_TUNNEL",
+    "NO_REMOTE_ACCESS",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP",
+    "NO_SHEET_WRITE",
+    "NO_BIGQUERY_WRITE",
+    "HUMAN_REVIEW_REQUIRED"
+  ],
+  "features": {
+    "real_response_file_import": true,
+    "active_gem_selection": true,
+    "stitch_ui_logic_integrated": true,
+    "stitch_rendered_as_ui_steps": true,
+    "operator_ui_rebuild": true,
+    "real_save_button": true,
+    "save_response_to_local_file_from_ui": true,
+    "copy_p133_command": true,
+    "open_export_folder": true,
+    "json_debug_collapsed_by_default": true,
+    "prompt_corrections_queue": true,
+    "p133_command_preview": true,
+    "local_private_only": true,
+    "no_broker_execution": true,
+    "no_order": true,
+    "no_sizing": true,
+    "no_auto_apply": true
+  }
+}

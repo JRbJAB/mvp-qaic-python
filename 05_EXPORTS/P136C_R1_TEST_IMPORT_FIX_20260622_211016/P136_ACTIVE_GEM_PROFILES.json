@@ -1,0 +1,26 @@
+[
+  {
+    "gem_id": "GEM_GENERAL_REVIEW",
+    "label": "GEM General Review",
+    "status": "ACTIVE",
+    "default": true,
+    "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+    "description": "Profil standard pour extraction portefeuille Revolut X / USD avec résumé lisible + JSON pretty."
+  },
+  {
+    "gem_id": "GEM_PORTFOLIO_REVIEW",
+    "label": "GEM Portfolio Review",
+    "status": "ACTIVE",
+    "default": false,
+    "prompt_profile": "P132_R2_MULTIMODAL_PORTFOLIO_USD",
+    "description": "Profil centré sur inventaire positions, allocations, PnL et cohérences arithmétiques."
+  },
+  {
+    "gem_id": "GEM_RISK_GUARD_REVIEW",
+    "label": "GEM Risk Guard Review",
+    "status": "ACTIVE",
+    "default": false,
+    "prompt_profile": "P132_R2_RISK_GUARD_REVIEW",
+    "description": "Profil centré blockers, incertitudes, human review et garde-fous no order/no sizing."
+  }
+]
