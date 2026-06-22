@@ -1,0 +1,67 @@
+{
+  "runtime": "MVP_QAIC_CANONICAL_WEBAPP_BINDING_ADMIN",
+  "version": "P107_R1_CANONICAL_WEBAPP_BINDING_ADMIN_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "status": "CANONICAL_BINDING_READY",
+  "scope": {
+    "mvp": "lexique_webapp_prompts_methods_benchmark_public",
+    "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+  },
+  "canonical_ui": {
+    "role": "validated_webapp_shell",
+    "file_name": "Index.html",
+    "policy": "DO_NOT_OVERWRITE_FROM_PYTHON",
+    "python_role": "generate_data_contracts_context_packs_and_admin_monitor_only",
+    "requires_human_review_before_ui_change": true
+  },
+  "allowed_generated_files": [
+    "data/webapp_pack.json",
+    "data/context_pack.json",
+    "data/prompt_payload.json",
+    "data/binding_contract.json",
+    "data/admin_status.json",
+    "WEBAPP_BINDING_CONTRACT.md",
+    "admin/ADMIN_MONITOR.html",
+    "admin/README_ADMIN_MONITOR.md"
+  ],
+  "forbidden_generated_files": [
+    "index.html",
+    "Index.html",
+    "MVPQAIC_Index.html",
+    "Code.gs",
+    "appsscript.json"
+  ],
+  "data_sources": {
+    "routes_count": 6,
+    "sections_count": 8,
+    "benchmark_available": true,
+    "lexique_context_available": true,
+    "method_context_available": true,
+    "portfolio_prompt_input_modes": [
+      "none",
+      "pasted_text",
+      "structured",
+      "image_capture"
+    ]
+  },
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "canonical_webapp_index_do_not_overwrite": true,
+    "admin_html_allowed": true,
+    "no_index_html_generation": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true,
+    "local_admin_monitor_only": true
+  },
+  "next": "P108_UI_POLISH_USING_CANONICAL_INDEX_OR_PUBLIC_DEPLOY_DECISION_GATE"
+}

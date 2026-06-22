@@ -1,0 +1,41 @@
+﻿{
+    "step":  "P107_R1_CANONICAL_WEBAPP_BINDING_ADMIN_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "depends_on":  "P106_WEBAPP_STATIC_PREVIEW_DATA_EXPORT",
+    "source_file":  "mvp_qaic_py/webapp_canonical_binding_admin.py",
+    "test_file":  "tests/test_webapp_canonical_binding_admin_p107_r1.py",
+    "canonical_ui_policy":  "DO_NOT_OVERWRITE_FROM_PYTHON",
+    "admin_html_allowed":  true,
+    "generated_index_html":  false,
+    "binding_dir":  "CANONICAL_BINDING_PACK",
+    "generated_files":  [
+                            "CANONICAL_BINDING_PACK/data/webapp_pack.json",
+                            "CANONICAL_BINDING_PACK/data/context_pack.json",
+                            "CANONICAL_BINDING_PACK/data/prompt_payload.json",
+                            "CANONICAL_BINDING_PACK/data/binding_contract.json",
+                            "CANONICAL_BINDING_PACK/data/admin_status.json",
+                            "CANONICAL_BINDING_PACK/WEBAPP_BINDING_CONTRACT.md",
+                            "CANONICAL_BINDING_PACK/admin/ADMIN_MONITOR.html",
+                            "CANONICAL_BINDING_PACK/admin/README_ADMIN_MONITOR.md"
+                        ],
+    "forbidden_files":  [
+                            "index.html",
+                            "Index.html",
+                            "MVPQAIC_Index.html"
+                        ],
+    "safety":  {
+                   "no_revolutx_real_access":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_cancel":  true,
+                   "no_replace_order":  true,
+                   "no_auto_sizing":  true,
+                   "no_secret_log":  true,
+                   "no_sheet_write":  true,
+                   "no_apps_script_execution":  true,
+                   "no_clasp":  true,
+                   "no_public_deploy":  true,
+                   "local_admin_monitor_only":  true
+               },
+    "next":  "P108_UI_POLISH_USING_CANONICAL_INDEX_OR_PUBLIC_DEPLOY_DECISION_GATE"
+}

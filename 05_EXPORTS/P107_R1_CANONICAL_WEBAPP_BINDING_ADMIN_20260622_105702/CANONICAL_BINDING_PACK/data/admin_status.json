@@ -1,0 +1,70 @@
+{
+  "runtime": "MVP_QAIC_ADMIN_MONITOR_STATUS",
+  "version": "P107_R1_ADMIN_MONITOR_STATUS_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "status": "ADMIN_MONITOR_READY",
+  "decision_status": "PUBLIC_PROMPT_READY",
+  "benchmark": {
+    "quality_score": 100,
+    "public_safety_score": 100,
+    "data_completeness_score": 100,
+    "public_usefulness_score": 100,
+    "missing_data": []
+  },
+  "routes_count": 6,
+  "sections_count": 8,
+  "gates": [
+    {
+      "gate_id": "canonical_index_not_generated",
+      "status": "PASS",
+      "evidence": "No index.html is part of the generated binding pack."
+    },
+    {
+      "gate_id": "admin_monitor_generated",
+      "status": "PASS",
+      "evidence": "admin/ADMIN_MONITOR.html"
+    },
+    {
+      "gate_id": "mvp_qaic_scope_separated",
+      "status": "PASS",
+      "evidence": {
+        "mvp": "lexique_webapp_prompts_methods_benchmark_public",
+        "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+      }
+    },
+    {
+      "gate_id": "no_public_deploy",
+      "status": "PASS",
+      "evidence": true
+    },
+    {
+      "gate_id": "no_trading_execution",
+      "status": "PASS",
+      "evidence": {
+        "no_broker": true,
+        "no_order": true,
+        "no_auto_sizing": true,
+        "no_revolutx_real_access": true
+      }
+    }
+  ],
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "canonical_webapp_index_do_not_overwrite": true,
+    "admin_html_allowed": true,
+    "no_index_html_generation": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true,
+    "local_admin_monitor_only": true
+  }
+}

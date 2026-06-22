@@ -1,0 +1,96 @@
+{
+  "runtime": "MVP_QAIC_PUBLIC_PROMPT_WEBAPP_BENCHMARK",
+  "version": "P103_MVP_PUBLIC_PROMPT_WEBAPP_BENCHMARK_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "scope": {
+    "mvp": "lexique_webapp_prompts_methods_public",
+    "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+  },
+  "decision_status": "PUBLIC_PROMPT_READY",
+  "blockers": [],
+  "missing_data": [],
+  "human_review_only": true,
+  "public_educational_mode": true,
+  "no_order_no_sizing": true,
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "portfolio_on_demand_supported": true,
+    "image_capture_reference_supported": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "public_educational_mode": true
+  },
+  "prompt_request": {
+    "user_prompt": "Analyse BTC et ETH avec une méthode portfolio educational review.",
+    "portfolio_context": {
+      "input_type": "pasted_text",
+      "positions": [
+        {
+          "asset": "BTC",
+          "quantity": 0.1,
+          "avg_entry": 60000.0,
+          "current_value": 6800.0,
+          "pnl": 800.0,
+          "source": "parsed_text"
+        },
+        {
+          "asset": "ETH",
+          "quantity": 1.0,
+          "avg_entry": 3000.0,
+          "current_value": 3200.0,
+          "pnl": 200.0,
+          "source": "parsed_text"
+        }
+      ],
+      "positions_count": 2,
+      "missing_data": [],
+      "raw_text_available": true,
+      "extraction_confidence": "LOW_BEST_EFFORT"
+    },
+    "lexique_context": {
+      "BTC": "Bitcoin",
+      "ETH": "Ethereum"
+    },
+    "methods_context": {
+      "method": "portfolio educational review"
+    },
+    "benchmark_context": {
+      "profile": "static_preview"
+    }
+  },
+  "benchmark": {
+    "quality_score": 100,
+    "public_safety_score": 100,
+    "data_completeness_score": 100,
+    "public_usefulness_score": 100,
+    "missing_data": []
+  },
+  "webapp_ui": {
+    "recommended_sections": [
+      "prompt_input",
+      "portfolio_optional_input",
+      "portfolio_image_capture",
+      "lexique_context",
+      "method_context",
+      "benchmark_scores",
+      "missing_data",
+      "blockers",
+      "human_review_output"
+    ],
+    "portfolio_input_modes": [
+      "none",
+      "pasted_text",
+      "structured",
+      "image_capture"
+    ]
+  }
+}

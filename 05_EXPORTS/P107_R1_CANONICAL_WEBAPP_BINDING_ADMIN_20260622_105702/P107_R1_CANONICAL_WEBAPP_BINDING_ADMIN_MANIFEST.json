@@ -1,0 +1,37 @@
+{
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P107_R1_CANONICAL_WEBAPP_BINDING_ADMIN_20260622_105702\\CANONICAL_BINDING_PACK",
+  "file_count": 8,
+  "files": [
+    "WEBAPP_BINDING_CONTRACT.md",
+    "admin/ADMIN_MONITOR.html",
+    "admin/README_ADMIN_MONITOR.md",
+    "data/admin_status.json",
+    "data/binding_contract.json",
+    "data/context_pack.json",
+    "data/prompt_payload.json",
+    "data/webapp_pack.json"
+  ],
+  "has_admin_monitor": true,
+  "has_binding_contract": true,
+  "has_webapp_pack": true,
+  "has_no_index_html": true,
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "canonical_webapp_index_do_not_overwrite": true,
+    "admin_html_allowed": true,
+    "no_index_html_generation": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true,
+    "local_admin_monitor_only": true
+  }
+}
