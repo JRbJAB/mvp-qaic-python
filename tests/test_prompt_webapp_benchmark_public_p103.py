@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from mvp_qaic_py.prompt_webapp_benchmark_public import (
     MVP_PUBLIC_SAFETY,
@@ -10,9 +10,7 @@ from mvp_qaic_py.prompt_webapp_benchmark_public import (
 
 
 def test_p103_pasted_portfolio_text_is_supported_without_execution() -> None:
-    parsed = parse_pasted_portfolio_text(
-        "BTC 0.10 60000 6800 800\nETH 1.5 3000 4800 300"
-    )
+    parsed = parse_pasted_portfolio_text("BTC 0.10 60000 6800 800\nETH 1.5 3000 4800 300")
 
     assert parsed["input_type"] == "pasted_text"
     assert parsed["positions_count"] == 2

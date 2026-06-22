@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import re
 from dataclasses import dataclass
@@ -170,7 +170,9 @@ def parse_pasted_portfolio_text(text: str) -> dict[str, Any]:
     }
 
 
-def normalize_structured_portfolio(portfolio: dict[str, Any] | list[dict[str, Any]]) -> dict[str, Any]:
+def normalize_structured_portfolio(
+    portfolio: dict[str, Any] | list[dict[str, Any]],
+) -> dict[str, Any]:
     rows: list[dict[str, Any]]
     if isinstance(portfolio, dict):
         nested = portfolio.get("positions") or portfolio.get("rows") or portfolio.get("items")
