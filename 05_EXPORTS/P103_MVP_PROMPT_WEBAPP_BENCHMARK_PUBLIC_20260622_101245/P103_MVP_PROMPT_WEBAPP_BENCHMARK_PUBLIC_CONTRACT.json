@@ -1,0 +1,30 @@
+﻿{
+    "step":  "P103_MVP_PROMPT_WEBAPP_BENCHMARK_PYTHON_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "architecture":  {
+                         "mvp":  "lexique + webapp + prompts + methodes + benchmark + public access later",
+                         "qaic":  "private backend + quant engine + risk + RevolutX + locked trade execution"
+                     },
+    "source_file":  "mvp_qaic_py/prompt_webapp_benchmark_public.py",
+    "test_file":  "tests/test_prompt_webapp_benchmark_public_p103.py",
+    "portfolio_on_demand":  {
+                                "pasted_text":  true,
+                                "structured_json":  true,
+                                "image_capture_reference":  true,
+                                "image_ocr_local_claim":  false,
+                                "visual_extraction_required_marker":  true
+                            },
+    "safety":  {
+                   "no_revolutx_real_access":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_cancel":  true,
+                   "no_replace_order":  true,
+                   "no_auto_sizing":  true,
+                   "no_secret_log":  true,
+                   "no_sheet_write":  true,
+                   "no_apps_script_execution":  true,
+                   "no_clasp":  true
+               },
+    "next":  "P104_WEBAPP_UI_PROMPT_BENCHMARK_DATA_PACK_FAST_FUSE"
+}
