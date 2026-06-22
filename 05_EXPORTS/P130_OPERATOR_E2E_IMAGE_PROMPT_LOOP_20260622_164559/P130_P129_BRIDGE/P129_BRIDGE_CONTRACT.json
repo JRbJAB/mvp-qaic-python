@@ -1,0 +1,62 @@
+{
+  "allowed": [
+    "discover latest local P128 export folder",
+    "read local manual transcription text",
+    "write local P124-compatible input text",
+    "write review CSV",
+    "write manifest and next actions"
+  ],
+  "contract": "P129_IMAGE_TO_PROMPT_MANUAL_TRANSCRIPTION_BRIDGE",
+  "forbidden": [
+    "ocr_claim",
+    "automated_visual_extraction",
+    "invented_portfolio_data",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "auto_sizing",
+    "auto_apply_gem_response",
+    "revolutx_real_access_from_mvp"
+  ],
+  "manual_transcription_required": true,
+  "no_automated_visual_extraction": true,
+  "no_invented_portfolio_data": true,
+  "no_ocr_claim": true,
+  "outputs": [
+    "P129_P124_PORTFOLIO_INPUT_FROM_MANUAL_TRANSCRIPTION.txt",
+    "P129_IMAGE_TO_PROMPT_BRIDGE_REPORT.md",
+    "P129_MANUAL_TRANSCRIPTION_REVIEW.csv",
+    "P129_BRIDGE_CONTRACT.json",
+    "P129_BRIDGE_MANIFEST.json",
+    "P129_NEXT_ACTIONS.md",
+    "P129_README.md"
+  ],
+  "purpose": "Transform a manually filled P128 transcription file into P124-compatible portfolio input.",
+  "runtime_fix": "latest P128 discovery is handled as a Path list, not a PowerShell scalar string.",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "IMAGE_TO_PROMPT_BRIDGE_ONLY",
+    "HUMAN_REVIEW_ONLY",
+    "MANUAL_TRANSCRIPTION_REQUIRED",
+    "NO_OCR_CLAIM",
+    "NO_AUTOMATED_VISUAL_EXTRACTION",
+    "NO_INVENTED_PORTFOLIO_DATA",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "BRIDGE_CONTRACT_READY",
+  "version": "MVP_QAIC_P129_IMAGE_TO_PROMPT_MANUAL_TRANSCRIPTION_BRIDGE_0_1_1_RUNTIME_FIX_SAFE"
+}

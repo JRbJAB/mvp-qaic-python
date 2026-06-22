@@ -1,0 +1,7 @@
+﻿step,name,required,safety,status
+1,P128 image capture folder exists,YES,LOCAL_ONLY,READY
+2,P129 bridge generated P124-compatible input,YES,MANUAL_TRANSCRIPTION_REQUIRED,E2E_WAITING_FOR_MANUAL_TRANSCRIPTION
+3,Copy/paste prompt to GEM manually,YES,HUMAN_REVIEW_ONLY,OPERATOR_ACTION
+4,Paste GEM response into gem_response.txt,YES,NO_AUTO_APPLY_GEM_RESPONSE,OPERATOR_ACTION
+5,Run P125 review UX,YES,NO_SHEET_WRITE,READY
+6,Run P126 daily registry,YES,LOCAL_REGISTRY_ONLY,READY
