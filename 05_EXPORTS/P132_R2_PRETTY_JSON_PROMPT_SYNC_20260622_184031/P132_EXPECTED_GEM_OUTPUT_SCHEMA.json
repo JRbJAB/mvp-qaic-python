@@ -1,0 +1,220 @@
+{
+  "properties": {
+    "assets": {
+      "items": {
+        "properties": {
+          "allocation_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "asset_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW",
+              "REVIEW"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "price_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "quantity": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "symbol": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unrealized_pnl_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unrealized_pnl_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "value_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "symbol",
+          "asset_name",
+          "quantity",
+          "price_usd",
+          "value_usd",
+          "allocation_pct",
+          "unrealized_pnl_usd",
+          "unrealized_pnl_pct",
+          "confidence",
+          "notes"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "copy_paste_text_used": {
+      "type": "boolean"
+    },
+    "human_review_required": {
+      "const": true
+    },
+    "image_usage_evidence": {
+      "properties": {
+        "blockers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "IMAGE_USED",
+            "IMAGE_NOT_USED_OR_NOT_EVIDENCED",
+            "REVIEW_REQUIRED"
+          ]
+        },
+        "visible_platform_or_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "visual_evidence_summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "visual_evidence_summary",
+        "visible_platform_or_context",
+        "blockers"
+      ],
+      "type": "object"
+    },
+    "image_used": {
+      "type": "boolean"
+    },
+    "missing_data": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "no_order_no_sizing": {
+      "const": true
+    },
+    "portfolio": {
+      "properties": {
+        "cash_allocation_pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "cash_usd_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "total_value_usd": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unrealized_pnl_pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unrealized_pnl_usd": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "total_value_usd",
+        "unrealized_pnl_usd",
+        "unrealized_pnl_pct",
+        "cash_usd_value",
+        "cash_allocation_pct"
+      ],
+      "type": "object"
+    },
+    "reference_currency": {
+      "const": "USD"
+    },
+    "source_type": {
+      "enum": [
+        "image",
+        "copy_paste_text",
+        "image_plus_text"
+      ]
+    },
+    "status": {
+      "enum": [
+        "OK",
+        "REVIEW_REQUIRED",
+        "BLOCKED"
+      ]
+    },
+    "unclear_data": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "status",
+    "source_type",
+    "reference_currency",
+    "image_used",
+    "image_usage_evidence",
+    "portfolio",
+    "assets",
+    "missing_data",
+    "unclear_data",
+    "human_review_required",
+    "no_order_no_sizing"
+  ],
+  "type": "object"
+}

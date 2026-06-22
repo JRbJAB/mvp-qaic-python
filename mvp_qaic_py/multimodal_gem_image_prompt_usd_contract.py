@@ -22,6 +22,10 @@ SAFETY_MARKERS = (
     "USD_REFERENCE_CURRENCY",
     "FRENCH_RESPONSE_VALUES_ALLOWED",
     "JSON_KEYS_STABLE_ENGLISH",
+    "P133_COMPATIBLE_RESPONSE_FORMAT",
+    "NO_MINIFIED_JSON_FOR_OPERATOR_REVIEW",
+    "PRETTY_JSON_REQUIRED",
+    "HUMAN_READABLE_SUMMARY_REQUIRED",
     "HUMAN_REVIEW_REQUIRED",
     "NO_INVENTED_PORTFOLIO_DATA",
     "NO_INDEX_EDIT",
@@ -203,6 +207,10 @@ def build_contract() -> dict[str, Any]:
         "reference_currency": REFERENCE_CURRENCY,
         "response_language": "fr",
         "json_keys_language": "en_stable",
+        "human_readable_summary_required": True,
+        "pretty_json_required": True,
+        "no_minified_json_for_operator_review": True,
+        "p133_compatible_response_format": True,
         "architecture_decision": "The Revolut X image is attached directly to the main GEM portfolio prompt. There is no separate preliminary image-reading step.",
         "allowed": [
             "attach Revolut X image directly in GEM",
@@ -252,6 +260,42 @@ The image is part of this main prompt. Do not ask for or create a separate preli
 - Ne traduis pas les clés JSON.
 - Si la réponse est en JSON, les valeurs textuelles peuvent être en français, mais la structure technique doit rester strictement conforme au schéma.
 - Les valeurs des enums techniques doivent rester exactes, par exemple `IMAGE_USED`, `REVIEW_REQUIRED`, `OK`, `BLOCKED`, `HIGH`, `MEDIUM`, `LOW`, `REVIEW`.
+
+## Format de sortie obligatoire
+
+- Commence par un bloc `## Résumé lisible` rédigé en français pour l’opérateur.
+- Ensuite, fournis un bloc `## JSON strict pretty-printed`.
+- Le JSON strict doit être dans un bloc fenced `json`.
+- Le JSON doit être indenté sur plusieurs lignes avec 2 espaces.
+- Ne produis pas de JSON minifié sur une seule ligne.
+- Le JSON doit rester parseable par P133 sans correction manuelle.
+- Les clés JSON doivent rester exactement en anglais et conformes au schéma existant.
+- Les valeurs textuelles libres, `notes`, `visual_evidence_summary`, `missing_data` et `unclear_data` peuvent être en français.
+- Ne mets aucun ordre, sizing, recommandation d’exécution ou instruction broker.
+- Si tu dois ajouter du texte hors JSON, il doit rester strictement dans le résumé lisible et ne doit pas modifier le JSON.
+
+Format attendu :
+
+```markdown
+## Résumé lisible
+
+- Statut : REVIEW_REQUIRED
+- Image utilisée : oui
+- Devise : USD
+- Total portefeuille : <valeur> USD
+- Sécurité : human review, no order, no sizing, no auto apply
+
+## JSON strict pretty-printed
+
+```json
+{{
+  "status": "REVIEW_REQUIRED",
+  "source_type": "image",
+  "reference_currency": "USD",
+  "image_used": true
+}}
+```
+```
 
 ## Hard rules
 
@@ -451,6 +495,8 @@ Get a functional real GEM test today without another pre-extraction step.
    - `no_order_no_sizing=true`
    - les valeurs textuelles rédigées sont en français
    - les clés JSON restent inchangées en anglais
+   - le JSON strict est pretty-printed et non minifié
+   - un résumé lisible en français précède le JSON strict
 
 ## Block if
 
@@ -522,6 +568,10 @@ def write_multimodal_gem_image_prompt_usd_contract(
         "json_keys_language": "en_stable",
         "french_response_values_allowed": True,
         "json_keys_stable_english": True,
+        "human_readable_summary_required": True,
+        "pretty_json_required": True,
+        "no_minified_json_for_operator_review": True,
+        "p133_compatible_response_format": True,
         "gem_multimodal_image_input_allowed": True,
         "image_included_in_main_prompt": True,
         "no_preliminary_image_extraction_step": True,

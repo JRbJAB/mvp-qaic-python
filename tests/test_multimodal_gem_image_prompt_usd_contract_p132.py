@@ -271,3 +271,54 @@ def test_p132_r1_contract_records_language_boundary():
 def test_p132_r1_safety_markers_include_language_contract():
     assert "FRENCH_RESPONSE_VALUES_ALLOWED" in SAFETY_MARKERS
     assert "JSON_KEYS_STABLE_ENGLISH" in SAFETY_MARKERS
+
+
+def test_p132_r2_prompt_requires_human_summary_and_pretty_json(tmp_path):
+    exports = tmp_path / "05_EXPORTS"
+    _make_p131(exports)
+
+    write_multimodal_gem_image_prompt_usd_contract(
+        MultimodalGemImagePromptUsdContractRequest(output_dir=tmp_path / "out", exports_dir=exports)
+    )
+
+    prompt = (tmp_path / "out" / "P132_GEM_MULTIMODAL_PORTFOLIO_PROMPT.md").read_text(
+        encoding="utf-8"
+    )
+    assert "## Résumé lisible" in prompt
+    assert "## JSON strict pretty-printed" in prompt
+    assert "```json" in prompt
+    assert "Ne produis pas de JSON minifié sur une seule ligne" in prompt
+    assert "Le JSON doit rester parseable par P133" in prompt
+    assert '{\n  "status": "REVIEW_REQUIRED"' in prompt
+
+
+def test_p132_r2_manifest_records_pretty_json_prompt_sync(tmp_path):
+    exports = tmp_path / "05_EXPORTS"
+    _make_p131(exports)
+
+    write_multimodal_gem_image_prompt_usd_contract(
+        MultimodalGemImagePromptUsdContractRequest(output_dir=tmp_path / "out", exports_dir=exports)
+    )
+
+    manifest = json.loads((tmp_path / "out" / "P132_MANIFEST.json").read_text(encoding="utf-8"))
+    assert manifest["response_language"] == "fr"
+    assert manifest["json_keys_language"] == "en_stable"
+    assert manifest["human_readable_summary_required"] is True
+    assert manifest["pretty_json_required"] is True
+    assert manifest["no_minified_json_for_operator_review"] is True
+    assert manifest["p133_compatible_response_format"] is True
+
+
+def test_p132_r2_contract_records_pretty_json_prompt_sync():
+    contract = build_contract()
+    assert contract["human_readable_summary_required"] is True
+    assert contract["pretty_json_required"] is True
+    assert contract["no_minified_json_for_operator_review"] is True
+    assert contract["p133_compatible_response_format"] is True
+
+
+def test_p132_r2_safety_markers_include_operator_readability_contract():
+    assert "HUMAN_READABLE_SUMMARY_REQUIRED" in SAFETY_MARKERS
+    assert "PRETTY_JSON_REQUIRED" in SAFETY_MARKERS
+    assert "NO_MINIFIED_JSON_FOR_OPERATOR_REVIEW" in SAFETY_MARKERS
+    assert "P133_COMPATIBLE_RESPONSE_FORMAT" in SAFETY_MARKERS

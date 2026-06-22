@@ -1,0 +1,10 @@
+﻿step,check,required,safety_or_gate,action_if_fail
+1,GEM final answer is valid JSON,REQUIRED,JSON_VALIDATION,BLOCK_IF_FAIL
+2,reference_currency is USD,REQUIRED,USD_REFERENCE_CURRENCY,BLOCK_IF_FAIL
+3,image_used is true,REQUIRED,IMAGE_USAGE_EVIDENCE_REQUIRED,BLOCK_IF_FAIL
+4,image_usage_evidence.status is IMAGE_USED,REQUIRED,IMAGE_NOT_USED_OR_NOT_EVIDENCED,BLOCK_IF_FAIL
+5,visual_evidence_summary is present,REQUIRED,IMAGE_USAGE_EVIDENCE_REQUIRED,REVIEW_IF_MISSING
+6,assets use value_usd and price_usd,REQUIRED,USD_FIELDS,BLOCK_IF_FAIL
+7,human_review_required is true,REQUIRED,HUMAN_REVIEW_REQUIRED,BLOCK_IF_FAIL
+8,no_order_no_sizing is true,REQUIRED,NO_BROKER_ORDER_SIZING,BLOCK_IF_FAIL
+9,missing/unclear values are explicit,REQUIRED,NO_INVENTED_PORTFOLIO_DATA,REVIEW_IF_MISSING
