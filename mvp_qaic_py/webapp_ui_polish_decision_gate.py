@@ -53,19 +53,31 @@ def bounded_index_candidate_names() -> tuple[str, ...]:
 def detect_canonical_index_candidates(repo_root: str | Path) -> list[dict[str, Any]]:
     root = Path(repo_root)
     candidates: list[dict[str, Any]] = []
+    seen_paths: set[str] = set()
 
     for relative_name in bounded_index_candidate_names():
         path = root / relative_name
-        if path.exists() and path.is_file():
-            candidates.append(
-                {
-                    "relative_path": relative_name.replace("\\", "/"),
-                    "exists": True,
-                    "size_bytes": path.stat().st_size,
-                    "role": "possible_canonical_index",
-                    "allowed_to_edit": False,
-                }
-            )
+        if not (path.exists() and path.is_file()):
+            continue
+
+        try:
+            dedupe_key = str(path.resolve()).casefold()
+        except OSError:
+            dedupe_key = str(path).casefold()
+
+        if dedupe_key in seen_paths:
+            continue
+
+        seen_paths.add(dedupe_key)
+        candidates.append(
+            {
+                "relative_path": relative_name.replace("\\", "/"),
+                "exists": True,
+                "size_bytes": path.stat().st_size,
+                "role": "possible_canonical_index",
+                "allowed_to_edit": False,
+            }
+        )
 
     return candidates
 
