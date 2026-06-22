@@ -1,0 +1,7 @@
+﻿check_id,priority,check_name,expected_state,operator_action,safety_marker
+P122-CHECK-001,P0,Use local files only,"No Google Sheet write, no Apps Script execution.",Run only Python local commands from P122_DAILY_OPERATOR_COMMANDS.md.,LOCAL_ONLY
+P122-CHECK-002,P0,Copy prompt to GEM manually,Prompt file exists under P118/P121 runtime pack.,Open P116_GEM_PROMPT_COPY_PASTE.md and paste manually into GEM.,HUMAN_REVIEW_ONLY
+P122-CHECK-003,P0,Capture GEM response locally,Response is pasted into local text or JSON file.,Use P119 command to create P119_REVIEW_QUEUE.csv.,NO_AUTO_APPLY_GEM_RESPONSE
+P122-CHECK-004,P0,Bridge to local journal candidate only,P120 creates CSV/JSON candidate but does not write Sheets.,Review P120_DECISION_JOURNAL_ENTRY.csv manually.,NO_SHEET_WRITE
+P122-CHECK-005,P0,No execution action,"No broker, no order, no sizing, no Revolut X real access from MVP.",Keep all trading decisions human-only and outside MVP automation.,NO_BROKER_NO_ORDER_NO_SIZING
+P122-CHECK-006,P1,Stop after handoff,Do not add UI/live layer until user validates first manual GEM test.,Either stop or explicitly launch P123 UI input helper.,STOP_AFTER_HANDOFF

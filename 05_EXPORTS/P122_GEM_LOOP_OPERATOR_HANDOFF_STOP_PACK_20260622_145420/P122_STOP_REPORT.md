@@ -1,0 +1,6 @@
+# P122 Stop Report
+
+- status: HANDOFF_READY
+- stop_after_handoff: true
+- next: WAIT_OPERATOR_REAL_GEM_TEST_OR_P123_UI_INPUT_HELPER
+- safety: LOCAL_ONLY / HUMAN_REVIEW_ONLY / NO_SHEET_WRITE / NO_BROKER / NO_ORDER / NO_SIZING

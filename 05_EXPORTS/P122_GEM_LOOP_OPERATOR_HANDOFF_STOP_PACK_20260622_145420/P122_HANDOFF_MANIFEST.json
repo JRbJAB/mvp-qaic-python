@@ -1,0 +1,40 @@
+{
+  "files": [
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420\\P122_OPERATOR_HANDOFF_CONTRACT.json",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420\\P122_OPERATOR_HANDOFF.md",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420\\P122_DAILY_OPERATOR_COMMANDS.md",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420\\P122_DAILY_GEM_LOOP_RUNBOOK.md",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420\\P122_READY_CHECKLIST.csv",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420\\P122_STOP_REPORT.md"
+  ],
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "latest_smoke_chain_verified": true,
+  "latest_smoke_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950",
+  "latest_smoke_status": "PASS",
+  "next": "WAIT_OPERATOR_REAL_GEM_TEST_OR_P123_UI_INPUT_HELPER",
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420",
+  "ready_check_count": 6,
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "OPERATOR_HANDOFF_ONLY",
+    "STOP_AFTER_HANDOFF",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "HANDOFF_READY",
+  "step": "P122_GEM_LOOP_OPERATOR_HANDOFF_AND_STOP_PACK",
+  "stop_after_handoff": true,
+  "version": "MVP_QAIC_P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_0_1_0_SAFE"
+}

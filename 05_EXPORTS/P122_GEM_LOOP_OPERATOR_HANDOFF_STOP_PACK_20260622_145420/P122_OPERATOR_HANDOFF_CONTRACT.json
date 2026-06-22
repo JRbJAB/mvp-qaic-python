@@ -1,0 +1,46 @@
+{
+  "contract": "P122_GEM_LOOP_OPERATOR_HANDOFF_AND_STOP_PACK",
+  "forbidden": [
+    "auto_apply_gem_response",
+    "apps_script_execution",
+    "sheet_write",
+    "clasp_push",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "cancel_order",
+    "replace_order",
+    "auto_sizing",
+    "revolutx_real_access_from_mvp",
+    "secret_logging"
+  ],
+  "operator_boundary": "Manual copy/paste with human review only. No live apply.",
+  "purpose": "Give the operator a practical handoff for the local GEM loop P118 -> P119 -> P120, after P121 e2e smoke.",
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "LOCAL_ONLY",
+    "OPERATOR_HANDOFF_ONLY",
+    "STOP_AFTER_HANDOFF",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "HANDOFF_READY_LOCAL_ONLY",
+  "validated_chain": [
+    "P118_DAILY_OPERATOR_SHORTCUT",
+    "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+    "P120_DECISION_JOURNAL_BRIDGE_LOCAL_ONLY",
+    "P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE"
+  ],
+  "version": "MVP_QAIC_P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_0_1_0_SAFE"
+}
