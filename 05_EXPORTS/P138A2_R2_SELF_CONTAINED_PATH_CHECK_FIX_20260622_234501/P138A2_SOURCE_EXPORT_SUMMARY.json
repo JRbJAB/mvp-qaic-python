@@ -1,0 +1,87 @@
+{
+  "source": "Google Drive connector export of 🛠️ MVP QAIC — Crypto Signal OS — DEV.xlsx",
+  "source_spreadsheet_id": "19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0",
+  "export_mode": "live_connector_xlsx_to_csv_snapshot",
+  "generated_for_batch": "P138A2_SHEETS_SOURCE_CSV_CANDIDATES",
+  "sheets": [
+    {
+      "sheet_name": "📘 PROMPT_LIBRARY",
+      "csv_file": "📘 PROMPT_LIBRARY.csv",
+      "rows": 23,
+      "cols": 52,
+      "non_empty_rows": 23
+    },
+    {
+      "sheet_name": "🎛️ PROMPT_VARIANT_CONTROL_CENT",
+      "csv_file": "🎛️ PROMPT_VARIANT_CONTROL_CENT.csv",
+      "rows": 11,
+      "cols": 27,
+      "non_empty_rows": 11
+    },
+    {
+      "sheet_name": "🚀 PROMPT_RUN_QUEUE",
+      "csv_file": "🚀 PROMPT_RUN_QUEUE.csv",
+      "rows": 24,
+      "cols": 43,
+      "non_empty_rows": 24
+    },
+    {
+      "sheet_name": "🧩 PROMPT_READY_TO_COPY",
+      "csv_file": "🧩 PROMPT_READY_TO_COPY.csv",
+      "rows": 14,
+      "cols": 17,
+      "non_empty_rows": 14
+    },
+    {
+      "sheet_name": "🧠 PROMPT_CONTEXT_PACKS",
+      "csv_file": "🧠 PROMPT_CONTEXT_PACKS.csv",
+      "rows": 13,
+      "cols": 22,
+      "non_empty_rows": 13
+    },
+    {
+      "sheet_name": "🔗 PROMPT_LEXIQUE_BRIDGE",
+      "csv_file": "🔗 PROMPT_LEXIQUE_BRIDGE.csv",
+      "rows": 65,
+      "cols": 36,
+      "non_empty_rows": 65
+    },
+    {
+      "sheet_name": "GPT_PROMPT_RUNTIME_SPEC",
+      "csv_file": "GPT_PROMPT_RUNTIME_SPEC.csv",
+      "rows": 6,
+      "cols": 16,
+      "non_empty_rows": 6
+    },
+    {
+      "sheet_name": "OUTPUT_TEMPLATES",
+      "csv_file": "OUTPUT_TEMPLATES.csv",
+      "rows": 6,
+      "cols": 14,
+      "non_empty_rows": 6
+    },
+    {
+      "sheet_name": "DATA_REQUIREMENTS",
+      "csv_file": "DATA_REQUIREMENTS.csv",
+      "rows": 38,
+      "cols": 16,
+      "non_empty_rows": 38
+    },
+    {
+      "sheet_name": "QAIC_OUTPUT_CONTRACT",
+      "csv_file": "QAIC_OUTPUT_CONTRACT.csv",
+      "rows": 14,
+      "cols": 16,
+      "non_empty_rows": 14
+    },
+    {
+      "sheet_name": "🤖 AI_RUNTIME_REFERENCE",
+      "csv_file": "🤖 AI_RUNTIME_REFERENCE.csv",
+      "rows": 7,
+      "cols": 67,
+      "non_empty_rows": 7
+    }
+  ],
+  "no_sheets_write": true,
+  "future_sheets_write_only_after_validation_go": true
+}
