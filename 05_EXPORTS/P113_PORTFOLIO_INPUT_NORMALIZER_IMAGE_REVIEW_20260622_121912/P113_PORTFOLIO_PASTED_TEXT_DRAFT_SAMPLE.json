@@ -1,0 +1,102 @@
+{
+  "runtime": "MVP_QAIC_PORTFOLIO_INPUT_NORMALIZER_IMAGE_REVIEW",
+  "version": "P113_PORTFOLIO_INPUT_NORMALIZER_IMAGE_REVIEW_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "user_goal": "Prepare first GEM portfolio test from pasted text.",
+  "portfolio_input_mode": "PASTED_TEXT_DRAFT",
+  "asset_candidates": [
+    "BTC",
+    "ETH",
+    "SOL"
+  ],
+  "structured_positions": [],
+  "pasted_text": "BTC 0.1 6800\nETH 2 7000\nSOL 10 1400",
+  "draft_text_positions": [
+    {
+      "line_no": 1,
+      "raw_line": "BTC 0.1 6800",
+      "symbols_detected": [
+        "BTC"
+      ],
+      "numeric_tokens_detected": [
+        "0.1",
+        "6800"
+      ],
+      "review_required": true,
+      "confidence": "DRAFT_REVIEW_REQUIRED",
+      "notes": [
+        "Text parser does not assign numeric tokens to quantity/value/price automatically.",
+        "Human confirmation required before portfolio analysis."
+      ]
+    },
+    {
+      "line_no": 2,
+      "raw_line": "ETH 2 7000",
+      "symbols_detected": [
+        "ETH"
+      ],
+      "numeric_tokens_detected": [
+        "2",
+        "7000"
+      ],
+      "review_required": true,
+      "confidence": "DRAFT_REVIEW_REQUIRED",
+      "notes": [
+        "Text parser does not assign numeric tokens to quantity/value/price automatically.",
+        "Human confirmation required before portfolio analysis."
+      ]
+    },
+    {
+      "line_no": 3,
+      "raw_line": "SOL 10 1400",
+      "symbols_detected": [
+        "SOL"
+      ],
+      "numeric_tokens_detected": [
+        "10",
+        "1400"
+      ],
+      "review_required": true,
+      "confidence": "DRAFT_REVIEW_REQUIRED",
+      "notes": [
+        "Text parser does not assign numeric tokens to quantity/value/price automatically.",
+        "Human confirmation required before portfolio analysis."
+      ]
+    }
+  ],
+  "image_reference": "",
+  "image_review_checklist": [],
+  "missing_data": [],
+  "blockers": [],
+  "review_required_reasons": [],
+  "ocr_performed": false,
+  "human_review_required": true,
+  "analysis_allowed_now": true,
+  "gem_prompt_ready": true,
+  "human_decision_only": true,
+  "no_order_no_sizing": true,
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "human_review_only": true,
+    "portfolio_input_normalizer_only": true,
+    "image_review_workflow_only": true,
+    "no_ocr_claim": true,
+    "no_image_visual_extraction_without_human": true,
+    "no_invented_position": true,
+    "no_invented_price": true,
+    "no_invented_value": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "next": "P114_GEM_PROMPT_RUNNER_PACK_COPY_PASTE_AND_JSON_CONTRACT"
+}

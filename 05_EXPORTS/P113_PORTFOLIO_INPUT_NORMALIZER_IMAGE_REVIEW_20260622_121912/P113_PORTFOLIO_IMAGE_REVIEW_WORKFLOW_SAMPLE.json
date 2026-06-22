@@ -1,0 +1,59 @@
+{
+  "runtime": "MVP_QAIC_PORTFOLIO_INPUT_NORMALIZER_IMAGE_REVIEW",
+  "version": "P113_PORTFOLIO_INPUT_NORMALIZER_IMAGE_REVIEW_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "user_goal": "Prepare first GEM portfolio test from a screen capture.",
+  "portfolio_input_mode": "IMAGE_REVIEW_REQUIRED",
+  "asset_candidates": [],
+  "structured_positions": [],
+  "pasted_text": "",
+  "draft_text_positions": [],
+  "image_reference": "portfolio_capture_example.png",
+  "image_review_checklist": [
+    "Confirm that the image/capture reference is correct: portfolio_capture_example.png.",
+    "List every visible asset symbol exactly as displayed.",
+    "Confirm visible quantity/amount for each asset.",
+    "Confirm visible fiat value for each asset if present.",
+    "Confirm average entry price/cost basis only if it is explicitly visible.",
+    "Confirm current price only if explicitly visible or provided as separate market context.",
+    "Do not infer hidden rows or missing assets from the capture.",
+    "Do not generate an order, sizing, stop-loss, take-profit, or trailing action."
+  ],
+  "missing_data": [
+    "portfolio_image_visual_extraction"
+  ],
+  "blockers": [],
+  "review_required_reasons": [
+    "IMAGE_CAPTURE_REQUIRES_HUMAN_VISUAL_CONFIRMATION"
+  ],
+  "ocr_performed": false,
+  "human_review_required": true,
+  "analysis_allowed_now": false,
+  "gem_prompt_ready": true,
+  "human_decision_only": true,
+  "no_order_no_sizing": true,
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "human_review_only": true,
+    "portfolio_input_normalizer_only": true,
+    "image_review_workflow_only": true,
+    "no_ocr_claim": true,
+    "no_image_visual_extraction_without_human": true,
+    "no_invented_position": true,
+    "no_invented_price": true,
+    "no_invented_value": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "next": "P114_GEM_PROMPT_RUNNER_PACK_COPY_PASTE_AND_JSON_CONTRACT"
+}

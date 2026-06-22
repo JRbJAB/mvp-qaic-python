@@ -1,0 +1,33 @@
+﻿{
+    "step":  "P113_PORTFOLIO_INPUT_NORMALIZER_IMAGE_REVIEW_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "source_file":  "mvp_qaic_py/portfolio_input_normalizer.py",
+    "test_file":  "tests/test_portfolio_input_normalizer_p113.py",
+    "outputs":  [
+                    "P113_PORTFOLIO_IMAGE_REVIEW_WORKFLOW_SAMPLE.json",
+                    "P113_PORTFOLIO_IMAGE_REVIEW_CHECKLIST.md",
+                    "P113_PORTFOLIO_PASTED_TEXT_DRAFT_SAMPLE.json"
+                ],
+    "modes":  [
+                  "NONE",
+                  "PASTED_TEXT_DRAFT",
+                  "STRUCTURED",
+                  "IMAGE_REVIEW_REQUIRED"
+              ],
+    "safety":  {
+                   "no_ocr_claim":  true,
+                   "no_invented_position":  true,
+                   "no_invented_price":  true,
+                   "no_invented_value":  true,
+                   "human_review_only":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_sizing":  true,
+                   "no_revolutx_real_access":  true,
+                   "no_sheet_write":  true,
+                   "no_apps_script_execution":  true,
+                   "no_clasp":  true,
+                   "no_public_deploy":  true
+               },
+    "next":  "P114_GEM_PROMPT_RUNNER_PACK_COPY_PASTE_AND_JSON_CONTRACT"
+}
