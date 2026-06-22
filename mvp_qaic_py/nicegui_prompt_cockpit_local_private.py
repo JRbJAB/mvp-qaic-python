@@ -42,6 +42,7 @@ SAFETY_MARKERS = (
     "GEM_RESPONSE_LOCAL_SAVE",
     "PROMPT_COPY_BUTTON",
     "P135_OPERATOR_POLISH",
+    "P135B_UI_RENDER_POLISH",
 )
 
 
@@ -383,7 +384,7 @@ def _operator_polish_runbook(payload: dict[str, Any]) -> str:
 
 
 def build_nicegui_app(payload: dict[str, Any]) -> Any:
-    """Build NiceGUI app lazily with P135 operator polish."""
+    """Build NiceGUI app lazily with P135B operator-grade layout polish."""
 
     try:
         from nicegui import app, ui
@@ -396,6 +397,11 @@ def build_nicegui_app(payload: dict[str, Any]) -> Any:
 
     prompt_text = payload.get("prompt_preview", "")
     sources = payload.get("sources", {})
+    p135 = payload.get("p135_operator_polish", {})
+    p133_command = p135.get(
+        "p133_command_preview",
+        "Génère le pack P135/P135B dry-run pour obtenir la commande P133.",
+    )
 
     @app.get("/favicon.ico")
     async def p134_favicon() -> Response:
@@ -403,59 +409,214 @@ def build_nicegui_app(payload: dict[str, Any]) -> Any:
 
     @ui.page("/")
     def p134_home() -> None:
-        ui.page_title("P134/P135 MVP QAIC Prompt Cockpit")
+        ui.page_title("MVP QAIC — Prompt Cockpit")
 
-        with ui.header().classes("items-center justify-between"):
-            ui.label("P135 — MVP QAIC Prompt Cockpit")
-            ui.label("LOCAL_PRIVATE_ONLY · NO_PUBLIC_DEPLOY · NO_BROKER")
+        ui.add_head_html(
+            """
+            <style>
+              :root {
+                --qaic-bg: #0b1020;
+                --qaic-panel: #111827;
+                --qaic-panel-soft: #172033;
+                --qaic-border: #263249;
+                --qaic-text: #e5e7eb;
+                --qaic-muted: #9ca3af;
+                --qaic-accent: #60a5fa;
+                --qaic-good: #34d399;
+                --qaic-warn: #fbbf24;
+              }
+              body {
+                background: linear-gradient(135deg, #090e1a 0%, #101827 60%, #111827 100%);
+                color: var(--qaic-text);
+              }
+              .q-page {
+                background: transparent;
+              }
+              .qaic-shell {
+                width: min(1500px, calc(100vw - 32px));
+                margin: 0 auto;
+                padding: 18px 0 40px;
+              }
+              .qaic-hero {
+                border: 1px solid var(--qaic-border);
+                background: rgba(17, 24, 39, 0.92);
+                border-radius: 18px;
+                padding: 20px;
+                box-shadow: 0 16px 45px rgba(0,0,0,0.28);
+              }
+              .qaic-card {
+                border: 1px solid var(--qaic-border);
+                background: rgba(17, 24, 39, 0.88);
+                border-radius: 16px;
+                padding: 16px;
+                box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+              }
+              .qaic-title {
+                font-size: 24px;
+                font-weight: 800;
+                letter-spacing: .2px;
+              }
+              .qaic-subtitle {
+                color: var(--qaic-muted);
+                font-size: 14px;
+              }
+              .qaic-pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                border: 1px solid var(--qaic-border);
+                background: var(--qaic-panel-soft);
+                border-radius: 999px;
+                padding: 5px 10px;
+                font-size: 12px;
+                color: var(--qaic-text);
+              }
+              .qaic-pill.good { border-color: rgba(52,211,153,.45); color: var(--qaic-good); }
+              .qaic-pill.warn { border-color: rgba(251,191,36,.45); color: var(--qaic-warn); }
+              .qaic-grid {
+                display: grid;
+                grid-template-columns: 1.15fr 0.85fr;
+                gap: 16px;
+                align-items: start;
+              }
+              @media (max-width: 1050px) {
+                .qaic-grid { grid-template-columns: 1fr; }
+              }
+              .qaic-textarea textarea {
+                font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+                font-size: 12px;
+                line-height: 1.45;
+                min-height: 520px;
+                background: #060a14 !important;
+                color: #e5e7eb !important;
+              }
+              .qaic-response textarea {
+                font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+                font-size: 12px;
+                line-height: 1.45;
+                min-height: 360px;
+                background: #060a14 !important;
+                color: #e5e7eb !important;
+              }
+              .qaic-code pre {
+                max-height: 330px;
+                overflow: auto;
+                border-radius: 12px;
+              }
+              .qaic-small {
+                color: var(--qaic-muted);
+                font-size: 12px;
+              }
+            </style>
+            """
+        )
 
-        with ui.column().classes("w-full gap-4"):
-            ui.markdown(
-                "## Cockpit opérateur local privé\n"
-                f"- URL: `{payload['local_url']}`\n"
-                "- Flux: P132-R2 prompt → GEM avec image → P133 gate local\n"
-                "- Sécurité: human review, no order, no sizing, no auto apply"
-            )
+        with ui.column().classes("qaic-shell gap-4"):
+            with ui.row().classes("qaic-hero w-full items-center justify-between"):
+                with ui.column().classes("gap-1"):
+                    ui.label("MVP QAIC — GEM Portfolio Prompt Cockpit").classes("qaic-title")
+                    ui.label(
+                        "Flux local privé : P132-R2 prompt → GEM multimodal → P133 gate"
+                    ).classes("qaic-subtitle")
+                with ui.row().classes("gap-2"):
+                    ui.label("127.0.0.1:8088").classes("qaic-pill good")
+                    ui.label("NO_PUBLIC_DEPLOY").classes("qaic-pill")
+                    ui.label("NO_BROKER / NO_ORDER / NO_SIZING").classes("qaic-pill warn")
 
-            with ui.card().classes("w-full"):
-                ui.markdown("### 1) Sources détectées")
-                ui.code(json.dumps(sources, ensure_ascii=False, indent=2), language="json")
+            with ui.row().classes("w-full gap-2"):
+                ui.label("Prompt copiable").classes("qaic-pill good")
+                ui.label("Réponse GEM manuelle").classes("qaic-pill")
+                ui.label("Commande P133 prête").classes("qaic-pill")
+                ui.label("Human review obligatoire").classes("qaic-pill warn")
 
-            with ui.card().classes("w-full"):
-                ui.markdown("### 2) Prompt P132-R2")
-                prompt_area = ui.textarea(value=prompt_text).props("readonly").classes("w-full")
-                prompt_area.props("rows=24")
-                ui.button(
-                    "Copier le prompt",
-                    on_click=lambda: ui.run_javascript(
-                        "navigator.clipboard.writeText("
-                        + json.dumps(prompt_text, ensure_ascii=False)
-                        + ")"
-                    ),
-                )
+            with ui.element("div").classes("qaic-grid"):
+                with ui.column().classes("gap-4"):
+                    with ui.card().classes("qaic-card w-full"):
+                        ui.markdown("### 1) Prompt GEM P132-R2")
+                        ui.markdown(
+                            "Copie ce prompt dans GEM, joins la capture Revolut X dans le même message, "
+                            "puis récupère une réponse avec résumé lisible + JSON pretty."
+                        ).classes("qaic-small")
+                        prompt_area = (
+                            ui.textarea(value=prompt_text)
+                            .props("readonly outlined")
+                            .classes("qaic-textarea w-full")
+                        )
+                        prompt_area.props("rows=28")
+                        with ui.row().classes("gap-2"):
+                            ui.button(
+                                "Copier le prompt",
+                                on_click=lambda: ui.run_javascript(
+                                    "navigator.clipboard.writeText("
+                                    + json.dumps(prompt_text, ensure_ascii=False)
+                                    + ")"
+                                ),
+                            )
+                            ui.button(
+                                "Ouvrir GEM dans un nouvel onglet",
+                                on_click=lambda: ui.run_javascript(
+                                    "window.open('https://gemini.google.com/', '_blank')"
+                                ),
+                            )
 
-            with ui.card().classes("w-full"):
-                ui.markdown("### 3) Réponse GEM")
-                ui.markdown(
-                    "Colle ici la réponse GEM. Pour P135, la sauvegarde fiable reste locale fichier/runbook ; "
-                    "le cockpit évite les appels externes et n’applique rien automatiquement."
-                )
-                ui.textarea(placeholder="Coller ici la réponse GEM...").classes("w-full").props(
-                    "rows=18"
-                )
+                    with ui.card().classes("qaic-card w-full"):
+                        ui.markdown("### 2) Réponse GEM")
+                        ui.markdown(
+                            "Colle ici la réponse GEM pour lecture opérateur. La sauvegarde fiable passe par "
+                            "le fichier local `P135_GEM_RESPONSE_INPUT.md` et la commande P133."
+                        ).classes("qaic-small")
+                        ui.textarea(placeholder="Coller ici la réponse GEM complète...").props(
+                            "outlined"
+                        ).classes("qaic-response w-full")
 
-            with ui.card().classes("w-full"):
-                ui.markdown("### 4) Commande P133 locale")
-                p135 = payload.get("p135_operator_polish", {})
-                command = p135.get(
-                    "p133_command_preview",
-                    "Génère le pack P135 dry-run pour obtenir la commande P133.",
-                )
-                ui.code(command, language="powershell")
+                with ui.column().classes("gap-4"):
+                    with ui.card().classes("qaic-card w-full"):
+                        ui.markdown("### Statut cockpit")
+                        ui.markdown(
+                            f"""
+                            - **Statut** : `{payload.get("status")}`
+                            - **URL locale** : `{payload.get("local_url")}`
+                            - **Prompt détecté** : `{bool(sources.get("prompt_file"))}`
+                            - **P133 gate détecté** : `{bool(sources.get("p133_gate_file"))}`
+                            - **Mode** : local privé uniquement
+                            """
+                        )
 
-            with ui.card().classes("w-full"):
-                ui.markdown("### Sécurité")
-                ui.code("\n".join(SAFETY_MARKERS))
+                    with ui.card().classes("qaic-card w-full"):
+                        ui.markdown("### 3) Commande P133 locale")
+                        ui.markdown(
+                            "Après sauvegarde de la réponse GEM dans le fichier local, lance cette commande "
+                            "pour produire le JSON pretty + rapport human review."
+                        ).classes("qaic-small")
+                        ui.code(p133_command, language="powershell").classes("qaic-code")
+
+                    with ui.card().classes("qaic-card w-full"):
+                        ui.markdown("### Sources détectées")
+                        ui.code(
+                            json.dumps(sources, ensure_ascii=False, indent=2), language="json"
+                        ).classes("qaic-code")
+
+                    with ui.card().classes("qaic-card w-full"):
+                        ui.markdown("### Sécurité")
+                        visible_markers = [
+                            marker
+                            for marker in SAFETY_MARKERS
+                            if marker
+                            in {
+                                "LOCAL_PRIVATE_ONLY",
+                                "NO_PUBLIC_DEPLOY",
+                                "NO_TUNNEL",
+                                "NO_REMOTE_ACCESS",
+                                "NO_BROKER",
+                                "NO_ORDER",
+                                "NO_SIZING",
+                                "NO_AUTO_APPLY_GEM_RESPONSE",
+                                "NO_REVOLUTX_REAL_ACCESS_FROM_MVP",
+                                "HUMAN_REVIEW_REQUIRED",
+                                "P135B_UI_RENDER_POLISH",
+                            }
+                        ]
+                        ui.code("\n".join(visible_markers), language="text")
 
     return ui
 

@@ -124,3 +124,37 @@ def test_p135_r2_pack_keeps_p134_compatibility_files(tmp_path):
     assert (out / "P134_LATEST_P132_PROMPT_COPY.md").exists()
     assert (out / "P135_OPERATOR_POLISH_CONTRACT.json").exists()
     assert (out / "P135_P133_CAPTURE_COMMAND.ps1").exists()
+
+
+def test_p135b_ui_render_polish_source_contains_operator_layout():
+    source = Path("mvp_qaic_py/nicegui_prompt_cockpit_local_private.py").read_text(encoding="utf-8")
+    assert "P135B_UI_RENDER_POLISH" in source
+    assert "MVP QAIC — GEM Portfolio Prompt Cockpit" in source
+    assert "qaic-hero" in source
+    assert "qaic-grid" in source
+    assert "qaic-card" in source
+    assert "Ouvrir GEM dans un nouvel onglet" in source
+    assert "window.open('https://gemini.google.com/'" in source
+    assert '@ui.page("/")' in source
+
+
+def test_p135b_operator_payload_keeps_p134_and_p135_files(tmp_path):
+    out = tmp_path / "out"
+    payload = write_operator_polish_pack(
+        PromptCockpitRequest(
+            output_dir=out,
+            generated_at_utc="2026-06-22T00:00:00Z",
+        )
+    )
+
+    assert payload["p135_operator_polish"]["status"] == "OPERATOR_POLISH_READY"
+    assert "P135B_UI_RENDER_POLISH" in payload["safety_markers"]
+    assert (out / "P134_NICEGUI_PROMPT_COCKPIT_CONTRACT.json").exists()
+    assert (out / "P135_OPERATOR_POLISH_CONTRACT.json").exists()
+    assert (out / "P135_P133_CAPTURE_COMMAND.ps1").exists()
+
+
+def test_p135b_r2_marker_and_legacy_label_are_present():
+    source = Path("mvp_qaic_py/nicegui_prompt_cockpit_local_private.py").read_text(encoding="utf-8")
+    assert "Commande P133 locale" in source
+    assert "P135B_UI_RENDER_POLISH" in SAFETY_MARKERS
