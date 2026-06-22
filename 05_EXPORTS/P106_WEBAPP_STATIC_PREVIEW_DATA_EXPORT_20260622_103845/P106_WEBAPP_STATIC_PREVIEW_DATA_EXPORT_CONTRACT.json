@@ -1,0 +1,31 @@
+﻿{
+    "step":  "P106_WEBAPP_STATIC_PREVIEW_DATA_EXPORT_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "depends_on":  "P105_LEXIQUE_METHOD_PROMPT_CONTEXT_WEBAPP",
+    "source_file":  "mvp_qaic_py/webapp_static_preview_export.py",
+    "test_file":  "tests/test_webapp_static_preview_export_p106.py",
+    "preview_dir":  "STATIC_PREVIEW",
+    "static_files":  [
+                         "index.html",
+                         "data/webapp_pack.json",
+                         "data/context_pack.json",
+                         "data/prompt_payload.json",
+                         "preview_manifest.json",
+                         "README_PREVIEW.md"
+                     ],
+    "safety":  {
+                   "no_revolutx_real_access":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_cancel":  true,
+                   "no_replace_order":  true,
+                   "no_auto_sizing":  true,
+                   "no_secret_log":  true,
+                   "no_sheet_write":  true,
+                   "no_apps_script_execution":  true,
+                   "no_clasp":  true,
+                   "no_public_deploy":  true,
+                   "local_static_preview_only":  true
+               },
+    "next":  "P107_PRIVATE_PREVIEW_RELEASE_CANDIDATE_FAST_FUSE"
+}

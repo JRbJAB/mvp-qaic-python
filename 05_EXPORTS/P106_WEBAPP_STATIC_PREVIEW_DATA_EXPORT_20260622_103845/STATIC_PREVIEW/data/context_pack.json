@@ -1,0 +1,64 @@
+{
+  "runtime": "MVP_QAIC_LEXIQUE_METHOD_PROMPT_CONTEXT_WEBAPP",
+  "version": "P105_LEXIQUE_METHOD_PROMPT_CONTEXT_WEBAPP_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "scope": {
+    "mvp": "lexique_webapp_prompts_methods_benchmark_public",
+    "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+  },
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "prompt_decision_status": "PUBLIC_PROMPT_READY",
+  "portfolio_assets": [
+    "BTC",
+    "ETH"
+  ],
+  "matched_lexique_count": 2,
+  "matched_method_count": 1,
+  "missing_context": [],
+  "context_cards": {
+    "lexique_cards": [
+      {
+        "card_id": "lexique::lexique_0001",
+        "title": "BTC",
+        "subtitle": "ASSET",
+        "body": "Bitcoin, crypto-actif de référence. Analyse publique uniquement dans le MVP.",
+        "source": "local_context"
+      },
+      {
+        "card_id": "lexique::lexique_0002",
+        "title": "ETH",
+        "subtitle": "ASSET",
+        "body": "Ethereum, réseau smart contracts et actif crypto.",
+        "source": "local_context"
+      }
+    ],
+    "method_cards": [
+      {
+        "card_id": "method::portfolio_educational_review",
+        "title": "Portfolio educational review",
+        "subtitle": "portfolio, risk, education",
+        "body": "Revue pédagogique des expositions, concentrations, risques et données manquantes.",
+        "risk_notes": "Aucun conseil financier personnalisé ni exécution."
+      }
+    ]
+  },
+  "webapp_pack_summary": {
+    "route_count": 6,
+    "section_count": 8,
+    "prompt_template_count": 3
+  }
+}

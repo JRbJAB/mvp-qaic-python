@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>MVP QAIC — Static Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; line-height: 1.45; }
+    header, section { margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .card, article { border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+    code { background: #f4f4f4; padding: 2px 4px; }
+    .blocked { color: #8a1f11; }
+    .safe { color: #126b2d; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MVP QAIC — WebApp Preview</h1>
+    <p><strong>Scope MVP:</strong> lexique + webapp + prompts + méthodes + benchmark public.</p>
+    <p><strong>QAIC privé:</strong> backend quant + risque + Revolut X + exécution verrouillée.</p>
+    <p class="safe">Safety: no RevolutX réel, no broker, no order, no sizing, no public deploy.</p>
+  </header>
+
+  <section>
+    <h2>Routes prévues</h2>
+    <ul><li><code>/</code> — home</li>
+<li><code>/prompts</code> — prompt_library</li>
+<li><code>/benchmark</code> — benchmark</li>
+<li><code>/lexique</code> — lexique</li>
+<li><code>/methodes</code> — methods</li>
+<li><code>/portfolio-review</code> — portfolio_prompt_review</li></ul>
+  </section>
+
+  <section>
+    <h2>Benchmark prompt</h2>
+    <div class="grid">
+      <div class="card">Qualité: <strong>100</strong></div>
+      <div class="card">Sécurité publique: <strong>100</strong></div>
+      <div class="card">Complétude données: <strong>100</strong></div>
+      <div class="card">Utilité pédagogique: <strong>100</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lexique context</h2>
+    <div class="grid"><article><h3>BTC</h3><p>Bitcoin, crypto-actif de référence. Analyse publique uniquement dans le MVP.</p></article>
+<article><h3>ETH</h3><p>Ethereum, réseau smart contracts et actif crypto.</p></article></div>
+  </section>
+
+  <section>
+    <h2>Méthodes context</h2>
+    <div class="grid"><article><h3>Portfolio educational review</h3><p>Revue pédagogique des expositions, concentrations, risques et données manquantes.</p></article></div>
+  </section>
+
+  <section>
+    <h2>Data files</h2>
+    <ul>
+      <li><code>data/webapp_pack.json</code></li>
+      <li><code>data/context_pack.json</code></li>
+      <li><code>data/prompt_payload.json</code></li>
+      <li><code>preview_manifest.json</code></li>
+    </ul>
+  </section>
+</body>
+</html>

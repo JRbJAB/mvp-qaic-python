@@ -1,0 +1,21 @@
+# MVP QAIC — Static Preview
+
+Local static preview only.
+
+## Open
+
+Open `index.html` locally.
+
+## Safety
+
+- NO_REVOLUTX_REAL_ACCESS
+- NO_BROKER
+- NO_ORDER
+- NO_CANCEL
+- NO_REPLACE_ORDER
+- NO_AUTO_SIZING
+- NO_SECRET_LOG
+- NO_SHEET_WRITE
+- NO_APPS_SCRIPT_EXECUTION
+- NO_CLASP
+- NO_PUBLIC_DEPLOY
