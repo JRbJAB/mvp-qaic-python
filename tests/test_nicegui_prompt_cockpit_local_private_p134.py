@@ -157,3 +157,17 @@ def test_p134_cli_dry_run_export(tmp_path):
     assert "NICEGUI_PROMPT_COCKPIT_LOCAL_PRIVATE_READY" in completed.stdout
     assert "http://127.0.0.1:8088" in completed.stdout
     assert (tmp_path / "out" / "P134_NICEGUI_PROMPT_COCKPIT_CONTRACT.json").exists()
+
+
+def test_p134a_source_uses_explicit_root_page_and_favicon_route():
+    source = Path("mvp_qaic_py/nicegui_prompt_cockpit_local_private.py").read_text(encoding="utf-8")
+    assert '@ui.page("/")' in source
+    assert '@app.get("/favicon.ico")' in source
+    assert "EXPLICIT_NICEGUI_ROOT_PAGE" in source
+    assert "FAVICON_204_ROUTE" in source
+
+
+def test_p134a_payload_keeps_launch_fix_safety_markers(tmp_path):
+    payload = build_prompt_cockpit_payload(PromptCockpitRequest(output_dir=tmp_path / "out"))
+    assert "EXPLICIT_NICEGUI_ROOT_PAGE" in payload["safety_markers"]
+    assert "FAVICON_204_ROUTE" in payload["safety_markers"]

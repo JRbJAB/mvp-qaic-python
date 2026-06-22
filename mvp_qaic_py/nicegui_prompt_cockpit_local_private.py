@@ -34,6 +34,8 @@ SAFETY_MARKERS = (
     "HUMAN_REVIEW_REQUIRED",
     "P132_R2_PROMPT_SOURCE",
     "P133_RESPONSE_CAPTURE_GATE_COMPATIBLE",
+    "EXPLICIT_NICEGUI_ROOT_PAGE",
+    "FAVICON_204_ROUTE",
 )
 
 
@@ -265,8 +267,16 @@ def write_prompt_cockpit_pack(request: PromptCockpitRequest) -> dict[str, Any]:
 
 
 def build_nicegui_app(payload: dict[str, Any]) -> Any:
+    """Build NiceGUI app lazily with an explicit root page.
+
+    P134A fix: NiceGUI must expose an explicit `/` page. Without it, opening the
+    browser can trigger the framework's script-run fallback on 404 handling and
+    terminate `python -m ... --launch`.
+    """
+
     try:
-        from nicegui import ui
+        from nicegui import app, ui
+        from starlette.responses import Response
     except ImportError as exc:  # pragma: no cover
         raise RuntimeError(
             "NiceGUI is not installed. Install it outside this script if you want launch mode. "
@@ -276,36 +286,44 @@ def build_nicegui_app(payload: dict[str, Any]) -> Any:
     prompt_text = payload.get("prompt_preview", "")
     sources = payload.get("sources", {})
 
-    ui.page_title("P134 MVP QAIC Prompt Cockpit")
+    @app.get("/favicon.ico")
+    async def p134_favicon() -> Response:
+        return Response(status_code=204)
 
-    with ui.header().classes("items-center justify-between"):
-        ui.label("P134 — NiceGUI Prompt Cockpit Local Private")
-        ui.label("LOCAL_PRIVATE_ONLY · NO_PUBLIC_DEPLOY · NO_BROKER")
+    @ui.page("/")
+    def p134_home() -> None:
+        ui.page_title("P134 MVP QAIC Prompt Cockpit")
 
-    with ui.column().classes("w-full gap-4"):
-        ui.markdown(
-            "## Cockpit local privé\n"
-            f"- URL: `{payload['local_url']}`\n"
-            "- Host autorisé: `127.0.0.1` / `localhost`\n"
-            "- Sécurité: human review, no order, no sizing, no auto apply"
-        )
+        with ui.header().classes("items-center justify-between"):
+            ui.label("P134 — NiceGUI Prompt Cockpit Local Private")
+            ui.label("LOCAL_PRIVATE_ONLY · NO_PUBLIC_DEPLOY · NO_BROKER")
 
-        ui.markdown("## Sources")
-        ui.code(json.dumps(sources, ensure_ascii=False, indent=2), language="json")
+        with ui.column().classes("w-full gap-4"):
+            ui.markdown(
+                "## Cockpit local privé\n"
+                f"- URL: `{payload['local_url']}`\n"
+                "- Host autorisé: `127.0.0.1` / `localhost`\n"
+                "- Sécurité: human review, no order, no sizing, no auto apply"
+            )
 
-        ui.markdown("## Prompt P132-R2 à copier dans GEM")
-        prompt_area = ui.textarea(value=prompt_text).props("readonly").classes("w-full")
-        prompt_area.props("rows=24")
+            ui.markdown("## Sources")
+            ui.code(json.dumps(sources, ensure_ascii=False, indent=2), language="json")
 
-        ui.markdown(
-            "## Réponse GEM\n"
-            "Colle ici la réponse GEM puis sauvegarde-la via ton workflow local/P133. "
-            "Le cockpit ne fait aucun appel provider et n’applique rien automatiquement."
-        )
-        ui.textarea(placeholder="Coller ici la réponse GEM...").classes("w-full").props("rows=18")
+            ui.markdown("## Prompt P132-R2 à copier dans GEM")
+            prompt_area = ui.textarea(value=prompt_text).props("readonly").classes("w-full")
+            prompt_area.props("rows=24")
 
-        ui.markdown("## Sécurité")
-        ui.code("\n".join(SAFETY_MARKERS))
+            ui.markdown(
+                "## Réponse GEM\n"
+                "Colle ici la réponse GEM puis sauvegarde-la via ton workflow local/P133. "
+                "Le cockpit ne fait aucun appel provider et n’applique rien automatiquement."
+            )
+            ui.textarea(placeholder="Coller ici la réponse GEM...").classes("w-full").props(
+                "rows=18"
+            )
+
+            ui.markdown("## Sécurité")
+            ui.code("\n".join(SAFETY_MARKERS))
 
     return ui
 
