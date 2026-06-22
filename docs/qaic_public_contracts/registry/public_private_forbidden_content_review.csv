@@ -1,0 +1,5 @@
+pattern,file,line_number,classification,reason,excerpt
+"portfolio_balance","docs/public_method_contracts/registry/public_field_dictionary.csv",22,"FALSE_POSITIVE_DOCUMENTED_EXCLUSION","The pattern is present to document a public MVP exclusion or private-only field.","portfolio_balance,QAIC_PRIVATE,FALSE,FALSE,Private portfolio field"
+"broker_secret","docs/public_method_contracts/registry/public_field_dictionary.csv",23,"FALSE_POSITIVE_DOCUMENTED_EXCLUSION","The pattern is present to document a public MVP exclusion or private-only field.","broker_secret,QAIC_PRIVATE,FALSE,FALSE,Forbidden secret field"
+"real_order_allowed","docs/public_method_contracts/registry/public_field_dictionary.csv",24,"FALSE_POSITIVE_DOCUMENTED_EXCLUSION","The pattern is present to document a public MVP exclusion or private-only field.","real_order_allowed,QAIC_PRIVATE,FALSE,FALSE,Forbidden in MVP public"
+"auto_sizing_allowed","docs/public_method_contracts/registry/public_field_dictionary.csv",25,"FALSE_POSITIVE_DOCUMENTED_EXCLUSION","The pattern is present to document a public MVP exclusion or private-only field.","auto_sizing_allowed,QAIC_PRIVATE,FALSE,FALSE,Forbidden in MVP public"

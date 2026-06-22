@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qaic.public.lexicon_entry.schema.v1",
+  "title": "QAIC Public Lexicon Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["term_id", "term", "category", "definition_short", "review_status", "last_updated"],
+  "properties": {
+    "term_id": {"type": "string", "minLength": 1},
+    "term": {"type": "string", "minLength": 1},
+    "category": {"type": "string", "minLength": 1},
+    "definition_short": {"type": "string", "minLength": 1},
+    "definition_long": {"type": "string"},
+    "example_public_safe": {"type": "string"},
+    "related_terms": {"type": "string"},
+    "difficulty_level": {"type": "string", "enum": ["BEGINNER", "INTERMEDIATE", "ADVANCED", ""]},
+    "review_status": {"type": "string", "enum": ["DRAFT", "REVIEWED", "PUBLISHED", "RETIRED"]},
+    "last_updated": {"type": "string"}
+  }
+}

@@ -1,0 +1,7 @@
+check,result
+"public_scaffold_exists","True"
+"lexicon_schema_exists","True"
+"prompt_schema_exists","True"
+"taxonomy_schema_exists","True"
+revolut_exclusion_file_hits,3
+public_private_boundary_status,PASS

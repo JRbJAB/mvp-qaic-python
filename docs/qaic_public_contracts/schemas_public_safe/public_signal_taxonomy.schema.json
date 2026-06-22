@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qaic.public.signal_taxonomy.schema.v1",
+  "title": "QAIC Public Signal Taxonomy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["signal_type_id", "signal_type_name", "description", "interpretation_public_safe", "risk_warning", "not_financial_advice", "review_status", "last_updated"],
+  "properties": {
+    "signal_type_id": {"type": "string", "minLength": 1},
+    "signal_type_name": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "indicator_family": {"type": "string"},
+    "interpretation_public_safe": {"type": "string", "minLength": 1},
+    "common_misuse": {"type": "string"},
+    "risk_warning": {"type": "string", "minLength": 1},
+    "not_financial_advice": {"type": "boolean", "const": true},
+    "review_status": {"type": "string", "enum": ["DRAFT", "REVIEWED", "PUBLISHED", "RETIRED"]},
+    "last_updated": {"type": "string"}
+  }
+}
