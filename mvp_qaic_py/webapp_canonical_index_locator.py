@@ -84,6 +84,15 @@ def normalize_locator_roots(roots: list[dict[str, str]] | None) -> list[dict[str
     return normalized
 
 
+def load_locator_roots_json(path: str | Path) -> list[dict[str, str]]:
+    payload = json.loads(Path(path).read_text(encoding="utf-8-sig"))
+    if isinstance(payload, dict):
+        payload = [payload]
+    if not isinstance(payload, list):
+        raise ValueError("locator roots JSON must be a list or object")
+    return normalize_locator_roots([item for item in payload if isinstance(item, dict)])
+
+
 def score_locator_candidate(relative_path: str, root_role: str) -> dict[str, Any]:
     path_cf = relative_path.casefold()
     name_cf = Path(relative_path).name.casefold()
@@ -231,7 +240,7 @@ def build_locator_audit(
 
     return {
         "runtime": "MVP_QAIC_CANONICAL_WEBAPP_INDEX_LOCATOR_READONLY",
-        "version": "P110A_CANONICAL_WEBAPP_INDEX_LOCATOR_READONLY_0_1_0",
+        "version": "P110A_R2_CANONICAL_WEBAPP_INDEX_LOCATOR_READONLY_0_1_0",
         "created_at_utc": _now_iso(now_utc),
         "decision_status": decision_status,
         "scope": {
@@ -282,7 +291,7 @@ def render_locator_review_markdown(audit: dict[str, Any]) -> str:
         else "`NONE`"
     )
 
-    return f"""# P110A — Canonical WebApp Index Locator Readonly
+    return f"""# P110A-R2 — Canonical WebApp Index Locator Readonly
 
 ## Decision status
 

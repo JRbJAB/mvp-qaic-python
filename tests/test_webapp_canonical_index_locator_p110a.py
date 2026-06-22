@@ -3,6 +3,7 @@ from __future__ import annotations
 from mvp_qaic_py.webapp_canonical_index_locator import (
     CANONICAL_INDEX_LOCATOR_SAFETY,
     build_locator_audit,
+    load_locator_roots_json,
     locate_index_candidates,
     normalize_locator_roots,
     score_locator_candidate,
@@ -64,6 +65,18 @@ def test_p110a_audit_review_required_even_when_candidate_found(tmp_path) -> None
     assert audit["decision_status"] == "CANONICAL_INDEX_CANDIDATE_FOUND_REVIEW_REQUIRED"
     assert audit["top_candidate"]["canonical_score"] == 95
     assert audit["top_candidate"]["allowed_to_edit"] is False
+
+
+def test_p110a_load_locator_roots_json_accepts_utf8_bom(tmp_path) -> None:
+    path = tmp_path / "roots.json"
+    path.write_text(
+        '[{"root_id":"demo","path":"X:/demo","role":"mvp qaic root"}]',
+        encoding="utf-8-sig",
+    )
+
+    roots = load_locator_roots_json(path)
+
+    assert roots == [{"root_id": "demo", "path": "X:/demo", "role": "mvp qaic root"}]
 
 
 def test_p110a_normalize_roots_and_safety_locked() -> None:

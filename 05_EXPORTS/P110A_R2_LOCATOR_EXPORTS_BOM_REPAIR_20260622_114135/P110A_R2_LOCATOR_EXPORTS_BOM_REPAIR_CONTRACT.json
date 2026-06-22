@@ -1,0 +1,25 @@
+﻿{
+    "step":  "P110A_R2_LOCATOR_EXPORTS_BOM_REPAIR_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "repairs":  [
+                    "replace corrupted R1 here-string patch with full controlled module rewrite",
+                    "read locator roots JSON with utf-8-sig compatibility",
+                    "regenerate audit JSON",
+                    "regenerate candidates CSV",
+                    "regenerate review markdown",
+                    "block commit if required locator outputs are missing"
+                ],
+    "depends_on":  "P110A_PARTIAL_COMMIT_7150D69",
+    "source_file":  "mvp_qaic_py/webapp_canonical_index_locator.py",
+    "test_file":  "tests/test_webapp_canonical_index_locator_p110a.py",
+    "safety":  {
+                   "no_index_html_edit":  true,
+                   "no_index_html_generation":  true,
+                   "no_public_deploy":  true,
+                   "no_clasp":  true,
+                   "no_apps_script_execution":  true,
+                   "no_sheet_write":  true,
+                   "no_broker_order_sizing":  true
+               },
+    "next":  "P110B_HUMAN_CONFIRM_CANONICAL_INDEX_OR_PATCH_PLAN"
+}
