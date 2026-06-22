@@ -1,0 +1,40 @@
+{
+  "blocked_review_required_count": 1,
+  "exports_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS",
+  "files": [
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P126_DAILY_RUN_REGISTRY_20260622_155955\\P126_DAILY_RUN_REGISTRY.csv",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P126_DAILY_RUN_REGISTRY_20260622_155955\\P126_DAILY_RUN_REGISTRY.json",
+    "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P126_DAILY_RUN_REGISTRY_20260622_155955\\P126_RUN_REGISTRY_REPORT.md"
+  ],
+  "generated_at_utc": "2026-06-22T00:00:00Z",
+  "human_review_only": true,
+  "next": "P127_OPERATOR_RUN_SHORTCUT_OR_REAL_GEM_TEST",
+  "no_auto_apply_gem_response": true,
+  "no_order_no_sizing": true,
+  "no_sheet_write": true,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P126_DAILY_RUN_REGISTRY_20260622_155955",
+  "pending_count": 0,
+  "ready_for_operator_review_count": 1,
+  "row_count": 2,
+  "run_id": "P126-DAILY-RUN-REGISTRY-20260622",
+  "safety_markers": [
+    "LOCAL_ONLY",
+    "REGISTRY_ONLY",
+    "HUMAN_REVIEW_ONLY",
+    "NO_INDEX_EDIT",
+    "NO_CLASP",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_SHEET_WRITE",
+    "NO_PUBLIC_DEPLOY",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_AUTO_APPLY_GEM_RESPONSE",
+    "NO_REVOLUTX_REAL_ACCESS_FROM_MVP"
+  ],
+  "status": "RUN_REGISTRY_READY",
+  "step": "P126_DAILY_RUN_REGISTRY_LOCAL_ONLY",
+  "version": "MVP_QAIC_P126_DAILY_RUN_REGISTRY_LOCAL_ONLY_0_1_1_SAFE"
+}

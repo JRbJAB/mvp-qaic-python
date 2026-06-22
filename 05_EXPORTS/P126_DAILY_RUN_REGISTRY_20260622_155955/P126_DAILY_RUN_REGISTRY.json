@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "blocker_count": "0",
+      "decision_status": "READY_FOR_OPERATOR_REVIEW",
+      "finding_count": "0",
+      "human_review_only": "true",
+      "missing_data_count": "0",
+      "next": "REAL_GEM_TEST_OR_P126_DAILY_RUN_REGISTRY",
+      "no_auto_apply_gem_response": "true",
+      "no_order_no_sizing": "true",
+      "no_sheet_write": "true",
+      "p124_run_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\LOCAL_TEST_FILLED_P124_REAL_GEM_20260622_155009",
+      "p124_status": "INPUT_HELPER_READY",
+      "p125_review_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\LOCAL_TEST_P125_REVIEW_READY_20260622_155009",
+      "p125_status": "READY_FOR_OPERATOR_REVIEW",
+      "ready_for_operator_review": "true",
+      "ready_for_real_gem_manual_test": "true",
+      "registry_row_id": "P126-ROW-0001",
+      "run_family": "P124_P125_REVIEW"
+    },
+    {
+      "blocker_count": "1",
+      "decision_status": "BLOCKED_REVIEW_REQUIRED",
+      "finding_count": "3",
+      "human_review_only": "true",
+      "missing_data_count": "2",
+      "next": "REAL_GEM_TEST_OR_P126_DAILY_RUN_REGISTRY",
+      "no_auto_apply_gem_response": "true",
+      "no_order_no_sizing": "true",
+      "no_sheet_write": "true",
+      "p124_run_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P124_LOCAL_INPUT_HELPER_REAL_GEM_TEST_20260622_153328",
+      "p124_status": "INPUT_HELPER_READY",
+      "p125_review_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P125_REAL_GEM_MANUAL_TEST_REVIEW_UX_20260622_154321",
+      "p125_status": "BLOCKED_REVIEW_REQUIRED",
+      "ready_for_operator_review": "false",
+      "ready_for_real_gem_manual_test": "true",
+      "registry_row_id": "P126-ROW-0002",
+      "run_family": "P124_P125_REVIEW"
+    }
+  ],
+  "version": "MVP_QAIC_P126_DAILY_RUN_REGISTRY_LOCAL_ONLY_0_1_1_SAFE"
+}
