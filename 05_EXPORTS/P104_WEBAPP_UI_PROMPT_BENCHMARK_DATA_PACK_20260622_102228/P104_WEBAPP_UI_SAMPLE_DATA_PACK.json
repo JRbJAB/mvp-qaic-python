@@ -1,0 +1,528 @@
+{
+  "runtime": "MVP_QAIC_WEBAPP_UI_PROMPT_BENCHMARK_DATA_PACK",
+  "version": "P104_WEBAPP_UI_PROMPT_BENCHMARK_DATA_PACK_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "scope": {
+    "mvp": "lexique_webapp_prompts_methods_benchmark_public",
+    "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+  },
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "inherits_p103_safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "portfolio_on_demand_supported": true,
+    "image_capture_reference_supported": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "public_educational_mode": true
+  },
+  "ui_schema": {
+    "app_id": "mvp_qaic_public_prompt_webapp",
+    "sections": [
+      {
+        "section_id": "prompt_input",
+        "title": "Prompt",
+        "component": "textarea",
+        "required": true
+      },
+      {
+        "section_id": "portfolio_input",
+        "title": "Portfolio optionnel",
+        "component": "tabs",
+        "modes": [
+          {
+            "mode": "none",
+            "label": "Aucun portfolio",
+            "component": "empty_state"
+          },
+          {
+            "mode": "pasted_text",
+            "label": "Copier-coller",
+            "component": "textarea"
+          },
+          {
+            "mode": "structured",
+            "label": "JSON structuré",
+            "component": "json_editor"
+          },
+          {
+            "mode": "image_capture",
+            "label": "Capture image",
+            "component": "image_upload_reference",
+            "requires_visual_extraction": true
+          }
+        ]
+      },
+      {
+        "section_id": "lexique_context",
+        "title": "Lexique",
+        "component": "context_cards"
+      },
+      {
+        "section_id": "method_context",
+        "title": "Méthodes",
+        "component": "context_cards"
+      },
+      {
+        "section_id": "benchmark_scores",
+        "title": "Benchmark",
+        "component": "score_cards"
+      },
+      {
+        "section_id": "missing_data",
+        "title": "Données manquantes",
+        "component": "checklist"
+      },
+      {
+        "section_id": "blockers",
+        "title": "Blocages sécurité",
+        "component": "alert_list"
+      },
+      {
+        "section_id": "human_review_output",
+        "title": "Sortie revue humaine",
+        "component": "markdown_panel"
+      }
+    ],
+    "routes": [
+      {
+        "path": "/",
+        "view": "home"
+      },
+      {
+        "path": "/prompts",
+        "view": "prompt_library"
+      },
+      {
+        "path": "/benchmark",
+        "view": "benchmark"
+      },
+      {
+        "path": "/lexique",
+        "view": "lexique"
+      },
+      {
+        "path": "/methodes",
+        "view": "methods"
+      },
+      {
+        "path": "/portfolio-review",
+        "view": "portfolio_prompt_review"
+      }
+    ]
+  },
+  "prompt_templates": [
+    {
+      "template_id": "portfolio_public_review",
+      "title": "Analyse portefeuille pédagogique",
+      "input_modes": [
+        "pasted_text",
+        "structured",
+        "image_capture"
+      ],
+      "safety": "human_review_only_no_order_no_sizing",
+      "prompt": "Analyse ce portefeuille de manière pédagogique. Identifie les risques, les données manquantes, les concentrations et les points à vérifier. N'invente aucun prix, TP, SL, PnL ou sizing."
+    },
+    {
+      "template_id": "asset_method_review",
+      "title": "Analyse méthode + actif",
+      "input_modes": [
+        "none",
+        "pasted_text",
+        "structured",
+        "image_capture"
+      ],
+      "safety": "education_only",
+      "prompt": "Explique la méthode applicable à cet actif, les limites, les signaux à vérifier et les erreurs fréquentes."
+    },
+    {
+      "template_id": "prompt_quality_benchmark",
+      "title": "Benchmark qualité prompt",
+      "input_modes": [
+        "none",
+        "pasted_text",
+        "structured",
+        "image_capture"
+      ],
+      "safety": "public_safe_benchmark",
+      "prompt": "Évalue la qualité du prompt selon clarté, données manquantes, risque d'hallucination, sécurité publique et exploitabilité pédagogique."
+    }
+  ],
+  "lexique_items": [],
+  "method_items": [],
+  "sample_payloads": [
+    {
+      "runtime": "MVP_QAIC_PUBLIC_PROMPT_WEBAPP_BENCHMARK",
+      "version": "P103_MVP_PUBLIC_PROMPT_WEBAPP_BENCHMARK_0_1_0",
+      "created_at_utc": "2026-06-22T00:00:00Z",
+      "scope": {
+        "mvp": "lexique_webapp_prompts_methods_public",
+        "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+      },
+      "decision_status": "PUBLIC_PROMPT_READY",
+      "blockers": [],
+      "missing_data": [],
+      "human_review_only": true,
+      "public_educational_mode": true,
+      "no_order_no_sizing": true,
+      "safety": {
+        "mvp_public_scope": true,
+        "qaic_private_backend_separated": true,
+        "portfolio_on_demand_supported": true,
+        "image_capture_reference_supported": true,
+        "no_revolutx_real_access": true,
+        "no_broker": true,
+        "no_order": true,
+        "no_cancel": true,
+        "no_replace_order": true,
+        "no_auto_sizing": true,
+        "no_secret_log": true,
+        "no_sheet_write": true,
+        "no_apps_script_execution": true,
+        "no_clasp": true,
+        "public_educational_mode": true
+      },
+      "prompt_request": {
+        "user_prompt": "Analyse ce portefeuille de manière pédagogique avec les risques principaux.",
+        "portfolio_context": {
+          "input_type": "pasted_text",
+          "positions": [
+            {
+              "asset": "BTC",
+              "quantity": 0.1,
+              "avg_entry": 60000.0,
+              "current_value": 6800.0,
+              "pnl": 800.0,
+              "source": "parsed_text"
+            },
+            {
+              "asset": "ETH",
+              "quantity": 1.0,
+              "avg_entry": 3000.0,
+              "current_value": 3200.0,
+              "pnl": 200.0,
+              "source": "parsed_text"
+            }
+          ],
+          "positions_count": 2,
+          "missing_data": [],
+          "raw_text_available": true,
+          "extraction_confidence": "LOW_BEST_EFFORT"
+        },
+        "lexique_context": {
+          "BTC": "Bitcoin",
+          "ETH": "Ethereum"
+        },
+        "methods_context": {
+          "method": "portfolio educational review"
+        },
+        "benchmark_context": {
+          "profile": "public"
+        }
+      },
+      "benchmark": {
+        "quality_score": 100,
+        "public_safety_score": 100,
+        "data_completeness_score": 100,
+        "public_usefulness_score": 100,
+        "missing_data": []
+      },
+      "webapp_ui": {
+        "recommended_sections": [
+          "prompt_input",
+          "portfolio_optional_input",
+          "portfolio_image_capture",
+          "lexique_context",
+          "method_context",
+          "benchmark_scores",
+          "missing_data",
+          "blockers",
+          "human_review_output"
+        ],
+        "portfolio_input_modes": [
+          "none",
+          "pasted_text",
+          "structured",
+          "image_capture"
+        ]
+      }
+    },
+    {
+      "runtime": "MVP_QAIC_PUBLIC_PROMPT_WEBAPP_BENCHMARK",
+      "version": "P103_MVP_PUBLIC_PROMPT_WEBAPP_BENCHMARK_0_1_0",
+      "created_at_utc": "2026-06-22T00:00:00Z",
+      "scope": {
+        "mvp": "lexique_webapp_prompts_methods_public",
+        "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+      },
+      "decision_status": "REVIEW_REQUIRED",
+      "blockers": [],
+      "missing_data": [
+        "portfolio_image_visual_extraction_required"
+      ],
+      "human_review_only": true,
+      "public_educational_mode": true,
+      "no_order_no_sizing": true,
+      "safety": {
+        "mvp_public_scope": true,
+        "qaic_private_backend_separated": true,
+        "portfolio_on_demand_supported": true,
+        "image_capture_reference_supported": true,
+        "no_revolutx_real_access": true,
+        "no_broker": true,
+        "no_order": true,
+        "no_cancel": true,
+        "no_replace_order": true,
+        "no_auto_sizing": true,
+        "no_secret_log": true,
+        "no_sheet_write": true,
+        "no_apps_script_execution": true,
+        "no_clasp": true,
+        "public_educational_mode": true
+      },
+      "prompt_request": {
+        "user_prompt": "Analyse ma capture de portefeuille sans inventer les données cachées.",
+        "portfolio_context": {
+          "input_type": "image_capture",
+          "image_id": "sample-image-ref",
+          "image_filename": "portfolio_capture.png",
+          "user_notes": "Analyse ma capture de portefeuille sans inventer les données cachées.",
+          "positions": [],
+          "positions_count": 0,
+          "missing_data": [
+            "portfolio_image_visual_extraction_required"
+          ],
+          "extraction_required": true,
+          "extraction_instruction": "Use the UI/LLM visual analysis layer to extract visible assets, quantities, average entry/PRU, value, PnL, and any missing fields. Do not invent hidden data.",
+          "extraction_confidence": "PENDING_VISUAL_EXTRACTION"
+        },
+        "lexique_context": {
+          "portfolio": "allocation crypto"
+        },
+        "methods_context": {
+          "method": "visual portfolio extraction"
+        },
+        "benchmark_context": {
+          "profile": "image"
+        }
+      },
+      "benchmark": {
+        "quality_score": 82,
+        "public_safety_score": 100,
+        "data_completeness_score": 88,
+        "public_usefulness_score": 82,
+        "missing_data": [
+          "portfolio_image_visual_extraction_required"
+        ]
+      },
+      "webapp_ui": {
+        "recommended_sections": [
+          "prompt_input",
+          "portfolio_optional_input",
+          "portfolio_image_capture",
+          "lexique_context",
+          "method_context",
+          "benchmark_scores",
+          "missing_data",
+          "blockers",
+          "human_review_output"
+        ],
+        "portfolio_input_modes": [
+          "none",
+          "pasted_text",
+          "structured",
+          "image_capture"
+        ]
+      }
+    },
+    {
+      "runtime": "MVP_QAIC_PUBLIC_PROMPT_WEBAPP_BENCHMARK",
+      "version": "P103_MVP_PUBLIC_PROMPT_WEBAPP_BENCHMARK_0_1_0",
+      "created_at_utc": "2026-06-22T00:00:00Z",
+      "scope": {
+        "mvp": "lexique_webapp_prompts_methods_public",
+        "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+      },
+      "decision_status": "BLOCKED",
+      "blockers": [
+        "FORBIDDEN_EXECUTION_OR_BROKER_INTENT"
+      ],
+      "missing_data": [],
+      "human_review_only": true,
+      "public_educational_mode": true,
+      "no_order_no_sizing": true,
+      "safety": {
+        "mvp_public_scope": true,
+        "qaic_private_backend_separated": true,
+        "portfolio_on_demand_supported": true,
+        "image_capture_reference_supported": true,
+        "no_revolutx_real_access": true,
+        "no_broker": true,
+        "no_order": true,
+        "no_cancel": true,
+        "no_replace_order": true,
+        "no_auto_sizing": true,
+        "no_secret_log": true,
+        "no_sheet_write": true,
+        "no_apps_script_execution": true,
+        "no_clasp": true,
+        "public_educational_mode": true
+      },
+      "prompt_request": {
+        "user_prompt": "Place an automatic order on BTC.",
+        "portfolio_context": {
+          "input_type": "pasted_text",
+          "positions": [
+            {
+              "asset": "BTC",
+              "quantity": 0.1,
+              "avg_entry": 60000.0,
+              "current_value": 6800.0,
+              "pnl": 800.0,
+              "source": "parsed_text"
+            }
+          ],
+          "positions_count": 1,
+          "missing_data": [],
+          "raw_text_available": true,
+          "extraction_confidence": "LOW_BEST_EFFORT"
+        },
+        "lexique_context": {
+          "BTC": "Bitcoin"
+        },
+        "methods_context": {
+          "method": "safety test"
+        },
+        "benchmark_context": {
+          "profile": "blocker"
+        }
+      },
+      "benchmark": {
+        "quality_score": 100,
+        "public_safety_score": 0,
+        "data_completeness_score": 100,
+        "public_usefulness_score": 100,
+        "missing_data": []
+      },
+      "webapp_ui": {
+        "recommended_sections": [
+          "prompt_input",
+          "portfolio_optional_input",
+          "portfolio_image_capture",
+          "lexique_context",
+          "method_context",
+          "benchmark_scores",
+          "missing_data",
+          "blockers",
+          "human_review_output"
+        ],
+        "portfolio_input_modes": [
+          "none",
+          "pasted_text",
+          "structured",
+          "image_capture"
+        ]
+      }
+    }
+  ],
+  "sample_summaries": [
+    {
+      "decision_status": "PUBLIC_PROMPT_READY",
+      "missing_data_count": 0,
+      "blocker_count": 0,
+      "portfolio_input_type": "pasted_text",
+      "portfolio_positions_count": 2,
+      "portfolio_extraction_required": false,
+      "quality_score": 100,
+      "public_safety_score": 100,
+      "public_educational_mode": true,
+      "no_order_no_sizing": true
+    },
+    {
+      "decision_status": "REVIEW_REQUIRED",
+      "missing_data_count": 1,
+      "blocker_count": 0,
+      "portfolio_input_type": "image_capture",
+      "portfolio_positions_count": 0,
+      "portfolio_extraction_required": true,
+      "quality_score": 82,
+      "public_safety_score": 100,
+      "public_educational_mode": true,
+      "no_order_no_sizing": true
+    },
+    {
+      "decision_status": "BLOCKED",
+      "missing_data_count": 0,
+      "blocker_count": 1,
+      "portfolio_input_type": "pasted_text",
+      "portfolio_positions_count": 1,
+      "portfolio_extraction_required": false,
+      "quality_score": 100,
+      "public_safety_score": 0,
+      "public_educational_mode": true,
+      "no_order_no_sizing": true
+    }
+  ],
+  "benchmark_cards": [
+    {
+      "card_id": "quality_score",
+      "label": "Qualité prompt",
+      "source": "benchmark.quality_score"
+    },
+    {
+      "card_id": "public_safety_score",
+      "label": "Sécurité publique",
+      "source": "benchmark.public_safety_score"
+    },
+    {
+      "card_id": "data_completeness_score",
+      "label": "Complétude données",
+      "source": "benchmark.data_completeness_score"
+    },
+    {
+      "card_id": "public_usefulness_score",
+      "label": "Utilité pédagogique",
+      "source": "benchmark.public_usefulness_score"
+    }
+  ],
+  "api_contract": {
+    "input": {
+      "user_prompt": "string",
+      "portfolio_input_type": "none|pasted_text|structured|image_capture",
+      "portfolio_input": "optional text/json",
+      "image_id": "optional",
+      "image_filename": "optional",
+      "lexique_context": "optional object",
+      "methods_context": "optional object"
+    },
+    "output": {
+      "decision_status": "PUBLIC_PROMPT_READY|REVIEW_REQUIRED|BLOCKED",
+      "missing_data": "list[string]",
+      "blockers": "list[string]",
+      "benchmark": "object",
+      "webapp_ui": "object"
+    }
+  }
+}
