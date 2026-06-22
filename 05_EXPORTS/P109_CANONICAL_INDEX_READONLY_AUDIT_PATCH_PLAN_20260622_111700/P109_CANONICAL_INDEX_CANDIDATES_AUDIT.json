@@ -1,0 +1,93 @@
+{
+  "runtime": "MVP_QAIC_CANONICAL_INDEX_READONLY_AUDIT_PATCH_PLAN",
+  "version": "P109_CANONICAL_INDEX_READONLY_AUDIT_PATCH_PLAN_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "decision_status": "REVIEW_REQUIRED",
+  "scope": {
+    "mvp": "lexique_webapp_prompts_methods_benchmark_public",
+    "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+  },
+  "candidate_count": 1,
+  "possible_canonical_count": 0,
+  "candidates": [
+    {
+      "relative_path": "05_EXPORTS/P106_WEBAPP_STATIC_PREVIEW_DATA_EXPORT_20260622_103845/STATIC_PREVIEW/index.html",
+      "size_bytes": 2603,
+      "file_name": "index.html",
+      "candidate_role": "generated_export_not_canonical",
+      "canonical_score": 0,
+      "allowed_to_edit": false,
+      "reason": "Generated export artifact, not the validated WebApp shell."
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "confirm_canonical_index",
+      "priority": "P0",
+      "action": "Human confirms which Index.html is the validated WebApp shell."
+    },
+    {
+      "requirement_id": "bind_json_data_packs",
+      "priority": "P0",
+      "action": "Plan binding of webapp_pack/context_pack/prompt_payload/admin_status to the canonical UI."
+    },
+    {
+      "requirement_id": "portfolio_modes_visibility",
+      "priority": "P1",
+      "action": "Show portfolio modes: none, pasted_text, structured, image_capture."
+    },
+    {
+      "requirement_id": "prompt_benchmark_visibility",
+      "priority": "P1",
+      "action": "Show quality, public safety, completeness, usefulness, missing_data and blockers."
+    },
+    {
+      "requirement_id": "admin_monitor_separation",
+      "priority": "P1",
+      "action": "Keep ADMIN_MONITOR.html internal and separate from public UI shell."
+    },
+    {
+      "requirement_id": "public_deploy_gate",
+      "priority": "P0",
+      "action": "Public deployment stays blocked until explicit approval."
+    }
+  ],
+  "blockers": [],
+  "reviews": [
+    "NO_CONFIRMED_CANONICAL_INDEX_CANDIDATE_FOUND"
+  ],
+  "allowed_next_actions": [
+    "HUMAN_CONFIRM_CANONICAL_INDEX",
+    "PREPARE_UI_POLISH_PATCH_PLAN_ONLY",
+    "PREPARE_DATA_BINDING_PATCH_AFTER_APPROVAL"
+  ],
+  "forbidden_next_actions": [
+    "EDIT_INDEX_HTML_NOW",
+    "OVERWRITE_INDEX_HTML",
+    "GENERATE_PUBLIC_INDEX_HTML",
+    "CLASP_PUSH",
+    "APPS_SCRIPT_EXECUTION",
+    "PUBLIC_DEPLOY_WITHOUT_APPROVAL",
+    "BROKER_OR_TRADING_EXECUTION"
+  ],
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "readonly_audit_only": true,
+    "patch_plan_only": true,
+    "no_index_html_edit": true,
+    "no_index_html_generation": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "next": "P110_CANONICAL_INDEX_BINDING_PATCH_PLAN_AFTER_HUMAN_CONFIRMATION"
+}

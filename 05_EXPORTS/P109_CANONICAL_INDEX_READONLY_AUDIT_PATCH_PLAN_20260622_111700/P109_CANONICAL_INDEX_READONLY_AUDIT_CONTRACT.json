@@ -1,0 +1,20 @@
+﻿{
+    "step":  "P109_CANONICAL_INDEX_READONLY_AUDIT_PATCH_PLAN_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "depends_on":  "P108_R1_CANONICAL_INDEX_DEDUP_REPAIR",
+    "source_file":  "mvp_qaic_py/webapp_canonical_index_audit.py",
+    "test_file":  "tests/test_webapp_canonical_index_audit_p109.py",
+    "audit_file":  "P109_CANONICAL_INDEX_CANDIDATES_AUDIT.json",
+    "patch_plan_file":  "P109_UI_POLISH_PATCH_PLAN_READONLY.md",
+    "mode":  "READONLY_AUDIT_PATCH_PLAN_ONLY",
+    "safety":  {
+                   "no_index_html_edit":  true,
+                   "no_index_html_generation":  true,
+                   "no_public_deploy":  true,
+                   "no_clasp":  true,
+                   "no_apps_script_execution":  true,
+                   "no_sheet_write":  true,
+                   "no_broker_order_sizing":  true
+               },
+    "next":  "P110_CANONICAL_INDEX_BINDING_PATCH_PLAN_AFTER_HUMAN_CONFIRMATION"
+}
