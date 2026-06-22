@@ -1,0 +1,315 @@
+{
+  "contract": {
+    "contract": "P116_PROMPT_GEM_RUNTIME_MINI_CLI",
+    "forbidden": [
+      "ocr_claim",
+      "automated_visual_extraction",
+      "apps_script_execution",
+      "sheet_write",
+      "clasp_push",
+      "public_deploy",
+      "broker_execution",
+      "order_execution",
+      "cancel_order",
+      "replace_order",
+      "auto_sizing",
+      "revolutx_real_access_from_mvp",
+      "secret_logging"
+    ],
+    "output_files": [
+      "P116_RUNTIME_PAYLOAD.json",
+      "P116_GEM_PROMPT_COPY_PASTE.md",
+      "P116_EXPECTED_GEM_OUTPUT_SCHEMA.json",
+      "P116_RUNTIME_CONTRACT.json",
+      "P116_RUNTIME_REPORT.md"
+    ],
+    "safety_markers": [
+      "MVP_PUBLIC_SCOPE",
+      "HUMAN_REVIEW_ONLY",
+      "NO_OCR_CLAIM",
+      "NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN",
+      "NO_INVENTED_POSITION",
+      "NO_INVENTED_PRICE",
+      "NO_INVENTED_VALUE",
+      "NO_REVOLUTX_REAL_ACCESS",
+      "NO_BROKER",
+      "NO_ORDER",
+      "NO_CANCEL",
+      "NO_REPLACE_ORDER",
+      "NO_AUTO_SIZING",
+      "NO_SECRET_LOG",
+      "NO_SHEET_WRITE",
+      "NO_APPS_SCRIPT_EXECUTION",
+      "NO_CLASP",
+      "NO_PUBLIC_DEPLOY",
+      "P116_MINI_CLI_LOCAL_ONLY",
+      "NO_LIVE_PROVIDER_CALL",
+      "NO_IMAGE_OCR_RUNTIME",
+      "NO_AUTOMATED_VISUAL_EXTRACTION",
+      "COPY_PASTE_TO_GEM_ONLY"
+    ],
+    "status": "LOCAL_ONLY_HUMAN_REVIEW",
+    "supported_input_modes": [
+      "NONE",
+      "PASTED_TEXT",
+      "PASTED_TEXT_DRAFT",
+      "STRUCTURED",
+      "IMAGE_REVIEW_REQUIRED"
+    ],
+    "version": "MVP_QAIC_P116_PROMPT_GEM_RUNTIME_MINI_CLI_0_1_0_SAFE"
+  },
+  "expected_gem_output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": true,
+    "properties": {
+      "blockers": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "decision_status": {
+        "enum": [
+          "REVIEW_REQUIRED",
+          "BLOCKED",
+          "HUMAN_REVIEW_ONLY"
+        ],
+        "type": "string"
+      },
+      "human_decision_only": {
+        "const": true,
+        "type": "boolean"
+      },
+      "missing_data": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "no_order_no_sizing": {
+        "const": true,
+        "type": "boolean"
+      },
+      "portfolio_review": {
+        "type": "object"
+      },
+      "questions_for_human": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "risk_notes": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "safety_markers": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      }
+    },
+    "required": [
+      "decision_status",
+      "missing_data",
+      "blockers",
+      "human_decision_only",
+      "no_order_no_sizing",
+      "safety_markers"
+    ],
+    "title": "MVP QAIC P114 Expected GEM Portfolio Review Output",
+    "type": "object"
+  },
+  "gem_prompt_markdown": "# MVP QAIC - GEM Portfolio Review Prompt\n\n## Mission\nReview the portfolio input for educational and decision-support purposes only.\nReturn a structured JSON answer matching the expected schema.\n\n## Hard safety rules\n- HUMAN_REVIEW_ONLY.\n- Do not place, suggest placing, cancel, replace, or automate any order.\n- Do not calculate position sizing.\n- Do not claim OCR or automatic image extraction.\n- Do not invent assets, quantities, prices, values, TP, SL, or trailing levels.\n- If the input is incomplete or image-based, return REVIEW_REQUIRED with missing_data.\n\n## Normalized portfolio input\n```json\n{\n  \"blockers\": [],\n  \"human_review_required\": true,\n  \"image_reference\": null,\n  \"input_mode\": \"PASTED_TEXT_DRAFT\",\n  \"integration\": {\n    \"p113_normalizer\": \"fallback_used\",\n    \"warnings\": []\n  },\n  \"missing_data\": [],\n  \"no_ocr_claim\": true,\n  \"no_visual_extraction_claim\": true,\n  \"notes\": \"P116-R1 sample: pasted text is source input, human review only.\",\n  \"pasted_text_available\": true,\n  \"positions\": [],\n  \"review_questions\": [\n    \"Confirm that the pasted text reflects the full portfolio and not a partial extract.\"\n  ],\n  \"safety_markers\": [\n    \"MVP_PUBLIC_SCOPE\",\n    \"HUMAN_REVIEW_ONLY\",\n    \"NO_OCR_CLAIM\",\n    \"NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN\",\n    \"NO_INVENTED_POSITION\",\n    \"NO_INVENTED_PRICE\",\n    \"NO_INVENTED_VALUE\",\n    \"NO_REVOLUTX_REAL_ACCESS\",\n    \"NO_BROKER\",\n    \"NO_ORDER\",\n    \"NO_CANCEL\",\n    \"NO_REPLACE_ORDER\",\n    \"NO_AUTO_SIZING\",\n    \"NO_SECRET_LOG\",\n    \"NO_SHEET_WRITE\",\n    \"NO_APPS_SCRIPT_EXECUTION\",\n    \"NO_CLASP\",\n    \"NO_PUBLIC_DEPLOY\"\n  ],\n  \"source\": \"p114_fallback_normalizer\",\n  \"status\": \"REVIEW_REQUIRED\",\n  \"structured_portfolio_available\": false\n}\n```\n\n## Expected output JSON schema\n```json\n{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"additionalProperties\": true,\n  \"properties\": {\n    \"blockers\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"decision_status\": {\n      \"enum\": [\n        \"REVIEW_REQUIRED\",\n        \"BLOCKED\",\n        \"HUMAN_REVIEW_ONLY\"\n      ],\n      \"type\": \"string\"\n    },\n    \"human_decision_only\": {\n      \"const\": true,\n      \"type\": \"boolean\"\n    },\n    \"missing_data\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"no_order_no_sizing\": {\n      \"const\": true,\n      \"type\": \"boolean\"\n    },\n    \"portfolio_review\": {\n      \"type\": \"object\"\n    },\n    \"questions_for_human\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"risk_notes\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"safety_markers\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"decision_status\",\n    \"missing_data\",\n    \"blockers\",\n    \"human_decision_only\",\n    \"no_order_no_sizing\",\n    \"safety_markers\"\n  ],\n  \"title\": \"MVP QAIC P114 Expected GEM Portfolio Review Output\",\n  \"type\": \"object\"\n}\n```\n\n---\n## P116 Runtime input reference\n\nThis section is the user-provided source input for manual GEM review.\nDo not infer hidden positions, quantities, prices, or values from it.\n\n- input_mode: PASTED_TEXT_DRAFT\n\n### Pasted portfolio text\n```text\nBTC 0.10 value EUR 6500; ETH 1.20 value EUR 4200\n```\n\n### Notes\nP116-R1 sample: pasted text is source input, human review only.\n\n## P116 Safety reminder\n- HUMAN_REVIEW_ONLY.\n- NO_OCR_CLAIM.\n- NO_BROKER / NO_ORDER / NO_AUTO_SIZING.\n- NO_REVOLUTX_REAL_ACCESS_FROM_MVP.\n",
+  "human_review_only": true,
+  "no_ocr_claim": true,
+  "no_order_no_sizing": true,
+  "no_revolutx_real_access": true,
+  "p114_runner_payload": {
+    "expected_gem_output_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": true,
+      "properties": {
+        "blockers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "decision_status": {
+          "enum": [
+            "REVIEW_REQUIRED",
+            "BLOCKED",
+            "HUMAN_REVIEW_ONLY"
+          ],
+          "type": "string"
+        },
+        "human_decision_only": {
+          "const": true,
+          "type": "boolean"
+        },
+        "missing_data": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "no_order_no_sizing": {
+          "const": true,
+          "type": "boolean"
+        },
+        "portfolio_review": {
+          "type": "object"
+        },
+        "questions_for_human": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "risk_notes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "safety_markers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "decision_status",
+        "missing_data",
+        "blockers",
+        "human_decision_only",
+        "no_order_no_sizing",
+        "safety_markers"
+      ],
+      "title": "MVP QAIC P114 Expected GEM Portfolio Review Output",
+      "type": "object"
+    },
+    "gem_prompt_markdown": "# MVP QAIC - GEM Portfolio Review Prompt\n\n## Mission\nReview the portfolio input for educational and decision-support purposes only.\nReturn a structured JSON answer matching the expected schema.\n\n## Hard safety rules\n- HUMAN_REVIEW_ONLY.\n- Do not place, suggest placing, cancel, replace, or automate any order.\n- Do not calculate position sizing.\n- Do not claim OCR or automatic image extraction.\n- Do not invent assets, quantities, prices, values, TP, SL, or trailing levels.\n- If the input is incomplete or image-based, return REVIEW_REQUIRED with missing_data.\n\n## Normalized portfolio input\n```json\n{\n  \"blockers\": [],\n  \"human_review_required\": true,\n  \"image_reference\": null,\n  \"input_mode\": \"PASTED_TEXT_DRAFT\",\n  \"integration\": {\n    \"p113_normalizer\": \"fallback_used\",\n    \"warnings\": []\n  },\n  \"missing_data\": [],\n  \"no_ocr_claim\": true,\n  \"no_visual_extraction_claim\": true,\n  \"notes\": \"P116-R1 sample: pasted text is source input, human review only.\",\n  \"pasted_text_available\": true,\n  \"positions\": [],\n  \"review_questions\": [\n    \"Confirm that the pasted text reflects the full portfolio and not a partial extract.\"\n  ],\n  \"safety_markers\": [\n    \"MVP_PUBLIC_SCOPE\",\n    \"HUMAN_REVIEW_ONLY\",\n    \"NO_OCR_CLAIM\",\n    \"NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN\",\n    \"NO_INVENTED_POSITION\",\n    \"NO_INVENTED_PRICE\",\n    \"NO_INVENTED_VALUE\",\n    \"NO_REVOLUTX_REAL_ACCESS\",\n    \"NO_BROKER\",\n    \"NO_ORDER\",\n    \"NO_CANCEL\",\n    \"NO_REPLACE_ORDER\",\n    \"NO_AUTO_SIZING\",\n    \"NO_SECRET_LOG\",\n    \"NO_SHEET_WRITE\",\n    \"NO_APPS_SCRIPT_EXECUTION\",\n    \"NO_CLASP\",\n    \"NO_PUBLIC_DEPLOY\"\n  ],\n  \"source\": \"p114_fallback_normalizer\",\n  \"status\": \"REVIEW_REQUIRED\",\n  \"structured_portfolio_available\": false\n}\n```\n\n## Expected output JSON schema\n```json\n{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"additionalProperties\": true,\n  \"properties\": {\n    \"blockers\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"decision_status\": {\n      \"enum\": [\n        \"REVIEW_REQUIRED\",\n        \"BLOCKED\",\n        \"HUMAN_REVIEW_ONLY\"\n      ],\n      \"type\": \"string\"\n    },\n    \"human_decision_only\": {\n      \"const\": true,\n      \"type\": \"boolean\"\n    },\n    \"missing_data\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"no_order_no_sizing\": {\n      \"const\": true,\n      \"type\": \"boolean\"\n    },\n    \"portfolio_review\": {\n      \"type\": \"object\"\n    },\n    \"questions_for_human\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"risk_notes\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"safety_markers\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"decision_status\",\n    \"missing_data\",\n    \"blockers\",\n    \"human_decision_only\",\n    \"no_order_no_sizing\",\n    \"safety_markers\"\n  ],\n  \"title\": \"MVP QAIC P114 Expected GEM Portfolio Review Output\",\n  \"type\": \"object\"\n}\n```",
+    "generated_at_utc": "2026-06-22T00:00:00Z",
+    "human_review_only": true,
+    "input": {
+      "image_reference": null,
+      "notes": "P116-R1 sample: pasted text is source input, human review only.",
+      "pasted_text": "BTC 0.10 value EUR 6500; ETH 1.20 value EUR 4200",
+      "structured_portfolio": null
+    },
+    "input_mode": "PASTED_TEXT_DRAFT",
+    "no_ocr_claim": true,
+    "no_order_no_sizing": true,
+    "no_revolutx_real_access": true,
+    "normalized_portfolio_input": {
+      "blockers": [],
+      "human_review_required": true,
+      "image_reference": null,
+      "input_mode": "PASTED_TEXT_DRAFT",
+      "integration": {
+        "p113_normalizer": "fallback_used",
+        "warnings": []
+      },
+      "missing_data": [],
+      "no_ocr_claim": true,
+      "no_visual_extraction_claim": true,
+      "notes": "P116-R1 sample: pasted text is source input, human review only.",
+      "pasted_text_available": true,
+      "positions": [],
+      "review_questions": [
+        "Confirm that the pasted text reflects the full portfolio and not a partial extract."
+      ],
+      "safety_markers": [
+        "MVP_PUBLIC_SCOPE",
+        "HUMAN_REVIEW_ONLY",
+        "NO_OCR_CLAIM",
+        "NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN",
+        "NO_INVENTED_POSITION",
+        "NO_INVENTED_PRICE",
+        "NO_INVENTED_VALUE",
+        "NO_REVOLUTX_REAL_ACCESS",
+        "NO_BROKER",
+        "NO_ORDER",
+        "NO_CANCEL",
+        "NO_REPLACE_ORDER",
+        "NO_AUTO_SIZING",
+        "NO_SECRET_LOG",
+        "NO_SHEET_WRITE",
+        "NO_APPS_SCRIPT_EXECUTION",
+        "NO_CLASP",
+        "NO_PUBLIC_DEPLOY"
+      ],
+      "source": "p114_fallback_normalizer",
+      "status": "REVIEW_REQUIRED",
+      "structured_portfolio_available": false
+    },
+    "run_id": "P116-R1-SAMPLE-20260622",
+    "safety_markers": [
+      "MVP_PUBLIC_SCOPE",
+      "HUMAN_REVIEW_ONLY",
+      "NO_OCR_CLAIM",
+      "NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN",
+      "NO_INVENTED_POSITION",
+      "NO_INVENTED_PRICE",
+      "NO_INVENTED_VALUE",
+      "NO_REVOLUTX_REAL_ACCESS",
+      "NO_BROKER",
+      "NO_ORDER",
+      "NO_CANCEL",
+      "NO_REPLACE_ORDER",
+      "NO_AUTO_SIZING",
+      "NO_SECRET_LOG",
+      "NO_SHEET_WRITE",
+      "NO_APPS_SCRIPT_EXECUTION",
+      "NO_CLASP",
+      "NO_PUBLIC_DEPLOY"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "step": "P114_GEM_PROMPT_RUNNER_PACK_COPY_PASTE_AND_JSON_CONTRACT",
+    "version": "MVP_QAIC_P114_GEM_PROMPT_RUNNER_PACK_0_1_0_SAFE"
+  },
+  "request": {
+    "generated_at_utc": "2026-06-22T00:00:00Z",
+    "image_reference": null,
+    "input_mode": "PASTED_TEXT_DRAFT",
+    "notes": "P116-R1 sample: pasted text is source input, human review only.",
+    "pasted_text_available": true,
+    "run_id": "P116-R1-SAMPLE-20260622",
+    "structured_portfolio_available": false
+  },
+  "runtime_mode": "LOCAL_COPY_PASTE_TO_GEM_ONLY",
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "NO_OCR_CLAIM",
+    "NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN",
+    "NO_INVENTED_POSITION",
+    "NO_INVENTED_PRICE",
+    "NO_INVENTED_VALUE",
+    "NO_REVOLUTX_REAL_ACCESS",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_SECRET_LOG",
+    "NO_SHEET_WRITE",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_CLASP",
+    "NO_PUBLIC_DEPLOY",
+    "P116_MINI_CLI_LOCAL_ONLY",
+    "NO_LIVE_PROVIDER_CALL",
+    "NO_IMAGE_OCR_RUNTIME",
+    "NO_AUTOMATED_VISUAL_EXTRACTION",
+    "COPY_PASTE_TO_GEM_ONLY"
+  ],
+  "status": "REVIEW_REQUIRED",
+  "step": "P116_PROMPT_GEM_RUNTIME_MINI_CLI",
+  "version": "MVP_QAIC_P116_PROMPT_GEM_RUNTIME_MINI_CLI_0_1_0_SAFE"
+}
