@@ -1,0 +1,55 @@
+{
+  "allowed_inputs": [
+    "NONE",
+    "PASTED_TEXT",
+    "PASTED_TEXT_DRAFT",
+    "STRUCTURED",
+    "IMAGE_REVIEW_REQUIRED"
+  ],
+  "contract": "P114_GEM_PROMPT_RUNNER_PACK_COPY_PASTE_AND_JSON_CONTRACT",
+  "forbidden": [
+    "index_edit",
+    "clasp_push",
+    "apps_script_execution",
+    "sheet_write",
+    "public_deploy",
+    "broker_execution",
+    "order_execution",
+    "order_cancel",
+    "order_replace",
+    "auto_sizing",
+    "ocr_claim",
+    "invented_position",
+    "invented_price",
+    "invented_value",
+    "revolutx_real_access_from_mvp"
+  ],
+  "output_files": [
+    "P114_GEM_RUNNER_PAYLOAD_SAMPLE.json",
+    "P114_GEM_PROMPT_COPY_PASTE.md",
+    "P114_EXPECTED_GEM_OUTPUT_SCHEMA.json",
+    "P114_RUNNER_REPORT.md",
+    "P114_RUNNER_CONTRACT.json"
+  ],
+  "safety_markers": [
+    "MVP_PUBLIC_SCOPE",
+    "HUMAN_REVIEW_ONLY",
+    "NO_OCR_CLAIM",
+    "NO_IMAGE_VISUAL_EXTRACTION_WITHOUT_HUMAN",
+    "NO_INVENTED_POSITION",
+    "NO_INVENTED_PRICE",
+    "NO_INVENTED_VALUE",
+    "NO_REVOLUTX_REAL_ACCESS",
+    "NO_BROKER",
+    "NO_ORDER",
+    "NO_CANCEL",
+    "NO_REPLACE_ORDER",
+    "NO_AUTO_SIZING",
+    "NO_SECRET_LOG",
+    "NO_SHEET_WRITE",
+    "NO_APPS_SCRIPT_EXECUTION",
+    "NO_CLASP",
+    "NO_PUBLIC_DEPLOY"
+  ],
+  "version": "MVP_QAIC_P114_GEM_PROMPT_RUNNER_PACK_0_1_0_SAFE"
+}
