@@ -1,0 +1,29 @@
+﻿{
+    "step":  "P105_LEXIQUE_METHOD_PROMPT_CONTEXT_WEBAPP_INTEGRATION_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "depends_on":  "P104_WEBAPP_UI_PROMPT_BENCHMARK_DATA_PACK",
+    "source_file":  "mvp_qaic_py/lexique_method_prompt_context.py",
+    "test_file":  "tests/test_lexique_method_prompt_context_p105.py",
+    "features":  [
+                     "normalize lexique items",
+                     "normalize method items",
+                     "match lexique from prompt and portfolio assets",
+                     "match method context",
+                     "build webapp-ready context cards",
+                     "integrate with P103 prompt payload and P104 webapp pack"
+                 ],
+    "safety":  {
+                   "no_revolutx_real_access":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_cancel":  true,
+                   "no_replace_order":  true,
+                   "no_auto_sizing":  true,
+                   "no_secret_log":  true,
+                   "no_sheet_write":  true,
+                   "no_apps_script_execution":  true,
+                   "no_clasp":  true,
+                   "no_public_deploy":  true
+               },
+    "next":  "P106_WEBAPP_STATIC_PREVIEW_DATA_EXPORT_FAST_FUSE"
+}
