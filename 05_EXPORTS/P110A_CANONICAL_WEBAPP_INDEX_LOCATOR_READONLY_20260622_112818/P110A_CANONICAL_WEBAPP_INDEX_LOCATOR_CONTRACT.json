@@ -1,0 +1,32 @@
+﻿{
+    "step":  "P110A_CANONICAL_WEBAPP_INDEX_LOCATOR_READONLY_FAST_FUSE",
+    "status":  "CREATED_LOCAL_PENDING_GATE",
+    "depends_on":  "P109_CANONICAL_INDEX_READONLY_AUDIT_PATCH_PLAN",
+    "source_file":  "mvp_qaic_py/webapp_canonical_index_locator.py",
+    "test_file":  "tests/test_webapp_canonical_index_locator_p110a.py",
+    "roots_scanned":  [
+                          {
+                              "root_id":  "mvp_qaic_py_repo",
+                              "path":  "G:/Mon Drive/👥 JULIEN [Perso]/📈 Trading JRb/Solutions \u0026 Dev (Trading JRb)/MVP_QAIC_PY",
+                              "role":  "python repo mvp_qaic_py"
+                          },
+                          {
+                              "root_id":  "mvp_qaic_drive_root",
+                              "path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+                              "role":  "mvp qaic root webapp apps script"
+                          }
+                      ],
+    "audit_json":  "P110A_CANONICAL_WEBAPP_INDEX_LOCATOR_AUDIT.json",
+    "candidates_csv":  "P110A_CANONICAL_WEBAPP_INDEX_CANDIDATES.csv",
+    "review_md":  "P110A_CANONICAL_WEBAPP_INDEX_REVIEW.md",
+    "safety":  {
+                   "no_index_html_edit":  true,
+                   "no_index_html_generation":  true,
+                   "no_public_deploy":  true,
+                   "no_clasp":  true,
+                   "no_apps_script_execution":  true,
+                   "no_sheet_write":  true,
+                   "no_broker_order_sizing":  true
+               },
+    "next":  "P110B_HUMAN_CONFIRM_CANONICAL_INDEX_OR_PATCH_PLAN"
+}
