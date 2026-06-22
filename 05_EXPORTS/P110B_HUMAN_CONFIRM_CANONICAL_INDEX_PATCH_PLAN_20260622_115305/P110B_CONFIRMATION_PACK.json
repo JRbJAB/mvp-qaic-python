@@ -1,0 +1,130 @@
+{
+  "runtime": "MVP_QAIC_HUMAN_CONFIRM_CANONICAL_INDEX_PATCH_PLAN",
+  "version": "P110B_HUMAN_CONFIRM_CANONICAL_INDEX_PATCH_PLAN_0_1_0",
+  "created_at_utc": "2026-06-22T00:00:00Z",
+  "decision_status": "REVIEW_REQUIRED",
+  "scope": {
+    "mvp": "lexique_webapp_prompts_methods_benchmark_public",
+    "qaic_private": "backend_quant_risk_revolutx_execution_locked"
+  },
+  "candidate_summary": {
+    "candidate_count": 71,
+    "probable_canonical_count": 10,
+    "possible_canonical_count": 66
+  },
+  "top_candidate": {
+    "root_id": "mvp_qaic_drive_root",
+    "root_role": "mvp qaic root webapp apps script",
+    "root_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+    "relative_path": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+    "full_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\03_DEV\\APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750\\CAND_001\\MVPQAIC_Index.html",
+    "file_name": "MVPQAIC_Index.html",
+    "size_bytes": 5169160,
+    "allowed_to_edit": false,
+    "candidate_role": "probable_canonical_apps_script_mirror",
+    "canonical_score": 95,
+    "reason": "Apps Script mirror in DEV area; strongest local candidate for validated WebApp shell."
+  },
+  "confirmation_options": [
+    {
+      "decision": "ACCEPT_TOP_CANDIDATE_AS_CANONICAL",
+      "effect": "Allows a future patch-plan batch to target this UI shell after explicit confirmation.",
+      "requires_human": true,
+      "applies_now": false
+    },
+    {
+      "decision": "REJECT_TOP_CANDIDATE",
+      "effect": "Keeps UI binding blocked and requires another locator/audit pass.",
+      "requires_human": true,
+      "applies_now": false
+    },
+    {
+      "decision": "SELECT_OTHER_CANDIDATE",
+      "effect": "Requires the selected path to be supplied in a later confirmation batch.",
+      "requires_human": true,
+      "applies_now": false
+    },
+    {
+      "decision": "NEEDS_MORE_REVIEW",
+      "effect": "Keeps all UI patching and public deploy blocked.",
+      "requires_human": true,
+      "applies_now": false
+    }
+  ],
+  "binding_patch_plan": [
+    {
+      "step_id": "bind_webapp_pack",
+      "priority": "P0",
+      "target_candidate": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+      "action": "Plan data binding of webapp_pack.json to the confirmed canonical UI shell.",
+      "apply_now": false
+    },
+    {
+      "step_id": "bind_context_pack",
+      "priority": "P0",
+      "target_candidate": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+      "action": "Plan context_pack.json binding for lexique/method/prompt context cards.",
+      "apply_now": false
+    },
+    {
+      "step_id": "bind_prompt_payload",
+      "priority": "P0",
+      "target_candidate": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+      "action": "Plan prompt_payload.json binding for public human-review prompt flow.",
+      "apply_now": false
+    },
+    {
+      "step_id": "preserve_admin_monitor_separation",
+      "priority": "P1",
+      "target_candidate": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+      "action": "Keep ADMIN_MONITOR.html as internal admin/suivi only.",
+      "apply_now": false
+    },
+    {
+      "step_id": "keep_public_deploy_blocked",
+      "priority": "P0",
+      "target_candidate": "03_DEV/APPS_SCRIPT_PULL_ISOLATED_P57D_20260620_114750/CAND_001/MVPQAIC_Index.html",
+      "action": "Do not public deploy until explicit separate authorization.",
+      "apply_now": false
+    }
+  ],
+  "blockers": [],
+  "reviews": [
+    "HUMAN_CONFIRMATION_REQUIRED_BEFORE_ANY_INDEX_PATCH",
+    "MULTIPLE_POSSIBLE_CANONICAL_INDEX_CANDIDATES"
+  ],
+  "allowed_next_actions": [
+    "HUMAN_CONFIRM_TOP_CANDIDATE",
+    "HUMAN_SELECT_OTHER_CANDIDATE",
+    "PREPARE_PATCH_PLAN_AFTER_CONFIRMATION"
+  ],
+  "forbidden_next_actions": [
+    "EDIT_INDEX_HTML_NOW",
+    "OVERWRITE_INDEX_HTML",
+    "GENERATE_PUBLIC_INDEX_HTML",
+    "CLASP_PUSH",
+    "APPS_SCRIPT_EXECUTION",
+    "PUBLIC_DEPLOY_WITHOUT_APPROVAL",
+    "BROKER_OR_TRADING_EXECUTION"
+  ],
+  "safety": {
+    "mvp_public_scope": true,
+    "qaic_private_backend_separated": true,
+    "human_confirmation_required": true,
+    "patch_plan_only": true,
+    "no_index_html_edit": true,
+    "no_index_html_generation": true,
+    "no_revolutx_real_access": true,
+    "no_broker": true,
+    "no_order": true,
+    "no_cancel": true,
+    "no_replace_order": true,
+    "no_auto_sizing": true,
+    "no_secret_log": true,
+    "no_sheet_write": true,
+    "no_apps_script_execution": true,
+    "no_clasp": true,
+    "no_public_deploy": true
+  },
+  "next": "P111_BINDING_PATCH_PLAN_AFTER_EXPLICIT_CANONICAL_INDEX_CONFIRMATION"
+}
