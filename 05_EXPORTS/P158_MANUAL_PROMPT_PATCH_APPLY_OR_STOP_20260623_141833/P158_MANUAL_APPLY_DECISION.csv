@@ -1,0 +1,2 @@
+decision_id,prompt_source_id,source_p157_status,patch_candidate_found,patch_safe_for_review,candidate_ready_for_manual_apply,human_apply_decision,manual_apply_authorized,apply_now,apply_allowed,source_patch_applied,prompt_source_modified,safety_status,manual_note
+P158-APPLY-001,P132_P133_PORTFOLIO_MULTIMODAL_REVIEW,P157_PROMPT_PATCH_CANDIDATE_REVIEW_READY_ONLY,True,True,True,PENDING_MANUAL_APPLY_AUTHORIZATION,false,NO,false,false,false,HUMAN_REVIEW_ONLY_NO_APPLY,Review P157 candidate and explicitly authorize manual source patch only in a later controlled batch.

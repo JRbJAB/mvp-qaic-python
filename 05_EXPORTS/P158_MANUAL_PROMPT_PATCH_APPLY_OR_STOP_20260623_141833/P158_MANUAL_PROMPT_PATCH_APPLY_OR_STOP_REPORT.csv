@@ -1,0 +1,31 @@
+metric,value
+status,P158_STOP_WAITING_MANUAL_APPLY_AUTHORIZATION
+prompt_source_id,P132_P133_PORTFOLIO_MULTIMODAL_REVIEW
+source_p157_status,P157_PROMPT_PATCH_CANDIDATE_REVIEW_READY_ONLY
+source_p157_dir,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P157_PROMPT_PATCH_CANDIDATE_REVIEW_OR_APPLY_GATE_20260623_141418
+patch_candidate_found,True
+patch_candidate_created,True
+patch_safe_for_review,True
+candidate_ready_for_manual_apply,True
+manual_apply_authorized,False
+source_patch_applied,False
+apply_allowed,False
+apply_now_yes_count,0
+prompt_source_modified,False
+google_sheets_write,False
+live_google_sheets_read,False
+public_deploy,False
+no_apps_script_execution,True
+no_clasp_push,True
+no_broker,True
+no_order,True
+no_sizing,True
+no_auto_apply_gem_response,True
+human_review_required,True
+unsafe_marker_count,0
+unsafe_markers,[]
+blocker_count,1
+blockers,"[""WAITING_MANUAL_APPLY_AUTHORIZATION""]"
+output_dir,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P158_MANUAL_PROMPT_PATCH_APPLY_OR_STOP_20260623_141833
+next,AUTHORIZE_P158_MANUAL_APPLY_THEN_RETRY_OR_STOP
+generated_at_utc,2026-06-23T14:18:33Z
