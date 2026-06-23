@@ -1,0 +1,23 @@
+{
+  "broker": false,
+  "google_sheets_write": false,
+  "human_review_required": true,
+  "live_google_sheets_read": false,
+  "next": "P145_GEM_RESPONSE_IMPORT_E2E",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209",
+  "p145_gem_response_import_ready": true,
+  "public_deploy": false,
+  "sizing": false,
+  "status": "P144_PROMPT_COCKPIT_WORKFLOWS_RENDERED_LOCAL_READONLY",
+  "workflow_counts": {
+    "context_pack": 1,
+    "contract_reference": 5,
+    "lexique_bridge": 1,
+    "prompt_library": 1,
+    "ready_to_copy": 1,
+    "run_queue": 1,
+    "variant_control": 1
+  },
+  "workflow_step_count": 11
+}
