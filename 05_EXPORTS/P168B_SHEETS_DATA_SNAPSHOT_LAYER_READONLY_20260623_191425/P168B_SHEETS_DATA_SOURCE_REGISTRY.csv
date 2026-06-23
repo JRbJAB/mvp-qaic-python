@@ -1,0 +1,3 @@
+﻿source_id,source_type,source_title,source_ref,access_mode,migration_use
+LIVE_SHEET_MVP_QAIC_DEV,GOOGLE_SHEET,MVP QAIC - Crypto Signal OS - DEV,19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0,READ_ONLY_SEED,initial MVP sheet data/tabs/config/journal/prompt queues
+LIVE_SHEET_QAIC_CRYPTO_V25_DEV,GOOGLE_SHEET,QAIC Crypto - V25 DEV,1vBwQ6GMfqBOfesIIpzBVGieTm-GcY9y_dXink_VY1Vg,READ_ONLY_SEED,upstream QAIC/V25 functional context and possible historical prompt material
