@@ -1,0 +1,1 @@
+snapshot_id,source_key,tab_name,bounded_range,source_file,cache_file,row_count_cached,column_count_cached,checksum_sha256,cache_status,write_allowed
