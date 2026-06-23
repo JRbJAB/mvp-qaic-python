@@ -36,3 +36,7 @@ Thumbs.db
 *.zip.sha256.txt
 
 desktop.ini
+# P168G local operator exports/cache - local only, never commit raw operator CSV
+00_OPERATOR_EXPORTS/P168F_REQUIRED_SNAPSHOTS/*.csv
+00_OPERATOR_EXPORTS/P168G_LOCAL_CACHE/*.csv
+00_OPERATOR_EXPORTS/**/desktop.ini
