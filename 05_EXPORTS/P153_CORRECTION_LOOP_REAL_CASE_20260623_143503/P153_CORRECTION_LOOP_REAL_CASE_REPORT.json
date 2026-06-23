@@ -1,0 +1,87 @@
+{
+  "action_count": 4,
+  "actions": [
+    {
+      "action_id": "P153-CHECK-IMAGE_USED",
+      "action_type": "PAYLOAD_FIELD_REVIEW",
+      "apply_allowed": false,
+      "description": "image_used observed=true expected=true when source_type=image",
+      "human_review_required": true,
+      "priority": "P2",
+      "recommended_change": "Valider manuellement la cohérence ou renforcer le prompt source.",
+      "source": "P152_PAYLOAD"
+    },
+    {
+      "action_id": "P153-CHECK-REFERENCE_CURRENCY",
+      "action_type": "PAYLOAD_FIELD_REVIEW",
+      "apply_allowed": false,
+      "description": "reference_currency observed=\"USD\" expected=USD or explicit",
+      "human_review_required": true,
+      "priority": "P2",
+      "recommended_change": "Valider manuellement la cohérence ou renforcer le prompt source.",
+      "source": "P152_PAYLOAD"
+    },
+    {
+      "action_id": "P153-HUMAN-REVIEW-001",
+      "action_type": "FINAL_HUMAN_REVIEW",
+      "apply_allowed": false,
+      "description": "Relire la réponse GEM réelle avant toute correction de prompt.",
+      "human_review_required": true,
+      "priority": "P0",
+      "recommended_change": "Confirmer les chiffres, la devise, l'image_used, et la présence des garde-fous no order/no sizing/no auto apply.",
+      "source": "P152_REAL_GEM_RESPONSE"
+    },
+    {
+      "action_id": "P153-PROMPT-IMPROVEMENT-001",
+      "action_type": "PROMPT_IMPROVEMENT_PROPOSAL",
+      "apply_allowed": false,
+      "description": "Préparer une itération P132/P133 si la réponse GEM manque de précision ou de structure.",
+      "human_review_required": true,
+      "priority": "P1",
+      "recommended_change": "Ajouter seulement des corrections review-only, sans ordre, sans sizing, sans Sheet write.",
+      "source": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW"
+    }
+  ],
+  "apply_allowed": false,
+  "blocker_count": 0,
+  "blockers": [],
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "next": "P154_PROMPT_CORRECTION_APPLY_PLAN_OR_STOP",
+  "output_files": {
+    "actions_csv": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P153_CORRECTION_LOOP_REAL_CASE_20260623_143503\\P153_CORRECTION_ACTIONS.csv",
+    "checklist_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P153_CORRECTION_LOOP_REAL_CASE_20260623_143503\\P153_OPERATOR_REVIEW_CHECKLIST.md",
+    "report_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P153_CORRECTION_LOOP_REAL_CASE_20260623_143503\\P153_CORRECTION_LOOP_REAL_CASE_REPORT.json",
+    "suggestions_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P153_CORRECTION_LOOP_REAL_CASE_20260623_143503\\P153_PROMPT_IMPROVEMENT_SUGGESTIONS.md",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P153_CORRECTION_LOOP_REAL_CASE_20260623_143503\\P153_SUMMARY.json"
+  },
+  "payload_human_review_required": true,
+  "payload_image_used": true,
+  "payload_no_auto_apply": true,
+  "payload_no_order_no_sizing": true,
+  "payload_reference_currency": "USD",
+  "payload_status": "REVIEW_REQUIRED",
+  "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+  "review_gate": "HUMAN_REVIEW_REQUIRED",
+  "run_id": "P153-CORRECTION-LOOP-REAL-CASE-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "correction_loop_only": true,
+    "google_sheets_write": false,
+    "human_review_required": true,
+    "live_google_sheets_read": false,
+    "order": false,
+    "public_deploy": false,
+    "review_only": true,
+    "sizing": false
+  },
+  "source_p152_report_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_20260623_142527\\P152_REAL_GEM_RESPONSE_IMPORT_REPORT.json",
+  "source_p152_status": "P152_REAL_GEM_RESPONSE_IMPORTED_LOCAL_REVIEW",
+  "source_p152_validation_status": "VALIDATED_FOR_HUMAN_REVIEW",
+  "source_p152a_binding_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152A_PROMPT_SOURCE_BINDING_FOR_REAL_GEM_20260623_140542\\P152A_PROMPT_SOURCE_BINDING.json",
+  "source_p152a_status": "P152A_PROMPT_SOURCE_BINDING_READY_FOR_REAL_GEM",
+  "status": "P153_CORRECTION_LOOP_REAL_CASE_READY_REVIEW_ONLY",
+  "version": "MVP_QAIC_P153_CORRECTION_LOOP_REAL_CASE_1.0.0_SAFE"
+}

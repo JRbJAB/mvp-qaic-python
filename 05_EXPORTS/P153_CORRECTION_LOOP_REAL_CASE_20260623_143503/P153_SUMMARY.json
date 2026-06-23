@@ -1,0 +1,19 @@
+{
+  "action_count": 4,
+  "apply_allowed": false,
+  "auto_apply_gem_response": false,
+  "blocker_count": 0,
+  "broker": false,
+  "google_sheets_write": false,
+  "live_google_sheets_read": false,
+  "next": "P154_PROMPT_CORRECTION_APPLY_PLAN_OR_STOP",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P153_CORRECTION_LOOP_REAL_CASE_20260623_143503",
+  "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+  "public_deploy": false,
+  "review_gate": "HUMAN_REVIEW_REQUIRED",
+  "sizing": false,
+  "source_p152_status": "P152_REAL_GEM_RESPONSE_IMPORTED_LOCAL_REVIEW",
+  "source_p152_validation_status": "VALIDATED_FOR_HUMAN_REVIEW",
+  "status": "P153_CORRECTION_LOOP_REAL_CASE_READY_REVIEW_ONLY"
+}

@@ -1,0 +1,5 @@
+action_id,action_type,priority,source,description,recommended_change,apply_allowed,human_review_required
+P153-CHECK-IMAGE_USED,PAYLOAD_FIELD_REVIEW,P2,P152_PAYLOAD,image_used observed=true expected=true when source_type=image,Valider manuellement la cohérence ou renforcer le prompt source.,False,True
+P153-CHECK-REFERENCE_CURRENCY,PAYLOAD_FIELD_REVIEW,P2,P152_PAYLOAD,"reference_currency observed=""USD"" expected=USD or explicit",Valider manuellement la cohérence ou renforcer le prompt source.,False,True
+P153-HUMAN-REVIEW-001,FINAL_HUMAN_REVIEW,P0,P152_REAL_GEM_RESPONSE,Relire la réponse GEM réelle avant toute correction de prompt.,"Confirmer les chiffres, la devise, l'image_used, et la présence des garde-fous no order/no sizing/no auto apply.",False,True
+P153-PROMPT-IMPROVEMENT-001,PROMPT_IMPROVEMENT_PROPOSAL,P1,P132_P133_PORTFOLIO_MULTIMODAL_REVIEW,Préparer une itération P132/P133 si la réponse GEM manque de précision ou de structure.,"Ajouter seulement des corrections review-only, sans ordre, sans sizing, sans Sheet write.",False,True
