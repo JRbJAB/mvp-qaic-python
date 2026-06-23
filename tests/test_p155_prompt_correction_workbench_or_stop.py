@@ -12,6 +12,7 @@ from mvp_qaic_py.p155_prompt_correction_workbench_or_stop import (
     build_and_write_export,
     build_workbench_rows,
     load_p154_source,
+    p154_status_ready,
     summary_value,
     validate_p154_for_p155,
 )
@@ -151,6 +152,7 @@ def test_p155_accepts_nested_lowercase_p154_summary(tmp_path: Path) -> None:
     assert validate_p154_for_p155(source) == []
 
 
+# R5 guard: p154_status_ready must be imported; R4 committed despite F821/NameError.
 def test_p155_accepts_p154_global_sealed_status_when_safety_gates_pass(tmp_path: Path) -> None:
     source_dir = write_p154_export(tmp_path, global_status_only=True)
     source = load_p154_source(source_dir)
