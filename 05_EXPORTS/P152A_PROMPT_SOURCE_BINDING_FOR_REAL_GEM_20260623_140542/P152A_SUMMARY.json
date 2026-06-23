@@ -1,0 +1,19 @@
+{
+  "allowed_for_p152_count": 1,
+  "auto_apply_gem_response": false,
+  "blocker_count": 0,
+  "broker": false,
+  "google_sheets_write": false,
+  "historical_reference_count": 11,
+  "live_google_sheets_read": false,
+  "next": "P152_REAL_GEM_RESPONSE_IMPORT_WITH_BOUND_PROMPT_OR_STOP",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152A_PROMPT_SOURCE_BINDING_FOR_REAL_GEM_20260623_140542",
+  "prompt_source_count": 12,
+  "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+  "public_deploy": false,
+  "real_gem_import_executed": false,
+  "selected_prompt_source_status": "ACTIVE_FOR_P152_REAL_GEM",
+  "sizing": false,
+  "status": "P152A_PROMPT_SOURCE_BINDING_READY_FOR_REAL_GEM"
+}

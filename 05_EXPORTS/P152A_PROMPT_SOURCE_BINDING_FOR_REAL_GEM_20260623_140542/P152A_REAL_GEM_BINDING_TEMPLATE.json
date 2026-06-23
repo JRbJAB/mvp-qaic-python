@@ -1,0 +1,10 @@
+{
+  "NO_AUTO_APPLY": true,
+  "expected_runtime_profile": "GEM_MULTIMODAL_PORTFOLIO_REVIEW",
+  "gem_response_file": "C:\\Users\\Julie\\Documents\\JRb-Secrets\\QAIC\\MVP QAIC\\GEM_RESPONSES\\gem_response_real.json",
+  "human_review_required": true,
+  "input_evidence_type": "portfolio_screenshot",
+  "no_order_no_sizing": true,
+  "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+  "prompt_source_label": "P132/P133 — Portfolio multimodal Revolut X"
+}
