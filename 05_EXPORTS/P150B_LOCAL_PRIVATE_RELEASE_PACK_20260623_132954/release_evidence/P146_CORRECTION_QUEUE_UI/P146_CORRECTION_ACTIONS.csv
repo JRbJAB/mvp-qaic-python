@@ -1,0 +1,3 @@
+queue_id,priority,issue_type,title,source,suggested_action,human_review_required,apply_now
+P146-REVIEW-001,P1,REVIEW,GEM response accepted for human review,P145_REVIEW_QUEUE,"Lire la réponse, valider l'extraction, puis préparer le prochain test réel.",True,False
+P146-PROMPT-002,P2,PROMPT_NEXT_TEST,Next prompt workflow: 📘 PROMPT_LIBRARY,P144_WORKFLOW,Choisir un prompt validé et consulter son contenu source.,True,False

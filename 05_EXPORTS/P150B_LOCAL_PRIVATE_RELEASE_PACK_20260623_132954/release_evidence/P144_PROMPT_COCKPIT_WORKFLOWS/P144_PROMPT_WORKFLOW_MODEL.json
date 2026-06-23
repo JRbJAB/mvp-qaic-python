@@ -1,0 +1,248 @@
+{
+  "cockpit_page_count": 11,
+  "gates": {
+    "allows_auto_apply": false,
+    "allows_broker": false,
+    "allows_sizing": false,
+    "p145_gem_response_import_ready": true,
+    "requires_human_review": true
+  },
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "next": "P145_GEM_RESPONSE_IMPORT_E2E",
+  "operator_flow": [
+    "select_prompt",
+    "select_variant",
+    "attach_context",
+    "review_lexique_bridge",
+    "copy_prompt",
+    "queue_review",
+    "import_gem_response_in_p145"
+  ],
+  "output_files": {
+    "operator_actions_csv": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_OPERATOR_ACTIONS.csv",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_SUMMARY.json",
+    "workflow_app_py": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_NICEGUI_PROMPT_WORKFLOW_APP.py",
+    "workflow_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_COCKPIT_WORKFLOWS.md",
+    "workflow_model_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_WORKFLOW_MODEL.json"
+  },
+  "run_id": "P144-PROMPT-COCKPIT-WORKFLOWS-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "google_sheets_write": false,
+    "human_review_required": true,
+    "live_google_sheets_read": false,
+    "order": false,
+    "public_deploy": false,
+    "sizing": false,
+    "source": "P143B_LOCAL_PREVIEW_BINDING"
+  },
+  "source_csv_count": 65,
+  "source_p143b_binding_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_DATA_PREVIEW_EXPANDED_BINDING.json",
+  "source_p143b_status": "P143B_DATA_PREVIEW_SOURCE_EXPANSION_RENDERED_LOCAL_READONLY",
+  "status": "P144_PROMPT_COCKPIT_WORKFLOWS_RENDERED_LOCAL_READONLY",
+  "steps": [
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "select_prompt",
+      "no_auto_apply": true,
+      "operator_goal": "Choisir un prompt validé et consulter son contenu source.",
+      "preview_row_count": 22,
+      "primary_fields": [
+        "prompt_id",
+        "prompt_title",
+        "raw_prompt_text",
+        "status"
+      ],
+      "route": "/cockpit/library_prompt_library",
+      "source_filename": "P138C_BACKUP___PROMPT_LIBRARY.csv",
+      "title": "📘 PROMPT_LIBRARY",
+      "workflow_type": "prompt_library"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "select_variant",
+      "no_auto_apply": true,
+      "operator_goal": "Comparer les variantes actives et sélectionner la variante utile au test.",
+      "preview_row_count": 22,
+      "primary_fields": [
+        "variant_id",
+        "prompt_id",
+        "status",
+        "priority"
+      ],
+      "route": "/cockpit/control_prompt_variant_control_center",
+      "source_filename": "P138C_BACKUP___PROMPT_LIBRARY.csv",
+      "title": "🎛️ PROMPT_VARIANT_CONTROL_CENTER",
+      "workflow_type": "variant_control"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "attach_context",
+      "no_auto_apply": true,
+      "operator_goal": "Attacher un contexte métier au prompt avant copie.",
+      "preview_row_count": 22,
+      "primary_fields": [
+        "context_pack_id",
+        "scope",
+        "status"
+      ],
+      "route": "/cockpit/context_prompt_context_packs",
+      "source_filename": "P138C_BACKUP___PROMPT_LIBRARY.csv",
+      "title": "🧠 PROMPT_CONTEXT_PACKS",
+      "workflow_type": "context_pack"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "review_bridge",
+      "no_auto_apply": true,
+      "operator_goal": "Relier le prompt aux termes/méthodes du lexique.",
+      "preview_row_count": 22,
+      "primary_fields": [
+        "term",
+        "category",
+        "prompt_id"
+      ],
+      "route": "/cockpit/bridge_prompt_lexique_bridge",
+      "source_filename": "P138C_BACKUP___PROMPT_LIBRARY.csv",
+      "title": "🔗 PROMPT_LEXIQUE_BRIDGE",
+      "workflow_type": "lexique_bridge"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "copy_prompt",
+      "no_auto_apply": true,
+      "operator_goal": "Préparer le prompt final copiable dans GEM/ChatGPT.",
+      "preview_row_count": 22,
+      "primary_fields": [
+        "ready_prompt_id",
+        "compiled_prompt",
+        "safety"
+      ],
+      "route": "/cockpit/ready_prompt_ready_to_copy",
+      "source_filename": "P138C_BACKUP___PROMPT_LIBRARY.csv",
+      "title": "🧩 PROMPT_READY_TO_COPY",
+      "workflow_type": "ready_to_copy"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "queue_review",
+      "no_auto_apply": true,
+      "operator_goal": "Voir les prompts à tester et leur statut opérateur.",
+      "preview_row_count": 1,
+      "primary_fields": [
+        "queue_id",
+        "prompt_id",
+        "run_status"
+      ],
+      "route": "/cockpit/run_prompt_run_queue",
+      "source_filename": "P120_DECISION_JOURNAL_ENTRY.csv",
+      "title": "🚀 PROMPT_RUN_QUEUE",
+      "workflow_type": "run_queue"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "review_reference",
+      "no_auto_apply": true,
+      "operator_goal": "Consulter les contrats/références nécessaires au workflow.",
+      "preview_row_count": 8,
+      "primary_fields": [
+        "id",
+        "status",
+        "notes"
+      ],
+      "route": "/cockpit/data_requirements",
+      "source_filename": "P079D_DOMAIN_DECISION_PACK.csv",
+      "title": "DATA_REQUIREMENTS",
+      "workflow_type": "contract_reference"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "review_reference",
+      "no_auto_apply": true,
+      "operator_goal": "Consulter les contrats/références nécessaires au workflow.",
+      "preview_row_count": 9,
+      "primary_fields": [
+        "id",
+        "status",
+        "notes"
+      ],
+      "route": "/cockpit/gpt_prompt_runtime_spec",
+      "source_filename": "P138C_HYDRATED_SAFE_CANDIDATES.csv",
+      "title": "GPT_PROMPT_RUNTIME_SPEC",
+      "workflow_type": "contract_reference"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "review_reference",
+      "no_auto_apply": true,
+      "operator_goal": "Consulter les contrats/références nécessaires au workflow.",
+      "preview_row_count": 25,
+      "primary_fields": [
+        "id",
+        "status",
+        "notes"
+      ],
+      "route": "/cockpit/output_templates",
+      "source_filename": "P139_SHEET_UI_METADATA.csv",
+      "title": "OUTPUT_TEMPLATES",
+      "workflow_type": "contract_reference"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "review_reference",
+      "no_auto_apply": true,
+      "operator_goal": "Consulter les contrats/références nécessaires au workflow.",
+      "preview_row_count": 25,
+      "primary_fields": [
+        "id",
+        "status",
+        "notes"
+      ],
+      "route": "/cockpit/qaic_output_contract",
+      "source_filename": "P079B_FIELD_REVIEW_WORKING_COPY.csv",
+      "title": "QAIC_OUTPUT_CONTRACT",
+      "workflow_type": "contract_reference"
+    },
+    {
+      "binding_mode": "csv_match",
+      "human_review_required": true,
+      "next_action": "review_reference",
+      "no_auto_apply": true,
+      "operator_goal": "Consulter les contrats/références nécessaires au workflow.",
+      "preview_row_count": 22,
+      "primary_fields": [
+        "id",
+        "status",
+        "notes"
+      ],
+      "route": "/cockpit/runtime_ai_runtime_reference",
+      "source_filename": "P138C_BACKUP___PROMPT_LIBRARY.csv",
+      "title": "🤖 AI_RUNTIME_REFERENCE",
+      "workflow_type": "contract_reference"
+    }
+  ],
+  "version": "MVP_QAIC_P144_PROMPT_COCKPIT_WORKFLOWS_1.0.0_SAFE",
+  "workflow_counts": {
+    "context_pack": 1,
+    "contract_reference": 5,
+    "lexique_bridge": 1,
+    "prompt_library": 1,
+    "ready_to_copy": 1,
+    "run_queue": 1,
+    "variant_control": 1
+  },
+  "workflow_step_count": 11
+}

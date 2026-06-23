@@ -1,0 +1,91 @@
+{
+  "fixture_used": true,
+  "gem_response_source_path": "BUILTIN_P145_FIXTURE",
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "next": "P146_CORRECTION_QUEUE_UI",
+  "output_files": {
+    "import_payload_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_IMPORT_PAYLOAD.json",
+    "markdown": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_IMPORT_E2E.md",
+    "review_app_py": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_NICEGUI_GEM_RESPONSE_REVIEW_APP.py",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_SUMMARY.json",
+    "validation_report_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_VALIDATION_REPORT.json"
+  },
+  "raw_text_length": 718,
+  "response_payload": {
+    "assets": [
+      {
+        "allocation_pct": 63.59,
+        "pnl": -117.69,
+        "symbol": "BTC",
+        "value": 416.92
+      },
+      {
+        "allocation_pct": 30.31,
+        "pnl": 0.06,
+        "symbol": "USDC",
+        "value": 198.75
+      },
+      {
+        "allocation_pct": 6.1,
+        "pnl": 0.0,
+        "symbol": "CASH",
+        "value": 39.99
+      }
+    ],
+    "blockers": [
+      "HUMAN_REVIEW_REQUIRED",
+      "NO_AUTO_APPLY"
+    ],
+    "human_review_required": true,
+    "image_used": true,
+    "no_order_no_sizing": true,
+    "notes_fr": "Fixture locale P145 pour valider le chemin import GEM sans ordre ni sizing.",
+    "portfolio_total_value": 655.66,
+    "reference_currency": "USD",
+    "source_type": "fixture",
+    "status": "REVIEW_REQUIRED"
+  },
+  "review_queue_item": {
+    "allowed_actions": [
+      "HUMAN_REVIEW",
+      "PROMPT_CORRECTION",
+      "SAVE_LOCAL_REPORT"
+    ],
+    "blocked_actions": [
+      "ORDER",
+      "SIZING",
+      "AUTO_APPLY",
+      "SHEET_WRITE"
+    ],
+    "decision_required": "ACCEPT_FOR_ANALYSIS_OR_REJECT_AND_CORRECT_PROMPT",
+    "review_id": "P145-GEM-RESPONSE-REVIEW-001",
+    "status": "REVIEW_REQUIRED"
+  },
+  "run_id": "P145-GEM-RESPONSE-IMPORT-E2E-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "google_sheets_write": false,
+    "human_review_required": true,
+    "live_google_sheets_read": false,
+    "order": false,
+    "public_deploy": false,
+    "sizing": false,
+    "source": "LOCAL_GEM_RESPONSE_FILE_OR_FIXTURE"
+  },
+  "source_p144_model_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_WORKFLOW_MODEL.json",
+  "source_p144_status": "P144_PROMPT_COCKPIT_WORKFLOWS_RENDERED_LOCAL_READONLY",
+  "status": "P145_GEM_RESPONSE_IMPORT_E2E_VALIDATED_LOCAL_REVIEW",
+  "validation": {
+    "blockers": [],
+    "human_review_required": true,
+    "no_auto_apply": true,
+    "no_order_no_sizing": true,
+    "status": "VALIDATED_FOR_HUMAN_REVIEW",
+    "warnings": []
+  },
+  "version": "MVP_QAIC_P145_GEM_RESPONSE_IMPORT_E2E_1.0.0_SAFE",
+  "workflow_step_count": 11
+}

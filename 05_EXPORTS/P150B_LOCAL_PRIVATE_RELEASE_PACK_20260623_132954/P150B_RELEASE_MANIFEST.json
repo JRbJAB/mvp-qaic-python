@@ -1,0 +1,496 @@
+{
+  "blocker_count": 0,
+  "blockers": [],
+  "copied_file_count": 46,
+  "copied_files": [
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER\\P140_NICEGUI_COMPONENT_MODEL.json",
+      "release_relative_path": "release_evidence/P140_NICEGUI_COCKPIT_REPLICA_RENDERER/P140_NICEGUI_COMPONENT_MODEL.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_NICEGUI_COMPONENT_MODEL.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER\\P140_RENDERER_SPEC.md",
+      "release_relative_path": "release_evidence/P140_NICEGUI_COCKPIT_REPLICA_RENDERER/P140_RENDERER_SPEC.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_RENDERER_SPEC.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER\\P140_SUMMARY.json",
+      "release_relative_path": "release_evidence/P140_NICEGUI_COCKPIT_REPLICA_RENDERER/P140_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH\\P141_LOCAL_LAUNCH_PLAN.json",
+      "release_relative_path": "release_evidence/P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH/P141_LOCAL_LAUNCH_PLAN.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_LOCAL_LAUNCH_PLAN.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH\\P141_LOCAL_LAUNCH_RUNBOOK.md",
+      "release_relative_path": "release_evidence/P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH/P141_LOCAL_LAUNCH_RUNBOOK.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_LOCAL_LAUNCH_RUNBOOK.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH\\P141_ROUTE_SMOKE_RESULTS.csv",
+      "release_relative_path": "release_evidence/P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH/P141_ROUTE_SMOKE_RESULTS.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_ROUTE_SMOKE_RESULTS.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH\\P141_SUMMARY.json",
+      "release_relative_path": "release_evidence/P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH/P141_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P142_UI_FIDELITY_SHELL\\P142_SUMMARY.json",
+      "release_relative_path": "release_evidence/P142_UI_FIDELITY_SHELL/P142_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P142_UI_FIDELITY_SHELL\\P142_UI_FIDELITY_SHELL.md",
+      "release_relative_path": "release_evidence/P142_UI_FIDELITY_SHELL/P142_UI_FIDELITY_SHELL.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_UI_FIDELITY_SHELL.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P142_UI_FIDELITY_SHELL\\P142_UI_FIDELITY_SHELL_SPEC.json",
+      "release_relative_path": "release_evidence/P142_UI_FIDELITY_SHELL/P142_UI_FIDELITY_SHELL_SPEC.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_UI_FIDELITY_SHELL_SPEC.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P142_UI_FIDELITY_SHELL\\P142_UI_TOKENS.json",
+      "release_relative_path": "release_evidence/P142_UI_FIDELITY_SHELL/P142_UI_TOKENS.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_UI_TOKENS.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P143B_DATA_PREVIEW_SOURCE_EXPANSION\\P143B_BINDING_SUMMARY.csv",
+      "release_relative_path": "release_evidence/P143B_DATA_PREVIEW_SOURCE_EXPANSION/P143B_BINDING_SUMMARY.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_BINDING_SUMMARY.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P143B_DATA_PREVIEW_SOURCE_EXPANSION\\P143B_DATA_PREVIEW_EXPANDED_BINDING.json",
+      "release_relative_path": "release_evidence/P143B_DATA_PREVIEW_SOURCE_EXPANSION/P143B_DATA_PREVIEW_EXPANDED_BINDING.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_DATA_PREVIEW_EXPANDED_BINDING.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P143B_DATA_PREVIEW_SOURCE_EXPANSION\\P143B_DATA_PREVIEW_SOURCE_EXPANSION.md",
+      "release_relative_path": "release_evidence/P143B_DATA_PREVIEW_SOURCE_EXPANSION/P143B_DATA_PREVIEW_SOURCE_EXPANSION.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_DATA_PREVIEW_SOURCE_EXPANSION.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P143B_DATA_PREVIEW_SOURCE_EXPANSION\\P143B_SUMMARY.json",
+      "release_relative_path": "release_evidence/P143B_DATA_PREVIEW_SOURCE_EXPANSION/P143B_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P144_PROMPT_COCKPIT_WORKFLOWS\\P144_OPERATOR_ACTIONS.csv",
+      "release_relative_path": "release_evidence/P144_PROMPT_COCKPIT_WORKFLOWS/P144_OPERATOR_ACTIONS.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_OPERATOR_ACTIONS.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P144_PROMPT_COCKPIT_WORKFLOWS\\P144_PROMPT_COCKPIT_WORKFLOWS.md",
+      "release_relative_path": "release_evidence/P144_PROMPT_COCKPIT_WORKFLOWS/P144_PROMPT_COCKPIT_WORKFLOWS.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_COCKPIT_WORKFLOWS.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P144_PROMPT_COCKPIT_WORKFLOWS\\P144_PROMPT_WORKFLOW_MODEL.json",
+      "release_relative_path": "release_evidence/P144_PROMPT_COCKPIT_WORKFLOWS/P144_PROMPT_WORKFLOW_MODEL.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_WORKFLOW_MODEL.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P144_PROMPT_COCKPIT_WORKFLOWS\\P144_SUMMARY.json",
+      "release_relative_path": "release_evidence/P144_PROMPT_COCKPIT_WORKFLOWS/P144_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P145_GEM_RESPONSE_IMPORT_E2E\\P145_GEM_RESPONSE_IMPORT_E2E.md",
+      "release_relative_path": "release_evidence/P145_GEM_RESPONSE_IMPORT_E2E/P145_GEM_RESPONSE_IMPORT_E2E.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_IMPORT_E2E.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P145_GEM_RESPONSE_IMPORT_E2E\\P145_GEM_RESPONSE_IMPORT_PAYLOAD.json",
+      "release_relative_path": "release_evidence/P145_GEM_RESPONSE_IMPORT_E2E/P145_GEM_RESPONSE_IMPORT_PAYLOAD.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_IMPORT_PAYLOAD.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P145_GEM_RESPONSE_IMPORT_E2E\\P145_GEM_RESPONSE_VALIDATION_REPORT.json",
+      "release_relative_path": "release_evidence/P145_GEM_RESPONSE_IMPORT_E2E/P145_GEM_RESPONSE_VALIDATION_REPORT.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_VALIDATION_REPORT.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P145_GEM_RESPONSE_IMPORT_E2E\\P145_SUMMARY.json",
+      "release_relative_path": "release_evidence/P145_GEM_RESPONSE_IMPORT_E2E/P145_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P146_CORRECTION_QUEUE_UI\\P146_CORRECTION_ACTIONS.csv",
+      "release_relative_path": "release_evidence/P146_CORRECTION_QUEUE_UI/P146_CORRECTION_ACTIONS.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_ACTIONS.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P146_CORRECTION_QUEUE_UI\\P146_CORRECTION_QUEUE_MODEL.json",
+      "release_relative_path": "release_evidence/P146_CORRECTION_QUEUE_UI/P146_CORRECTION_QUEUE_MODEL.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_QUEUE_MODEL.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P146_CORRECTION_QUEUE_UI\\P146_CORRECTION_QUEUE_UI.md",
+      "release_relative_path": "release_evidence/P146_CORRECTION_QUEUE_UI/P146_CORRECTION_QUEUE_UI.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_QUEUE_UI.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P146_CORRECTION_QUEUE_UI\\P146_SUMMARY.json",
+      "release_relative_path": "release_evidence/P146_CORRECTION_QUEUE_UI/P146_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P147_OPERATOR_POLISH\\P147_OPERATOR_POLISH.md",
+      "release_relative_path": "release_evidence/P147_OPERATOR_POLISH/P147_OPERATOR_POLISH.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_POLISH.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P147_OPERATOR_POLISH\\P147_OPERATOR_POLISH_MODEL.json",
+      "release_relative_path": "release_evidence/P147_OPERATOR_POLISH/P147_OPERATOR_POLISH_MODEL.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_POLISH_MODEL.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P147_OPERATOR_POLISH\\P147_OPERATOR_SHORTCUTS.csv",
+      "release_relative_path": "release_evidence/P147_OPERATOR_POLISH/P147_OPERATOR_SHORTCUTS.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_SHORTCUTS.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P147_OPERATOR_POLISH\\P147_SUMMARY.json",
+      "release_relative_path": "release_evidence/P147_OPERATOR_POLISH/P147_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P148_SYNC_STRATEGY_READONLY\\P148_SOURCE_REGISTRY.csv",
+      "release_relative_path": "release_evidence/P148_SYNC_STRATEGY_READONLY/P148_SOURCE_REGISTRY.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SOURCE_REGISTRY.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P148_SYNC_STRATEGY_READONLY\\P148_SUMMARY.json",
+      "release_relative_path": "release_evidence/P148_SYNC_STRATEGY_READONLY/P148_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P148_SYNC_STRATEGY_READONLY\\P148_SYNC_STEPS.csv",
+      "release_relative_path": "release_evidence/P148_SYNC_STRATEGY_READONLY/P148_SYNC_STEPS.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SYNC_STEPS.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P148_SYNC_STRATEGY_READONLY\\P148_SYNC_STRATEGY_READONLY.json",
+      "release_relative_path": "release_evidence/P148_SYNC_STRATEGY_READONLY/P148_SYNC_STRATEGY_READONLY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SYNC_STRATEGY_READONLY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P148_SYNC_STRATEGY_READONLY\\P148_SYNC_STRATEGY_READONLY.md",
+      "release_relative_path": "release_evidence/P148_SYNC_STRATEGY_READONLY/P148_SYNC_STRATEGY_READONLY.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SYNC_STRATEGY_READONLY.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P149_MIGRATION_CLOSE_GATE\\P149_MIGRATION_CLOSE_GATE.md",
+      "release_relative_path": "release_evidence/P149_MIGRATION_CLOSE_GATE/P149_MIGRATION_CLOSE_GATE.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_CLOSE_GATE.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P149_MIGRATION_CLOSE_GATE\\P149_MIGRATION_CLOSE_GATE_REPORT.json",
+      "release_relative_path": "release_evidence/P149_MIGRATION_CLOSE_GATE/P149_MIGRATION_CLOSE_GATE_REPORT.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_CLOSE_GATE_REPORT.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P149_MIGRATION_CLOSE_GATE\\P149_MIGRATION_TIMELINE.csv",
+      "release_relative_path": "release_evidence/P149_MIGRATION_CLOSE_GATE/P149_MIGRATION_TIMELINE.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_TIMELINE.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P149_MIGRATION_CLOSE_GATE\\P149_POST_MIGRATION_RUNBOOK.md",
+      "release_relative_path": "release_evidence/P149_MIGRATION_CLOSE_GATE/P149_POST_MIGRATION_RUNBOOK.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_POST_MIGRATION_RUNBOOK.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P149_MIGRATION_CLOSE_GATE\\P149_SUMMARY.json",
+      "release_relative_path": "release_evidence/P149_MIGRATION_CLOSE_GATE/P149_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_SUMMARY.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P150_PUBLIC_PREP_SELECTOR_OR_STOP\\P150_NEXT_OPTIONS.csv",
+      "release_relative_path": "release_evidence/P150_PUBLIC_PREP_SELECTOR_OR_STOP/P150_NEXT_OPTIONS.csv",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_NEXT_OPTIONS.csv"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P150_PUBLIC_PREP_SELECTOR_OR_STOP\\P150_OPERATOR_HANDOFF.md",
+      "release_relative_path": "release_evidence/P150_PUBLIC_PREP_SELECTOR_OR_STOP/P150_OPERATOR_HANDOFF.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_OPERATOR_HANDOFF.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P150_PUBLIC_PREP_SELECTOR_OR_STOP\\P150_PUBLIC_PREP_SELECTOR.json",
+      "release_relative_path": "release_evidence/P150_PUBLIC_PREP_SELECTOR_OR_STOP/P150_PUBLIC_PREP_SELECTOR.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_PUBLIC_PREP_SELECTOR.json"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P150_PUBLIC_PREP_SELECTOR_OR_STOP\\P150_PUBLIC_PREP_SELECTOR.md",
+      "release_relative_path": "release_evidence/P150_PUBLIC_PREP_SELECTOR_OR_STOP/P150_PUBLIC_PREP_SELECTOR.md",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_PUBLIC_PREP_SELECTOR.md"
+    },
+    {
+      "dest": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P150_PUBLIC_PREP_SELECTOR_OR_STOP\\P150_SUMMARY.json",
+      "release_relative_path": "release_evidence/P150_PUBLIC_PREP_SELECTOR_OR_STOP/P150_SUMMARY.json",
+      "source": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_SUMMARY.json"
+    }
+  ],
+  "evidence": [
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P140_NICEGUI_COCKPIT_REPLICA_RENDERER_",
+      "selected_file_count": 3,
+      "selected_files": [
+        "P140_NICEGUI_COMPONENT_MODEL.json",
+        "P140_RENDERER_SPEC.md",
+        "P140_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_NICEGUI_COMPONENT_MODEL.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_RENDERER_SPEC.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_",
+      "selected_file_count": 4,
+      "selected_files": [
+        "P141_LOCAL_LAUNCH_PLAN.json",
+        "P141_LOCAL_LAUNCH_RUNBOOK.md",
+        "P141_ROUTE_SMOKE_RESULTS.csv",
+        "P141_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_LOCAL_LAUNCH_PLAN.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_LOCAL_LAUNCH_RUNBOOK.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_ROUTE_SMOKE_RESULTS.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P142_UI_FIDELITY_SHELL_",
+      "selected_file_count": 4,
+      "selected_files": [
+        "P142_SUMMARY.json",
+        "P142_UI_FIDELITY_SHELL.md",
+        "P142_UI_FIDELITY_SHELL_SPEC.json",
+        "P142_UI_TOKENS.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_SUMMARY.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_UI_FIDELITY_SHELL.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_UI_FIDELITY_SHELL_SPEC.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818\\P142_UI_TOKENS.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P143B_DATA_PREVIEW_SOURCE_EXPANSION_",
+      "selected_file_count": 4,
+      "selected_files": [
+        "P143B_BINDING_SUMMARY.csv",
+        "P143B_DATA_PREVIEW_EXPANDED_BINDING.json",
+        "P143B_DATA_PREVIEW_SOURCE_EXPANSION.md",
+        "P143B_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_BINDING_SUMMARY.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_DATA_PREVIEW_EXPANDED_BINDING.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_DATA_PREVIEW_SOURCE_EXPANSION.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P144_PROMPT_COCKPIT_WORKFLOWS_",
+      "selected_file_count": 4,
+      "selected_files": [
+        "P144_OPERATOR_ACTIONS.csv",
+        "P144_PROMPT_COCKPIT_WORKFLOWS.md",
+        "P144_PROMPT_WORKFLOW_MODEL.json",
+        "P144_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_OPERATOR_ACTIONS.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_COCKPIT_WORKFLOWS.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_WORKFLOW_MODEL.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P145_GEM_RESPONSE_IMPORT_E2E_",
+      "selected_file_count": 4,
+      "selected_files": [
+        "P145_GEM_RESPONSE_IMPORT_E2E.md",
+        "P145_GEM_RESPONSE_IMPORT_PAYLOAD.json",
+        "P145_GEM_RESPONSE_VALIDATION_REPORT.json",
+        "P145_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_IMPORT_E2E.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_IMPORT_PAYLOAD.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_VALIDATION_REPORT.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P146_CORRECTION_QUEUE_UI_",
+      "selected_file_count": 4,
+      "selected_files": [
+        "P146_CORRECTION_ACTIONS.csv",
+        "P146_CORRECTION_QUEUE_MODEL.json",
+        "P146_CORRECTION_QUEUE_UI.md",
+        "P146_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_ACTIONS.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_QUEUE_MODEL.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_QUEUE_UI.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P147_OPERATOR_POLISH_",
+      "selected_file_count": 4,
+      "selected_files": [
+        "P147_OPERATOR_POLISH.md",
+        "P147_OPERATOR_POLISH_MODEL.json",
+        "P147_OPERATOR_SHORTCUTS.csv",
+        "P147_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_POLISH.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_POLISH_MODEL.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_SHORTCUTS.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P148_SYNC_STRATEGY_READONLY_",
+      "selected_file_count": 5,
+      "selected_files": [
+        "P148_SOURCE_REGISTRY.csv",
+        "P148_SUMMARY.json",
+        "P148_SYNC_STEPS.csv",
+        "P148_SYNC_STRATEGY_READONLY.json",
+        "P148_SYNC_STRATEGY_READONLY.md"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SOURCE_REGISTRY.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SUMMARY.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SYNC_STEPS.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SYNC_STRATEGY_READONLY.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SYNC_STRATEGY_READONLY.md"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P149_MIGRATION_CLOSE_GATE_",
+      "selected_file_count": 5,
+      "selected_files": [
+        "P149_MIGRATION_CLOSE_GATE.md",
+        "P149_MIGRATION_CLOSE_GATE_REPORT.json",
+        "P149_MIGRATION_TIMELINE.csv",
+        "P149_POST_MIGRATION_RUNBOOK.md",
+        "P149_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_CLOSE_GATE.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_CLOSE_GATE_REPORT.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_TIMELINE.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_POST_MIGRATION_RUNBOOK.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_SUMMARY.json"
+      ]
+    },
+    {
+      "export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354",
+      "found": true,
+      "gate": "OK",
+      "prefix": "P150_PUBLIC_PREP_SELECTOR_OR_STOP_",
+      "selected_file_count": 5,
+      "selected_files": [
+        "P150_NEXT_OPTIONS.csv",
+        "P150_OPERATOR_HANDOFF.md",
+        "P150_PUBLIC_PREP_SELECTOR.json",
+        "P150_PUBLIC_PREP_SELECTOR.md",
+        "P150_SUMMARY.json"
+      ],
+      "selected_paths": [
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_NEXT_OPTIONS.csv",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_OPERATOR_HANDOFF.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_PUBLIC_PREP_SELECTOR.json",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_PUBLIC_PREP_SELECTOR.md",
+        "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_SUMMARY.json"
+      ]
+    }
+  ],
+  "evidence_count": 11,
+  "evidence_ok_count": 11,
+  "exports_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS",
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "next": "STOP_OR_P150A_REAL_GEM_RESPONSE_IMPORT_OR_P150_PUBLIC_PREP_NO_DEPLOY",
+  "output_files": {
+    "evidence_csv": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\P150B_RELEASE_EVIDENCE_INDEX.csv",
+    "launch_commands_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\P150B_LOCAL_LAUNCH_COMMANDS.md",
+    "manifest_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\P150B_RELEASE_MANIFEST.json",
+    "release_notes_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\P150B_RELEASE_NOTES.md",
+    "release_zip": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\P150B_LOCAL_PRIVATE_RELEASE_PACK.zip",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\P150B_SUMMARY.json"
+  },
+  "release_gates": {
+    "local_private_ready": true,
+    "migration_closed": true,
+    "public_deploy_ready": false,
+    "requires_human_review_before_public": true,
+    "sheet_write_ready": false
+  },
+  "release_name": "MVP_QAIC_LOCAL_PRIVATE_PROMPT_COCKPIT_RELEASE_P150B",
+  "release_scope": "LOCAL_PRIVATE_PROMPT_COCKPIT_ONLY",
+  "run_id": "P150B-LOCAL-PRIVATE-RELEASE-PACK-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "future_public_deploy_requires_explicit_go": true,
+    "future_sheet_write_requires_explicit_go": true,
+    "google_sheets_write": false,
+    "live_google_sheets_read": false,
+    "local_private_only": true,
+    "order": false,
+    "public_deploy": false,
+    "release_pack_only": true,
+    "sizing": false
+  },
+  "selected_file_total": 46,
+  "source_p150_selector_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_PUBLIC_PREP_SELECTOR.json",
+  "source_p150_status": "P150_PUBLIC_PREP_SELECTOR_OR_STOP_READY_READONLY",
+  "source_recommended_next": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+  "status": "P150B_LOCAL_PRIVATE_RELEASE_PACK_READY",
+  "version": "MVP_QAIC_P150B_LOCAL_PRIVATE_RELEASE_PACK_1.0.0_SAFE"
+}

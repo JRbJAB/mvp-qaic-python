@@ -1,0 +1,82 @@
+{
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "issue_type_counts": {
+    "PROMPT_NEXT_TEST": 1,
+    "REVIEW": 1
+  },
+  "items": [
+    {
+      "apply_now": false,
+      "blocked_actions": [
+        "SHEET_WRITE",
+        "AUTO_APPLY",
+        "ORDER",
+        "SIZING"
+      ],
+      "human_review_required": true,
+      "issue_type": "REVIEW",
+      "priority": "P1",
+      "queue_id": "P146-REVIEW-001",
+      "source": "P145_REVIEW_QUEUE",
+      "suggested_action": "Lire la réponse, valider l'extraction, puis préparer le prochain test réel.",
+      "title": "GEM response accepted for human review"
+    },
+    {
+      "apply_now": false,
+      "blocked_actions": [
+        "SHEET_WRITE",
+        "AUTO_APPLY",
+        "ORDER",
+        "SIZING"
+      ],
+      "human_review_required": true,
+      "issue_type": "PROMPT_NEXT_TEST",
+      "priority": "P2",
+      "queue_id": "P146-PROMPT-002",
+      "source": "P144_WORKFLOW",
+      "suggested_action": "Choisir un prompt validé et consulter son contenu source.",
+      "title": "Next prompt workflow: 📘 PROMPT_LIBRARY"
+    }
+  ],
+  "next": "P147_OPERATOR_POLISH",
+  "output_files": {
+    "actions_csv": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_ACTIONS.csv",
+    "markdown": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_QUEUE_UI.md",
+    "queue_app_py": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_NICEGUI_CORRECTION_QUEUE_APP.py",
+    "queue_model_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_QUEUE_MODEL.json",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_SUMMARY.json"
+  },
+  "priority_counts": {
+    "P1": 1,
+    "P2": 1
+  },
+  "queue_item_count": 2,
+  "run_id": "P146-CORRECTION-QUEUE-UI-20260623",
+  "safety": {
+    "apply_requires_explicit_future_go": true,
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "google_sheets_write": false,
+    "human_review_required": true,
+    "live_google_sheets_read": false,
+    "order": false,
+    "public_deploy": false,
+    "sizing": false,
+    "source": "P145_LOCAL_GEM_REVIEW_AND_P144_WORKFLOW"
+  },
+  "source_p144_model_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_WORKFLOW_MODEL.json",
+  "source_p144_status": "P144_PROMPT_COCKPIT_WORKFLOWS_RENDERED_LOCAL_READONLY",
+  "source_p145_payload_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938\\P145_GEM_RESPONSE_IMPORT_PAYLOAD.json",
+  "source_p145_status": "P145_GEM_RESPONSE_IMPORT_E2E_VALIDATED_LOCAL_REVIEW",
+  "status": "P146_CORRECTION_QUEUE_UI_RENDERED_LOCAL_REVIEW_ONLY",
+  "ui_policy": {
+    "apply_button_enabled": false,
+    "auto_apply_enabled": false,
+    "export_changeset_enabled": true,
+    "review_only": true,
+    "sheet_write_enabled": false
+  },
+  "version": "MVP_QAIC_P146_CORRECTION_QUEUE_UI_1.0.0_SAFE"
+}

@@ -1,0 +1,102 @@
+{
+  "blocker_count": 0,
+  "blockers": [],
+  "decision_required": "HUMAN_DECISION_BEFORE_PUBLIC_OR_SHEET_WRITE",
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "next": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+  "option_count": 5,
+  "options": [
+    {
+      "label": "Stop / validation opérateur",
+      "next_batch": "STOP_WAIT_HUMAN_DECISION",
+      "option_id": "STOP_AFTER_P149",
+      "priority": "P0",
+      "public_deploy": false,
+      "recommended": false,
+      "risk": "LOW",
+      "why": "La migration locale/private est close ; pause possible pour validation visuelle par l'opérateur.",
+      "writes": false
+    },
+    {
+      "label": "Release pack local privé",
+      "next_batch": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+      "option_id": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+      "priority": "P0",
+      "public_deploy": false,
+      "recommended": true,
+      "risk": "LOW",
+      "why": "Meilleur choix immédiat : empaqueter les preuves P140-P149, runbook, commandes launch et état safety avant tout public.",
+      "writes": false
+    },
+    {
+      "label": "Importer une vraie réponse GEM",
+      "next_batch": "P150A_REAL_GEM_RESPONSE_IMPORT",
+      "option_id": "P150A_REAL_GEM_RESPONSE_IMPORT",
+      "priority": "P1",
+      "public_deploy": false,
+      "recommended": false,
+      "risk": "LOW",
+      "why": "Utile pour remplacer la fixture P145, mais mieux après release pack local.",
+      "writes": false
+    },
+    {
+      "label": "Préparation public sans déploiement",
+      "next_batch": "P150_PUBLIC_PREP_NO_DEPLOY",
+      "option_id": "P150_PUBLIC_PREP_NO_DEPLOY",
+      "priority": "P1",
+      "public_deploy": false,
+      "recommended": false,
+      "risk": "MEDIUM",
+      "why": "Préparer la séparation contenu public / backend privé, sans tunnel ni déploiement.",
+      "writes": false
+    },
+    {
+      "label": "Future Sheet write gate",
+      "next_batch": "P150C_SHEETS_WRITE_GATE_AFTER_EXPLICIT_GO",
+      "option_id": "P150C_SHEETS_WRITE_GATE_AFTER_EXPLICIT_GO",
+      "priority": "P2",
+      "public_deploy": false,
+      "recommended": false,
+      "risk": "HIGH",
+      "why": "Réservé à un GO explicite séparé ; pas nécessaire pour le cockpit local privé.",
+      "writes": true
+    }
+  ],
+  "output_files": {
+    "markdown": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_PUBLIC_PREP_SELECTOR.md",
+    "operator_handoff_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_OPERATOR_HANDOFF.md",
+    "options_csv": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_NEXT_OPTIONS.csv",
+    "selector_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_PUBLIC_PREP_SELECTOR.json",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_SUMMARY.json"
+  },
+  "recommended_next": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+  "recommended_option_id": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+  "run_id": "P150-PUBLIC-PREP-SELECTOR-OR-STOP-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "future_public_deploy_requires_explicit_go": true,
+    "future_sheet_write_requires_explicit_go": true,
+    "google_sheets_write": false,
+    "live_google_sheets_read": false,
+    "order": false,
+    "public_deploy": false,
+    "public_prep_only": true,
+    "selector_only": true,
+    "sizing": false
+  },
+  "selector_scope": "READONLY_DECISION_PACK_NO_DEPLOY_NO_WRITE",
+  "source_p149_headline": {
+    "blocker_count": 0,
+    "evidence_ok_count": 9,
+    "migration_close_ready": true,
+    "mvp_prompt_cockpit_local_private_ready": true,
+    "required_export_count": 9
+  },
+  "source_p149_report_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_CLOSE_GATE_REPORT.json",
+  "source_p149_status": "P149_MIGRATION_CLOSE_GATE_READY_LOCAL_PRIVATE",
+  "status": "P150_PUBLIC_PREP_SELECTOR_OR_STOP_READY_READONLY",
+  "version": "MVP_QAIC_P150_PUBLIC_PREP_SELECTOR_OR_STOP_1.0.0_SAFE"
+}

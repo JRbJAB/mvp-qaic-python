@@ -1,0 +1,15 @@
+{
+  "auto_apply_gem_response": false,
+  "blocker_count": 0,
+  "broker": false,
+  "fixture_used": true,
+  "google_sheets_write": false,
+  "human_review_required": true,
+  "next": "P146_CORRECTION_QUEUE_UI",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P145_GEM_RESPONSE_IMPORT_E2E_20260623_124938",
+  "sizing": false,
+  "status": "P145_GEM_RESPONSE_IMPORT_E2E_VALIDATED_LOCAL_REVIEW",
+  "validation_status": "VALIDATED_FOR_HUMAN_REVIEW",
+  "warning_count": 0
+}

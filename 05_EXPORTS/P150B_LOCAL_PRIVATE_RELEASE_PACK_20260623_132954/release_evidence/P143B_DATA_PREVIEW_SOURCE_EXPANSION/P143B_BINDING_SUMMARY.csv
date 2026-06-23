@@ -1,0 +1,12 @@
+title,route,binding_mode,match_score,source_filename,preview_row_count,missing_source_reason
+🚀 PROMPT_RUN_QUEUE,/cockpit/run_prompt_run_queue,csv_match,90,P120_DECISION_JOURNAL_ENTRY.csv,1,
+🧩 PROMPT_READY_TO_COPY,/cockpit/ready_prompt_ready_to_copy,csv_match,100,P138C_BACKUP___PROMPT_LIBRARY.csv,22,
+🧠 PROMPT_CONTEXT_PACKS,/cockpit/context_prompt_context_packs,csv_match,100,P138C_BACKUP___PROMPT_LIBRARY.csv,22,
+🔗 PROMPT_LEXIQUE_BRIDGE,/cockpit/bridge_prompt_lexique_bridge,csv_match,90,P138C_BACKUP___PROMPT_LIBRARY.csv,22,
+🎛️ PROMPT_VARIANT_CONTROL_CENTER,/cockpit/control_prompt_variant_control_center,csv_match,125,P138C_BACKUP___PROMPT_LIBRARY.csv,22,
+GPT_PROMPT_RUNTIME_SPEC,/cockpit/gpt_prompt_runtime_spec,csv_match,45,P138C_HYDRATED_SAFE_CANDIDATES.csv,9,
+📘 PROMPT_LIBRARY,/cockpit/library_prompt_library,csv_match,540,P138C_BACKUP___PROMPT_LIBRARY.csv,22,
+OUTPUT_TEMPLATES,/cockpit/output_templates,csv_match,55,P139_SHEET_UI_METADATA.csv,25,
+DATA_REQUIREMENTS,/cockpit/data_requirements,csv_match,40,P079D_DOMAIN_DECISION_PACK.csv,8,
+🤖 AI_RUNTIME_REFERENCE,/cockpit/runtime_ai_runtime_reference,csv_match,145,P138C_BACKUP___PROMPT_LIBRARY.csv,22,
+QAIC_OUTPUT_CONTRACT,/cockpit/qaic_output_contract,csv_match,95,P079B_FIELD_REVIEW_WORKING_COPY.csv,25,

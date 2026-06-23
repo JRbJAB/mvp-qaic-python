@@ -1,0 +1,187 @@
+{
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "launch": {
+    "command": "python P147_NICEGUI_OPERATOR_POLISH_APP.py",
+    "host": "127.0.0.1",
+    "port": 8088,
+    "public_deploy": false
+  },
+  "navigation": [
+    {
+      "icon": "dashboard",
+      "label": "Dashboard",
+      "priority": "P0",
+      "route": "/"
+    },
+    {
+      "icon": "route",
+      "label": "Prompt Workflow",
+      "priority": "P0",
+      "route": "/workflow"
+    },
+    {
+      "icon": "rule",
+      "label": "Correction Queue",
+      "priority": "P0",
+      "route": "/queue"
+    },
+    {
+      "icon": "psychology",
+      "label": "GEM Review",
+      "priority": "P1",
+      "route": "/gem-review"
+    },
+    {
+      "icon": "lock",
+      "label": "Safety",
+      "priority": "P0",
+      "route": "/safety"
+    },
+    {
+      "icon": "article",
+      "label": "Prompt Library",
+      "priority": "P1",
+      "route": "/workflow/prompt-library"
+    },
+    {
+      "icon": "article",
+      "label": "Variant Control",
+      "priority": "P1",
+      "route": "/workflow/variant-control"
+    },
+    {
+      "icon": "article",
+      "label": "Context Pack",
+      "priority": "P1",
+      "route": "/workflow/context-pack"
+    },
+    {
+      "icon": "article",
+      "label": "Lexique Bridge",
+      "priority": "P1",
+      "route": "/workflow/lexique-bridge"
+    },
+    {
+      "icon": "article",
+      "label": "Ready To Copy",
+      "priority": "P1",
+      "route": "/workflow/ready-to-copy"
+    },
+    {
+      "icon": "article",
+      "label": "Run Queue",
+      "priority": "P1",
+      "route": "/workflow/run-queue"
+    },
+    {
+      "icon": "checklist",
+      "label": "Review Items",
+      "priority": "P0",
+      "route": "/queue/items"
+    }
+  ],
+  "next": "P148_SYNC_STRATEGY_READONLY",
+  "operator_cards": [
+    {
+      "card_id": "workflow_status",
+      "severity": "info",
+      "subtitle": "étapes opérateur",
+      "title": "Workflow prompt",
+      "value": "11"
+    },
+    {
+      "card_id": "queue_status",
+      "severity": "review",
+      "subtitle": "items review-only",
+      "title": "Correction queue",
+      "value": "2"
+    },
+    {
+      "card_id": "safety_status",
+      "severity": "safe",
+      "subtitle": "no write / no broker / no auto apply",
+      "title": "Safety",
+      "value": "LOCKED"
+    }
+  ],
+  "operator_shell": {
+    "default_route": "/",
+    "density": "compact",
+    "layout": "left_nav_top_status_main_cards",
+    "mode": "local_private_review_only",
+    "theme": "clean_light",
+    "title": "MVP QAIC — Prompt Operator Cockpit"
+  },
+  "output_files": {
+    "app_py": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_NICEGUI_OPERATOR_POLISH_APP.py",
+    "markdown": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_POLISH.md",
+    "model_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_POLISH_MODEL.json",
+    "shortcuts_csv": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_SHORTCUTS.csv",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_SUMMARY.json"
+  },
+  "queue_item_count": 2,
+  "review_policy": {
+    "apply_to_sheet_enabled": false,
+    "auto_apply_gem_response_enabled": false,
+    "broker_actions_enabled": false,
+    "copy_prompt_enabled": true,
+    "export_changeset_enabled": true,
+    "order_actions_enabled": false,
+    "save_local_review_enabled": true,
+    "sizing_enabled": false
+  },
+  "run_id": "P147-OPERATOR-POLISH-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "google_sheets_write": false,
+    "human_review_required": true,
+    "live_google_sheets_read": false,
+    "local_private_only": true,
+    "order": false,
+    "public_deploy": false,
+    "sizing": false,
+    "source": "P146_CORRECTION_QUEUE_AND_P144_WORKFLOW"
+  },
+  "shortcuts": [
+    {
+      "action": "open_dashboard",
+      "description": "Retour dashboard",
+      "keys": "Ctrl+1"
+    },
+    {
+      "action": "open_prompt_workflow",
+      "description": "Ouvrir workflow prompt",
+      "keys": "Ctrl+2"
+    },
+    {
+      "action": "open_correction_queue",
+      "description": "Ouvrir correction queue",
+      "keys": "Ctrl+3"
+    },
+    {
+      "action": "copy_selected_prompt",
+      "description": "Copie manuelle uniquement",
+      "keys": "Ctrl+C"
+    },
+    {
+      "action": "save_local_review",
+      "description": "Sauvegarde locale review-only",
+      "keys": "Ctrl+S"
+    },
+    {
+      "action": "clear_selection",
+      "description": "Annuler sélection",
+      "keys": "Esc"
+    }
+  ],
+  "source_p144_model_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_PROMPT_WORKFLOW_MODEL.json",
+  "source_p144_status": "P144_PROMPT_COCKPIT_WORKFLOWS_RENDERED_LOCAL_READONLY",
+  "source_p146_queue_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_QUEUE_MODEL.json",
+  "source_p146_status": "P146_CORRECTION_QUEUE_UI_RENDERED_LOCAL_REVIEW_ONLY",
+  "status": "P147_OPERATOR_POLISH_RENDERED_LOCAL_PRIVATE",
+  "version": "MVP_QAIC_P147_OPERATOR_POLISH_1.0.0_SAFE",
+  "workflow_step_count": 11
+}

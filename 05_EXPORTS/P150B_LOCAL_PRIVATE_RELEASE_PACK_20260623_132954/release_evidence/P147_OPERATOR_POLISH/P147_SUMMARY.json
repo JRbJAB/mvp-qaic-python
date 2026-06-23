@@ -1,0 +1,18 @@
+{
+  "apply_to_sheet_enabled": false,
+  "auto_apply_gem_response": false,
+  "broker": false,
+  "copy_prompt_enabled": true,
+  "google_sheets_write": false,
+  "navigation_item_count": 12,
+  "next": "P148_SYNC_STRATEGY_READONLY",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332",
+  "public_deploy": false,
+  "queue_item_count": 2,
+  "save_local_review_enabled": true,
+  "shortcut_count": 6,
+  "sizing": false,
+  "status": "P147_OPERATOR_POLISH_RENDERED_LOCAL_PRIVATE",
+  "workflow_step_count": 11
+}

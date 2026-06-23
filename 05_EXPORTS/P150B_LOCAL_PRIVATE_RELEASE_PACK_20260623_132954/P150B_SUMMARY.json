@@ -1,0 +1,20 @@
+{
+  "auto_apply_gem_response": false,
+  "blocker_count": 0,
+  "broker": false,
+  "copied_file_count": 46,
+  "evidence_count": 11,
+  "evidence_ok_count": 11,
+  "future_public_deploy_requires_explicit_go": true,
+  "future_sheet_write_requires_explicit_go": true,
+  "google_sheets_write": false,
+  "live_google_sheets_read": false,
+  "next": "STOP_OR_P150A_REAL_GEM_RESPONSE_IMPORT_OR_P150_PUBLIC_PREP_NO_DEPLOY",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954",
+  "public_deploy": false,
+  "release_name": "MVP_QAIC_LOCAL_PRIVATE_PROMPT_COCKPIT_RELEASE_P150B",
+  "selected_file_total": 46,
+  "sizing": false,
+  "status": "P150B_LOCAL_PRIVATE_RELEASE_PACK_READY"
+}

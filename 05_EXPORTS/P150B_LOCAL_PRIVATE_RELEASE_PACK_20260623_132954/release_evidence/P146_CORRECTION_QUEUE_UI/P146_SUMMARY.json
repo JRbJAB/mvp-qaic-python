@@ -1,0 +1,18 @@
+{
+  "apply_button_enabled": false,
+  "auto_apply_gem_response": false,
+  "broker": false,
+  "google_sheets_write": false,
+  "next": "P147_OPERATOR_POLISH",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709",
+  "priority_counts": {
+    "P1": 1,
+    "P2": 1
+  },
+  "public_deploy": false,
+  "queue_item_count": 2,
+  "review_only": true,
+  "sizing": false,
+  "status": "P146_CORRECTION_QUEUE_UI_RENDERED_LOCAL_REVIEW_ONLY"
+}

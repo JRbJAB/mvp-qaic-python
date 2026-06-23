@@ -1,0 +1,12 @@
+workflow_type,title,route,next_action,human_review_required,no_auto_apply,binding_mode,preview_row_count
+prompt_library,📘 PROMPT_LIBRARY,/cockpit/library_prompt_library,select_prompt,True,True,csv_match,22
+variant_control,🎛️ PROMPT_VARIANT_CONTROL_CENTER,/cockpit/control_prompt_variant_control_center,select_variant,True,True,csv_match,22
+context_pack,🧠 PROMPT_CONTEXT_PACKS,/cockpit/context_prompt_context_packs,attach_context,True,True,csv_match,22
+lexique_bridge,🔗 PROMPT_LEXIQUE_BRIDGE,/cockpit/bridge_prompt_lexique_bridge,review_bridge,True,True,csv_match,22
+ready_to_copy,🧩 PROMPT_READY_TO_COPY,/cockpit/ready_prompt_ready_to_copy,copy_prompt,True,True,csv_match,22
+run_queue,🚀 PROMPT_RUN_QUEUE,/cockpit/run_prompt_run_queue,queue_review,True,True,csv_match,1
+contract_reference,DATA_REQUIREMENTS,/cockpit/data_requirements,review_reference,True,True,csv_match,8
+contract_reference,GPT_PROMPT_RUNTIME_SPEC,/cockpit/gpt_prompt_runtime_spec,review_reference,True,True,csv_match,9
+contract_reference,OUTPUT_TEMPLATES,/cockpit/output_templates,review_reference,True,True,csv_match,25
+contract_reference,QAIC_OUTPUT_CONTRACT,/cockpit/qaic_output_contract,review_reference,True,True,csv_match,25
+contract_reference,🤖 AI_RUNTIME_REFERENCE,/cockpit/runtime_ai_runtime_reference,review_reference,True,True,csv_match,22

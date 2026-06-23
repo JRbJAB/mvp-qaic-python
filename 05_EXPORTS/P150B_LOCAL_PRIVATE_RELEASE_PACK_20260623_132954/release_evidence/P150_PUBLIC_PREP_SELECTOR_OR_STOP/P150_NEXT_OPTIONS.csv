@@ -1,0 +1,6 @@
+option_id,label,priority,recommended,why,writes,public_deploy,risk,next_batch
+STOP_AFTER_P149,Stop / validation opérateur,P0,False,La migration locale/private est close ; pause possible pour validation visuelle par l'opérateur.,False,False,LOW,STOP_WAIT_HUMAN_DECISION
+P150B_LOCAL_PRIVATE_RELEASE_PACK,Release pack local privé,P0,True,"Meilleur choix immédiat : empaqueter les preuves P140-P149, runbook, commandes launch et état safety avant tout public.",False,False,LOW,P150B_LOCAL_PRIVATE_RELEASE_PACK
+P150A_REAL_GEM_RESPONSE_IMPORT,Importer une vraie réponse GEM,P1,False,"Utile pour remplacer la fixture P145, mais mieux après release pack local.",False,False,LOW,P150A_REAL_GEM_RESPONSE_IMPORT
+P150_PUBLIC_PREP_NO_DEPLOY,Préparation public sans déploiement,P1,False,"Préparer la séparation contenu public / backend privé, sans tunnel ni déploiement.",False,False,MEDIUM,P150_PUBLIC_PREP_NO_DEPLOY
+P150C_SHEETS_WRITE_GATE_AFTER_EXPLICIT_GO,Future Sheet write gate,P2,False,Réservé à un GO explicite séparé ; pas nécessaire pour le cockpit local privé.,True,False,HIGH,P150C_SHEETS_WRITE_GATE_AFTER_EXPLICIT_GO

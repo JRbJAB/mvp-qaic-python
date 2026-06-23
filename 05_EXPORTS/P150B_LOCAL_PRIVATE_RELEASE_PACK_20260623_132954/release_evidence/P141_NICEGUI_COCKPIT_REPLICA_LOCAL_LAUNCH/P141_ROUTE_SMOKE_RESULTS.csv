@@ -1,0 +1,61 @@
+route,url,http_status,ok,body_preview
+/,http://127.0.0.1:8088/,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/run_prompt_run_queue,http://127.0.0.1:8088/cockpit/run_prompt_run_queue,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/ready_prompt_ready_to_copy,http://127.0.0.1:8088/cockpit/ready_prompt_ready_to_copy,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/context_prompt_context_packs,http://127.0.0.1:8088/cockpit/context_prompt_context_packs,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/bridge_prompt_lexique_bridge,http://127.0.0.1:8088/cockpit/bridge_prompt_lexique_bridge,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/control_prompt_variant_control_center,http://127.0.0.1:8088/cockpit/control_prompt_variant_control_center,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/gpt_prompt_runtime_spec,http://127.0.0.1:8088/cockpit/gpt_prompt_runtime_spec,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/library_prompt_library,http://127.0.0.1:8088/cockpit/library_prompt_library,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/output_templates,http://127.0.0.1:8088/cockpit/output_templates,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/data_requirements,http://127.0.0.1:8088/cockpit/data_requirements,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/runtime_ai_runtime_reference,http://127.0.0.1:8088/cockpit/runtime_ai_runtime_reference,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"
+/cockpit/qaic_output_contract,http://127.0.0.1:8088/cockpit/qaic_output_contract,200,True,"<!doctype html>
+<html>
+  <head>
+    <title>NiceGUI</title>
+    <meta name=""viewport"" content=""width=device-width, initia"

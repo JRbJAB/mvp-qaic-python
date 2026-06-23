@@ -1,0 +1,142 @@
+{
+  "cockpit_page_count": 11,
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "host": "127.0.0.1",
+  "launch_command": "python \"G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_NICEGUI_REPLICA_APP.py\"",
+  "local_url": "http://127.0.0.1:8088",
+  "next": "P142_UI_FIDELITY_SHELL",
+  "nicegui_app_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204\\P140_NICEGUI_REPLICA_APP.py",
+  "output_files": {
+    "plan_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_LOCAL_LAUNCH_PLAN.json",
+    "runbook_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_LOCAL_LAUNCH_RUNBOOK.md",
+    "smoke_csv": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_ROUTE_SMOKE_RESULTS.csv",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_SUMMARY.json"
+  },
+  "port": 8088,
+  "route_count": 12,
+  "routes": [
+    "/",
+    "/cockpit/run_prompt_run_queue",
+    "/cockpit/ready_prompt_ready_to_copy",
+    "/cockpit/context_prompt_context_packs",
+    "/cockpit/bridge_prompt_lexique_bridge",
+    "/cockpit/control_prompt_variant_control_center",
+    "/cockpit/gpt_prompt_runtime_spec",
+    "/cockpit/library_prompt_library",
+    "/cockpit/output_templates",
+    "/cockpit/data_requirements",
+    "/cockpit/runtime_ai_runtime_reference",
+    "/cockpit/qaic_output_contract"
+  ],
+  "run_id": "P141-NICEGUI-COCKPIT-REPLICA-LOCAL-LAUNCH-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "google_sheets_write": false,
+    "host": "127.0.0.1",
+    "live_google_sheets_read": false,
+    "order": false,
+    "public_deploy": false,
+    "remote_access": false,
+    "sizing": false,
+    "tunnel": false
+  },
+  "server": {
+    "pid": 12712,
+    "stderr_log": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_NICEGUI_SERVER_STDERR.log",
+    "stdout_log": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_NICEGUI_SERVER_STDOUT.log"
+  },
+  "server_reused": false,
+  "smoke_results": [
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/",
+      "url": "http://127.0.0.1:8088/"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/run_prompt_run_queue",
+      "url": "http://127.0.0.1:8088/cockpit/run_prompt_run_queue"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/ready_prompt_ready_to_copy",
+      "url": "http://127.0.0.1:8088/cockpit/ready_prompt_ready_to_copy"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/context_prompt_context_packs",
+      "url": "http://127.0.0.1:8088/cockpit/context_prompt_context_packs"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/bridge_prompt_lexique_bridge",
+      "url": "http://127.0.0.1:8088/cockpit/bridge_prompt_lexique_bridge"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/control_prompt_variant_control_center",
+      "url": "http://127.0.0.1:8088/cockpit/control_prompt_variant_control_center"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/gpt_prompt_runtime_spec",
+      "url": "http://127.0.0.1:8088/cockpit/gpt_prompt_runtime_spec"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/library_prompt_library",
+      "url": "http://127.0.0.1:8088/cockpit/library_prompt_library"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/output_templates",
+      "url": "http://127.0.0.1:8088/cockpit/output_templates"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/data_requirements",
+      "url": "http://127.0.0.1:8088/cockpit/data_requirements"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/runtime_ai_runtime_reference",
+      "url": "http://127.0.0.1:8088/cockpit/runtime_ai_runtime_reference"
+    },
+    {
+      "body_preview": "<!doctype html>\n<html>\n  <head>\n    <title>NiceGUI</title>\n    <meta name=\"viewport\" content=\"width=device-width, initia",
+      "http_status": 200,
+      "ok": true,
+      "route": "/cockpit/qaic_output_contract",
+      "url": "http://127.0.0.1:8088/cockpit/qaic_output_contract"
+    }
+  ],
+  "source_p140_export_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204",
+  "start_local_server_requested": true,
+  "status": "P141_NICEGUI_LOCAL_LAUNCH_SMOKE_PASSED",
+  "version": "MVP_QAIC_P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_1.0.0_SAFE"
+}
