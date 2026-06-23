@@ -1,0 +1,19 @@
+{
+  "auto_apply_gem_response": false,
+  "blocker_count": 0,
+  "broker": false,
+  "evidence_ok_count": 9,
+  "future_sheet_write_requires_explicit_go": true,
+  "google_sheets_write": false,
+  "live_google_sheets_read": false,
+  "migration_close_ready": true,
+  "migration_scope_closed": true,
+  "mvp_prompt_cockpit_local_private_ready": true,
+  "next": "P150_PUBLIC_PREP_SELECTOR_OR_STOP",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402",
+  "public_deploy": false,
+  "required_export_count": 9,
+  "sizing": false,
+  "status": "P149_MIGRATION_CLOSE_GATE_READY_LOCAL_PRIVATE"
+}
