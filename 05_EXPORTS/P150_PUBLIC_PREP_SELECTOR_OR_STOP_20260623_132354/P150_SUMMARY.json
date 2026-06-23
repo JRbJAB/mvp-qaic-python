@@ -1,0 +1,18 @@
+{
+  "auto_apply_gem_response": false,
+  "blocker_count": 0,
+  "broker": false,
+  "decision_required": "HUMAN_DECISION_BEFORE_PUBLIC_OR_SHEET_WRITE",
+  "google_sheets_write": false,
+  "live_google_sheets_read": false,
+  "next": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+  "option_count": 5,
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354",
+  "public_deploy": false,
+  "recommended_next": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+  "recommended_option_id": "P150B_LOCAL_PRIVATE_RELEASE_PACK",
+  "sizing": false,
+  "source_p149_status": "P149_MIGRATION_CLOSE_GATE_READY_LOCAL_PRIVATE",
+  "status": "P150_PUBLIC_PREP_SELECTOR_OR_STOP_READY_READONLY"
+}
