@@ -299,6 +299,17 @@ Format attendu :
 
 ## Hard rules
 
+<!-- P158_R5_PROMPT_PATCH_APPLIED_20260623 -->
+### P158-R5 Runtime clarification patch
+
+- Set `image_used` explicitly in the output payload: `true` when the screenshot or image is used as evidence, `false` only when no image evidence is available.
+- Set `reference_currency` explicitly: use `USD` for the Revolut X / USD runtime prompt unless the provided interface or copied text proves another currency.
+- When a field is uncertain, missing, or not visible, mark the uncertainty explicitly instead of silently omitting the field.
+- Preserve the human-review-only stance: do not convert prompt observations into execution instructions, allocation instructions, or broker actions.
+- Keep JSON field names, enum values, safety markers, and technical statuses exactly as specified by the runtime schema.
+<!-- /P158_R5_PROMPT_PATCH_APPLIED_20260623 -->
+
+
 - Reference currency is USD.
 - Use `value_usd`, `price_usd`, `portfolio_total_value_usd`, and `cash_usd_value`.
 - Do not use EUR unless an explicit FX conversion is provided.
