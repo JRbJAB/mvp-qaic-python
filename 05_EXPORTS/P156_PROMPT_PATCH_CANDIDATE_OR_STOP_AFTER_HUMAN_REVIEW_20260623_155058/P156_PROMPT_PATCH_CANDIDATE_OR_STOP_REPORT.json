@@ -1,0 +1,79 @@
+{
+  "decision_readback": [
+    {
+      "action_id": "",
+      "correction_type": "",
+      "decision_state": "PENDING_HUMAN_REVIEW",
+      "field_name": "",
+      "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+      "raw_human_decision": "PENDING_REVIEW",
+      "row_index": 1,
+      "summary": ""
+    },
+    {
+      "action_id": "",
+      "correction_type": "",
+      "decision_state": "PENDING_HUMAN_REVIEW",
+      "field_name": "",
+      "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+      "raw_human_decision": "PENDING_REVIEW",
+      "row_index": 2,
+      "summary": ""
+    },
+    {
+      "action_id": "",
+      "correction_type": "",
+      "decision_state": "PENDING_HUMAN_REVIEW",
+      "field_name": "",
+      "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+      "raw_human_decision": "PENDING_REVIEW",
+      "row_index": 3,
+      "summary": ""
+    },
+    {
+      "action_id": "",
+      "correction_type": "",
+      "decision_state": "PENDING_HUMAN_REVIEW",
+      "field_name": "",
+      "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+      "raw_human_decision": "PENDING_REVIEW",
+      "row_index": 4,
+      "summary": ""
+    }
+  ],
+  "notes": [
+    "P156 is an after-human-review gate.",
+    "When P155 still contains pending rows, P156 must stop and produce no prompt patch candidate.",
+    "No prompt source file is modified by this module."
+  ],
+  "summary": {
+    "accepted_for_patch_candidate_count": 0,
+    "apply_allowed": false,
+    "apply_now_yes_count": 0,
+    "blocker_count": 1,
+    "generated_at": "2026-06-23T13:50:58Z",
+    "google_sheets_write": false,
+    "human_review_required": true,
+    "live_google_sheets_read": false,
+    "next": "FILL_P155_WORKBENCH_THEN_RETRY_P156",
+    "no_apps_script_execution": true,
+    "no_auto_apply_gem_response": true,
+    "no_broker": true,
+    "no_clasp_push": true,
+    "no_order": true,
+    "no_sizing": true,
+    "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058",
+    "p156_status": "P156_STOP_WAITING_HUMAN_REVIEW",
+    "patch_candidate_created": false,
+    "pending_human_review_count": 4,
+    "prompt_source_id": "P132_P133_PORTFOLIO_MULTIMODAL_REVIEW",
+    "prompt_source_modified": false,
+    "public_deploy": false,
+    "rejected_or_deferred_count": 0,
+    "source_p155_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P155_PROMPT_CORRECTION_WORKBENCH_OR_STOP_20260623_134138",
+    "source_p155_status": "P155_PROMPT_CORRECTION_WORKBENCH_READY_REVIEW_ONLY",
+    "status": "OK_P156_PROMPT_PATCH_CANDIDATE_OR_STOP_EXPORT_READY",
+    "version": "MVP_QAIC_P156_PROMPT_PATCH_CANDIDATE_OR_STOP_0.1.0",
+    "workbench_row_count": 4
+  }
+}
