@@ -124,7 +124,7 @@ def discover_latest_p165_export(repo: Path) -> Path:
     exports = repo / "05_EXPORTS"
     candidates = sorted(
         exports.glob("P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_*"),
-        key=lambda p: p.stat().st_mtime,
+        key=lambda p: p.name,
         reverse=True,
     )
     if not candidates:
