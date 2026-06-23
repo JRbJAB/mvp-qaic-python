@@ -1,0 +1,122 @@
+{
+  "STATUS": "OK_P171_NICEGUI_LOCAL_PROMPT_COCKPIT_PANELS_READY_REVIEW_ONLY",
+  "generated_at": "2026-06-23T22:27:16+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "source_step": "P170_NICEGUI_LOCAL_CACHE_READ_BINDING",
+  "cache_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\00_OPERATOR_EXPORTS\\P168G_LOCAL_CACHE",
+  "panel_count": 5,
+  "ready_panel_count": 5,
+  "cockpit_ready": true,
+  "blocker_count": 0,
+  "blockers": [],
+  "panels": [
+    {
+      "panel_id": "p171_cockpit_bootstrap",
+      "ui_slot": "cockpit_bootstrap",
+      "panel_title": "Config cockpit",
+      "source_id": "config",
+      "file_name": "MVP_QAIC_CONFIG.csv",
+      "row_count": 6,
+      "component_type": "nicegui_local_cache_panel",
+      "binding_mode": "LOCAL_CACHE_READ_ONLY",
+      "visible_in_private_cockpit": true,
+      "write_allowed": false,
+      "live_api_allowed": false,
+      "human_review_required": true,
+      "operator_action": "READ_REVIEW_ONLY"
+    },
+    {
+      "panel_id": "p171_prompt_source_selector",
+      "ui_slot": "prompt_source_selector",
+      "panel_title": "Prompt source registry",
+      "source_id": "prompt_registry",
+      "file_name": "MVP_QAIC_PROMPT_SOURCE_REGISTRY.csv",
+      "row_count": 5,
+      "component_type": "nicegui_local_cache_panel",
+      "binding_mode": "LOCAL_CACHE_READ_ONLY",
+      "visible_in_private_cockpit": true,
+      "write_allowed": false,
+      "live_api_allowed": false,
+      "human_review_required": true,
+      "operator_action": "READ_REVIEW_ONLY"
+    },
+    {
+      "panel_id": "p171_decision_history_panel",
+      "ui_slot": "decision_history_panel",
+      "panel_title": "Decision journal",
+      "source_id": "decision_journal",
+      "file_name": "MVP_QAIC_DECISION_JOURNAL.csv",
+      "row_count": 1,
+      "component_type": "nicegui_local_cache_panel",
+      "binding_mode": "LOCAL_CACHE_READ_ONLY",
+      "visible_in_private_cockpit": true,
+      "write_allowed": false,
+      "live_api_allowed": false,
+      "human_review_required": true,
+      "operator_action": "READ_REVIEW_ONLY"
+    },
+    {
+      "panel_id": "p171_human_review_workbench_panel",
+      "ui_slot": "human_review_workbench_panel",
+      "panel_title": "Prompt review workbench",
+      "source_id": "prompt_review",
+      "file_name": "MVP_QAIC_PROMPT_REVIEW_WORKBENCH.csv",
+      "row_count": 5,
+      "component_type": "nicegui_local_cache_panel",
+      "binding_mode": "LOCAL_CACHE_READ_ONLY",
+      "visible_in_private_cockpit": true,
+      "write_allowed": false,
+      "live_api_allowed": false,
+      "human_review_required": true,
+      "operator_action": "READ_REVIEW_ONLY"
+    },
+    {
+      "panel_id": "p171_lexique_context_panel",
+      "ui_slot": "lexique_context_panel",
+      "panel_title": "Lexique or cockpit data",
+      "source_id": "lexique_or_cockpit",
+      "file_name": "MVP_QAIC_LEXIQUE_OR_COCKPIT_DATA.csv",
+      "row_count": 88,
+      "component_type": "nicegui_local_cache_panel",
+      "binding_mode": "LOCAL_CACHE_READ_ONLY",
+      "visible_in_private_cockpit": true,
+      "write_allowed": false,
+      "live_api_allowed": false,
+      "human_review_required": true,
+      "operator_action": "READ_REVIEW_ONLY"
+    }
+  ],
+  "private_routes": [
+    {
+      "route": "/",
+      "route_id": "local_prompt_cockpit_home",
+      "purpose": "Private local cockpit home",
+      "public_access_allowed": false
+    },
+    {
+      "route": "/cache",
+      "route_id": "local_cache_panels",
+      "purpose": "Read-only cache panels",
+      "public_access_allowed": false
+    },
+    {
+      "route": "/review",
+      "route_id": "human_review_workbench",
+      "purpose": "Prompt review workbench",
+      "public_access_allowed": false
+    }
+  ],
+  "recommended_launch_host": "127.0.0.1",
+  "recommended_launch_port": 8088,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "raw_operator_exports_committed": false,
+  "recommended_next": "P172_NICEGUI_PRIVATE_COCKPIT_RENDER_LOCAL_CACHE_PANELS",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P171_NICEGUI_LOCAL_PROMPT_COCKPIT_CACHE_PANELS_20260624_002716"
+}
