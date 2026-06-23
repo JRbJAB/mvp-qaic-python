@@ -1,0 +1,12 @@
+{
+  "google_sheets_write": false,
+  "local_url": "http://127.0.0.1:8088",
+  "next": "P142_UI_FIDELITY_SHELL",
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105",
+  "public_deploy": false,
+  "route_count": 12,
+  "server_pid": 12712,
+  "smoke_pass_count": 12,
+  "smoke_total_count": 12,
+  "status": "P141_NICEGUI_LOCAL_LAUNCH_SMOKE_PASSED"
+}
