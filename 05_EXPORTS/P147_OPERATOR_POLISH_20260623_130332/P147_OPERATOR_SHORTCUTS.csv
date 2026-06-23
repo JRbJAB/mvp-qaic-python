@@ -1,0 +1,7 @@
+keys,action,description
+Ctrl+1,open_dashboard,Retour dashboard
+Ctrl+2,open_prompt_workflow,Ouvrir workflow prompt
+Ctrl+3,open_correction_queue,Ouvrir correction queue
+Ctrl+C,copy_selected_prompt,Copie manuelle uniquement
+Ctrl+S,save_local_review,Sauvegarde locale review-only
+Esc,clear_selection,Annuler sélection
