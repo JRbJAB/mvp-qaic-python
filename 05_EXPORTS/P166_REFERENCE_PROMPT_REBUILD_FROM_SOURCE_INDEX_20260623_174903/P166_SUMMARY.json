@@ -1,0 +1,20 @@
+{
+  "status": "P166_REFERENCE_PROMPT_REBUILD_READY_REVIEW_ONLY",
+  "p165_source_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121",
+  "output_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P166_REFERENCE_PROMPT_REBUILD_FROM_SOURCE_INDEX_20260623_174903",
+  "source_candidate_count": 4288,
+  "reference_prompt_draft_created": true,
+  "operator_quick_prompt_created": true,
+  "json_schema_draft_created": true,
+  "runtime_prompt_modified": false,
+  "apply_allowed": false,
+  "blocker_count": 0,
+  "next": "P167_HUMAN_REVIEW_REFERENCE_PROMPT_OR_APPLY_GATE",
+  "google_sheets_write": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "public_deploy": false
+}
