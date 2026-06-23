@@ -1,0 +1,10 @@
+{
+  "background": "#F7F7F8",
+  "border": "#E5E7EB",
+  "density": "compact",
+  "font_family": "Inter, Arial, sans-serif",
+  "radius_card_px": 16,
+  "surface": "#FFFFFF",
+  "text_muted": "#6B7280",
+  "text_primary": "#111827"
+}

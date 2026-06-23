@@ -1,0 +1,18 @@
+{
+  "cockpit_page_count": 11,
+  "domain_counts": {
+    "contracts": 4,
+    "control": 1,
+    "knowledge": 2,
+    "library": 1,
+    "operations": 2,
+    "support": 1
+  },
+  "google_sheets_write": false,
+  "live_google_sheets_read": false,
+  "next": "P143_DATA_PREVIEW_BINDING_LOCAL_READONLY",
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P142_UI_FIDELITY_SHELL_20260623_121818",
+  "public_deploy": false,
+  "route_count": 12,
+  "status": "P142_UI_FIDELITY_SHELL_RENDERED"
+}
