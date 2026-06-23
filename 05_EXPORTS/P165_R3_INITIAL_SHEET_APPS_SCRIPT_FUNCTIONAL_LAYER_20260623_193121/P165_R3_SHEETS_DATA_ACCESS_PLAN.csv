@@ -1,0 +1,6 @@
+sheet_or_domain,purpose,python_target,migration_status,priority
+CONFIG,runtime/config key-value source,settings/config loader,NEEDS_LIVE_READ_EXPORT_OR_LOCAL_CACHE,P0
+LEXIQUE / KNOWLEDGE,"lexique, methods, signals, risk playbook",knowledge index + search service,NEEDS_LIVE_READ_EXPORT_OR_LOCAL_CACHE,P0
+PROMPT_QUALITY / PROMPT_IMPROVEMENT,"prompt corrections, prompt quality dashboard, queue",prompt improvement queue + source selector,NEEDS_LIVE_READ_EXPORT_OR_LOCAL_CACHE,P0
+DECISION_JOURNAL,human review journal and decision evidence,decision journal local store,NEEDS_LIVE_READ_EXPORT_OR_LOCAL_CACHE,P0
+WEBAPP / FRONTEND,MVP web app visible data and sync candidates,local UI/NiceGUI source tables,NEEDS_LIVE_READ_EXPORT_OR_LOCAL_CACHE,P1
