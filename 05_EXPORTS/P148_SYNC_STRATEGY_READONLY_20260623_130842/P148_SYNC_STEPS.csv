@@ -1,0 +1,6 @@
+step_id,name,description,gate,write_allowed
+P148-STEP-001,freeze_current_local_sources,Geler les CSV/metadata locaux utilisés par le cockpit actuel.,LOCAL_ONLY,False
+P148-STEP-002,define_sheet_to_snapshot_contract,"Définir le contrat futur de snapshot depuis Sheets vers fichiers locaux, sans écriture Sheets.",READONLY_DESIGN,False
+P148-STEP-003,map_11_cockpit_pages,Mapper 11 pages cockpit vers leurs sources locales et fallback.,METADATA_READY,False
+P148-STEP-004,prepare_future_write_gate,"Préparer un futur GO séparé pour toute écriture Google Sheets, non activé ici.",FUTURE_GO_REQUIRED,False
+P148-STEP-005,migration_close_readiness,"Préparer P149 migration close gate avec preuves, tags, runbook.",READY_FOR_P149,False

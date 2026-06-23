@@ -1,0 +1,15 @@
+{
+  "broker": false,
+  "future_sheet_write_requires_explicit_go": true,
+  "google_sheets_write": false,
+  "live_google_sheets_read": false,
+  "migration_close_gate_ready": true,
+  "next": "P149_MIGRATION_CLOSE_GATE",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842",
+  "public_deploy": false,
+  "registry_row_count": 11,
+  "sizing": false,
+  "status": "P148_SYNC_STRATEGY_READONLY_RENDERED",
+  "sync_step_count": 5
+}
