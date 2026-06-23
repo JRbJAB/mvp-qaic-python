@@ -1,0 +1,38 @@
+{
+  "blocker_count": 0,
+  "blockers": [],
+  "generated_at_utc": "2026-06-23T00:00:00Z",
+  "mode": "STOP_WAIT_REAL_GEM_RESPONSE_FILE",
+  "next": "WAIT_REAL_GEM_RESPONSE_FILE_OR_STOP",
+  "operator_instruction": "Définir $env:MVP_QAIC_GEM_RESPONSE_FILE vers un fichier JSON/TXT de réponse GEM réelle puis relancer P152.",
+  "output_files": {
+    "commands_md": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_20260623_135225\\P152_REAL_GEM_RESPONSE_IMPORT_COMMANDS.md",
+    "markdown": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_20260623_135225\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP.md",
+    "payload_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_20260623_135225\\P152_REAL_GEM_RESPONSE_PAYLOAD.json",
+    "report_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_20260623_135225\\P152_REAL_GEM_RESPONSE_IMPORT_REPORT.json",
+    "summary_json": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_20260623_135225\\P152_SUMMARY.json"
+  },
+  "real_gem_file_provided": false,
+  "run_id": "P152-REAL-GEM-RESPONSE-IMPORT-OR-STOP-20260623",
+  "safety": {
+    "apps_script_execution": false,
+    "auto_apply_gem_response": false,
+    "broker": false,
+    "clasp_push": false,
+    "fixture_allowed": false,
+    "google_sheets_write": false,
+    "human_review_required": true,
+    "live_google_sheets_read": false,
+    "order": false,
+    "public_deploy": false,
+    "real_file_import_only": true,
+    "sizing": false
+  },
+  "source_p151_status": "P151_RELEASE_PACK_VERIFY_LAUNCH_SMOKE_READY",
+  "source_p151_summary_path": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P151_RELEASE_PACK_VERIFY_LAUNCH_SMOKE_20260623_134044\\P151_SUMMARY.json",
+  "status": "P152_STOP_WAIT_REAL_GEM_RESPONSE_FILE_READY",
+  "validation_status": "NOT_RUN_WAIT_REAL_FILE",
+  "version": "MVP_QAIC_P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_1.0.0_SAFE",
+  "warning_count": 0,
+  "warnings": []
+}

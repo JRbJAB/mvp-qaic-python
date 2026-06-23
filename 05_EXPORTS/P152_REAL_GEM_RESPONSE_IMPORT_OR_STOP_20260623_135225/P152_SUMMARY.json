@@ -1,0 +1,19 @@
+{
+  "auto_apply_gem_response": false,
+  "blocker_count": 0,
+  "broker": false,
+  "google_sheets_write": false,
+  "human_review_required": true,
+  "json_payload_detected": false,
+  "live_google_sheets_read": false,
+  "mode": "STOP_WAIT_REAL_GEM_RESPONSE_FILE",
+  "next": "WAIT_REAL_GEM_RESPONSE_FILE_OR_STOP",
+  "order": false,
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P152_REAL_GEM_RESPONSE_IMPORT_OR_STOP_20260623_135225",
+  "public_deploy": false,
+  "real_gem_file_provided": false,
+  "sizing": false,
+  "status": "P152_STOP_WAIT_REAL_GEM_RESPONSE_FILE_READY",
+  "validation_status": "NOT_RUN_WAIT_REAL_FILE",
+  "warning_count": 0
+}
