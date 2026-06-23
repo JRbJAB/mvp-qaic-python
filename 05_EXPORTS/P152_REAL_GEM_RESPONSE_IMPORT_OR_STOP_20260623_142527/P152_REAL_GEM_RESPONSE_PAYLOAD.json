@@ -1,0 +1,85 @@
+{
+  "NO_AUTO_APPLY": true,
+  "assets": [
+    {
+      "allocation_pct": 6.24,
+      "asset_name": "US Dollar",
+      "confidence": "HIGH",
+      "notes": "Ligne espèces visible. Le PnL n'est pas affiché, indiqué par un tiret.",
+      "price_usd": 1.0,
+      "quantity": 39.99,
+      "symbol": "USD",
+      "unrealized_pnl_pct": null,
+      "unrealized_pnl_usd": null,
+      "value_usd": 39.99
+    },
+    {
+      "allocation_pct": 62.75,
+      "asset_name": "Bitcoin",
+      "confidence": "MEDIUM",
+      "notes": "Les chiffres principaux sont visibles. La partie droite de la colonne PnL est légèrement tronquée, mais le pourcentage semble lisible comme -24,77 %.",
+      "price_usd": 62359.14,
+      "quantity": 0.00644955,
+      "symbol": "BTC",
+      "unrealized_pnl_pct": -24.77,
+      "unrealized_pnl_usd": -132.43,
+      "value_usd": 402.18
+    },
+    {
+      "allocation_pct": 31.01,
+      "asset_name": "USDC",
+      "confidence": "HIGH",
+      "notes": "Ligne USDC visible avec quantité, prix, valeur, allocation et PnL positif.",
+      "price_usd": 1.0,
+      "quantity": 198.756267,
+      "symbol": "USDC",
+      "unrealized_pnl_pct": 0.03,
+      "unrealized_pnl_usd": 0.06,
+      "value_usd": 198.75
+    }
+  ],
+  "blockers": [
+    "NO_AUTO_APPLY"
+  ],
+  "copy_paste_text_used": false,
+  "human_review_required": true,
+  "image_usage_evidence": {
+    "blockers": [],
+    "status": "IMAGE_USED",
+    "visible_platform_or_context": "Interface de portefeuille crypto similaire à Revolut/Revolut X, avec affichage en USD et onglets de performance.",
+    "visual_evidence_summary": "La capture montre une valeur totale de portefeuille de 640,92 $, une variation globale de -132,37 $ et -17,12 %, ainsi que trois lignes visibles : US Dollar, Bitcoin et USDC."
+  },
+  "image_used": true,
+  "missing_data": [
+    "PnL du cash USD non affiché, indiqué par un tiret.",
+    "Prix d'achat moyen ou coût de revient non visible.",
+    "Historique détaillé des transactions non visible.",
+    "Date et heure exactes de la capture non visibles."
+  ],
+  "no_order_no_sizing": true,
+  "notes_fr": "Extraction réalisée uniquement à partir de l'image fournie. Les totaux visibles sont cohérents : la somme des valeurs des actifs correspond au total du portefeuille, les allocations totalisent 100,00 %, et le PnL BTC + USDC correspond au PnL global affiché. Aucun ordre, aucun sizing et aucune auto-application ne sont fournis.",
+  "portfolio": {
+    "cash_allocation_pct": 6.24,
+    "cash_usd_value": 39.99,
+    "total_value_usd": 640.92,
+    "unrealized_pnl_pct": -17.12,
+    "unrealized_pnl_usd": -132.37
+  },
+  "reconciliation": {
+    "allocation_sum_pct": 100.0,
+    "asset_values_sum_usd": 640.92,
+    "pnl_diff_usd": 0.0,
+    "pnl_sum_usd": -132.37,
+    "portfolio_total_usd": 640.92,
+    "reported_pnl_usd": -132.37,
+    "status": "REVIEW",
+    "value_diff_usd": 0.0
+  },
+  "reference_currency": "USD",
+  "source_type": "image",
+  "status": "REVIEW_REQUIRED",
+  "unclear_data": [
+    "La colonne PnL à droite est partiellement tronquée sur la capture.",
+    "Le pourcentage PnL BTC semble être -24,77 %, mais une vérification humaine est recommandée."
+  ]
+}
