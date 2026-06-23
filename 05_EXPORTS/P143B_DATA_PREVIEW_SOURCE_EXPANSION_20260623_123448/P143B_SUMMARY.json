@@ -1,0 +1,13 @@
+{
+  "bound_page_count": 11,
+  "cockpit_page_count": 11,
+  "csv_match_page_count": 11,
+  "google_sheets_write": false,
+  "live_google_sheets_read": false,
+  "metadata_fallback_page_count": 0,
+  "next": "P144_PROMPT_COCKPIT_WORKFLOWS",
+  "output_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY\\05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448",
+  "public_deploy": false,
+  "source_csv_count": 65,
+  "status": "P143B_DATA_PREVIEW_SOURCE_EXPANSION_RENDERED_LOCAL_READONLY"
+}
