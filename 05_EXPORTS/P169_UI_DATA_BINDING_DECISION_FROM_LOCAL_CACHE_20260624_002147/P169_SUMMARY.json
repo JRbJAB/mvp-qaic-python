@@ -1,0 +1,22 @@
+{
+  "STATUS": "OK_P169_UI_DATA_BINDING_DECISION_READY_FROM_LOCAL_CACHE_REVIEW_ONLY",
+  "generated_at": "2026-06-23T22:21:48+00:00",
+  "repo": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "cache_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\00_OPERATOR_EXPORTS\\P168G_LOCAL_CACHE",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P169_UI_DATA_BINDING_DECISION_FROM_LOCAL_CACHE_20260624_002147",
+  "cache_source_count": 5,
+  "ready_source_count": 5,
+  "binding_plan_count": 5,
+  "binding_ready": true,
+  "blocker_count": 0,
+  "blockers": [],
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "raw_operator_exports_committed": false,
+  "recommended_next": "P170_NICEGUI_LOCAL_CACHE_READ_BINDING"
+}
