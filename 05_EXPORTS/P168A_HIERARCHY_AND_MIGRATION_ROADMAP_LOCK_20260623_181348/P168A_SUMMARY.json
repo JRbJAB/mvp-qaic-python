@@ -1,0 +1,112 @@
+{
+  "step": "P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK",
+  "status": "P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK_READY_REVIEW_ONLY",
+  "generated_at": "2026-06-23T18:13:48Z",
+  "project": "MVP_QAIC_PY",
+  "hierarchy_locked": true,
+  "domain_boundaries": [
+    {
+      "domain": "MVP_QAIC_PY",
+      "owner_role": "MVP product and operator layer",
+      "allowed_scope": "lexique, webapp/NiceGUI local private, prompt cockpit, prompt review, Sheets snapshots/read-only data migration, Apps Script functional recovery, operator handoff",
+      "forbidden_scope": "broker execution, real orders, auto sizing, Revolut X execution backend, QAIT assets, public deploy without explicit release gate",
+      "source_of_truth": "mvp-qaic-python repository + reviewed Sheets/App Script snapshots"
+    },
+    {
+      "domain": "QAIC_PY",
+      "owner_role": "private crypto trading backend",
+      "allowed_scope": "technical backend, market/scoring/risk engine, Revolut X crypto lane, execution-capable modules locked by human review and safety gates",
+      "forbidden_scope": "MVP public/webapp product surface, QAIT Revolut Invest lane, unreviewed prompt apply",
+      "source_of_truth": "qaic-python-min-cost-dev-factory repository"
+    },
+    {
+      "domain": "QAIT_PY",
+      "owner_role": "actions and commodities trading backend",
+      "allowed_scope": "actions, commodities, Revolut Invest lane, BigQuery/read-only inventories, provider-specific evidence packs",
+      "forbidden_scope": "MVP prompt cockpit, MVP lexique/webapp, QAIC Revolut X crypto lane",
+      "source_of_truth": "qait-python-min-cost-dev-factory repository"
+    }
+  ],
+  "migration_roadmap": [
+    {
+      "priority": "P0",
+      "next_batch": "P168B_SHEETS_DATA_SNAPSHOT_LAYER_READONLY",
+      "domain": "MVP_QAIC_PY",
+      "objective": "Create a deterministic local Python snapshot layer for key MVP Sheets tabs using read-only exports or already-approved local snapshots.",
+      "inputs": "P165 source registry, live Sheets IDs, CONFIG/lexique/journal/prompt tables",
+      "outputs": "tab registry, bounded CSV snapshots, schema/readiness report",
+      "apply_mode": "READ_ONLY_NO_SHEET_WRITE",
+      "status": "RECOMMENDED_NEXT"
+    },
+    {
+      "priority": "P1",
+      "next_batch": "P169_APPS_SCRIPT_TO_PYTHON_FUNCTIONAL_PORT_SELECTOR",
+      "domain": "MVP_QAIC_PY",
+      "objective": "Convert the 22 Apps Script modules and 2738 function index into a ranked Python migration backlog by feature lane.",
+      "inputs": "P165_R3_APPS_SCRIPT_MODULE_INVENTORY.csv, P165_R3_FUNCTIONAL_MIGRATION_MAP.csv",
+      "outputs": "module backlog, feature parity matrix, port/no-port decisions",
+      "apply_mode": "LOCAL_REVIEW_ONLY",
+      "status": "NEXT_AFTER_SNAPSHOT"
+    },
+    {
+      "priority": "P2",
+      "next_batch": "P170_PROMPT_COCKPIT_BINDING_TO_REFERENCE_PROMPT",
+      "domain": "MVP_QAIC_PY",
+      "objective": "Bind the reviewed reference prompt draft to local operator/NiceGUI prompt cockpit without automatic runtime replacement.",
+      "inputs": "P166 reference draft, P167 review workbench, operator approval",
+      "outputs": "prompt cockpit draft binding, preview smoke, manual apply gate",
+      "apply_mode": "HUMAN_REVIEW_ONLY",
+      "status": "WAIT_AFTER_P167_HUMAN_REVIEW"
+    },
+    {
+      "priority": "P3",
+      "next_batch": "QAIC_PY_HANDOFF_BACKEND_BOUNDARY_CHECK",
+      "domain": "QAIC_PY",
+      "objective": "Keep trading/backend execution outside MVP_QAIC_PY and document any later handoff contract to QAIC_PY.",
+      "inputs": "MVP reviewed outputs only; no broker state copied into MVP",
+      "outputs": "handoff contract, no-live safety checklist",
+      "apply_mode": "SEPARATE_REPOSITORY_ONLY",
+      "status": "NOT_MVP_NEXT_BATCH"
+    },
+    {
+      "priority": "P4",
+      "next_batch": "QAIT_PY_NOOP_BOUNDARY_CONFIRMATION",
+      "domain": "QAIT_PY",
+      "objective": "Keep actions/commodities and Revolut Invest work completely outside MVP_QAIC_PY.",
+      "inputs": "none for MVP batch",
+      "outputs": "boundary note only",
+      "apply_mode": "NOOP_FOR_MVP",
+      "status": "OUT_OF_SCOPE_FOR_MVP"
+    }
+  ],
+  "source_milestones": {
+    "p165_export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121",
+    "p166_export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P166_REFERENCE_PROMPT_REBUILD_FROM_SOURCE_INDEX_20260623_174903",
+    "p167_export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529",
+    "p165_status": "P165_R3_PYTHON_INITIAL_FUNCTIONAL_SOURCE_ACCESS_LAYER_READY_REVIEW_ONLY",
+    "p166_status": "P166_REFERENCE_PROMPT_REBUILD_READY_REVIEW_ONLY",
+    "p167_status": "P167_REFERENCE_PROMPT_HUMAN_REVIEW_GATE_READY_REVIEW_ONLY",
+    "apps_script_module_count": 22,
+    "apps_script_function_count": 2738,
+    "prompt_engine_function_count": 2296,
+    "source_candidate_count": 4288,
+    "review_item_count": 5,
+    "pending_review_count": 5
+  },
+  "safety_flags": {
+    "review_only": true,
+    "runtime_prompt_modified": false,
+    "apply_allowed": false,
+    "google_sheets_write": false,
+    "apps_script_execution": false,
+    "clasp_push": false,
+    "broker": false,
+    "order": false,
+    "sizing": false,
+    "public_deploy": false
+  },
+  "blockers": [],
+  "blocker_count": 0,
+  "next": "P168B_SHEETS_DATA_SNAPSHOT_LAYER_READONLY",
+  "output_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK_20260623_181348"
+}
