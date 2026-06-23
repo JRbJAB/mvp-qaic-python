@@ -1,0 +1,254 @@
+{
+  "layout_fidelity_level": "STRUCTURE_HEADER_GRID_METADATA_V1",
+  "navigation_groups": [
+    {
+      "group": "Prompt cockpit historique",
+      "routes": [
+        "/cockpit/run_prompt_run_queue",
+        "/cockpit/ready_prompt_ready_to_copy",
+        "/cockpit/context_prompt_context_packs",
+        "/cockpit/bridge_prompt_lexique_bridge",
+        "/cockpit/control_prompt_variant_control_center",
+        "/cockpit/gpt_prompt_runtime_spec",
+        "/cockpit/library_prompt_library",
+        "/cockpit/output_templates",
+        "/cockpit/data_requirements",
+        "/cockpit/runtime_ai_runtime_reference",
+        "/cockpit/qaic_output_contract"
+      ]
+    }
+  ],
+  "recommended_next_step": "P140_NICEGUI_COCKPIT_REPLICA_RENDERER_FROM_METADATA",
+  "rendering_rules": {
+    "no_auto_apply": true,
+    "no_sheet_write": true,
+    "preserve_frozen_columns": true,
+    "preserve_header_names": true,
+    "preserve_sheet_order": true,
+    "show_hidden_tabs_as_archived": true
+  },
+  "routes": [
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "MVP QAIC P4-E PROMPT RUN QUEUE",
+        "version",
+        "MVP_QAIC_P4E_PROMPT_RUN_QUEUE_BATCH_MAXI_1.6.4_SAFE",
+        "run_id",
+        "P4E-RUNQ-20260614-000402",
+        "created_at",
+        "2026-06-13T22:04:02.725Z",
+        "policy",
+        "MANUAL_RUN_ONLY"
+      ],
+      "frozen_columns": 5,
+      "priority": "P0",
+      "route": "/cockpit/run_prompt_run_queue",
+      "title": "🚀 PROMPT_RUN_QUEUE"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "MVP QAIC P4-D READY TO COPY PROMPTS",
+        "version",
+        "MVP_QAIC_P4D_READY_TO_COPY_PROMPTS_BATCH_MAXI_1.6.3_SAFE",
+        "run_id",
+        "P4D-READY-20260613-235310",
+        "generated_at",
+        "2026-06-13T21:53:10.498Z",
+        "policy",
+        "MANUAL_USE_ONLY"
+      ],
+      "frozen_columns": 5,
+      "priority": "P0",
+      "route": "/cockpit/ready_prompt_ready_to_copy",
+      "title": "🧩 PROMPT_READY_TO_COPY"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "MVP QAIC P4-B PROMPT CONTEXT PACKS",
+        "version",
+        "MVP_QAIC_P4C_BRIDGE_REVIEW_APPROVAL_BATCH_MAXI_1.6.2_SAFE",
+        "run_id",
+        "P4B-CTX-20260613-233958",
+        "built_at",
+        "2026-06-13T21:39:58.434Z",
+        "policy",
+        "APPROVED_ACTIVE_LINKS_ONLY"
+      ],
+      "frozen_columns": 5,
+      "priority": "P0",
+      "route": "/cockpit/context_prompt_context_packs",
+      "title": "🧠 PROMPT_CONTEXT_PACKS"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "MVP QAIC P4-A PROMPT-LEXIQUE BRIDGE",
+        "version",
+        "MVP_QAIC_P4A_PROMPT_LEXIQUE_BRIDGE_BATCH_MAXI_1.6.0_SAFE",
+        "run_id",
+        "P4A-BRIDGE-20260613-230021",
+        "built_at",
+        "2026-06-13T21:00:21.610Z",
+        "policy",
+        "HUMAN_REVIEW_ONLY_NO_MODEL_CALL"
+      ],
+      "frozen_columns": 0,
+      "priority": "P0",
+      "route": "/cockpit/bridge_prompt_lexique_bridge",
+      "title": "🔗 PROMPT_LEXIQUE_BRIDGE"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "🎛️ PROMPT_VARIANT_CONTROL_CENTER",
+        "P2-BATCH-4 alias consolidation",
+        "status",
+        "READY",
+        "run_id",
+        "P2B4CTR-20260613-001336",
+        "version",
+        "MVP_QAIC_P2_BATCH_4_CONTROL_CENTER_ALIAS_CONSOLIDATION_1.3.1_SAFE"
+      ],
+      "frozen_columns": 3,
+      "priority": "P0",
+      "route": "/cockpit/control_prompt_variant_control_center",
+      "title": "🎛️ PROMPT_VARIANT_CONTROL_CENTER"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "stable_id",
+        "prompt_id",
+        "runtime_name",
+        "required_sections",
+        "required_signal_families",
+        "required_decision_matrix_rules",
+        "required_output_template",
+        "required_data_requirements",
+        "required_qaic_mappings",
+        "revolut_x_inclusion_mode",
+        "portfolio_required",
+        "journal_write_required",
+        "execution_modes",
+        "risk_guards",
+        "priority",
+        "validation_status"
+      ],
+      "frozen_columns": 0,
+      "priority": "P0",
+      "route": "/cockpit/gpt_prompt_runtime_spec",
+      "title": "GPT_PROMPT_RUNTIME_SPEC"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "📘 PROMPT_LIBRARY",
+        "P2-Y Stable UI + workflow repair",
+        "status",
+        "READY_FOR_REVIEW",
+        "run_id",
+        "P2YUI-20260615-184819",
+        "version",
+        "MVP_QAIC_P2AB_LIBRARY_USED_BY_AND_PROMPT_DETAIL_FIX_1.1.8_SAFE"
+      ],
+      "frozen_columns": 5,
+      "priority": "P0",
+      "route": "/cockpit/library_prompt_library",
+      "title": "📘 PROMPT_LIBRARY"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "stable_id",
+        "category",
+        "title",
+        "use_case",
+        "required_columns",
+        "markdown_template",
+        "appsheet_view",
+        "related_prompts",
+        "risk_guards",
+        "tags",
+        "priority",
+        "source_file",
+        "source_section",
+        "validation_status"
+      ],
+      "frozen_columns": 0,
+      "priority": "P0",
+      "route": "/cockpit/output_templates",
+      "title": "OUTPUT_TEMPLATES"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "stable_id",
+        "category",
+        "title",
+        "required_for",
+        "data_field",
+        "description",
+        "required_level",
+        "fallback",
+        "manual_input_hint",
+        "quality_guard",
+        "related_terms",
+        "tags",
+        "priority",
+        "source_file",
+        "source_section",
+        "validation_status"
+      ],
+      "frozen_columns": 0,
+      "priority": "P0",
+      "route": "/cockpit/data_requirements",
+      "title": "DATA_REQUIREMENTS"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "🤖 AI_RUNTIME_REFERENCE",
+        "Runtime registry + Gem CDC + prompt dédié validé",
+        "status",
+        "READY",
+        "run_id",
+        "P2FAN-20260615-183402",
+        "version",
+        "MVP_QAIC_P4T_TSV_PARSER_RUNTIME_REFERENCE_2.4.1_SUMMARYCOLS_FIX_SAFE"
+      ],
+      "frozen_columns": 6,
+      "priority": "P0",
+      "route": "/cockpit/runtime_ai_runtime_reference",
+      "title": "🤖 AI_RUNTIME_REFERENCE"
+    },
+    {
+      "component": "DataGridCard",
+      "detected_columns": [
+        "stable_id",
+        "field_name",
+        "field_label",
+        "data_type",
+        "required_level",
+        "produced_by",
+        "source_priority",
+        "fallback_if_missing",
+        "appsheet_usage",
+        "gpt_usage",
+        "audit_requirement",
+        "notes",
+        "priority",
+        "validation_status",
+        "qaic_output_contract_id",
+        "contract_name"
+      ],
+      "frozen_columns": 0,
+      "priority": "P0",
+      "route": "/cockpit/qaic_output_contract",
+      "title": "QAIC_OUTPUT_CONTRACT"
+    }
+  ],
+  "spec_id": "P139_NICEGUI_HISTORICAL_COCKPIT_UI_REPLICA_SPEC"
+}
