@@ -1,0 +1,2 @@
+status,patch_candidate_found,patch_safe_for_review,unsafe_marker_count,blocker_count,apply_allowed,prompt_source_modified,next
+P157_PROMPT_PATCH_CANDIDATE_REVIEW_READY_ONLY,True,True,0,0,False,False,P158_MANUAL_PROMPT_PATCH_APPLY_OR_STOP
