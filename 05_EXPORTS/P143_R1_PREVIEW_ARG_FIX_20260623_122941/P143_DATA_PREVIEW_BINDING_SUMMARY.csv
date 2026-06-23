@@ -1,0 +1,12 @@
+title,route,domain,matched,source_filename,source_rows_total,preview_row_count,missing_source_reason
+🚀 PROMPT_RUN_QUEUE,/cockpit/run_prompt_run_queue,operations,False,,0,0,NO_LOCAL_CSV_MATCH
+🧩 PROMPT_READY_TO_COPY,/cockpit/ready_prompt_ready_to_copy,operations,False,,0,0,NO_LOCAL_CSV_MATCH
+🧠 PROMPT_CONTEXT_PACKS,/cockpit/context_prompt_context_packs,knowledge,False,,0,0,NO_LOCAL_CSV_MATCH
+🔗 PROMPT_LEXIQUE_BRIDGE,/cockpit/bridge_prompt_lexique_bridge,knowledge,False,,0,0,NO_LOCAL_CSV_MATCH
+🎛️ PROMPT_VARIANT_CONTROL_CENTER,/cockpit/control_prompt_variant_control_center,control,False,,0,0,NO_LOCAL_CSV_MATCH
+GPT_PROMPT_RUNTIME_SPEC,/cockpit/gpt_prompt_runtime_spec,contracts,False,,0,0,NO_LOCAL_CSV_MATCH
+📘 PROMPT_LIBRARY,/cockpit/library_prompt_library,library,False,,0,0,NO_LOCAL_CSV_MATCH
+OUTPUT_TEMPLATES,/cockpit/output_templates,contracts,False,,0,0,NO_LOCAL_CSV_MATCH
+DATA_REQUIREMENTS,/cockpit/data_requirements,support,False,,0,0,NO_LOCAL_CSV_MATCH
+🤖 AI_RUNTIME_REFERENCE,/cockpit/runtime_ai_runtime_reference,contracts,False,,0,0,NO_LOCAL_CSV_MATCH
+QAIC_OUTPUT_CONTRACT,/cockpit/qaic_output_contract,contracts,False,,0,0,NO_LOCAL_CSV_MATCH
