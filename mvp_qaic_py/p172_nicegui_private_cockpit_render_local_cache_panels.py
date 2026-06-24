@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import csv
@@ -166,7 +166,7 @@ def render_static_private_cockpit_html(payload: dict[str, Any]) -> str:
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>MVP QAIC P172 Private Local Cockpit Preview</title>
+<title>MVP QAIC — Private Local Cockpit Preview</title>
 <style>
 body {{ font-family: Arial, sans-serif; margin: 24px; background: #f6f7f9; color: #111; }}
 header {{ background: white; border: 1px solid #ddd; border-radius: 12px; padding: 18px; margin-bottom: 18px; }}
@@ -343,4 +343,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

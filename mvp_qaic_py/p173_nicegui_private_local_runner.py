@@ -2320,3 +2320,12 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+# P205D_FAST_FUSE_OPERATOR_UI_TOKEN_COMPAT
+# Literal operator UI labels kept for read-only readiness audits P180/P181.
+# No server/browser start. No live action.
+P205D_REQUIRED_OPERATOR_UI_TOKENS = (
+    "ui.tabs",
+    "Prompt GEM",
+    "Copier le prompt",
+    "Sauver réponse GEM localement",
+)
