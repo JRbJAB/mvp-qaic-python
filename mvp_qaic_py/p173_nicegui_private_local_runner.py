@@ -453,6 +453,7 @@ def serve_private(
                     _nav_button("Sessions", "/sessions", "history")
                     _nav_button("Roundtrip", "/roundtrip", "sync_alt")
                     _nav_button("Real Case", "/real-case", "rule")
+                    _nav_button("Migration", "/migration", "dashboard")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -767,6 +768,99 @@ def serve_private(
     @ui.page("/real-case")
     def real_case() -> None:
         _real_case_page()
+
+    def _migration_page() -> None:
+        from mvp_qaic_py.p190r_runtime_migration_tracker_live_readonly import (
+            build_runtime_migration_tracker,
+        )
+
+        payload = build_runtime_migration_tracker(project_root)
+        with _shell("migration"):
+            ui.label("P190R Runtime Migration Tracker").classes("qaic-section-title")
+            ui.label(
+                "Vision runtime read-only: onglets de suivi GEM, scripts, fonctions, "
+                "modules Python, tests, routes NiceGUI, prompts, exports, tags et % migration."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(f"migration={payload['migration_percent']}%", color="blue")
+                ui.badge(f"artifacts={payload['artifact_count']}", color="green")
+                ui.badge(f"blockers={payload['blocker_count']}", color="red")
+                ui.badge("READ ONLY", color="orange")
+
+            ui.separator()
+            ui.label("Coverage").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "area", "label": "area", "field": "area", "align": "left"},
+                    {"name": "count", "label": "count", "field": "count", "align": "right"},
+                    {"name": "percent", "label": "%", "field": "percent", "align": "right"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                ],
+                rows=payload["coverage_rows"],
+                row_key="area",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("GEM tracking tabs layer").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "name", "label": "onglet / layer", "field": "name", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "migration_percent",
+                        "label": "%",
+                        "field": "migration_percent",
+                        "align": "right",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next_action",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["gem_tracking_rows"],
+                row_key="name",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Runtime artifacts").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "artifact_type",
+                        "label": "type",
+                        "field": "artifact_type",
+                        "align": "left",
+                    },
+                    {"name": "name", "label": "name", "field": "name", "align": "left"},
+                    {
+                        "name": "migration_status",
+                        "label": "status",
+                        "field": "migration_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "migration_percent",
+                        "label": "%",
+                        "field": "migration_percent",
+                        "align": "right",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next_action",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["artifacts"][:250],
+                row_key="artifact_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/migration")
+    def migration() -> None:
+        _migration_page()
 
     @ui.page("/")
     def home() -> None:
