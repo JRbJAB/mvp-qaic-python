@@ -1,0 +1,5 @@
+step,action,status
+1,Déposer une capture image dans 00_OPERATOR_EXPORTS/P196_REAL_CASE_PORTFOLIO_GEM_INPUTS/CAPTURES,WAITING
+2,"Exécuter manuellement le prompt GEM hors Python, puis coller la réponse dans RESPONSES.",WAITING
+3,Ajouter texte copié/notes si disponible.,OPTIONAL
+4,Relancer ce statut pour passer vers P196B review réelle.,WAITING_INPUTS

@@ -1,0 +1,3 @@
+priority,layer_id,expected_sheet_tab,operator_status,runtime_status,binding_percent,operator_action,local_path,nicegui_route,python_handler,evidence_summary,purpose
+3,GEM_ROUNDTRIP,GEM_ROUNDTRIP_STATUS,REVIEW_EVIDENCE_TO_COMPLETE,BOUND_PARTIAL,85,ADD_ROUNDTRIP_STATUS_EXPORT_OR_BIND_EXISTING_EVIDENCE,05_EXPORTS,/roundtrip,p185/p186 roundtrip,path_exists=True; files=0; route=True; handler=BOUND; binding=85%,Valider le cycle capture → prompt → réponse → review.
+3,GEM_DECISION_JOURNAL,GEM_DECISION_JOURNAL,REVIEW_EVIDENCE_TO_COMPLETE,BOUND_PARTIAL,70,ADD_DECISION_JOURNAL_RUNTIME_EXPORT_OR_BIND_LOCAL_JOURNAL,05_EXPORTS,/review,decision journal bridge,path_exists=True; files=0; route=True; handler=PARTIAL_LOCAL_EXPORTS; binding=70%,Tracer les décisions humaines review-only.

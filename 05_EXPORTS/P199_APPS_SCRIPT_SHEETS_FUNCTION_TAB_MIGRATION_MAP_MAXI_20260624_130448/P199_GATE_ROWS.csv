@@ -1,0 +1,6 @@
+gate,status,value,reason
+NO_APPS_SCRIPT_EXECUTION,PASS,False,P199 only scans local files and exports mapping.
+NO_CLASP_PUSH,PASS,False,No CLASP command is executed.
+NO_GOOGLE_SHEETS_WRITE,PASS,False,No Sheets API/write action.
+TARGET_TAB_COUNT,PASS,13,Mapping inherits P198 target tabs.
+PYTHON_MODULES_DISCOVERED,PASS,293,Python modules are the MVP runtime source for migration.

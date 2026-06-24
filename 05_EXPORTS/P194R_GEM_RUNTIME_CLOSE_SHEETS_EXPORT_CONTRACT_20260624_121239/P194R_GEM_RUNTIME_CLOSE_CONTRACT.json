@@ -1,0 +1,227 @@
+{
+  "STATUS": "OK_P194R_GEM_RUNTIME_TRACKER_CLOSE_SHEETS_EXPORT_CONTRACT_READY",
+  "generated_at": "2026-06-24T10:12:40+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "sheet_contract_row_count": 13,
+  "ready_for_sheets_export_count": 11,
+  "ready_with_review_count": 1,
+  "not_ready_count": 1,
+  "runtime_close_percent": 96.5,
+  "sheet_contract_rows": [
+    {
+      "sheet_tab": "GEM_CAPTURE_INBOX",
+      "runtime_layer": "GEM_CAPTURE_INBOX",
+      "source_export": "00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX",
+      "primary_key": "capture_id",
+      "required_columns": "capture_id,session_id,prompt_id,image_path,status,created_at,operator_notes",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_RESPONSE_INBOX",
+      "runtime_layer": "GEM_RESPONSE_INBOX",
+      "source_export": "00_OPERATOR_EXPORTS/P181_GEM_RESPONSES",
+      "primary_key": "response_id",
+      "required_columns": "response_id,session_id,prompt_id,response_path,parser_status,created_at",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_SESSION_LOG",
+      "runtime_layer": "GEM_SESSION_LOG",
+      "source_export": "00_OPERATOR_EXPORTS/P181_SESSION_LOG",
+      "primary_key": "session_id",
+      "required_columns": "session_id,capture_id,response_id,prompt_id,status,created_at,updated_at",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_ROUNDTRIP_STATUS",
+      "runtime_layer": "GEM_ROUNDTRIP",
+      "source_export": "P193R_GEM_ROUNDTRIP_EVIDENCE.csv",
+      "primary_key": "evidence_id",
+      "required_columns": "evidence_id,evidence_type,name,source_path,is_file,is_dir,size_bytes,modified_time_epoch",
+      "export_status": "READY_WITH_REVIEW",
+      "readiness_percent": 85,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "REVIEW_CONTRACT_BEFORE_SHEETS_EXPORT"
+    },
+    {
+      "sheet_tab": "GEM_REVIEW_GATE",
+      "runtime_layer": "GEM_REVIEW_GATE",
+      "source_export": "P187_REAL_MANUAL_CASE_GATE.json",
+      "primary_key": "gate_id",
+      "required_columns": "gate_id,status,real_case_ready,blocker_count,blockers,next_action",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_REAL_CASE_DECISION",
+      "runtime_layer": "GEM_REAL_CASE_DECISION",
+      "source_export": "P188_REAL_CASE_OPERATOR_DECISION_GATE.json",
+      "primary_key": "decision_gate_id",
+      "required_columns": "decision_gate_id,decision_status,real_case_ready,blocker_count,next_action",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_DECISION_JOURNAL",
+      "runtime_layer": "GEM_DECISION_JOURNAL",
+      "source_export": "P193R_GEM_DECISION_JOURNAL_EVIDENCE.csv",
+      "primary_key": "evidence_id",
+      "required_columns": "evidence_id,evidence_type,name,source_path,is_file,is_dir,size_bytes,modified_time_epoch",
+      "export_status": "NOT_READY",
+      "readiness_percent": 70,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "COMPLETE_RUNTIME_LAYER_FIRST"
+    },
+    {
+      "sheet_tab": "PROMPT_HISTORY_LIBRARY",
+      "runtime_layer": "PROMPT_HISTORY_LIBRARY",
+      "source_export": "P182 prompt library export",
+      "primary_key": "prompt_id",
+      "required_columns": "prompt_id,source_kind,status,sha12,version_label,created_at",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "PROMPT_MIGRATION_MATRIX",
+      "runtime_layer": "PROMPT_MIGRATION_MATRIX",
+      "source_export": "P189H_PROMPT_MIGRATION_MATRIX.csv",
+      "primary_key": "prompt_id",
+      "required_columns": "prompt_id,quality_score,risk_score,migration_decision,migration_reason",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "RUNTIME_MIGRATION_TRACKER",
+      "runtime_layer": "RUNTIME_MIGRATION_TRACKER",
+      "source_export": "P190R_RUNTIME_ARTIFACTS.csv",
+      "primary_key": "artifact_id",
+      "required_columns": "artifact_id,artifact_type,name,migration_status,migration_percent,next_action",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_TRACKING_BINDING_MATRIX",
+      "runtime_layer": "GEM_TRACKING_BINDING_MATRIX",
+      "source_export": "P191R_GEM_TRACKING_BINDING_MATRIX.csv",
+      "primary_key": "layer_id",
+      "required_columns": "layer_id,expected_sheet_tab,runtime_status,binding_percent,next_action",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_TRACKING_OPERATOR_VIEW",
+      "runtime_layer": "GEM_TRACKING_OPERATOR_VIEW",
+      "source_export": "P192R_GEM_TRACKING_OPERATOR_VIEW.csv",
+      "primary_key": "layer_id",
+      "required_columns": "priority,layer_id,operator_status,operator_action,evidence_summary",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    },
+    {
+      "sheet_tab": "GEM_EVIDENCE_BINDING",
+      "runtime_layer": "GEM_EVIDENCE_BINDING",
+      "source_export": "P193R_GEM_EVIDENCE_BINDING.csv",
+      "primary_key": "layer_id",
+      "required_columns": "layer_id,evidence_status,evidence_count,evidence_percent,latest_evidence,next_action",
+      "export_status": "READY_FOR_READONLY_EXPORT",
+      "readiness_percent": 100,
+      "write_policy": "READONLY_EXPORT_CONTRACT_NO_SHEET_WRITE",
+      "human_review_required": true,
+      "next_action": "KEEP_CONTRACT_AND_OPTIONAL_EXPORT_TO_SHEETS_LATER"
+    }
+  ],
+  "close_rows": [
+    {
+      "metric": "sheet_contract_row_count",
+      "value": 13,
+      "status": "INFO"
+    },
+    {
+      "metric": "ready_for_sheets_export_count",
+      "value": 11,
+      "status": "OK"
+    },
+    {
+      "metric": "ready_with_review_count",
+      "value": 1,
+      "status": "REVIEW"
+    },
+    {
+      "metric": "not_ready_count",
+      "value": 1,
+      "status": "BLOCKED"
+    },
+    {
+      "metric": "runtime_close_percent",
+      "value": 96.5,
+      "status": "OK"
+    },
+    {
+      "metric": "roundtrip_evidence_count",
+      "value": 31,
+      "status": "OK"
+    },
+    {
+      "metric": "decision_journal_evidence_count",
+      "value": 83,
+      "status": "OK"
+    },
+    {
+      "metric": "blocker_count",
+      "value": 1,
+      "status": "REVIEW"
+    }
+  ],
+  "blocker_count": 1,
+  "blockers": [
+    "SOME_SHEETS_EXPORT_CONTRACT_ROWS_NOT_READY"
+  ],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P195R_OPERATOR_RELEASE_RUNTIME_TRACKER_OR_REAL_CASE_INPUTS",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P194R_GEM_RUNTIME_CLOSE_SHEETS_EXPORT_CONTRACT_20260624_121239"
+}

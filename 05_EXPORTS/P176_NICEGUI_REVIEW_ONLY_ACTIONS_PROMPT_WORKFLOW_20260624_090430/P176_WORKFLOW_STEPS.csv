@@ -1,0 +1,7 @@
+step_id,label,tab,mode,allowed,writes_data
+select_prompt_source,Sélectionner source prompt,prompt,READ_ONLY,True,False
+copy_prompt_to_gem,Copier prompt vers GEM,prompt,LOCAL_UI_ONLY,True,False
+save_gem_response_local_review_file,Sauver réponse GEM fichier local review-only,review,LOCAL_FILE_REVIEW_ONLY,True,False
+preview_review_decision,Prévisualiser décision humaine,review,PREVIEW_ONLY,True,False
+apply_review_decision,Appliquer décision review,review,BLOCKED_UNTIL_EXPLICIT_GATE,False,False
+apply_prompt_patch,Appliquer patch prompt runtime,prompt,BLOCKED_UNTIL_EXPLICIT_GATE,False,False

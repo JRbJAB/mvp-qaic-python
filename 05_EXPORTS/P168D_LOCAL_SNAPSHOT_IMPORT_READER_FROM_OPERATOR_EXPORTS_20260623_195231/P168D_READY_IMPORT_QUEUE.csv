@@ -1,0 +1,1 @@
+snapshot_id,source_key,spreadsheet_id,spreadsheet_title,tab_name,bounded_range,local_file,resolved_path,file_type,row_count_detected,column_count_detected,checksum_sha256_detected,import_stage,write_allowed

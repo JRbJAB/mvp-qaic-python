@@ -1,0 +1,10 @@
+﻿{
+    "STATUS":  "OK_P190R_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P190R_RUNTIME_MIGRATION_TRACKER_LIVE_READONLY_FAST_FUSE_20260624_112720.zip",
+    "zip_size_bytes":  60435,
+    "artifact_count":  853,
+    "migration_percent":  86.8,
+    "route_smoke_ok":  true,
+    "route_success_count":  9,
+    "recommended_next":  "P191R_GEM_TRACKING_TABS_RUNTIME_BINDING_MATRIX"
+}

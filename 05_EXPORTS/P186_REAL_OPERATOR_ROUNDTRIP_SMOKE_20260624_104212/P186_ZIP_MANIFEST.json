@@ -1,0 +1,10 @@
+﻿{
+    "STATUS":  "OK_P186_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_FAST_FUSE_20260624_104220.zip",
+    "zip_size_bytes":  6456,
+    "smoke_ready":  true,
+    "parsed_response_count":  1,
+    "route_smoke_ok":  true,
+    "route_success_count":  7,
+    "recommended_next":  "P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE"
+}

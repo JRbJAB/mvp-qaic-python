@@ -1,0 +1,12 @@
+﻿{
+    "STATUS":  "OK_P199UX_R2_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P199UX_R2_DEV_ROADMAP_TABS_ERGONOMICS_MAXI_20260624_132458.zip",
+    "zip_size_bytes":  27678,
+    "roadmap_step_count":  15,
+    "nicegui_tab_count":  9,
+    "post_python_step_count":  4,
+    "migration_coverage_percent":  97.7,
+    "route_smoke_ok":  false,
+    "route_success_count":  17,
+    "recommended_next":  "P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI"
+}

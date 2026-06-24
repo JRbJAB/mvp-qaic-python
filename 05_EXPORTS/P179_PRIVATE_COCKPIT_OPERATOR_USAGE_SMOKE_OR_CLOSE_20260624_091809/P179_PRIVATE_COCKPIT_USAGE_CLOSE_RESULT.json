@@ -1,0 +1,61 @@
+{
+  "STATUS": "OK_P179_PRIVATE_COCKPIT_OPERATOR_USAGE_SMOKE_CLOSED",
+  "generated_at": "2026-06-24T07:18:10+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "source_step": "P178_OPERATOR_SHORTCUT_AND_PRIVATE_COCKPIT_HANDOFF",
+  "launcher_path": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\00_OPERATOR_SHORTCUTS\\P178_RUN_PRIVATE_COCKPIT.ps1",
+  "handoff_path": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\00_OPERATOR_SHORTCUTS\\P178_OPERATOR_HANDOFF.md",
+  "private_url": "http://127.0.0.1:8088",
+  "check_count": 6,
+  "pass_count": 6,
+  "fail_count": 0,
+  "checks": [
+    {
+      "check_id": "launcher_exists",
+      "status": "PASS"
+    },
+    {
+      "check_id": "handoff_exists",
+      "status": "PASS"
+    },
+    {
+      "check_id": "launcher_private_host",
+      "status": "PASS"
+    },
+    {
+      "check_id": "launcher_private_port",
+      "status": "PASS"
+    },
+    {
+      "check_id": "handoff_private_url",
+      "status": "PASS"
+    },
+    {
+      "check_id": "handoff_safety",
+      "status": "PASS"
+    }
+  ],
+  "close_ready": true,
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "PRIVATE_PROMPT_COCKPIT_CLOSED_READY_FOR_REAL_OPERATOR_USE",
+  "usage_smoke_executed": true,
+  "usage_smoke_ok": true,
+  "route_success_count": 3,
+  "server_started_by_smoke": true,
+  "server_stopped_after_smoke": true,
+  "stdout_tail": "  \"public_serve\": false,\n  \"broker\": false,\n  \"order\": false,\n  \"sizing\": false,\n  \"raw_operator_exports_committed\": false,\n  \"server_started_by_smoke\": true,\n  \"server_stopped_after_smoke\": true,\n  \"route_results\": [\n    {\n      \"route\": \"/\",\n      \"url\": \"http://127.0.0.1:8088/\",\n      \"ok\": true\n    },\n    {\n      \"route\": \"/cache\",\n      \"url\": \"http://127.0.0.1:8088/cache\",\n      \"ok\": true\n    },\n    {\n      \"route\": \"/review\",\n      \"url\": \"http://127.0.0.1:8088/review\",\n      \"ok\": true\n    }\n  ],\n  \"route_success_count\": 3,\n  \"smoke_ok\": true,\n  \"stdout_tail\": \"NiceGUI ready to go on http://127.0.0.1:8088\",\n  \"stderr_tail\": \"\",\n  \"recommended_next\": \"P175_NICEGUI_OPERATOR_ERGONOMICS_POLISH\"\n}",
+  "stderr_tail": "",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P179_PRIVATE_COCKPIT_OPERATOR_USAGE_SMOKE_OR_CLOSE_20260624_091809"
+}

@@ -1,0 +1,9 @@
+metric,value,status
+sheet_contract_row_count,13,INFO
+ready_for_sheets_export_count,11,OK
+ready_with_review_count,1,REVIEW
+not_ready_count,1,BLOCKED
+runtime_close_percent,96.5,OK
+roundtrip_evidence_count,31,OK
+decision_journal_evidence_count,83,OK
+blocker_count,1,REVIEW

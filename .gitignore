@@ -34,3 +34,20 @@ Thumbs.db
 *.gz
 *.bz2
 *.zip.sha256.txt
+
+desktop.ini
+# P168G local operator exports/cache - local only, never commit raw operator CSV
+00_OPERATOR_EXPORTS/P168F_REQUIRED_SNAPSHOTS/*.csv
+00_OPERATOR_EXPORTS/P168G_LOCAL_CACHE/*.csv
+00_OPERATOR_EXPORTS/**/desktop.ini
+# MVP QAIC local private operator runtime artifacts
+00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX/*
+00_OPERATOR_EXPORTS/P181_GEM_RESPONSES/*
+00_OPERATOR_EXPORTS/P181_SESSION_LOG/*
+!00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX/.gitkeep
+!00_OPERATOR_EXPORTS/P181_GEM_RESPONSES/.gitkeep
+!00_OPERATOR_EXPORTS/P181_SESSION_LOG/.gitkeep
+desktop.ini
+**/desktop.ini
+.DS_Store
+**/.DS_Store

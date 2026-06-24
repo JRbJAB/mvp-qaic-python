@@ -1,0 +1,7 @@
+tab_id,label,purpose,default_visible,route,component_hint
+dashboard,Dashboard,"Vue rapide état cache, prompts, review, journal.",True,/,ui.tabs + status cards
+prompt,Prompt GEM,Préparer/copier le prompt opérateur image/portfolio.,True,/prompt,ui.textarea + copy button + prompt source selector
+cache,Cache local,Voir les 5 sources locales read-only.,True,/cache,ui.table + filters
+review,Review,Traiter les lignes PENDING en review-only.,True,/review,ui.table + status chips
+journal,Journal,Consulter les décisions et smoke runs.,True,/journal,ui.timeline + ui.table
+lexique,Lexique,Explorer les éléments lexique/cockpit disponibles.,True,/lexique,search input + ui.table

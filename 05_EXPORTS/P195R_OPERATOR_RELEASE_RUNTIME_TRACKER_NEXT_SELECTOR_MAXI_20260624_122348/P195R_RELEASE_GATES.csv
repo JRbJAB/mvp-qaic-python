@@ -1,0 +1,7 @@
+gate,status,value,reason
+runtime_close_percent,PASS,96.5,Runtime GEM coverage is high enough for operator release.
+sheets_contract_rows,PASS,13,All expected future Sheets tabs are represented in the contract.
+review_waivers,PASS,2,Waivers allow operator runtime release but do not allow live Sheet write.
+live_sheet_write,PASS,False,All Sheets integration remains read-only/contract-only.
+gem_call,PASS,False,No GEM call executed from Python.
+broker_order_sizing,PASS,False,No broker/order/sizing path enabled.

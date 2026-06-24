@@ -1,0 +1,5 @@
+priority,workstream,status,next_pack,reason
+1,REAL_CASE_PORTFOLIO_GEM,READY_WAITING_INPUTS,P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI,"Runtime UI, capture/response/session/review layers are ready. Needs real capture + real GEM response."
+2,PROMPT_HISTORICAL_MASTER,READY_FOR_MAXI_BATCH,P197_PROMPT_MASTER_FROM_HISTORICAL_AUDIT_AND_REGRESSION_MAXI,"Historical prompt inventory/audit exists; next is master candidate + regression, not micro review."
+3,SHEETS_EXPORT_DRY_RUN,READY_READONLY_CONTRACT_ONLY,P198_SHEETS_EXPORT_DRY_RUN_CONTRACT_PACK_MAXI,Runtime close at 96.5%; live Sheet write stays blocked until human validation.
+4,APPS_SCRIPT_SHEETS_MIGRATION_MAP,READY_FOR_AUDIT_MAXI,P199_APPS_SCRIPT_SHEETS_FUNCTION_TAB_MIGRATION_MAP_MAXI,Runtime tracker exists; remaining migration map can be grouped by tabs/scripts/functions.

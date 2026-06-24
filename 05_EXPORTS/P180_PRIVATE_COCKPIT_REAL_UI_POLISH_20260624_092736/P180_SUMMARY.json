@@ -1,0 +1,72 @@
+{
+  "STATUS": "OK_P180_PRIVATE_COCKPIT_REAL_UI_POLISH_ROUTE_SMOKE",
+  "generated_at": "2026-06-24T07:27:37+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "runner_path": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\mvp_qaic_py\\p173_nicegui_private_local_runner.py",
+  "route_count": 6,
+  "routes": [
+    "/",
+    "/prompt",
+    "/cache",
+    "/review",
+    "/journal",
+    "/lexique"
+  ],
+  "required_token_count": 12,
+  "missing_token_count": 0,
+  "missing_tokens": [],
+  "ui_polish_ready": true,
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P181_REAL_OPERATOR_VISUAL_REVIEW_OR_MICRO_POLISH",
+  "route_results": [
+    {
+      "route": "/",
+      "url": "http://127.0.0.1:8088/",
+      "ok": true
+    },
+    {
+      "route": "/prompt",
+      "url": "http://127.0.0.1:8088/prompt",
+      "ok": true
+    },
+    {
+      "route": "/cache",
+      "url": "http://127.0.0.1:8088/cache",
+      "ok": true
+    },
+    {
+      "route": "/review",
+      "url": "http://127.0.0.1:8088/review",
+      "ok": true
+    },
+    {
+      "route": "/journal",
+      "url": "http://127.0.0.1:8088/journal",
+      "ok": true
+    },
+    {
+      "route": "/lexique",
+      "url": "http://127.0.0.1:8088/lexique",
+      "ok": true
+    }
+  ],
+  "route_success_count": 6,
+  "route_smoke_ok": true,
+  "server_started_by_smoke": true,
+  "server_stopped_after_smoke": true,
+  "stdout_tail": "NiceGUI ready to go on http://127.0.0.1:8088",
+  "stderr_tail": "",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P180_PRIVATE_COCKPIT_REAL_UI_POLISH_20260624_092736"
+}

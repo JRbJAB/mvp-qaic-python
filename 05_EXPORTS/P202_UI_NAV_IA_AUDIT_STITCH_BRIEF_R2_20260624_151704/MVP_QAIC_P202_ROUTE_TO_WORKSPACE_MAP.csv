@@ -1,0 +1,25 @@
+﻿route,current_label,target_workspace,new_label,keep_mode,reason,ui_priority
+/,Home,W01,Command Center,KEEP_PRIMARY,"Accueil unique état système",1
+/dev-roadmap,Dev Roadmap,W01,Roadmap & Planning,KEEP_PRIMARY,"Vue passé/en cours/futur/post-Python",2
+/release-final,Release Final,W05,Release Gate,KEEP_PRIMARY,"Validation finale opérateur",3
+/sheets-cockpit-plan,Sheets Cockpit,W03,Plans onglets Sheets,KEEP_PRIMARY,"Vrais onglets Sheets utiles",4
+/migration-control,Migration Control,W04,Migration Control,KEEP_PRIMARY,"Fait/reste pour onglets/scripts/fonctions/modules",5
+/instructions,Instructions,W04,Obligations,KEEP_PRIMARY,"Suivi règles projet par thème",6
+/docs,Docs,W04,Documentation,KEEP_PRIMARY,"Index et fusion documentaire",7
+/notice,Notice,W04,Notice,KEEP_SECONDARY,"Aide opérateur",8
+/prompt-master,Prompt Master,W02,Prompt Master,KEEP_PRIMARY,"Prompt source actuel",9
+/real-case-inputs,Cas réel,W02,Cas réel,KEEP_PRIMARY,"Entrée capture/réponse",10
+/roundtrip,Roundtrip,W02,Roundtrip,KEEP_SECONDARY,"Audit flux complet",11
+/review,Review,W02,Review Gate,KEEP_PRIMARY,"Décision humaine",12
+/apps-script-map,Migration Map,W04,Apps Script Map,KEEP_SECONDARY,"Source migration technique",13
+/sheets-export,Sheets Dry-run,W03,Export Sheets dry-run,KEEP_SECONDARY,"Contrat export sans write live",14
+/runtime-contract,Runtime Contract,W05,Runtime Contract,KEEP_SECONDARY,"Contrat sécurité runtime",15
+/operator-release,Operator Release,W05,Operator Release,MERGE_LATER,"Peut fusionner avec release-final",16
+/gem-tracking,GEM Tracking,W02,GEM Tracking,MERGE_LATER,"Peut fusionner dans Utiliser l'outil",17
+/gem-tracking-operator,GEM Operator,W02,GEM Operator,MERGE_LATER,"Doublon potentiel GEM tracking",18
+/gem-evidence,GEM Evidence,W04,Évidences GEM,KEEP_SECONDARY,"Preuves utiles",19
+/prompt,Prompt,W02,Prompt legacy,REVIEW_HIDE,"Doublon prompt-master",20
+/capture,Capture,W02,Capture legacy,REVIEW_HIDE,"À fusionner dans real-case-inputs",21
+/responses,Responses,W02,Responses legacy,REVIEW_HIDE,"À fusionner dans roundtrip/review",22
+/sessions,Sessions,W02,Sessions legacy,REVIEW_HIDE,"À fusionner dans roundtrip",23
+/real-case,Real Case,W02,Real Case legacy,REVIEW_HIDE,"À fusionner dans real-case-inputs",24

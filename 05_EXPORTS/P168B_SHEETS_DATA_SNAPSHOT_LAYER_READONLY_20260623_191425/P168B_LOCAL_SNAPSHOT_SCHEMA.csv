@@ -1,0 +1,12 @@
+﻿field,type,required,description
+snapshot_id,string,YES,Deterministic ID: source_key + tab + range + timestamp.
+source_key,string,YES,"Logical source key, for example LIVE_SHEET_MVP_QAIC_DEV."
+spreadsheet_id,string,YES,Raw Google Sheets ID.
+spreadsheet_title,string,YES,Human-readable spreadsheet title.
+tab_name,string,YES,Sheet tab name.
+bounded_range,string,YES,Finite A1 range used for read-only extraction.
+local_file,string,YES,Local CSV/XLSX snapshot file path relative to repo.
+row_count,integer,RECOMMENDED,Detected data rows when local snapshot is available.
+column_count,integer,RECOMMENDED,Detected max columns when local snapshot is available.
+captured_at,timestamp,YES,UTC timestamp when snapshot/manifest is generated.
+read_mode,enum,YES,"READ_ONLY_EXPORT, LOCAL_CSV, LOCAL_XLSX, or PLANNED_READ_ONLY."

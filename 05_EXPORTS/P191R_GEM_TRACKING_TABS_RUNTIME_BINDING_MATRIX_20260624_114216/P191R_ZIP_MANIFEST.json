@@ -1,0 +1,11 @@
+﻿{
+    "STATUS":  "OK_P191R_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P191R_GEM_TRACKING_TABS_RUNTIME_BINDING_MATRIX_20260624_114229.zip",
+    "zip_size_bytes":  20814,
+    "layer_count":  10,
+    "ready_layer_count":  8,
+    "binding_coverage_percent":  95.5,
+    "route_smoke_ok":  true,
+    "route_success_count":  10,
+    "recommended_next":  "P192R_GEM_TRACKING_TABS_CSV_EXPORT_AND_OPERATOR_VIEW_POLISH"
+}

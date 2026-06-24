@@ -1,0 +1,9 @@
+﻿{
+    "STATUS":  "OK_P181ABC_ZIP_CREATED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P181ABC_OPERATOR_UI_PROMPT_CAPTURE_SESSIONS_FAST_FUSE_ZIP_20260624_094841.zip",
+    "zip_stage":  "C:\\Users\\Julie\\AppData\\Local\\Temp\\MVP_QAIC_P181ABC_ZIP_STAGE_20260624_094841",
+    "operator_ui_ready":  true,
+    "route_count":  9,
+    "route_success_count":  9,
+    "route_smoke_ok":  true
+}

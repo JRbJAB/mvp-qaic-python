@@ -1,0 +1,11 @@
+﻿{
+    "STATUS":  "OK_P183_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P183_CAPTURE_TO_SESSION_LINK_PROMPT_RUN_WORKFLOW_FAST_FUSE_20260624_100752.zip",
+    "zip_size_bytes":  16111,
+    "zip_stage":  "C:\\Users\\Julie\\AppData\\Local\\Temp\\MVP_QAIC_P183_ZIP_STAGE_20260624_100751",
+    "zip_verify_stage":  "C:\\Users\\Julie\\AppData\\Local\\Temp\\MVP_QAIC_P183_ZIP_VERIFY_20260624_100752",
+    "workflow_ready":  true,
+    "session_created":  true,
+    "active_prompt_count":  1,
+    "recommended_next":  "P184_REAL_GEM_SESSION_REVIEW_AND_RESPONSE_PARSER"
+}

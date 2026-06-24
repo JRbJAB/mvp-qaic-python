@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>MVP QAIC P172 Private Local Cockpit Preview</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 24px; background: #f6f7f9; color: #111; }
+header { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 18px; margin-bottom: 18px; }
+.panel { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 12px; }
+th, td { border: 1px solid #ddd; padding: 6px; vertical-align: top; }
+th { background: #f0f0f0; text-align: left; }
+.badge { display: inline-block; padding: 4px 8px; border: 1px solid #bbb; border-radius: 999px; background: #fafafa; }
+.muted { color: #666; }
+</style>
+</head>
+<body>
+<header>
+<h1>MVP QAIC — Private Local Cockpit Preview</h1>
+<p class="badge">OK_P172_NICEGUI_PRIVATE_COCKPIT_RENDER_READY_REVIEW_ONLY</p>
+<p>Host prévu: 127.0.0.1 | Port prévu: 8088 | Public serve: False | Google Sheets write: False</p>
+</header>
+<section class='panel'>
+<h2>Config cockpit</h2>
+<p><strong>Source:</strong> config | <strong>Rows:</strong> 6 | <strong>Mode:</strong> LOCAL_CACHE_READ_ONLY</p>
+<table><thead><tr><th>source_key</th><th>spreadsheet_id</th><th>spreadsheet_title</th><th>tab_name</th><th>bounded_range</th><th>snapshot_filename</th><th>priority</th><th>required_before_python_port</th><th>binding_action</th><th>preferred_path_now</th><th>api_binding_later</th><th>ready_now</th><th>write_allowed</th><th>live_api_call_from_python_now</th></tr></thead><tbody><tr><td>LIVE_SHEET_MVP_QAIC_DEV</td><td>19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0</td><td>🛠️ MVP QAIC — Crypto Signal OS — DEV</td><td>CONFIG</td><td>A1:D200</td><td>MVP_QAIC_DEV__CONFIG__A1_D200.csv</td><td>P0</td><td>YES</td><td>SNAPSHOT_REQUIRED_BEFORE_PORT</td><td>LOCAL_EXPORT_IMPORT_FIRST</td><td>GOOGLE_SHEETS_API_READONLY</td><td>YES_WITH_OPERATOR_EXPORT</td><td>NO</td><td>NO</td></tr>
+<tr><td>LIVE_SHEET_MVP_QAIC_DEV</td><td>19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0</td><td>🛠️ MVP QAIC — Crypto Signal OS — DEV</td><td>LEXIQUE_CRYPTO_APPROVED</td><td>A1:Z5000</td><td>MVP_QAIC_DEV__LEXIQUE_CRYPTO_APPROVED__A1_Z5000.csv</td><td>P0</td><td>YES</td><td>SNAPSHOT_REQUIRED_BEFORE_PORT</td><td>LOCAL_EXPORT_IMPORT_FIRST</td><td>GOOGLE_SHEETS_API_READONLY</td><td>YES_WITH_OPERATOR_EXPORT</td><td>NO</td><td>NO</td></tr>
+<tr><td>LIVE_SHEET_MVP_QAIC_DEV</td><td>19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0</td><td>🛠️ MVP QAIC — Crypto Signal OS — DEV</td><td>PROMPT_IMPROVEMENT_QUEUE</td><td>A1:Z5000</td><td>MVP_QAIC_DEV__PROMPT_IMPROVEMENT_QUEUE__A1_Z5000.csv</td><td>P0</td><td>YES</td><td>SNAPSHOT_REQUIRED_BEFORE_PORT</td><td>LOCAL_EXPORT_IMPORT_FIRST</td><td>GOOGLE_SHEETS_API_READONLY</td><td>YES_WITH_OPERATOR_EXPORT</td><td>NO</td><td>NO</td></tr>
+<tr><td>LIVE_SHEET_MVP_QAIC_DEV</td><td>19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0</td><td>🛠️ MVP QAIC — Crypto Signal OS — DEV</td><td>DECISION_JOURNAL</td><td>A1:Z5000</td><td>MVP_QAIC_DEV__DECISION_JOURNAL__A1_Z5000.csv</td><td>P1</td><td>YES</td><td>SNAPSHOT_REQUIRED_BEFORE_PORT</td><td>LOCAL_EXPORT_IMPORT_FIRST</td><td>GOOGLE_SHEETS_API_READONLY</td><td>YES_WITH_OPERATOR_EXPORT</td><td>NO</td><td>NO</td></tr>
+<tr><td>LIVE_SHEET_MVP_QAIC_DEV</td><td>19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0</td><td>🛠️ MVP QAIC — Crypto Signal OS — DEV</td><td>GPT_QUALITY_DASHBOARD</td><td>A1:Z2000</td><td>MVP_QAIC_DEV__GPT_QUALITY_DASHBOARD__A1_Z2000.csv</td><td>P1</td><td>REVIEW</td><td>SNAPSHOT_REVIEW_BEFORE_PORT</td><td>LOCAL_EXPORT_IMPORT_FIRST</td><td>GOOGLE_SHEETS_API_READONLY</td><td>REVIEW</td><td>NO</td><td>NO</td></tr></tbody></table>
+</section>
+<section class='panel'>
+<h2>Prompt source registry</h2>
+<p><strong>Source:</strong> prompt_registry | <strong>Rows:</strong> 5 | <strong>Mode:</strong> LOCAL_CACHE_READ_ONLY</p>
+<table><thead><tr><th>source_id</th><th>source_type</th><th>source_title</th><th>source_ref</th><th>access_mode</th><th>migration_use</th></tr></thead><tbody><tr><td>LIVE_SHEET_MVP_QAIC_DEV</td><td>GOOGLE_SHEET</td><td>MVP QAIC - Crypto Signal OS - DEV</td><td>19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0</td><td>READ_ONLY_SEED</td><td>initial MVP sheet data/tabs/config/journal/prompt queues</td></tr>
+<tr><td>LIVE_SHEET_QAIC_CRYPTO_V25_DEV</td><td>GOOGLE_SHEET</td><td>QAIC Crypto - V25 DEV</td><td>1vBwQ6GMfqBOfesIIpzBVGieTm-GcY9y_dXink_VY1Vg</td><td>READ_ONLY_SEED</td><td>upstream QAIC/V25 functional context and possible historical prompt material</td></tr>
+<tr><td>LIVE_DOC_MVP_QAIC_INSTRUCTIONS_0_6_2</td><td>GOOGLE_DRIVE_MD_OR_DOC</td><td>INSTRUCTIONS_PROJET_MVP_QAIC_0.6.2_REAL_FUSION_REPAIR</td><td>13MS0do4ho0uUJfDVKRe3z0i4HbieFG2N</td><td>READ_ONLY_SEED</td><td>historical project requirements / lexique-first / prompt design source</td></tr>
+<tr><td>LOCAL_CLASP_IMPORTS_ALL</td><td>LOCAL_CSV_EXPORT</td><td>MVPQAIC_CLASP_IMPORTS_ALL.csv</td><td>MVPQAIC_CLASP_IMPORTS_ALL.csv</td><td>LOCAL_READ_ONLY</td><td>Apps Script module/function/risk/flags recovery</td></tr>
+<tr><td>LOCAL_CLASP_IMPORTS_ALL_RESOLVED</td><td>LOCAL_CSV_EXPORT</td><td>MVPQAIC_CLASP_IMPORTS_ALL.csv</td><td>C:\Users\Julie\Downloads\MVP_QAIC_P165_R3_RUN_20260623_191208\p165_r3_zip_build\inputs\MVPQAIC_CLASP_IMPORTS_ALL.csv</td><td>LOCAL_READ_ONLY_RESOLVED</td><td>resolved CLASP import CSV used for P165-R3 functional recovery</td></tr></tbody></table>
+</section>
+<section class='panel'>
+<h2>Decision journal</h2>
+<p><strong>Source:</strong> decision_journal | <strong>Rows:</strong> 1 | <strong>Mode:</strong> LOCAL_CACHE_READ_ONLY</p>
+<table><thead><tr><th>journal_entry_id</th><th>journal_status</th><th>decision_status</th><th>source_step</th><th>source_response_run_id</th><th>source_prompt_run_id</th><th>generated_at_utc</th><th>missing_data_count</th><th>blocker_count</th><th>review_queue_rows</th><th>summary</th><th>missing_data</th><th>blockers</th><th>required_human_action</th><th>human_review_only</th><th>no_order_no_sizing</th><th>no_sheet_write</th><th>no_auto_apply_gem_response</th><th>notes</th></tr></thead><tbody><tr><td>P121-R2-SAMPLE-20260622-P120-JOURNAL</td><td>REVIEW_REQUIRED</td><td>REVIEW_REQUIRED</td><td>P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE</td><td>P121-R2-SAMPLE-20260622-P119</td><td>P121-R2-SAMPLE-20260622-P118</td><td>2026-06-22T00:00:00Z</td><td>3</td><td>0</td><td>3</td><td>P121 sample GEM response. Manual review required before any journal acceptance.</td><td>[&quot;human_confirmed_asset_symbols&quot;, &quot;current_prices&quot;, &quot;portfolio_total_value_eur&quot;]</td><td>[]</td><td>Complete missing data manually or keep journal_status=REVIEW_REQUIRED.</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>P121-R2 sample end-to-end local smoke. P119 blocker dedupe verified. No Sheet write.</td></tr></tbody></table>
+</section>
+<section class='panel'>
+<h2>Prompt review workbench</h2>
+<p><strong>Source:</strong> prompt_review | <strong>Rows:</strong> 5 | <strong>Mode:</strong> LOCAL_CACHE_READ_ONLY</p>
+<table><thead><tr><th>review_item_id</th><th>source_file</th><th>review_scope</th><th>recommended_decision</th><th>human_decision</th><th>apply_now</th><th>blocker_if_not_reviewed</th><th>notes</th></tr></thead><tbody><tr><td>P167-001</td><td>P166_REFERENCE_PROMPT_DRAFT_V1.md</td><td>Valider la demande globale, les hard rules, les blocs attendus et la sÃ©paration MVP_QAIC_PY / QAIC_PY.</td><td>REVIEW_REQUIRED</td><td>PENDING</td><td>NO</td><td>Cannot promote rebuilt prompt without human review.</td><td>Ne pas appliquer au runtime tant que la revue humaine n&#x27;est pas explicite.</td></tr>
+<tr><td>P167-002</td><td>P166_OPERATOR_QUICK_USE_PROMPT.md</td><td>VÃ©rifier que le prompt opÃ©rateur rapide est utilisable pour GEM portfolio image/capture.</td><td>REVIEW_REQUIRED</td><td>PENDING</td><td>NO</td><td>Operator quick prompt remains draft only.</td><td>Doit rester sans broker/order/sizing.</td></tr>
+<tr><td>P167-003</td><td>P166_JSON_OUTPUT_SCHEMA_DRAFT.md</td><td>VÃ©rifier que le schÃ©ma JSON couvre extraction, data quality, risk review, decision review et audit metadata.</td><td>REVIEW_REQUIRED</td><td>PENDING</td><td>NO</td><td>Schema cannot be used as runtime contract without approval.</td><td>Enums techniques Ã  garder stables.</td></tr>
+<tr><td>P167-004</td><td>P166_PROMPT_SOURCE_SELECTION.csv</td><td>ContrÃ´ler les candidats source indexÃ©s par P166. source_candidate_count=4288.</td><td>REVIEW_REQUIRED</td><td>PENDING</td><td>NO</td><td>Source selection remains unapproved.</td><td>P132/P133 reste runtime smoke contract only.</td></tr>
+<tr><td>P167-005</td><td>P166_REBUILD_REPORT.md</td><td>Valider que le rebuild est cohÃ©rent avec la hiÃ©rarchie MVP_QAIC_PY, QAIC_PY, QAIT_PY.</td><td>REVIEW_REQUIRED</td><td>PENDING</td><td>NO</td><td>No apply gate can open.</td><td>MVP_QAIC_PY ne doit pas absorber le backend trading QAIC_PY.</td></tr></tbody></table>
+</section>
+<section class='panel'>
+<h2>Lexique or cockpit data</h2>
+<p><strong>Source:</strong> lexique_or_cockpit | <strong>Rows:</strong> 88 | <strong>Mode:</strong> LOCAL_CACHE_READ_ONLY</p>
+<table><thead><tr><th>local_file</th><th>file_type</th><th>row_count</th><th>column_count</th><th>sheet_names</th><th>status</th></tr></thead><tbody><tr><td>05_EXPORTS\P102_COCKPIT_MIGRATION_SELECTOR_R5_20260622_084412\P102_COCKPIT_MIGRATION_SELECTOR.csv</td><td>CSV</td><td>377</td><td>12</td><td></td><td>LOCAL_SNAPSHOT_DETECTED</td></tr>
+<tr><td>05_EXPORTS\P110A_R2_LOCATOR_EXPORTS_BOM_REPAIR_20260622_114135\P110A_R2_CANONICAL_WEBAPP_INDEX_CANDIDATES.csv</td><td>CSV</td><td>72</td><td>9</td><td></td><td>LOCAL_SNAPSHOT_DETECTED</td></tr>
+<tr><td>05_EXPORTS\P110B_HUMAN_CONFIRM_CANONICAL_INDEX_PATCH_PLAN_20260622_115305\P110B_TOP_CANDIDATE_SUMMARY.csv</td><td>CSV</td><td>11</td><td>2</td><td></td><td>LOCAL_SNAPSHOT_DETECTED</td></tr>
+<tr><td>05_EXPORTS\P111_R1_CANONICAL_INDEX_CONFIRMATION_SEAL_AFTER_P112_20260622_120852\P111_R1_CANONICAL_INDEX_CONFIRMATION_SUMMARY.csv</td><td>CSV</td><td>10</td><td>2</td><td></td><td>LOCAL_SNAPSHOT_DETECTED</td></tr>
+<tr><td>05_EXPORTS\P115_MODULE_MIGRATION_INVENTORY_20260622_131544\P115_MODULE_MIGRATION_INVENTORY.csv</td><td>CSV</td><td>541</td><td>9</td><td></td><td>LOCAL_SNAPSHOT_DETECTED</td></tr></tbody></table>
+</section>
+</body>
+</html>

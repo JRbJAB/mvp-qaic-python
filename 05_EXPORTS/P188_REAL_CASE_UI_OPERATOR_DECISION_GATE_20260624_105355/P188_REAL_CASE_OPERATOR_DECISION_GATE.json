@@ -1,0 +1,77 @@
+{
+  "STATUS": "OK_P188_REAL_CASE_ROUTE_SMOKE",
+  "generated_at": "2026-06-24T08:53:55+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "decision_status": "WAITING_INPUTS",
+  "operator_instruction": "Déposer une vraie capture portfolio puis coller une vraie réponse GEM.",
+  "real_case_ready": false,
+  "human_review_required": true,
+  "apply_allowed": false,
+  "capture_count": 0,
+  "response_count": 0,
+  "blocker_count": 2,
+  "blockers": [
+    "WAITING_REAL_OPERATOR_CAPTURE",
+    "WAITING_REAL_GEM_RESPONSE_PASTE"
+  ],
+  "selected_capture": null,
+  "selected_response": null,
+  "route_count": 6,
+  "routes": [
+    "/",
+    "/capture",
+    "/responses",
+    "/roundtrip",
+    "/real-case",
+    "/review"
+  ],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "WAIT_OPERATOR_REAL_CAPTURE_AND_GEM_RESPONSE",
+  "route_results": [
+    {
+      "route": "/",
+      "url": "http://127.0.0.1:8097/",
+      "ok": true
+    },
+    {
+      "route": "/capture",
+      "url": "http://127.0.0.1:8097/capture",
+      "ok": true
+    },
+    {
+      "route": "/responses",
+      "url": "http://127.0.0.1:8097/responses",
+      "ok": true
+    },
+    {
+      "route": "/roundtrip",
+      "url": "http://127.0.0.1:8097/roundtrip",
+      "ok": true
+    },
+    {
+      "route": "/real-case",
+      "url": "http://127.0.0.1:8097/real-case",
+      "ok": true
+    },
+    {
+      "route": "/review",
+      "url": "http://127.0.0.1:8097/review",
+      "ok": true
+    }
+  ],
+  "route_success_count": 6,
+  "route_smoke_ok": true,
+  "server_started_by_smoke": true,
+  "server_stopped_after_smoke": true,
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_20260624_105355"
+}

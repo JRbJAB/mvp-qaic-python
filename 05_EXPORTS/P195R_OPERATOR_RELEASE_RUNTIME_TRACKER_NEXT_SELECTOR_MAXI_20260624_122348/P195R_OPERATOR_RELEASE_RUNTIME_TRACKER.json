@@ -1,0 +1,113 @@
+{
+  "STATUS": "OK_P195R_OPERATOR_RELEASE_RUNTIME_TRACKER_READY",
+  "generated_at": "2026-06-24T10:23:49+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "operator_release_status": "READY_WITH_REVIEW_WAIVERS",
+  "runtime_close_percent": 96.5,
+  "sheet_contract_row_count": 13,
+  "ready_for_sheets_export_count": 11,
+  "ready_with_review_count": 1,
+  "not_ready_count": 1,
+  "review_waiver_count": 2,
+  "review_waivers": [
+    {
+      "waiver_id": "ROUNDTRIP_STATUS_REVIEW_ACCEPTED",
+      "scope": "GEM_ROUNDTRIP_STATUS",
+      "reason": "Evidence exists and route/runtime are usable; Sheets export contract remains human-review only.",
+      "policy": "ALLOW_OPERATOR_RELEASE_DO_NOT_WRITE_SHEETS"
+    },
+    {
+      "waiver_id": "DECISION_JOURNAL_CONTRACT_DEFERRED",
+      "scope": "GEM_DECISION_JOURNAL",
+      "reason": "Decision evidence exists but future tab schema needs human validation before any Sheet write.",
+      "policy": "ALLOW_OPERATOR_RELEASE_BLOCK_LIVE_SHEETS_WRITE"
+    }
+  ],
+  "release_gate_rows": [
+    {
+      "gate": "runtime_close_percent",
+      "status": "PASS",
+      "value": "96.5",
+      "reason": "Runtime GEM coverage is high enough for operator release."
+    },
+    {
+      "gate": "sheets_contract_rows",
+      "status": "PASS",
+      "value": "13",
+      "reason": "All expected future Sheets tabs are represented in the contract."
+    },
+    {
+      "gate": "review_waivers",
+      "status": "PASS",
+      "value": "2",
+      "reason": "Waivers allow operator runtime release but do not allow live Sheet write."
+    },
+    {
+      "gate": "live_sheet_write",
+      "status": "PASS",
+      "value": "False",
+      "reason": "All Sheets integration remains read-only/contract-only."
+    },
+    {
+      "gate": "gem_call",
+      "status": "PASS",
+      "value": "False",
+      "reason": "No GEM call executed from Python."
+    },
+    {
+      "gate": "broker_order_sizing",
+      "status": "PASS",
+      "value": "False",
+      "reason": "No broker/order/sizing path enabled."
+    }
+  ],
+  "next_work_rows": [
+    {
+      "priority": 1,
+      "workstream": "REAL_CASE_PORTFOLIO_GEM",
+      "status": "READY_WAITING_INPUTS",
+      "next_pack": "P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI",
+      "reason": "Runtime UI, capture/response/session/review layers are ready. Needs real capture + real GEM response."
+    },
+    {
+      "priority": 2,
+      "workstream": "PROMPT_HISTORICAL_MASTER",
+      "status": "READY_FOR_MAXI_BATCH",
+      "next_pack": "P197_PROMPT_MASTER_FROM_HISTORICAL_AUDIT_AND_REGRESSION_MAXI",
+      "reason": "Historical prompt inventory/audit exists; next is master candidate + regression, not micro review."
+    },
+    {
+      "priority": 3,
+      "workstream": "SHEETS_EXPORT_DRY_RUN",
+      "status": "READY_READONLY_CONTRACT_ONLY",
+      "next_pack": "P198_SHEETS_EXPORT_DRY_RUN_CONTRACT_PACK_MAXI",
+      "reason": "Runtime close at 96.5%; live Sheet write stays blocked until human validation."
+    },
+    {
+      "priority": 4,
+      "workstream": "APPS_SCRIPT_SHEETS_MIGRATION_MAP",
+      "status": "READY_FOR_AUDIT_MAXI",
+      "next_pack": "P199_APPS_SCRIPT_SHEETS_FUNCTION_TAB_MIGRATION_MAP_MAXI",
+      "reason": "Runtime tracker exists; remaining migration map can be grouped by tabs/scripts/functions."
+    }
+  ],
+  "selected_next_pack": "P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI",
+  "expected_route_count": 14,
+  "blocker_count": 0,
+  "blockers": [],
+  "sheets_export_allowed": false,
+  "operator_runtime_release_allowed": true,
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P195R_OPERATOR_RELEASE_RUNTIME_TRACKER_NEXT_SELECTOR_MAXI_20260624_122348"
+}

@@ -1,0 +1,10 @@
+check_id,severity,status,rule
+NO_INVENTED_PORTFOLIO_NUMBERS,BLOCKING,PASS,"Ne jamais inventer prix, PRU, quantité, PnL, exposition, TP/SL."
+IMAGE_AND_TEXT_SINGLE_RESPONSE,BLOCKING,PASS,"La capture image fait partie du prompt principal, pas d'étape préliminaire séparée."
+FRENCH_NARRATIVE_KEEP_JSON_KEYS,HIGH,PASS,"Réponse en français, clés JSON/enums techniques conservés exactement."
+USD_REFERENCE_CURRENCY,HIGH,PASS,Devise de référence USD sauf preuve contraire explicite.
+HUMAN_REVIEW_ONLY,BLOCKING,PASS,"Toujours review-only, jamais ordre, sizing automatique, broker ou exécution réelle."
+NO_SHEETS_OR_APPS_SCRIPT_SIDE_EFFECT,BLOCKING,PASS,"Aucune écriture Sheets, Apps Script, CLASP, trigger, déploiement public."
+GEM_RESPONSE_NOT_AUTO_APPLIED,BLOCKING,PASS,"Une réponse GEM est analysée, jamais appliquée automatiquement au prompt source."
+MISSING_DATA_EXPLICIT,HIGH,PASS,Marquer les champs manquants REVIEW/UNKNOWN au lieu d'inférer.
+OUTPUT_HAS_OPERATOR_DECISION,MEDIUM,PASS,La sortie doit proposer un statut de décision opérateur et les bloqueurs.

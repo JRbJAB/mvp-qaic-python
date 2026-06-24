@@ -1,0 +1,11 @@
+priority,theme,obligation,status,color_cell,progress_percent,evidence,correction_rule
+1,Safety QAIC,HUMAN_REVIEW_ONLY permanent,PASS_MANDATORY,🟩,100,No broker/order/sizing flags must remain false.,Tout batch doit exposer les flags safety dans le summary.
+2,Safety QAIC,No auto-order / no auto-sizing / no broker execution,PASS_MANDATORY,🟩,100,"BROKER=False, ORDER=False, SIZING=False.",Bloquer tout module qui introduit exécution réelle.
+3,Google Live,No Google Sheets write sans autorisation humaine explicite,PASS_MANDATORY,🟩,100,"google_sheets_write=False, real_sheet_write_allowed=False.",Dry-run only jusqu’à validation écrite.
+4,Apps Script / CLASP,"No Apps Script execution, no CLASP push par défaut",PASS_MANDATORY,🟩,100,"apps_script_execution=False, clasp_push=False.",Lire/migrer/cartographier seulement.
+5,Batch process,"Batch fast and fuse, pas de micro-patchs inutiles",ACTIVE_REQUIREMENT,🟦,90,"Scripts complets, tests, export, ZIP, commit/tag/push.",Préférer MAXI batch avec réparation + UX + seal.
+6,UX Cockpit,Planning visuel en haut des onglets clés,ACTIVE_REQUIREMENT,🟦,90,Global banner + /dev-roadmap + /migration-control.,Chaque cockpit doit commencer par cards/compteurs et planning.
+7,UX Cockpit,"Tables compactes, utiles, colorées",ACTIVE_REQUIREMENT,🟦,90,"color_cell, entity_type, progress_percent, done/todo/action.","Interdire les tables longues sans statut, couleur et action."
+8,Migration,"Voir fait/reste à faire pour onglets, scripts, fonctions",ACTIVE_REQUIREMENT,🟦,90,"/migration-control agrège SHEET_TAB, PYTHON_MODULE, APPS_SCRIPT_SOURCE, FUNCTION.",Toute migration doit produire une matrice lisible opérateur.
+9,Prompt/GEM,"Ne jamais inventer prix, quantité, PnL, PRU, TP, SL",PASS_MANDATORY,🟩,100,Prompt master et real-case restent review-only.,Si données manquantes : REVIEW_REQUIRED/BLOCKED.
+10,Evidence,Ne pas annoncer scellé si export/summary/route smoke absent,CRITICAL_CORRECTION,🟦,50,P200 initial a eu un faux seal après KeyError.,Le batch doit stopper avant commit si summary ou smoke manquent.

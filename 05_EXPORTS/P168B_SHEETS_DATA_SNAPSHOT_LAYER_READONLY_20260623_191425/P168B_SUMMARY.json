@@ -1,0 +1,932 @@
+{
+  "step": "P168B_SHEETS_DATA_SNAPSHOT_LAYER_READONLY",
+  "status": "P168B_SHEETS_DATA_SNAPSHOT_LAYER_READY_READONLY",
+  "generated_at": "2026-06-23T19:14:25Z",
+  "project": "MVP_QAIC_PY",
+  "p165_export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121",
+  "p168a_export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK_20260623_181348",
+  "p165_status": "P165_R3_PYTHON_INITIAL_FUNCTIONAL_SOURCE_ACCESS_LAYER_READY_REVIEW_ONLY",
+  "p168a_status": "P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK_READY_REVIEW_ONLY",
+  "hierarchy_locked": true,
+  "source_registry_rows": [
+    {
+      "source_id": "LIVE_SHEET_MVP_QAIC_DEV",
+      "source_type": "GOOGLE_SHEET",
+      "source_title": "MVP QAIC - Crypto Signal OS - DEV",
+      "source_ref": "19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0",
+      "access_mode": "READ_ONLY_SEED",
+      "migration_use": "initial MVP sheet data/tabs/config/journal/prompt queues"
+    },
+    {
+      "source_id": "LIVE_SHEET_QAIC_CRYPTO_V25_DEV",
+      "source_type": "GOOGLE_SHEET",
+      "source_title": "QAIC Crypto - V25 DEV",
+      "source_ref": "1vBwQ6GMfqBOfesIIpzBVGieTm-GcY9y_dXink_VY1Vg",
+      "access_mode": "READ_ONLY_SEED",
+      "migration_use": "upstream QAIC/V25 functional context and possible historical prompt material"
+    }
+  ],
+  "source_registry_count": 2,
+  "bounded_read_plan": [
+    {
+      "priority": "P0",
+      "spreadsheet_id": "19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0",
+      "spreadsheet_title": "🛠️ MVP QAIC — Crypto Signal OS — DEV",
+      "tab_name": "CONFIG",
+      "bounded_range": "A1:D200",
+      "purpose": "Runtime project configuration, source folder IDs, setup/import timestamps, safety mode.",
+      "snapshot_filename": "MVP_QAIC_DEV__CONFIG__A1_D200.csv",
+      "required_before_python_port": "YES",
+      "source_key": "LIVE_SHEET_MVP_QAIC_DEV",
+      "snapshot_id": "LIVE_SHEET_MVP_QAIC_DEV__CONFIG__A1_D200__2026-06-23T19_14_25Z",
+      "captured_at": "2026-06-23T19:14:25Z",
+      "read_mode": "PLANNED_READ_ONLY",
+      "local_file": "",
+      "row_count": "",
+      "column_count": "",
+      "status": "WAITING_FOR_READONLY_EXPORT_OR_GOOGLE_API_READER"
+    },
+    {
+      "priority": "P0",
+      "spreadsheet_id": "19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0",
+      "spreadsheet_title": "🛠️ MVP QAIC — Crypto Signal OS — DEV",
+      "tab_name": "LEXIQUE_CRYPTO_APPROVED",
+      "bounded_range": "A1:Z5000",
+      "purpose": "Lexique/knowledge source for MVP prompt/webapp context.",
+      "snapshot_filename": "MVP_QAIC_DEV__LEXIQUE_CRYPTO_APPROVED__A1_Z5000.csv",
+      "required_before_python_port": "YES",
+      "source_key": "LIVE_SHEET_MVP_QAIC_DEV",
+      "snapshot_id": "LIVE_SHEET_MVP_QAIC_DEV__LEXIQUE_CRYPTO_APPROVED__A1_Z5000__2026-06-23T19_14_25Z",
+      "captured_at": "2026-06-23T19:14:25Z",
+      "read_mode": "PLANNED_READ_ONLY",
+      "local_file": "",
+      "row_count": "",
+      "column_count": "",
+      "status": "WAITING_FOR_READONLY_EXPORT_OR_GOOGLE_API_READER"
+    },
+    {
+      "priority": "P0",
+      "spreadsheet_id": "19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0",
+      "spreadsheet_title": "🛠️ MVP QAIC — Crypto Signal OS — DEV",
+      "tab_name": "PROMPT_IMPROVEMENT_QUEUE",
+      "bounded_range": "A1:Z5000",
+      "purpose": "Prompt correction/review queue; no automatic apply.",
+      "snapshot_filename": "MVP_QAIC_DEV__PROMPT_IMPROVEMENT_QUEUE__A1_Z5000.csv",
+      "required_before_python_port": "YES",
+      "source_key": "LIVE_SHEET_MVP_QAIC_DEV",
+      "snapshot_id": "LIVE_SHEET_MVP_QAIC_DEV__PROMPT_IMPROVEMENT_QUEUE__A1_Z5000__2026-06-23T19_14_25Z",
+      "captured_at": "2026-06-23T19:14:25Z",
+      "read_mode": "PLANNED_READ_ONLY",
+      "local_file": "",
+      "row_count": "",
+      "column_count": "",
+      "status": "WAITING_FOR_READONLY_EXPORT_OR_GOOGLE_API_READER"
+    },
+    {
+      "priority": "P1",
+      "spreadsheet_id": "19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0",
+      "spreadsheet_title": "🛠️ MVP QAIC — Crypto Signal OS — DEV",
+      "tab_name": "DECISION_JOURNAL",
+      "bounded_range": "A1:Z5000",
+      "purpose": "Human review/decision history for MVP operator traceability.",
+      "snapshot_filename": "MVP_QAIC_DEV__DECISION_JOURNAL__A1_Z5000.csv",
+      "required_before_python_port": "YES",
+      "source_key": "LIVE_SHEET_MVP_QAIC_DEV",
+      "snapshot_id": "LIVE_SHEET_MVP_QAIC_DEV__DECISION_JOURNAL__A1_Z5000__2026-06-23T19_14_25Z",
+      "captured_at": "2026-06-23T19:14:25Z",
+      "read_mode": "PLANNED_READ_ONLY",
+      "local_file": "",
+      "row_count": "",
+      "column_count": "",
+      "status": "WAITING_FOR_READONLY_EXPORT_OR_GOOGLE_API_READER"
+    },
+    {
+      "priority": "P1",
+      "spreadsheet_id": "19KY8Y1ozS7ONaJu9_5NQmjO47l-xM798Xm-y1n7fNd0",
+      "spreadsheet_title": "🛠️ MVP QAIC — Crypto Signal OS — DEV",
+      "tab_name": "GPT_QUALITY_DASHBOARD",
+      "bounded_range": "A1:Z2000",
+      "purpose": "Quality dashboard source for prompt cockpit prioritization.",
+      "snapshot_filename": "MVP_QAIC_DEV__GPT_QUALITY_DASHBOARD__A1_Z2000.csv",
+      "required_before_python_port": "REVIEW",
+      "source_key": "LIVE_SHEET_MVP_QAIC_DEV",
+      "snapshot_id": "LIVE_SHEET_MVP_QAIC_DEV__GPT_QUALITY_DASHBOARD__A1_Z2000__2026-06-23T19_14_25Z",
+      "captured_at": "2026-06-23T19:14:25Z",
+      "read_mode": "PLANNED_READ_ONLY",
+      "local_file": "",
+      "row_count": "",
+      "column_count": "",
+      "status": "WAITING_FOR_READONLY_EXPORT_OR_GOOGLE_API_READER"
+    },
+    {
+      "priority": "REFERENCE_ONLY",
+      "spreadsheet_id": "1vBwQ6GMfqBOfesIIpzBVGieTm-GcY9y_dXink_VY1Vg",
+      "spreadsheet_title": "📈 QAIC Crypto - V25 DEV",
+      "tab_name": "REFERENCE_ONLY_NO_MVP_PORT",
+      "bounded_range": "N/A",
+      "purpose": "QAIC V25 remains backend/reference only; do not merge into MVP_QAIC_PY runtime.",
+      "snapshot_filename": "NO_MVP_SNAPSHOT_REFERENCE_ONLY.csv",
+      "required_before_python_port": "NO",
+      "source_key": "LIVE_SHEET_QAIC_CRYPTO_V25_DEV",
+      "snapshot_id": "LIVE_SHEET_QAIC_CRYPTO_V25_DEV__REFERENCE_ONLY_NO_MVP_PORT__N_A__2026-06-23T19_14_25Z",
+      "captured_at": "2026-06-23T19:14:25Z",
+      "read_mode": "PLANNED_READ_ONLY",
+      "local_file": "",
+      "row_count": "",
+      "column_count": "",
+      "status": "WAITING_FOR_READONLY_EXPORT_OR_GOOGLE_API_READER"
+    }
+  ],
+  "bounded_read_plan_count": 6,
+  "local_snapshot_inventory": [
+    {
+      "local_file": "05_EXPORTS\\P102_COCKPIT_MIGRATION_SELECTOR_R5_20260622_084412\\P102_COCKPIT_MIGRATION_SELECTOR.csv",
+      "file_type": "CSV",
+      "row_count": 377,
+      "column_count": 12,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P110A_R2_LOCATOR_EXPORTS_BOM_REPAIR_20260622_114135\\P110A_R2_CANONICAL_WEBAPP_INDEX_CANDIDATES.csv",
+      "file_type": "CSV",
+      "row_count": 72,
+      "column_count": 9,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P110B_HUMAN_CONFIRM_CANONICAL_INDEX_PATCH_PLAN_20260622_115305\\P110B_TOP_CANDIDATE_SUMMARY.csv",
+      "file_type": "CSV",
+      "row_count": 11,
+      "column_count": 2,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P111_R1_CANONICAL_INDEX_CONFIRMATION_SEAL_AFTER_P112_20260622_120852\\P111_R1_CANONICAL_INDEX_CONFIRMATION_SUMMARY.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 2,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P115_MODULE_MIGRATION_INVENTORY_20260622_131544\\P115_MODULE_MIGRATION_INVENTORY.csv",
+      "file_type": "CSV",
+      "row_count": 541,
+      "column_count": 9,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE_20260622_140404\\P119_REVIEW_QUEUE.csv",
+      "file_type": "CSV",
+      "row_count": 4,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755\\P120_DECISION_JOURNAL_ENTRY.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950\\P121_STEP_P119_RESPONSE_CAPTURE_QUEUE\\P119_REVIEW_QUEUE.csv",
+      "file_type": "CSV",
+      "row_count": 4,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950\\P121_STEP_P120_DECISION_JOURNAL_BRIDGE\\P120_DECISION_JOURNAL_ENTRY.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P122_GEM_LOOP_OPERATOR_HANDOFF_STOP_PACK_20260622_145420\\P122_READY_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 7,
+      "column_count": 6,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P124_LOCAL_INPUT_HELPER_REAL_GEM_TEST_20260622_153328\\P124_REAL_GEM_TEST_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 7,
+      "column_count": 6,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P125_REAL_GEM_MANUAL_TEST_REVIEW_UX_20260622_154321\\P125_MISSING_DATA_AND_BLOCKERS.csv",
+      "file_type": "CSV",
+      "row_count": 4,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P126_DAILY_RUN_REGISTRY_20260622_155955\\P126_DAILY_RUN_REGISTRY.csv",
+      "file_type": "CSV",
+      "row_count": 3,
+      "column_count": 17,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P127_OPERATOR_RUN_SHORTCUT_20260622_161241\\P127_SHORTCUT_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704\\P128_IMAGE_CAPTURE_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 7,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P129_IMAGE_TO_PROMPT_MANUAL_TRANSCRIPTION_BRIDGE_20260622_162333\\P129_MANUAL_TRANSCRIPTION_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 3,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P129_R1_IMAGE_TO_PROMPT_MANUAL_TRANSCRIPTION_BRIDGE_20260622_163027\\P129_MANUAL_TRANSCRIPTION_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 3,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P130_OPERATOR_E2E_IMAGE_PROMPT_LOOP_20260622_164559\\P130_E2E_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 7,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P130_OPERATOR_E2E_IMAGE_PROMPT_LOOP_20260622_164559\\P130_P129_BRIDGE\\P129_MANUAL_TRANSCRIPTION_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 3,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P131_REAL_IMAGE_TRANSCRIPTION_OPERATOR_TEST_20260622_165234\\P131_REAL_TEST_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 7,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P132_MULTIMODAL_GEM_IMAGE_PROMPT_USD_CONTRACT_20260622_171525\\P132_RESPONSE_IMAGE_USAGE_GATE_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P132_R1_FRENCH_RESPONSE_JSON_STABLE_20260622_175827\\P132_RESPONSE_IMAGE_USAGE_GATE_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P132_R2_PRETTY_JSON_PROMPT_SYNC_20260622_184031\\P132_RESPONSE_IMAGE_USAGE_GATE_CHECKLIST.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P133_GEM_MULTIMODAL_RESPONSE_CAPTURE_IMAGE_USAGE_GATE_20260622_181633\\P133_OPERATOR_SUMMARY.csv",
+      "file_type": "CSV",
+      "row_count": 21,
+      "column_count": 2,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138A2_R2_SELF_CONTAINED_PATH_CHECK_FIX_20260622_234501\\P138A_MIGRATION_CANDIDATES.csv",
+      "file_type": "CSV",
+      "row_count": 37,
+      "column_count": 25,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138A_SHEETS_PROMPT_BASE_MIGRATION_CANDIDATE_20260622_231538\\P138A_MIGRATION_CANDIDATES.csv",
+      "file_type": "CSV",
+      "row_count": 1,
+      "column_count": 25,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000205\\P138B3_BLOCKED_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 19,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000205\\P138B3_DUPLICATE_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 5,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000205\\P138B3_OTHER_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 1,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000205\\P138B3_PROTECTED_REFERENCES.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000205\\P138B3_SAFE_PARTIAL_WRITE_READY.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000829\\P138B3_BLOCKED_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 19,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000829\\P138B3_DUPLICATE_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 5,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000829\\P138B3_OTHER_REVIEW.csv",
+      "file_type": "CSV",
+      "row_count": 1,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000829\\P138B3_PROTECTED_REFERENCES.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B3_WRITE_READINESS_TRIAGE_20260623_000829\\P138B3_SAFE_PARTIAL_WRITE_READY.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 19,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B_R2_SELF_CONTAINED_RUFF_PATH_FIX_20260622_235443\\P138B_BLOCKERS.csv",
+      "file_type": "CSV",
+      "row_count": 19,
+      "column_count": 6,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138B_R2_SELF_CONTAINED_RUFF_PATH_FIX_20260622_235443\\P138B_WRITE_PLAN.csv",
+      "file_type": "CSV",
+      "row_count": 37,
+      "column_count": 18,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138C_R9_CUSTOM_OAUTH_CLIENT_SAFE_WRITE_20260623_113901\\P138C_BACKUP___PROMPT_LIBRARY.csv",
+      "file_type": "CSV",
+      "row_count": 23,
+      "column_count": 52,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P138C_R9_CUSTOM_OAUTH_CLIENT_SAFE_WRITE_20260623_113901\\P138C_HYDRATED_SAFE_CANDIDATES.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 28,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P139_R1_GCLOUD_PS_TOKEN_BRIDGE_20260623_115113\\P139_SHEET_UI_METADATA.csv",
+      "file_type": "CSV",
+      "row_count": 133,
+      "column_count": 20,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH_20260623_121105\\P141_ROUTE_SMOKE_RESULTS.csv",
+      "file_type": "CSV",
+      "row_count": 13,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P143B_DATA_PREVIEW_SOURCE_EXPANSION_20260623_123448\\P143B_BINDING_SUMMARY.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 7,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P143_R1_PREVIEW_ARG_FIX_20260623_122941\\P143_DATA_PREVIEW_BINDING_SUMMARY.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P144_PROMPT_COCKPIT_WORKFLOWS_20260623_124209\\P144_OPERATOR_ACTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P146_CORRECTION_QUEUE_UI_20260623_125709\\P146_CORRECTION_ACTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 3,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P147_OPERATOR_POLISH_20260623_130332\\P147_OPERATOR_SHORTCUTS.csv",
+      "file_type": "CSV",
+      "row_count": 7,
+      "column_count": 3,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SOURCE_REGISTRY.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 13,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P148_SYNC_STRATEGY_READONLY_20260623_130842\\P148_SYNC_STEPS.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P149_MIGRATION_CLOSE_GATE_20260623_131402\\P149_MIGRATION_TIMELINE.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\P150B_RELEASE_EVIDENCE_INDEX.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P141_NICEGUI_COCKPIT_REPLICA_LOCAL_LAUNCH\\P141_ROUTE_SMOKE_RESULTS.csv",
+      "file_type": "CSV",
+      "row_count": 13,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P143B_DATA_PREVIEW_SOURCE_EXPANSION\\P143B_BINDING_SUMMARY.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 7,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P144_PROMPT_COCKPIT_WORKFLOWS\\P144_OPERATOR_ACTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P146_CORRECTION_QUEUE_UI\\P146_CORRECTION_ACTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 3,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P147_OPERATOR_POLISH\\P147_OPERATOR_SHORTCUTS.csv",
+      "file_type": "CSV",
+      "row_count": 7,
+      "column_count": 3,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P148_SYNC_STRATEGY_READONLY\\P148_SOURCE_REGISTRY.csv",
+      "file_type": "CSV",
+      "row_count": 12,
+      "column_count": 13,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P148_SYNC_STRATEGY_READONLY\\P148_SYNC_STEPS.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P149_MIGRATION_CLOSE_GATE\\P149_MIGRATION_TIMELINE.csv",
+      "file_type": "CSV",
+      "row_count": 10,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150B_LOCAL_PRIVATE_RELEASE_PACK_20260623_132954\\release_evidence\\P150_PUBLIC_PREP_SELECTOR_OR_STOP\\P150_NEXT_OPTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 9,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P150_PUBLIC_PREP_SELECTOR_OR_STOP_20260623_132354\\P150_NEXT_OPTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 9,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P151_RELEASE_PACK_VERIFY_LAUNCH_SMOKE_20260623_134044\\P151_RELEASE_ZIP_INDEX.csv",
+      "file_type": "CSV",
+      "row_count": 52,
+      "column_count": 1,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P152A_PROMPT_SOURCE_BINDING_FOR_REAL_GEM_20260623_140542\\P152A_PROMPT_SOURCE_OPTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 13,
+      "column_count": 11,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P153_CORRECTION_LOOP_REAL_CASE_20260623_143503\\P153_CORRECTION_ACTIONS.csv",
+      "file_type": "CSV",
+      "row_count": 5,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P154_PROMPT_CORRECTION_APPLY_PLAN_OR_STOP_20260623_144922\\P154_PROMPT_CORRECTION_APPLY_PLAN.csv",
+      "file_type": "CSV",
+      "row_count": 5,
+      "column_count": 12,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P155_PROMPT_CORRECTION_WORKBENCH_OR_STOP_20260623_134138\\P155_PROMPT_CORRECTION_WORKBENCH.csv",
+      "file_type": "CSV",
+      "row_count": 5,
+      "column_count": 20,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058\\P156_WORKBENCH_DECISION_READBACK.csv",
+      "file_type": "CSV",
+      "row_count": 5,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539\\P156_WORKBENCH_DECISION_READBACK.csv",
+      "file_type": "CSV",
+      "row_count": 5,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P157_PROMPT_PATCH_CANDIDATE_REVIEW_OR_APPLY_GATE_20260623_141418\\P157_PROMPT_PATCH_CANDIDATE_REVIEW_REPORT.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P158_MANUAL_PROMPT_PATCH_APPLY_OR_STOP_20260623_141833\\P158_MANUAL_APPLY_DECISION.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 16,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P158_MANUAL_PROMPT_PATCH_APPLY_OR_STOP_20260623_141833\\P158_MANUAL_PROMPT_PATCH_APPLY_OR_STOP_REPORT.csv",
+      "file_type": "CSV",
+      "row_count": 31,
+      "column_count": 2,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P159_PROMPT_PATCH_RUNTIME_SMOKE_OR_ROLLBACK_GATE_20260623_150735\\P159_RUNTIME_SMOKE_REPORT.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 29,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P160_REAL_GEM_RESPONSE_SMOKE_WITH_PATCH_OR_RELEASE_SEAL_20260623_153748\\P160_REAL_GEM_RESPONSE_SMOKE_WITH_PATCH_REPORT.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 34,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249\\P161_RELEASE_SEAL_REPORT.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 30,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P162_LOCAL_PRIVATE_OPERATOR_HANDOFF_OR_DEV_STOP_20260623_154739\\P162_OPERATOR_HANDOFF_REPORT.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 24,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P163_LOCAL_PRIVATE_OPERATOR_SHORTCUT_OR_DEV_STOP_20260623_155848\\P163_OPERATOR_SHORTCUT_REPORT.csv",
+      "file_type": "CSV",
+      "row_count": 2,
+      "column_count": 25,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P164_HISTORICAL_PROMPT_AUDIT_REFERENCE_REBUILD_20260623_165825\\P164_HISTORICAL_PROMPT_INVENTORY.csv",
+      "file_type": "CSV",
+      "row_count": 1144,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121\\P165_R3_APPS_SCRIPT_FUNCTION_INDEX.csv",
+      "file_type": "CSV",
+      "row_count": 2739,
+      "column_count": 9,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121\\P165_R3_APPS_SCRIPT_MODULE_INVENTORY.csv",
+      "file_type": "CSV",
+      "row_count": 23,
+      "column_count": 17,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121\\P165_R3_FUNCTIONAL_MIGRATION_MAP.csv",
+      "file_type": "CSV",
+      "row_count": 23,
+      "column_count": 10,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121\\P165_R3_PROMPT_ENGINE_RECOVERY.csv",
+      "file_type": "CSV",
+      "row_count": 2297,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121\\P165_R3_SHEETS_DATA_ACCESS_PLAN.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P165_R3_INITIAL_SHEET_APPS_SCRIPT_FUNCTIONAL_LAYER_20260623_193121\\P165_R3_SOURCE_REGISTRY.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 6,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P166_REFERENCE_PROMPT_REBUILD_FROM_SOURCE_INDEX_20260623_174903\\P166_PROMPT_SOURCE_SELECTION.csv",
+      "file_type": "CSV",
+      "row_count": 4289,
+      "column_count": 7,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529\\P167_REFERENCE_PROMPT_REVIEW_WORKBENCH.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK_20260623_181348\\P168A_DOMAIN_BOUNDARY_MATRIX.csv",
+      "file_type": "CSV",
+      "row_count": 4,
+      "column_count": 5,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK_20260623_181348\\P168A_MIGRATION_ROADMAP.csv",
+      "file_type": "CSV",
+      "row_count": 6,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    },
+    {
+      "local_file": "05_EXPORTS\\P168A_HIERARCHY_AND_MIGRATION_ROADMAP_LOCK_20260623_181348\\P168A_NEXT_BATCH_QUEUE.csv",
+      "file_type": "CSV",
+      "row_count": 4,
+      "column_count": 8,
+      "sheet_names": "",
+      "status": "LOCAL_SNAPSHOT_DETECTED"
+    }
+  ],
+  "local_snapshot_count": 88,
+  "schema": [
+    {
+      "field": "snapshot_id",
+      "type": "string",
+      "required": "YES",
+      "description": "Deterministic ID: source_key + tab + range + timestamp."
+    },
+    {
+      "field": "source_key",
+      "type": "string",
+      "required": "YES",
+      "description": "Logical source key, for example LIVE_SHEET_MVP_QAIC_DEV."
+    },
+    {
+      "field": "spreadsheet_id",
+      "type": "string",
+      "required": "YES",
+      "description": "Raw Google Sheets ID."
+    },
+    {
+      "field": "spreadsheet_title",
+      "type": "string",
+      "required": "YES",
+      "description": "Human-readable spreadsheet title."
+    },
+    {
+      "field": "tab_name",
+      "type": "string",
+      "required": "YES",
+      "description": "Sheet tab name."
+    },
+    {
+      "field": "bounded_range",
+      "type": "string",
+      "required": "YES",
+      "description": "Finite A1 range used for read-only extraction."
+    },
+    {
+      "field": "local_file",
+      "type": "string",
+      "required": "YES",
+      "description": "Local CSV/XLSX snapshot file path relative to repo."
+    },
+    {
+      "field": "row_count",
+      "type": "integer",
+      "required": "RECOMMENDED",
+      "description": "Detected data rows when local snapshot is available."
+    },
+    {
+      "field": "column_count",
+      "type": "integer",
+      "required": "RECOMMENDED",
+      "description": "Detected max columns when local snapshot is available."
+    },
+    {
+      "field": "captured_at",
+      "type": "timestamp",
+      "required": "YES",
+      "description": "UTC timestamp when snapshot/manifest is generated."
+    },
+    {
+      "field": "read_mode",
+      "type": "enum",
+      "required": "YES",
+      "description": "READ_ONLY_EXPORT, LOCAL_CSV, LOCAL_XLSX, or PLANNED_READ_ONLY."
+    }
+  ],
+  "safety_flags": {
+    "review_only": true,
+    "runtime_prompt_modified": false,
+    "apply_allowed": false,
+    "google_sheets_write": false,
+    "apps_script_execution": false,
+    "clasp_push": false,
+    "broker": false,
+    "order": false,
+    "sizing": false,
+    "public_deploy": false,
+    "live_google_api_call_from_python": false
+  },
+  "blockers": [],
+  "blocker_count": 0,
+  "next": "P168C_SHEETS_READONLY_EXPORT_IMPORT_OR_API_BINDING"
+}

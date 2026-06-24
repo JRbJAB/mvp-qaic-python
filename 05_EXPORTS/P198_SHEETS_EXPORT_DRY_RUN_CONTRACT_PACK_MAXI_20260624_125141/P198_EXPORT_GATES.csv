@@ -1,0 +1,6 @@
+gate,status,value,reason
+NO_GOOGLE_SHEETS_WRITE,PASS,False,P198 creates payloads and contracts only.
+TARGET_TAB_CONTRACT_COUNT,PASS,13,Expected 13 target tabs from P194 runtime contract.
+RUNTIME_CLOSE_PERCENT,PASS,96.5,Runtime close must be high before dry-run export.
+PROMPT_MASTER_READY,PASS,472,Prompt master candidates available for future prompt tabs.
+LIVE_WRITE_AUTHORIZATION,BLOCKED_BY_POLICY,False,No live Sheets write until explicit human authorization in a later batch.

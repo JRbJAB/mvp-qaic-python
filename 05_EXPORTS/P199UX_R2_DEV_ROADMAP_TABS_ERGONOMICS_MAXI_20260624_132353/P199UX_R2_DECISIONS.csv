@@ -1,0 +1,5 @@
+priority,decision,status,next_pack
+1,Clôturer cockpit opérateur final,NEXT,P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI
+2,Traiter vrai cas portfolio GEM,WAITING_INPUTS,P196B_AFTER_CAPTURE_AND_RESPONSE
+3,Autoriser ou refuser live Sheets write,BLOCKED_BY_POLICY,FUTURE_HUMAN_APPROVAL_ONLY
+4,Évolution post-Python public/private,FUTURE,POST_LOCAL_RELEASE_STRATEGY

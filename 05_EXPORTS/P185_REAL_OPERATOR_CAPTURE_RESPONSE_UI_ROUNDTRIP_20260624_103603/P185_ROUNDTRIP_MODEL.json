@@ -1,0 +1,107 @@
+{
+  "STATUS": "OK_P185_REAL_OPERATOR_ROUNDTRIP_ROUTE_SMOKE",
+  "generated_at": "2026-06-24T08:36:04+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "roundtrip_ready": true,
+  "route_count": 7,
+  "routes": [
+    "/",
+    "/capture",
+    "/prompt",
+    "/responses",
+    "/sessions",
+    "/roundtrip",
+    "/review"
+  ],
+  "capture_count": 0,
+  "response_count": 0,
+  "session_count": 4,
+  "parser_ready": true,
+  "parsed_response_count": 0,
+  "review_status": "WAITING_REAL_GEM_RESPONSE",
+  "has_real_response_ready": false,
+  "workflow_stage_count": 5,
+  "workflow_stages": [
+    {
+      "step": "capture_portfolio",
+      "label": "Capture portfolio locale",
+      "status": "WAITING_OPERATOR_INPUT"
+    },
+    {
+      "step": "copy_prompt",
+      "label": "Copie prompt actif",
+      "status": "READY"
+    },
+    {
+      "step": "paste_gem_response",
+      "label": "Coller réponse GEM locale",
+      "status": "WAITING_OPERATOR_INPUT"
+    },
+    {
+      "step": "parse_response",
+      "label": "Parser réponse GEM",
+      "status": "READY"
+    },
+    {
+      "step": "human_review",
+      "label": "Review humaine",
+      "status": "WAITING_REAL_GEM_RESPONSE"
+    }
+  ],
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_WITH_CAPTURE_AND_RESPONSE",
+  "route_results": [
+    {
+      "route": "/",
+      "url": "http://127.0.0.1:8095/",
+      "ok": true
+    },
+    {
+      "route": "/capture",
+      "url": "http://127.0.0.1:8095/capture",
+      "ok": true
+    },
+    {
+      "route": "/prompt",
+      "url": "http://127.0.0.1:8095/prompt",
+      "ok": true
+    },
+    {
+      "route": "/responses",
+      "url": "http://127.0.0.1:8095/responses",
+      "ok": true
+    },
+    {
+      "route": "/sessions",
+      "url": "http://127.0.0.1:8095/sessions",
+      "ok": true
+    },
+    {
+      "route": "/roundtrip",
+      "url": "http://127.0.0.1:8095/roundtrip",
+      "ok": true
+    },
+    {
+      "route": "/review",
+      "url": "http://127.0.0.1:8095/review",
+      "ok": true
+    }
+  ],
+  "route_success_count": 7,
+  "route_smoke_ok": true,
+  "server_started_by_smoke": true,
+  "server_stopped_after_smoke": true,
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P185_REAL_OPERATOR_CAPTURE_RESPONSE_UI_ROUNDTRIP_20260624_103603"
+}

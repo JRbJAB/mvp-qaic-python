@@ -1,0 +1,5 @@
+input_id,required,status,file_count,examples,local_path,allowed_extensions,operator_action
+portfolio_capture_image,True,WAITING_INPUT,0,,00_OPERATOR_EXPORTS/P196_REAL_CASE_PORTFOLIO_GEM_INPUTS/CAPTURES,".png,.jpg,.jpeg,.webp",Ajouter une capture écran portfolio Revolut X ou équivalent.
+gem_response_paste,True,WAITING_INPUT,0,,00_OPERATOR_EXPORTS/P196_REAL_CASE_PORTFOLIO_GEM_INPUTS/RESPONSES,".txt,.md,.json",Coller la réponse GEM réelle dans un fichier texte ou JSON.
+copied_interface_text,False,WAITING_INPUT,0,,00_OPERATOR_EXPORTS/P196_REAL_CASE_PORTFOLIO_GEM_INPUTS/TEXT,".txt,.md,.csv",Ajouter le texte copié de l'interface si disponible.
+operator_notes,False,WAITING_INPUT,0,,00_OPERATOR_EXPORTS/P196_REAL_CASE_PORTFOLIO_GEM_INPUTS/NOTES,".txt,.md","Ajouter contexte opérateur, anomalies, hypothèses et contraintes."

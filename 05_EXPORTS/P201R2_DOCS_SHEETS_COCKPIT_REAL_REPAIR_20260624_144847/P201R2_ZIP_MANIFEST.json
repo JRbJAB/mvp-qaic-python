@@ -1,0 +1,12 @@
+﻿{
+    "STATUS":  "OK_P201R2_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P201R2_DOCS_SHEETS_COCKPIT_REAL_REPAIR_20260624_144957.zip",
+    "zip_size_bytes":  44123,
+    "doc_count":  800,
+    "residual_doc_count":  750,
+    "sheet_cockpit_tab_count":  22,
+    "main_folder_write_ok":  true,
+    "route_success_count":  25,
+    "route_smoke_ok":  true,
+    "recommended_next":  "P202_UI_REAL_SCREEN_VALIDATION_AND_SHEETS_IMPORT_REVIEW"
+}

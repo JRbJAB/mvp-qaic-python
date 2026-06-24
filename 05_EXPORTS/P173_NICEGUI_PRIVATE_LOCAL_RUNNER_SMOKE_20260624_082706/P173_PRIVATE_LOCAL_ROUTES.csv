@@ -1,0 +1,4 @@
+route,label,host,port,public_access_allowed,route_status
+/,Home,127.0.0.1,8088,False,READY_FOR_PRIVATE_LOCAL_RUNNER
+/cache,Cache panels,127.0.0.1,8088,False,READY_FOR_PRIVATE_LOCAL_RUNNER
+/review,Human review,127.0.0.1,8088,False,READY_FOR_PRIVATE_LOCAL_RUNNER

@@ -1,0 +1,26 @@
+﻿{
+    "STATUS":  "OK_P202_R2_UX_NAV_IA_STITCH_BRIEF_READY",
+    "generated_at":  "2026-06-24T15:17:04",
+    "workspaces":  [
+                       "Command Center",
+                       "Utiliser l\u0027outil",
+                       "Cockpits Sheets utiles",
+                       "Administration \u0026 Migration",
+                       "Release \u0026 Diagnostics"
+                   ],
+    "primary_routes":  [
+                           "/",
+                           "/dev-roadmap",
+                           "/sheets-cockpit-plan",
+                           "/migration-control",
+                           "/instructions",
+                           "/docs",
+                           "/release-final"
+                       ],
+    "server_strategy":  "Dedicated PowerShell server window + stop old 8080 + optional pull + restart",
+    "no_google_sheets_write":  true,
+    "no_apps_script_execution":  true,
+    "no_clasp_push":  true,
+    "no_broker_order_sizing":  true,
+    "recommended_next":  "P203_NAV_SIDEBAR_WORKSPACE_REFACTOR_OR_STITCH_PREP"
+}

@@ -1,0 +1,11 @@
+﻿{
+    "STATUS":  "OK_P200R2_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P200R2_DEEP_COCKPIT_UX_INSTRUCTIONS_MAXI_20260624_140946.zip",
+    "zip_size_bytes":  41929,
+    "release_status":  "LOCAL_PRIVATE_OPERATOR_RELEASE_READY_WITH_DEEP_COCKPITS",
+    "route_smoke_ok":  true,
+    "route_success_count":  22,
+    "migration_control_row_count":  220,
+    "instruction_row_count":  10,
+    "recommended_next":  "P201_REAL_CASE_REVIEW_IF_INPUTS_READY_OR_LOCAL_RELEASE_SEAL"
+}

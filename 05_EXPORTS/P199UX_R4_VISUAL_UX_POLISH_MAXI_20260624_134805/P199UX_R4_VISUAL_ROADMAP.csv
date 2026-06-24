@@ -1,0 +1,16 @@
+order,period,lane,status,progress_percent,visible_route,next_action
+1,PASSÉ,Fondation Python MVP_QAIC_PY,DONE,100,/migration,Conserver comme socle local privé
+2,PASSÉ,NiceGUI local privé,DONE,100,/,Continuer polish UX utile
+3,PASSÉ,Prompt / capture / réponse GEM,DONE,95,/prompt,Tester avec cas réel opérateur
+4,PASSÉ,GEM tracking / evidence / runtime contract,DONE,100,/gem-tracking,Utiliser comme base journal / review
+5,PASSÉ,Prompt master historique,DONE_REVIEW_READY,95,/prompt-master,Review humaine avant patch source futur
+6,EN COURS,Sheets export dry-run,READY_NO_LIVE_WRITE,96,/sheets-export,Valider le contrat 13 onglets
+7,EN COURS,Migration Map Sheets / Apps Script / Python / NiceGUI,READY_READONLY,98,/apps-script-map,Garder la cartographie pour P200
+8,EN COURS,Roadmap visuelle opérateur,THIS_BATCH,100,/dev-roadmap,Devenir page de pilotage principale
+9,EN ATTENTE,Vrai cas GEM portfolio,WAITING_CAPTURE_AND_RESPONSE,60,/real-case-inputs,Déposer capture + réponse GEM réelle
+10,AVENIR PROCHE,Operator release cockpit final,NEXT_MAXI,80,/operator-release,P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI
+11,AVENIR PROCHE,Sheets live write gate,BLOCKED_BY_POLICY,40,/sheets-export,Autorisation humaine explicite plus tard seulement
+12,POST-PYTHON,Google Sheets cockpit public/privé,FUTURE,25,/sheets-export,Importer uniquement après validation live-write
+13,POST-PYTHON,WebApp publique MVP,FUTURE,20,/dev-roadmap,Séparer public lexique/méthode/prompt du backend privé
+14,POST-PYTHON,QAIC backend privé trading,FUTURE_SEPARATE,15,/dev-roadmap,"Bridge futur vers QAIC, sans auto order/sizing"
+15,POST-PYTHON,BigQuery / Cloud Run / IA gouvernée,FUTURE_AFTER_LOCAL_STABLE,10,/dev-roadmap,Seulement après stabilité MVP local
