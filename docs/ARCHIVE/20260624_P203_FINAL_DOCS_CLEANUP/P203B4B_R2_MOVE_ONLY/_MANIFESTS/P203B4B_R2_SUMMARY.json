@@ -1,0 +1,16 @@
+{
+  "STATUS": "OK_P203B4B_R2_ARCHIVE_MOVE_APPLIED_READY_TO_COMMIT",
+  "archive_root": "docs/ARCHIVE/20260624_P203_FINAL_DOCS_CLEANUP/P203B4B_R2_MOVE_ONLY",
+  "archive_safe_count": 20,
+  "moved_count": 20,
+  "hold_review_count": 5,
+  "hold_review_intact_count": 5,
+  "delete_data": false,
+  "copy_only": false,
+  "git_mv": true,
+  "manifest_hash_created": true,
+  "source_files_moved_from_old_location": true,
+  "data_loss": false,
+  "blocker_count": 0,
+  "blockers": []
+}
