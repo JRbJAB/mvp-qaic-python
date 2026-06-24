@@ -462,6 +462,7 @@ def serve_private(
                     _nav_button("Real Inputs", "/real-case-inputs", "upload_file")
                     _nav_button("Prompt Master", "/prompt-master", "psychology")
                     _nav_button("Sheets Export", "/sheets-export", "table_chart")
+                    _nav_button("AS Map", "/apps-script-map", "account_tree")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1505,6 +1506,123 @@ def serve_private(
     @ui.page("/sheets-export")
     def sheets_export() -> None:
         _sheets_export_page()
+
+    def _apps_script_map_page() -> None:
+        from mvp_qaic_py.p199_apps_script_sheets_function_tab_migration_map_maxi import (
+            build_apps_script_sheets_function_tab_migration_map,
+        )
+
+        payload = build_apps_script_sheets_function_tab_migration_map(project_root)
+
+        with _shell("apps-script-map"):
+            ui.label("P199 Apps Script Migration Map").classes("qaic-section-title")
+            ui.label(
+                "Mapping visuel read-only: onglets Sheets, sources Apps Script, modules Python, "
+                "routes NiceGUI, exports et statut de migration. Aucun CLASP, aucun Apps Script run."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(payload["migration_map_status"], color="blue")
+                ui.badge(f"tabs={payload['sheet_tab_count']}", color="green")
+                ui.badge(f"python={payload['python_module_count']}", color="purple")
+                ui.badge(f"apps_script={payload['apps_script_source_count']}", color="orange")
+                ui.badge(f"coverage={payload['migration_map_coverage_percent']}%", color="teal")
+                ui.badge("READ ONLY", color="red")
+
+            ui.separator()
+            ui.label("Migration matrix").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "priority",
+                        "label": "priority",
+                        "field": "priority",
+                        "align": "right",
+                    },
+                    {
+                        "name": "sheet_tab",
+                        "label": "sheet_tab",
+                        "field": "sheet_tab",
+                        "align": "left",
+                    },
+                    {
+                        "name": "runtime_layer",
+                        "label": "runtime_layer",
+                        "field": "runtime_layer",
+                        "align": "left",
+                    },
+                    {
+                        "name": "python_binding",
+                        "label": "python_binding",
+                        "field": "python_binding",
+                        "align": "left",
+                    },
+                    {
+                        "name": "apps_script_binding",
+                        "label": "apps_script_binding",
+                        "field": "apps_script_binding",
+                        "align": "left",
+                    },
+                    {
+                        "name": "migration_status",
+                        "label": "status",
+                        "field": "migration_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next_action",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["migration_rows"],
+                row_key="sheet_tab",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Python modules").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "module", "label": "module", "field": "module", "align": "left"},
+                    {
+                        "name": "function_count",
+                        "label": "functions",
+                        "field": "function_count",
+                        "align": "right",
+                    },
+                    {
+                        "name": "migration_role",
+                        "label": "role",
+                        "field": "migration_role",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["python_module_rows"][:120],
+                row_key="module",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Planning visuel").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "step", "label": "step", "field": "step", "align": "right"},
+                    {"name": "lane", "label": "lane", "field": "lane", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "next_pack",
+                        "label": "next_pack",
+                        "field": "next_pack",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["visual_planning_rows"],
+                row_key="step",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/apps-script-map")
+    def apps_script_map() -> None:
+        _apps_script_map_page()
 
     @ui.page("/")
     def home() -> None:

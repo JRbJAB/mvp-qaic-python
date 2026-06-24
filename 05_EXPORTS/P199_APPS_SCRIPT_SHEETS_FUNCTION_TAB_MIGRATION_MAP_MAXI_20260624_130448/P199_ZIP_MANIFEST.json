@@ -1,0 +1,14 @@
+﻿{
+    "STATUS":  "OK_P199_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P199_APPS_SCRIPT_SHEETS_FUNCTION_TAB_MIGRATION_MAP_MAXI_20260624_130536.zip",
+    "zip_size_bytes":  67708,
+    "migration_map_status":  "READY_READONLY_NO_CLASP_NO_APPS_SCRIPT_EXEC",
+    "sheet_tab_count":  13,
+    "ready_mapping_count":  12,
+    "python_module_count":  293,
+    "apps_script_source_count":  8,
+    "migration_map_coverage_percent":  97.7,
+    "route_smoke_ok":  true,
+    "route_success_count":  18,
+    "recommended_next":  "P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI"
+}
