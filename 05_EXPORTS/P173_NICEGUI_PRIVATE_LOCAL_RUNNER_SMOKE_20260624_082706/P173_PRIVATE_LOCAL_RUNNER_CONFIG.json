@@ -1,0 +1,56 @@
+{
+  "STATUS": "OK_P173_NICEGUI_PRIVATE_LOCAL_RUNNER_SMOKE_READY_REVIEW_ONLY",
+  "generated_at": "2026-06-24T06:27:07+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "source_step": "P172_NICEGUI_PRIVATE_COCKPIT_RENDER_LOCAL_CACHE",
+  "host": "127.0.0.1",
+  "port": 8088,
+  "preview_limit": 5,
+  "nicegui_import_available": true,
+  "require_nicegui": false,
+  "route_count": 3,
+  "route_rows": [
+    {
+      "route": "/",
+      "label": "Home",
+      "host": "127.0.0.1",
+      "port": 8088,
+      "public_access_allowed": false,
+      "route_status": "READY_FOR_PRIVATE_LOCAL_RUNNER"
+    },
+    {
+      "route": "/cache",
+      "label": "Cache panels",
+      "host": "127.0.0.1",
+      "port": 8088,
+      "public_access_allowed": false,
+      "route_status": "READY_FOR_PRIVATE_LOCAL_RUNNER"
+    },
+    {
+      "route": "/review",
+      "label": "Human review",
+      "host": "127.0.0.1",
+      "port": 8088,
+      "public_access_allowed": false,
+      "route_status": "READY_FOR_PRIVATE_LOCAL_RUNNER"
+    }
+  ],
+  "render_panel_count": 5,
+  "ready_render_panel_count": 5,
+  "smoke_ok": true,
+  "blocker_count": 0,
+  "blockers": [],
+  "launch_command": "python -m mvp_qaic_py.p173_nicegui_private_local_runner --project-root . --host 127.0.0.1 --port 8088 --serve-private",
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "raw_operator_exports_committed": false,
+  "server_started_by_smoke": false,
+  "recommended_next": "P174_NICEGUI_PRIVATE_LOCAL_LAUNCH_OPERATOR_SMOKE",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P173_NICEGUI_PRIVATE_LOCAL_RUNNER_SMOKE_20260624_082706"
+}
