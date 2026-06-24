@@ -1,0 +1,6 @@
+﻿workspace_id,workspace_label,role,primary_user_question,keep_routes,hide_or_merge_routes,ux_goal
+W01,Command Center,Accueil synthèse,"Où en est le système et que dois-je faire maintenant ?","/ /dev-roadmap /release-final","routes techniques isolées","Une page d'accueil claire avec état, blockers, prochaine action, liens rapides."
+W02,Utiliser l'outil,Usage quotidien,"Comment lancer un cas portfolio GEM review-only ?","/prompt-master /capture /real-case-inputs /roundtrip /review","/prompt /responses /sessions si doublons","Un flux opérateur unique : prompt -> capture -> réponse -> revue -> décision."
+W03,Cockpits Sheets utiles,Produit Sheets futur,"Quels vrais onglets Sheets faut-il créer et pourquoi ?","/sheets-cockpit-plan /sheets-export","routes Python prises pour des onglets","Séparer clairement futur onglet Sheets vs route Python."
+W04,Administration & Migration,Suivi dev/admin,"Qu'est-ce qui est fait, reste à faire, et où sont les preuves ?","/migration-control /apps-script-map /docs /instructions","/migration si redondant","Tableaux colorés, faits/reste, filtres, docs fusionnées."
+W05,Release & Diagnostics,Contrôle final,"Le système est-il prêt, sûr, et scellé ?","/release-final /runtime-contract /operator-release","smoke routes non lisibles","Gates clairs, erreurs visibles, aucun faux seal."
