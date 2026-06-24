@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -8,7 +8,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from mvp_qaic_py.p170_nicegui_local_cache_read_binding import REQUIRED_CACHE_SOURCES
 from mvp_qaic_py.p171_nicegui_local_prompt_cockpit_bind_cache_panels import (
     build_cockpit_panel_model,
 )
@@ -181,9 +180,9 @@ th {{ background: #f0f0f0; text-align: left; }}
 </head>
 <body>
 <header>
-<h1>MVP QAIC — Private Local Cockpit Preview</h1>
+<h1>MVP QAIC â€” Private Local Cockpit Preview</h1>
 <p class="badge">{status}</p>
-<p>Host prévu: 127.0.0.1 | Port prévu: 8088 | Public serve: False | Google Sheets write: False</p>
+<p>Host prÃ©vu: 127.0.0.1 | Port prÃ©vu: 8088 | Public serve: False | Google Sheets write: False</p>
 </header>
 {panel_html}
 </body>
@@ -344,3 +343,4 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

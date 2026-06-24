@@ -1,9 +1,9 @@
-# P168F operator export dropzone
+﻿# P168F operator export dropzone
 
 Place the required local CSV exports in this folder.
 
 Folder:
-`C:\Users\Julie\Documents\JRb-Dev\MVP_QAIC_PY_WORK_20260623_192901\00_OPERATOR_EXPORTS\P168F_REQUIRED_SNAPSHOTS`
+`C:\Users\Julie\Documents\JRb-Dev\MVP_QAIC_PY_WORK_20260623_192901\01_OPERATOR_INPUTS\P168F_REQUIRED_SNAPSHOTS`
 
 Required files:
 - `MVP_QAIC_CONFIG.csv`
@@ -19,3 +19,4 @@ Rules:
 - Do not export broker/API credentials.
 - Do not write back to Google Sheets from Python.
 - This folder is local/operator-controlled input for MVP_QAIC_PY only.
+
