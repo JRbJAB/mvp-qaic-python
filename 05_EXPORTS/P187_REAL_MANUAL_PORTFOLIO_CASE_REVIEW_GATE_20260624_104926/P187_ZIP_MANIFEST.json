@@ -1,0 +1,8 @@
+﻿{
+    "STATUS":  "OK_P187_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE_FAST_FUSE_20260624_104928.zip",
+    "zip_size_bytes":  6586,
+    "real_case_ready":  false,
+    "blocker_count":  2,
+    "recommended_next":  "P188_REAL_CASE_UI_OPERATOR_DECISION_SEAL_OR_WAIT"
+}
