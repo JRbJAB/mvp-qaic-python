@@ -47,3 +47,7 @@ desktop.ini
 !00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX/.gitkeep
 !00_OPERATOR_EXPORTS/P181_GEM_RESPONSES/.gitkeep
 !00_OPERATOR_EXPORTS/P181_SESSION_LOG/.gitkeep
+desktop.ini
+**/desktop.ini
+.DS_Store
+**/.DS_Store
