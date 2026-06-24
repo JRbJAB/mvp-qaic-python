@@ -459,10 +459,11 @@ def serve_private(
                     _nav_button("GEM Evidence", "/gem-evidence", "inventory")
                     _nav_button("Runtime Contract", "/runtime-contract", "assignment")
                     _nav_button("Operator Release", "/operator-release", "rocket_launch")
-                    _nav_button("Real Inputs", "/real-case-inputs", "upload_file")
+                    _nav_button("Cas réel", "/real-case-inputs", "upload_file")
                     _nav_button("Prompt Master", "/prompt-master", "psychology")
-                    _nav_button("Sheets Export", "/sheets-export", "table_chart")
-                    _nav_button("AS Map", "/apps-script-map", "account_tree")
+                    _nav_button("Sheets Dry-run", "/sheets-export", "table_chart")
+                    _nav_button("Migration Map", "/apps-script-map", "account_tree")
+                    _nav_button("Dev Roadmap", "/dev-roadmap", "timeline")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1623,6 +1624,115 @@ def serve_private(
     @ui.page("/apps-script-map")
     def apps_script_map() -> None:
         _apps_script_map_page()
+
+    def _dev_roadmap_page() -> None:
+        from mvp_qaic_py.p199ux_r2_dev_roadmap_tabs_ergonomics_maxi import (
+            build_dev_roadmap_tabs_ergonomics,
+        )
+
+        payload = build_dev_roadmap_tabs_ergonomics(project_root)
+
+        with _shell("dev-roadmap"):
+            ui.label("P199UX-R2 Dev Roadmap").classes("qaic-section-title")
+            ui.label(
+                "Planning visuel complet: passé, en cours, attente, futur et post-Python. "
+                "Chaque onglet NiceGUI est relié à son utilité métier, aux données traitées et à la prochaine action."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(payload["roadmap_status"], color="blue")
+                ui.badge(f"steps={payload['roadmap_step_count']}", color="green")
+                ui.badge(f"tabs={payload['nicegui_tab_count']}", color="purple")
+                ui.badge(f"post_python={payload['post_python_step_count']}", color="orange")
+                ui.badge(f"coverage={payload['migration_coverage_percent']}%", color="teal")
+                ui.badge("READ ONLY", color="red")
+
+            ui.separator()
+            ui.label("Planning visuel — passé / en cours / futur / post-Python").classes(
+                "qaic-section-title"
+            )
+            ui.table(
+                columns=[
+                    {"name": "order", "label": "#", "field": "order", "align": "right"},
+                    {"name": "period", "label": "période", "field": "period", "align": "left"},
+                    {"name": "lane", "label": "chantier", "field": "lane", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "progress_percent",
+                        "label": "%",
+                        "field": "progress_percent",
+                        "align": "right",
+                    },
+                    {
+                        "name": "visible_route",
+                        "label": "route",
+                        "field": "visible_route",
+                        "align": "left",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["roadmap_rows"],
+                row_key="order",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Onglets NiceGUI — lisibilité et valeur opérateur").classes(
+                "qaic-section-title"
+            )
+            ui.table(
+                columns=[
+                    {"name": "route", "label": "route", "field": "route", "align": "left"},
+                    {
+                        "name": "label_fr",
+                        "label": "nom métier",
+                        "field": "label_fr",
+                        "align": "left",
+                    },
+                    {"name": "purpose", "label": "utilité", "field": "purpose", "align": "left"},
+                    {
+                        "name": "data_rendered",
+                        "label": "données traitées",
+                        "field": "data_rendered",
+                        "align": "left",
+                    },
+                    {
+                        "name": "operator_value",
+                        "label": "valeur opérateur",
+                        "field": "operator_value",
+                        "align": "left",
+                    },
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                ],
+                rows=payload["nicegui_tab_rows"],
+                row_key="route",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Prochaines décisions").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "priority", "label": "#", "field": "priority", "align": "right"},
+                    {"name": "decision", "label": "décision", "field": "decision", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "next_pack",
+                        "label": "next pack",
+                        "field": "next_pack",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["decision_rows"],
+                row_key="priority",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/dev-roadmap")
+    def dev_roadmap() -> None:
+        _dev_roadmap_page()
 
     @ui.page("/")
     def home() -> None:
