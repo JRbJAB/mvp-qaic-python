@@ -1,0 +1,389 @@
+{
+  "STATUS": "OK_P199UX_R4_VISUAL_UX_POLISH_READY",
+  "generated_at": "2026-06-24T11:48:09+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "roadmap_status": "VISIBLE_PAST_CURRENT_FUTURE_POST_PYTHON",
+  "roadmap_step_count": 15,
+  "done_step_count": 5,
+  "current_step_count": 3,
+  "post_python_step_count": 4,
+  "nicegui_tab_count": 9,
+  "sheet_tab_count": 13,
+  "ready_mapping_count": 12,
+  "migration_coverage_percent": 97.7,
+  "roadmap_rows": [
+    {
+      "order": 1,
+      "period": "PASSÉ",
+      "lane": "Fondation Python MVP_QAIC_PY",
+      "status": "DONE",
+      "progress_percent": 100,
+      "visible_route": "/migration",
+      "next_action": "Conserver comme socle local privé"
+    },
+    {
+      "order": 2,
+      "period": "PASSÉ",
+      "lane": "NiceGUI local privé",
+      "status": "DONE",
+      "progress_percent": 100,
+      "visible_route": "/",
+      "next_action": "Continuer polish UX utile"
+    },
+    {
+      "order": 3,
+      "period": "PASSÉ",
+      "lane": "Prompt / capture / réponse GEM",
+      "status": "DONE",
+      "progress_percent": 95,
+      "visible_route": "/prompt",
+      "next_action": "Tester avec cas réel opérateur"
+    },
+    {
+      "order": 4,
+      "period": "PASSÉ",
+      "lane": "GEM tracking / evidence / runtime contract",
+      "status": "DONE",
+      "progress_percent": 100,
+      "visible_route": "/gem-tracking",
+      "next_action": "Utiliser comme base journal / review"
+    },
+    {
+      "order": 5,
+      "period": "PASSÉ",
+      "lane": "Prompt master historique",
+      "status": "DONE_REVIEW_READY",
+      "progress_percent": 95,
+      "visible_route": "/prompt-master",
+      "next_action": "Review humaine avant patch source futur"
+    },
+    {
+      "order": 6,
+      "period": "EN COURS",
+      "lane": "Sheets export dry-run",
+      "status": "READY_NO_LIVE_WRITE",
+      "progress_percent": 96,
+      "visible_route": "/sheets-export",
+      "next_action": "Valider le contrat 13 onglets"
+    },
+    {
+      "order": 7,
+      "period": "EN COURS",
+      "lane": "Migration Map Sheets / Apps Script / Python / NiceGUI",
+      "status": "READY_READONLY",
+      "progress_percent": 98,
+      "visible_route": "/apps-script-map",
+      "next_action": "Garder la cartographie pour P200"
+    },
+    {
+      "order": 8,
+      "period": "EN COURS",
+      "lane": "Roadmap visuelle opérateur",
+      "status": "THIS_BATCH",
+      "progress_percent": 100,
+      "visible_route": "/dev-roadmap",
+      "next_action": "Devenir page de pilotage principale"
+    },
+    {
+      "order": 9,
+      "period": "EN ATTENTE",
+      "lane": "Vrai cas GEM portfolio",
+      "status": "WAITING_CAPTURE_AND_RESPONSE",
+      "progress_percent": 60,
+      "visible_route": "/real-case-inputs",
+      "next_action": "Déposer capture + réponse GEM réelle"
+    },
+    {
+      "order": 10,
+      "period": "AVENIR PROCHE",
+      "lane": "Operator release cockpit final",
+      "status": "NEXT_MAXI",
+      "progress_percent": 80,
+      "visible_route": "/operator-release",
+      "next_action": "P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI"
+    },
+    {
+      "order": 11,
+      "period": "AVENIR PROCHE",
+      "lane": "Sheets live write gate",
+      "status": "BLOCKED_BY_POLICY",
+      "progress_percent": 40,
+      "visible_route": "/sheets-export",
+      "next_action": "Autorisation humaine explicite plus tard seulement"
+    },
+    {
+      "order": 12,
+      "period": "POST-PYTHON",
+      "lane": "Google Sheets cockpit public/privé",
+      "status": "FUTURE",
+      "progress_percent": 25,
+      "visible_route": "/sheets-export",
+      "next_action": "Importer uniquement après validation live-write"
+    },
+    {
+      "order": 13,
+      "period": "POST-PYTHON",
+      "lane": "WebApp publique MVP",
+      "status": "FUTURE",
+      "progress_percent": 20,
+      "visible_route": "/dev-roadmap",
+      "next_action": "Séparer public lexique/méthode/prompt du backend privé"
+    },
+    {
+      "order": 14,
+      "period": "POST-PYTHON",
+      "lane": "QAIC backend privé trading",
+      "status": "FUTURE_SEPARATE",
+      "progress_percent": 15,
+      "visible_route": "/dev-roadmap",
+      "next_action": "Bridge futur vers QAIC, sans auto order/sizing"
+    },
+    {
+      "order": 15,
+      "period": "POST-PYTHON",
+      "lane": "BigQuery / Cloud Run / IA gouvernée",
+      "status": "FUTURE_AFTER_LOCAL_STABLE",
+      "progress_percent": 10,
+      "visible_route": "/dev-roadmap",
+      "next_action": "Seulement après stabilité MVP local"
+    }
+  ],
+  "nicegui_tab_rows": [
+    {
+      "route": "/migration",
+      "label_fr": "Suivi dev migration",
+      "purpose": "Voir l'état global de migration et les artefacts produits.",
+      "data_rendered": "artefacts, statuts, modules, exports, routes, scores",
+      "operator_value": "savoir où on en est sans relire tous les logs",
+      "status": "VISIBLE"
+    },
+    {
+      "route": "/dev-roadmap",
+      "label_fr": "Roadmap visuelle",
+      "purpose": "Piloter passé, en cours, futur et post-Python.",
+      "data_rendered": "lanes, périodes, progrès, next packs, décisions",
+      "operator_value": "prioriser les batchs MAXI et éviter les micro-étapes",
+      "status": "THIS_BATCH"
+    },
+    {
+      "route": "/sheets-export",
+      "label_fr": "Dry-run Sheets",
+      "purpose": "Préparer les onglets Sheets sans écriture live.",
+      "data_rendered": "13 onglets cibles, colonnes, readiness, gates",
+      "operator_value": "valider le futur cockpit Sheets avant autorisation write",
+      "status": "VISIBLE"
+    },
+    {
+      "route": "/apps-script-map",
+      "label_fr": "Migration Map",
+      "purpose": "Mapper Sheets, Apps Script/local HTML, Python, NiceGUI.",
+      "data_rendered": "onglets, modules, fonctions, sources, migration %",
+      "operator_value": "décider quoi garder, migrer, archiver ou revoir",
+      "status": "VISIBLE"
+    },
+    {
+      "route": "/gem-tracking",
+      "label_fr": "Suivi GEM",
+      "purpose": "Suivre capture, réponse, session, roundtrip et review GEM.",
+      "data_rendered": "couches GEM, binding, evidence, statuts",
+      "operator_value": "contrôler le flux prompt → réponse GEM → review",
+      "status": "VISIBLE"
+    },
+    {
+      "route": "/runtime-contract",
+      "label_fr": "Contrat runtime",
+      "purpose": "Fermer les contrats runtime GEM et Sheets futur.",
+      "data_rendered": "contrats, readiness, blockers, write policy",
+      "operator_value": "sécuriser les exports avant toute écriture",
+      "status": "VISIBLE"
+    },
+    {
+      "route": "/prompt-master",
+      "label_fr": "Prompt Master",
+      "purpose": "Comparer l'historique prompt et choisir un candidat master.",
+      "data_rendered": "candidats, scores, checklist de régression",
+      "operator_value": "améliorer le prompt sans auto-apply",
+      "status": "VISIBLE"
+    },
+    {
+      "route": "/real-case-inputs",
+      "label_fr": "Cas réel portfolio",
+      "purpose": "Déposer capture portfolio et réponse GEM réelle.",
+      "data_rendered": "fichiers attendus, compteurs, blockers, next review",
+      "operator_value": "lancer le vrai test opérateur dès inputs disponibles",
+      "status": "WAITING_INPUTS"
+    },
+    {
+      "route": "/operator-release",
+      "label_fr": "Release opérateur",
+      "purpose": "Synthèse opérateur et choix du prochain chantier.",
+      "data_rendered": "gates, waivers, next work selector",
+      "operator_value": "décision rapide avant release locale finale",
+      "status": "VISIBLE"
+    }
+  ],
+  "decision_rows": [
+    {
+      "priority": 1,
+      "decision": "Clôturer cockpit opérateur final",
+      "status": "NEXT",
+      "next_pack": "P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI"
+    },
+    {
+      "priority": 2,
+      "decision": "Traiter vrai cas portfolio GEM",
+      "status": "WAITING_INPUTS",
+      "next_pack": "P196B_AFTER_CAPTURE_AND_RESPONSE"
+    },
+    {
+      "priority": 3,
+      "decision": "Autoriser ou refuser live Sheets write",
+      "status": "BLOCKED_BY_POLICY",
+      "next_pack": "FUTURE_HUMAN_APPROVAL_ONLY"
+    },
+    {
+      "priority": 4,
+      "decision": "Évolution post-Python public/private",
+      "status": "FUTURE",
+      "next_pack": "POST_LOCAL_RELEASE_STRATEGY"
+    }
+  ],
+  "migration_summary": {
+    "sheet_tab_count": 13,
+    "ready_mapping_count": 12,
+    "python_module_count": 297,
+    "apps_script_source_count": 8,
+    "migration_map_coverage_percent": 97.7
+  },
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "real_sheet_write_allowed": false,
+  "recommended_next": "P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI",
+  "parallel_waiting_next": "P196B_REAL_CASE_PORTFOLIO_GEM_REVIEW_AFTER_OPERATOR_INPUTS_MAXI_AFTER_INPUTS",
+  "ux_status": "VISUAL_PLANNING_TOP_COMPACT_TABLES_COLLAPSIBLE_NAV_READY",
+  "metric_card_rows": [
+    {
+      "metric_id": "roadmap_steps",
+      "label": "Étapes roadmap",
+      "value": 15,
+      "unit": "",
+      "color": "blue",
+      "priority": 1
+    },
+    {
+      "metric_id": "current_steps",
+      "label": "En cours",
+      "value": 3,
+      "unit": "",
+      "color": "orange",
+      "priority": 2
+    },
+    {
+      "metric_id": "post_python",
+      "label": "Post-Python",
+      "value": 4,
+      "unit": "",
+      "color": "purple",
+      "priority": 3
+    },
+    {
+      "metric_id": "nicegui_tabs",
+      "label": "Onglets utiles",
+      "value": 9,
+      "unit": "",
+      "color": "green",
+      "priority": 4
+    },
+    {
+      "metric_id": "migration_coverage",
+      "label": "Coverage migration",
+      "value": 97.7,
+      "unit": "%",
+      "color": "teal",
+      "priority": 5
+    },
+    {
+      "metric_id": "sheet_tabs",
+      "label": "Onglets Sheets",
+      "value": 13,
+      "unit": "",
+      "color": "indigo",
+      "priority": 6
+    }
+  ],
+  "top_visual_planning_rows": [
+    {
+      "order": 1,
+      "period": "PASSÉ",
+      "step_count": 5,
+      "avg_progress_percent": 98.0,
+      "main_status": "DONE",
+      "main_route": "/migration"
+    },
+    {
+      "order": 2,
+      "period": "EN COURS",
+      "step_count": 3,
+      "avg_progress_percent": 98.0,
+      "main_status": "ACTIVE",
+      "main_route": "/sheets-export"
+    },
+    {
+      "order": 3,
+      "period": "EN ATTENTE",
+      "step_count": 1,
+      "avg_progress_percent": 60.0,
+      "main_status": "WAITING_INPUTS",
+      "main_route": "/real-case-inputs"
+    },
+    {
+      "order": 4,
+      "period": "AVENIR PROCHE",
+      "step_count": 2,
+      "avg_progress_percent": 60.0,
+      "main_status": "NEXT",
+      "main_route": "/operator-release"
+    },
+    {
+      "order": 5,
+      "period": "POST-PYTHON",
+      "step_count": 4,
+      "avg_progress_percent": 17.5,
+      "main_status": "FUTURE",
+      "main_route": "/sheets-export"
+    }
+  ],
+  "compact_table_policy": {
+    "density": "dense",
+    "wrap_cells": false,
+    "operator_first_columns": true,
+    "horizontal_scroll": true,
+    "max_visible_rows_before_scroll": 12
+  },
+  "navigation_policy": {
+    "mode": "collapsible_quick_navigation",
+    "default_state": "collapsed",
+    "wide_screen_goal": "give more horizontal room to data tables",
+    "routes": [
+      "/dev-roadmap",
+      "/migration",
+      "/apps-script-map",
+      "/sheets-export",
+      "/prompt-master",
+      "/real-case-inputs",
+      "/operator-release"
+    ]
+  },
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P199UX_R4_VISUAL_UX_POLISH_MAXI_20260624_134805"
+}

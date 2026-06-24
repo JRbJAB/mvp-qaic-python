@@ -1,0 +1,10 @@
+route,label_fr,purpose,data_rendered,operator_value,status
+/migration,Suivi dev migration,Voir l'état global de migration et les artefacts produits.,"artefacts, statuts, modules, exports, routes, scores",savoir où on en est sans relire tous les logs,VISIBLE
+/dev-roadmap,Roadmap visuelle,"Piloter passé, en cours, futur et post-Python.","lanes, périodes, progrès, next packs, décisions",prioriser les batchs MAXI et éviter les micro-étapes,THIS_BATCH
+/sheets-export,Dry-run Sheets,Préparer les onglets Sheets sans écriture live.,"13 onglets cibles, colonnes, readiness, gates",valider le futur cockpit Sheets avant autorisation write,VISIBLE
+/apps-script-map,Migration Map,"Mapper Sheets, Apps Script/local HTML, Python, NiceGUI.","onglets, modules, fonctions, sources, migration %","décider quoi garder, migrer, archiver ou revoir",VISIBLE
+/gem-tracking,Suivi GEM,"Suivre capture, réponse, session, roundtrip et review GEM.","couches GEM, binding, evidence, statuts",contrôler le flux prompt → réponse GEM → review,VISIBLE
+/runtime-contract,Contrat runtime,Fermer les contrats runtime GEM et Sheets futur.,"contrats, readiness, blockers, write policy",sécuriser les exports avant toute écriture,VISIBLE
+/prompt-master,Prompt Master,Comparer l'historique prompt et choisir un candidat master.,"candidats, scores, checklist de régression",améliorer le prompt sans auto-apply,VISIBLE
+/real-case-inputs,Cas réel portfolio,Déposer capture portfolio et réponse GEM réelle.,"fichiers attendus, compteurs, blockers, next review",lancer le vrai test opérateur dès inputs disponibles,WAITING_INPUTS
+/operator-release,Release opérateur,Synthèse opérateur et choix du prochain chantier.,"gates, waivers, next work selector",décision rapide avant release locale finale,VISIBLE

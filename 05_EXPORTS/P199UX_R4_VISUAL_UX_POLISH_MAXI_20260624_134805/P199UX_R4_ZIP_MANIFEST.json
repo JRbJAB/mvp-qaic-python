@@ -1,0 +1,13 @@
+﻿{
+    "STATUS":  "OK_P199UX_R4_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P199UX_R4_VISUAL_UX_POLISH_MAXI_20260624_134835.zip",
+    "zip_size_bytes":  28038,
+    "ux_status":  "VISUAL_PLANNING_TOP_COMPACT_TABLES_COLLAPSIBLE_NAV_READY",
+    "roadmap_step_count":  15,
+    "nicegui_tab_count":  9,
+    "post_python_step_count":  4,
+    "migration_coverage_percent":  97.7,
+    "route_smoke_ok":  true,
+    "route_success_count":  19,
+    "recommended_next":  "P200_OPERATOR_RELEASE_COCKPIT_FINAL_MAXI"
+}

@@ -1626,31 +1626,86 @@ def serve_private(
         _apps_script_map_page()
 
     def _dev_roadmap_page() -> None:
-        from mvp_qaic_py.p199ux_r2_dev_roadmap_tabs_ergonomics_maxi import (
-            build_dev_roadmap_tabs_ergonomics,
-        )
+        from mvp_qaic_py.p199ux_r4_visual_ux_polish_maxi import build_visual_ux_polish
 
-        payload = build_dev_roadmap_tabs_ergonomics(project_root)
+        payload = build_visual_ux_polish(project_root)
 
         with _shell("dev-roadmap"):
-            ui.label("P199UX-R2 Dev Roadmap").classes("qaic-section-title")
+            ui.add_head_html("""
+            <style id="p199ux-r4-polish">
+              .qaic-hero-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:10px; margin: 8px 0 12px 0; }
+              .qaic-metric-card { border-radius: 14px; padding: 10px 12px; min-height: 84px; }
+              .qaic-metric-value { font-size: 28px; font-weight: 800; line-height: 1; }
+              .qaic-metric-label { font-size: 12px; opacity: .72; margin-top: 4px; }
+              .qaic-compact-table .q-table td { padding: 4px 8px !important; font-size: 12px; white-space: nowrap; }
+              .qaic-compact-table .q-table th { padding: 5px 8px !important; font-size: 11px; white-space: nowrap; font-weight: 700; }
+              .qaic-compact-table { max-height: 460px; overflow:auto; }
+              .qaic-top-section { margin-top: 4px; margin-bottom: 8px; }
+            </style>
+            """)
+
+            ui.label("Dev Roadmap — planning visuel MVP QAIC").classes("qaic-section-title")
             ui.label(
-                "Planning visuel complet: passé, en cours, attente, futur et post-Python. "
-                "Chaque onglet NiceGUI est relié à son utilité métier, aux données traitées et à la prochaine action."
+                "Vue opérateur compacte: passé, en cours, attente, futur proche et post-Python. "
+                "Les compteurs, couleurs et tables sont optimisés pour décider vite."
             ).classes("qaic-muted")
 
-            with ui.row().classes("gap-3"):
-                ui.badge(payload["roadmap_status"], color="blue")
-                ui.badge(f"steps={payload['roadmap_step_count']}", color="green")
-                ui.badge(f"tabs={payload['nicegui_tab_count']}", color="purple")
-                ui.badge(f"post_python={payload['post_python_step_count']}", color="orange")
-                ui.badge(f"coverage={payload['migration_coverage_percent']}%", color="teal")
-                ui.badge("READ ONLY", color="red")
+            with ui.element("div").classes("qaic-hero-grid"):
+                for card in payload["metric_card_rows"]:
+                    with ui.card().classes("qaic-metric-card"):
+                        with ui.row().classes("items-center justify-between"):
+                            ui.label(card["label"]).classes("qaic-metric-label")
+                            ui.badge(str(card["color"]).upper(), color=card["color"])
+                        ui.label(f"{card['value']}{card['unit']}").classes("qaic-metric-value")
 
             ui.separator()
-            ui.label("Planning visuel — passé / en cours / futur / post-Python").classes(
-                "qaic-section-title"
-            )
+
+            with ui.expansion(
+                "Navigation rapide escamotable", icon="menu_open", value=False
+            ).classes("w-full"):
+                ui.label("Routes utiles").classes("qaic-muted")
+                with ui.row().classes("gap-2"):
+                    for route in payload["navigation_policy"]["routes"]:
+                        ui.link(route, route).classes("q-pa-xs")
+
+            ui.separator()
+
+            ui.label("Planning visuel synthétique").classes("qaic-section-title qaic-top-section")
+            ui.table(
+                columns=[
+                    {"name": "period", "label": "période", "field": "period", "align": "left"},
+                    {
+                        "name": "step_count",
+                        "label": "étapes",
+                        "field": "step_count",
+                        "align": "right",
+                    },
+                    {
+                        "name": "avg_progress_percent",
+                        "label": "% moyen",
+                        "field": "avg_progress_percent",
+                        "align": "right",
+                    },
+                    {
+                        "name": "main_status",
+                        "label": "status",
+                        "field": "main_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "main_route",
+                        "label": "route",
+                        "field": "main_route",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["top_visual_planning_rows"],
+                row_key="period",
+            ).props("flat bordered dense separator=cell").classes("qaic-table qaic-compact-table")
+
+            ui.separator()
+
+            ui.label("Planning détaillé").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "order", "label": "#", "field": "order", "align": "right"},
@@ -1678,12 +1733,13 @@ def serve_private(
                 ],
                 rows=payload["roadmap_rows"],
                 row_key="order",
-            ).props("flat bordered dense").classes("qaic-table")
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
 
             ui.separator()
-            ui.label("Onglets NiceGUI — lisibilité et valeur opérateur").classes(
-                "qaic-section-title"
-            )
+
+            ui.label("Onglets NiceGUI — utilité réelle").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "route", "label": "route", "field": "route", "align": "left"},
@@ -1696,13 +1752,13 @@ def serve_private(
                     {"name": "purpose", "label": "utilité", "field": "purpose", "align": "left"},
                     {
                         "name": "data_rendered",
-                        "label": "données traitées",
+                        "label": "données",
                         "field": "data_rendered",
                         "align": "left",
                     },
                     {
                         "name": "operator_value",
-                        "label": "valeur opérateur",
+                        "label": "valeur",
                         "field": "operator_value",
                         "align": "left",
                     },
@@ -1710,9 +1766,12 @@ def serve_private(
                 ],
                 rows=payload["nicegui_tab_rows"],
                 row_key="route",
-            ).props("flat bordered dense").classes("qaic-table")
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
 
             ui.separator()
+
             ui.label("Prochaines décisions").classes("qaic-section-title")
             ui.table(
                 columns=[
@@ -1728,7 +1787,9 @@ def serve_private(
                 ],
                 rows=payload["decision_rows"],
                 row_key="priority",
-            ).props("flat bordered dense").classes("qaic-table")
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
 
     @ui.page("/dev-roadmap")
     def dev_roadmap() -> None:
