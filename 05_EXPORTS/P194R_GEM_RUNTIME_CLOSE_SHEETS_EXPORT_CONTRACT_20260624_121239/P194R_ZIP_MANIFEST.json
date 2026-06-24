@@ -1,0 +1,11 @@
+﻿{
+    "STATUS":  "OK_P194R_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P194R_GEM_RUNTIME_CLOSE_SHEETS_EXPORT_CONTRACT_20260624_121254.zip",
+    "zip_size_bytes":  21839,
+    "sheet_contract_row_count":  13,
+    "ready_for_sheets_export_count":  11,
+    "runtime_close_percent":  96.5,
+    "route_smoke_ok":  true,
+    "route_success_count":  13,
+    "recommended_next":  "P195R_OPERATOR_RELEASE_RUNTIME_TRACKER_OR_REAL_CASE_INPUTS"
+}

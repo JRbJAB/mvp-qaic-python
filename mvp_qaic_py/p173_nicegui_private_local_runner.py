@@ -457,6 +457,7 @@ def serve_private(
                     _nav_button("GEM Tracking", "/gem-tracking", "table_view")
                     _nav_button("GEM Ops", "/gem-tracking-operator", "fact_check")
                     _nav_button("GEM Evidence", "/gem-evidence", "inventory")
+                    _nav_button("Runtime Contract", "/runtime-contract", "assignment")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1101,6 +1102,87 @@ def serve_private(
     @ui.page("/gem-evidence")
     def gem_evidence() -> None:
         _gem_evidence_page()
+
+    def _runtime_contract_page() -> None:
+        from mvp_qaic_py.p194r_gem_runtime_tracker_close_sheets_export_contract import (
+            build_gem_runtime_close_contract,
+        )
+
+        payload = build_gem_runtime_close_contract(project_root)
+        with _shell("runtime-contract"):
+            ui.label("P194R GEM Runtime Contract").classes("qaic-section-title")
+            ui.label(
+                "Clôture runtime GEM + contrat d'export Sheets futur. "
+                "Lecture seule: aucune écriture Sheets, aucun Apps Script, aucun CLASP."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(f"tabs={payload['sheet_contract_row_count']}", color="blue")
+                ui.badge(f"ready={payload['ready_for_sheets_export_count']}", color="green")
+                ui.badge(f"coverage={payload['runtime_close_percent']}%", color="purple")
+                ui.badge(f"blockers={payload['blocker_count']}", color="red")
+                ui.badge("READ ONLY", color="orange")
+
+            ui.separator()
+            ui.label("Contrat onglets Sheets futur").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "sheet_tab",
+                        "label": "sheet_tab",
+                        "field": "sheet_tab",
+                        "align": "left",
+                    },
+                    {
+                        "name": "runtime_layer",
+                        "label": "runtime_layer",
+                        "field": "runtime_layer",
+                        "align": "left",
+                    },
+                    {
+                        "name": "export_status",
+                        "label": "export_status",
+                        "field": "export_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "readiness_percent",
+                        "label": "%",
+                        "field": "readiness_percent",
+                        "align": "right",
+                    },
+                    {
+                        "name": "write_policy",
+                        "label": "write_policy",
+                        "field": "write_policy",
+                        "align": "left",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next_action",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["sheet_contract_rows"],
+                row_key="sheet_tab",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Clôture runtime").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "metric", "label": "metric", "field": "metric", "align": "left"},
+                    {"name": "value", "label": "value", "field": "value", "align": "right"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                ],
+                rows=payload["close_rows"],
+                row_key="metric",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/runtime-contract")
+    def runtime_contract() -> None:
+        _runtime_contract_page()
 
     @ui.page("/")
     def home() -> None:
