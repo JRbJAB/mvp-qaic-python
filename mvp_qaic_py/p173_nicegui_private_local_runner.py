@@ -464,6 +464,7 @@ def serve_private(
                     _nav_button("Sheets Dry-run", "/sheets-export", "table_chart")
                     _nav_button("Migration Map", "/apps-script-map", "account_tree")
                     _nav_button("Dev Roadmap", "/dev-roadmap", "timeline")
+                    _nav_button("Release Final", "/release-final", "verified")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1794,6 +1795,70 @@ def serve_private(
     @ui.page("/dev-roadmap")
     def dev_roadmap() -> None:
         _dev_roadmap_page()
+
+    def _release_final_page() -> None:
+        from mvp_qaic_py.p200_operator_release_cockpit_final_maxi import (
+            build_operator_release_cockpit_final,
+        )
+
+        payload = build_operator_release_cockpit_final(project_root)
+
+        with _shell("release-final"):
+            ui.label("P200 Release Final — cockpit opérateur").classes("qaic-section-title")
+            ui.label(
+                "Synthèse finale locale privée: statut release, décisions, sécurité, cas réel en attente, "
+                "et prochain chantier. Aucune écriture live."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(payload["release_status"], color="blue")
+                ui.badge(f"tabs={payload['nicegui_tab_count']}", color="green")
+                ui.badge(f"roadmap={payload['roadmap_step_count']}", color="purple")
+                ui.badge(f"coverage={payload['migration_coverage_percent']}%", color="teal")
+                ui.badge(f"real_case={payload['real_case_input_status']}", color="orange")
+                ui.badge("NO LIVE WRITE", color="red")
+
+            ui.separator()
+
+            ui.label("Release gates").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "priority", "label": "#", "field": "priority", "align": "right"},
+                    {"name": "area", "label": "zone", "field": "area", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {"name": "evidence", "label": "preuve", "field": "evidence", "align": "left"},
+                    {
+                        "name": "operator_action",
+                        "label": "action",
+                        "field": "operator_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["release_rows"],
+                row_key="priority",
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
+
+            ui.separator()
+
+            ui.label("Décisions opérateur").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "priority", "label": "#", "field": "priority", "align": "right"},
+                    {"name": "decision", "label": "décision", "field": "decision", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {"name": "route", "label": "route", "field": "route", "align": "left"},
+                ],
+                rows=payload["decision_rows"],
+                row_key="priority",
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
+
+    @ui.page("/release-final")
+    def release_final() -> None:
+        _release_final_page()
 
     @ui.page("/")
     def home() -> None:
