@@ -461,6 +461,7 @@ def serve_private(
                     _nav_button("Operator Release", "/operator-release", "rocket_launch")
                     _nav_button("Real Inputs", "/real-case-inputs", "upload_file")
                     _nav_button("Prompt Master", "/prompt-master", "psychology")
+                    _nav_button("Sheets Export", "/sheets-export", "table_chart")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1397,6 +1398,113 @@ def serve_private(
     @ui.page("/prompt-master")
     def prompt_master() -> None:
         _prompt_master_page()
+
+    def _sheets_export_page() -> None:
+        from mvp_qaic_py.p198_sheets_export_dry_run_contract_pack_maxi import (
+            build_sheets_export_dry_run_contract_pack,
+        )
+
+        payload = build_sheets_export_dry_run_contract_pack(project_root)
+
+        with _shell("sheets-export"):
+            ui.label("P198 Sheets Export Dry Run Contract Pack").classes("qaic-section-title")
+            ui.label(
+                "Vue dry-run avant toute écriture Sheets: onglets cibles, sources Python, colonnes, "
+                "statuts, risques et ordre d'export. Aucune écriture Google Sheets."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(payload["dry_run_status"], color="blue")
+                ui.badge(f"tabs={payload['target_tab_count']}", color="green")
+                ui.badge(f"ready={payload['ready_tab_count']}", color="purple")
+                ui.badge(f"coverage={payload['dry_run_coverage_percent']}%", color="orange")
+                ui.badge("NO SHEET WRITE", color="red")
+
+            ui.separator()
+            ui.label("Target tabs dry-run").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "priority",
+                        "label": "priority",
+                        "field": "priority",
+                        "align": "right",
+                    },
+                    {
+                        "name": "sheet_tab",
+                        "label": "sheet_tab",
+                        "field": "sheet_tab",
+                        "align": "left",
+                    },
+                    {
+                        "name": "runtime_layer",
+                        "label": "runtime_layer",
+                        "field": "runtime_layer",
+                        "align": "left",
+                    },
+                    {
+                        "name": "dry_run_status",
+                        "label": "status",
+                        "field": "dry_run_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "estimated_rows",
+                        "label": "rows",
+                        "field": "estimated_rows",
+                        "align": "right",
+                    },
+                    {
+                        "name": "write_policy",
+                        "label": "write_policy",
+                        "field": "write_policy",
+                        "align": "left",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next_action",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["target_tab_rows"],
+                row_key="sheet_tab",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Export gates").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "gate", "label": "gate", "field": "gate", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {"name": "value", "label": "value", "field": "value", "align": "left"},
+                    {"name": "reason", "label": "reason", "field": "reason", "align": "left"},
+                ],
+                rows=payload["gate_rows"],
+                row_key="gate",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Planning visuel").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "step", "label": "step", "field": "step", "align": "right"},
+                    {"name": "lane", "label": "lane", "field": "lane", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "next_pack",
+                        "label": "next_pack",
+                        "field": "next_pack",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["visual_planning_rows"],
+                row_key="step",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/sheets-export")
+    def sheets_export() -> None:
+        _sheets_export_page()
 
     @ui.page("/")
     def home() -> None:
