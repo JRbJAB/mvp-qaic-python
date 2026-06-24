@@ -1,0 +1,6 @@
+panel_id,ui_slot,panel_title,source_id,file_name,row_count,preview_limit,render_status,nicegui_component_hint,write_allowed,live_api_allowed,public_access_allowed,human_review_required
+p171_cockpit_bootstrap,cockpit_bootstrap,Config cockpit,config,MVP_QAIC_CONFIG.csv,6,5,READY_FOR_PRIVATE_HTML_RENDER,ui.card + ui.table,False,False,False,True
+p171_prompt_source_selector,prompt_source_selector,Prompt source registry,prompt_registry,MVP_QAIC_PROMPT_SOURCE_REGISTRY.csv,5,5,READY_FOR_PRIVATE_HTML_RENDER,ui.card + ui.table,False,False,False,True
+p171_decision_history_panel,decision_history_panel,Decision journal,decision_journal,MVP_QAIC_DECISION_JOURNAL.csv,1,5,READY_FOR_PRIVATE_HTML_RENDER,ui.card + ui.table,False,False,False,True
+p171_human_review_workbench_panel,human_review_workbench_panel,Prompt review workbench,prompt_review,MVP_QAIC_PROMPT_REVIEW_WORKBENCH.csv,5,5,READY_FOR_PRIVATE_HTML_RENDER,ui.card + ui.table,False,False,False,True
+p171_lexique_context_panel,lexique_context_panel,Lexique or cockpit data,lexique_or_cockpit,MVP_QAIC_LEXIQUE_OR_COCKPIT_DATA.csv,88,5,READY_FOR_PRIVATE_HTML_RENDER,ui.card + ui.table,False,False,False,True
