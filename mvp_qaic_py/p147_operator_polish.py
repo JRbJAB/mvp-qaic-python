@@ -182,10 +182,107 @@ def build_polish_model(queue: dict[str, Any], workflow: dict[str, Any]) -> dict[
     }
 
 
+# P203E1_R2_FINAL_DOC_BINDINGS_REVIEW_ONLY_CANDIDATE
+P203_FINAL_DOC_BINDINGS = [
+    {
+        "emoji": "📘",
+        "title": "CDC / contrat final",
+        "key": "CDC_CONTRACT",
+        "filename": "📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "🧭",
+        "title": "Instructions & gouvernance",
+        "key": "INSTRUCTIONS_GOVERNANCE",
+        "filename": "🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "🗺️",
+        "title": "Roadmap / planning",
+        "key": "ROADMAP_PLANNING",
+        "filename": "🗺️ MVP_QAIC_ROADMAP_PLANNING_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/🗺️ MVP_QAIC_ROADMAP_PLANNING_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "🧱",
+        "title": "Architecture & migration",
+        "key": "ARCHITECTURE_MIGRATION",
+        "filename": "🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "💎",
+        "title": "Prompt GEM workflow",
+        "key": "PROMPT_GEM_WORKFLOW",
+        "filename": "💎 MVP_QAIC_PROMPT_GEM_WORKFLOW_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/💎 MVP_QAIC_PROMPT_GEM_WORKFLOW_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "📊",
+        "title": "Sheets / cockpits",
+        "key": "SHEETS_COCKPITS",
+        "filename": "📊 MVP_QAIC_SHEETS_COCKPITS_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/📊 MVP_QAIC_SHEETS_COCKPITS_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "🚀",
+        "title": "Notice / runbook",
+        "key": "NOTICE_RUNBOOK",
+        "filename": "🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "🎨",
+        "title": "UI / UX stitch",
+        "key": "UI_UX_STITCH",
+        "filename": "🎨 MVP_QAIC_UI_UX_STITCH_FINAL_FUSED_v0.2.2.md",
+        "path": "docs/FINAL/🎨 MVP_QAIC_UI_UX_STITCH_FINAL_FUSED_v0.2.2.md",
+    },
+    {
+        "emoji": "🧾",
+        "title": "Index final docs",
+        "key": "FINAL_DOCS_INDEX",
+        "filename": "🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md",
+        "path": "docs/FINAL/🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md",
+    },
+]
+
+
+def _p203_render_final_docs_panel_html() -> str:
+    """Render final MVP QAIC documentation references as an HTML fragment."""
+    from html import escape
+
+    rows = [
+        "<section class='p203-final-docs-panel'>",
+        "<h2>Documentation finale MVP QAIC</h2>",
+        "<p>Références finales P203 — consultation opérateur.</p>",
+        "<ul>",
+    ]
+    for doc in P203_FINAL_DOC_BINDINGS:
+        title = escape(f"{doc['emoji']} {doc['title']}")
+        filename = escape(str(doc.get("filename", "")))
+        path = escape(str(doc.get("path", "")))
+        rows.append(
+            f"<li><strong>{title}</strong><br><code>{filename}</code><br><small>{path}</small></li>"
+        )
+    rows.extend(
+        [
+            "</ul>",
+            "<p><small>Review-only: aucun ordre, sizing, broker, déploiement, archivage ou serveur auto.</small></p>",
+            "</section>",
+        ]
+    )
+    return "\\n".join(rows)
+
+
 def render_app(model: dict[str, Any]) -> str:
     model_repr = repr(json.dumps(model, ensure_ascii=False, indent=2, sort_keys=True))
+    _p203_final_docs_panel_html = _p203_render_final_docs_panel_html()
     return "\n".join(
         [
+            _p203_final_docs_panel_html,
             "from __future__ import annotations",
             "import json",
             "from nicegui import ui",

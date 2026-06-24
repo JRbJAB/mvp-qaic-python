@@ -1,0 +1,110 @@
+﻿[
+    {
+        "nav_label":  "📘 CDC \u0026 Contrats",
+        "route_hint":  "/docs/cdc",
+        "final_file":  "📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "🧭 Instructions \u0026 Gouvernance",
+        "route_hint":  "/docs/instructions",
+        "final_file":  "🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "🗺️ Roadmap \u0026 Planning",
+        "route_hint":  "/docs/roadmap",
+        "final_file":  "🗺️ MVP_QAIC_ROADMAP_PLANNING_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\🗺️ MVP_QAIC_ROADMAP_PLANNING_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\🗺️ MVP_QAIC_ROADMAP_PLANNING_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "🧱 Architecture \u0026 Migration",
+        "route_hint":  "/docs/architecture",
+        "final_file":  "🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "💎 Prompt GEM \u0026 Workflow",
+        "route_hint":  "/docs/prompt-gem",
+        "final_file":  "💎 MVP_QAIC_PROMPT_GEM_WORKFLOW_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\💎 MVP_QAIC_PROMPT_GEM_WORKFLOW_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\💎 MVP_QAIC_PROMPT_GEM_WORKFLOW_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "📊 Sheets \u0026 Cockpits",
+        "route_hint":  "/docs/sheets-cockpits",
+        "final_file":  "📊 MVP_QAIC_SHEETS_COCKPITS_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\📊 MVP_QAIC_SHEETS_COCKPITS_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\📊 MVP_QAIC_SHEETS_COCKPITS_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "🚀 Notice \u0026 Runbook",
+        "route_hint":  "/notice",
+        "final_file":  "🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "🎨 UI UX \u0026 Stitch",
+        "route_hint":  "/docs/ui-ux",
+        "final_file":  "🎨 MVP_QAIC_UI_UX_STITCH_FINAL_FUSED_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\🎨 MVP_QAIC_UI_UX_STITCH_FINAL_FUSED_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\🎨 MVP_QAIC_UI_UX_STITCH_FINAL_FUSED_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    },
+    {
+        "nav_label":  "🧾 Index documentaire",
+        "route_hint":  "/docs",
+        "final_file":  "🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md",
+        "repo_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\MVP_QAIC_PY\\docs\\FINAL\\🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md",
+        "main_path":  "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions \u0026 Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\01_DOCS\\FINAL_FUSED\\MVP_QAIC_PY\\🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md",
+        "repo_exists":  "True",
+        "main_exists":  "True",
+        "reference_ready":  "YES",
+        "interface_binding_status":  "READY_FOR_INTERFACE_BINDING_REVIEW_ONLY",
+        "edit_allowed_now":  "NO"
+    }
+]
