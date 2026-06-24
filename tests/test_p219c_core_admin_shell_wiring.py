@@ -1,0 +1,143 @@
+from pathlib import Path
+from typing import Any
+
+from mvp_qaic_py.p219c_core_admin_shell_wiring import (
+    TARGET_ADMIN_NAVIGATION,
+    build_core_admin_shell_html,
+    build_core_admin_shell_payload,
+    build_shell_wiring_markdown,
+    render_core_admin_shell_nicegui,
+    select_primary_nicegui_shell,
+)
+
+
+class FakeNiceGUI:
+    def __init__(self) -> None:
+        self.calls: list[tuple[str, str]] = []
+
+    def html(self, content: str) -> None:
+        self.calls.append(("html", content))
+
+    def markdown(self, content: str) -> None:
+        self.calls.append(("markdown", content))
+
+
+def _seed_project(root: Path) -> None:
+    package = root / "mvp_qaic_py"
+    package.mkdir()
+    (package / "p217_nicegui_private_cockpit_ui_wiring.py").write_text(
+        "from nicegui import ui\n\n@ui.page('/')\ndef private_cockpit():\n    ui.left_drawer()\n    ui.tabs()\n    ui.html('cockpit')\n",
+        encoding="utf-8",
+    )
+    (package / "p219b_core_admin_registry.py").write_text(
+        "def build_core_admin_registry():\n    return {}\n",
+        encoding="utf-8",
+    )
+    (root / "docs").mkdir()
+    (root / "docs" / "architecture.md").write_text("# Architecture", encoding="utf-8")
+    (root / "01_OPERATOR_INPUTS").mkdir()
+    (root / "01_OPERATOR_INPUTS" / "prompt.md").write_text("# Prompt", encoding="utf-8")
+
+
+def test_p219c_selects_primary_nicegui_shell() -> None:
+    core = {
+        "ui_candidates": [
+            {
+                "path": "mvp_qaic_py/other.py",
+                "layer": "other",
+                "score": 999,
+                "has_nicegui": False,
+                "has_menu_signal": False,
+                "routes": [],
+            },
+            {
+                "path": "mvp_qaic_py/p217_nicegui_private_cockpit_ui_wiring.py",
+                "layer": "private_cockpit_wiring",
+                "score": 5,
+                "has_nicegui": True,
+                "has_menu_signal": True,
+                "routes": ["/"],
+            },
+        ]
+    }
+
+    selection = select_primary_nicegui_shell(core)
+
+    assert selection["STATUS"] == "OK_P219C_PRIMARY_NICEGUI_SHELL_SELECTED"
+    assert selection["selected"]["layer"] == "private_cockpit_wiring"
+
+
+def test_p219c_builds_shell_payload(tmp_path: Path) -> None:
+    _seed_project(tmp_path)
+
+    payload = build_core_admin_shell_payload(
+        tmp_path,
+        generated_at="2026-06-25T00:00:00Z",
+    )
+
+    assert payload["STATUS"] == "OK_P219C_CORE_ADMIN_SHELL_PAYLOAD_READY"
+    assert payload["navigation_count"] == len(TARGET_ADMIN_NAVIGATION)
+    assert any(item["route"] == "/documents" for item in payload["navigation"])
+    assert any(item["route"] == "/architecture" for item in payload["navigation"])
+    assert payload["primary_shell_selection"]["STATUS"] == "OK_P219C_PRIMARY_NICEGUI_SHELL_SELECTED"
+    assert payload["shell_strategy"]["mode"] == "ADAPTER_FIRST_NO_DESTRUCTIVE_PATCH"
+    assert payload["server_started"] is False
+    assert payload["browser_started"] is False
+    assert payload["provider_call_executed"] is False
+    assert payload["gem_call_executed"] is False
+    assert payload["broker"] is False
+    assert payload["order"] is False
+    assert payload["sizing"] is False
+
+
+def test_p219c_shell_html_contains_navigation(tmp_path: Path) -> None:
+    _seed_project(tmp_path)
+    payload = build_core_admin_shell_payload(
+        tmp_path,
+        generated_at="2026-06-25T00:00:00Z",
+    )
+
+    html = build_core_admin_shell_html(payload)
+
+    assert "Noyau MVP QAIC" in html
+    assert "/documents" in html
+    assert "/architecture" in html
+    assert "Shell NiceGUI sélectionné" in html
+    assert "<table>" in html
+
+
+def test_p219c_renders_nicegui_shell(tmp_path: Path) -> None:
+    _seed_project(tmp_path)
+    payload = build_core_admin_shell_payload(
+        tmp_path,
+        generated_at="2026-06-25T00:00:00Z",
+    )
+    ui: Any = FakeNiceGUI()
+
+    result = render_core_admin_shell_nicegui(ui, payload)
+
+    assert result["STATUS"] == "OK_P219C_CORE_ADMIN_SHELL_NICEGUI_RENDERED"
+    assert result["rendered_count"] == 2
+    assert ui.calls[0][0] == "html"
+    assert ui.calls[1][0] == "markdown"
+    assert "Noyau MVP QAIC" in ui.calls[0][1]
+    assert "Shell admin MVP QAIC" in ui.calls[1][1]
+    assert result["server_started"] is False
+    assert result["browser_started"] is False
+    assert result["broker"] is False
+    assert result["order"] is False
+    assert result["sizing"] is False
+
+
+def test_p219c_builds_shell_wiring_markdown(tmp_path: Path) -> None:
+    _seed_project(tmp_path)
+    payload = build_core_admin_shell_payload(
+        tmp_path,
+        generated_at="2026-06-25T00:00:00Z",
+    )
+
+    markdown = build_shell_wiring_markdown(payload)
+
+    assert "# P219C" in markdown
+    assert "/documents" in markdown
+    assert "P219D" in markdown
