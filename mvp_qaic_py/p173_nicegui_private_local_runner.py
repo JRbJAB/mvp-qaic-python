@@ -238,7 +238,9 @@ def export_private_runner_smoke(
     return payload
 
 
-def serve_private(project_root: str | Path, *, host: str = "127.0.0.1", port: int = 8088) -> None:
+def serve_private(
+    project_root: str | Path, *, host: str = "127.0.0.1", port: int = 8088, show: bool = True
+) -> None:
     if host != "127.0.0.1":
         raise ValueError("Only 127.0.0.1 is allowed for private local runner.")
 
@@ -274,7 +276,7 @@ def serve_private(project_root: str | Path, *, host: str = "127.0.0.1", port: in
         ui.label("Human review workbench").classes("text-h5")
         ui.label("Review-only. No write, no broker, no order, no sizing.")
 
-    ui.run(host=host, port=port, reload=False, show=True)
+    ui.run(host=host, port=port, reload=False, show=show)
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -288,6 +290,7 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--write-export", action="store_true")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--serve-private", action="store_true")
+    parser.add_argument("--no-show", action="store_true")
     return parser
 
 
@@ -295,7 +298,7 @@ def main(argv: list[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
 
     if args.serve_private:
-        serve_private(args.project_root, host=args.host, port=args.port)
+        serve_private(args.project_root, host=args.host, port=args.port, show=not args.no_show)
         return 0
 
     if args.write_export:

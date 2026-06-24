@@ -1,0 +1,72 @@
+{
+  "STATUS": "OK_P174_NICEGUI_PRIVATE_LOCAL_LAUNCH_OPERATOR_SMOKE",
+  "generated_at": "2026-06-24T06:54:06+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "host": "127.0.0.1",
+  "port": 8088,
+  "timeout_seconds": 45,
+  "routes": [
+    {
+      "route": "/",
+      "url": "http://127.0.0.1:8088/"
+    },
+    {
+      "route": "/cache",
+      "url": "http://127.0.0.1:8088/cache"
+    },
+    {
+      "route": "/review",
+      "url": "http://127.0.0.1:8088/review"
+    }
+  ],
+  "route_count": 3,
+  "blocker_count": 0,
+  "blockers": [],
+  "launch_command": [
+    "C:\\Python314\\python.exe",
+    "-m",
+    "mvp_qaic_py.p173_nicegui_private_local_runner",
+    "--project-root",
+    "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8088",
+    "--serve-private",
+    "--no-show"
+  ],
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "raw_operator_exports_committed": false,
+  "server_started_by_smoke": true,
+  "server_stopped_after_smoke": true,
+  "route_results": [
+    {
+      "route": "/",
+      "url": "http://127.0.0.1:8088/",
+      "ok": true
+    },
+    {
+      "route": "/cache",
+      "url": "http://127.0.0.1:8088/cache",
+      "ok": true
+    },
+    {
+      "route": "/review",
+      "url": "http://127.0.0.1:8088/review",
+      "ok": true
+    }
+  ],
+  "route_success_count": 3,
+  "smoke_ok": true,
+  "stdout_tail": "NiceGUI ready to go on http://127.0.0.1:8088",
+  "stderr_tail": "",
+  "recommended_next": "P175_NICEGUI_OPERATOR_ERGONOMICS_POLISH",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P174_NICEGUI_PRIVATE_LOCAL_LAUNCH_OPERATOR_SMOKE_20260624_085406"
+}

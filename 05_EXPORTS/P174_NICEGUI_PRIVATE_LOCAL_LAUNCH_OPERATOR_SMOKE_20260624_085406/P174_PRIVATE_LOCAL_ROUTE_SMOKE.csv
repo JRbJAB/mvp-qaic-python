@@ -1,0 +1,4 @@
+route,url,ok
+/,http://127.0.0.1:8088/,True
+/cache,http://127.0.0.1:8088/cache,True
+/review,http://127.0.0.1:8088/review,True
