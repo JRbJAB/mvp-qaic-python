@@ -592,6 +592,13 @@ def serve_private(
     def _responses_page() -> None:
         with _shell("responses"):
             ui.label("GEM Response Inbox").classes("qaic-section-title")
+            ui.label("P184 Response Parser").classes("qaic-section-title")
+            ui.label(
+                "Parser local review-only des réponses GEM sauvegardées. "
+                "Aucun appel GEM, aucune écriture Sheets, aucun apply."
+            ).classes("qaic-muted")
+            ui.badge("LOCAL PARSER ONLY", color="green")
+            ui.badge("AUTO APPLY BLOCKED", color="red")
             ui.label(
                 "Coller ici la réponse GEM après interrogation manuelle. Sauvegarde locale review-only."
             ).classes("qaic-muted")
