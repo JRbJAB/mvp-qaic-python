@@ -1,0 +1,80 @@
+{
+  "STATUS": "OK_P177_GEM_PORTFOLIO_PROMPT_WORKFLOW_USABLE_SMOKE_READY",
+  "generated_at": "2026-06-24T07:07:58+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "source_step": "P176_NICEGUI_REVIEW_ONLY_ACTIONS_AND_PROMPT_WORKFLOW",
+  "sample_operator_case": {
+    "case_id": "P177_SAMPLE_GEM_PORTFOLIO_IMAGE_REVIEW",
+    "input_type": "IMAGE_OR_SCREENSHOT_PLUS_OPTIONAL_TEXT",
+    "asset_scope": "crypto_portfolio",
+    "reference_currency": "USD_OR_EUR_REVIEW_REQUIRED",
+    "expected_output_mode": "JSON_PLUS_FRENCH_REVIEW_SUMMARY",
+    "human_review_required": true
+  },
+  "prompt_sections": [
+    "input_mode",
+    "language",
+    "hard_rules",
+    "portfolio_extraction",
+    "data_quality_review",
+    "risk_review",
+    "decision_review",
+    "json_output_contract",
+    "missing_data_policy",
+    "safety_audit"
+  ],
+  "required_guards": {
+    "no_gem_call": true,
+    "no_auto_apply": true,
+    "no_order": true,
+    "no_sizing": true,
+    "no_broker": true,
+    "review_required_if_missing_data": true,
+    "block_if_score_inputs_missing": true
+  },
+  "usability_checks": [
+    {
+      "check_id": "prompt_sections_present",
+      "status": "PASS"
+    },
+    {
+      "check_id": "operator_case_defined",
+      "status": "PASS"
+    },
+    {
+      "check_id": "guards_review_only",
+      "status": "PASS"
+    },
+    {
+      "check_id": "copy_prompt_step_available",
+      "status": "PASS"
+    },
+    {
+      "check_id": "save_response_local_available",
+      "status": "PASS"
+    },
+    {
+      "check_id": "apply_steps_blocked",
+      "status": "PASS"
+    }
+  ],
+  "check_count": 6,
+  "pass_count": 6,
+  "fail_count": 0,
+  "smoke_ready": true,
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P178_OPERATOR_SHORTCUT_AND_PRIVATE_COCKPIT_HANDOFF",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P177_GEM_PORTFOLIO_PROMPT_WORKFLOW_USABLE_SMOKE_20260624_090757"
+}
