@@ -1,0 +1,3 @@
+waiver_id,scope,reason,policy
+ROUNDTRIP_STATUS_REVIEW_ACCEPTED,GEM_ROUNDTRIP_STATUS,Evidence exists and route/runtime are usable; Sheets export contract remains human-review only.,ALLOW_OPERATOR_RELEASE_DO_NOT_WRITE_SHEETS
+DECISION_JOURNAL_CONTRACT_DEFERRED,GEM_DECISION_JOURNAL,Decision evidence exists but future tab schema needs human validation before any Sheet write.,ALLOW_OPERATOR_RELEASE_BLOCK_LIVE_SHEETS_WRITE

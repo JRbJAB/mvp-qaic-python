@@ -1,0 +1,11 @@
+﻿{
+    "STATUS":  "OK_P195R_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P195R_OPERATOR_RELEASE_RUNTIME_TRACKER_NEXT_SELECTOR_MAXI_20260624_122403.zip",
+    "zip_size_bytes":  22233,
+    "operator_release_status":  "READY_WITH_REVIEW_WAIVERS",
+    "runtime_close_percent":  96.5,
+    "selected_next_pack":  "P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI",
+    "route_smoke_ok":  true,
+    "route_success_count":  14,
+    "recommended_next":  "P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI"
+}

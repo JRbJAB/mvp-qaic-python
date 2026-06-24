@@ -458,6 +458,7 @@ def serve_private(
                     _nav_button("GEM Ops", "/gem-tracking-operator", "fact_check")
                     _nav_button("GEM Evidence", "/gem-evidence", "inventory")
                     _nav_button("Runtime Contract", "/runtime-contract", "assignment")
+                    _nav_button("Operator Release", "/operator-release", "rocket_launch")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1183,6 +1184,72 @@ def serve_private(
     @ui.page("/runtime-contract")
     def runtime_contract() -> None:
         _runtime_contract_page()
+
+    def _operator_release_page() -> None:
+        from mvp_qaic_py.p195r_operator_release_runtime_tracker_next_selector_maxi import (
+            build_operator_release_runtime_tracker,
+        )
+
+        payload = build_operator_release_runtime_tracker(project_root)
+        with _shell("operator-release"):
+            ui.label("P195R Operator Release Runtime Tracker").classes("qaic-section-title")
+            ui.label(
+                "Clôture opérateur runtime GEM + sélecteur de prochain chantier MAXI. "
+                "Read-only: aucune écriture Sheets, aucun Apps Script, aucun GEM call."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(payload["operator_release_status"], color="green")
+                ui.badge(f"runtime={payload['runtime_close_percent']}%", color="blue")
+                ui.badge(f"routes={payload['expected_route_count']}", color="purple")
+                ui.badge(f"waivers={payload['review_waiver_count']}", color="orange")
+                ui.badge("READ ONLY", color="orange")
+
+            ui.separator()
+            ui.label("Release gates").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "gate", "label": "gate", "field": "gate", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {"name": "value", "label": "value", "field": "value", "align": "left"},
+                    {"name": "reason", "label": "reason", "field": "reason", "align": "left"},
+                ],
+                rows=payload["release_gate_rows"],
+                row_key="gate",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Next work selector MAXI").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "priority",
+                        "label": "priority",
+                        "field": "priority",
+                        "align": "right",
+                    },
+                    {
+                        "name": "workstream",
+                        "label": "workstream",
+                        "field": "workstream",
+                        "align": "left",
+                    },
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "next_pack",
+                        "label": "next_pack",
+                        "field": "next_pack",
+                        "align": "left",
+                    },
+                    {"name": "reason", "label": "reason", "field": "reason", "align": "left"},
+                ],
+                rows=payload["next_work_rows"],
+                row_key="workstream",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/operator-release")
+    def operator_release() -> None:
+        _operator_release_page()
 
     @ui.page("/")
     def home() -> None:
