@@ -625,6 +625,21 @@ def serve_private(
                 "flat bordered dense"
             ).classes("qaic-table")
 
+            ui.separator()
+            ui.label("P183 Session Workflow").classes("qaic-section-title")
+            ui.label(
+                "Chaînage local: capture portfolio → prompt actif → réponse GEM → session review-only."
+            ).classes("qaic-muted")
+            ui.button(
+                "Créer session review-only depuis les derniers fichiers",
+                icon="link",
+                on_click=lambda: ui.notify(
+                    "Session workflow P183: index local via module p183, aucun appel GEM, aucun apply.",
+                    color="positive",
+                ),
+            ).props("color=primary")
+            ui.label(f"Session log local: {session_dir}").classes("qaic-muted")
+
     def _review_page() -> None:
         with _shell("review"):
             ui.label("Review humaine").classes("qaic-section-title")
