@@ -451,6 +451,7 @@ def serve_private(
                     _nav_button("Capture Inbox", "/capture", "image")
                     _nav_button("GEM Responses", "/responses", "data_object")
                     _nav_button("Sessions", "/sessions", "history")
+                    _nav_button("Roundtrip", "/roundtrip", "sync_alt")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -669,6 +670,63 @@ def serve_private(
         with _shell("lexique"):
             ui.label("Lexique / contexte").classes("qaic-section-title")
             _panel_table(panel_by_slot.get("lexique_context_panel"))
+
+    def _roundtrip_page() -> None:
+        with _shell("roundtrip"):
+            ui.label("P185 Roundtrip Workbench").classes("qaic-section-title")
+            ui.label(
+                "Flux opérateur réel: capture portfolio → prompt actif → réponse GEM "
+                "collée localement → parser P184 → session review-only."
+            ).classes("qaic-muted")
+            with ui.row().classes("gap-3"):
+                ui.badge("LOCAL ONLY", color="green")
+                ui.badge("NO GEM CALL", color="orange")
+                ui.badge("AUTO APPLY BLOCKED", color="red")
+                ui.badge("NO BROKER / NO ORDER / NO SIZING", color="red")
+            with ui.row().classes("gap-3"):
+                ui.button("1. Capture", icon="image", on_click=lambda: ui.navigate.to("/capture"))
+                ui.button("2. Prompt", icon="article", on_click=lambda: ui.navigate.to("/prompt"))
+                ui.button(
+                    "3. Réponse GEM",
+                    icon="data_object",
+                    on_click=lambda: ui.navigate.to("/responses"),
+                )
+                ui.button(
+                    "4. Sessions", icon="history", on_click=lambda: ui.navigate.to("/sessions")
+                )
+                ui.button(
+                    "5. Review", icon="fact_check", on_click=lambda: ui.navigate.to("/review")
+                )
+            ui.separator()
+            ui.label("Checklist opérateur").classes("qaic-section-title")
+            ui.markdown(
+                "- Upload ou colle une capture portfolio dans Capture Inbox.\n"
+                "- Copie le prompt actif depuis Prompt Studio.\n"
+                "- Interroge GEM manuellement hors Python.\n"
+                "- Colle la réponse GEM dans GEM Response Inbox.\n"
+                "- Le parser P184 contrôle JSON, sécurité, missing_data et blockers.\n"
+                "- La décision finale reste humaine; aucun apply automatique."
+            )
+            ui.separator()
+            ui.label("Statut sécurité").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "gate", "label": "gate", "field": "gate", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                ],
+                rows=[
+                    {"gate": "PUBLIC_SERVE", "status": "False"},
+                    {"gate": "GEM_CALL_EXECUTED", "status": "False"},
+                    {"gate": "AUTO_APPLY_GEM_RESPONSE", "status": "False"},
+                    {"gate": "GOOGLE_SHEETS_WRITE", "status": "False"},
+                    {"gate": "BROKER / ORDER / SIZING", "status": "False"},
+                ],
+                row_key="gate",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/roundtrip")
+    def roundtrip() -> None:
+        _roundtrip_page()
 
     @ui.page("/")
     def home() -> None:
