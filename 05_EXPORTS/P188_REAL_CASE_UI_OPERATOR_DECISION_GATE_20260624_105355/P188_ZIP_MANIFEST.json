@@ -1,0 +1,10 @@
+﻿{
+    "STATUS":  "OK_P188_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_FAST_FUSE_20260624_105402.zip",
+    "zip_size_bytes":  15826,
+    "decision_status":  "WAITING_INPUTS",
+    "real_case_ready":  false,
+    "route_smoke_ok":  true,
+    "route_success_count":  6,
+    "recommended_next":  "WAIT_OPERATOR_REAL_CAPTURE_AND_GEM_RESPONSE"
+}

@@ -452,6 +452,7 @@ def serve_private(
                     _nav_button("GEM Responses", "/responses", "data_object")
                     _nav_button("Sessions", "/sessions", "history")
                     _nav_button("Roundtrip", "/roundtrip", "sync_alt")
+                    _nav_button("Real Case", "/real-case", "rule")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -727,6 +728,45 @@ def serve_private(
     @ui.page("/roundtrip")
     def roundtrip() -> None:
         _roundtrip_page()
+
+    def _real_case_page() -> None:
+        with _shell("real-case"):
+            ui.label("P188 Real Case Decision Gate").classes("qaic-section-title")
+            ui.label(
+                "Gate opérateur réel: déposer une vraie capture portfolio et coller une vraie réponse GEM. "
+                "Tant qu'un input manque, la décision reste WAIT."
+            ).classes("qaic-muted")
+            with ui.row().classes("gap-3"):
+                ui.badge("HUMAN REVIEW REQUIRED", color="orange")
+                ui.badge("AUTO APPLY BLOCKED", color="red")
+                ui.badge("NO BROKER / NO ORDER / NO SIZING", color="red")
+            ui.separator()
+            ui.label("À déposer").classes("qaic-section-title")
+            ui.markdown(
+                "- Capture réelle: `00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX/`\n"
+                "- Réponse GEM réelle: `00_OPERATOR_EXPORTS/P181_GEM_RESPONSES/`\n"
+                "- Fichiers `P186_SMOKE_*` ignorés automatiquement.\n"
+                "- La décision finale reste humaine."
+            )
+            ui.separator()
+            ui.label("Actions rapides").classes("qaic-section-title")
+            with ui.row().classes("gap-3"):
+                ui.button(
+                    "Capture Inbox", icon="image", on_click=lambda: ui.navigate.to("/capture")
+                )
+                ui.button(
+                    "GEM Responses",
+                    icon="data_object",
+                    on_click=lambda: ui.navigate.to("/responses"),
+                )
+                ui.button(
+                    "Roundtrip", icon="sync_alt", on_click=lambda: ui.navigate.to("/roundtrip")
+                )
+                ui.button("Review", icon="fact_check", on_click=lambda: ui.navigate.to("/review"))
+
+    @ui.page("/real-case")
+    def real_case() -> None:
+        _real_case_page()
 
     @ui.page("/")
     def home() -> None:
