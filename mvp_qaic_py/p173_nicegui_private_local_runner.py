@@ -460,6 +460,7 @@ def serve_private(
                     _nav_button("Runtime Contract", "/runtime-contract", "assignment")
                     _nav_button("Operator Release", "/operator-release", "rocket_launch")
                     _nav_button("Real Inputs", "/real-case-inputs", "upload_file")
+                    _nav_button("Prompt Master", "/prompt-master", "psychology")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1311,6 +1312,91 @@ def serve_private(
     @ui.page("/real-case-inputs")
     def real_case_inputs() -> None:
         _real_case_inputs_page()
+
+    def _prompt_master_page() -> None:
+        from mvp_qaic_py.p197_prompt_master_from_historical_audit_and_regression_maxi import (
+            build_prompt_master_historical_regression,
+        )
+
+        payload = build_prompt_master_historical_regression(project_root)
+        selected = payload["selected_master_candidate"]
+
+        with _shell("prompt-master"):
+            ui.label("P197 Prompt Master Historical Regression").classes("qaic-section-title")
+            ui.label(
+                "Fusion review-only: prompt actif, historiques, audit, candidat master, "
+                "checklist de régression. Aucune modification du prompt source."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(payload["master_status"], color="blue")
+                ui.badge(f"candidates={payload['candidate_count']}", color="green")
+                ui.badge(f"regression={payload['regression_check_count']}", color="purple")
+                ui.badge(f"score={selected.get('score', 0)}", color="orange")
+                ui.badge("NO SOURCE PATCH", color="red")
+
+            ui.separator()
+            ui.label("Master candidate").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "field", "label": "field", "field": "field", "align": "left"},
+                    {"name": "value", "label": "value", "field": "value", "align": "left"},
+                ],
+                rows=[
+                    {"field": "candidate_id", "value": selected.get("candidate_id", "")},
+                    {"field": "source_path", "value": selected.get("source_path", "")},
+                    {"field": "classification", "value": selected.get("classification", "")},
+                    {"field": "score", "value": selected.get("score", 0)},
+                    {"field": "decision", "value": selected.get("decision", "")},
+                ],
+                row_key="field",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Regression checklist").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "check_id", "label": "check", "field": "check_id", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {"name": "severity", "label": "severity", "field": "severity", "align": "left"},
+                    {"name": "rule", "label": "rule", "field": "rule", "align": "left"},
+                ],
+                rows=payload["regression_checks"],
+                row_key="check_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Prompt candidates").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "candidate_id",
+                        "label": "candidate",
+                        "field": "candidate_id",
+                        "align": "left",
+                    },
+                    {
+                        "name": "classification",
+                        "label": "classification",
+                        "field": "classification",
+                        "align": "left",
+                    },
+                    {"name": "score", "label": "score", "field": "score", "align": "right"},
+                    {"name": "decision", "label": "decision", "field": "decision", "align": "left"},
+                    {
+                        "name": "source_path",
+                        "label": "source",
+                        "field": "source_path",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["candidates"][:100],
+                row_key="candidate_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/prompt-master")
+    def prompt_master() -> None:
+        _prompt_master_page()
 
     @ui.page("/")
     def home() -> None:
