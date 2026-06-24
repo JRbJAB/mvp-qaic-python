@@ -52,12 +52,30 @@ def _ensure_dirs(root: Path) -> dict[str, Path]:
     return dirs
 
 
-def _latest_files(folder: Path, limit: int = 20) -> list[Path]:
-    return sorted(
-        [path for path in folder.glob("*") if path.is_file()],
-        key=lambda path: path.stat().st_mtime,
-        reverse=True,
-    )[:limit]
+CAPTURE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
+RESPONSE_EXTENSIONS = {".json", ".md", ".txt"}
+
+
+def _is_desktop_ini(path: Path) -> bool:
+    return path.name.lower() == "desktop.ini"
+
+
+def _latest_files(
+    folder: Path,
+    limit: int = 20,
+    *,
+    allowed_extensions: set[str] | None = None,
+) -> list[Path]:
+    files: list[Path] = []
+    for path in folder.glob("*"):
+        if not path.is_file():
+            continue
+        if _is_desktop_ini(path):
+            continue
+        if allowed_extensions is not None and path.suffix.lower() not in allowed_extensions:
+            continue
+        files.append(path)
+    return sorted(files, key=lambda path: path.stat().st_mtime, reverse=True)[:limit]
 
 
 def build_capture_prompt_session_workflow(
@@ -72,8 +90,8 @@ def build_capture_prompt_session_workflow(
     active_prompts = [
         row for row in prompt_library.get("entries", []) if row.get("status") == "ACTIVE_RUNTIME"
     ]
-    captures = _latest_files(dirs["capture_dir"])
-    responses = _latest_files(dirs["response_dir"])
+    captures = _latest_files(dirs["capture_dir"], allowed_extensions=CAPTURE_EXTENSIONS)
+    responses = _latest_files(dirs["response_dir"], allowed_extensions=RESPONSE_EXTENSIONS)
 
     blockers: list[str] = []
     if not prompt_library.get("library_ready"):
@@ -123,8 +141,8 @@ def create_review_only_session(
     dirs = _ensure_dirs(root)
     workflow = build_capture_prompt_session_workflow(root)
 
-    captures = _latest_files(dirs["capture_dir"])
-    responses = _latest_files(dirs["response_dir"])
+    captures = _latest_files(dirs["capture_dir"], allowed_extensions=CAPTURE_EXTENSIONS)
+    responses = _latest_files(dirs["response_dir"], allowed_extensions=RESPONSE_EXTENSIONS)
 
     selected_capture = (
         dirs["capture_dir"] / capture_file if capture_file else (captures[0] if captures else None)
