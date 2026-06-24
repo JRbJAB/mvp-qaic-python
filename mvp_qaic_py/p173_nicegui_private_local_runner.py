@@ -407,11 +407,7 @@ def serve_private(
                         ui.label(
                             "Copie ce prompt, puis colle la capture dans GEM manuellement."
                         ).classes("qaic-muted")
-                        prompt_box = (
-                            ui.textarea(value=prompt_text)
-                            .props("outlined autogrow")
-                            .classes("w-full")
-                        )
+                        ui.textarea(value=prompt_text).props("outlined autogrow").classes("w-full")
                         ui.button(
                             "Copier le prompt",
                             on_click=lambda: ui.run_javascript(
