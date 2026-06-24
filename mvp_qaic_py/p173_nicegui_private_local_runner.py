@@ -249,11 +249,19 @@ def serve_private(
         raise ValueError("Only 127.0.0.1 is allowed for private local runner.")
 
     try:
-        from nicegui import ui
+        from nicegui import events, ui
     except Exception as exc:  # pragma: no cover - depends on operator environment
         raise RuntimeError("NiceGUI is not available in this environment.") from exc
 
-    render_payload = build_private_cockpit_render_model(project_root)
+    root = Path(project_root)
+    capture_dir = root / "00_OPERATOR_EXPORTS" / "P181_CAPTURE_INBOX"
+    response_dir = root / "00_OPERATOR_EXPORTS" / "P181_GEM_RESPONSES"
+    session_dir = root / "00_OPERATOR_EXPORTS" / "P181_SESSION_LOG"
+    capture_dir.mkdir(parents=True, exist_ok=True)
+    response_dir.mkdir(parents=True, exist_ok=True)
+    session_dir.mkdir(parents=True, exist_ok=True)
+
+    render_payload = build_private_cockpit_render_model(root)
     panels = render_payload.get("render_panels", [])
     panel_by_slot = {panel.get("ui_slot"): panel for panel in panels}
 
@@ -278,6 +286,23 @@ def serve_private(
         ]
     )
 
+    def _now_id(prefix: str) -> str:
+        import datetime as _dt
+
+        return prefix + "-" + _dt.datetime.now().strftime("%Y%m%d-%H%M%S")
+
+    def _save_upload(e: events.UploadEventArguments) -> None:
+        safe_name = "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in e.name)
+        target = capture_dir / (_now_id("CAPTURE") + "_" + safe_name)
+        with target.open("wb") as file_obj:
+            file_obj.write(e.content.read())
+        ui.notify(f"Capture sauvegardée localement: {target.name}", color="positive")
+
+    def _save_text_file(prefix: str, text_value: str, folder: Path, suffix: str = ".md") -> Path:
+        target = folder / (_now_id(prefix) + suffix)
+        target.write_text(text_value, encoding="utf-8")
+        return target
+
     def _rows_for(panel: dict[str, Any]) -> list[dict[str, Any]]:
         header = [str(item) for item in panel.get("preview_header", [])]
         raw_rows = panel.get("preview_rows", [])
@@ -301,12 +326,6 @@ def serve_private(
             for column in header[:12]
         ]
 
-    def _status_card(title: str, value: str, caption: str) -> None:
-        with ui.card().classes("qaic-card"):
-            ui.label(title).classes("qaic-card-title")
-            ui.label(value).classes("qaic-card-value")
-            ui.label(caption).classes("qaic-card-caption")
-
     def _panel_table(
         panel: dict[str, Any] | None, empty: str = "Aucune donnée disponible."
     ) -> None:
@@ -319,157 +338,301 @@ def serve_private(
         ).classes("qaic-muted")
         rows = _rows_for(panel)
         columns = _columns_for(panel)
-        ui.table(columns=columns, rows=rows, row_key=columns[0]["name"]).classes("qaic-table")
+        ui.table(columns=columns, rows=rows, row_key=columns[0]["name"]).props(
+            "flat bordered dense"
+        ).classes("qaic-table")
 
-    def _render_cockpit(default_tab: str = "dashboard") -> None:
+    def _status_card(title: str, value: str, caption: str, tone: str = "neutral") -> None:
+        tone_class = {
+            "good": "qaic-card-good",
+            "warn": "qaic-card-warn",
+            "danger": "qaic-card-danger",
+        }.get(tone, "qaic-card")
+        with ui.card().classes(tone_class):
+            ui.label(title).classes("qaic-card-title")
+            ui.label(value).classes("qaic-card-value")
+            ui.label(caption).classes("qaic-card-caption")
+
+    def _nav_button(label: str, route: str, icon: str) -> None:
+        ui.button(label, icon=icon, on_click=lambda r=route: ui.navigate.to(r)).props(
+            "flat align=left"
+        ).classes("qaic-nav-button")
+
+    def _sessions_rows() -> list[dict[str, Any]]:
+        captures = sorted(capture_dir.glob("*"), key=lambda p: p.stat().st_mtime, reverse=True)[:20]
+        responses = sorted(response_dir.glob("*"), key=lambda p: p.stat().st_mtime, reverse=True)[
+            :20
+        ]
+        rows: list[dict[str, Any]] = []
+        for item in captures:
+            rows.append({"type": "capture", "file": item.name, "folder": "P181_CAPTURE_INBOX"})
+        for item in responses:
+            rows.append({"type": "gem_response", "file": item.name, "folder": "P181_GEM_RESPONSES"})
+        return rows[:30]
+
+    def _session_columns() -> list[dict[str, Any]]:
+        return [
+            {"name": "type", "label": "type", "field": "type", "align": "left", "sortable": True},
+            {"name": "file", "label": "file", "field": "file", "align": "left", "sortable": True},
+            {
+                "name": "folder",
+                "label": "folder",
+                "field": "folder",
+                "align": "left",
+                "sortable": True,
+            },
+        ]
+
+    def _shell(active: str) -> None:
         ui.add_head_html(
             """
             <style>
-              body { background: #f6f7fb; }
-              .qaic-shell { max-width: 1440px; margin: 0 auto; }
-              .qaic-hero {
-                background: linear-gradient(135deg, #0f172a, #1e3a8a);
-                color: white; border-radius: 22px; padding: 28px;
-                box-shadow: 0 14px 35px rgba(15, 23, 42, .18);
+              body { background: #eef2f7; font-family: Inter, Arial, sans-serif; }
+              .qaic-app { max-width: 1500px; margin: 0 auto; }
+              .qaic-top {
+                background: linear-gradient(135deg, #08111f, #102b64 55%, #0f766e);
+                color: white; border-radius: 24px; padding: 24px 28px;
+                box-shadow: 0 16px 40px rgba(15, 23, 42, .20);
               }
-              .qaic-title { font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
-              .qaic-subtitle { opacity: .86; font-size: 15px; margin-top: 6px; }
-              .qaic-card {
-                border-radius: 18px; padding: 18px; min-width: 210px;
-                box-shadow: 0 8px 22px rgba(15, 23, 42, .08);
+              .qaic-title { font-size: 32px; font-weight: 900; letter-spacing: -.03em; }
+              .qaic-subtitle { opacity: .88; font-size: 14px; margin-top: 5px; }
+              .qaic-grid { display: grid; grid-template-columns: 250px 1fr; gap: 18px; }
+              .qaic-sidebar {
+                background: white; border-radius: 22px; padding: 16px;
+                box-shadow: 0 10px 26px rgba(15, 23, 42, .08);
+                min-height: 680px;
               }
-              .qaic-card-title { font-size: 12px; text-transform: uppercase; color: #64748b; font-weight: 700; }
-              .qaic-card-value { font-size: 28px; font-weight: 800; color: #0f172a; margin-top: 4px; }
-              .qaic-card-caption { font-size: 13px; color: #64748b; margin-top: 4px; }
-              .qaic-section-title { font-size: 21px; font-weight: 800; color: #0f172a; margin-top: 8px; }
+              .qaic-main {
+                background: white; border-radius: 22px; padding: 20px;
+                box-shadow: 0 10px 26px rgba(15, 23, 42, .08);
+                min-height: 680px;
+              }
+              .qaic-nav-button { width: 100%; justify-content: flex-start; margin: 3px 0; }
+              .qaic-section-title { font-size: 22px; font-weight: 900; color: #0f172a; }
               .qaic-muted { color: #64748b; font-size: 14px; }
-              .qaic-table { width: 100%; border-radius: 16px; overflow: hidden; }
-              .qaic-panel { background: white; border-radius: 18px; padding: 18px; }
-              .qaic-danger { color: #b91c1c; font-weight: 700; }
-              .qaic-ok { color: #047857; font-weight: 800; }
+              .qaic-card, .qaic-card-good, .qaic-card-warn, .qaic-card-danger {
+                border-radius: 18px; padding: 16px; min-width: 170px;
+                box-shadow: 0 8px 20px rgba(15, 23, 42, .07);
+              }
+              .qaic-card-good { border-left: 6px solid #059669; }
+              .qaic-card-warn { border-left: 6px solid #f59e0b; }
+              .qaic-card-danger { border-left: 6px solid #dc2626; }
+              .qaic-card-title { font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 800; }
+              .qaic-card-value { font-size: 24px; font-weight: 900; color: #0f172a; margin-top: 4px; }
+              .qaic-card-caption { font-size: 12px; color: #64748b; margin-top: 3px; }
+              .qaic-table { width: 100%; border-radius: 14px; overflow: hidden; }
+              .qaic-prompt-box textarea { font-family: Consolas, monospace; font-size: 13px; }
+              .qaic-drop {
+                border: 2px dashed #94a3b8; border-radius: 18px; padding: 18px;
+                background: #f8fafc;
+              }
             </style>
             """
         )
 
-        with ui.column().classes("qaic-shell w-full gap-5 p-6"):
-            with ui.row().classes("qaic-hero w-full items-center justify-between"):
+        with ui.column().classes("qaic-app w-full gap-5 p-5"):
+            with ui.row().classes("qaic-top w-full items-center justify-between"):
                 with ui.column().classes("gap-1"):
-                    ui.label("MVP QAIC — Private Cockpit").classes("qaic-title")
-                    ui.label("Prompt GEM · Cache local · Review-only · 127.0.0.1").classes(
+                    ui.label("MVP QAIC — Private Operator Cockpit").classes("qaic-title")
+                    ui.label(
+                        "Prompt Studio · Capture Inbox · GEM Response Inbox · Sessions · Review-only"
+                    ).classes("qaic-subtitle")
+                with ui.column().classes("items-end gap-2"):
+                    ui.badge("127.0.0.1 ONLY", color="green")
+                    ui.label("No Sheet write · No GEM call · No broker/order/sizing").classes(
                         "qaic-subtitle"
                     )
-                with ui.column().classes("items-end gap-2"):
-                    ui.badge("PRIVATE LOCAL", color="green").classes("text-md")
-                    ui.label("No Sheet write · No broker · No auto-apply").classes("qaic-subtitle")
 
-            with ui.row().classes("w-full gap-4"):
-                _status_card("Status", "READY", str(render_payload.get("STATUS", "UNKNOWN")))
-                _status_card("Panels", str(len(panels)), "Sources locales rendues")
-                _status_card("Routes", "6", "/ /prompt /cache /review /journal /lexique")
-                _status_card("Safety", "LOCKED", "Review-only, no order, no sizing")
+            with ui.element("div").classes("qaic-grid w-full"):
+                with ui.column().classes("qaic-sidebar gap-2"):
+                    ui.label("Navigation").classes("qaic-section-title")
+                    _nav_button("Dashboard", "/", "dashboard")
+                    _nav_button("Prompt Studio", "/prompt", "article")
+                    _nav_button("Capture Inbox", "/capture", "image")
+                    _nav_button("GEM Responses", "/responses", "data_object")
+                    _nav_button("Sessions", "/sessions", "history")
+                    _nav_button("Review", "/review", "fact_check")
+                    _nav_button("Cache", "/cache", "storage")
+                    _nav_button("Journal", "/journal", "list_alt")
+                    _nav_button("Lexique", "/lexique", "menu_book")
+                    ui.separator()
+                    ui.label(f"Active: {active}").classes("qaic-muted")
+                    ui.label("Mode: REVIEW_ONLY").classes("qaic-muted")
+                    ui.label("Apply: BLOCKED").classes("qaic-muted")
+                    ui.label("Broker: BLOCKED").classes("qaic-muted")
 
-            with ui.tabs().classes("w-full") as tabs:
-                tab_dashboard = ui.tab("Dashboard")
-                tab_prompt = ui.tab("Prompt GEM")
-                tab_cache = ui.tab("Cache local")
-                tab_review = ui.tab("Review")
-                tab_journal = ui.tab("Journal")
-                tab_lexique = ui.tab("Lexique")
+                with ui.column().classes("qaic-main gap-5") as main:
+                    return main
 
-            selected = {
-                "dashboard": tab_dashboard,
-                "prompt": tab_prompt,
-                "cache": tab_cache,
-                "review": tab_review,
-                "journal": tab_journal,
-                "lexique": tab_lexique,
-            }.get(default_tab, tab_dashboard)
+    def _dashboard_page() -> None:
+        with _shell("dashboard"):
+            ui.label("Dashboard opérateur").classes("qaic-section-title")
+            ui.label("Vue rapide du cockpit privé local et des sources prêtes.").classes(
+                "qaic-muted"
+            )
+            with ui.row().classes("gap-4"):
+                _status_card("UI", "READY", "P181ABC visual cockpit", "good")
+                _status_card("Panels", str(len(panels)), "sources locales", "good")
+                _status_card("Prompt", "ACTIVE", "portfolio image review", "good")
+                _status_card("Apply", "BLOCKED", "human review only", "danger")
+                _status_card("Sessions", str(len(_sessions_rows())), "local files", "warn")
+            ui.separator()
+            for panel in panels:
+                _status_card(
+                    str(panel.get("panel_title", "Panel")),
+                    str(panel.get("row_count", 0)),
+                    str(panel.get("source_id", "?")),
+                    "good",
+                )
 
-            with ui.tab_panels(tabs, value=selected).classes("w-full"):
-                with ui.tab_panel(tab_dashboard):
-                    with ui.column().classes("qaic-panel w-full gap-4"):
-                        ui.label("Vue opérateur").classes("qaic-section-title")
-                        ui.label(
-                            "Cockpit privé utilisable pour préparer le prompt GEM, consulter le cache "
-                            "et faire une review humaine sans écriture live."
-                        ).classes("qaic-muted")
-                        with ui.row().classes("gap-4"):
-                            for panel in panels:
-                                _status_card(
-                                    str(panel.get("panel_title", "Panel")),
-                                    str(panel.get("row_count", 0)),
-                                    str(panel.get("source_id", "?")),
-                                )
+    def _prompt_page() -> None:
+        with _shell("prompt"):
+            ui.label("Prompt Studio").classes("qaic-section-title")
+            ui.label(
+                "Version active review-only. Les prompts historiques seront ajoutés en bibliothèque versionnée."
+            ).classes("qaic-muted")
+            ui.textarea(value=prompt_text).props("outlined autogrow").classes(
+                "w-full qaic-prompt-box"
+            )
+            with ui.row().classes("gap-3"):
+                ui.button(
+                    "Copier prompt actif",
+                    icon="content_copy",
+                    on_click=lambda: ui.run_javascript(
+                        f"navigator.clipboard.writeText({json.dumps(prompt_text)})"
+                    ),
+                ).props("color=primary")
+                ui.button(
+                    "Créer session locale",
+                    icon="add",
+                    on_click=lambda: ui.notify(
+                        "Session locale à formaliser en P182/P183 — aucun apply automatique.",
+                        color="warning",
+                    ),
+                )
+            _panel_table(panel_by_slot.get("prompt_source_selector"))
 
-                with ui.tab_panel(tab_prompt):
-                    with ui.column().classes("qaic-panel w-full gap-4"):
-                        ui.label("Prompt GEM portfolio").classes("qaic-section-title")
-                        ui.label(
-                            "Copie ce prompt, puis colle la capture dans GEM manuellement."
-                        ).classes("qaic-muted")
-                        ui.textarea(value=prompt_text).props("outlined autogrow").classes("w-full")
-                        ui.button(
-                            "Copier le prompt",
-                            on_click=lambda: ui.run_javascript(
-                                f"navigator.clipboard.writeText({json.dumps(prompt_text)})"
-                            ),
-                        ).props("color=primary")
-                        ui.label("Auto-apply désactivé · GEM call Python désactivé").classes(
-                            "qaic-ok"
-                        )
-                        _panel_table(panel_by_slot.get("prompt_source_selector"))
+    def _capture_page() -> None:
+        with _shell("capture"):
+            ui.label("Capture Inbox").classes("qaic-section-title")
+            ui.label(
+                "Upload local privé de captures portfolio. Coller depuis presse-papiers navigateur sera durci au prochain batch."
+            ).classes("qaic-muted")
+            with ui.column().classes("qaic-drop w-full gap-3"):
+                ui.upload(on_upload=_save_upload, auto_upload=True).props("accept=image/*").classes(
+                    "w-full"
+                )
+                ui.label(f"Dossier local: {capture_dir}").classes("qaic-muted")
+            ui.separator()
+            rows = [
+                {"file": p.name, "folder": "P181_CAPTURE_INBOX"}
+                for p in sorted(
+                    capture_dir.glob("*"), key=lambda x: x.stat().st_mtime, reverse=True
+                )[:20]
+            ]
+            ui.table(
+                columns=[
+                    {"name": "file", "label": "file", "field": "file", "align": "left"},
+                    {"name": "folder", "label": "folder", "field": "folder", "align": "left"},
+                ],
+                rows=rows,
+                row_key="file",
+            ).props("flat bordered dense").classes("qaic-table")
 
-                with ui.tab_panel(tab_cache):
-                    with ui.column().classes("qaic-panel w-full gap-4"):
-                        ui.label("Cache local").classes("qaic-section-title")
-                        ui.label(
-                            "Toutes les sources locales disponibles en lecture seule."
-                        ).classes("qaic-muted")
-                        for panel in panels:
-                            _panel_table(panel)
+    def _responses_page() -> None:
+        with _shell("responses"):
+            ui.label("GEM Response Inbox").classes("qaic-section-title")
+            ui.label(
+                "Coller ici la réponse GEM après interrogation manuelle. Sauvegarde locale review-only."
+            ).classes("qaic-muted")
+            response_box = (
+                ui.textarea(placeholder="Coller réponse GEM ici...")
+                .props("outlined autogrow")
+                .classes("w-full qaic-prompt-box")
+            )
+            ui.button(
+                "Sauver réponse GEM localement",
+                icon="save",
+                on_click=lambda: ui.notify(
+                    f"Sauvegarde locale: {_save_text_file('GEM_RESPONSE', response_box.value or '', response_dir)}",
+                    color="positive",
+                ),
+            ).props("color=primary")
+            ui.separator()
+            ui.table(
+                columns=_session_columns(),
+                rows=[row for row in _sessions_rows() if row["type"] == "gem_response"],
+                row_key="file",
+            ).props("flat bordered dense").classes("qaic-table")
 
-                with ui.tab_panel(tab_review):
-                    with ui.column().classes("qaic-panel w-full gap-4"):
-                        ui.label("Review humaine").classes("qaic-section-title")
-                        ui.label(
-                            "Prévisualisation uniquement. Apply decision et patch prompt restent bloqués."
-                        ).classes("qaic-muted")
-                        ui.badge("APPLY BLOCKED", color="red")
-                        _panel_table(panel_by_slot.get("human_review_workbench_panel"))
+    def _sessions_page() -> None:
+        with _shell("sessions"):
+            ui.label("Sessions / interrogations").classes("qaic-section-title")
+            ui.label(
+                "Suivi local des captures et réponses GEM. Liaison capture ↔ prompt ↔ réponse à renforcer ensuite."
+            ).classes("qaic-muted")
+            ui.table(columns=_session_columns(), rows=_sessions_rows(), row_key="file").props(
+                "flat bordered dense"
+            ).classes("qaic-table")
 
-                with ui.tab_panel(tab_journal):
-                    with ui.column().classes("qaic-panel w-full gap-4"):
-                        ui.label("Journal").classes("qaic-section-title")
-                        _panel_table(panel_by_slot.get("decision_history_panel"))
+    def _review_page() -> None:
+        with _shell("review"):
+            ui.label("Review humaine").classes("qaic-section-title")
+            ui.badge("APPLY BLOCKED", color="red")
+            ui.label("Prévisualisation uniquement. Aucune écriture live.").classes("qaic-muted")
+            _panel_table(panel_by_slot.get("human_review_workbench_panel"))
 
-                with ui.tab_panel(tab_lexique):
-                    with ui.column().classes("qaic-panel w-full gap-4"):
-                        ui.label("Lexique / contexte cockpit").classes("qaic-section-title")
-                        _panel_table(panel_by_slot.get("lexique_context_panel"))
+    def _cache_page() -> None:
+        with _shell("cache"):
+            ui.label("Cache local").classes("qaic-section-title")
+            for panel in panels:
+                _panel_table(panel)
+
+    def _journal_page() -> None:
+        with _shell("journal"):
+            ui.label("Journal").classes("qaic-section-title")
+            _panel_table(panel_by_slot.get("decision_history_panel"))
+
+    def _lexique_page() -> None:
+        with _shell("lexique"):
+            ui.label("Lexique / contexte").classes("qaic-section-title")
+            _panel_table(panel_by_slot.get("lexique_context_panel"))
 
     @ui.page("/")
     def home() -> None:
-        _render_cockpit("dashboard")
+        _dashboard_page()
 
     @ui.page("/prompt")
     def prompt() -> None:
-        _render_cockpit("prompt")
+        _prompt_page()
 
-    @ui.page("/cache")
-    def cache() -> None:
-        _render_cockpit("cache")
+    @ui.page("/capture")
+    def capture() -> None:
+        _capture_page()
+
+    @ui.page("/responses")
+    def responses() -> None:
+        _responses_page()
+
+    @ui.page("/sessions")
+    def sessions() -> None:
+        _sessions_page()
 
     @ui.page("/review")
     def review() -> None:
-        _render_cockpit("review")
+        _review_page()
+
+    @ui.page("/cache")
+    def cache() -> None:
+        _cache_page()
 
     @ui.page("/journal")
     def journal() -> None:
-        _render_cockpit("journal")
+        _journal_page()
 
     @ui.page("/lexique")
     def lexique() -> None:
-        _render_cockpit("lexique")
+        _lexique_page()
 
     @ui.page("/favicon.ico")
     def favicon() -> None:
