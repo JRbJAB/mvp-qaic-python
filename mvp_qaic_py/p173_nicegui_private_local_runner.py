@@ -464,6 +464,8 @@ def serve_private(
                     _nav_button("Sheets Dry-run", "/sheets-export", "table_chart")
                     _nav_button("Migration Map", "/apps-script-map", "account_tree")
                     _nav_button("Dev Roadmap", "/dev-roadmap", "timeline")
+                    _nav_button("Migration Control", "/migration-control", "fact_check")
+                    _nav_button("Instructions", "/instructions", "rule")
                     _nav_button("Release Final", "/release-final", "verified")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
@@ -480,6 +482,7 @@ def serve_private(
 
     def _dashboard_page() -> None:
         with _shell("dashboard"):
+            _render_global_visual_banner("dashboard")
             ui.label("Dashboard opérateur").classes("qaic-section-title")
             ui.label("Vue rapide du cockpit privé local et des sources prêtes.").classes(
                 "qaic-muted"
@@ -501,6 +504,7 @@ def serve_private(
 
     def _prompt_page() -> None:
         with _shell("prompt"):
+            _render_global_visual_banner("prompt")
             ui.label("Prompt Studio").classes("qaic-section-title")
             ui.label(
                 "Version active review-only. Les prompts historiques seront ajoutés en bibliothèque versionnée."
@@ -578,6 +582,7 @@ def serve_private(
 
     def _capture_page() -> None:
         with _shell("capture"):
+            _render_global_visual_banner("capture")
             ui.label("Capture Inbox").classes("qaic-section-title")
             ui.label(
                 "Upload local privé de captures portfolio. Coller depuis presse-papiers navigateur sera durci au prochain batch."
@@ -605,6 +610,7 @@ def serve_private(
 
     def _responses_page() -> None:
         with _shell("responses"):
+            _render_global_visual_banner("responses")
             ui.label("GEM Response Inbox").classes("qaic-section-title")
             ui.label("P184 Response Parser").classes("qaic-section-title")
             ui.label(
@@ -638,6 +644,7 @@ def serve_private(
 
     def _sessions_page() -> None:
         with _shell("sessions"):
+            _render_global_visual_banner("sessions")
             ui.label("Sessions / interrogations").classes("qaic-section-title")
             ui.label(
                 "Suivi local des captures et réponses GEM. Liaison capture ↔ prompt ↔ réponse à renforcer ensuite."
@@ -663,6 +670,7 @@ def serve_private(
 
     def _review_page() -> None:
         with _shell("review"):
+            _render_global_visual_banner("review")
             ui.label("Review humaine").classes("qaic-section-title")
             ui.badge("APPLY BLOCKED", color="red")
             ui.label("Prévisualisation uniquement. Aucune écriture live.").classes("qaic-muted")
@@ -670,22 +678,26 @@ def serve_private(
 
     def _cache_page() -> None:
         with _shell("cache"):
+            _render_global_visual_banner("cache")
             ui.label("Cache local").classes("qaic-section-title")
             for panel in panels:
                 _panel_table(panel)
 
     def _journal_page() -> None:
         with _shell("journal"):
+            _render_global_visual_banner("journal")
             ui.label("Journal").classes("qaic-section-title")
             _panel_table(panel_by_slot.get("decision_history_panel"))
 
     def _lexique_page() -> None:
         with _shell("lexique"):
+            _render_global_visual_banner("lexique")
             ui.label("Lexique / contexte").classes("qaic-section-title")
             _panel_table(panel_by_slot.get("lexique_context_panel"))
 
     def _roundtrip_page() -> None:
         with _shell("roundtrip"):
+            _render_global_visual_banner("roundtrip")
             ui.label("P185 Roundtrip Workbench").classes("qaic-section-title")
             ui.label(
                 "Flux opérateur réel: capture portfolio → prompt actif → réponse GEM "
@@ -743,6 +755,7 @@ def serve_private(
 
     def _real_case_page() -> None:
         with _shell("real-case"):
+            _render_global_visual_banner("real-case")
             ui.label("P188 Real Case Decision Gate").classes("qaic-section-title")
             ui.label(
                 "Gate opérateur réel: déposer une vraie capture portfolio et coller une vraie réponse GEM. "
@@ -787,6 +800,7 @@ def serve_private(
 
         payload = build_runtime_migration_tracker(project_root)
         with _shell("migration"):
+            _render_global_visual_banner("migration")
             ui.label("P190R Runtime Migration Tracker").classes("qaic-section-title")
             ui.label(
                 "Vision runtime read-only: onglets de suivi GEM, scripts, fonctions, "
@@ -880,6 +894,7 @@ def serve_private(
 
         payload = build_gem_tracking_tabs_runtime_binding_matrix(project_root)
         with _shell("gem-tracking"):
+            _render_global_visual_banner("gem-tracking")
             ui.label("P191R GEM Tracking Tabs Runtime Binding Matrix").classes("qaic-section-title")
             ui.label(
                 "Couche de suivi GEM: onglets/layers attendus, sources locales, "
@@ -956,6 +971,7 @@ def serve_private(
 
         payload = build_gem_tracking_operator_view(project_root)
         with _shell("gem-tracking-operator"):
+            _render_global_visual_banner("gem-tracking-operator")
             ui.label("P192R GEM Tracking Operator View").classes("qaic-section-title")
             ui.label(
                 "Vue opérateur: priorités, statuts lisibles, actions suivantes, "
@@ -1031,6 +1047,7 @@ def serve_private(
 
         payload = build_gem_evidence_binding(project_root)
         with _shell("gem-evidence"):
+            _render_global_visual_banner("gem-evidence")
             ui.label("P193R GEM Evidence Binding").classes("qaic-section-title")
             ui.label(
                 "Binding read-only des preuves runtime: roundtrip GEM et journal de décision. "
@@ -1117,6 +1134,7 @@ def serve_private(
 
         payload = build_gem_runtime_close_contract(project_root)
         with _shell("runtime-contract"):
+            _render_global_visual_banner("runtime-contract")
             ui.label("P194R GEM Runtime Contract").classes("qaic-section-title")
             ui.label(
                 "Clôture runtime GEM + contrat d'export Sheets futur. "
@@ -1198,6 +1216,7 @@ def serve_private(
 
         payload = build_operator_release_runtime_tracker(project_root)
         with _shell("operator-release"):
+            _render_global_visual_banner("operator-release")
             ui.label("P195R Operator Release Runtime Tracker").classes("qaic-section-title")
             ui.label(
                 "Clôture opérateur runtime GEM + sélecteur de prochain chantier MAXI. "
@@ -1264,6 +1283,7 @@ def serve_private(
 
         payload = build_real_case_portfolio_gem_inputs(project_root)
         with _shell("real-case-inputs"):
+            _render_global_visual_banner("real-case-inputs")
             ui.label("P196 Real Case Portfolio GEM Inputs").classes("qaic-section-title")
             ui.label(
                 "Pack opérateur pour vrai cas portfolio: capture écran, texte copié, "
@@ -1326,6 +1346,7 @@ def serve_private(
         selected = payload["selected_master_candidate"]
 
         with _shell("prompt-master"):
+            _render_global_visual_banner("prompt-master")
             ui.label("P197 Prompt Master Historical Regression").classes("qaic-section-title")
             ui.label(
                 "Fusion review-only: prompt actif, historiques, audit, candidat master, "
@@ -1410,6 +1431,7 @@ def serve_private(
         payload = build_sheets_export_dry_run_contract_pack(project_root)
 
         with _shell("sheets-export"):
+            _render_global_visual_banner("sheets-export")
             ui.label("P198 Sheets Export Dry Run Contract Pack").classes("qaic-section-title")
             ui.label(
                 "Vue dry-run avant toute écriture Sheets: onglets cibles, sources Python, colonnes, "
@@ -1517,6 +1539,7 @@ def serve_private(
         payload = build_apps_script_sheets_function_tab_migration_map(project_root)
 
         with _shell("apps-script-map"):
+            _render_global_visual_banner("apps-script-map")
             ui.label("P199 Apps Script Migration Map").classes("qaic-section-title")
             ui.label(
                 "Mapping visuel read-only: onglets Sheets, sources Apps Script, modules Python, "
@@ -1632,6 +1655,7 @@ def serve_private(
         payload = build_visual_ux_polish(project_root)
 
         with _shell("dev-roadmap"):
+            _render_global_visual_banner("dev-roadmap")
             ui.add_head_html("""
             <style id="p199ux-r4-polish">
               .qaic-hero-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:10px; margin: 8px 0 12px 0; }
@@ -1797,33 +1821,30 @@ def serve_private(
         _dev_roadmap_page()
 
     def _release_final_page() -> None:
-        from mvp_qaic_py.p200_operator_release_cockpit_final_maxi import (
-            build_operator_release_cockpit_final,
+        from mvp_qaic_py.p200r2_deep_cockpit_ux_instructions_tracker_maxi import (
+            build_deep_operator_cockpit,
         )
 
-        payload = build_operator_release_cockpit_final(project_root)
+        payload = build_deep_operator_cockpit(project_root)
 
         with _shell("release-final"):
-            ui.label("P200 Release Final — cockpit opérateur").classes("qaic-section-title")
+            _render_global_visual_banner("release-final")
+            ui.label("Release Final — cockpit opérateur réparé").classes("qaic-section-title")
             ui.label(
-                "Synthèse finale locale privée: statut release, décisions, sécurité, cas réel en attente, "
-                "et prochain chantier. Aucune écriture live."
+                "Synthèse finale fiable: release, sécurité, décisions, cas réel et live-write bloqué."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
                 ui.badge(payload["release_status"], color="blue")
-                ui.badge(f"tabs={payload['nicegui_tab_count']}", color="green")
-                ui.badge(f"roadmap={payload['roadmap_step_count']}", color="purple")
-                ui.badge(f"coverage={payload['migration_coverage_percent']}%", color="teal")
-                ui.badge(f"real_case={payload['real_case_input_status']}", color="orange")
+                ui.badge(f"migration={payload['migration_coverage_percent']}%", color="teal")
+                ui.badge(f"instructions={payload['instruction_row_count']}", color="orange")
+                ui.badge(f"rows={payload['migration_control_row_count']}", color="purple")
                 ui.badge("NO LIVE WRITE", color="red")
 
             ui.separator()
-
-            ui.label("Release gates").classes("qaic-section-title")
             ui.table(
                 columns=[
-                    {"name": "priority", "label": "#", "field": "priority", "align": "right"},
+                    {"name": "color_cell", "label": "", "field": "color_cell", "align": "center"},
                     {"name": "area", "label": "zone", "field": "area", "align": "left"},
                     {"name": "status", "label": "status", "field": "status", "align": "left"},
                     {"name": "evidence", "label": "preuve", "field": "evidence", "align": "left"},
@@ -1840,25 +1861,179 @@ def serve_private(
                 "qaic-table qaic-compact-table"
             )
 
-            ui.separator()
+    @ui.page("/release-final")
+    def release_final() -> None:
+        _release_final_page()
 
-            ui.label("Décisions opérateur").classes("qaic-section-title")
+    def _render_global_visual_banner(active: str) -> None:
+        """P200R2_GLOBAL_VISUAL_BANNER_MARKER: compact visual planning at top of key tabs."""
+        if active not in {
+            "dev-roadmap",
+            "migration",
+            "apps-script-map",
+            "sheets-export",
+            "release-final",
+            "migration-control",
+            "instructions",
+            "operator-release",
+        }:
+            return
+        try:
+            from mvp_qaic_py.p200r2_deep_cockpit_ux_instructions_tracker_maxi import (
+                build_global_visual_banner,
+            )
+
+            payload = build_global_visual_banner(project_root)
+            with ui.expansion(
+                "Planning visuel global / obligations", icon="dashboard", value=False
+            ).classes("w-full"):
+                with ui.row().classes("gap-2"):
+                    for card in payload["metric_card_rows"]:
+                        ui.badge(
+                            f"{card['label']}: {card['value']}{card['unit']}", color=card["color"]
+                        )
+                ui.table(
+                    columns=[
+                        {
+                            "name": "color_cell",
+                            "label": "",
+                            "field": "color_cell",
+                            "align": "center",
+                        },
+                        {"name": "period", "label": "période", "field": "period", "align": "left"},
+                        {
+                            "name": "step_count",
+                            "label": "étapes",
+                            "field": "step_count",
+                            "align": "right",
+                        },
+                        {
+                            "name": "progress_percent",
+                            "label": "%",
+                            "field": "progress_percent",
+                            "align": "right",
+                        },
+                        {"name": "status", "label": "status", "field": "status", "align": "left"},
+                        {"name": "route", "label": "route", "field": "route", "align": "left"},
+                    ],
+                    rows=payload["global_planning_rows"],
+                    row_key="period",
+                ).props("flat bordered dense separator=cell").classes(
+                    "qaic-table qaic-compact-table"
+                )
+        except Exception as exc:
+            ui.badge(f"Planning global indisponible: {exc}", color="orange")
+
+    def _migration_control_page() -> None:
+        from mvp_qaic_py.p200r2_deep_cockpit_ux_instructions_tracker_maxi import (
+            build_deep_operator_cockpit,
+        )
+
+        payload = build_deep_operator_cockpit(project_root)
+
+        with _shell("migration-control"):
+            _render_global_visual_banner("migration-control")
+            ui.label("Migration Control — onglets / scripts / fonctions").classes(
+                "qaic-section-title"
+            )
+            ui.label(
+                "Table de contrôle colorée: ce qui est fait, ce qui reste à faire, et l'action opérateur."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(f"rows={payload['migration_control_row_count']}", color="purple")
+                ui.badge(f"tabs={payload['sheet_tab_count']}", color="green")
+                ui.badge(f"coverage={payload['migration_coverage_percent']}%", color="teal")
+                ui.badge("READ ONLY", color="red")
+
+            ui.separator()
             ui.table(
                 columns=[
-                    {"name": "priority", "label": "#", "field": "priority", "align": "right"},
-                    {"name": "decision", "label": "décision", "field": "decision", "align": "left"},
+                    {"name": "color_cell", "label": "", "field": "color_cell", "align": "center"},
+                    {
+                        "name": "entity_type",
+                        "label": "type",
+                        "field": "entity_type",
+                        "align": "left",
+                    },
+                    {"name": "name", "label": "nom", "field": "name", "align": "left"},
                     {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "progress_percent",
+                        "label": "%",
+                        "field": "progress_percent",
+                        "align": "right",
+                    },
+                    {"name": "done", "label": "fait", "field": "done", "align": "left"},
+                    {"name": "todo", "label": "reste à faire", "field": "todo", "align": "left"},
+                    {"name": "binding", "label": "binding", "field": "binding", "align": "left"},
                     {"name": "route", "label": "route", "field": "route", "align": "left"},
                 ],
-                rows=payload["decision_rows"],
+                rows=payload["migration_control_rows"],
                 row_key="priority",
             ).props("flat bordered dense separator=cell wrap-cells").classes(
                 "qaic-table qaic-compact-table"
             )
 
-    @ui.page("/release-final")
-    def release_final() -> None:
-        _release_final_page()
+    @ui.page("/migration-control")
+    def migration_control() -> None:
+        _migration_control_page()
+
+    def _instructions_page() -> None:
+        from mvp_qaic_py.p200r2_deep_cockpit_ux_instructions_tracker_maxi import (
+            build_deep_operator_cockpit,
+        )
+
+        payload = build_deep_operator_cockpit(project_root)
+
+        with _shell("instructions"):
+            _render_global_visual_banner("instructions")
+            ui.label("Instructions Tracker — obligations par thème").classes("qaic-section-title")
+            ui.label(
+                "Suivi explicite des règles projet, sécurité, UX, migration, prompt/GEM et preuves."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(f"obligations={payload['instruction_row_count']}", color="orange")
+                ui.badge("HUMAN_REVIEW_ONLY", color="blue")
+                ui.badge("NO LIVE WRITE", color="red")
+                ui.badge("NO BROKER", color="purple")
+
+            ui.separator()
+            ui.table(
+                columns=[
+                    {"name": "color_cell", "label": "", "field": "color_cell", "align": "center"},
+                    {"name": "theme", "label": "thème", "field": "theme", "align": "left"},
+                    {
+                        "name": "obligation",
+                        "label": "obligation",
+                        "field": "obligation",
+                        "align": "left",
+                    },
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "progress_percent",
+                        "label": "%",
+                        "field": "progress_percent",
+                        "align": "right",
+                    },
+                    {"name": "evidence", "label": "preuve", "field": "evidence", "align": "left"},
+                    {
+                        "name": "correction_rule",
+                        "label": "règle correction",
+                        "field": "correction_rule",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["instruction_rows"],
+                row_key="priority",
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
+
+    @ui.page("/instructions")
+    def instructions() -> None:
+        _instructions_page()
 
     @ui.page("/")
     def home() -> None:

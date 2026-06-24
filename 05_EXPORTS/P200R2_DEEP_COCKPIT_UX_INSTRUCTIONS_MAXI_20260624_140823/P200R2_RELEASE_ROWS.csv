@@ -1,0 +1,6 @@
+priority,area,status,color_cell,evidence,operator_action
+1,Cockpit visuel,READY,🟩,"15 étapes, 9 onglets utiles",Utiliser /dev-roadmap et /migration-control
+2,Migration tabs/scripts/functions,READY,🟩,220 lignes contrôlées,Piloter fait/reste à faire par entité
+3,Instruction compliance,ACTIVE,🟧,10 obligations suivies,Vérifier /instructions avant chaque batch sensible
+4,Cas réel GEM,WAITING_INPUTS,🟧,"captures=0, responses=0",WAIT_OPERATOR_CAPTURE_AND_GEM_RESPONSE_THEN_RERUN_P196
+5,Live write,BLOCKED_BY_POLICY,🟥,Google Sheets / Apps Script / CLASP live restent interdits,Autorisation humaine future seulement

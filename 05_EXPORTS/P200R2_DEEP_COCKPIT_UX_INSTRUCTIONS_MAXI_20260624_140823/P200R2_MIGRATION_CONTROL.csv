@@ -1,0 +1,221 @@
+priority,entity_type,name,binding,route,status,color_cell,progress_percent,done,todo
+1,SHEET_TAB,GEM_CAPTURE_INBOX,mvp_qaic_py/prompt_image_capture_human_review.py,00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+2,SHEET_TAB,GEM_RESPONSE_INBOX,mvp_qaic_py/gem_manual_test_review_pack.py,00_OPERATOR_EXPORTS/P181_GEM_RESPONSES,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+3,SHEET_TAB,GEM_SESSION_LOG,mvp_qaic_py/p173_nicegui_private_local_runner.py,00_OPERATOR_EXPORTS/P181_SESSION_LOG,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+4,SHEET_TAB,GEM_ROUNDTRIP_STATUS,mvp_qaic_py/p185_real_operator_capture_response_ui_roundtrip.py,P193R_GEM_ROUNDTRIP_EVIDENCE.csv,PYTHON_READY_CONTRACT_REVIEW,🟩,85,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+5,SHEET_TAB,GEM_REVIEW_GATE,mvp_qaic_py/p156_prompt_patch_candidate_or_stop_after_human_review.py,P187_REAL_MANUAL_CASE_GATE.json,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+6,SHEET_TAB,GEM_REAL_CASE_DECISION,mvp_qaic_py/p188_real_case_ui_operator_decision_gate.py,P188_REAL_CASE_OPERATOR_DECISION_GATE.json,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+7,SHEET_TAB,GEM_DECISION_JOURNAL,mvp_qaic_py/gem_response_decision_journal_bridge.py,P193R_GEM_DECISION_JOURNAL_EVIDENCE.csv,PYTHON_BINDING_READY_REVIEW,🟩,85,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+8,SHEET_TAB,PROMPT_HISTORY_LIBRARY,mvp_qaic_py/p182_prompt_history_library_version_studio.py,P182 prompt library export,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+9,SHEET_TAB,PROMPT_MIGRATION_MATRIX,mvp_qaic_py/p138a_sheets_prompt_base_migration_candidate.py,P189H_PROMPT_MIGRATION_MATRIX.csv,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+10,SHEET_TAB,RUNTIME_MIGRATION_TRACKER,mvp_qaic_py/p190r_runtime_migration_tracker_live_readonly.py,P190R_RUNTIME_ARTIFACTS.csv,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+11,SHEET_TAB,GEM_TRACKING_BINDING_MATRIX,mvp_qaic_py/p191r_gem_tracking_tabs_runtime_binding_matrix.py,P191R_GEM_TRACKING_BINDING_MATRIX.csv,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+12,SHEET_TAB,GEM_TRACKING_OPERATOR_VIEW,mvp_qaic_py/p192r_gem_tracking_tabs_csv_export_operator_view_polish.py,P192R_GEM_TRACKING_OPERATOR_VIEW.csv,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+13,SHEET_TAB,GEM_EVIDENCE_BINDING,mvp_qaic_py/p192r_gem_tracking_tabs_csv_export_operator_view_polish.py,P193R_GEM_EVIDENCE_BINDING.csv,PYTHON_READY_SHEETS_DRY_RUN_READY,🟩,100,Mapping onglet cible + runtime layer,KEEP_PYTHON_DRY_RUN_NO_LIVE_WRITE
+14,PYTHON_MODULE,mvp_qaic_py/__init__.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,0 fonctions détectées,Garder si utile / archiver si legacy
+15,PYTHON_MODULE,mvp_qaic_py/bridge/__init__.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,0 fonctions détectées,Garder si utile / archiver si legacy
+16,PYTHON_MODULE,mvp_qaic_py/bridge/local_bridge_dryrun.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,3 fonctions détectées,Garder si utile / archiver si legacy
+17,PYTHON_MODULE,mvp_qaic_py/contracts/__init__.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,0 fonctions détectées,Garder si utile / archiver si legacy
+18,PYTHON_MODULE,mvp_qaic_py/contracts/sheets_live_contract.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,5 fonctions détectées,Garder si utile / archiver si legacy
+19,PYTHON_MODULE,mvp_qaic_py/daily_run_registry.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,19 fonctions détectées,Garder si utile / archiver si legacy
+20,PYTHON_MODULE,mvp_qaic_py/final_docs_planning_pack.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,16 fonctions détectées,Garder si utile / archiver si legacy
+21,PYTHON_MODULE,mvp_qaic_py/gem_daily_loop_smoke.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,8 fonctions détectées,Garder si utile / archiver si legacy
+22,PYTHON_MODULE,mvp_qaic_py/gem_loop_input_helper.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+23,PYTHON_MODULE,mvp_qaic_py/gem_loop_operator_handoff.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+24,PYTHON_MODULE,mvp_qaic_py/gem_manual_test_review_pack.py,TEST_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,17 fonctions détectées,Garder si utile / archiver si legacy
+25,PYTHON_MODULE,mvp_qaic_py/gem_multimodal_response_capture_gate.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,15 fonctions détectées,Garder si utile / archiver si legacy
+26,PYTHON_MODULE,mvp_qaic_py/gem_portfolio_prompt_module.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,7 fonctions détectées,Garder si utile / archiver si legacy
+27,PYTHON_MODULE,mvp_qaic_py/gem_prompt_daily_shortcut.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+28,PYTHON_MODULE,mvp_qaic_py/gem_prompt_runner_pack.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,13 fonctions détectées,Garder si utile / archiver si legacy
+29,PYTHON_MODULE,mvp_qaic_py/gem_prompt_runtime_cli.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,10 fonctions détectées,Garder si utile / archiver si legacy
+30,PYTHON_MODULE,mvp_qaic_py/gem_prompt_usability_pack.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+31,PYTHON_MODULE,mvp_qaic_py/gem_response_decision_journal_bridge.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+32,PYTHON_MODULE,mvp_qaic_py/gem_response_review_queue.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,16 fonctions détectées,Garder si utile / archiver si legacy
+33,PYTHON_MODULE,mvp_qaic_py/image_manual_transcription_bridge.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,21 fonctions détectées,Garder si utile / archiver si legacy
+34,PYTHON_MODULE,mvp_qaic_py/lexique_method_prompt_context.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+35,PYTHON_MODULE,mvp_qaic_py/module_migration_inventory.py,DEV_MIGRATION_TRACKER,,PYTHON_MODULE_DISCOVERED,🟦,90,10 fonctions détectées,Garder si utile / archiver si legacy
+36,PYTHON_MODULE,mvp_qaic_py/multimodal_gem_image_prompt_usd_contract.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,15 fonctions détectées,Garder si utile / archiver si legacy
+37,PYTHON_MODULE,mvp_qaic_py/nicegui_prompt_cockpit_local_private.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,17 fonctions détectées,Garder si utile / archiver si legacy
+38,PYTHON_MODULE,mvp_qaic_py/operator/__init__.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,0 fonctions détectées,Garder si utile / archiver si legacy
+39,PYTHON_MODULE,mvp_qaic_py/operator/operator_decision_gate.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,3 fonctions détectées,Garder si utile / archiver si legacy
+40,PYTHON_MODULE,mvp_qaic_py/operator/operator_output_pack.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,2 fonctions détectées,Garder si utile / archiver si legacy
+41,PYTHON_MODULE,mvp_qaic_py/operator_e2e_image_prompt_loop.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,13 fonctions détectées,Garder si utile / archiver si legacy
+42,PYTHON_MODULE,mvp_qaic_py/operator_run_shortcut.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+43,PYTHON_MODULE,mvp_qaic_py/p136_p133_real_response_file_import.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,20 fonctions détectées,Garder si utile / archiver si legacy
+44,PYTHON_MODULE,mvp_qaic_py/p137_prompt_corrections_apply_queue.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,17 fonctions détectées,Garder si utile / archiver si legacy
+45,PYTHON_MODULE,mvp_qaic_py/p138a_sheets_prompt_base_migration_candidate.py,DEV_MIGRATION_TRACKER,,PYTHON_MODULE_DISCOVERED,🟦,90,21 fonctions détectées,Garder si utile / archiver si legacy
+46,PYTHON_MODULE,mvp_qaic_py/p138b3_write_readiness_triage.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,16 fonctions détectées,Garder si utile / archiver si legacy
+47,PYTHON_MODULE,mvp_qaic_py/p138b_validate_migration_candidates.py,DEV_MIGRATION_TRACKER,,PYTHON_MODULE_DISCOVERED,🟦,90,18 fonctions détectées,Garder si utile / archiver si legacy
+48,PYTHON_MODULE,mvp_qaic_py/p138c_safe_partial_sheets_write.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,26 fonctions détectées,Garder si utile / archiver si legacy
+49,PYTHON_MODULE,mvp_qaic_py/p139_nicegui_historical_cockpit_metadata.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,16 fonctions détectées,Garder si utile / archiver si legacy
+50,PYTHON_MODULE,mvp_qaic_py/p140_nicegui_cockpit_replica_renderer.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+51,PYTHON_MODULE,mvp_qaic_py/p141_nicegui_cockpit_replica_local_launch.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,13 fonctions détectées,Garder si utile / archiver si legacy
+52,PYTHON_MODULE,mvp_qaic_py/p142_ui_fidelity_shell.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,10 fonctions détectées,Garder si utile / archiver si legacy
+53,PYTHON_MODULE,mvp_qaic_py/p143_data_preview_binding_local_readonly.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+54,PYTHON_MODULE,mvp_qaic_py/p143b_data_preview_source_expansion.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,15 fonctions détectées,Garder si utile / archiver si legacy
+55,PYTHON_MODULE,mvp_qaic_py/p144_prompt_cockpit_workflows.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+56,PYTHON_MODULE,mvp_qaic_py/p145_gem_response_import_e2e.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+57,PYTHON_MODULE,mvp_qaic_py/p146_correction_queue_ui.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+58,PYTHON_MODULE,mvp_qaic_py/p147_operator_polish.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+59,PYTHON_MODULE,mvp_qaic_py/p148_sync_strategy_readonly.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,10 fonctions détectées,Garder si utile / archiver si legacy
+60,PYTHON_MODULE,mvp_qaic_py/p149_migration_close_gate.py,DEV_MIGRATION_TRACKER,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+61,PYTHON_MODULE,mvp_qaic_py/p150_public_prep_selector_or_stop.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,9 fonctions détectées,Garder si utile / archiver si legacy
+62,PYTHON_MODULE,mvp_qaic_py/p150b_local_private_release_pack.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,13 fonctions détectées,Garder si utile / archiver si legacy
+63,PYTHON_MODULE,mvp_qaic_py/p151_release_pack_verify_launch_smoke.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,13 fonctions détectées,Garder si utile / archiver si legacy
+64,PYTHON_MODULE,mvp_qaic_py/p152_real_gem_response_import_or_stop.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+65,PYTHON_MODULE,mvp_qaic_py/p152a_prompt_source_binding_for_real_gem.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+66,PYTHON_MODULE,mvp_qaic_py/p153_correction_loop_real_case.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+67,PYTHON_MODULE,mvp_qaic_py/p154_prompt_correction_apply_plan_or_stop.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,9 fonctions détectées,Garder si utile / archiver si legacy
+68,PYTHON_MODULE,mvp_qaic_py/p155_prompt_correction_workbench_or_stop.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,26 fonctions détectées,Garder si utile / archiver si legacy
+69,PYTHON_MODULE,mvp_qaic_py/p156_prompt_patch_candidate_or_stop_after_human_review.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,18 fonctions détectées,Garder si utile / archiver si legacy
+70,PYTHON_MODULE,mvp_qaic_py/p157_prompt_patch_candidate_review_or_apply_gate.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,16 fonctions détectées,Garder si utile / archiver si legacy
+71,PYTHON_MODULE,mvp_qaic_py/p158_manual_prompt_patch_apply_or_stop.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,15 fonctions détectées,Garder si utile / archiver si legacy
+72,PYTHON_MODULE,mvp_qaic_py/p158_r2_authorize_and_apply_prompt_patch_manual_gate.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,18 fonctions détectées,Garder si utile / archiver si legacy
+73,PYTHON_MODULE,mvp_qaic_py/p159_prompt_patch_runtime_smoke_or_rollback_gate.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,13 fonctions détectées,Garder si utile / archiver si legacy
+74,PYTHON_MODULE,mvp_qaic_py/p160_real_gem_response_smoke_with_patch_or_release_seal.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,14 fonctions détectées,Garder si utile / archiver si legacy
+75,PYTHON_MODULE,mvp_qaic_py/p161_release_seal_or_p160b_real_case_review_pack.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,18 fonctions détectées,Garder si utile / archiver si legacy
+76,PYTHON_MODULE,mvp_qaic_py/p162_local_private_operator_handoff_or_dev_stop.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,14 fonctions détectées,Garder si utile / archiver si legacy
+77,PYTHON_MODULE,mvp_qaic_py/p163_local_private_operator_shortcut_or_dev_stop.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,15 fonctions détectées,Garder si utile / archiver si legacy
+78,PYTHON_MODULE,mvp_qaic_py/p164_historical_prompt_audit_reference_rebuild.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,12 fonctions détectées,Garder si utile / archiver si legacy
+79,PYTHON_MODULE,mvp_qaic_py/p165_initial_system_functional_source_access_layer.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,17 fonctions détectées,Garder si utile / archiver si legacy
+80,PYTHON_MODULE,mvp_qaic_py/p166_reference_prompt_rebuild_from_source_index.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,13 fonctions détectées,Garder si utile / archiver si legacy
+81,PYTHON_MODULE,mvp_qaic_py/p167_human_review_reference_prompt_or_apply_gate.py,PROMPT_LAYER,,PYTHON_MODULE_DISCOVERED,🟦,90,9 fonctions détectées,Garder si utile / archiver si legacy
+82,PYTHON_MODULE,mvp_qaic_py/p168_hierarchy_and_migration_roadmap_lock.py,DEV_MIGRATION_TRACKER,,PYTHON_MODULE_DISCOVERED,🟦,90,10 fonctions détectées,Garder si utile / archiver si legacy
+83,PYTHON_MODULE,mvp_qaic_py/p168b_sheets_data_snapshot_layer_readonly.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,19 fonctions détectées,Garder si utile / archiver si legacy
+84,PYTHON_MODULE,mvp_qaic_py/p168c_sheets_readonly_export_import_or_api_binding.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,16 fonctions détectées,Garder si utile / archiver si legacy
+85,PYTHON_MODULE,mvp_qaic_py/p168d_local_snapshot_import_reader_from_operator_exports.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,20 fonctions détectées,Garder si utile / archiver si legacy
+86,PYTHON_MODULE,mvp_qaic_py/p168e_local_cache_build_from_validated_snapshots_or_wait.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,20 fonctions détectées,Garder si utile / archiver si legacy
+87,PYTHON_MODULE,mvp_qaic_py/p168f_operator_export_capture_or_wait.py,PYTHON_SUPPORT,,PYTHON_MODULE_DISCOVERED,🟦,90,11 fonctions détectées,Garder si utile / archiver si legacy
+88,PYTHON_MODULE,mvp_qaic_py/p170_nicegui_local_cache_read_binding.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,7 fonctions détectées,Garder si utile / archiver si legacy
+89,PYTHON_MODULE,mvp_qaic_py/p171_nicegui_local_prompt_cockpit_bind_cache_panels.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,5 fonctions détectées,Garder si utile / archiver si legacy
+90,PYTHON_MODULE,mvp_qaic_py/p172_nicegui_private_cockpit_render_local_cache_panels.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,8 fonctions détectées,Garder si utile / archiver si legacy
+91,PYTHON_MODULE,mvp_qaic_py/p173_nicegui_private_local_runner.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,17 fonctions détectées,Garder si utile / archiver si legacy
+92,PYTHON_MODULE,mvp_qaic_py/p174_nicegui_private_local_launch_operator_smoke.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,8 fonctions détectées,Garder si utile / archiver si legacy
+93,PYTHON_MODULE,mvp_qaic_py/p175_nicegui_operator_ergonomics_polish.py,NICEGUI_RUNTIME_UI,,PYTHON_MODULE_DISCOVERED,🟦,90,6 fonctions détectées,Garder si utile / archiver si legacy
+94,APPS_SCRIPT_SOURCE,05_EXPORTS/P106_WEBAPP_STATIC_PREVIEW_DATA_EXPORT_20260622_103845/STATIC_PREVIEW/index.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+95,APPS_SCRIPT_SOURCE,05_EXPORTS/P107_R1_CANONICAL_WEBAPP_BINDING_ADMIN_20260622_105702/CANONICAL_BINDING_PACK/admin/ADMIN_MONITOR.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+96,APPS_SCRIPT_SOURCE,05_EXPORTS/P134_NICEGUI_PROMPT_COCKPIT_LOCAL_PRIVATE_20260622_190757/P134_NICEGUI_PROMPT_COCKPIT_STATIC_PREVIEW.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+97,APPS_SCRIPT_SOURCE,05_EXPORTS/P134A_NICEGUI_ROOT_PAGE_LAUNCH_FIX_20260622_193558/P134_NICEGUI_PROMPT_COCKPIT_STATIC_PREVIEW.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+98,APPS_SCRIPT_SOURCE,05_EXPORTS/P135_R2_NICEGUI_OPERATOR_POLISH_COMPAT_FIX_20260622_195252/P134_NICEGUI_PROMPT_COCKPIT_STATIC_PREVIEW.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+99,APPS_SCRIPT_SOURCE,05_EXPORTS/P135B_R3_NICEGUI_UI_RENDER_POLISH_MARKER_FIX_20260622_202343/P134_NICEGUI_PROMPT_COCKPIT_STATIC_PREVIEW.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+100,APPS_SCRIPT_SOURCE,05_EXPORTS/P140_NICEGUI_COCKPIT_REPLICA_RENDERER_20260623_120204/P140_STATIC_PREVIEW.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+101,APPS_SCRIPT_SOURCE,05_EXPORTS/P172_NICEGUI_PRIVATE_COCKPIT_RENDER_20260624_081937/P172_PRIVATE_COCKPIT_PREVIEW.html,APPS_SCRIPT_OR_WEBAPP_SOURCE,,DISCOVERED_READONLY,🟦,50,0 fonctions Apps Script/local détectées,MAP_TO_PYTHON_OR_ARCHIVE_LEGACY
+102,FUNCTION,assert_local_bridge_is_readonly,mvp_qaic_py/bridge/local_bridge_dryrun.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+103,FUNCTION,build_local_bridge_dryrun_payload,mvp_qaic_py/bridge/local_bridge_dryrun.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+104,FUNCTION,to_dict,mvp_qaic_py/bridge/local_bridge_dryrun.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+105,FUNCTION,_norm_set,mvp_qaic_py/contracts/sheets_live_contract.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+106,FUNCTION,safety_flags,mvp_qaic_py/contracts/sheets_live_contract.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+107,FUNCTION,validate_p81r_live_mapping,mvp_qaic_py/contracts/sheets_live_contract.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+108,FUNCTION,validate_p81r_p82_contract,mvp_qaic_py/contracts/sheets_live_contract.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+109,FUNCTION,validate_p82_header_contract,mvp_qaic_py/contracts/sheets_live_contract.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+110,FUNCTION,_bool_text,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+111,FUNCTION,_discover_dirs,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+112,FUNCTION,_int_text,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+113,FUNCTION,_normalize_path,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+114,FUNCTION,_p124_manifest,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+115,FUNCTION,_p125_manifest,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+116,FUNCTION,_read_json,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+117,FUNCTION,_report_markdown,mvp_qaic_py/daily_run_registry.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+118,FUNCTION,_join,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+119,FUNCTION,_write,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+120,FUNCTION,_write_json,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+121,FUNCTION,architecture_doc,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+122,FUNCTION,build_docs,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+123,FUNCTION,build_project_status,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+124,FUNCTION,cdc_roadmap_doc,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+125,FUNCTION,drive_rangement_doc,mvp_qaic_py/final_docs_planning_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+126,FUNCTION,_read_optional_json,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+127,FUNCTION,_read_optional_text,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+128,FUNCTION,_report_markdown,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+129,FUNCTION,_write_json,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+130,FUNCTION,build_smoke_contract,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+131,FUNCTION,main,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+132,FUNCTION,parse_args,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+133,FUNCTION,write_daily_gem_loop_smoke_pack,mvp_qaic_py/gem_daily_loop_smoke.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+134,FUNCTION,_commands_markdown,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+135,FUNCTION,_read_optional_text,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+136,FUNCTION,_readme_markdown,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+137,FUNCTION,_write,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+138,FUNCTION,_write_checklist_csv,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+139,FUNCTION,_write_json,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+140,FUNCTION,build_checklist_rows,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+141,FUNCTION,build_input_helper_contract,mvp_qaic_py/gem_loop_input_helper.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+142,FUNCTION,_daily_commands_markdown,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+143,FUNCTION,_discover_latest_manifest,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+144,FUNCTION,_handoff_markdown,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+145,FUNCTION,_runbook_markdown,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+146,FUNCTION,_write_checklist_csv,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+147,FUNCTION,_write_json,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+148,FUNCTION,build_handoff_contract,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+149,FUNCTION,build_ready_checklist_rows,mvp_qaic_py/gem_loop_operator_handoff.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+150,FUNCTION,_build_rows,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+151,FUNCTION,_dashboard_md,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+152,FUNCTION,_find_forbidden_terms,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+153,FUNCTION,_is_template_gem_response,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+154,FUNCTION,_is_template_portfolio,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+155,FUNCTION,_next_actions_md,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+156,FUNCTION,_read_text,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+157,FUNCTION,_status_from_findings,mvp_qaic_py/gem_manual_test_review_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+158,FUNCTION,_as_float,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+159,FUNCTION,_compact_json_likely,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+160,FUNCTION,_ensure_dir,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+161,FUNCTION,_is_number,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+162,FUNCTION,_json_keys_language_check,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+163,FUNCTION,_missing_keys,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+164,FUNCTION,_read_response_text,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+165,FUNCTION,_round2,mvp_qaic_py/gem_multimodal_response_capture_gate.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+166,FUNCTION,_now_iso,mvp_qaic_py/gem_portfolio_prompt_module.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+167,FUNCTION,build_expected_output_schema,mvp_qaic_py/gem_portfolio_prompt_module.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+168,FUNCTION,build_gem_prompt_payload,mvp_qaic_py/gem_portfolio_prompt_module.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+169,FUNCTION,normalize_portfolio_input,mvp_qaic_py/gem_portfolio_prompt_module.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+170,FUNCTION,render_gem_ready_prompt,mvp_qaic_py/gem_portfolio_prompt_module.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+171,FUNCTION,summarize_gem_prompt_payload,mvp_qaic_py/gem_portfolio_prompt_module.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+172,FUNCTION,write_json,mvp_qaic_py/gem_portfolio_prompt_module.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+173,FUNCTION,_commands_markdown,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+174,FUNCTION,_operator_shortcut_readme,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+175,FUNCTION,_read_optional_json,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+176,FUNCTION,_read_optional_text,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+177,FUNCTION,_report_markdown,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+178,FUNCTION,_write_json,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+179,FUNCTION,build_daily_contract,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+180,FUNCTION,main,mvp_qaic_py/gem_prompt_daily_shortcut.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+181,FUNCTION,_call_candidate,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+182,FUNCTION,_fallback_normalize,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+183,FUNCTION,_fallback_prompt,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+184,FUNCTION,_jsonable,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+185,FUNCTION,_utc_now,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+186,FUNCTION,_write_json,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+187,FUNCTION,build_expected_gem_output_schema,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+188,FUNCTION,build_gem_prompt_markdown,mvp_qaic_py/gem_prompt_runner_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+189,FUNCTION,_build_report,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+190,FUNCTION,_build_runtime_prompt_markdown,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+191,FUNCTION,_read_structured_json,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+192,FUNCTION,_read_text_or_file,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+193,FUNCTION,_write_json,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+194,FUNCTION,build_runtime_contract,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+195,FUNCTION,build_runtime_payload,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+196,FUNCTION,main,mvp_qaic_py/gem_prompt_runtime_cli.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+197,FUNCTION,_checklist_markdown,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+198,FUNCTION,_commands_markdown,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+199,FUNCTION,_quickstart_markdown,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+200,FUNCTION,_report_markdown,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+201,FUNCTION,_write_json,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+202,FUNCTION,build_cli_commands,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+203,FUNCTION,build_operator_checklist,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+204,FUNCTION,build_usability_contract,mvp_qaic_py/gem_prompt_usability_pack.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+205,FUNCTION,_as_list,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+206,FUNCTION,_build_required_action,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+207,FUNCTION,_flatten_for_csv,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+208,FUNCTION,_report_markdown,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+209,FUNCTION,_write_journal_csv,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+210,FUNCTION,_write_json,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+211,FUNCTION,build_bridge_contract,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+212,FUNCTION,build_decision_journal_entry,mvp_qaic_py/gem_response_decision_journal_bridge.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+213,FUNCTION,_dedupe_preserve_order,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+214,FUNCTION,_list_from_payload,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+215,FUNCTION,_read_json,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+216,FUNCTION,_read_text,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+217,FUNCTION,_report_markdown,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+218,FUNCTION,_strip_markdown_json_fence,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+219,FUNCTION,_try_parse_json,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur
+220,FUNCTION,_write_json,mvp_qaic_py/gem_response_review_queue.py,,FUNCTION_DISCOVERED,🟦,80,Fonction présente dans module Python,Relier à route/onglet si fonction opérateur

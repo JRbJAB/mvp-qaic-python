@@ -1,0 +1,7 @@
+priority,label,value,unit,color
+1,Roadmap,15,,blue
+2,Onglets utiles,9,,green
+3,Migration %,97.7,%,teal
+4,Entités migration,220,,purple
+5,Obligations,10,,orange
+6,Live write,NO,,red

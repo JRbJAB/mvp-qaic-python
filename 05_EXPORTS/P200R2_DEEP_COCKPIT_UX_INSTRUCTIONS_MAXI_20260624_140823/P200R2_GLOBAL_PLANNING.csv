@@ -1,0 +1,6 @@
+order,period,step_count,progress_percent,status,color_cell,route
+1,PASSÉ,5,98.0,DONE,🟩,/migration
+2,EN COURS,3,98.0,ACTIVE,🟦,/sheets-export
+3,EN ATTENTE,1,60.0,WAITING_INPUTS,🟧,/real-case-inputs
+4,AVENIR PROCHE,2,60.0,NEXT,🟧,/operator-release
+5,POST-PYTHON,4,17.5,FUTURE,🟧,/sheets-export
