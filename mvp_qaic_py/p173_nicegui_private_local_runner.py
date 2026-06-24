@@ -267,22 +267,22 @@ def serve_private(
 
     prompt_text = "\n".join(
         [
-            "# MVP QAIC — GEM Portfolio Image Review",
+            "# MVP QAIC â€” GEM Portfolio Image Review",
             "",
-            "Réponds en français.",
+            "RÃ©ponds en franÃ§ais.",
             "Analyse une capture portfolio crypto.",
-            "Extrais uniquement les données visibles.",
-            "N'invente aucun prix, PRU, quantité, PnL, TP, SL ou exposition.",
-            "Retourne REVIEW_REQUIRED si données insuffisantes.",
+            "Extrais uniquement les donnÃ©es visibles.",
+            "N'invente aucun prix, PRU, quantitÃ©, PnL, TP, SL ou exposition.",
+            "Retourne REVIEW_REQUIRED si donnÃ©es insuffisantes.",
             "Aucun ordre, aucun sizing, aucun auto-apply.",
             "Conserve les enums techniques exacts.",
             "",
             "Sortie attendue:",
-            "- JSON structuré",
+            "- JSON structurÃ©",
             "- missing_data",
             "- blockers",
             "- safety_audit",
-            "- décision humaine review-only",
+            "- dÃ©cision humaine review-only",
         ]
     )
 
@@ -296,7 +296,7 @@ def serve_private(
         target = capture_dir / (_now_id("CAPTURE") + "_" + safe_name)
         with target.open("wb") as file_obj:
             file_obj.write(e.content.read())
-        ui.notify(f"Capture sauvegardée localement: {target.name}", color="positive")
+        ui.notify(f"Capture sauvegardÃ©e localement: {target.name}", color="positive")
 
     def _save_text_file(prefix: str, text_value: str, folder: Path, suffix: str = ".md") -> Path:
         target = folder / (_now_id(prefix) + suffix)
@@ -327,14 +327,14 @@ def serve_private(
         ]
 
     def _panel_table(
-        panel: dict[str, Any] | None, empty: str = "Aucune donnée disponible."
+        panel: dict[str, Any] | None, empty: str = "Aucune donnÃ©e disponible."
     ) -> None:
         if not panel:
             ui.label(empty).classes("qaic-muted")
             return
         ui.label(str(panel.get("panel_title", "Panel"))).classes("qaic-section-title")
         ui.label(
-            f"Source: {panel.get('source_id', '?')} · Rows: {panel.get('row_count', 0)}"
+            f"Source: {panel.get('source_id', '?')} Â· Rows: {panel.get('row_count', 0)}"
         ).classes("qaic-muted")
         rows = _rows_for(panel)
         columns = _columns_for(panel)
@@ -433,13 +433,13 @@ def serve_private(
         with ui.column().classes("qaic-app w-full gap-5 p-5"):
             with ui.row().classes("qaic-top w-full items-center justify-between"):
                 with ui.column().classes("gap-1"):
-                    ui.label("MVP QAIC — Private Operator Cockpit").classes("qaic-title")
+                    ui.label("MVP QAIC â€” Private Operator Cockpit").classes("qaic-title")
                     ui.label(
-                        "Prompt Studio · Capture Inbox · GEM Response Inbox · Sessions · Review-only"
+                        "Prompt Studio Â· Capture Inbox Â· GEM Response Inbox Â· Sessions Â· Review-only"
                     ).classes("qaic-subtitle")
                 with ui.column().classes("items-end gap-2"):
                     ui.badge("127.0.0.1 ONLY", color="green")
-                    ui.label("No Sheet write · No GEM call · No broker/order/sizing").classes(
+                    ui.label("No Sheet write Â· No GEM call Â· No broker/order/sizing").classes(
                         "qaic-subtitle"
                     )
 
@@ -459,13 +459,16 @@ def serve_private(
                     _nav_button("GEM Evidence", "/gem-evidence", "inventory")
                     _nav_button("Runtime Contract", "/runtime-contract", "assignment")
                     _nav_button("Operator Release", "/operator-release", "rocket_launch")
-                    _nav_button("Cas réel", "/real-case-inputs", "upload_file")
+                    _nav_button("Cas rÃ©el", "/real-case-inputs", "upload_file")
                     _nav_button("Prompt Master", "/prompt-master", "psychology")
                     _nav_button("Sheets Dry-run", "/sheets-export", "table_chart")
                     _nav_button("Migration Map", "/apps-script-map", "account_tree")
                     _nav_button("Dev Roadmap", "/dev-roadmap", "timeline")
                     _nav_button("Migration Control", "/migration-control", "fact_check")
                     _nav_button("Instructions", "/instructions", "rule")
+                    _nav_button("Sheets Cockpit", "/sheets-cockpit-plan", "grid_view")
+                    _nav_button("Docs", "/docs", "article")
+                    _nav_button("Notice", "/notice", "help")
                     _nav_button("Release Final", "/release-final", "verified")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
@@ -482,9 +485,10 @@ def serve_private(
 
     def _dashboard_page() -> None:
         with _shell("dashboard"):
+            _p201r2_font_fix()
             _render_global_visual_banner("dashboard")
-            ui.label("Dashboard opérateur").classes("qaic-section-title")
-            ui.label("Vue rapide du cockpit privé local et des sources prêtes.").classes(
+            ui.label("Dashboard opÃ©rateur").classes("qaic-section-title")
+            ui.label("Vue rapide du cockpit privÃ© local et des sources prÃªtes.").classes(
                 "qaic-muted"
             )
             with ui.row().classes("gap-4"):
@@ -504,10 +508,11 @@ def serve_private(
 
     def _prompt_page() -> None:
         with _shell("prompt"):
+            _p201r2_font_fix()
             _render_global_visual_banner("prompt")
             ui.label("Prompt Studio").classes("qaic-section-title")
             ui.label(
-                "Version active review-only. Les prompts historiques seront ajoutés en bibliothèque versionnée."
+                "Version active review-only. Les prompts historiques seront ajoutÃ©s en bibliothÃ¨que versionnÃ©e."
             ).classes("qaic-muted")
             ui.textarea(value=prompt_text).props("outlined autogrow").classes(
                 "w-full qaic-prompt-box"
@@ -521,10 +526,10 @@ def serve_private(
                     ),
                 ).props("color=primary")
                 ui.button(
-                    "Créer session locale",
+                    "CrÃ©er session locale",
                     icon="add",
                     on_click=lambda: ui.notify(
-                        "Session locale à formaliser en P182/P183 — aucun apply automatique.",
+                        "Session locale Ã  formaliser en P182/P183 â€” aucun apply automatique.",
                         color="warning",
                     ),
                 )
@@ -532,7 +537,7 @@ def serve_private(
             ui.separator()
             ui.label("Prompt History Library").classes("qaic-section-title")
             ui.label(
-                "Inventaire versionné: prompt actif, prompts historiques, exports de référence. "
+                "Inventaire versionnÃ©: prompt actif, prompts historiques, exports de rÃ©fÃ©rence. "
                 "Aucun apply automatique."
             ).classes("qaic-muted")
             ui.table(
@@ -582,10 +587,11 @@ def serve_private(
 
     def _capture_page() -> None:
         with _shell("capture"):
+            _p201r2_font_fix()
             _render_global_visual_banner("capture")
             ui.label("Capture Inbox").classes("qaic-section-title")
             ui.label(
-                "Upload local privé de captures portfolio. Coller depuis presse-papiers navigateur sera durci au prochain batch."
+                "Upload local privÃ© de captures portfolio. Coller depuis presse-papiers navigateur sera durci au prochain batch."
             ).classes("qaic-muted")
             with ui.column().classes("qaic-drop w-full gap-3"):
                 ui.upload(on_upload=_save_upload, auto_upload=True).props("accept=image/*").classes(
@@ -610,25 +616,26 @@ def serve_private(
 
     def _responses_page() -> None:
         with _shell("responses"):
+            _p201r2_font_fix()
             _render_global_visual_banner("responses")
             ui.label("GEM Response Inbox").classes("qaic-section-title")
             ui.label("P184 Response Parser").classes("qaic-section-title")
             ui.label(
-                "Parser local review-only des réponses GEM sauvegardées. "
-                "Aucun appel GEM, aucune écriture Sheets, aucun apply."
+                "Parser local review-only des rÃ©ponses GEM sauvegardÃ©es. "
+                "Aucun appel GEM, aucune Ã©criture Sheets, aucun apply."
             ).classes("qaic-muted")
             ui.badge("LOCAL PARSER ONLY", color="green")
             ui.badge("AUTO APPLY BLOCKED", color="red")
             ui.label(
-                "Coller ici la réponse GEM après interrogation manuelle. Sauvegarde locale review-only."
+                "Coller ici la rÃ©ponse GEM aprÃ¨s interrogation manuelle. Sauvegarde locale review-only."
             ).classes("qaic-muted")
             response_box = (
-                ui.textarea(placeholder="Coller réponse GEM ici...")
+                ui.textarea(placeholder="Coller rÃ©ponse GEM ici...")
                 .props("outlined autogrow")
                 .classes("w-full qaic-prompt-box")
             )
             ui.button(
-                "Sauver réponse GEM localement",
+                "Sauver rÃ©ponse GEM localement",
                 icon="save",
                 on_click=lambda: ui.notify(
                     f"Sauvegarde locale: {_save_text_file('GEM_RESPONSE', response_box.value or '', response_dir)}",
@@ -644,10 +651,11 @@ def serve_private(
 
     def _sessions_page() -> None:
         with _shell("sessions"):
+            _p201r2_font_fix()
             _render_global_visual_banner("sessions")
             ui.label("Sessions / interrogations").classes("qaic-section-title")
             ui.label(
-                "Suivi local des captures et réponses GEM. Liaison capture ↔ prompt ↔ réponse à renforcer ensuite."
+                "Suivi local des captures et rÃ©ponses GEM. Liaison capture â†” prompt â†” rÃ©ponse Ã  renforcer ensuite."
             ).classes("qaic-muted")
             ui.table(columns=_session_columns(), rows=_sessions_rows(), row_key="file").props(
                 "flat bordered dense"
@@ -656,10 +664,10 @@ def serve_private(
             ui.separator()
             ui.label("P183 Session Workflow").classes("qaic-section-title")
             ui.label(
-                "Chaînage local: capture portfolio → prompt actif → réponse GEM → session review-only."
+                "ChaÃ®nage local: capture portfolio â†’ prompt actif â†’ rÃ©ponse GEM â†’ session review-only."
             ).classes("qaic-muted")
             ui.button(
-                "Créer session review-only depuis les derniers fichiers",
+                "CrÃ©er session review-only depuis les derniers fichiers",
                 icon="link",
                 on_click=lambda: ui.notify(
                     "Session workflow P183: index local via module p183, aucun appel GEM, aucun apply.",
@@ -670,14 +678,16 @@ def serve_private(
 
     def _review_page() -> None:
         with _shell("review"):
+            _p201r2_font_fix()
             _render_global_visual_banner("review")
             ui.label("Review humaine").classes("qaic-section-title")
             ui.badge("APPLY BLOCKED", color="red")
-            ui.label("Prévisualisation uniquement. Aucune écriture live.").classes("qaic-muted")
+            ui.label("PrÃ©visualisation uniquement. Aucune Ã©criture live.").classes("qaic-muted")
             _panel_table(panel_by_slot.get("human_review_workbench_panel"))
 
     def _cache_page() -> None:
         with _shell("cache"):
+            _p201r2_font_fix()
             _render_global_visual_banner("cache")
             ui.label("Cache local").classes("qaic-section-title")
             for panel in panels:
@@ -685,23 +695,26 @@ def serve_private(
 
     def _journal_page() -> None:
         with _shell("journal"):
+            _p201r2_font_fix()
             _render_global_visual_banner("journal")
             ui.label("Journal").classes("qaic-section-title")
             _panel_table(panel_by_slot.get("decision_history_panel"))
 
     def _lexique_page() -> None:
         with _shell("lexique"):
+            _p201r2_font_fix()
             _render_global_visual_banner("lexique")
             ui.label("Lexique / contexte").classes("qaic-section-title")
             _panel_table(panel_by_slot.get("lexique_context_panel"))
 
     def _roundtrip_page() -> None:
         with _shell("roundtrip"):
+            _p201r2_font_fix()
             _render_global_visual_banner("roundtrip")
             ui.label("P185 Roundtrip Workbench").classes("qaic-section-title")
             ui.label(
-                "Flux opérateur réel: capture portfolio → prompt actif → réponse GEM "
-                "collée localement → parser P184 → session review-only."
+                "Flux opÃ©rateur rÃ©el: capture portfolio â†’ prompt actif â†’ rÃ©ponse GEM "
+                "collÃ©e localement â†’ parser P184 â†’ session review-only."
             ).classes("qaic-muted")
             with ui.row().classes("gap-3"):
                 ui.badge("LOCAL ONLY", color="green")
@@ -712,7 +725,7 @@ def serve_private(
                 ui.button("1. Capture", icon="image", on_click=lambda: ui.navigate.to("/capture"))
                 ui.button("2. Prompt", icon="article", on_click=lambda: ui.navigate.to("/prompt"))
                 ui.button(
-                    "3. Réponse GEM",
+                    "3. RÃ©ponse GEM",
                     icon="data_object",
                     on_click=lambda: ui.navigate.to("/responses"),
                 )
@@ -723,17 +736,17 @@ def serve_private(
                     "5. Review", icon="fact_check", on_click=lambda: ui.navigate.to("/review")
                 )
             ui.separator()
-            ui.label("Checklist opérateur").classes("qaic-section-title")
+            ui.label("Checklist opÃ©rateur").classes("qaic-section-title")
             ui.markdown(
                 "- Upload ou colle une capture portfolio dans Capture Inbox.\n"
                 "- Copie le prompt actif depuis Prompt Studio.\n"
                 "- Interroge GEM manuellement hors Python.\n"
-                "- Colle la réponse GEM dans GEM Response Inbox.\n"
-                "- Le parser P184 contrôle JSON, sécurité, missing_data et blockers.\n"
-                "- La décision finale reste humaine; aucun apply automatique."
+                "- Colle la rÃ©ponse GEM dans GEM Response Inbox.\n"
+                "- Le parser P184 contrÃ´le JSON, sÃ©curitÃ©, missing_data et blockers.\n"
+                "- La dÃ©cision finale reste humaine; aucun apply automatique."
             )
             ui.separator()
-            ui.label("Statut sécurité").classes("qaic-section-title")
+            ui.label("Statut sÃ©curitÃ©").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "gate", "label": "gate", "field": "gate", "align": "left"},
@@ -755,23 +768,24 @@ def serve_private(
 
     def _real_case_page() -> None:
         with _shell("real-case"):
+            _p201r2_font_fix()
             _render_global_visual_banner("real-case")
             ui.label("P188 Real Case Decision Gate").classes("qaic-section-title")
             ui.label(
-                "Gate opérateur réel: déposer une vraie capture portfolio et coller une vraie réponse GEM. "
-                "Tant qu'un input manque, la décision reste WAIT."
+                "Gate opÃ©rateur rÃ©el: dÃ©poser une vraie capture portfolio et coller une vraie rÃ©ponse GEM. "
+                "Tant qu'un input manque, la dÃ©cision reste WAIT."
             ).classes("qaic-muted")
             with ui.row().classes("gap-3"):
                 ui.badge("HUMAN REVIEW REQUIRED", color="orange")
                 ui.badge("AUTO APPLY BLOCKED", color="red")
                 ui.badge("NO BROKER / NO ORDER / NO SIZING", color="red")
             ui.separator()
-            ui.label("À déposer").classes("qaic-section-title")
+            ui.label("Ã€ dÃ©poser").classes("qaic-section-title")
             ui.markdown(
-                "- Capture réelle: `00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX/`\n"
-                "- Réponse GEM réelle: `00_OPERATOR_EXPORTS/P181_GEM_RESPONSES/`\n"
-                "- Fichiers `P186_SMOKE_*` ignorés automatiquement.\n"
-                "- La décision finale reste humaine."
+                "- Capture rÃ©elle: `00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX/`\n"
+                "- RÃ©ponse GEM rÃ©elle: `00_OPERATOR_EXPORTS/P181_GEM_RESPONSES/`\n"
+                "- Fichiers `P186_SMOKE_*` ignorÃ©s automatiquement.\n"
+                "- La dÃ©cision finale reste humaine."
             )
             ui.separator()
             ui.label("Actions rapides").classes("qaic-section-title")
@@ -800,6 +814,7 @@ def serve_private(
 
         payload = build_runtime_migration_tracker(project_root)
         with _shell("migration"):
+            _p201r2_font_fix()
             _render_global_visual_banner("migration")
             ui.label("P190R Runtime Migration Tracker").classes("qaic-section-title")
             ui.label(
@@ -894,6 +909,7 @@ def serve_private(
 
         payload = build_gem_tracking_tabs_runtime_binding_matrix(project_root)
         with _shell("gem-tracking"):
+            _p201r2_font_fix()
             _render_global_visual_banner("gem-tracking")
             ui.label("P191R GEM Tracking Tabs Runtime Binding Matrix").classes("qaic-section-title")
             ui.label(
@@ -971,10 +987,11 @@ def serve_private(
 
         payload = build_gem_tracking_operator_view(project_root)
         with _shell("gem-tracking-operator"):
+            _p201r2_font_fix()
             _render_global_visual_banner("gem-tracking-operator")
             ui.label("P192R GEM Tracking Operator View").classes("qaic-section-title")
             ui.label(
-                "Vue opérateur: priorités, statuts lisibles, actions suivantes, "
+                "Vue opÃ©rateur: prioritÃ©s, statuts lisibles, actions suivantes, "
                 "preuves runtime et exports CSV pour les onglets/couches GEM."
             ).classes("qaic-muted")
 
@@ -986,7 +1003,7 @@ def serve_private(
                 ui.badge("READ ONLY", color="orange")
 
             ui.separator()
-            ui.label("Priorités opérateur").classes("qaic-section-title")
+            ui.label("PrioritÃ©s opÃ©rateur").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {
@@ -1020,7 +1037,7 @@ def serve_private(
             ).props("flat bordered dense").classes("qaic-table")
 
             ui.separator()
-            ui.label("Exports opérateur").classes("qaic-section-title")
+            ui.label("Exports opÃ©rateur").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {
@@ -1047,11 +1064,12 @@ def serve_private(
 
         payload = build_gem_evidence_binding(project_root)
         with _shell("gem-evidence"):
+            _p201r2_font_fix()
             _render_global_visual_banner("gem-evidence")
             ui.label("P193R GEM Evidence Binding").classes("qaic-section-title")
             ui.label(
-                "Binding read-only des preuves runtime: roundtrip GEM et journal de décision. "
-                "Aucune écriture Sheets, aucun appel GEM, aucun broker."
+                "Binding read-only des preuves runtime: roundtrip GEM et journal de dÃ©cision. "
+                "Aucune Ã©criture Sheets, aucun appel GEM, aucun broker."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1102,7 +1120,7 @@ def serve_private(
             ).props("flat bordered dense").classes("qaic-table")
 
             ui.separator()
-            ui.label("Preuves récentes").classes("qaic-section-title")
+            ui.label("Preuves rÃ©centes").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {
@@ -1134,11 +1152,12 @@ def serve_private(
 
         payload = build_gem_runtime_close_contract(project_root)
         with _shell("runtime-contract"):
+            _p201r2_font_fix()
             _render_global_visual_banner("runtime-contract")
             ui.label("P194R GEM Runtime Contract").classes("qaic-section-title")
             ui.label(
-                "Clôture runtime GEM + contrat d'export Sheets futur. "
-                "Lecture seule: aucune écriture Sheets, aucun Apps Script, aucun CLASP."
+                "ClÃ´ture runtime GEM + contrat d'export Sheets futur. "
+                "Lecture seule: aucune Ã©criture Sheets, aucun Apps Script, aucun CLASP."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1194,7 +1213,7 @@ def serve_private(
             ).props("flat bordered dense").classes("qaic-table")
 
             ui.separator()
-            ui.label("Clôture runtime").classes("qaic-section-title")
+            ui.label("ClÃ´ture runtime").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "metric", "label": "metric", "field": "metric", "align": "left"},
@@ -1216,11 +1235,12 @@ def serve_private(
 
         payload = build_operator_release_runtime_tracker(project_root)
         with _shell("operator-release"):
+            _p201r2_font_fix()
             _render_global_visual_banner("operator-release")
             ui.label("P195R Operator Release Runtime Tracker").classes("qaic-section-title")
             ui.label(
-                "Clôture opérateur runtime GEM + sélecteur de prochain chantier MAXI. "
-                "Read-only: aucune écriture Sheets, aucun Apps Script, aucun GEM call."
+                "ClÃ´ture opÃ©rateur runtime GEM + sÃ©lecteur de prochain chantier MAXI. "
+                "Read-only: aucune Ã©criture Sheets, aucun Apps Script, aucun GEM call."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1283,11 +1303,12 @@ def serve_private(
 
         payload = build_real_case_portfolio_gem_inputs(project_root)
         with _shell("real-case-inputs"):
+            _p201r2_font_fix()
             _render_global_visual_banner("real-case-inputs")
             ui.label("P196 Real Case Portfolio GEM Inputs").classes("qaic-section-title")
             ui.label(
-                "Pack opérateur pour vrai cas portfolio: capture écran, texte copié, "
-                "réponse GEM collée, preuves locales et prochain statut review."
+                "Pack opÃ©rateur pour vrai cas portfolio: capture Ã©cran, texte copiÃ©, "
+                "rÃ©ponse GEM collÃ©e, preuves locales et prochain statut review."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1298,7 +1319,7 @@ def serve_private(
                 ui.badge("NO GEM CALL", color="red")
 
             ui.separator()
-            ui.label("Contrat d'inputs opérateur").classes("qaic-section-title")
+            ui.label("Contrat d'inputs opÃ©rateur").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "input_id", "label": "input_id", "field": "input_id", "align": "left"},
@@ -1322,7 +1343,7 @@ def serve_private(
             ).props("flat bordered dense").classes("qaic-table")
 
             ui.separator()
-            ui.label("Étapes opérateur").classes("qaic-section-title")
+            ui.label("Ã‰tapes opÃ©rateur").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "step", "label": "step", "field": "step", "align": "right"},
@@ -1346,11 +1367,12 @@ def serve_private(
         selected = payload["selected_master_candidate"]
 
         with _shell("prompt-master"):
+            _p201r2_font_fix()
             _render_global_visual_banner("prompt-master")
             ui.label("P197 Prompt Master Historical Regression").classes("qaic-section-title")
             ui.label(
                 "Fusion review-only: prompt actif, historiques, audit, candidat master, "
-                "checklist de régression. Aucune modification du prompt source."
+                "checklist de rÃ©gression. Aucune modification du prompt source."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1431,11 +1453,12 @@ def serve_private(
         payload = build_sheets_export_dry_run_contract_pack(project_root)
 
         with _shell("sheets-export"):
+            _p201r2_font_fix()
             _render_global_visual_banner("sheets-export")
             ui.label("P198 Sheets Export Dry Run Contract Pack").classes("qaic-section-title")
             ui.label(
-                "Vue dry-run avant toute écriture Sheets: onglets cibles, sources Python, colonnes, "
-                "statuts, risques et ordre d'export. Aucune écriture Google Sheets."
+                "Vue dry-run avant toute Ã©criture Sheets: onglets cibles, sources Python, colonnes, "
+                "statuts, risques et ordre d'export. Aucune Ã©criture Google Sheets."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1539,6 +1562,7 @@ def serve_private(
         payload = build_apps_script_sheets_function_tab_migration_map(project_root)
 
         with _shell("apps-script-map"):
+            _p201r2_font_fix()
             _render_global_visual_banner("apps-script-map")
             ui.label("P199 Apps Script Migration Map").classes("qaic-section-title")
             ui.label(
@@ -1655,6 +1679,7 @@ def serve_private(
         payload = build_visual_ux_polish(project_root)
 
         with _shell("dev-roadmap"):
+            _p201r2_font_fix()
             _render_global_visual_banner("dev-roadmap")
             ui.add_head_html("""
             <style id="p199ux-r4-polish">
@@ -1669,10 +1694,10 @@ def serve_private(
             </style>
             """)
 
-            ui.label("Dev Roadmap — planning visuel MVP QAIC").classes("qaic-section-title")
+            ui.label("Dev Roadmap â€” planning visuel MVP QAIC").classes("qaic-section-title")
             ui.label(
-                "Vue opérateur compacte: passé, en cours, attente, futur proche et post-Python. "
-                "Les compteurs, couleurs et tables sont optimisés pour décider vite."
+                "Vue opÃ©rateur compacte: passÃ©, en cours, attente, futur proche et post-Python. "
+                "Les compteurs, couleurs et tables sont optimisÃ©s pour dÃ©cider vite."
             ).classes("qaic-muted")
 
             with ui.element("div").classes("qaic-hero-grid"):
@@ -1695,13 +1720,13 @@ def serve_private(
 
             ui.separator()
 
-            ui.label("Planning visuel synthétique").classes("qaic-section-title qaic-top-section")
+            ui.label("Planning visuel synthÃ©tique").classes("qaic-section-title qaic-top-section")
             ui.table(
                 columns=[
-                    {"name": "period", "label": "période", "field": "period", "align": "left"},
+                    {"name": "period", "label": "pÃ©riode", "field": "period", "align": "left"},
                     {
                         "name": "step_count",
-                        "label": "étapes",
+                        "label": "Ã©tapes",
                         "field": "step_count",
                         "align": "right",
                     },
@@ -1730,11 +1755,11 @@ def serve_private(
 
             ui.separator()
 
-            ui.label("Planning détaillé").classes("qaic-section-title")
+            ui.label("Planning dÃ©taillÃ©").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "order", "label": "#", "field": "order", "align": "right"},
-                    {"name": "period", "label": "période", "field": "period", "align": "left"},
+                    {"name": "period", "label": "pÃ©riode", "field": "period", "align": "left"},
                     {"name": "lane", "label": "chantier", "field": "lane", "align": "left"},
                     {"name": "status", "label": "status", "field": "status", "align": "left"},
                     {
@@ -1764,20 +1789,20 @@ def serve_private(
 
             ui.separator()
 
-            ui.label("Onglets NiceGUI — utilité réelle").classes("qaic-section-title")
+            ui.label("Onglets NiceGUI â€” utilitÃ© rÃ©elle").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "route", "label": "route", "field": "route", "align": "left"},
                     {
                         "name": "label_fr",
-                        "label": "nom métier",
+                        "label": "nom mÃ©tier",
                         "field": "label_fr",
                         "align": "left",
                     },
-                    {"name": "purpose", "label": "utilité", "field": "purpose", "align": "left"},
+                    {"name": "purpose", "label": "utilitÃ©", "field": "purpose", "align": "left"},
                     {
                         "name": "data_rendered",
-                        "label": "données",
+                        "label": "donnÃ©es",
                         "field": "data_rendered",
                         "align": "left",
                     },
@@ -1797,11 +1822,16 @@ def serve_private(
 
             ui.separator()
 
-            ui.label("Prochaines décisions").classes("qaic-section-title")
+            ui.label("Prochaines dÃ©cisions").classes("qaic-section-title")
             ui.table(
                 columns=[
                     {"name": "priority", "label": "#", "field": "priority", "align": "right"},
-                    {"name": "decision", "label": "décision", "field": "decision", "align": "left"},
+                    {
+                        "name": "decision",
+                        "label": "dÃ©cision",
+                        "field": "decision",
+                        "align": "left",
+                    },
                     {"name": "status", "label": "status", "field": "status", "align": "left"},
                     {
                         "name": "next_pack",
@@ -1828,10 +1858,11 @@ def serve_private(
         payload = build_deep_operator_cockpit(project_root)
 
         with _shell("release-final"):
+            _p201r2_font_fix()
             _render_global_visual_banner("release-final")
-            ui.label("Release Final — cockpit opérateur réparé").classes("qaic-section-title")
+            ui.label("Release Final â€” cockpit opÃ©rateur rÃ©parÃ©").classes("qaic-section-title")
             ui.label(
-                "Synthèse finale fiable: release, sécurité, décisions, cas réel et live-write bloqué."
+                "SynthÃ¨se finale fiable: release, sÃ©curitÃ©, dÃ©cisions, cas rÃ©el et live-write bloquÃ©."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1900,10 +1931,10 @@ def serve_private(
                             "field": "color_cell",
                             "align": "center",
                         },
-                        {"name": "period", "label": "période", "field": "period", "align": "left"},
+                        {"name": "period", "label": "pÃ©riode", "field": "period", "align": "left"},
                         {
                             "name": "step_count",
-                            "label": "étapes",
+                            "label": "Ã©tapes",
                             "field": "step_count",
                             "align": "right",
                         },
@@ -1932,12 +1963,13 @@ def serve_private(
         payload = build_deep_operator_cockpit(project_root)
 
         with _shell("migration-control"):
+            _p201r2_font_fix()
             _render_global_visual_banner("migration-control")
-            ui.label("Migration Control — onglets / scripts / fonctions").classes(
+            ui.label("Migration Control â€” onglets / scripts / fonctions").classes(
                 "qaic-section-title"
             )
             ui.label(
-                "Table de contrôle colorée: ce qui est fait, ce qui reste à faire, et l'action opérateur."
+                "Table de contrÃ´le colorÃ©e: ce qui est fait, ce qui reste Ã  faire, et l'action opÃ©rateur."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -1965,7 +1997,7 @@ def serve_private(
                         "align": "right",
                     },
                     {"name": "done", "label": "fait", "field": "done", "align": "left"},
-                    {"name": "todo", "label": "reste à faire", "field": "todo", "align": "left"},
+                    {"name": "todo", "label": "reste Ã  faire", "field": "todo", "align": "left"},
                     {"name": "binding", "label": "binding", "field": "binding", "align": "left"},
                     {"name": "route", "label": "route", "field": "route", "align": "left"},
                 ],
@@ -1987,10 +2019,13 @@ def serve_private(
         payload = build_deep_operator_cockpit(project_root)
 
         with _shell("instructions"):
+            _p201r2_font_fix()
             _render_global_visual_banner("instructions")
-            ui.label("Instructions Tracker — obligations par thème").classes("qaic-section-title")
+            ui.label("Instructions Tracker â€” obligations par thÃ¨me").classes(
+                "qaic-section-title"
+            )
             ui.label(
-                "Suivi explicite des règles projet, sécurité, UX, migration, prompt/GEM et preuves."
+                "Suivi explicite des rÃ¨gles projet, sÃ©curitÃ©, UX, migration, prompt/GEM et preuves."
             ).classes("qaic-muted")
 
             with ui.row().classes("gap-3"):
@@ -2003,7 +2038,7 @@ def serve_private(
             ui.table(
                 columns=[
                     {"name": "color_cell", "label": "", "field": "color_cell", "align": "center"},
-                    {"name": "theme", "label": "thème", "field": "theme", "align": "left"},
+                    {"name": "theme", "label": "thÃ¨me", "field": "theme", "align": "left"},
                     {
                         "name": "obligation",
                         "label": "obligation",
@@ -2020,7 +2055,7 @@ def serve_private(
                     {"name": "evidence", "label": "preuve", "field": "evidence", "align": "left"},
                     {
                         "name": "correction_rule",
-                        "label": "règle correction",
+                        "label": "rÃ¨gle correction",
                         "field": "correction_rule",
                         "align": "left",
                     },
@@ -2034,6 +2069,160 @@ def serve_private(
     @ui.page("/instructions")
     def instructions() -> None:
         _instructions_page()
+
+    def _p201r2_font_fix() -> None:
+        """P201R2_UTF8_ACCENT_FONT_FIX"""
+        ui.add_head_html("""
+        <style id="p201r2-utf8-font-fix">
+          body, .q-page, .q-table, .q-table th, .q-table td, .q-btn, .q-badge {
+            font-family: "Segoe UI","Noto Sans","DejaVu Sans",Arial,sans-serif !important;
+            text-rendering: geometricPrecision;
+            -webkit-font-smoothing: antialiased;
+          }
+          .qaic-compact-table .q-table td,
+          .qaic-compact-table .q-table th {
+            line-height: 1.42 !important;
+            white-space: normal !important;
+            overflow: visible !important;
+            text-overflow: clip !important;
+            vertical-align: top !important;
+            padding: 6px 8px !important;
+          }
+        </style>
+        """)
+
+    def _sheets_cockpit_plan_page() -> None:
+        from mvp_qaic_py.p201r2_docs_and_sheets_cockpit_real_repair import build_sheets_cockpit_plan
+
+        rows = build_sheets_cockpit_plan()
+        with _shell("sheets-cockpit-plan"):
+            _p201r2_font_fix()
+            try:
+                _render_global_visual_banner("sheets-cockpit-plan")
+            except Exception:
+                pass
+            ui.label("Vrais onglets Sheets utiles — cockpits & données").classes(
+                "qaic-section-title"
+            )
+            ui.label(
+                "Ce sont les onglets Sheets à créer/importer plus tard en dry-run d'abord, pas des routes Python. Accents OK : é è à ç ù œ."
+            ).classes("qaic-muted")
+            with ui.row().classes("gap-3"):
+                ui.badge(f"onglets={len(rows)}", color="blue")
+                ui.badge("DRY RUN ONLY", color="red")
+                ui.badge("COCKPIT FIRST", color="green")
+            ui.table(
+                columns=[
+                    {"name": "color_cell", "label": "", "field": "color_cell", "align": "center"},
+                    {"name": "priority", "label": "#", "field": "priority", "align": "right"},
+                    {
+                        "name": "sheet_tab",
+                        "label": "onglet Sheets",
+                        "field": "sheet_tab",
+                        "align": "left",
+                    },
+                    {
+                        "name": "category",
+                        "label": "catégorie",
+                        "field": "category",
+                        "align": "left",
+                    },
+                    {"name": "purpose", "label": "utilité", "field": "purpose", "align": "left"},
+                    {
+                        "name": "key_fields",
+                        "label": "champs utiles",
+                        "field": "key_fields",
+                        "align": "left",
+                    },
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "next_action",
+                        "label": "next",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=rows,
+                row_key="sheet_tab",
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
+
+    @ui.page("/sheets-cockpit-plan")
+    def sheets_cockpit_plan() -> None:
+        _sheets_cockpit_plan_page()
+
+    def _docs_page() -> None:
+        from mvp_qaic_py.p201r2_docs_and_sheets_cockpit_real_repair import build_payload
+
+        payload = build_payload(project_root)
+        with _shell("docs"):
+            _p201r2_font_fix()
+            try:
+                _render_global_visual_banner("docs")
+            except Exception:
+                pass
+            ui.label("Documentation — repo + dossier principal").classes("qaic-section-title")
+            ui.label(
+                "Index documentaire, versions finales et résiduelles à fusionner. Accents OK : é è à ç ù œ."
+            ).classes("qaic-muted")
+            with ui.row().classes("gap-3"):
+                ui.badge(f"docs={payload['doc_count']}", color="blue")
+                ui.badge(f"résiduels={payload['residual_doc_count']}", color="orange")
+                ui.badge(f"onglets Sheets={payload['sheet_cockpit_tab_count']}", color="green")
+            ui.table(
+                columns=[
+                    {"name": "color_cell", "label": "", "field": "color_cell", "align": "center"},
+                    {"name": "scope", "label": "scope", "field": "scope", "align": "left"},
+                    {
+                        "name": "relative_path",
+                        "label": "chemin",
+                        "field": "relative_path",
+                        "align": "left",
+                    },
+                    {
+                        "name": "doc_status",
+                        "label": "status",
+                        "field": "doc_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "merge_action",
+                        "label": "action",
+                        "field": "merge_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["doc_rows"][:300],
+                row_key="doc_id",
+            ).props("flat bordered dense separator=cell wrap-cells").classes(
+                "qaic-table qaic-compact-table"
+            )
+
+    @ui.page("/docs")
+    def docs() -> None:
+        _docs_page()
+
+    def _notice_page() -> None:
+        with _shell("notice"):
+            _p201r2_font_fix()
+            try:
+                _render_global_visual_banner("notice")
+            except Exception:
+                pass
+            ui.label("Notice d’utilisation").classes("qaic-section-title")
+            ui.label(
+                "Notice HTML/CSS générée dans docs/FINAL et miroir dossier principal. Accents OK : é è à ç ù œ."
+            ).classes("qaic-muted")
+            ui.link("Roadmap", "/dev-roadmap")
+            ui.link("Migration Control", "/migration-control")
+            ui.link("Sheets Cockpit Plan", "/sheets-cockpit-plan")
+            ui.link("Instructions", "/instructions")
+            ui.link("Docs", "/docs")
+
+    @ui.page("/notice")
+    def notice() -> None:
+        _notice_page()
 
     @ui.page("/")
     def home() -> None:

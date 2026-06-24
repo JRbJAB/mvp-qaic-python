@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>MVP QAIC — Notice d’utilisation</title>
+<link rel="stylesheet" href="MVP_QAIC_NOTICE_UTILISATION.css">
+</head>
+<body>
+<header>
+<h1>MVP QAIC — Notice d’utilisation</h1>
+<p>Interface locale privée. Les accents doivent s’afficher correctement : é è à ç ù œ.</p>
+<span class="badge green">HUMAN_REVIEW_ONLY</span><span class="badge red">NO LIVE WRITE</span><span class="badge red">NO BROKER</span>
+</header>
+<main>
+<section class="grid">
+<div class="card"><div class="metric">800</div><p>documents indexés</p></div>
+<div class="card"><div class="metric">22</div><p>onglets Sheets utiles prévus</p></div>
+<div class="card"><div class="metric">750</div><p>docs résiduelles à revoir/fusionner</p></div>
+</section>
+<h2>Démarrer NiceGUI</h2>
+<div class="code">cd "C:\Users\Julie\Documents\JRb-Dev\MVP_QAIC_PY_WORK_20260623_192901"<br>python -m mvp_qaic_py.p173_nicegui_private_local_runner --project-root . --host 127.0.0.1 --port 8080 --serve-private</div>
+<h2>Liens utiles</h2>
+<table><thead><tr><th>Route</th><th>Usage</th></tr></thead><tbody><tr><td><a href='http://127.0.0.1:8080/dev-roadmap'>/dev-roadmap</a></td><td>Roadmap visuelle</td></tr>
+<tr><td><a href='http://127.0.0.1:8080/migration-control'>/migration-control</a></td><td>Cockpit migration : onglets, scripts, fonctions</td></tr>
+<tr><td><a href='http://127.0.0.1:8080/sheets-cockpit-plan'>/sheets-cockpit-plan</a></td><td>Plan des onglets Sheets utiles</td></tr>
+<tr><td><a href='http://127.0.0.1:8080/instructions'>/instructions</a></td><td>Obligations / instructions</td></tr>
+<tr><td><a href='http://127.0.0.1:8080/docs'>/docs</a></td><td>Index documentaire</td></tr>
+<tr><td><a href='http://127.0.0.1:8080/notice'>/notice</a></td><td>Notice</td></tr>
+<tr><td><a href='http://127.0.0.1:8080/release-final'>/release-final</a></td><td>Release final</td></tr></tbody></table>
+<h2>Règles</h2>
+<ul>
+<li>Aucun ordre, aucun sizing, aucun broker.</li>
+<li>Aucune écriture Google Sheets / Apps Script / CLASP sans autorisation explicite.</li>
+<li>Les docs finales sont dans <b>docs/FINAL</b> et en miroir dans le dossier principal.</li>
+<li>Les onglets Sheets décrits sont des cockpits utiles à créer/importer plus tard, pas des routes Python.</li>
+</ul>
+</main>
+<footer>Généré 2026-06-24T12:48:47+00:00</footer>
+</body>
+</html>

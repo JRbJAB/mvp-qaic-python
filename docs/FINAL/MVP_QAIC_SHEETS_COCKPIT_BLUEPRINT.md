@@ -1,0 +1,24 @@
+# MVP QAIC — Plan des onglets Sheets utiles
+
+- `QAIC_OPERATOR_COCKPIT` — Vue décisionnelle principale — `READY_DESIGN`
+- `MIGRATION_CONTROL` — Suivi fait / reste à faire pour onglets, scripts, fonctions — `READY_DESIGN`
+- `INSTRUCTIONS_TRACKER` — Suivi des obligations par thème — `READY_DESIGN`
+- `DOCS_INDEX` — Index des docs repo + dossier principal — `READY_DESIGN`
+- `DOCS_FINAL_FUSED` — Référence documentaire finale — `READY_DESIGN`
+- `GEM_CAPTURE_INBOX` — Réception capture portfolio — `READY_DESIGN`
+- `GEM_RESPONSE_INBOX` — Réception réponse GEM — `READY_DESIGN`
+- `GEM_SESSION_LOG` — Sessions prompt / capture / réponse — `READY_DESIGN`
+- `GEM_ROUNDTRIP_STATUS` — Statut roundtrip complet — `REVIEW`
+- `GEM_REVIEW_GATE` — Gate de revue humaine — `READY_DESIGN`
+- `GEM_REAL_CASE_DECISION` — Décision cas réel portfolio — `WAITING_INPUTS`
+- `GEM_DECISION_JOURNAL` — Journal décisions GEM — `REVIEW`
+- `PROMPT_MASTER` — Prompt source actuel — `READY_DESIGN`
+- `PROMPT_HISTORY_LIBRARY` — Historique versions prompt — `READY_DESIGN`
+- `PROMPT_MIGRATION_MATRIX` — Migration prompts historiques — `READY_DESIGN`
+- `RUNTIME_MIGRATION_TRACKER` — Suivi migration runtime — `READY_DESIGN`
+- `GEM_TRACKING_BINDING_MATRIX` — Binding GEM ↔ Python ↔ Sheets — `READY_DESIGN`
+- `GEM_TRACKING_OPERATOR_VIEW` — Vue opérateur GEM — `READY_DESIGN`
+- `GEM_EVIDENCE_BINDING` — Liens preuves / exports — `READY_DESIGN`
+- `SHEETS_EXPORT_CONTRACT` — Contrat export Sheets dry-run — `READY_DESIGN`
+- `SAFETY_FLAGS_AUDIT` — Audit flags sécurité — `READY_DESIGN`
+- `RELEASE_RUNBOOK` — Notice opérateur / lancement — `READY_DESIGN`
