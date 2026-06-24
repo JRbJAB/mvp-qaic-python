@@ -1,0 +1,6 @@
+action_id,label,mode,allowed,requires_human,writes_data
+copy_prompt,Copier prompt,LOCAL_UI_ONLY,True,True,False
+save_gem_response_local_file,Sauver réponse GEM localement,LOCAL_FILE_REVIEW_ONLY,True,True,False
+mark_review_decision_local_preview,Prévisualiser décision review,PREVIEW_ONLY,True,True,False
+refresh_google_sheets_live,Refresh Google Sheets live,BLOCKED_FOR_NOW,False,True,False
+apply_prompt_patch,Apply prompt patch,BLOCKED_UNTIL_EXPLICIT_GATE,False,True,False

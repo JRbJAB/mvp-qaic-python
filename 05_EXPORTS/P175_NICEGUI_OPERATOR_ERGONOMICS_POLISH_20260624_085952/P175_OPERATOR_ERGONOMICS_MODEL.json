@@ -1,0 +1,174 @@
+{
+  "STATUS": "OK_P175_NICEGUI_OPERATOR_ERGONOMICS_POLISH_READY_REVIEW_ONLY",
+  "generated_at": "2026-06-24T06:59:52+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "source_step": "P174_NICEGUI_PRIVATE_LOCAL_LAUNCH_OPERATOR_SMOKE",
+  "tab_count": 6,
+  "action_count": 5,
+  "panel_count": 5,
+  "ergonomics_ready": true,
+  "blocker_count": 0,
+  "blockers": [],
+  "tabs": [
+    {
+      "tab_id": "dashboard",
+      "label": "Dashboard",
+      "purpose": "Vue rapide état cache, prompts, review, journal.",
+      "default_visible": true,
+      "route": "/",
+      "component_hint": "ui.tabs + status cards"
+    },
+    {
+      "tab_id": "prompt",
+      "label": "Prompt GEM",
+      "purpose": "Préparer/copier le prompt opérateur image/portfolio.",
+      "default_visible": true,
+      "route": "/prompt",
+      "component_hint": "ui.textarea + copy button + prompt source selector"
+    },
+    {
+      "tab_id": "cache",
+      "label": "Cache local",
+      "purpose": "Voir les 5 sources locales read-only.",
+      "default_visible": true,
+      "route": "/cache",
+      "component_hint": "ui.table + filters"
+    },
+    {
+      "tab_id": "review",
+      "label": "Review",
+      "purpose": "Traiter les lignes PENDING en review-only.",
+      "default_visible": true,
+      "route": "/review",
+      "component_hint": "ui.table + status chips"
+    },
+    {
+      "tab_id": "journal",
+      "label": "Journal",
+      "purpose": "Consulter les décisions et smoke runs.",
+      "default_visible": true,
+      "route": "/journal",
+      "component_hint": "ui.timeline + ui.table"
+    },
+    {
+      "tab_id": "lexique",
+      "label": "Lexique",
+      "purpose": "Explorer les éléments lexique/cockpit disponibles.",
+      "default_visible": true,
+      "route": "/lexique",
+      "component_hint": "search input + ui.table"
+    }
+  ],
+  "actions": [
+    {
+      "action_id": "copy_prompt",
+      "label": "Copier prompt",
+      "mode": "LOCAL_UI_ONLY",
+      "allowed": true,
+      "requires_human": true,
+      "writes_data": false
+    },
+    {
+      "action_id": "save_gem_response_local_file",
+      "label": "Sauver réponse GEM localement",
+      "mode": "LOCAL_FILE_REVIEW_ONLY",
+      "allowed": true,
+      "requires_human": true,
+      "writes_data": false
+    },
+    {
+      "action_id": "mark_review_decision_local_preview",
+      "label": "Prévisualiser décision review",
+      "mode": "PREVIEW_ONLY",
+      "allowed": true,
+      "requires_human": true,
+      "writes_data": false
+    },
+    {
+      "action_id": "refresh_google_sheets_live",
+      "label": "Refresh Google Sheets live",
+      "mode": "BLOCKED_FOR_NOW",
+      "allowed": false,
+      "requires_human": true,
+      "writes_data": false
+    },
+    {
+      "action_id": "apply_prompt_patch",
+      "label": "Apply prompt patch",
+      "mode": "BLOCKED_UNTIL_EXPLICIT_GATE",
+      "allowed": false,
+      "requires_human": true,
+      "writes_data": false
+    }
+  ],
+  "panels": [
+    {
+      "panel_id": "p171_cockpit_bootstrap",
+      "panel_title": "Config cockpit",
+      "source_id": "config",
+      "row_count": 6,
+      "default_tab": "dashboard",
+      "filterable": true,
+      "copyable": true,
+      "read_only": true
+    },
+    {
+      "panel_id": "p171_prompt_source_selector",
+      "panel_title": "Prompt source registry",
+      "source_id": "prompt_registry",
+      "row_count": 5,
+      "default_tab": "prompt",
+      "filterable": true,
+      "copyable": true,
+      "read_only": true
+    },
+    {
+      "panel_id": "p171_decision_history_panel",
+      "panel_title": "Decision journal",
+      "source_id": "decision_journal",
+      "row_count": 1,
+      "default_tab": "journal",
+      "filterable": true,
+      "copyable": true,
+      "read_only": true
+    },
+    {
+      "panel_id": "p171_human_review_workbench_panel",
+      "panel_title": "Prompt review workbench",
+      "source_id": "prompt_review",
+      "row_count": 5,
+      "default_tab": "review",
+      "filterable": true,
+      "copyable": true,
+      "read_only": true
+    },
+    {
+      "panel_id": "p171_lexique_context_panel",
+      "panel_title": "Lexique or cockpit data",
+      "source_id": "lexique_or_cockpit",
+      "row_count": 88,
+      "default_tab": "lexique",
+      "filterable": true,
+      "copyable": true,
+      "read_only": true
+    }
+  ],
+  "navigation_model": {
+    "host": "127.0.0.1",
+    "port": 8088,
+    "default_route": "/",
+    "public_access_allowed": false
+  },
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "raw_operator_exports_committed": false,
+  "auto_apply_gem_response": false,
+  "recommended_next": "P176_NICEGUI_REVIEW_ONLY_ACTIONS_AND_PROMPT_WORKFLOW",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P175_NICEGUI_OPERATOR_ERGONOMICS_POLISH_20260624_085952"
+}
