@@ -456,6 +456,7 @@ def serve_private(
                     _nav_button("Migration", "/migration", "dashboard")
                     _nav_button("GEM Tracking", "/gem-tracking", "table_view")
                     _nav_button("GEM Ops", "/gem-tracking-operator", "fact_check")
+                    _nav_button("GEM Evidence", "/gem-evidence", "inventory")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1014,6 +1015,92 @@ def serve_private(
     @ui.page("/gem-tracking-operator")
     def gem_tracking_operator() -> None:
         _gem_tracking_operator_page()
+
+    def _gem_evidence_page() -> None:
+        from mvp_qaic_py.p193r_gem_decision_journal_roundtrip_evidence_binding import (
+            build_gem_evidence_binding,
+        )
+
+        payload = build_gem_evidence_binding(project_root)
+        with _shell("gem-evidence"):
+            ui.label("P193R GEM Evidence Binding").classes("qaic-section-title")
+            ui.label(
+                "Binding read-only des preuves runtime: roundtrip GEM et journal de décision. "
+                "Aucune écriture Sheets, aucun appel GEM, aucun broker."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(f"roundtrip={payload['roundtrip_evidence_count']}", color="blue")
+                ui.badge(f"journal={payload['decision_journal_evidence_count']}", color="green")
+                ui.badge(f"coverage={payload['evidence_coverage_percent']}%", color="purple")
+                ui.badge(f"blockers={payload['blocker_count']}", color="red")
+                ui.badge("READ ONLY", color="orange")
+
+            ui.separator()
+            ui.label("Evidence binding").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "layer_id", "label": "layer", "field": "layer_id", "align": "left"},
+                    {
+                        "name": "evidence_status",
+                        "label": "status",
+                        "field": "evidence_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "evidence_count",
+                        "label": "count",
+                        "field": "evidence_count",
+                        "align": "right",
+                    },
+                    {
+                        "name": "evidence_percent",
+                        "label": "%",
+                        "field": "evidence_percent",
+                        "align": "right",
+                    },
+                    {
+                        "name": "latest_evidence",
+                        "label": "latest",
+                        "field": "latest_evidence",
+                        "align": "left",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next_action",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["binding_rows"],
+                row_key="layer_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Preuves récentes").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "evidence_type",
+                        "label": "type",
+                        "field": "evidence_type",
+                        "align": "left",
+                    },
+                    {"name": "name", "label": "name", "field": "name", "align": "left"},
+                    {
+                        "name": "source_path",
+                        "label": "source_path",
+                        "field": "source_path",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["evidence_rows"][:150],
+                row_key="evidence_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/gem-evidence")
+    def gem_evidence() -> None:
+        _gem_evidence_page()
 
     @ui.page("/")
     def home() -> None:

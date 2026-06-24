@@ -1,0 +1,11 @@
+﻿{
+    "STATUS":  "OK_P193R_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115805.zip",
+    "zip_size_bytes":  24344,
+    "roundtrip_evidence_count":  16,
+    "decision_journal_evidence_count":  68,
+    "evidence_coverage_percent":  100.0,
+    "route_smoke_ok":  true,
+    "route_success_count":  12,
+    "recommended_next":  "P194R_GEM_RUNTIME_TRACKER_CLOSE_OR_SHEETS_EXPORT_CONTRACT"
+}
