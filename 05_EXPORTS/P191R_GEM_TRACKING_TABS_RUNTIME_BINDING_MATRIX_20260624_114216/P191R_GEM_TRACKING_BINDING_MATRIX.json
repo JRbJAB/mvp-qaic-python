@@ -1,0 +1,265 @@
+{
+  "STATUS": "OK_P191R_GEM_TRACKING_ROUTE_SMOKE",
+  "generated_at": "2026-06-24T09:42:17+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "layer_count": 10,
+  "ready_layer_count": 8,
+  "partial_layer_count": 2,
+  "missing_layer_count": 0,
+  "binding_coverage_percent": 95.5,
+  "layers": [
+    {
+      "layer_id": "GEM_CAPTURE_INBOX",
+      "expected_sheet_tab": "GEM_CAPTURE_INBOX",
+      "local_path": "00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX",
+      "python_handler": "p181/p183 capture workflow",
+      "nicegui_route": "/capture",
+      "purpose": "Stocker les captures portfolio à traiter.",
+      "source_exists": true,
+      "local_file_count": 2,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "GEM_RESPONSE_INBOX",
+      "expected_sheet_tab": "GEM_RESPONSE_INBOX",
+      "local_path": "00_OPERATOR_EXPORTS/P181_GEM_RESPONSES",
+      "python_handler": "p184 parser",
+      "nicegui_route": "/responses",
+      "purpose": "Stocker les réponses GEM collées localement.",
+      "source_exists": true,
+      "local_file_count": 2,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "GEM_SESSION_LOG",
+      "expected_sheet_tab": "GEM_SESSION_LOG",
+      "local_path": "00_OPERATOR_EXPORTS/P181_SESSION_LOG",
+      "python_handler": "p183 session linker",
+      "nicegui_route": "/sessions",
+      "purpose": "Relier capture, prompt, réponse et session.",
+      "source_exists": true,
+      "local_file_count": 5,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "GEM_ROUNDTRIP",
+      "expected_sheet_tab": "GEM_ROUNDTRIP_STATUS",
+      "local_path": "05_EXPORTS",
+      "python_handler": "p185/p186 roundtrip",
+      "nicegui_route": "/roundtrip",
+      "purpose": "Valider le cycle capture → prompt → réponse → review.",
+      "source_exists": true,
+      "local_file_count": 0,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 85,
+      "runtime_status": "BOUND_PARTIAL",
+      "next_action": "ADD_MISSING_RUNTIME_EVIDENCE"
+    },
+    {
+      "layer_id": "GEM_REVIEW_GATE",
+      "expected_sheet_tab": "GEM_REVIEW_GATE",
+      "local_path": "mvp_qaic_py/p187_real_manual_portfolio_case_review_gate.py",
+      "python_handler": "p187 real manual gate",
+      "nicegui_route": "/review",
+      "purpose": "Bloquer ou valider le passage en review humaine.",
+      "source_exists": true,
+      "local_file_count": 1,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "GEM_REAL_CASE_DECISION",
+      "expected_sheet_tab": "GEM_REAL_CASE_DECISION",
+      "local_path": "mvp_qaic_py/p188_real_case_ui_operator_decision_gate.py",
+      "python_handler": "p188 real case UI gate",
+      "nicegui_route": "/real-case",
+      "purpose": "Afficher WAITING_INPUTS ou READY_FOR_HUMAN_DECISION.",
+      "source_exists": true,
+      "local_file_count": 1,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "GEM_DECISION_JOURNAL",
+      "expected_sheet_tab": "GEM_DECISION_JOURNAL",
+      "local_path": "05_EXPORTS",
+      "python_handler": "decision journal bridge",
+      "nicegui_route": "/review",
+      "purpose": "Tracer les décisions humaines review-only.",
+      "source_exists": true,
+      "local_file_count": 0,
+      "route_bound": true,
+      "handler_status": "PARTIAL_LOCAL_EXPORTS",
+      "binding_percent": 70,
+      "runtime_status": "BOUND_PARTIAL",
+      "next_action": "ADD_MISSING_RUNTIME_EVIDENCE"
+    },
+    {
+      "layer_id": "PROMPT_HISTORY_LIBRARY",
+      "expected_sheet_tab": "PROMPT_HISTORY_LIBRARY",
+      "local_path": "mvp_qaic_py/p182_prompt_history_library_version_studio.py",
+      "python_handler": "p182 prompt library",
+      "nicegui_route": "/prompt",
+      "purpose": "Suivre prompt actif, historiques et références.",
+      "source_exists": true,
+      "local_file_count": 1,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "PROMPT_MIGRATION_MATRIX",
+      "expected_sheet_tab": "PROMPT_MIGRATION_MATRIX",
+      "local_path": "mvp_qaic_py/p189h_historical_prompt_quality_audit.py",
+      "python_handler": "p189h historical audit",
+      "nicegui_route": "/migration",
+      "purpose": "Qualifier les prompts historiques: merge/archive/reject/review.",
+      "source_exists": true,
+      "local_file_count": 1,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "RUNTIME_MIGRATION_TRACKER",
+      "expected_sheet_tab": "RUNTIME_MIGRATION_TRACKER",
+      "local_path": "mvp_qaic_py/p190r_runtime_migration_tracker_live_readonly.py",
+      "python_handler": "p190r runtime tracker",
+      "nicegui_route": "/migration",
+      "purpose": "Suivre migration onglets/scripts/fonctions/Python/routes.",
+      "source_exists": true,
+      "local_file_count": 1,
+      "route_bound": true,
+      "handler_status": "BOUND",
+      "binding_percent": 100,
+      "runtime_status": "BOUND_RUNTIME_VISIBLE",
+      "next_action": "KEEP_TRACKING"
+    }
+  ],
+  "coverage_rows": [
+    {
+      "metric": "layer_count",
+      "value": 10,
+      "status": "INFO"
+    },
+    {
+      "metric": "ready_layer_count",
+      "value": 8,
+      "status": "OK"
+    },
+    {
+      "metric": "partial_layer_count",
+      "value": 2,
+      "status": "REVIEW"
+    },
+    {
+      "metric": "missing_layer_count",
+      "value": 0,
+      "status": "OK"
+    },
+    {
+      "metric": "binding_coverage_percent",
+      "value": 95.5,
+      "status": "OK"
+    },
+    {
+      "metric": "blocker_count",
+      "value": 0,
+      "status": "OK"
+    }
+  ],
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P192R_GEM_TRACKING_TABS_CSV_EXPORT_AND_OPERATOR_VIEW_POLISH",
+  "route_results": [
+    {
+      "route": "/",
+      "url": "http://127.0.0.1:8099/",
+      "ok": true
+    },
+    {
+      "route": "/prompt",
+      "url": "http://127.0.0.1:8099/prompt",
+      "ok": true
+    },
+    {
+      "route": "/capture",
+      "url": "http://127.0.0.1:8099/capture",
+      "ok": true
+    },
+    {
+      "route": "/responses",
+      "url": "http://127.0.0.1:8099/responses",
+      "ok": true
+    },
+    {
+      "route": "/sessions",
+      "url": "http://127.0.0.1:8099/sessions",
+      "ok": true
+    },
+    {
+      "route": "/roundtrip",
+      "url": "http://127.0.0.1:8099/roundtrip",
+      "ok": true
+    },
+    {
+      "route": "/real-case",
+      "url": "http://127.0.0.1:8099/real-case",
+      "ok": true
+    },
+    {
+      "route": "/migration",
+      "url": "http://127.0.0.1:8099/migration",
+      "ok": true
+    },
+    {
+      "route": "/gem-tracking",
+      "url": "http://127.0.0.1:8099/gem-tracking",
+      "ok": true
+    },
+    {
+      "route": "/review",
+      "url": "http://127.0.0.1:8099/review",
+      "ok": true
+    }
+  ],
+  "route_success_count": 10,
+  "route_smoke_ok": true,
+  "server_started_by_smoke": true,
+  "server_stopped_after_smoke": true,
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P191R_GEM_TRACKING_TABS_RUNTIME_BINDING_MATRIX_20260624_114216"
+}

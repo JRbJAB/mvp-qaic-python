@@ -454,6 +454,7 @@ def serve_private(
                     _nav_button("Roundtrip", "/roundtrip", "sync_alt")
                     _nav_button("Real Case", "/real-case", "rule")
                     _nav_button("Migration", "/migration", "dashboard")
+                    _nav_button("GEM Tracking", "/gem-tracking", "table_view")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -861,6 +862,82 @@ def serve_private(
     @ui.page("/migration")
     def migration() -> None:
         _migration_page()
+
+    def _gem_tracking_page() -> None:
+        from mvp_qaic_py.p191r_gem_tracking_tabs_runtime_binding_matrix import (
+            build_gem_tracking_tabs_runtime_binding_matrix,
+        )
+
+        payload = build_gem_tracking_tabs_runtime_binding_matrix(project_root)
+        with _shell("gem-tracking"):
+            ui.label("P191R GEM Tracking Tabs Runtime Binding Matrix").classes("qaic-section-title")
+            ui.label(
+                "Couche de suivi GEM: onglets/layers attendus, sources locales, "
+                "routes NiceGUI, handlers Python, exports, statut runtime et actions suivantes."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(f"layers={payload['layer_count']}", color="blue")
+                ui.badge(f"ready={payload['ready_layer_count']}", color="green")
+                ui.badge(f"coverage={payload['binding_coverage_percent']}%", color="purple")
+                ui.badge(f"blockers={payload['blocker_count']}", color="red")
+                ui.badge("READ ONLY", color="orange")
+
+            ui.separator()
+            ui.label("GEM tracking layers").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "layer_id", "label": "layer_id", "field": "layer_id", "align": "left"},
+                    {
+                        "name": "expected_sheet_tab",
+                        "label": "expected sheet tab",
+                        "field": "expected_sheet_tab",
+                        "align": "left",
+                    },
+                    {
+                        "name": "runtime_status",
+                        "label": "runtime_status",
+                        "field": "runtime_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "binding_percent",
+                        "label": "%",
+                        "field": "binding_percent",
+                        "align": "right",
+                    },
+                    {
+                        "name": "nicegui_route",
+                        "label": "route",
+                        "field": "nicegui_route",
+                        "align": "left",
+                    },
+                    {
+                        "name": "next_action",
+                        "label": "next_action",
+                        "field": "next_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["layers"],
+                row_key="layer_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Runtime coverage").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "metric", "label": "metric", "field": "metric", "align": "left"},
+                    {"name": "value", "label": "value", "field": "value", "align": "right"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                ],
+                rows=payload["coverage_rows"],
+                row_key="metric",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/gem-tracking")
+    def gem_tracking() -> None:
+        _gem_tracking_page()
 
     @ui.page("/")
     def home() -> None:
