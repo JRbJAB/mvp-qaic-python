@@ -1,0 +1,11 @@
+﻿{
+    "STATUS":  "OK_P182_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P182_PROMPT_HISTORY_LIBRARY_VERSION_STUDIO_FAST_FUSE_20260624_095742.zip",
+    "zip_size_bytes":  21418,
+    "zip_stage":  "C:\\Users\\Julie\\AppData\\Local\\Temp\\MVP_QAIC_P182_ZIP_STAGE_20260624_095742",
+    "zip_verify_stage":  "C:\\Users\\Julie\\AppData\\Local\\Temp\\MVP_QAIC_P182_ZIP_VERIFY_20260624_095742",
+    "prompt_version_count":  74,
+    "active_prompt_count":  1,
+    "library_ready":  true,
+    "recommended_next":  "P183_CAPTURE_TO_SESSION_LINK_AND_PROMPT_RUN_WORKFLOW"
+}

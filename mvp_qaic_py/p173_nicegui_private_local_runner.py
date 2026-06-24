@@ -510,6 +510,56 @@ def serve_private(
                         color="warning",
                     ),
                 )
+
+            ui.separator()
+            ui.label("Prompt History Library").classes("qaic-section-title")
+            ui.label(
+                "Inventaire versionné: prompt actif, prompts historiques, exports de référence. "
+                "Aucun apply automatique."
+            ).classes("qaic-muted")
+            ui.table(
+                columns=[
+                    {
+                        "name": "prompt_id",
+                        "label": "prompt_id",
+                        "field": "prompt_id",
+                        "align": "left",
+                        "sortable": True,
+                    },
+                    {
+                        "name": "status",
+                        "label": "status",
+                        "field": "status",
+                        "align": "left",
+                        "sortable": True,
+                    },
+                    {
+                        "name": "source",
+                        "label": "source",
+                        "field": "source",
+                        "align": "left",
+                        "sortable": True,
+                    },
+                ],
+                rows=[
+                    {
+                        "prompt_id": "ACTIVE_GEM_PORTFOLIO_IMAGE_REVIEW",
+                        "status": "ACTIVE_RUNTIME",
+                        "source": "p173_private_cockpit",
+                    },
+                    {
+                        "prompt_id": "HISTORICAL_PROMPT_EXPORTS",
+                        "status": "HISTORICAL_REFERENCE_ONLY",
+                        "source": "05_EXPORTS",
+                    },
+                    {
+                        "prompt_id": "PROMPT_PATCH_HISTORY",
+                        "status": "REFERENCE_AUDIT",
+                        "source": "P152-P180 chain",
+                    },
+                ],
+                row_key="prompt_id",
+            ).props("flat bordered dense").classes("qaic-table")
             _panel_table(panel_by_slot.get("prompt_source_selector"))
 
     def _capture_page() -> None:
