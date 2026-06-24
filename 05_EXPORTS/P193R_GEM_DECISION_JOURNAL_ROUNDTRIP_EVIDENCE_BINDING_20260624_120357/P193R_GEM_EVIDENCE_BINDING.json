@@ -1,0 +1,1044 @@
+{
+  "STATUS": "OK_P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_READY",
+  "generated_at": "2026-06-24T10:03:58+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "binding_layer_count": 2,
+  "roundtrip_evidence_count": 24,
+  "decision_journal_evidence_count": 76,
+  "evidence_coverage_percent": 100.0,
+  "binding_rows": [
+    {
+      "layer_id": "GEM_ROUNDTRIP",
+      "evidence_status": "EVIDENCE_BOUND_READY",
+      "evidence_count": 24,
+      "evidence_percent": 100,
+      "latest_evidence": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_120357",
+      "next_action": "KEEP_TRACKING"
+    },
+    {
+      "layer_id": "GEM_DECISION_JOURNAL",
+      "evidence_status": "EVIDENCE_BOUND_READY",
+      "evidence_count": 76,
+      "evidence_percent": 100,
+      "latest_evidence": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_120357",
+      "next_action": "KEEP_TRACKING"
+    }
+  ],
+  "evidence_rows": [
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_120357",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_120357",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782295437
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782295086
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_ZIP_MANIFEST.json",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_ZIP_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 500,
+      "modified_time_epoch": 1782295086
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_SUMMARY.json",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1023,
+      "modified_time_epoch": 1782295083
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_REPORT.md",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 877,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_GEM_DECISION_JOURNAL_EVIDENCE.csv",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_DECISION_JOURNAL_EVIDENCE.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 22732,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_GEM_ROUNDTRIP_EVIDENCE.csv",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_ROUNDTRIP_EVIDENCE.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 5064,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_GEM_EVIDENCE_BINDING.csv",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_EVIDENCE_BINDING.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 369,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-bindin",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P193R_GEM_EVIDENCE_BINDING.json",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_EVIDENCE_BINDING.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 45923,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p188-real-case-ui-operator-decision-gate-20260624-10",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_20260624_105355",
+      "source_path": "05_EXPORTS/P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_20260624_105355",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293821
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p187-real-manual-portfolio-case-review-gate-20260624",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE_20260624_104926",
+      "source_path": "05_EXPORTS/P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE_20260624_104926",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293821
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p167-human-review-reference-prompt-gate-20260623-180",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529",
+      "source_path": "05_EXPORTS/P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293820
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p161-release-seal-or-p160b-real-case-review-pack-202",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249",
+      "source_path": "05_EXPORTS/P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293820
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293820
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293820
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p153-correction-loop-real-case-20260623-143503",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P153_CORRECTION_LOOP_REAL_CASE_20260623_143503",
+      "source_path": "05_EXPORTS/P153_CORRECTION_LOOP_REAL_CASE_20260623_143503",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293820
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_IMAGE_CAPTURE_INBOX",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_IMAGE_CAPTURE_INBOX",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293818
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293818
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p121-daily-gem-loop-e2e-local-smoke-20260622-144950-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P121_STEP_P120_DECISION_JOURNAL_BRIDGE",
+      "source_path": "05_EXPORTS/P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950/P121_STEP_P120_DECISION_JOURNAL_BRIDGE",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293818
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p120-gem-response-decision-journal-bridge-20260622-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755",
+      "source_path": "05_EXPORTS/P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293818
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p188-real-case-ui-operator-decision-gate-20260624-10",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P188_ZIP_MANIFEST.json",
+      "source_path": "05_EXPORTS/P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_20260624_105355/P188_ZIP_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 431,
+      "modified_time_epoch": 1782291243
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p188-real-case-ui-operator-decision-gate-20260624-10",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P188_REAL_CASE_OPERATOR_DECISION_GATE_REPORT.md",
+      "source_path": "05_EXPORTS/P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_20260624_105355/P188_REAL_CASE_OPERATOR_DECISION_GATE_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 557,
+      "modified_time_epoch": 1782291241
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p188-real-case-ui-operator-decision-gate-20260624-10",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P188_SUMMARY.json",
+      "source_path": "05_EXPORTS/P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_20260624_105355/P188_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1125,
+      "modified_time_epoch": 1782291241
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p188-real-case-ui-operator-decision-gate-20260624-10",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P188_REAL_CASE_OPERATOR_DECISION_GATE.json",
+      "source_path": "05_EXPORTS/P188_REAL_CASE_UI_OPERATOR_DECISION_GATE_20260624_105355/P188_REAL_CASE_OPERATOR_DECISION_GATE.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2153,
+      "modified_time_epoch": 1782291241
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p187-real-manual-portfolio-case-review-gate-20260624",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P187_ZIP_MANIFEST.json",
+      "source_path": "05_EXPORTS/P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE_20260624_104926/P187_ZIP_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 359,
+      "modified_time_epoch": 1782290969
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p187-real-manual-portfolio-case-review-gate-20260624",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P187_REAL_MANUAL_CASE_GATE_REPORT.md",
+      "source_path": "05_EXPORTS/P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE_20260624_104926/P187_REAL_MANUAL_CASE_GATE_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 631,
+      "modified_time_epoch": 1782290967
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p187-real-manual-portfolio-case-review-gate-20260624",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P187_SUMMARY.json",
+      "source_path": "05_EXPORTS/P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE_20260624_104926/P187_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1201,
+      "modified_time_epoch": 1782290967
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p187-real-manual-portfolio-case-review-gate-20260624",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P187_REAL_MANUAL_CASE_GATE.json",
+      "source_path": "05_EXPORTS/P187_REAL_MANUAL_PORTFOLIO_CASE_REVIEW_GATE_20260624_104926/P187_REAL_MANUAL_CASE_GATE.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1229,
+      "modified_time_epoch": 1782290967
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p167-human-review-reference-prompt-gate-20260623-180",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P167_SUMMARY.json",
+      "source_path": "05_EXPORTS/P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529/P167_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 998,
+      "modified_time_epoch": 1782237929
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p167-human-review-reference-prompt-gate-20260623-180",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P167_OPERATOR_REVIEW_INSTRUCTIONS.md",
+      "source_path": "05_EXPORTS/P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529/P167_OPERATOR_REVIEW_INSTRUCTIONS.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 429,
+      "modified_time_epoch": 1782237929
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p167-human-review-reference-prompt-gate-20260623-180",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P167_GATE_REPORT.md",
+      "source_path": "05_EXPORTS/P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529/P167_GATE_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1292,
+      "modified_time_epoch": 1782237929
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p167-human-review-reference-prompt-gate-20260623-180",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P167_REFERENCE_PROMPT_REVIEW_WORKBENCH.csv",
+      "source_path": "05_EXPORTS/P167_HUMAN_REVIEW_REFERENCE_PROMPT_GATE_20260623_180529/P167_REFERENCE_PROMPT_REVIEW_WORKBENCH.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1429,
+      "modified_time_epoch": 1782237929
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p161-release-seal-or-p160b-real-case-review-pack-202",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P161_SUMMARY.json",
+      "source_path": "05_EXPORTS/P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249/P161_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1693,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p161-release-seal-or-p160b-real-case-review-pack-202",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P161_RELEASE_SEAL_REPORT.json",
+      "source_path": "05_EXPORTS/P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249/P161_RELEASE_SEAL_REPORT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1693,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p161-release-seal-or-p160b-real-case-review-pack-202",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P161_RELEASE_SEAL_DECISION.md",
+      "source_path": "05_EXPORTS/P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249/P161_RELEASE_SEAL_DECISION.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1104,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p161-release-seal-or-p160b-real-case-review-pack-202",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P161_RELEASE_SEAL_REPORT.csv",
+      "source_path": "05_EXPORTS/P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249/P161_RELEASE_SEAL_REPORT.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1438,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p161-release-seal-or-p160b-real-case-review-pack-202",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P161_HANDOFF.md",
+      "source_path": "05_EXPORTS/P161_RELEASE_SEAL_OR_P160B_REAL_CASE_REVIEW_PACK_20260623_154249/P161_HANDOFF.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1112,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p157-prompt-patch-candidate-review-or-apply-gate-202",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P157_REVIEW_GATE_DECISION.md",
+      "source_path": "05_EXPORTS/P157_PROMPT_PATCH_CANDIDATE_REVIEW_OR_APPLY_GATE_20260623_141418/P157_REVIEW_GATE_DECISION.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 973,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_WORKBENCH_DECISION_READBACK.csv",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539/P156_WORKBENCH_DECISION_READBACK.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 407,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_PROMPT_PATCH_CANDIDATE_OR_STOP_REPORT.json",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_REPORT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2946,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_SUMMARY.json",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539/P156_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1432,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_PROMPT_PATCH_CANDIDATE.md",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539/P156_PROMPT_PATCH_CANDIDATE.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 426,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_HANDOFF.md",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_160539/P156_HANDOFF.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 343,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_SUMMARY.json",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058/P156_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1417,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_WORKBENCH_DECISION_READBACK.csv",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058/P156_WORKBENCH_DECISION_READBACK.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 431,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_PROMPT_PATCH_CANDIDATE_OR_STOP_REPORT.json",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_REPORT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2955,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_STOP_WAITING_HUMAN_REVIEW.md",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058/P156_STOP_WAITING_HUMAN_REVIEW.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 469,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p156-prompt-patch-candidate-or-stop-after-human-revi",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P156_HANDOFF.md",
+      "source_path": "05_EXPORTS/P156_PROMPT_PATCH_CANDIDATE_OR_STOP_AFTER_HUMAN_REVIEW_20260623_155058/P156_HANDOFF.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 327,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p154-prompt-correction-apply-plan-or-stop-20260623-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P154_HUMAN_REVIEW_DECISION.md",
+      "source_path": "05_EXPORTS/P154_PROMPT_CORRECTION_APPLY_PLAN_OR_STOP_20260623_144922/P154_HUMAN_REVIEW_DECISION.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 403,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p153-correction-loop-real-case-20260623-143503-p153-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P153_SUMMARY.json",
+      "source_path": "05_EXPORTS/P153_CORRECTION_LOOP_REAL_CASE_20260623_143503/P153_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 812,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p153-correction-loop-real-case-20260623-143503-p153-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P153_PROMPT_IMPROVEMENT_SUGGESTIONS.md",
+      "source_path": "05_EXPORTS/P153_CORRECTION_LOOP_REAL_CASE_20260623_143503/P153_PROMPT_IMPROVEMENT_SUGGESTIONS.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 570,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p153-correction-loop-real-case-20260623-143503-p153-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P153_OPERATOR_REVIEW_CHECKLIST.md",
+      "source_path": "05_EXPORTS/P153_CORRECTION_LOOP_REAL_CASE_20260623_143503/P153_OPERATOR_REVIEW_CHECKLIST.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 364,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p153-correction-loop-real-case-20260623-143503-p153-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P153_CORRECTION_LOOP_REAL_CASE_REPORT.json",
+      "source_path": "05_EXPORTS/P153_CORRECTION_LOOP_REAL_CASE_20260623_143503/P153_CORRECTION_LOOP_REAL_CASE_REPORT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 4742,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p153-correction-loop-real-case-20260623-143503-p153-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P153_CORRECTION_ACTIONS.csv",
+      "source_path": "05_EXPORTS/P153_CORRECTION_LOOP_REAL_CASE_20260623_143503/P153_CORRECTION_ACTIONS.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1066,
+      "modified_time_epoch": 1782235747
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p133-gem-multimodal-response-capture-image-usage-gat",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P133_GEM_RESPONSE_HUMAN_REVIEW.md",
+      "source_path": "05_EXPORTS/P133_GEM_MULTIMODAL_RESPONSE_CAPTURE_IMAGE_USAGE_GATE_20260622_181633/P133_GEM_RESPONSE_HUMAN_REVIEW.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1605,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_README.md",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_README.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 311,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_MANUAL_TRANSCRIPTION_TEMPLATE.md",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_MANUAL_TRANSCRIPTION_TEMPLATE.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 766,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_OPERATOR_VISUAL_NOTES_TEMPLATE.md",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_OPERATOR_VISUAL_NOTES_TEMPLATE.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 317,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_IMAGE_INPUT_CONTRACT.json",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_IMAGE_INPUT_CONTRACT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1883,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_IMAGE_CAPTURE_MANIFEST.json",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_IMAGE_CAPTURE_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 3489,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "README.md",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_IMAGE_CAPTURE_INBOX/README.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 242,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": ".gitkeep",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_IMAGE_CAPTURE_INBOX/.gitkeep",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_IMAGE_CAPTURE_GUIDE.md",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_IMAGE_CAPTURE_GUIDE.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 819,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p128-prompt-input-image-capture-human-review-2026062",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P128_IMAGE_CAPTURE_CHECKLIST.csv",
+      "source_path": "05_EXPORTS/P128_PROMPT_INPUT_IMAGE_CAPTURE_HUMAN_REVIEW_20260622_161704/P128_IMAGE_CAPTURE_CHECKLIST.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 514,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p121-daily-gem-loop-e2e-local-smoke-20260622-144950-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_SOURCE_CAPTURE_SNAPSHOT.json",
+      "source_path": "05_EXPORTS/P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950/P121_STEP_P120_DECISION_JOURNAL_BRIDGE/P120_SOURCE_CAPTURE_SNAPSHOT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 5842,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p121-daily-gem-loop-e2e-local-smoke-20260622-144950-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_DECISION_JOURNAL_ENTRY.csv",
+      "source_path": "05_EXPORTS/P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950/P121_STEP_P120_DECISION_JOURNAL_BRIDGE/P120_DECISION_JOURNAL_ENTRY.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 855,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p121-daily-gem-loop-e2e-local-smoke-20260622-144950-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_DECISION_JOURNAL_ENTRY.json",
+      "source_path": "05_EXPORTS/P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950/P121_STEP_P120_DECISION_JOURNAL_BRIDGE/P120_DECISION_JOURNAL_ENTRY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1458,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p121-daily-gem-loop-e2e-local-smoke-20260622-144950-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_BRIDGE_MANIFEST.json",
+      "source_path": "05_EXPORTS/P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950/P121_STEP_P120_DECISION_JOURNAL_BRIDGE/P120_BRIDGE_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2204,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p121-daily-gem-loop-e2e-local-smoke-20260622-144950-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_BRIDGE_REPORT.md",
+      "source_path": "05_EXPORTS/P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950/P121_STEP_P120_DECISION_JOURNAL_BRIDGE/P120_BRIDGE_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 843,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p121-daily-gem-loop-e2e-local-smoke-20260622-144950-",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_BRIDGE_CONTRACT.json",
+      "source_path": "05_EXPORTS/P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE_20260622_144950/P121_STEP_P120_DECISION_JOURNAL_BRIDGE/P120_BRIDGE_CONTRACT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1343,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p120-gem-response-decision-journal-bridge-20260622-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_SOURCE_CAPTURE_SNAPSHOT.json",
+      "source_path": "05_EXPORTS/P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755/P120_SOURCE_CAPTURE_SNAPSHOT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 796,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p120-gem-response-decision-journal-bridge-20260622-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_DECISION_JOURNAL_ENTRY.csv",
+      "source_path": "05_EXPORTS/P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755/P120_DECISION_JOURNAL_ENTRY.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 786,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p120-gem-response-decision-journal-bridge-20260622-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_DECISION_JOURNAL_ENTRY.json",
+      "source_path": "05_EXPORTS/P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755/P120_DECISION_JOURNAL_ENTRY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1387,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p120-gem-response-decision-journal-bridge-20260622-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_BRIDGE_MANIFEST.json",
+      "source_path": "05_EXPORTS/P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755/P120_BRIDGE_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1984,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p120-gem-response-decision-journal-bridge-20260622-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_BRIDGE_REPORT.md",
+      "source_path": "05_EXPORTS/P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755/P120_BRIDGE_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 797,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-decision-journal-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p120-gem-response-decision-journal-bridge-20260622-1",
+      "evidence_type": "GEM_DECISION_JOURNAL",
+      "name": "P120_BRIDGE_CONTRACT.json",
+      "source_path": "05_EXPORTS/P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE_20260622_140755/P120_BRIDGE_CONTRACT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1343,
+      "modified_time_epoch": 1782235746
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_120357",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_120357",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782295437
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782295086
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_ZIP_MANIFEST.json",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_ZIP_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 500,
+      "modified_time_epoch": 1782295086
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_SUMMARY.json",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1023,
+      "modified_time_epoch": 1782295083
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_REPORT.md",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 877,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_GEM_DECISION_JOURNAL_EVIDENCE.csv",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_DECISION_JOURNAL_EVIDENCE.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 22732,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_GEM_ROUNDTRIP_EVIDENCE.csv",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_ROUNDTRIP_EVIDENCE.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 5064,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_GEM_EVIDENCE_BINDING.csv",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_EVIDENCE_BINDING.csv",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 369,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p193r-gem-decision-journal-roundtrip-evidence-binding-20260",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P193R_GEM_EVIDENCE_BINDING.json",
+      "source_path": "05_EXPORTS/P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_115727/P193R_GEM_EVIDENCE_BINDING.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 45923,
+      "modified_time_epoch": 1782295048
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104825",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104825",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104825",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293821
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104212",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104212",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104212",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293821
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p185-real-operator-capture-response-ui-roundtrip-20260624-1",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P185_REAL_OPERATOR_CAPTURE_RESPONSE_UI_ROUNDTRIP_20260624_103603",
+      "source_path": "05_EXPORTS/P185_REAL_OPERATOR_CAPTURE_RESPONSE_UI_ROUNDTRIP_20260624_103603",
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": 0,
+      "modified_time_epoch": 1782293821
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104825-p186-zip",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_ZIP_MANIFEST.json",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104825/P186_ZIP_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 410,
+      "modified_time_epoch": 1782290915
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104825-p186-rou",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_ROUNDTRIP_SMOKE_REPORT.md",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104825/P186_ROUNDTRIP_SMOKE_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 715,
+      "modified_time_epoch": 1782290913
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104825-p186-sum",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_SUMMARY.json",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104825/P186_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1179,
+      "modified_time_epoch": 1782290913
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104825-p186-rou",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_ROUNDTRIP_SMOKE_RESULT.json",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104825/P186_ROUNDTRIP_SMOKE_RESULT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1667,
+      "modified_time_epoch": 1782290913
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104212-p186-zip",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_ZIP_MANIFEST.json",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104212/P186_ZIP_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 410,
+      "modified_time_epoch": 1782290541
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104212-p186-rou",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_ROUNDTRIP_SMOKE_REPORT.md",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104212/P186_ROUNDTRIP_SMOKE_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 715,
+      "modified_time_epoch": 1782290539
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104212-p186-sum",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_SUMMARY.json",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104212/P186_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1179,
+      "modified_time_epoch": 1782290539
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p186-real-operator-roundtrip-smoke-20260624-104212-p186-rou",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P186_ROUNDTRIP_SMOKE_RESULT.json",
+      "source_path": "05_EXPORTS/P186_REAL_OPERATOR_ROUNDTRIP_SMOKE_20260624_104212/P186_ROUNDTRIP_SMOKE_RESULT.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1667,
+      "modified_time_epoch": 1782290539
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p185-real-operator-capture-response-ui-roundtrip-20260624-1",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P185_ZIP_MANIFEST.json",
+      "source_path": "05_EXPORTS/P185_REAL_OPERATOR_CAPTURE_RESPONSE_UI_ROUNDTRIP_20260624_103603/P185_ZIP_MANIFEST.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 381,
+      "modified_time_epoch": 1782290173
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p185-real-operator-capture-response-ui-roundtrip-20260624-1",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P185_ROUNDTRIP_REPORT.md",
+      "source_path": "05_EXPORTS/P185_REAL_OPERATOR_CAPTURE_RESPONSE_UI_ROUNDTRIP_20260624_103603/P185_ROUNDTRIP_REPORT.md",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 637,
+      "modified_time_epoch": 1782290170
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p185-real-operator-capture-response-ui-roundtrip-20260624-1",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P185_SUMMARY.json",
+      "source_path": "05_EXPORTS/P185_REAL_OPERATOR_CAPTURE_RESPONSE_UI_ROUNDTRIP_20260624_103603/P185_SUMMARY.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1109,
+      "modified_time_epoch": 1782290170
+    },
+    {
+      "evidence_id": "gem-roundtrip-c--users-julie-documents-jrb-dev-mvp-qaic-py-work-20260623-192901-05-exports-p185-real-operator-capture-response-ui-roundtrip-20260624-1",
+      "evidence_type": "GEM_ROUNDTRIP",
+      "name": "P185_ROUNDTRIP_MODEL.json",
+      "source_path": "05_EXPORTS/P185_REAL_OPERATOR_CAPTURE_RESPONSE_UI_ROUNDTRIP_20260624_103603/P185_ROUNDTRIP_MODEL.json",
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2812,
+      "modified_time_epoch": 1782290170
+    }
+  ],
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P194R_GEM_RUNTIME_TRACKER_CLOSE_OR_SHEETS_EXPORT_CONTRACT",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P193R_GEM_DECISION_JOURNAL_ROUNDTRIP_EVIDENCE_BINDING_20260624_120357"
+}
