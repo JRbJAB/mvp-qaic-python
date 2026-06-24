@@ -1,0 +1,42 @@
+{
+  "STATUS": "OK_P189H_HISTORICAL_PROMPT_QUALITY_AUDIT_READY",
+  "generated_at": "2026-06-24T09:06:54+00:00",
+  "project_root": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901",
+  "export_dir": "C:\\Users\\Julie\\Documents\\JRb-Dev\\MVP_QAIC_PY_WORK_20260623_192901\\05_EXPORTS\\P189H_HISTORICAL_PROMPT_QUALITY_AUDIT_20260624_110651",
+  "audited_prompt_count": 733,
+  "migration_matrix_ready": true,
+  "decision_counts": {
+    "ACTIVE_KEEP": 27,
+    "ARCHIVE_LEGACY": 339,
+    "MERGE_INTO_MASTER": 133,
+    "REFERENCE_ONLY": 206,
+    "REJECT_UNSAFE": 1,
+    "REVIEW_REQUIRED": 27
+  },
+  "source_kind_counts": {
+    "ACTIVE_RUNTIME_OR_SOURCE": 45,
+    "HISTORICAL": 438,
+    "REFERENCE_AUDIT": 247,
+    "SMOKE_IGNORED_REFERENCE": 3
+  },
+  "merge_candidate_count": 133,
+  "active_keep_count": 27,
+  "reference_only_count": 206,
+  "archive_legacy_count": 339,
+  "reject_unsafe_count": 1,
+  "review_required_count": 27,
+  "blocker_count": 0,
+  "blockers": [],
+  "gem_call_executed": false,
+  "google_sheets_write": false,
+  "live_google_api_call_from_python": false,
+  "apps_script_execution": false,
+  "clasp_push": false,
+  "public_serve": false,
+  "broker": false,
+  "order": false,
+  "sizing": false,
+  "auto_apply_gem_response": false,
+  "source_prompt_modified": false,
+  "recommended_next": "P190H_PROMPT_MIGRATION_GROUPING_AND_MASTER_EXTRACT"
+}

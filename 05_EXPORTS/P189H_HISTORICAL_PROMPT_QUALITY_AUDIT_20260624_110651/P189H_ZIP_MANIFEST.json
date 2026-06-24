@@ -1,0 +1,9 @@
+﻿{
+    "STATUS":  "OK_P189H_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P189H_HISTORICAL_PROMPT_QUALITY_AUDIT_FAST_FUSE_20260624_110656.zip",
+    "zip_size_bytes":  180488,
+    "audited_prompt_count":  733,
+    "merge_candidate_count":  133,
+    "reject_unsafe_count":  1,
+    "recommended_next":  "P190H_PROMPT_MIGRATION_GROUPING_AND_MASTER_EXTRACT"
+}
