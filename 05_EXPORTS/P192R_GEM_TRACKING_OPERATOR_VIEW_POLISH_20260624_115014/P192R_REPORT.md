@@ -1,0 +1,25 @@
+# P192R GEM Tracking CSV Export + Operator View Polish
+
+- STATUS: OK_P192R_GEM_TRACKING_OPERATOR_VIEW_READY
+- layer_count: 10
+- ready_count: 8
+- review_count: 2
+- operator_coverage_percent: 95.5
+
+## Actions restantes
+- GEM_ROUNDTRIP: REVIEW_EVIDENCE_TO_COMPLETE / ADD_ROUNDTRIP_STATUS_EXPORT_OR_BIND_EXISTING_EVIDENCE / path_exists=True; files=0; route=True; handler=BOUND; binding=85%
+- GEM_DECISION_JOURNAL: REVIEW_EVIDENCE_TO_COMPLETE / ADD_DECISION_JOURNAL_RUNTIME_EXPORT_OR_BIND_LOCAL_JOURNAL / path_exists=True; files=0; route=True; handler=PARTIAL_LOCAL_EXPORTS; binding=70%
+
+## Safety
+- GEM_CALL_EXECUTED=False
+- GOOGLE_SHEETS_WRITE=False
+- LIVE_GOOGLE_API_CALL_FROM_PYTHON=False
+- APPS_SCRIPT_EXECUTION=False
+- CLASP_PUSH=False
+- PUBLIC_SERVE=False
+- BROKER=False
+- ORDER=False
+- SIZING=False
+
+## Next
+- P193R_GEM_DECISION_JOURNAL_AND_ROUNDTRIP_EVIDENCE_BINDING

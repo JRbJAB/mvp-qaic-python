@@ -1,0 +1,11 @@
+layer_id,operator_status,runtime_status,binding_percent,expected_sheet_tab,local_path,nicegui_route,python_handler,evidence_summary
+GEM_ROUNDTRIP,REVIEW_EVIDENCE_TO_COMPLETE,BOUND_PARTIAL,85,GEM_ROUNDTRIP_STATUS,05_EXPORTS,/roundtrip,p185/p186 roundtrip,path_exists=True; files=0; route=True; handler=BOUND; binding=85%
+GEM_DECISION_JOURNAL,REVIEW_EVIDENCE_TO_COMPLETE,BOUND_PARTIAL,70,GEM_DECISION_JOURNAL,05_EXPORTS,/review,decision journal bridge,path_exists=True; files=0; route=True; handler=PARTIAL_LOCAL_EXPORTS; binding=70%
+GEM_CAPTURE_INBOX,OK_READY,BOUND_RUNTIME_VISIBLE,100,GEM_CAPTURE_INBOX,00_OPERATOR_EXPORTS/P181_CAPTURE_INBOX,/capture,p181/p183 capture workflow,path_exists=True; files=2; route=True; handler=BOUND; binding=100%
+GEM_REAL_CASE_DECISION,OK_READY,BOUND_RUNTIME_VISIBLE,100,GEM_REAL_CASE_DECISION,mvp_qaic_py/p188_real_case_ui_operator_decision_gate.py,/real-case,p188 real case UI gate,path_exists=True; files=1; route=True; handler=BOUND; binding=100%
+GEM_RESPONSE_INBOX,OK_READY,BOUND_RUNTIME_VISIBLE,100,GEM_RESPONSE_INBOX,00_OPERATOR_EXPORTS/P181_GEM_RESPONSES,/responses,p184 parser,path_exists=True; files=2; route=True; handler=BOUND; binding=100%
+GEM_REVIEW_GATE,OK_READY,BOUND_RUNTIME_VISIBLE,100,GEM_REVIEW_GATE,mvp_qaic_py/p187_real_manual_portfolio_case_review_gate.py,/review,p187 real manual gate,path_exists=True; files=1; route=True; handler=BOUND; binding=100%
+GEM_SESSION_LOG,OK_READY,BOUND_RUNTIME_VISIBLE,100,GEM_SESSION_LOG,00_OPERATOR_EXPORTS/P181_SESSION_LOG,/sessions,p183 session linker,path_exists=True; files=5; route=True; handler=BOUND; binding=100%
+PROMPT_HISTORY_LIBRARY,OK_READY,BOUND_RUNTIME_VISIBLE,100,PROMPT_HISTORY_LIBRARY,mvp_qaic_py/p182_prompt_history_library_version_studio.py,/prompt,p182 prompt library,path_exists=True; files=1; route=True; handler=BOUND; binding=100%
+PROMPT_MIGRATION_MATRIX,OK_READY,BOUND_RUNTIME_VISIBLE,100,PROMPT_MIGRATION_MATRIX,mvp_qaic_py/p189h_historical_prompt_quality_audit.py,/migration,p189h historical audit,path_exists=True; files=1; route=True; handler=BOUND; binding=100%
+RUNTIME_MIGRATION_TRACKER,OK_READY,BOUND_RUNTIME_VISIBLE,100,RUNTIME_MIGRATION_TRACKER,mvp_qaic_py/p190r_runtime_migration_tracker_live_readonly.py,/migration,p190r runtime tracker,path_exists=True; files=1; route=True; handler=BOUND; binding=100%

@@ -455,6 +455,7 @@ def serve_private(
                     _nav_button("Real Case", "/real-case", "rule")
                     _nav_button("Migration", "/migration", "dashboard")
                     _nav_button("GEM Tracking", "/gem-tracking", "table_view")
+                    _nav_button("GEM Ops", "/gem-tracking-operator", "fact_check")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -938,6 +939,81 @@ def serve_private(
     @ui.page("/gem-tracking")
     def gem_tracking() -> None:
         _gem_tracking_page()
+
+    def _gem_tracking_operator_page() -> None:
+        from mvp_qaic_py.p192r_gem_tracking_tabs_csv_export_operator_view_polish import (
+            build_gem_tracking_operator_view,
+        )
+
+        payload = build_gem_tracking_operator_view(project_root)
+        with _shell("gem-tracking-operator"):
+            ui.label("P192R GEM Tracking Operator View").classes("qaic-section-title")
+            ui.label(
+                "Vue opérateur: priorités, statuts lisibles, actions suivantes, "
+                "preuves runtime et exports CSV pour les onglets/couches GEM."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(f"layers={payload['layer_count']}", color="blue")
+                ui.badge(f"ready={payload['ready_count']}", color="green")
+                ui.badge(f"review={payload['review_count']}", color="orange")
+                ui.badge(f"coverage={payload['operator_coverage_percent']}%", color="purple")
+                ui.badge("READ ONLY", color="orange")
+
+            ui.separator()
+            ui.label("Priorités opérateur").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "priority",
+                        "label": "priority",
+                        "field": "priority",
+                        "align": "right",
+                    },
+                    {"name": "layer_id", "label": "layer", "field": "layer_id", "align": "left"},
+                    {
+                        "name": "operator_status",
+                        "label": "status",
+                        "field": "operator_status",
+                        "align": "left",
+                    },
+                    {
+                        "name": "operator_action",
+                        "label": "action",
+                        "field": "operator_action",
+                        "align": "left",
+                    },
+                    {
+                        "name": "evidence_summary",
+                        "label": "evidence",
+                        "field": "evidence_summary",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["operator_rows"],
+                row_key="layer_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Exports opérateur").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {
+                        "name": "export_name",
+                        "label": "export",
+                        "field": "export_name",
+                        "align": "left",
+                    },
+                    {"name": "purpose", "label": "purpose", "field": "purpose", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                ],
+                rows=payload["export_rows"],
+                row_key="export_name",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/gem-tracking-operator")
+    def gem_tracking_operator() -> None:
+        _gem_tracking_operator_page()
 
     @ui.page("/")
     def home() -> None:
