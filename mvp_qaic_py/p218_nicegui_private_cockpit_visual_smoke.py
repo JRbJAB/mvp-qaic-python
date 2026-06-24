@@ -10,12 +10,23 @@ from mvp_qaic_py.p217_nicegui_private_cockpit_ui_wiring import (
 )
 
 
+def _response_preview_from_view_model(view_model_payload: dict[str, Any]) -> str:
+    return str(
+        view_model_payload.get("bundle", {})
+        .get("response_draft_panel", {})
+        .get("response_editor", {})
+        .get("preview", "")
+        or ""
+    )
+
+
 def build_private_cockpit_static_html(view_model_payload: dict[str, Any]) -> str:
     view = view_model_payload["view_model"]
     header = view["header"]
     cards = view.get("cards", [])
     actions = view.get("actions", [])
     safety = view.get("safety", {})
+    response_preview = _response_preview_from_view_model(view_model_payload)
 
     card_html = "\n".join(
         [
@@ -26,6 +37,15 @@ def build_private_cockpit_static_html(view_model_payload: dict[str, Any]) -> str
             + "</section>"
             for card in cards
         ]
+    )
+
+    response_preview_html = (
+        "<section class='card response-preview'>"
+        "<h2>Response Preview</h2>"
+        f"<pre>{escape(response_preview)}</pre>"
+        "</section>"
+        if response_preview
+        else ""
     )
 
     action_html = "\n".join(
@@ -64,6 +84,7 @@ def build_private_cockpit_static_html(view_model_payload: dict[str, Any]) -> str
             "button{border:0;border-radius:12px;padding:10px 14px;background:#111827;color:white}",
             "button:disabled{background:#9ca3af}",
             ".safety{background:white;border-radius:16px;padding:16px;box-shadow:0 2px 12px #0001}",
+            "pre{white-space:pre-wrap;word-break:break-word;background:#f3f4f6;border-radius:12px;padding:12px}",
             "</style>",
             "</head>",
             "<body>",
@@ -75,6 +96,7 @@ def build_private_cockpit_static_html(view_model_payload: dict[str, Any]) -> str
             "</section>",
             "<section class='grid'>",
             card_html,
+            response_preview_html,
             "</section>",
             "<section class='actions'>",
             action_html,
