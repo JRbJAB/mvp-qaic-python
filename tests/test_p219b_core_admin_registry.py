@@ -49,6 +49,24 @@ def test_p219b_scans_existing_ui_foundation(tmp_path: Path) -> None:
     assert any(item["layer"] == "private_cockpit_wiring" for item in candidates)
 
 
+def test_p219b_source_first_scan_reaches_mvp_source_before_exports(tmp_path: Path) -> None:
+    _seed_project(tmp_path)
+    export_root = tmp_path / "05_EXPORTS" / "many"
+    export_root.mkdir(parents=True)
+    for i in range(30):
+        (export_root / f"export_{i}.py").write_text(
+            "from nicegui import ui\n\n@ui.page('/')\ndef index():\n    ui.html('export')\n",
+            encoding="utf-8",
+        )
+
+    candidates = scan_ui_foundation(tmp_path, max_files=5)
+
+    assert any(
+        item["path"] == "mvp_qaic_py/p217_nicegui_private_cockpit_ui_wiring.py"
+        for item in candidates
+    )
+
+
 def test_p219b_builds_core_admin_registry(tmp_path: Path) -> None:
     _seed_project(tmp_path)
 
@@ -121,7 +139,7 @@ def test_p219b_builds_audit_markdown(tmp_path: Path) -> None:
 
     markdown = build_core_admin_audit_markdown(payload)
 
-    assert "# P219B" in markdown
+    assert "# P219B/P219C-R3" in markdown
     assert "NiceGUI Private Admin Cockpit" in markdown
     assert "Safety registry" in markdown
-    assert "P219C" in markdown
+    assert "P219D" in markdown

@@ -13,6 +13,17 @@ from mvp_qaic_py.p219a_document_management_ui_foundation import (
 
 SCAN_EXTENSIONS = {".py", ".html", ".md", ".json", ".svg", ".csv"}
 IGNORE_DIR_NAMES = {".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache"}
+
+SOURCE_FIRST_SCAN_ROOTS = (
+    "mvp_qaic_py",
+    "tests",
+    "docs",
+    "01_OPERATOR_INPUTS",
+    "05_EXPORTS",
+    "03_EXPORTS",
+    "08_LEGACY_REFERENCE",
+)
+
 UI_SIGNAL_PATTERNS = (
     "nicegui",
     "ui.page",
@@ -32,6 +43,7 @@ UI_SIGNAL_PATTERNS = (
     "config",
     "audit",
 )
+
 SAFETY_FLAGS = {
     "HUMAN_REVIEW_ONLY": True,
     "NO_AUTO_APPLY": True,
@@ -82,6 +94,10 @@ def _classify_layer(rel_path: str, text: str) -> str:
     low = (rel_path + "\n" + text).lower()
     if "p219a_document_management_ui_foundation" in low:
         return "document_ui_foundation"
+    if "p219b_core_admin_registry" in low:
+        return "core_admin_registry"
+    if "p219c_core_admin_shell_wiring" in low:
+        return "core_admin_shell_wiring"
     if "p217_nicegui_private_cockpit_ui_wiring" in low:
         return "private_cockpit_wiring"
     if "p216_private_cockpit_runtime_bundle" in low:
@@ -103,11 +119,34 @@ def _classify_layer(rel_path: str, text: str) -> str:
     return "other"
 
 
+def _iter_source_first_files(root: Path) -> list[Path]:
+    seen: set[Path] = set()
+    paths: list[Path] = []
+
+    for rel_root in SOURCE_FIRST_SCAN_ROOTS:
+        base = root / rel_root
+        if not base.exists():
+            continue
+        for path in sorted(base.rglob("*")):
+            if path in seen:
+                continue
+            seen.add(path)
+            paths.append(path)
+
+    for path in sorted(root.rglob("*")):
+        if path in seen:
+            continue
+        seen.add(path)
+        paths.append(path)
+
+    return paths
+
+
 def scan_ui_foundation(project_root: str | Path, *, max_files: int = 700) -> list[dict[str, Any]]:
     root = Path(project_root)
     candidates: list[UiCandidate] = []
 
-    for path in sorted(root.rglob("*")):
+    for path in _iter_source_first_files(root):
         if len(candidates) >= max_files:
             break
         if _should_skip(path) or not path.is_file():
@@ -274,7 +313,7 @@ def build_core_admin_registry(
         "broker": False,
         "order": False,
         "sizing": False,
-        "recommended_next": "P219C_WIRE_CORE_ADMIN_INTO_EXISTING_NICEGUI_SHELL",
+        "recommended_next": "P219D_PATCH_SELECTED_SOURCE_NICEGUI_SHELL_MENU_WITH_CORE_ADMIN",
     }
 
 
@@ -372,7 +411,7 @@ def render_core_admin_nicegui(ui: Any, payload: dict[str, Any]) -> dict[str, Any
 
 def build_core_admin_audit_markdown(payload: dict[str, Any]) -> str:
     lines = [
-        "# P219B — Core Admin UI Foundation",
+        "# P219B/P219C-R3 — Core Admin Source-First UI Foundation",
         "",
         "## Status",
         "",
@@ -400,23 +439,11 @@ def build_core_admin_audit_markdown(payload: dict[str, Any]) -> str:
     ]
     for layer, count in payload.get("layer_counts", {}).items():
         lines.append(f"- {layer}: {count}")
-    lines.extend(
-        [
-            "",
-            "## Safety registry",
-            "",
-        ]
-    )
+    lines.extend(["", "## Safety registry", ""])
     for flag, value in payload.get("safety_registry", {}).items():
         lines.append(f"- {flag}: {value}")
     lines.extend(
-        [
-            "",
-            "## Recommended next",
-            "",
-            "P219C: wire this core admin registry into the existing NiceGUI shell/menu.",
-            "",
-        ]
+        ["", "## Recommended next", "", "P219D: patch selected source NiceGUI shell/menu."]
     )
     return "\n".join(lines)
 
