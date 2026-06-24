@@ -1,0 +1,12 @@
+﻿{
+    "STATUS":  "OK_P196_ZIP_CREATED_AND_VERIFIED",
+    "zip_path":  "C:\\Users\\Julie\\Downloads\\MVP_QAIC_P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI_20260624_123303.zip",
+    "zip_size_bytes":  22676,
+    "input_status":  "WAITING_OPERATOR_CAPTURE_AND_GEM_RESPONSE",
+    "ready_for_review":  false,
+    "capture_count":  0,
+    "response_count":  0,
+    "route_smoke_ok":  true,
+    "route_success_count":  15,
+    "recommended_next":  "WAIT_OPERATOR_CAPTURE_AND_GEM_RESPONSE_THEN_RERUN_P196"
+}

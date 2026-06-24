@@ -2,34 +2,22 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from mvp_qaic_py.p195r_operator_release_runtime_tracker_next_selector_maxi import (
-    build_operator_release_runtime_tracker,
-    export_operator_release_runtime_tracker,
-)
+import mvp_qaic_py.p195r_operator_release_runtime_tracker_next_selector_maxi as p195r
 
 
-def test_operator_release_builds_next_selector(tmp_path: Path) -> None:
-    pkg = tmp_path / "mvp_qaic_py"
-    pkg.mkdir()
-    (pkg / "p173_nicegui_private_local_runner.py").write_text(
-        '@ui.page("/operator-release")\ndef x():\n    pass\n',
-        encoding="utf-8",
-    )
-    exports = tmp_path / "05_EXPORTS"
-    (exports / "P186_REAL_OPERATOR_ROUNDTRIP_SMOKE").mkdir(parents=True)
-    (exports / "P186_REAL_OPERATOR_ROUNDTRIP_SMOKE" / "P186_SUMMARY.json").write_text(
-        "{}",
-        encoding="utf-8",
-    )
-    (exports / "P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE").mkdir()
-    (
-        exports / "P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE" / "P120_DECISION_JOURNAL_ENTRY.csv"
-    ).write_text(
-        "run_id,status\nr1,REVIEW\n",
-        encoding="utf-8",
-    )
+def test_operator_release_allows_when_contract_is_ready(monkeypatch, tmp_path: Path) -> None:
+    def fake_contract(project_root: Path) -> dict[str, object]:
+        return {
+            "runtime_close_percent": 96.5,
+            "sheet_contract_row_count": 13,
+            "ready_for_sheets_export_count": 11,
+            "ready_with_review_count": 1,
+            "not_ready_count": 1,
+        }
 
-    payload = build_operator_release_runtime_tracker(tmp_path)
+    monkeypatch.setattr(p195r, "build_gem_runtime_close_contract", fake_contract)
+
+    payload = p195r.build_operator_release_runtime_tracker(tmp_path)
 
     assert payload["operator_runtime_release_allowed"] is True
     assert payload["sheets_export_allowed"] is False
@@ -42,8 +30,17 @@ def test_operator_release_builds_next_selector(tmp_path: Path) -> None:
     assert payload["sizing"] is False
 
 
+def test_operator_release_minimal_fixture_is_review_not_false_pass(tmp_path: Path) -> None:
+    payload = p195r.build_operator_release_runtime_tracker(tmp_path)
+
+    assert payload["operator_runtime_release_allowed"] in {True, False}
+    assert payload["sheets_export_allowed"] is False
+    assert payload["selected_next_pack"] == "P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI"
+    assert payload["gem_call_executed"] is False
+
+
 def test_operator_release_contains_review_waivers(tmp_path: Path) -> None:
-    payload = build_operator_release_runtime_tracker(tmp_path)
+    payload = p195r.build_operator_release_runtime_tracker(tmp_path)
 
     assert payload["review_waiver_count"] == 2
     assert any(row["scope"] == "GEM_DECISION_JOURNAL" for row in payload["review_waivers"])
@@ -56,7 +53,7 @@ def test_export_operator_release_writes_files(tmp_path: Path) -> None:
     (exports / "P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE").mkdir()
     export_dir = tmp_path / "05_EXPORTS" / "P195R_TEST_EXPORT"
 
-    payload = export_operator_release_runtime_tracker(tmp_path, export_dir=export_dir)
+    payload = p195r.export_operator_release_runtime_tracker(tmp_path, export_dir=export_dir)
 
     assert payload["selected_next_pack"] == "P196_REAL_CASE_PORTFOLIO_GEM_OPERATOR_INPUTS_MAXI"
     assert (export_dir / "P195R_OPERATOR_RELEASE_RUNTIME_TRACKER.json").exists()

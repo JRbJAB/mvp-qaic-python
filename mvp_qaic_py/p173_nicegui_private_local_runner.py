@@ -459,6 +459,7 @@ def serve_private(
                     _nav_button("GEM Evidence", "/gem-evidence", "inventory")
                     _nav_button("Runtime Contract", "/runtime-contract", "assignment")
                     _nav_button("Operator Release", "/operator-release", "rocket_launch")
+                    _nav_button("Real Inputs", "/real-case-inputs", "upload_file")
                     _nav_button("Review", "/review", "fact_check")
                     _nav_button("Cache", "/cache", "storage")
                     _nav_button("Journal", "/journal", "list_alt")
@@ -1250,6 +1251,66 @@ def serve_private(
     @ui.page("/operator-release")
     def operator_release() -> None:
         _operator_release_page()
+
+    def _real_case_inputs_page() -> None:
+        from mvp_qaic_py.p196_real_case_portfolio_gem_operator_inputs_maxi import (
+            build_real_case_portfolio_gem_inputs,
+        )
+
+        payload = build_real_case_portfolio_gem_inputs(project_root)
+        with _shell("real-case-inputs"):
+            ui.label("P196 Real Case Portfolio GEM Inputs").classes("qaic-section-title")
+            ui.label(
+                "Pack opérateur pour vrai cas portfolio: capture écran, texte copié, "
+                "réponse GEM collée, preuves locales et prochain statut review."
+            ).classes("qaic-muted")
+
+            with ui.row().classes("gap-3"):
+                ui.badge(payload["input_status"], color="blue")
+                ui.badge(f"captures={payload['capture_count']}", color="green")
+                ui.badge(f"responses={payload['response_count']}", color="purple")
+                ui.badge(f"ready={payload['ready_for_review']}", color="orange")
+                ui.badge("NO GEM CALL", color="red")
+
+            ui.separator()
+            ui.label("Contrat d'inputs opérateur").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "input_id", "label": "input_id", "field": "input_id", "align": "left"},
+                    {"name": "required", "label": "required", "field": "required", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                    {
+                        "name": "local_path",
+                        "label": "local_path",
+                        "field": "local_path",
+                        "align": "left",
+                    },
+                    {
+                        "name": "operator_action",
+                        "label": "operator_action",
+                        "field": "operator_action",
+                        "align": "left",
+                    },
+                ],
+                rows=payload["input_contract_rows"],
+                row_key="input_id",
+            ).props("flat bordered dense").classes("qaic-table")
+
+            ui.separator()
+            ui.label("Étapes opérateur").classes("qaic-section-title")
+            ui.table(
+                columns=[
+                    {"name": "step", "label": "step", "field": "step", "align": "right"},
+                    {"name": "action", "label": "action", "field": "action", "align": "left"},
+                    {"name": "status", "label": "status", "field": "status", "align": "left"},
+                ],
+                rows=payload["operator_steps"],
+                row_key="step",
+            ).props("flat bordered dense").classes("qaic-table")
+
+    @ui.page("/real-case-inputs")
+    def real_case_inputs() -> None:
+        _real_case_inputs_page()
 
     @ui.page("/")
     def home() -> None:
