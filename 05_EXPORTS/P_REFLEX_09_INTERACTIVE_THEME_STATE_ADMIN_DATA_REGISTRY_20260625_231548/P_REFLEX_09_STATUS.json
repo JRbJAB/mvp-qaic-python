@@ -1,0 +1,17 @@
+﻿{
+    "theme_state_write_mode":  "IN_MEMORY_ONLY",
+    "live_action":  false,
+    "interactive_theme_state":  true,
+    "next_recommended_batch":  "P_REFLEX_10_VISUAL_THEME_APPLICATION_AND_ADMIN_POLISH",
+    "registry_write_allowed":  false,
+    "project":  "MVP_QAIC_ONLY",
+    "tests_passed":  true,
+    "STATUS":  "OK_P_REFLEX_09_INTERACTIVE_THEME_STATE_ADMIN_DATA_REGISTRY",
+    "manual_preview_script":  "RUN_P_REFLEX_09_LOCAL_PREVIEW.ps1",
+    "admin_data_registry":  true,
+    "public_deploy":  false,
+    "full_pytest_passed":  true,
+    "ruff_ok":  true,
+    "browser_opened_by_batch":  false,
+    "server_started_by_batch":  false
+}

@@ -6,6 +6,12 @@ import reflex as rx
 
 from mvp_qaic_py.reflex_app.data_binding import build_local_data_binding_payload
 
+from .admin_data_registry import (
+    admin_registry_summary_rows,
+    build_admin_data_registry_payload,
+    registry_domain_rows,
+)
+from .admin_theme_state import theme_state_component, theme_state_summary_rows
 from .layout import page_shell
 from .theme import (
     ADMIN_SECTIONS,
@@ -74,6 +80,7 @@ def admin_runtime() -> rx.Component:
         rx.vstack(
             key_value_card("Runtime contract", rows),
             key_value_card("Theme contract", get_theme_contract()),
+            key_value_card("Admin data registry", admin_registry_summary_rows()),
             spacing="4",
             align="start",
             width="100%",
@@ -97,16 +104,19 @@ def admin_theme() -> rx.Component:
         section["title"],
         section["description"],
         rx.vstack(
+            theme_state_component(),
+            key_value_card("Theme state contract", theme_state_summary_rows()),
             key_value_card("Current theme", rows),
             key_value_card("Allowed theme options", THEME_OPTIONS),
             rx.box(
                 rx.vstack(
                     rx.heading("Decision", size="4"),
                     rx.text(
-                        "P08 fixe le contrat thème. Les contrôles interactifs arrivent dans P09/P10.",
+                        "P09 ajoute l'état interactif local. Application visuelle complète dans P10.",
                         size="3",
                     ),
                     rx.hstack(
+                        status_pill("THEME_STATE_READY", "ok"),
                         status_pill("LIGHT_DARK_SYSTEM_READY", "ok"),
                         status_pill("ACCENT_READY", "ok"),
                         status_pill("DENSITY_READY", "ok"),
@@ -167,6 +177,7 @@ def admin_routes() -> rx.Component:
             key_value_card(
                 "Route counts", {"admin_routes": len(get_admin_routes()), "all_routes": len(routes)}
             ),
+            key_value_card("Registry domains", registry_domain_rows()),
             spacing="4",
             align="start",
             width="100%",
@@ -178,6 +189,7 @@ def admin_routes() -> rx.Component:
 def admin_data_binding() -> rx.Component:
     section = _admin_section_by_id("admin_data_binding")
     payload = build_local_data_binding_payload()
+    registry_payload = build_admin_data_registry_payload()
     rows = {
         "binding_mode": payload["binding_mode"],
         "docs_source_count": payload["docs_source_count"],
@@ -191,10 +203,13 @@ def admin_data_binding() -> rx.Component:
         section["description"],
         rx.vstack(
             key_value_card("Local readonly data binding", rows),
+            key_value_card("Admin data registry", admin_registry_summary_rows()),
+            key_value_card("Registry domains", registry_domain_rows()),
             rx.hstack(
                 status_pill("LOCAL_READONLY", "ok"),
                 status_pill("NO_SHEET_WRITE", "ok"),
                 status_pill("NO_BIGQUERY_WRITE", "ok"),
+                status_pill(f"ROUTES={registry_payload['route_count']}", "info"),
                 spacing="2",
                 wrap="wrap",
             ),
