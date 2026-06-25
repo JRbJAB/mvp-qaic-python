@@ -1,0 +1,25 @@
+﻿{
+    "server_started_by_batch":  false,
+    "live_action":  false,
+    "manual_preview_script":  "RUN_P_REFLEX_07_LOCAL_PREVIEW.ps1",
+    "sections":  [
+                     "HOME_MISSION_CONTROL",
+                     "DEV_TRACKING",
+                     "CDC_TRACKER",
+                     "ARCHITECTURE_WEB",
+                     "DOCUMENTATION_REGISTRY",
+                     "ARCHITECTURE_REGISTRY"
+                 ],
+    "landing_page":  "HOME_MISSION_CONTROL",
+    "next_recommended_batch":  "P_REFLEX_08_ADMIN_THEME_SETTINGS_FOUNDATION",
+    "project":  "MVP_QAIC_ONLY",
+    "STATUS":  "OK_P_REFLEX_07_LANDING_MISSION_CONTROL_ARCH_REGISTRY",
+    "ui_theme_foundation":  true,
+    "public_deploy":  false,
+    "ruff_ok":  true,
+    "full_pytest_passed":  true,
+    "sitemap_plugin":  "EXPLICIT_ENABLED",
+    "radix_themes_plugin":  "EXPLICIT_ENABLED",
+    "browser_opened_by_batch":  false,
+    "tests_passed":  true
+}
