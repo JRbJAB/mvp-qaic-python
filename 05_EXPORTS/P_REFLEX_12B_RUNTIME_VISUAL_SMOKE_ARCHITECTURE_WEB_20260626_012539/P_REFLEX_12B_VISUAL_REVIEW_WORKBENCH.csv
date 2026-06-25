@@ -1,0 +1,7 @@
+﻿"check_id","route","check","expected","human_status","notes"
+"P12B-VISUAL-01","/architecture-web","Le SVG schema pro est visible en tete de page","schema displayed first","PENDING",""
+"P12B-VISUAL-02","/architecture-web","Le CDC tracker affiche routes/liens/statuts/progress percent","cdc table readable","PENDING",""
+"P12B-VISUAL-03","/architecture-web","Les cockpits essentiels sont visibles et cliquables","cockpit registry visible","PENDING",""
+"P12B-VISUAL-04","/sitemap","La page sitemap dediee affiche le schema et les nodes","sitemap page readable","PENDING",""
+"P12B-VISUAL-05","/architecture-web","Pas de debordement horizontal majeur","no major overflow","PENDING",""
+"P12B-VISUAL-06","/architecture-web","Lisibilite correcte en mode clair et sombre","theme-compatible","PENDING",""

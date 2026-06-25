@@ -1,0 +1,6 @@
+﻿"route_name","url","status_code","http_ok","body_length","content_type","contains_svg"
+"HOME","http://localhost:3000/","200","True","3534","text/html","False"
+"ARCHITECTURE_WEB","http://localhost:3000/architecture-web","200","True","3534","text/html","False"
+"SITEMAP","http://localhost:3000/sitemap","200","True","3534","text/html","False"
+"SVG_ASSET","http://localhost:3000/mvp_qaic_web_architecture_schema.svg","200","True","5471","image/svg+xml","True"
+"ADMIN_ROUTES","http://localhost:3000/admin/routes","200","True","3534","text/html","False"

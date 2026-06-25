@@ -1,0 +1,20 @@
+﻿{
+    "live_action":  false,
+    "svg_asset_http_ok":  true,
+    "http_smoke_count":  5,
+    "browser_opened_by_batch":  false,
+    "next_recommended_batch":  "P_REFLEX_12C_VISUAL_APPROVAL_OR_REWORK_ARCHITECTURE_WEB",
+    "server_started_by_batch":  true,
+    "source_modified":  false,
+    "architecture_web_http_ok":  true,
+    "project":  "MVP_QAIC_ONLY",
+    "source_head":  "58cb7e8c16a895283d0ed30cf913b3d61c87efd7",
+    "sitemap_http_ok":  true,
+    "public_deploy":  false,
+    "visual_review_rows":  6,
+    "visual_review_status":  "PENDING_HUMAN",
+    "STATUS":  "OK_P_REFLEX_12B_RUNTIME_VISUAL_SMOKE_ARCHITECTURE_WEB",
+    "broker_order_sizing":  false,
+    "runtime_synced":  true,
+    "svg_asset_contains_svg":  true
+}
