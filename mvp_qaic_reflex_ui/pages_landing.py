@@ -7,6 +7,7 @@ import reflex as rx
 from .layout import page_shell, placeholder_body
 from .theme import LANDING_SECTIONS, get_landing_sections, safety_panel, section_card
 from .visual_theme import metric_grid, mission_control_hero
+from .web_architecture_cdc import architecture_web_cdc_body, sitemap_page_body
 
 
 def _section_by_id(section_id: str) -> dict[str, str]:
@@ -103,13 +104,18 @@ def architecture_web() -> rx.Component:
     section = _section_by_id("architecture_web")
     return page_shell(
         section["title"],
-        "Architecture WebApp Reflex, routes, composants et couches données.",
-        placeholder_body(
-            section["title"],
-            section["route"],
-            "Cette page cartographiera landing, admin, lexique, prompt lab, GEM portfolio et future exposition publique.",
-        ),
+        "Schema pro, sitemap visuel, CDC tracker et cockpits essentiels.",
+        architecture_web_cdc_body(),
         section["route"],
+    )
+
+
+def web_sitemap() -> rx.Component:
+    return page_shell(
+        "🧭 Visual Sitemap",
+        "Carte visuelle des pages Reflex, cockpits, flux et statuts CDC.",
+        sitemap_page_body(),
+        "/sitemap",
     )
 
 

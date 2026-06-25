@@ -155,6 +155,7 @@ SECONDARY_ROUTES = (
     {"title": "Prompt Lab", "route": "/prompt-lab"},
     {"title": "GEM Portfolio", "route": "/gem-portfolio"},
     {"title": "QAIC Bridge", "route": "/qaic-bridge"},
+    {"title": "Visual Sitemap", "route": "/sitemap"},
     {"title": "Settings Safety", "route": "/settings-safety"},
 )
 

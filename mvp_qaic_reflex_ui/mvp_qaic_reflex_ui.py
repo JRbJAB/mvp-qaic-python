@@ -15,6 +15,7 @@ from .pages_admin import (
 from .pages_landing import (
     architecture_registry,
     architecture_web,
+    web_sitemap,
     cdc_tracker,
     dev_tracking,
     documentation_registry,
@@ -44,6 +45,7 @@ app.add_page(mission_control, route="/mission-control", title="Mission Control")
 app.add_page(dev_tracking, route="/dev-tracking", title="Dev Tracking")
 app.add_page(cdc_tracker, route="/cdc-tracker", title="CDC Tracker")
 app.add_page(architecture_web, route="/architecture-web", title="Architecture Web")
+app.add_page(web_sitemap, route="/sitemap", title="MVP QAIC — Visual Sitemap")
 app.add_page(
     documentation_registry, route="/documentation-registry", title="Documentation Registry"
 )

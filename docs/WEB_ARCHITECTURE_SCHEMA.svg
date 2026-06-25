@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1040" viewBox="0 0 1680 1040">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#eef6ff"/>
+      <stop offset="52%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8fff7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title{font-family:Inter,Arial,sans-serif;font-size:42px;font-weight:800;fill:#0f172a}
+      .subtitle{font-family:Inter,Arial,sans-serif;font-size:20px;fill:#475569}
+      .box{fill:#ffffff;stroke:#cbd5e1;stroke-width:2;rx:24;filter:url(#shadow)}
+      .box2{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2;rx:18}
+      .layer{font-family:Inter,Arial,sans-serif;font-size:19px;font-weight:800;fill:#1e3a8a}
+      .text{font-family:Inter,Arial,sans-serif;font-size:17px;fill:#0f172a}
+      .small{font-family:Inter,Arial,sans-serif;font-size:14px;fill:#475569}
+      .ok{fill:#dcfce7;stroke:#16a34a;stroke-width:2;rx:12}
+      .review{fill:#fef3c7;stroke:#d97706;stroke-width:2;rx:12}
+      .private{fill:#dbeafe;stroke:#2563eb;stroke-width:2;rx:12}
+      .arrow{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1680" height="1040" fill="url(#bg)"/>
+  <text x="70" y="70" class="title">MVP QAIC — Web Architecture CDC & Visual Sitemap</text>
+  <text x="70" y="106" class="subtitle">Private Reflex app · SitemapPlugin enabled · LocalStorage theme persistence · No broker/order/sizing · No public deploy</text>
+
+  <rect x="70" y="150" width="330" height="250" class="box"/>
+  <text x="95" y="190" class="layer">Mission Layer</text>
+  <text x="95" y="230" class="text">/ Home / Mission Control</text>
+  <text x="95" y="262" class="text">/dev-tracking</text>
+  <text x="95" y="294" class="text">/cdc-tracker</text>
+  <rect x="95" y="330" width="150" height="34" class="private"/>
+  <text x="112" y="353" class="small">PRIVATE_READY</text>
+
+  <rect x="460" y="150" width="330" height="250" class="box"/>
+  <text x="485" y="190" class="layer">Architecture Layer</text>
+  <text x="485" y="230" class="text">/architecture-web</text>
+  <text x="485" y="262" class="text">/sitemap</text>
+  <text x="485" y="294" class="text">docs + assets + JSON</text>
+  <rect x="485" y="330" width="120" height="34" class="ok"/>
+  <text x="508" y="353" class="small">ACTIVE</text>
+
+  <rect x="850" y="150" width="350" height="250" class="box"/>
+  <text x="875" y="190" class="layer">Admin Layer</text>
+  <text x="875" y="230" class="text">/admin/runtime</text>
+  <text x="875" y="262" class="text">/admin/theme</text>
+  <text x="875" y="294" class="text">/admin/data-binding</text>
+  <text x="875" y="326" class="text">localStorage theme</text>
+  <rect x="875" y="360" width="150" height="34" class="private"/>
+  <text x="892" y="383" class="small">PRIVATE_READY</text>
+
+  <rect x="1260" y="150" width="340" height="250" class="box"/>
+  <text x="1285" y="190" class="layer">Product Layer</text>
+  <text x="1285" y="230" class="text">/prompt-lab</text>
+  <text x="1285" y="262" class="text">/gem-portfolio</text>
+  <text x="1285" y="294" class="text">/lexique-knowledge</text>
+  <text x="1285" y="326" class="text">/qaic-bridge read-only</text>
+  <rect x="1285" y="360" width="128" height="34" class="review"/>
+  <text x="1303" y="383" class="small">REVIEW</text>
+
+  <path d="M400 275 C430 275 430 275 460 275" class="arrow"/>
+  <path d="M790 275 C820 275 820 275 850 275" class="arrow"/>
+  <path d="M1200 275 C1230 275 1230 275 1260 275" class="arrow"/>
+
+  <rect x="70" y="460" width="1530" height="230" class="box2"/>
+  <text x="95" y="502" class="layer">Data / Contract / Governance</text>
+  <text x="95" y="548" class="text">Source of truth: docs/WEB_ARCHITECTURE_CDC.md · docs/WEB_ARCHITECTURE_SITEMAP.json · docs/WEB_ARCHITECTURE_SCHEMA.svg</text>
+  <text x="95" y="588" class="text">Rendered in Reflex: assets/mvp_qaic_web_architecture_schema.svg at top of /architecture-web</text>
+  <text x="95" y="628" class="text">CDC tracker: routes, cockpit, status, evidence, progress %, next action</text>
+
+  <rect x="70" y="750" width="330" height="160" class="box2"/>
+  <text x="95" y="790" class="layer">Runtime</text>
+  <text x="95" y="830" class="text">Frontend 3000</text>
+  <text x="95" y="862" class="text">Backend 8000</text>
+
+  <rect x="460" y="750" width="330" height="160" class="box2"/>
+  <text x="485" y="790" class="layer">Safety Gates</text>
+  <text x="485" y="830" class="text">No broker · No order</text>
+  <text x="485" y="862" class="text">No sizing · No public deploy</text>
+
+  <rect x="850" y="750" width="350" height="160" class="box2"/>
+  <text x="875" y="790" class="layer">Sitemap Plugin</text>
+  <text x="875" y="830" class="text">SitemapPlugin explicit</text>
+  <text x="875" y="862" class="text">Routes registered in Reflex app</text>
+
+  <rect x="1260" y="750" width="340" height="160" class="box2"/>
+  <text x="1285" y="790" class="layer">Essential Cockpits</text>
+  <text x="1285" y="830" class="text">Mission · CDC · Architecture</text>
+  <text x="1285" y="862" class="text">Prompt · GEM · Docs · QAIC bridge</text>
+</svg>
