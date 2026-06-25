@@ -290,3 +290,137 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+ROUTE_PAGE_COPY: dict[str, dict[str, str]] = {
+    "/": {
+        "title": "Dashboard",
+        "summary": "Vue synthèse du cockpit privé MVP QAIC.",
+        "primary_panel": "État du noyau, navigation, sécurité et derniers points stables.",
+    },
+    "/base-python": {
+        "title": "Base Python",
+        "summary": "Modules Python, noyau, registries et état repo.",
+        "primary_panel": "Point d’entrée pour suivre les modules MVP_QAIC_PY et la structure source.",
+    },
+    "/google-sheets": {
+        "title": "Google Sheets",
+        "summary": "Vue cockpit/export Google Sheets, sans écriture live par défaut.",
+        "primary_panel": "Place réservée pour liens Sheets, exports, ponts read-only et statuts de synchro.",
+    },
+    "/prompt": {
+        "title": "Prompt Cockpit",
+        "summary": "Prompts, templates, historique, qualité et review humaine.",
+        "primary_panel": "Pilotage prompt MVP, sans appel GEM automatique.",
+    },
+    "/responses": {
+        "title": "Réponses GEM",
+        "summary": "Brouillons, réponses GEM, review humaine et exports locaux.",
+        "primary_panel": "Gestion des drafts et décisions humaines avant toute application.",
+    },
+    "/documents": {
+        "title": "Documents",
+        "summary": "Registry documentaire, méthodes, lexique et sources MVP.",
+        "primary_panel": "Gestion documentaire connectée au noyau P219B.",
+    },
+    "/architecture": {
+        "title": "Architecture",
+        "summary": "Schéma SVG, arborescence, routes, modules et frontières MVP/QAIC.",
+        "primary_panel": "Vue d’architecture cible et frontière QAIC backend privé.",
+    },
+    "/configuration": {
+        "title": "Configuration",
+        "summary": "Paths, modes, flags safety et paramètres UI.",
+        "primary_panel": "Administration locale de la configuration, en review-only.",
+    },
+    "/audit-runs": {
+        "title": "Audit / Runs",
+        "summary": "Gates, tests, tags, logs et preuves de validation.",
+        "primary_panel": "Suivi sérieux des runs, commits, tags et visual gates.",
+    },
+}
+
+
+def build_route_page_payload(
+    project_root: str | Path, *, active_route: str = "/"
+) -> dict[str, Any]:
+    shell_payload = build_private_admin_shell_payload(project_root)
+    copy = ROUTE_PAGE_COPY.get(active_route, ROUTE_PAGE_COPY["/"])
+    nav = shell_payload["navigation"]
+    active = next((item for item in nav if item["route"] == active_route), nav[0])
+    return {
+        "STATUS": "OK_P219D2_ROUTE_PAGE_PAYLOAD_READY",
+        "active_route": active_route,
+        "active_navigation": active,
+        "title": copy["title"],
+        "summary": copy["summary"],
+        "primary_panel": copy["primary_panel"],
+        "navigation_count": len(nav),
+        "safety_flags": shell_payload["safety_flags"],
+        "old_menu_source": shell_payload["old_menu_source"],
+        "selected_source_shell": shell_payload["selected_source_shell"],
+        "local_only": True,
+        "review_only": True,
+        "provider_call_executed": False,
+        "gem_call_executed": False,
+        "broker": False,
+        "order": False,
+        "sizing": False,
+    }
+
+
+def render_admin_route_content(
+    ui: Any, route_payload: dict[str, Any], shell_payload: dict[str, Any]
+) -> None:
+    ui.html(
+        "\n".join(
+            [
+                "<section class='mvp-card'>",
+                f"<div class='mvp-title'>{escape(str(route_payload['title']))}</div>",
+                f"<div class='mvp-subtitle'>{escape(str(route_payload['summary']))}</div>",
+                "<p>",
+                f"{escape(str(route_payload['primary_panel']))}",
+                "</p>",
+                f"<p><span class='mvp-badge'>Route: {escape(str(route_payload['active_route']))}</span></p>",
+                "</section>",
+            ]
+        )
+    )
+
+    nav_rows = "\n".join(
+        "<tr>"
+        f"<td>{escape(str(item['group']))}</td>"
+        f"<td>{escape(str(item['label']))}</td>"
+        f"<td><code>{escape(str(item['route']))}</code></td>"
+        f"<td>{escape(str(item['purpose']))}</td>"
+        "</tr>"
+        for item in shell_payload["navigation"]
+    )
+    ui.html(
+        "\n".join(
+            [
+                "<section class='mvp-card'>",
+                "<h2>Menu latéral officiel</h2>",
+                "<table class='mvp-table'><thead><tr><th>Groupe</th><th>Page</th><th>Route</th><th>Objectif</th></tr></thead><tbody>",
+                nav_rows,
+                "</tbody></table>",
+                "</section>",
+            ]
+        )
+    )
+
+    safety_rows = "\n".join(
+        f"<tr><td>{escape(str(flag))}</td><td>{escape(str(value))}</td></tr>"
+        for flag, value in route_payload["safety_flags"].items()
+    )
+    ui.html(
+        "\n".join(
+            [
+                "<section class='mvp-card'>",
+                "<h2>Safety registry</h2>",
+                "<table class='mvp-table'><thead><tr><th>Flag</th><th>Value</th></tr></thead><tbody>",
+                safety_rows,
+                "</tbody></table>",
+                "</section>",
+            ]
+        )
+    )

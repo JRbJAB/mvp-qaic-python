@@ -61,3 +61,11 @@ MVP_QAIC_PY
 ## Next
 
 `P219D2_INTEGRATE_REAL_P173_MENU_DETAILS_AND_PAGE_STUBS_VISUAL_GATE`
+## P219D2 normal preview target
+
+- CURRENT_NORMAL_PREVIEW_APP: `mvp_qaic_py/private_admin_app/app.py`
+- CURRENT_VISUAL_URL: `http://127.0.0.1:8096`
+- CURRENT_UI_MODE: `NORMAL_LEFT_MENU_PREVIEW`
+- CURRENT_NEXT_BATCH: `P219D3_POLISH_REAL_PAGE_CONTENT_AND_LINKS_VISUAL_GATE`
+
+P219D2 converts the durable shell into a normal NiceGUI preview with left drawer and route pages.
