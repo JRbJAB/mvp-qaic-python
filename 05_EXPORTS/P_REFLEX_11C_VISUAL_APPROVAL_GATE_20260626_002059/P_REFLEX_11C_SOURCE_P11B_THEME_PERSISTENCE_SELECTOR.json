@@ -1,0 +1,23 @@
+﻿{
+    "visual_approval":  "PENDING_HUMAN",
+    "current_theme_mode":  "IN_MEMORY_ONLY",
+    "public_deploy":  false,
+    "selector_status":  "READY_REVIEW_ONLY",
+    "next":  "P_REFLEX_11C_BROWSER_LOCAL_STORAGE_THEME_PERSISTENCE_AFTER_VISUAL_APPROVAL",
+    "broker_order_sizing":  false,
+    "rejected_for_now":  [
+                             "SERVER_DATABASE",
+                             "GOOGLE_SHEETS",
+                             "BIGQUERY",
+                             "COOKIE_SERVER_SESSION"
+                         ],
+    "recommended_option":  "BROWSER_LOCAL_STORAGE",
+    "apply_allowed":  false,
+    "recommendation_reason":  [
+                                  "Persistance privée par navigateur",
+                                  "Aucune base serveur nécessaire pour le MVP",
+                                  "Aucune écriture Google Sheets ou BigQuery",
+                                  "Compatible light dark system et préférences UI",
+                                  "Réversible et simple à supprimer"
+                              ]
+}

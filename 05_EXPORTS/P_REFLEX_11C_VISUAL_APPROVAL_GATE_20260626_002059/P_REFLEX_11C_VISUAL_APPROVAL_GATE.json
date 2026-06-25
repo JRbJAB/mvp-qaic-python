@@ -1,0 +1,19 @@
+﻿{
+    "live_action":  false,
+    "operator_decision":  "APPROVED",
+    "broker_order_sizing":  false,
+    "route_count_from_p11b":  11,
+    "theme_persistence_recommendation":  "BROWSER_LOCAL_STORAGE",
+    "route_smoke_ok_from_p11b":  true,
+    "visual_approval":  "VISUAL_APPROVED_BY_OPERATOR",
+    "source_p11b_export":  "Q:\\MVP_QAIC_PY\\05_EXPORTS\\P_REFLEX_11B_RUNTIME_SMOKE_THEME_PERSISTENCE_SELECTOR_20260626_001125",
+    "source_head_before_gate":  "1a6a1301bd4a94bc707d15810026f8cc081af443",
+    "next":  "P_REFLEX_11D_BROWSER_LOCAL_STORAGE_THEME_PERSISTENCE",
+    "browser_opened_by_batch":  false,
+    "theme_persistence_apply_allowed":  true,
+    "project":  "MVP_QAIC_ONLY",
+    "public_deploy":  false,
+    "server_started_by_batch":  false,
+    "STATUS":  "VISUAL_APPROVED_BY_OPERATOR",
+    "source_modified":  false
+}
