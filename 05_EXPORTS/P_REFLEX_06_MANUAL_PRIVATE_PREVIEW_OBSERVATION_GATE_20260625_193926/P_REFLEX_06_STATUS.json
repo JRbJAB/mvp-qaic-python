@@ -1,0 +1,18 @@
+﻿{
+    "server_started_by_batch":  false,
+    "live_action":  false,
+    "manual_run_script":  "RUN_MANUAL_PRIVATE_REFLEX_PREVIEW.ps1",
+    "next_recommended_batch":  "P_REFLEX_07_PRIVATE_PREVIEW_OBSERVATION_REVIEW",
+    "project":  "MVP_QAIC_ONLY",
+    "operator_must_run_manually":  true,
+    "gate_status":  "READY_FOR_OPERATOR_MANUAL_RUN",
+    "STATUS":  "OK_P_REFLEX_06_MANUAL_PRIVATE_PREVIEW_OBSERVATION_GATE",
+    "expected_local_url":  "http://127.0.0.1:3000",
+    "tests_passed":  true,
+    "public_deploy":  false,
+    "ruff_ok":  true,
+    "bigquery_write":  false,
+    "sheet_write":  false,
+    "browser_opened_by_batch":  false,
+    "broker_order_sizing":  false
+}
