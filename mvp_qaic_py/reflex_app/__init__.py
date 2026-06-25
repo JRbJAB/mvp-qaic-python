@@ -1,10 +1,13 @@
-﻿from .data_binding import build_local_data_binding_payload
-"""MVP QAIC Reflex global webapp shell foundation.
+"""MVP QAIC Reflex shell package."""
 
-Local-only foundation. No live provider, broker, Sheet writes, data warehouse writes, CLASP or public deploy action.
-"""
+from __future__ import annotations
 
-from .navigation import build_navigation_groups, safety_banner_payload, ui_shell_payload
+from .data_binding import build_local_data_binding_payload
+from .navigation import (
+    build_navigation_groups,
+    safety_banner_payload,
+    ui_shell_payload,
+)
 from .registry import (
     ARCHITECTURE_ASSET,
     CURRENT_CDC,
@@ -28,4 +31,3 @@ __all__ = [
     "ui_shell_payload",
     "build_local_data_binding_payload",
 ]
-

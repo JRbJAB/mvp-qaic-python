@@ -1,0 +1,16 @@
+﻿{
+    "public_deploy":  false,
+    "live_action":  false,
+    "browser_opened":  false,
+    "next_recommended_batch":  "P_REFLEX_05_PRIVATE_OPERATOR_PREVIEW_SELECTOR",
+    "previous_commit":  "861ce23",
+    "server_started":  false,
+    "project":  "MVP_QAIC_ONLY",
+    "tests_passed":  true,
+    "STATUS":  "OK_P_REFLEX_04_R2_FIX_INIT_RUFF_SEAL",
+    "repaired_issue":  "P_REFLEX_04_RUFF_E402_FALSE_OK",
+    "bigquery_write":  false,
+    "sheet_write":  false,
+    "ruff_ok":  true,
+    "broker_order_sizing":  false
+}
