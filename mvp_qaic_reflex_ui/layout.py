@@ -5,6 +5,13 @@ from __future__ import annotations
 import reflex as rx
 
 from .theme import ADMIN_SECTIONS, LANDING_SECTIONS, SECONDARY_ROUTES, UI_THEME, status_pill
+from .visual_theme import (
+    APP_BACKGROUND,
+    CONTENT_MAX_WIDTH,
+    SIDEBAR_BACKGROUND,
+    TOPBAR_BACKGROUND,
+    color_mode_toggle,
+)
 
 
 def navigation_items() -> list[dict[str, str]]:
@@ -88,7 +95,7 @@ def sidebar(active_route: str = "/") -> rx.Component:
         padding="1rem",
         border_right="1px solid rgba(0, 0, 0, 0.10)",
         min_height="100vh",
-        background="#F8FAFC",
+        background=SIDEBAR_BACKGROUND,
     )
 
 
@@ -105,6 +112,7 @@ def topbar(title: str, subtitle: str) -> rx.Component:
                 rx.spacer(),
                 status_pill("LOCAL_PRIVATE", "ok"),
                 status_pill(UI_THEME["default_mode"].upper(), "info"),
+                color_mode_toggle(),
                 spacing="3",
                 align="center",
                 width="100%",
@@ -116,6 +124,11 @@ def topbar(title: str, subtitle: str) -> rx.Component:
         ),
         padding="1.25rem 1.5rem",
         width="100%",
+        background=TOPBAR_BACKGROUND,
+        position="sticky",
+        top="0",
+        z_index="20",
+        backdrop_filter="blur(16px)",
     )
 
 
@@ -126,9 +139,16 @@ def page_shell(
         sidebar(active_route),
         rx.box(
             topbar(title, subtitle),
-            rx.box(body, padding="0 1.5rem 2rem 1.5rem", width="100%"),
+            rx.box(
+                body,
+                padding="0 1.5rem 2rem 1.5rem",
+                width="100%",
+                max_width=CONTENT_MAX_WIDTH,
+                margin="0 auto",
+            ),
             width="100%",
             min_height="100vh",
+            background=APP_BACKGROUND,
         ),
         align="start",
         width="100%",

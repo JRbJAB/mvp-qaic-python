@@ -5,7 +5,8 @@ from __future__ import annotations
 import reflex as rx
 
 from .layout import page_shell, placeholder_body
-from .theme import LANDING_SECTIONS, get_landing_sections, safety_panel, section_card, status_pill
+from .theme import LANDING_SECTIONS, get_landing_sections, safety_panel, section_card
+from .visual_theme import metric_grid, mission_control_hero
 
 
 def _section_by_id(section_id: str) -> dict[str, str]:
@@ -17,44 +18,48 @@ def _section_by_id(section_id: str) -> dict[str, str]:
 
 def home() -> rx.Component:
     sections = get_landing_sections()
+    metrics = (
+        {
+            "label": "Mission sections",
+            "value": "6",
+            "detail": "Home, Dev, CDC, Web, Docs and Registry.",
+            "tone": "accent",
+        },
+        {
+            "label": "Admin sections",
+            "value": "6",
+            "detail": "Runtime, theme, safety, routes and data.",
+            "tone": "accent",
+        },
+        {
+            "label": "Runtime",
+            "value": "LOCAL",
+            "detail": "Private Reflex frontend and backend.",
+            "tone": "success",
+        },
+        {
+            "label": "Safety",
+            "value": "LOCKED",
+            "detail": "No broker, order, sizing or public deploy.",
+            "tone": "warning",
+        },
+    )
+
     return page_shell(
         "🏠 Home / Mission Control",
         "Landing page opérateur pour piloter le MVP QAIC Reflex.",
         rx.vstack(
-            rx.box(
-                rx.vstack(
-                    rx.heading("Mission Control", size="6"),
-                    rx.text(
-                        "Priorité actuelle : structurer l'accueil, le suivi dev, le CDC, "
-                        "l'architecture web, la documentation registry et l'architecture registry.",
-                        size="3",
-                    ),
-                    rx.hstack(
-                        status_pill("APP_RUNNING_LOCAL", "ok"),
-                        status_pill("REFLEX_FOUNDATION", "ok"),
-                        status_pill("THEME_FOUNDATION", "ok"),
-                        status_pill("ADMIN_NEXT", "warning"),
-                        spacing="2",
-                        wrap="wrap",
-                    ),
-                    spacing="3",
-                    align="start",
-                ),
-                border="1px solid rgba(0, 0, 0, 0.10)",
-                border_radius="14px",
-                padding="1rem",
-                width="100%",
-                background="#F8FAFC",
-            ),
+            mission_control_hero(),
+            metric_grid(metrics),
             safety_panel(),
             rx.heading("Sections prioritaires", size="5"),
-            rx.vstack(
+            rx.grid(
                 *[section_card(section) for section in sections],
-                spacing="3",
+                columns="2",
+                spacing="4",
                 width="100%",
-                align="start",
             ),
-            spacing="4",
+            spacing="5",
             align="start",
             width="100%",
         ),

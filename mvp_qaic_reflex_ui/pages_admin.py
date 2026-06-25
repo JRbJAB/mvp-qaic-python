@@ -13,6 +13,7 @@ from .admin_data_registry import (
 )
 from .admin_theme_state import theme_state_component, theme_state_summary_rows
 from .layout import page_shell
+from .visual_theme import admin_summary_panel, theme_runtime_panel
 from .theme import (
     ADMIN_SECTIONS,
     SAFETY_FLAGS,
@@ -47,6 +48,7 @@ def admin_center() -> rx.Component:
                 spacing="2",
                 wrap="wrap",
             ),
+            admin_summary_panel(),
             rx.heading("Admin sections", size="5"),
             rx.vstack(
                 *[section_card(section) for section in ADMIN_SECTIONS],
@@ -104,6 +106,7 @@ def admin_theme() -> rx.Component:
         section["title"],
         section["description"],
         rx.vstack(
+            theme_runtime_panel(),
             theme_state_component(),
             key_value_card("Theme state contract", theme_state_summary_rows()),
             key_value_card("Current theme", rows),

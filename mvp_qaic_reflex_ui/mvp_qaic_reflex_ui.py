@@ -29,7 +29,16 @@ from .pages_landing import (
 
 index = home
 
-app = rx.App()
+app = rx.App(
+    theme=rx.theme(
+        appearance="inherit",
+        accent_color="blue",
+        gray_color="slate",
+        panel_background="solid",
+        radius="large",
+        scaling="100%",
+    )
+)
 app.add_page(index, route="/", title="MVP QAIC — Mission Control")
 app.add_page(mission_control, route="/mission-control", title="Mission Control")
 app.add_page(dev_tracking, route="/dev-tracking", title="Dev Tracking")

@@ -1,0 +1,23 @@
+﻿{
+    "next_recommended_batch":  "P_REFLEX_11_RUNTIME_VISUAL_REVIEW_AND_THEME_PERSISTENCE_SELECTOR",
+    "ruff_format_passed":  true,
+    "targeted_pytest_passed":  true,
+    "theme_state_write_mode":  "IN_MEMORY_ONLY",
+    "import_smoke_ok":  true,
+    "live_action":  false,
+    "repaired_issue":  "F401_UNUSED_STATUS_PILL_IMPORT",
+    "broker_order_sizing":  false,
+    "design_tokens":  true,
+    "public_deploy":  false,
+    "ruff_check_passed":  true,
+    "landing_visual_polish":  true,
+    "project":  "MVP_QAIC_ONLY",
+    "server_started_by_batch":  false,
+    "STATUS":  "OK_P_REFLEX_10R1_VISUAL_THEME_RUFF_REPAIR_SEAL",
+    "registry_write_allowed":  false,
+    "official_color_mode_toggle":  true,
+    "full_pytest_passed":  true,
+    "global_reflex_theme":  true,
+    "browser_opened_by_batch":  false,
+    "admin_visual_polish":  true
+}
