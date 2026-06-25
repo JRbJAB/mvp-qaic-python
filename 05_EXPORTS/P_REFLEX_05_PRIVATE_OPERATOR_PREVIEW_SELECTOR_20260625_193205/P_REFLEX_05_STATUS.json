@@ -1,0 +1,17 @@
+﻿{
+    "live_action":  false,
+    "manual_command":  "python -m reflex run --env dev --backend-host 127.0.0.1 --frontend-port 3000",
+    "next_recommended_batch":  "P_REFLEX_06_MANUAL_PRIVATE_PREVIEW_OBSERVATION_GATE",
+    "selector_status":  "READY_FOR_MANUAL_PRIVATE_PREVIEW",
+    "server_started":  false,
+    "project":  "MVP_QAIC_ONLY",
+    "operator_must_run_manually":  true,
+    "tests_passed":  true,
+    "STATUS":  "OK_P_REFLEX_05_PRIVATE_OPERATOR_PREVIEW_SELECTOR",
+    "browser_opened":  false,
+    "public_deploy":  false,
+    "bigquery_write":  false,
+    "sheet_write":  false,
+    "ruff_ok":  true,
+    "broker_order_sizing":  false
+}
