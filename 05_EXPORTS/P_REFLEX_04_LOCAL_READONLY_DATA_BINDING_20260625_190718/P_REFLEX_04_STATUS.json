@@ -1,0 +1,19 @@
+﻿{
+    "live_action":  false,
+    "binding_mode":  "LOCAL_READONLY",
+    "browser_opened":  false,
+    "next_recommended_batch":  "P_REFLEX_05_PRIVATE_OPERATOR_PREVIEW_SELECTOR",
+    "server_started":  false,
+    "project":  "MVP_QAIC_ONLY",
+    "STATUS":  "OK_P_REFLEX_04_LOCAL_READONLY_DATA_BINDING",
+    "public_deploy":  false,
+    "tests":  [
+                  "tests/test_p_reflex_01_global_shell.py",
+                  "tests/test_p_reflex_03_navigation_polish.py",
+                  "tests/test_p_reflex_04_data_binding.py"
+              ],
+    "bigquery_write":  false,
+    "sheet_write":  false,
+    "ruff_ok":  true,
+    "broker_order_sizing":  false
+}

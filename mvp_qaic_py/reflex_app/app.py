@@ -1,4 +1,4 @@
-"""Reflex app entrypoint for MVP QAIC global shell.
+﻿"""Reflex app entrypoint for MVP QAIC global shell.
 
 The module imports without requiring Reflex to be installed.
 When Reflex is available, `app` is built as a local-only shell.
@@ -6,6 +6,7 @@ When Reflex is available, `app` is built as a local-only shell.
 
 from __future__ import annotations
 
+from .data_binding import build_local_data_binding_payload
 from .navigation import ui_shell_payload
 from .registry import ARCHITECTURE_ASSET, DOCS_REGISTRY, PAGES, SAFETY_FLAGS
 
@@ -27,6 +28,7 @@ def page_registry_payload() -> dict[str, object]:
         "docs": DOCS_REGISTRY,
         "safety_flags": SAFETY_FLAGS,
         "ui_shell": ui_shell_payload(),
+        "local_data_binding": build_local_data_binding_payload(),
         "pages": [
             {
                 "page_id": page.page_id,
@@ -68,3 +70,4 @@ try:
 except Exception as exc:  # pragma: no cover - defensive for Reflex API drift
     app = None
     REFLEX_BUILD_ERROR = repr(exc)
+
