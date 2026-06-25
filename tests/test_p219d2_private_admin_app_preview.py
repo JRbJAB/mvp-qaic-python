@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from mvp_qaic_py.private_admin_app.app import (
     register_private_admin_pages,
     render_private_admin_normal_preview,
@@ -33,10 +34,8 @@ class FakeUI:
     def add_head_html(self, value: str) -> None:
         self.calls.append(("head", value))
 
-    def row(self) -> FakeContext:
-        return FakeContext()
-
     def column(self) -> FakeContext:
+        self.calls.append(("column", "column"))
         return FakeContext()
 
     def left_drawer(self, value: bool = True) -> FakeContext:
@@ -120,7 +119,7 @@ def test_p219d2_registers_all_navigation_routes() -> None:
     assert set(ui.registered_routes) == expected
 
 
-def test_p219d2_renders_normal_preview_with_left_menu(tmp_path: Path) -> None:
+def test_p219d2_renders_normal_preview_with_top_level_left_menu(tmp_path: Path) -> None:
     _seed_project(tmp_path)
     ui = FakeUI()
 
@@ -128,7 +127,10 @@ def test_p219d2_renders_normal_preview_with_left_menu(tmp_path: Path) -> None:
 
     assert result["STATUS"] == "OK_P219D2_PRIVATE_ADMIN_NORMAL_PREVIEW_RENDERED"
     assert result["navigation_count"] >= 9
+    assert result["left_drawer_top_level"] is True
+    assert result["header_top_level"] is True
     assert ("left_drawer", "True") in ui.calls
+    assert ("header", "header") in ui.calls
     assert any(call[0] == "link" and "Base Python" in call[1] for call in ui.calls)
     assert any(call[0] == "link" and "Google Sheets" in call[1] for call in ui.calls)
     assert any(call[0] == "html" and "Menu latéral officiel" in call[1] for call in ui.calls)

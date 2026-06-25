@@ -69,3 +69,11 @@ MVP_QAIC_PY
 - CURRENT_NEXT_BATCH: `P219D3_POLISH_REAL_PAGE_CONTENT_AND_LINKS_VISUAL_GATE`
 
 P219D2 converts the durable shell into a normal NiceGUI preview with left drawer and route pages.
+## P219D2-R4 runtime repair
+
+- RUNTIME_ERROR_REPAIRED: `LeftDrawer nested inside Row`
+- CURRENT_VISUAL_URL: `http://127.0.0.1:8097`
+- CURRENT_UI_MODE: `NORMAL_LEFT_MENU_PREVIEW_TOPLEVEL_LAYOUT`
+- CURRENT_NEXT_BATCH: `P219D3_POLISH_REAL_PAGE_CONTENT_AND_LINKS_VISUAL_GATE`
+
+NiceGUI top-level layout rule: `ui.left_drawer()` and `ui.header()` must be direct page children, not nested inside `ui.row()` or `ui.column()`.

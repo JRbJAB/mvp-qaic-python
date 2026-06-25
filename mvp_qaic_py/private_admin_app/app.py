@@ -17,12 +17,12 @@ def _apply_style(ui: Any) -> None:
         """
         <style>
           body { background:#f6f7fb; }
-          .mvp-shell { min-height:100vh; }
           .mvp-main { padding:18px; }
           .mvp-card {
             background:white;
             border-radius:18px;
             padding:18px;
+            margin-bottom:16px;
             box-shadow:0 2px 14px rgba(0,0,0,.06);
           }
           .mvp-title { font-size:22px; font-weight:800; color:#111827; }
@@ -53,13 +53,26 @@ def _apply_style(ui: Any) -> None:
             font-size:12px;
             font-weight:700;
           }
+          .mvp-menu-link {
+            display:block;
+            padding:8px 16px;
+            font-size:14px;
+            text-decoration:none;
+            color:#111827;
+            border-radius:10px;
+            margin:2px 10px;
+          }
+          .mvp-menu-link:hover { background:#f3f4f6; }
         </style>
         """
     )
 
 
 def render_private_admin_normal_preview(
-    ui: Any, project_root: str | Path, *, active_route: str = "/"
+    ui: Any,
+    project_root: str | Path,
+    *,
+    active_route: str = "/",
 ) -> dict[str, Any]:
     payload = build_private_admin_shell_payload(project_root)
     route_payload = build_route_page_payload(project_root, active_route=active_route)
@@ -67,29 +80,33 @@ def render_private_admin_normal_preview(
 
     _apply_style(ui)
 
-    with ui.row().classes("mvp-shell w-full no-wrap"):
-        with ui.left_drawer(value=True).classes("bg-white").props("bordered width=285"):
-            ui.label("MVP QAIC").classes("text-xl font-bold q-pa-md")
-            ui.label("Private Admin").classes("text-xs text-gray-500 q-px-md q-pb-md")
-            for item in navigation:
-                active = item["route"] == active_route
-                label = f"{'● ' if active else ''}{item['label']}"
-                ui.link(label, item["route"]).classes("block q-px-md q-py-sm text-sm")
-            ui.separator().classes("q-my-md")
-            ui.label("Safety").classes("text-xs font-bold q-px-md")
-            ui.label("NO BROKER / NO ORDER / NO SIZING").classes("text-xs text-gray-600 q-pa-md")
+    # NiceGUI top-level layout elements must be direct page children:
+    # never nest left_drawer/header inside row/column/card.
+    with ui.left_drawer(value=True).classes("bg-white").props("bordered width=285"):
+        ui.label("MVP QAIC").classes("text-xl font-bold q-pa-md")
+        ui.label("Private Admin").classes("text-xs text-gray-500 q-px-md q-pb-md")
+        for item in navigation:
+            active = item["route"] == active_route
+            label = f"{'● ' if active else ''}{item['label']}"
+            ui.link(label, item["route"]).classes("mvp-menu-link")
+        ui.separator().classes("q-my-md")
+        ui.label("Safety").classes("text-xs font-bold q-px-md")
+        ui.label("NO BROKER / NO ORDER / NO SIZING").classes("text-xs text-gray-600 q-pa-md")
 
-        with ui.column().classes("mvp-main w-full"):
-            with ui.header().classes("bg-white text-black shadow-sm"):
-                ui.label(route_payload["title"]).classes("text-lg font-bold")
-                ui.space()
-                ui.label("HUMAN_REVIEW_ONLY").classes("mvp-badge")
-            render_admin_route_content(ui, route_payload, payload)
+    with ui.header().classes("bg-white text-black shadow-sm"):
+        ui.label(route_payload["title"]).classes("text-lg font-bold")
+        ui.space()
+        ui.label("HUMAN_REVIEW_ONLY").classes("mvp-badge")
+
+    with ui.column().classes("mvp-main w-full"):
+        render_admin_route_content(ui, route_payload, payload)
 
     return {
         "STATUS": "OK_P219D2_PRIVATE_ADMIN_NORMAL_PREVIEW_RENDERED",
         "active_route": active_route,
         "navigation_count": len(navigation),
+        "left_drawer_top_level": True,
+        "header_top_level": True,
         "server_started": False,
         "browser_started": False,
         "provider_call_executed": False,
@@ -116,7 +133,7 @@ def run_private_admin_app(
     *,
     project_root: str | Path,
     host: str = "127.0.0.1",
-    port: int = 8096,
+    port: int = 8097,
     show: bool = False,
     reload: bool = False,
 ) -> None:
@@ -138,7 +155,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--project-root", default=".")
     parser.add_argument("--host", default="127.0.0.1")
-    parser.add_argument("--port", type=int, default=8096)
+    parser.add_argument("--port", type=int, default=8097)
     args = parser.parse_args()
 
     run_private_admin_app(
