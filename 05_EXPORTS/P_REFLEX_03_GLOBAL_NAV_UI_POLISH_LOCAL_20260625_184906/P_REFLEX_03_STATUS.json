@@ -1,0 +1,17 @@
+﻿{
+    "navigation_groups":  6,
+    "public_deploy":  false,
+    "live_action":  false,
+    "ruff_ok":  true,
+    "project":  "MVP_QAIC_ONLY",
+    "broker_order_sizing":  false,
+    "scope":  "GLOBAL_NAV_UI_POLISH_LOCAL",
+    "next_recommended_batch":  "P_REFLEX_04_LOCAL_READONLY_DATA_BINDING",
+    "browser_opened":  false,
+    "server_started":  false,
+    "STATUS":  "OK_P_REFLEX_03_GLOBAL_NAV_UI_POLISH_LOCAL",
+    "tests":  [
+                  "tests/test_p_reflex_01_global_shell.py",
+                  "tests/test_p_reflex_03_navigation_polish.py"
+              ]
+}
