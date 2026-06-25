@@ -1,0 +1,20 @@
+﻿{
+    "public_deploy":  false,
+    "tests_passed":  true,
+    "reconciled_files":  [
+                             "mvp_qaic_reflex_ui/layout.py",
+                             "mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py",
+                             "mvp_qaic_reflex_ui/pages_admin.py",
+                             "mvp_qaic_reflex_ui/theme.py",
+                             "tests/test_p_reflex_08_admin_theme_settings.py"
+                         ],
+    "source_issue":  "P09 stopped because P08 files were dirty before start",
+    "ruff_ok":  true,
+    "project":  "MVP_QAIC_ONLY",
+    "server_started_by_batch":  false,
+    "full_pytest_passed":  true,
+    "live_action":  false,
+    "next_recommended_batch":  "P_REFLEX_09_INTERACTIVE_THEME_STATE_ADMIN_DATA_REGISTRY",
+    "STATUS":  "OK_P_REFLEX_08B_DIRTY_RECONCILE_BEFORE_P09",
+    "browser_opened_by_batch":  false
+}
