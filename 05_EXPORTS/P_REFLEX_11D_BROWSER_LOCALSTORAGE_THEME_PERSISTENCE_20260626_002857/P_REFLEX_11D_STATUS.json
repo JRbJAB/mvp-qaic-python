@@ -1,0 +1,27 @@
+﻿{
+    "sheet_write":  false,
+    "next_recommended_batch":  "P_REFLEX_11E_RUNTIME_PERSISTENCE_SMOKE",
+    "targeted_pytest_passed":  true,
+    "live_action":  false,
+    "source_p11c_approval":  "VISUAL_APPROVED_BY_OPERATOR",
+    "import_smoke_ok":  true,
+    "bigquery_write":  false,
+    "broker_order_sizing":  false,
+    "server_write":  false,
+    "public_deploy":  false,
+    "manual_preview_script":  "RUN_P_REFLEX_11D_LOCAL_PREVIEW.ps1",
+    "project":  "MVP_QAIC_ONLY",
+    "server_started_by_batch":  false,
+    "source_modified":  true,
+    "STATUS":  "OK_P_REFLEX_11D_BROWSER_LOCALSTORAGE_THEME_PERSISTENCE",
+    "ruff_ok":  true,
+    "persistence_mode":  "BROWSER_LOCAL_STORAGE",
+    "allowed_values":  [
+                           "light",
+                           "dark",
+                           "system"
+                       ],
+    "full_pytest_passed":  true,
+    "localstorage_key":  "mvp_qaic_ui_theme_preference_v1",
+    "browser_opened_by_batch":  false
+}

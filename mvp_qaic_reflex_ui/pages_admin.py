@@ -12,6 +12,10 @@ from .admin_data_registry import (
     registry_domain_rows,
 )
 from .admin_theme_state import theme_state_component, theme_state_summary_rows
+from .theme_persistence import (
+    theme_persistence_component,
+    theme_persistence_summary_rows,
+)
 from .layout import page_shell
 from .visual_theme import admin_summary_panel, theme_runtime_panel
 from .theme import (
@@ -107,6 +111,8 @@ def admin_theme() -> rx.Component:
         section["description"],
         rx.vstack(
             theme_runtime_panel(),
+            theme_persistence_component(),
+            key_value_card("Browser persistence", theme_persistence_summary_rows()),
             theme_state_component(),
             key_value_card("Theme state contract", theme_state_summary_rows()),
             key_value_card("Current theme", rows),
