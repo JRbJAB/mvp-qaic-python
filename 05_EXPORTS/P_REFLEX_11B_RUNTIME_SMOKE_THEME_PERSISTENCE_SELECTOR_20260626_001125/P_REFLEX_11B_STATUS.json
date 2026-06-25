@@ -1,0 +1,20 @@
+﻿{
+    "visual_approval":  "PENDING_HUMAN",
+    "http_route_smoke_ok":  true,
+    "browser_opened_by_batch":  false,
+    "broker_order_sizing":  false,
+    "server_started_by_batch":  false,
+    "backend_listener":  true,
+    "visual_review_row_count":  8,
+    "reflex_import_smoke_ok":  true,
+    "frontend_listener":  true,
+    "persistence_recommendation":  "BROWSER_LOCAL_STORAGE",
+    "persistence_apply_allowed":  false,
+    "source_head":  "919bdc62f1d0532309d37c730f3cb3b4f25e88ea",
+    "source_modified":  false,
+    "http_route_count":  11,
+    "next":  "P_REFLEX_11C_BROWSER_LOCAL_STORAGE_THEME_PERSISTENCE_AFTER_VISUAL_APPROVAL",
+    "live_action":  false,
+    "STATUS":  "OK_P_REFLEX_11B_RUNTIME_SMOKE_THEME_PERSISTENCE_SELECTOR",
+    "public_deploy":  false
+}
