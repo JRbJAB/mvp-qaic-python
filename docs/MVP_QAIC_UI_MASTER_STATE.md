@@ -77,3 +77,10 @@ P219D2 converts the durable shell into a normal NiceGUI preview with left drawer
 - CURRENT_NEXT_BATCH: `P219D3_POLISH_REAL_PAGE_CONTENT_AND_LINKS_VISUAL_GATE`
 
 NiceGUI top-level layout rule: `ui.left_drawer()` and `ui.header()` must be direct page children, not nested inside `ui.row()` or `ui.column()`.
+## P219E1-R3 P173 baseline frame anchorless polish
+
+- BASELINE_FRAME: `mvp_qaic_py/p173_nicegui_private_local_runner.py`
+- OFFICIAL_FINAL_UI: `False`
+- PURPOSE: apply audit-driven UI suggestions on recovered baseline frame
+- PREVIEW_COMMAND: `python -m mvp_qaic_py.p173_nicegui_private_local_runner --project-root . --host 127.0.0.1 --port 8088 --serve-private`
+- NEXT: `P219E2_P173_APPLY_AUDIT_UI_CONTENT_FAST_FUSE`

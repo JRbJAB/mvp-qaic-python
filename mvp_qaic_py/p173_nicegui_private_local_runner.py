@@ -447,6 +447,8 @@ def serve_private(
                 with ui.column().classes("qaic-sidebar gap-2"):
                     ui.label("Navigation").classes("qaic-section-title")
                     _nav_button("Dashboard", "/", "dashboard")
+                    _nav_button("Base Python", "/base-python", "code")
+                    _nav_button("Google Sheets", "/google-sheets", "table_chart")
                     _nav_button("Prompt Studio", "/prompt", "article")
                     _nav_button("Capture Inbox", "/capture", "image")
                     _nav_button("GEM Responses", "/responses", "data_object")
@@ -2329,3 +2331,48 @@ P205D_REQUIRED_OPERATOR_UI_TOKENS = (
     "Copier le prompt",
     "Sauver réponse GEM localement",
 )
+
+P219E1_R3_P173_BASELINE_FRAME_ANCHORLESS_MARKER = "P173_BASELINE_FRAME_NOT_FINAL_UI"
+
+
+def build_p173_baseline_frame_audit_plan(project_root="."):
+    quick_access = [
+        {"label": "Base Python", "route": "/base-python", "target": "_cache_page"},
+        {
+            "label": "Google Sheets",
+            "route": "/google-sheets",
+            "target": "_sheets_cockpit_plan_page",
+        },
+    ]
+    audit_suggestions = [
+        "Use recovered P173 visual frame as baseline.",
+        "Do not freeze P173 as the final official UI.",
+        "Add explicit quick access for Base Python and Google Sheets.",
+        "Keep local private serve only.",
+        "Improve content, hierarchy, and page usefulness in next batches.",
+        "Keep no broker, no order, no sizing.",
+    ]
+    return {
+        "STATUS": "OK_P219E1_R3_P173_BASELINE_FRAME_AUDIT_PLAN_READY",
+        "baseline_frame": True,
+        "official_final_ui": False,
+        "visual_source": "mvp_qaic_py/p173_nicegui_private_local_runner.py",
+        "project_root": str(project_root),
+        "launch_command": (
+            "python -m mvp_qaic_py.p173_nicegui_private_local_runner "
+            "--project-root . --host 127.0.0.1 --port 8088 --serve-private"
+        ),
+        "quick_access": quick_access,
+        "quick_access_routes": [item["route"] for item in quick_access],
+        "audit_suggestions": audit_suggestions,
+        "private_admin_app_visual_source": False,
+        "google_sheets_write": False,
+        "live_google_api_call_from_python": False,
+        "apps_script_execution": False,
+        "clasp_push": False,
+        "public_serve": False,
+        "broker": False,
+        "order": False,
+        "sizing": False,
+        "recommended_next": "P219E2_P173_APPLY_AUDIT_UI_CONTENT_FAST_FUSE",
+    }
