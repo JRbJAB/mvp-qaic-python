@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import reflex as rx
 
-from .theme import LANDING_SECTIONS, SECONDARY_ROUTES, UI_THEME, status_pill
+from .theme import ADMIN_SECTIONS, LANDING_SECTIONS, SECONDARY_ROUTES, UI_THEME, status_pill
 
 
 def navigation_items() -> list[dict[str, str]]:
@@ -16,6 +16,14 @@ def navigation_items() -> list[dict[str, str]]:
         }
         for section in LANDING_SECTIONS
     ]
+    admin = [
+        {
+            "title": f"{section['icon']} {section['title']}",
+            "route": section["route"],
+            "kind": "admin",
+        }
+        for section in ADMIN_SECTIONS
+    ]
     secondary = [
         {
             "title": item["title"],
@@ -24,18 +32,18 @@ def navigation_items() -> list[dict[str, str]]:
         }
         for item in SECONDARY_ROUTES
     ]
-    return primary + secondary
+    return primary + admin + secondary
 
 
-def sidebar(active_route: str = "/") -> rx.Component:
+def _nav_group(title: str, items: list[dict[str, str]], active_route: str) -> rx.Component:
     links = []
-    for item in navigation_items():
+    for item in items:
         is_active = item["route"] == active_route
         links.append(
             rx.link(
                 rx.box(
                     rx.text(item["title"], weight="bold" if is_active else "regular", size="3"),
-                    padding="0.65rem 0.75rem",
+                    padding="0.60rem 0.75rem",
                     border_radius="10px",
                     background="#EAF2FF" if is_active else "transparent",
                     width="100%",
@@ -46,18 +54,37 @@ def sidebar(active_route: str = "/") -> rx.Component:
             )
         )
 
+    return rx.vstack(
+        rx.text(title, size="2", weight="bold"),
+        *links,
+        spacing="1",
+        align="start",
+        width="100%",
+    )
+
+
+def sidebar(active_route: str = "/") -> rx.Component:
+    items = navigation_items()
+    primary = [item for item in items if item["kind"] == "primary"]
+    admin = [item for item in items if item["kind"] == "admin"]
+    secondary = [item for item in items if item["kind"] == "secondary"]
+
     return rx.box(
         rx.vstack(
             rx.heading("MVP QAIC", size="5"),
             rx.text("Crypto Signal OS", size="2"),
             rx.divider(),
-            *links,
-            spacing="2",
+            _nav_group("Mission", primary, active_route),
+            rx.divider(),
+            _nav_group("Admin", admin, active_route),
+            rx.divider(),
+            _nav_group("Modules", secondary, active_route),
+            spacing="3",
             align="start",
             width="100%",
         ),
-        width="280px",
-        min_width="280px",
+        width="300px",
+        min_width="300px",
         padding="1rem",
         border_right="1px solid rgba(0, 0, 0, 0.10)",
         min_height="100vh",

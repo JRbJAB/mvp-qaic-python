@@ -1,0 +1,30 @@
+﻿{
+    "server_started_by_batch":  false,
+    "live_action":  false,
+    "manual_preview_script":  "RUN_P_REFLEX_08_LOCAL_PREVIEW.ps1",
+    "next_recommended_batch":  "P_REFLEX_09_INTERACTIVE_THEME_STATE_OR_ADMIN_DATA_REGISTRY",
+    "admin_routes":  [
+                         "/admin",
+                         "/admin/runtime",
+                         "/admin/theme",
+                         "/admin/safety",
+                         "/admin/routes",
+                         "/admin/data-binding"
+                     ],
+    "public_deploy":  false,
+    "project":  "MVP_QAIC_ONLY",
+    "STATUS":  "OK_P_REFLEX_08_ADMIN_THEME_SETTINGS_FOUNDATION",
+    "sitemap_plugin":  "EXPLICIT_ENABLED",
+    "theme_settings":  [
+                           "mode_light_dark_system",
+                           "accent",
+                           "radius",
+                           "density",
+                           "panel_background"
+                       ],
+    "full_pytest_passed":  true,
+    "radix_themes_plugin":  "EXPLICIT_ENABLED",
+    "ruff_ok":  true,
+    "browser_opened_by_batch":  false,
+    "tests_passed":  true
+}

@@ -13,7 +13,16 @@ UI_THEME = {
     "secondary_accent": "cyan",
     "radius": "large",
     "density": "comfortable",
+    "panel_background": "solid",
     "mission": "Lexique-first Crypto Signal OS with prompt workflows and QAIC bridge.",
+}
+
+THEME_OPTIONS = {
+    "modes": ("light", "dark", "system"),
+    "accents": ("blue", "cyan", "indigo", "violet", "green", "amber", "red"),
+    "radius": ("none", "small", "medium", "large", "full"),
+    "density": ("compact", "comfortable", "spacious"),
+    "panel_background": ("solid", "translucent"),
 }
 
 SAFETY_FLAGS = {
@@ -22,6 +31,9 @@ SAFETY_FLAGS = {
     "no_auto_sizing": True,
     "no_broker_execution": True,
     "no_public_deploy": True,
+    "no_apps_script_execution": True,
+    "no_sheet_write": True,
+    "no_bigquery_write": True,
 }
 
 LANDING_SECTIONS = (
@@ -81,6 +93,63 @@ LANDING_SECTIONS = (
     },
 )
 
+ADMIN_SECTIONS = (
+    {
+        "section_id": "admin_center",
+        "icon": "🛠️",
+        "title": "Admin Center",
+        "route": "/admin",
+        "status": "ACTIVE",
+        "priority": "P0",
+        "description": "Centre d'administration privé Reflex.",
+    },
+    {
+        "section_id": "admin_runtime",
+        "icon": "🟢",
+        "title": "Runtime",
+        "route": "/admin/runtime",
+        "status": "ACTIVE",
+        "priority": "P0",
+        "description": "État frontend, backend, plugins, bindings et environnement local.",
+    },
+    {
+        "section_id": "admin_theme",
+        "icon": "🎨",
+        "title": "Theme Settings",
+        "route": "/admin/theme",
+        "status": "ACTIVE",
+        "priority": "P0",
+        "description": "Modes light/dark/system, accent, radius, density et panel background.",
+    },
+    {
+        "section_id": "admin_safety",
+        "icon": "🛡️",
+        "title": "Safety",
+        "route": "/admin/safety",
+        "status": "ACTIVE",
+        "priority": "P0",
+        "description": "Garde-fous no order/no sizing/no deploy/no external write.",
+    },
+    {
+        "section_id": "admin_routes",
+        "icon": "🧭",
+        "title": "Routes",
+        "route": "/admin/routes",
+        "status": "ACTIVE",
+        "priority": "P0",
+        "description": "Inventaire des routes produit, admin et futures routes.",
+    },
+    {
+        "section_id": "admin_data_binding",
+        "icon": "🔗",
+        "title": "Data Binding",
+        "route": "/admin/data-binding",
+        "status": "ACTIVE",
+        "priority": "P0",
+        "description": "Vue locale readonly des sources docs, exports, prompts et registry.",
+    },
+)
+
 SECONDARY_ROUTES = (
     {"title": "Lexique Knowledge", "route": "/lexique-knowledge"},
     {"title": "Prompt Lab", "route": "/prompt-lab"},
@@ -94,15 +163,30 @@ def get_landing_sections() -> list[dict[str, str]]:
     return [dict(section) for section in LANDING_SECTIONS]
 
 
+def get_admin_sections() -> list[dict[str, str]]:
+    return [dict(section) for section in ADMIN_SECTIONS]
+
+
 def get_primary_routes() -> list[str]:
     return [section["route"] for section in LANDING_SECTIONS]
+
+
+def get_admin_routes() -> list[str]:
+    return [section["route"] for section in ADMIN_SECTIONS]
+
+
+def get_all_routes() -> list[str]:
+    secondary = [item["route"] for item in SECONDARY_ROUTES]
+    return get_primary_routes() + get_admin_routes() + secondary
 
 
 def get_theme_contract() -> dict[str, object]:
     return {
         "theme": dict(UI_THEME),
+        "theme_options": {key: list(value) for key, value in THEME_OPTIONS.items()},
         "safety_flags": dict(SAFETY_FLAGS),
         "primary_section_count": len(LANDING_SECTIONS),
+        "admin_section_count": len(ADMIN_SECTIONS),
         "secondary_route_count": len(SECONDARY_ROUTES),
     }
 
@@ -146,6 +230,7 @@ def section_card(section: Mapping[str, str]) -> rx.Component:
                     ),
                     status_pill(section["priority"], "info"),
                     spacing="2",
+                    wrap="wrap",
                 ),
                 spacing="3",
                 align="start",
@@ -159,6 +244,32 @@ def section_card(section: Mapping[str, str]) -> rx.Component:
         href=section["route"],
         width="100%",
         text_decoration="none",
+    )
+
+
+def key_value_card(title: str, rows: Mapping[str, object]) -> rx.Component:
+    return rx.box(
+        rx.vstack(
+            rx.heading(title, size="4"),
+            *[
+                rx.hstack(
+                    rx.text(str(key), size="2", weight="bold", min_width="180px"),
+                    rx.text(str(value), size="2"),
+                    spacing="3",
+                    align="center",
+                    width="100%",
+                )
+                for key, value in rows.items()
+            ],
+            spacing="2",
+            align="start",
+            width="100%",
+        ),
+        border="1px solid rgba(0, 0, 0, 0.10)",
+        border_radius="14px",
+        padding="1rem",
+        width="100%",
+        background="white",
     )
 
 
