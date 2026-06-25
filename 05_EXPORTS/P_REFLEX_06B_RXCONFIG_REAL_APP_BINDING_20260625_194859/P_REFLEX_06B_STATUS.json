@@ -1,0 +1,14 @@
+﻿{
+    "repaired_issue":  "RXCONFIG_MISSING_FOR_REFLEX_RUN",
+    "live_action":  false,
+    "public_deploy":  false,
+    "server_started_by_batch":  false,
+    "expected_local_url":  "http://127.0.0.1:3000",
+    "project":  "MVP_QAIC_ONLY",
+    "real_reflex_app_created":  true,
+    "manual_run_script":  "RUN_MANUAL_PRIVATE_REFLEX_PREVIEW_RXCONFIG.ps1",
+    "rxconfig_created":  true,
+    "next_recommended_batch":  "MANUAL_RUN_THEN_P_REFLEX_07_PRIVATE_PREVIEW_OBSERVATION_REVIEW",
+    "STATUS":  "OK_P_REFLEX_06B_RXCONFIG_REAL_APP_BINDING",
+    "browser_opened_by_batch":  false
+}
