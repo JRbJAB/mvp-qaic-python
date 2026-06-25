@@ -1,0 +1,16 @@
+{
+  "status": "OK_MVP_QAIC_WEBAPP_ARCHITECTURE_V0_1_2_PRO_READY",
+  "scope": "MVP_QAIC_ONLY",
+  "version": "0.1.2",
+  "pro_schema": true,
+  "qait_discarded": true,
+  "qaic_bridge_future_fusion": true,
+  "tabs_observed": 132,
+  "apps_script_files": 22,
+  "function_rows": 2738,
+  "md": "CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_QAIC_LIAISON_v0_1_2.md",
+  "png": "CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_SCHEMA_PRO_v0_1_2.png",
+  "svg": "CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_SCHEMA_PRO_v0_1_2.svg",
+  "mojibake": false,
+  "generated_at": "2026-06-25T11:28:52.817188+00:00"
+}

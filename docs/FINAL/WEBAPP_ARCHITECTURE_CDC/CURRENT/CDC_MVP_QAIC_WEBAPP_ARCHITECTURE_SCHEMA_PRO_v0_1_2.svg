@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1220" viewBox="0 0 1800 1220">
+<defs>
+<style>
+.bg{fill:#f8fafc} .title{font:700 30px Arial;fill:#0f172a} .sub{font:400 16px Arial;fill:#475569}
+.lane{fill:#f1f5f9;stroke:#cbd5e1;stroke-width:2} .b{fill:#fff;stroke:#475569;stroke-width:2;rx:16}
+.green{fill:#dcfce7;stroke:#16a34a;stroke-width:2;rx:16} .violet{fill:#f5f3ff;stroke:#7c3aed;stroke-width:2;rx:16}
+.blue{fill:#eef2ff;stroke:#6366f1;stroke-width:2;rx:16} .orange{fill:#fff7ed;stroke:#ea580c;stroke-width:2;rx:16}
+.red{fill:#fef2f2;stroke:#dc2626;stroke-width:2;rx:16} .yellow{fill:#fffbeb;stroke:#ca8a04;stroke-width:2;rx:16}
+.t{font:700 17px Arial;fill:#111827} .x{font:400 13px Arial;fill:#1f2937} .laneText{font:700 14px Arial;fill:#334155}
+.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arr)} .safe{stroke:#e11d48;stroke-width:2;fill:none;stroke-dasharray:8 6;marker-end:url(#arrRed)}
+</style>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#334155"/></marker>
+<marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#e11d48"/></marker>
+</defs>
+<rect class="bg" width="1800" height="1220"/>
+<text x="40" y="50" class="title">MVP QAIC — Professional Web Architecture v0.1.2</text>
+<text x="40" y="78" class="sub">Deep audit based • Reflex-first shell • Gradio prompt/capture • Panel analytics • QAIC read-only liaison • Human review only</text>
+<rect x="40" y="110" width="1720" height="140" class="lane"/><text x="55" y="132" class="laneText">A. User / Operator entry layer</text>
+<rect x="40" y="270" width="1720" height="250" class="lane"/><text x="55" y="292" class="laneText">B. Reflex WebApp shell and page composition</text>
+<rect x="40" y="540" width="1720" height="260" class="lane"/><text x="55" y="562" class="laneText">C. MVP functional domains and specialized modules</text>
+<rect x="40" y="820" width="1720" height="210" class="lane"/><text x="55" y="842" class="laneText">D. Data, registry, archive and liaison layer</text>
+<rect x="40" y="1050" width="1720" height="110" class="lane"/><text x="55" y="1072" class="laneText">E. Safety / governance plane</text>
+<text x="70" y="170" class="t">Private operator</text><text x="70" y="195" class="x">local/private first</text>
+<text x="360" y="170" class="t">Human review</text><text x="360" y="195" class="x">mandatory gate</text>
+<text x="650" y="170" class="t">Browser / Web client</text><text x="650" y="195" class="x">desktop-first UX</text>
+<text x="1040" y="170" class="t">Future public</text><text x="1040" y="195" class="x">MVP content only</text>
+<text x="1360" y="170" class="t">Access boundary</text><text x="1360" y="195" class="x">review before publish</text>
+<rect x="70" y="320" width="310" height="150" class="green"/><text x="90" y="350" class="t">Reflex app shell</text><text x="90" y="378" class="x">layout • sidebar • topbar</text><text x="90" y="402" class="x">route registry • state</text><text x="90" y="426" class="x">status badges • views</text>
+<rect x="440" y="320" width="280" height="150" class="b"/><text x="460" y="350" class="t">Dev tracking</text><text x="460" y="378" class="x">Pxxx runs • gates</text><text x="460" y="402" class="x">packs • releases</text>
+<rect x="780" y="320" width="280" height="150" class="b"/><text x="800" y="350" class="t">Docs &amp; methods</text><text x="800" y="378" class="x">FINAL docs</text><text x="800" y="402" class="x">CDC • runbooks</text>
+<rect x="1120" y="320" width="280" height="150" class="b"/><text x="1140" y="350" class="t">Registry admin</text><text x="1140" y="378" class="x">routes • modules</text><text x="1140" y="402" class="x">inventory • audit</text>
+<rect x="1460" y="320" width="260" height="150" class="b"/><text x="1480" y="350" class="t">Preview / release</text><text x="1480" y="378" class="x">private preview</text><text x="1480" y="402" class="x">manual integration</text>
+<rect x="70" y="590" width="250" height="150" class="blue"/><text x="90" y="620" class="t">Lexique &amp; KB</text><text x="90" y="648" class="x">LEXIQUE_MASTER</text><text x="90" y="672" class="x">SEARCH_COCKPIT</text>
+<rect x="360" y="590" width="250" height="150" class="violet"/><text x="380" y="620" class="t">Prompt lab</text><text x="380" y="648" class="x">PROMPT_LIBRARY</text><text x="380" y="672" class="x">CONTEXT_PACKS</text>
+<rect x="650" y="590" width="250" height="150" class="violet"/><text x="670" y="620" class="t">GEM portfolio</text><text x="670" y="648" class="x">image/text capture</text><text x="670" y="672" class="x">human review</text>
+<rect x="940" y="590" width="250" height="150" class="orange"/><text x="960" y="620" class="t">Responses</text><text x="960" y="648" class="x">GPT intake</text><text x="960" y="672" class="x">review queue</text>
+<rect x="1230" y="590" width="250" height="150" class="yellow"/><text x="1250" y="620" class="t">Panel analytics</text><text x="1250" y="648" class="x">quality dashboard</text><text x="1250" y="672" class="x">benchmark</text>
+<rect x="1520" y="590" width="200" height="150" class="red"/><text x="1540" y="620" class="t">QAIC bridge</text><text x="1540" y="648" class="x">read-only</text><text x="1540" y="672" class="x">no execution</text>
+<rect x="70" y="870" width="280" height="110" class="b"/><text x="90" y="900" class="t">Sheets historical</text><text x="90" y="928" class="x">132 tabs observed</text>
+<rect x="410" y="870" width="280" height="110" class="b"/><text x="430" y="900" class="t">Apps Script heritage</text><text x="430" y="928" class="x">22 files / 2738 function rows</text>
+<rect x="750" y="870" width="280" height="110" class="b"/><text x="770" y="900" class="t">Python services</text><text x="770" y="928" class="x">MVP_QAIC_PY migration</text>
+<rect x="1090" y="870" width="280" height="110" class="b"/><text x="1110" y="900" class="t">Drive archives</text><text x="1110" y="928" class="x">ZIP • MD • CSV • proofs</text>
+<rect x="1430" y="870" width="290" height="110" class="red"/><text x="1450" y="900" class="t">QAIC private</text><text x="1450" y="928" class="x">quant/risk/backend • locked broker</text>
+<text x="70" y="1105" class="t">No live mutation</text><text x="70" y="1130" class="x">no Apps Script exec • no Sheet/BQ write</text>
+<text x="560" y="1105" class="t">No trading action</text><text x="560" y="1130" class="x">no auto-order • no sizing • no broker</text>
+<text x="1060" y="1105" class="t">Review only</text><text x="1060" y="1130" class="x">human validation before handoff</text>
+<text x="1460" y="1105" class="t">No QAIT</text><text x="1460" y="1130" class="x">wrong-scope branch discarded</text>
+<path d="M380 395 H440" class="a"/><path d="M720 395 H780" class="a"/><path d="M1060 395 H1120" class="a"/><path d="M1400 395 H1460" class="a"/>
+<path d="M220 470 C220 540 190 555 190 590" class="a"/><path d="M220 470 C430 520 480 540 480 590" class="a"/><path d="M220 470 C720 520 770 540 770 590" class="a"/><path d="M220 470 C1260 520 1620 540 1620 590" class="a"/>
+<path d="M190 740 V870" class="a"/><path d="M480 740 V870" class="a"/><path d="M770 740 V870" class="a"/><path d="M1065 740 V870" class="a"/><path d="M1620 740 V870" class="safe"/>
+<text x="40" y="1195" class="sub">Decision: Reflex is the durable WebApp shell. Gradio and Panel are specialized modules. QAIC receives only reviewed read-only payloads.</text>
+</svg>

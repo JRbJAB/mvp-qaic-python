@@ -1,0 +1,9 @@
+{
+  "status": "OK_SVG_XML_REPAIRED_AND_VALIDATED",
+  "svg_file": "CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_SCHEMA_PRO_v0_1_2.svg",
+  "xml_parse_ok": true,
+  "cause": "Unescaped ampersand characters in SVG text nodes caused XML entity parsing errors.",
+  "canonical_md": "CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_QAIC_LIAISON_v0_1_2.md",
+  "png_file": "CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_SCHEMA_PRO_v0_1_2.png",
+  "generated_at": "2026-06-25T12:03:21.084229+00:00"
+}
