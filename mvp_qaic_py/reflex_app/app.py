@@ -6,6 +6,7 @@ When Reflex is available, `app` is built as a local-only shell.
 
 from __future__ import annotations
 
+from .navigation import ui_shell_payload
 from .registry import ARCHITECTURE_ASSET, DOCS_REGISTRY, PAGES, SAFETY_FLAGS
 
 try:
@@ -25,6 +26,7 @@ def page_registry_payload() -> dict[str, object]:
         "architecture_asset": ARCHITECTURE_ASSET.as_posix(),
         "docs": DOCS_REGISTRY,
         "safety_flags": SAFETY_FLAGS,
+        "ui_shell": ui_shell_payload(),
         "pages": [
             {
                 "page_id": page.page_id,

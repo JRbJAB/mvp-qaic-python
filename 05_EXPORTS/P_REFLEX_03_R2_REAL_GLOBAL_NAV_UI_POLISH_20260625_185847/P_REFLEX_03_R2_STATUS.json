@@ -1,0 +1,20 @@
+﻿{
+    "navigation_test_created":  true,
+    "live_action":  false,
+    "browser_opened":  false,
+    "broker_order_sizing":  false,
+    "previous_bad_commit":  "eb4b255_export_only_false_ok",
+    "project":  "MVP_QAIC_ONLY",
+    "next_recommended_batch":  "P_REFLEX_04_LOCAL_READONLY_DATA_BINDING",
+    "server_started":  false,
+    "STATUS":  "OK_P_REFLEX_03_R2_REAL_GLOBAL_NAV_UI_POLISH_LOCAL",
+    "scope":  "REAL_GLOBAL_NAV_UI_POLISH_LOCAL",
+    "public_deploy":  false,
+    "tests":  [
+                  "tests/test_p_reflex_01_global_shell.py",
+                  "tests/test_p_reflex_03_navigation_polish.py"
+              ],
+    "navigation_groups":  6,
+    "ruff_ok":  true,
+    "navigation_module_created":  true
+}
