@@ -1,4 +1,4 @@
-﻿"""Local read-only data binding for the MVP QAIC Reflex shell."""
+"""Local read-only data binding for the MVP QAIC Reflex shell."""
 
 from __future__ import annotations
 

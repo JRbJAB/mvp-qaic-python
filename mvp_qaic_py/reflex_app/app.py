@@ -1,4 +1,4 @@
-﻿"""Reflex app entrypoint for MVP QAIC global shell.
+"""Reflex app entrypoint for MVP QAIC global shell.
 
 The module imports without requiring Reflex to be installed.
 When Reflex is available, `app` is built as a local-only shell.
@@ -70,4 +70,3 @@ try:
 except Exception as exc:  # pragma: no cover - defensive for Reflex API drift
     app = None
     REFLEX_BUILD_ERROR = repr(exc)
-

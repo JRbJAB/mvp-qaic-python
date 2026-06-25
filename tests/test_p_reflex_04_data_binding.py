@@ -1,4 +1,4 @@
-﻿from mvp_qaic_py.reflex_app.app import page_registry_payload
+from mvp_qaic_py.reflex_app.app import page_registry_payload
 from mvp_qaic_py.reflex_app.data_binding import (
     build_local_data_binding_payload,
     docs_registry_sources,
