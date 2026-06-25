@@ -1,0 +1,31 @@
+{
+  "STATUS": "OK_P_REFLEX_02_LOCAL_RUNTIME_SMOKE_NO_SERVER",
+  "project": "MVP_QAIC_ONLY",
+  "repo": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY",
+  "reflex_available": true,
+  "reflex_build_error": "",
+  "server_started": false,
+  "browser_opened": false,
+  "public_deploy": false,
+  "live_action": false,
+  "broker_order_sizing": false,
+  "route_count": 16,
+  "payload_route_count": 16,
+  "architecture_asset": "docs/FINAL/WEBAPP_ARCHITECTURE_CDC/CURRENT/CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_SCHEMA_PRO_v0_1_2.png",
+  "current_cdc": "docs/FINAL/WEBAPP_ARCHITECTURE_CDC/CURRENT/CDC_MVP_QAIC_WEBAPP_ARCHITECTURE_QAIC_LIAISON_v0_1_2.md",
+  "docs_registry_count": 3,
+  "safety_flags": {
+    "HUMAN_REVIEW_ONLY": true,
+    "NO_AUTO_ORDER": true,
+    "NO_AUTO_SIZING": true,
+    "NO_BROKER_EXECUTION": true,
+    "NO_REAL_ORDER": true,
+    "NO_APPS_SCRIPT_EXECUTION": true,
+    "NO_CLASP_PUSH": true,
+    "NO_SHEET_WRITE": true,
+    "NO_BIGQUERY_WRITE": true,
+    "NO_PUBLIC_PUBLISH": true,
+    "NO_QAIT": true
+  },
+  "next_recommended_batch": "P_REFLEX_03_GLOBAL_NAV_UI_POLISH_LOCAL"
+}
