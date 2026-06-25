@@ -1,0 +1,15 @@
+﻿{
+    "server_started_by_batch":  false,
+    "live_action":  false,
+    "next_recommended_batch":  "RESTART_LOCAL_RUNTIME_THEN_P_REFLEX_07_PRIVATE_PREVIEW_OBSERVATION_REVIEW",
+    "browser_opened_by_batch":  false,
+    "project":  "MVP_QAIC_ONLY",
+    "latest_local_runtime_rxconfig_patched":  true,
+    "STATUS":  "OK_P_REFLEX_06F_ACTIVATE_SITEMAP_RADIX_CONFIG",
+    "sitemap_plugin":  "EXPLICIT_ENABLED",
+    "public_deploy":  false,
+    "radix_themes_plugin":  "EXPLICIT_ENABLED",
+    "ruff_ok":  true,
+    "rxconfig_modified":  true,
+    "tests_passed":  true
+}
