@@ -1,0 +1,12 @@
+﻿{
+    "step":  "P_REFLEX_12F_R17_POLICY_DUAL_CONTRACT_FINAL",
+    "status":  "VALIDATED_READY_FOR_COMMIT",
+    "generated_at":  "2026-06-26T11:35:27Z",
+    "head_before":  "b3a47a52a0aee14ec45039e6fae1404c09e8389c",
+    "branch":  "master",
+    "policy":  "POLICY_DUAL_CONTRACT_FINAL",
+    "legacy_rows_preserved":  15,
+    "table_ux_preserved":  true,
+    "raw_matrix_visible":  false,
+    "no_server_start_by_batch":  true
+}
