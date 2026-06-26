@@ -1,0 +1,10 @@
+﻿{
+    "step":  "P_REFLEX_12F_GLOBAL_MIGRATION_MATRIX",
+    "status":  "VALIDATED_READY_FOR_COMMIT",
+    "generated_at":  "2026-06-26T09:39:10Z",
+    "head_before":  "405d7afc7e97cd95106b9f7ea834b0fbd459b9bf",
+    "branch":  "master",
+    "route_patch":  true,
+    "full_pytest":  "SKIPPED_FAST_MODE_LAST_SEAL_REUSED",
+    "no_server_start_by_batch":  true
+}
