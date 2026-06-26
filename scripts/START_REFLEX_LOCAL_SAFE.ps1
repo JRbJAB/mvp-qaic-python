@@ -63,16 +63,16 @@ function Stop-PortIfSafe([int]$Port) {
         Write-Host "PORT_$Port=FREE"
         return
     }
-    foreach ($pid in $pids) {
-        $proc = Get-Process -Id $pid -ErrorAction SilentlyContinue
+    foreach ($listenerPid in $pids) {
+        $proc = Get-Process -Id $listenerPid -ErrorAction SilentlyContinue
         if (-not $proc) { continue }
         $name = $proc.ProcessName
         if ($name -match '^(python|pythonw|node|bun|reflex)$') {
-            Write-Host "STOP_PORT_$Port PID=$pid PROCESS=$name"
-            Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+            Write-Host "STOP_PORT_$Port PID=$listenerPid PROCESS=$name"
+            Stop-Process -Id $listenerPid -Force -ErrorAction SilentlyContinue
             Start-Sleep -Milliseconds 500
         } else {
-            throw "Port $Port already used by PID=$pid PROCESS=$name. Stop it manually or run with another port."
+            throw "Port $Port already used by PID=$listenerPid PROCESS=$name. Stop it manually or run with another port."
         }
     }
 }

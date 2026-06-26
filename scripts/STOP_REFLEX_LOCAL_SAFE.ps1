@@ -28,15 +28,15 @@ function Stop-PortIfSafe([int]$Port) {
         Write-Host "PORT_$Port=FREE"
         return
     }
-    foreach ($pid in $pids) {
-        $proc = Get-Process -Id $pid -ErrorAction SilentlyContinue
+    foreach ($listenerPid in $pids) {
+        $proc = Get-Process -Id $listenerPid -ErrorAction SilentlyContinue
         if (-not $proc) { continue }
         $name = $proc.ProcessName
         if ($name -match '^(python|pythonw|node|bun|reflex)$') {
-            Write-Host "STOP PID=$pid PROCESS=$name PORT=$Port"
-            Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+            Write-Host "STOP PID=$listenerPid PROCESS=$name PORT=$Port"
+            Stop-Process -Id $listenerPid -Force -ErrorAction SilentlyContinue
         } else {
-            Write-Host "SKIP PID=$pid PROCESS=$name PORT=$Port NOT_SAFE_TO_KILL"
+            Write-Host "SKIP PID=$listenerPid PROCESS=$name PORT=$Port NOT_SAFE_TO_KILL"
         }
     }
 }
