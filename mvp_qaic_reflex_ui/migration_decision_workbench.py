@@ -84,7 +84,9 @@ def normalize_source(value: Any) -> str:
 
 
 def row_source(row: dict[str, Any]) -> str:
-    return normalize_source(row.get("source") or row.get("Source") or row.get("name") or row.get("Name"))
+    return normalize_source(
+        row.get("source") or row.get("Source") or row.get("name") or row.get("Name")
+    )
 
 
 def row_status(row: dict[str, Any]) -> str:
@@ -143,7 +145,11 @@ def upsert_decision(
         note=note,
         reviewer=reviewer,
     )
-    decisions = [d for d in overlay.get("decisions", []) if isinstance(d, dict) and normalize_source(d.get("source")) != entry["source"]]
+    decisions = [
+        d
+        for d in overlay.get("decisions", [])
+        if isinstance(d, dict) and normalize_source(d.get("source")) != entry["source"]
+    ]
     decisions.append(entry)
     decisions.sort(key=lambda item: normalize_source(item.get("source")).casefold())
     overlay["decisions"] = decisions
@@ -162,7 +168,9 @@ def load_live_payload(repo_root: str | Path = ".") -> dict[str, Any]:
     return built if isinstance(built, dict) else {"rows": []}
 
 
-def apply_overlay_to_rows(rows: list[dict[str, Any]], overlay: dict[str, Any]) -> list[dict[str, Any]]:
+def apply_overlay_to_rows(
+    rows: list[dict[str, Any]], overlay: dict[str, Any]
+) -> list[dict[str, Any]]:
     by_source = overlay_by_source(overlay)
     merged: list[dict[str, Any]] = []
     for row in rows:
@@ -206,7 +214,8 @@ def build_decision_queue(
     return {
         "version": "0.1.0",
         "generated_at_utc": utc_now(),
-        "source_live_hash": payload.get("data_hash") or payload.get("live_meta", {}).get("data_hash"),
+        "source_live_hash": payload.get("data_hash")
+        or payload.get("live_meta", {}).get("data_hash"),
         "queue_count": len(queue),
         "overlay_decision_count": len(overlay.get("decisions", [])),
         "allowed_statuses": sorted(allowed_statuses),

@@ -58,7 +58,11 @@ def test_p12g_decision_overlay_roundtrip(tmp_path: Path) -> None:
                 "data_hash": "abc",
                 "rows": [
                     {"type": "SHEETS_COCKPIT", "source": "Prompt Cockpit", "status": "MIGRATE_NOW"},
-                    {"type": "FEATURE_CLUSTER", "source": "QAIC_BRIDGE", "status": "PYTHON_REWRITE"},
+                    {
+                        "type": "FEATURE_CLUSTER",
+                        "source": "QAIC_BRIDGE",
+                        "status": "PYTHON_REWRITE",
+                    },
                 ],
             }
         ),
