@@ -1,0 +1,39 @@
+{
+  "status": "OK",
+  "policy": "TRACKER_UI_RESTORE_AND_DATA_AUDIT",
+  "legacy_expected_count": 15,
+  "legacy_row_count": 15,
+  "legacy_first_15_exact": true,
+  "missing_legacy": [],
+  "missing_essential": [],
+  "duplicate_sources": [],
+  "row_count": 78,
+  "average_progress": 35.13,
+  "function_index_count": 2738,
+  "source_csv_rows": 3235,
+  "types": [
+    "APPS_SCRIPT_FILE",
+    "APPS_SCRIPT_FUNCTION",
+    "APPS_SCRIPT_FUNCTION_GROUP",
+    "DOC_EXPORT",
+    "FEATURE_CLUSTER",
+    "FUNCTIONALITY",
+    "FUTURE_ARCHITECTURE",
+    "INVENTORY",
+    "SHEETS_COCKPIT",
+    "SHEET_TAB"
+  ],
+  "ui_contract": {
+    "table_columns": [
+      "Type",
+      "Source",
+      "Cible",
+      "%",
+      "Statut"
+    ],
+    "progress_blue_line": true,
+    "status_color_badges": true,
+    "legacy_15_first": true,
+    "raw_function_rows_visible": false
+  }
+}

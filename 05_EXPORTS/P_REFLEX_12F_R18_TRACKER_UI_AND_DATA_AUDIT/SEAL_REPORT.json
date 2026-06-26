@@ -1,0 +1,18 @@
+﻿{
+    "step":  "P_REFLEX_12F_R18_TRACKER_UI_AND_DATA_AUDIT",
+    "status":  "READY_TO_COMMIT",
+    "head_before":  "45c0fc1a27f02ec1eb6af7e1e1c4be8705c47a49",
+    "head_after_patch":  "45c0fc1a27f02ec1eb6af7e1e1c4be8705c47a49",
+    "branch":  "master",
+    "no_public_deploy":  true,
+    "no_live_action":  true,
+    "no_broker_order_sizing":  true,
+    "no_sheet_write":  true,
+    "no_bigquery_write":  true,
+    "human_review_only":  true,
+    "no_server_start_by_batch":  true,
+    "ui_table_restored":  true,
+    "data_audit_ok":  true,
+    "tests_targeted":  "passed",
+    "ruff":  "passed"
+}
