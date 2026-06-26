@@ -1,0 +1,23 @@
+{
+  "schema_version": "P12G0_MIGRATION_DECISION_OVERLAY_1.0.0",
+  "policy": "HUMAN_REVIEW_ONLY_LOCAL_JSON_OVERLAY",
+  "updated_at_utc": "2026-06-26T13:02:17.996505+00:00",
+  "source_of_truth": "docs/MIGRATION_DECISION_OVERLAY.json",
+  "applies_to": [
+    "docs/MIGRATION_GLOBAL_MATRIX.json",
+    "docs/MIGRATION_GLOBAL_MATRIX_SUMMARY.json"
+  ],
+  "safety_flags": {
+    "NO_PUBLIC_DEPLOY": true,
+    "NO_LIVE_ACTION": true,
+    "NO_BROKER_ORDER_SIZING": true,
+    "NO_SHEET_WRITE": true,
+    "NO_BIGQUERY_WRITE": true,
+    "HUMAN_REVIEW_ONLY": true
+  },
+  "decisions": [],
+  "notes": [
+    "P12G+ writes reviewed migration decisions here or in generated migration JSON files.",
+    "migration_tracker.py is UI-only and must not be edited for data updates."
+  ]
+}
