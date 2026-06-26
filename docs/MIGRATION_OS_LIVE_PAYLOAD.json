@@ -16,13 +16,19 @@
     {
       "type": "SHEET_TAB",
       "source": "LEXIQUE_CRYPTO_APPROVED",
-      "target": "Lexique KB",
+      "target": "PYTHON_REFLEX_UI",
       "route": "/lexique-knowledge",
       "progress_pct": 40,
-      "status": "STRUCTURE_READY",
+      "status": "MIGRATE_NOW",
       "status_label_fr": "Structure prete",
       "progress": 40,
-      "decision_override": false
+      "decision_override": true,
+      "decision_status": "MIGRATE_NOW",
+      "decision_note": "P12H0 operator smoke decision",
+      "decision_reviewer": "operator",
+      "decision_updated_at_utc": "2026-06-26T14:12:39.201533+00:00",
+      "cible": "PYTHON_REFLEX_UI",
+      "Statut": "MIGRATE_NOW"
     },
     {
       "type": "SHEET_TAB",
@@ -1076,17 +1082,17 @@
   "duplicate_sources": [],
   "legacy_first_15_exact": true,
   "raw_function_rows_visible": false,
-  "decision_overlay_count": 0,
-  "decision_overlay_applied_count": 0,
-  "data_hash": "ac9e7b7917cfffc7",
-  "refreshed_at_utc": "2026-06-26T14:03:14.063539+00:00",
+  "decision_overlay_count": 1,
+  "decision_overlay_applied_count": 1,
+  "data_hash": "97448e5f10275203",
+  "refreshed_at_utc": "2026-06-26T14:13:05.608764+00:00",
   "live_meta": {
     "status": "OK_MIGRATION_OS_REFRESH",
-    "data_hash": "ac9e7b7917cfffc7",
+    "data_hash": "97448e5f10275203",
     "row_count": 78,
     "function_index_count": 2738,
-    "decision_overlay_count": 0,
-    "decision_overlay_applied_count": 0,
-    "refreshed_at_utc": "2026-06-26T14:03:14.063539+00:00"
+    "decision_overlay_count": 1,
+    "decision_overlay_applied_count": 1,
+    "refreshed_at_utc": "2026-06-26T14:13:05.608764+00:00"
   }
 }

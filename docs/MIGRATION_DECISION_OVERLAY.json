@@ -1,7 +1,7 @@
 {
   "schema_version": "P12G0_MIGRATION_DECISION_OVERLAY_1.0.0",
   "policy": "HUMAN_REVIEW_ONLY_LOCAL_JSON_OVERLAY",
-  "updated_at_utc": "2026-06-26T13:02:17.996505+00:00",
+  "updated_at_utc": "2026-06-26T14:12:39.201685+00:00",
   "source_of_truth": "docs/MIGRATION_DECISION_OVERLAY.json",
   "applies_to": [
     "docs/MIGRATION_GLOBAL_MATRIX.json",
@@ -15,9 +15,19 @@
     "NO_BIGQUERY_WRITE": true,
     "HUMAN_REVIEW_ONLY": true
   },
-  "decisions": [],
+  "decisions": [
+    {
+      "source": "LEXIQUE_CRYPTO_APPROVED",
+      "decision_status": "MIGRATE_NOW",
+      "target": "PYTHON_REFLEX_UI",
+      "note": "P12H0 operator smoke decision",
+      "reviewer": "operator",
+      "updated_at_utc": "2026-06-26T14:12:39.201533+00:00"
+    }
+  ],
   "notes": [
     "P12G+ writes reviewed migration decisions here or in generated migration JSON files.",
     "migration_tracker.py is UI-only and must not be edited for data updates."
-  ]
+  ],
+  "version": "0.2.0"
 }

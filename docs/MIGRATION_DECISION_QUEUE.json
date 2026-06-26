@@ -1,9 +1,9 @@
 {
   "version": "0.1.0",
-  "generated_at_utc": "2026-06-26T14:03:23.212172+00:00",
-  "source_live_hash": "ac9e7b7917cfffc7",
-  "queue_count": 57,
-  "overlay_decision_count": 0,
+  "generated_at_utc": "2026-06-26T14:13:16.142052+00:00",
+  "source_live_hash": "97448e5f10275203",
+  "queue_count": 58,
+  "overlay_decision_count": 1,
   "allowed_statuses": [
     "BIGQUERY_FUTURE_CANDIDATE",
     "KEEP_AS_EXPORT_SOURCE",
@@ -14,6 +14,23 @@
     "REVIEW_REQUIRED"
   ],
   "rows": [
+    {
+      "type": "SHEET_TAB",
+      "source": "LEXIQUE_CRYPTO_APPROVED",
+      "target": "PYTHON_REFLEX_UI",
+      "route": "/lexique-knowledge",
+      "progress_pct": 40,
+      "status": "MIGRATE_NOW",
+      "status_label_fr": "Structure prete",
+      "progress": 40,
+      "decision_override": true,
+      "decision_status": "MIGRATE_NOW",
+      "decision_note": "P12H0 operator smoke decision",
+      "decision_reviewer": "operator",
+      "decision_updated_at_utc": "2026-06-26T14:12:39.201533+00:00",
+      "cible": "PYTHON_REFLEX_UI",
+      "Statut": "MIGRATE_NOW"
+    },
     {
       "type": "SHEETS_COCKPIT",
       "source": "Dev Tracking",
