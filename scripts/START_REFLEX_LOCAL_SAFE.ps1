@@ -24,6 +24,17 @@ $env:NO_BIGQUERY_WRITE = "true"
 $env:HUMAN_REVIEW_ONLY = "true"
 $env:REFLEX_DIR = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_STATE"
 
+# P_REFLEX_12H1D_R2_BEGIN_RUNTIME_SYNC
+if ([string]::IsNullOrWhiteSpace($RepoRoot)) {
+    $RepoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
+}
+$RepoRoot = (Resolve-Path -LiteralPath $RepoRoot).Path
+$env:QAIC_REPO_ROOT = $RepoRoot
+if (-not (Test-Path -LiteralPath (Join-Path $RepoRoot "mvp_qaic_reflex_ui"))) {
+    throw "RepoRoot missing mvp_qaic_reflex_ui: $RepoRoot"
+}
+# P_REFLEX_12H1D_R2_END_RUNTIME_SYNC
+
 $LogDir = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_LOGS"
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 New-Item -ItemType Directory -Force -Path $env:REFLEX_DIR | Out-Null
@@ -77,6 +88,33 @@ if (-not (Test-Path -LiteralPath $RuntimeRoot)) {
 }
 if (-not (Test-Path -LiteralPath (Join-Path $RuntimeRoot "rxconfig.py"))) {
     throw "rxconfig.py not found in runtime: $RuntimeRoot"
+}
+
+
+Write-Step "SYNC REPO SOURCE TO RUNTIME"
+Write-Host "REPO_ROOT=$RepoRoot"
+Write-Host "RUNTIME_ROOT=$RuntimeRoot"
+
+$syncDirs = @("mvp_qaic_reflex_ui", "docs")
+foreach ($dir in $syncDirs) {
+    $src = Join-Path $RepoRoot $dir
+    $dst = Join-Path $RuntimeRoot $dir
+    if (-not (Test-Path -LiteralPath $src)) {
+        throw "SYNC_SOURCE_MISSING=$src"
+    }
+    Remove-Item -LiteralPath $dst -Recurse -Force -ErrorAction SilentlyContinue
+    Copy-Item -LiteralPath $src -Destination $dst -Recurse -Force
+    Write-Host "SYNCED_DIR=$dir"
+}
+
+$syncFiles = @("rxconfig.py", "pyproject.toml")
+foreach ($file in $syncFiles) {
+    $src = Join-Path $RepoRoot $file
+    $dst = Join-Path $RuntimeRoot $file
+    if (Test-Path -LiteralPath $src) {
+        Copy-Item -LiteralPath $src -Destination $dst -Force
+        Write-Host "SYNCED_FILE=$file"
+    }
 }
 
 Set-Location -LiteralPath $RuntimeRoot
