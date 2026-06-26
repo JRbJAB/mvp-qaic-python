@@ -1,7 +1,7 @@
 {
   "step": "P_REFLEX_12F_R3_NO_SCAN_EXPLICIT_REPO_GLOBAL_MIGRATION_MATRIX",
   "status": "GLOBAL_MIGRATION_MATRIX_READY_FOR_OPERATOR_REVIEW",
-  "generated_at": "2026-06-26T09:54:52+00:00",
+  "generated_at": "2026-06-26T10:30:02+00:00",
   "status_policy": "Keep machine statuses in English; display French labels in UI via migration_status_fr.",
   "source_csv": "docs/MVPQAIC_CLASP_IMPORTS_ALL.csv",
   "legend": {

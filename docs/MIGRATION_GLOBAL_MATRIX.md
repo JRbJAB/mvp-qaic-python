@@ -1,7 +1,7 @@
 # Matrice globale de migration — Sheets / Apps Script / Python / Reflex / BigQuery
 
 - Status: `GLOBAL_MIGRATION_MATRIX_READY_FOR_OPERATOR_REVIEW`
-- Generated at: `2026-06-26T09:54:52+00:00`
+- Generated at: `2026-06-26T10:30:02+00:00`
 - Politique statuts: statuts machine en anglais + libellés français en UI.
 
 ## Synthèse

@@ -1,0 +1,12 @@
+﻿{
+    "step":  "P_REFLEX_12F_R8C_HOT_REFRESH_RUNTIME_NO_RESTART",
+    "status":  "VALIDATED_READY_FOR_COMMIT",
+    "generated_at":  "2026-06-26T10:30:25Z",
+    "head_before":  "4331d2bdd06fc004cbf04365038b76b21a421fef",
+    "branch":  "master",
+    "command_updated":  "scripts/RUN_P_REFLEX_12F_REFRESH_GLOBAL_MIGRATION_MATRIX.ps1",
+    "hot_refresh_policy":  "SYNC_RUNTIME_DOCS_AND_TOUCH_MISSION_CONTROL_NO_SERVER_RESTART",
+    "runtime_sync_after_refresh":  true,
+    "no_drive_scan":  true,
+    "no_server_start_by_batch":  true
+}
