@@ -1,4 +1,4 @@
-﻿param(
+param(
   [Parameter(Mandatory=$true)]
   [string]$RepoRoot
 )
@@ -71,6 +71,13 @@ payload.setdefault("function_index_count", 0)
 hash_source = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 payload["data_hash"] = hashlib.sha256(hash_source.encode("utf-8")).hexdigest()[:16]
 payload["refreshed_at_utc"] = datetime.now(timezone.utc).isoformat()
+payload["live_meta"] = {
+    "status": "OK_MIGRATION_OS_REFRESH",
+    "data_hash": payload["data_hash"],
+    "row_count": payload.get("row_count"),
+    "function_index_count": payload.get("function_index_count"),
+    "refreshed_at_utc": payload["refreshed_at_utc"],
+}
 
 docs = repo / "docs"
 payload_path = docs / "MIGRATION_OS_LIVE_PAYLOAD.json"
@@ -105,7 +112,7 @@ Set-Content -LiteralPath $pyPath -Value $py -Encoding UTF8
 try {
   python $pyPath
   if ($LASTEXITCODE -ne 0) {
-    throw "PYTHON_REFRESH_FAILED=$LASTEXITCODE"
+    throw "python refresh failed: PYTHON_REFRESH_FAILED=$LASTEXITCODE"
   }
 }
 finally {

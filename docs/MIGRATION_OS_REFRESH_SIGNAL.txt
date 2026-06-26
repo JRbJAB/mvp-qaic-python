@@ -3,5 +3,5 @@
   "data_hash": "d5ebdb69cd361454",
   "row_count": 78,
   "function_index_count": 2738,
-  "refreshed_at_utc": "2026-06-26T13:41:49.469295+00:00"
+  "refreshed_at_utc": "2026-06-26T13:44:44.375289+00:00"
 }
