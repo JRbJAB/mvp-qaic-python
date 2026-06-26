@@ -227,3 +227,120 @@ def export_decision_queue(repo_root: str | Path = ".", *, limit: int = 200) -> d
     queue = build_decision_queue(repo_root, limit=limit)
     write_json_atomic(repo_path(repo_root, DECISION_QUEUE_REL), queue)
     return queue
+
+
+# P_REFLEX_12H1B_BEGIN_UI_COMPONENTS
+try:
+    import reflex as rx
+except Exception:  # noqa: BLE001
+    rx = None  # type: ignore[assignment]
+
+
+MIGRATION_DECISION_WORKBENCH_ROUTE = "/migration/decisions"
+
+
+def _require_reflex() -> Any:
+    if rx is None:
+        raise RuntimeError("reflex is required to render migration decision workbench")
+    return rx
+
+
+def _safe_text(value: Any, default: str = "-") -> str:
+    text = str(value or "").strip()
+    return text or default
+
+
+def _decision_row_card(row: dict[str, Any]) -> Any:
+    reflex = _require_reflex()
+    source = _safe_text(row.get("source") or row.get("Source") or row.get("name"))
+    status = _safe_text(row.get("decision_status") or row.get("status") or row.get("Statut"))
+    target = _safe_text(row.get("target") or row.get("cible") or row.get("Cible"))
+    note = _safe_text(row.get("decision_note") or row.get("note"), "")
+
+    return reflex.card(
+        reflex.vstack(
+            reflex.hstack(
+                reflex.badge(status),
+                reflex.text(source, size="2", weight="bold"),
+                spacing="2",
+                flex_wrap="wrap",
+            ),
+            reflex.text(f"Cible: {target}", size="2"),
+            reflex.cond(note != "", reflex.text(note, size="1"), reflex.text("", size="1")),
+            spacing="2",
+            width="100%",
+        ),
+        width="100%",
+    )
+
+
+def migration_decision_workbench_compact_panel(limit: int = 6) -> Any:
+    reflex = _require_reflex()
+    queue = build_decision_queue(".", limit=limit)
+    rows = [row for row in queue.get("rows", []) if isinstance(row, dict)][:limit]
+    cards = [_decision_row_card(row) for row in rows]
+
+    return reflex.card(
+        reflex.vstack(
+            reflex.hstack(
+                reflex.heading("Migration Decision Workbench", size="4"),
+                reflex.badge(f"queue={queue.get('queue_count', 0)}"),
+                reflex.badge(f"overlay={queue.get('overlay_decision_count', 0)}"),
+                spacing="2",
+                flex_wrap="wrap",
+            ),
+            reflex.text(
+                "Revue humaine des lignes à migrer. Écritures via overlay JSON, aucun ordre, aucun broker.",
+                size="2",
+            ),
+            *cards,
+            reflex.hstack(
+                reflex.link(
+                    reflex.button("Ouvrir le workbench"),
+                    href=MIGRATION_DECISION_WORKBENCH_ROUTE,
+                ),
+                reflex.link(
+                    reflex.button("Migration globale"),
+                    href="/migration/global",
+                ),
+                spacing="3",
+                flex_wrap="wrap",
+            ),
+            spacing="3",
+            width="100%",
+        ),
+        width="100%",
+    )
+
+
+def migration_decision_workbench_page() -> Any:
+    reflex = _require_reflex()
+    queue = build_decision_queue(".", limit=40)
+    rows = [row for row in queue.get("rows", []) if isinstance(row, dict)][:40]
+    cards = [_decision_row_card(row) for row in rows]
+
+    return reflex.container(
+        reflex.vstack(
+            reflex.heading("Migration Decision Workbench", size="6"),
+            reflex.text(
+                "Queue de décision migration alimentée par MIGRATION_OS_LIVE_PAYLOAD.json et MIGRATION_DECISION_OVERLAY.json.",
+                size="2",
+            ),
+            reflex.hstack(
+                reflex.badge(f"queue={queue.get('queue_count', 0)}"),
+                reflex.badge(f"overlay={queue.get('overlay_decision_count', 0)}"),
+                reflex.badge(f"hash={queue.get('source_live_hash', '-')}"),
+                spacing="3",
+                flex_wrap="wrap",
+            ),
+            *cards,
+            reflex.link(reflex.button("Retour Mission Control"), href="/"),
+            spacing="4",
+            width="100%",
+        ),
+        size="4",
+        padding_y="1.5rem",
+    )
+
+
+# P_REFLEX_12H1B_END_UI_COMPONENTS

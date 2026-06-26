@@ -99,3 +99,19 @@ try:
 except Exception:
     pass
 # P_REFLEX_12F_END_GLOBAL_MIGRATION_ROUTE
+
+# P_REFLEX_12H1B_BEGIN_DECISION_WORKBENCH_ROUTE
+try:
+    from mvp_qaic_reflex_ui.migration_decision_workbench import (
+        MIGRATION_DECISION_WORKBENCH_ROUTE,
+        migration_decision_workbench_page,
+    )
+
+    app.add_page(
+        migration_decision_workbench_page,
+        route=MIGRATION_DECISION_WORKBENCH_ROUTE,
+        title="Migration Decision Workbench",
+    )
+except Exception:
+    pass
+# P_REFLEX_12H1B_END_DECISION_WORKBENCH_ROUTE
