@@ -1,0 +1,59 @@
+{
+  "total_rows": 2794,
+  "by_scope": {
+    "APPS_SCRIPT_FUNCTION": 2738,
+    "APPS_SCRIPT_FILE": 22,
+    "SHEETS_COCKPIT": 19,
+    "FEATURE_CLUSTER": 10,
+    "FUTURE_ARCHITECTURE": 5
+  },
+  "by_status": {
+    "PYTHON_REWRITE": 1594,
+    "MIGRATE_NOW": 1048,
+    "KEEP_AS_EXPORT_SOURCE": 114,
+    "REVIEW_REQUIRED": 18,
+    "RETIRE_NO_VALUE": 7,
+    "BIGQUERY_FUTURE_CANDIDATE": 5,
+    "MIGRATE_LATER": 4,
+    "NO_MIGRATION_NEEDED": 2,
+    "REFLEX_UI_BINDING": 1,
+    "KEEP_SHEETS_MANUAL": 1
+  },
+  "by_target_layer": {
+    "PYTHON_SERVICE + READONLY_EXPORT": 1594,
+    "PYTHON + REFLEX_UI": 964,
+    "PYTHON + LOCAL_EXPORT + FUTURE_BIGQUERY": 78,
+    "LOCAL_DOCS + REFLEX_UI": 66,
+    "LOCAL_CSV + REFLEX_UI": 48,
+    "PYTHON_REWRITE_OR_RETIRE": 9,
+    "REFLEX_NATIVE_UI": 7,
+    "REFLEX_UI": 5,
+    "BIGQUERY": 5,
+    "LOCAL_EXPORT": 5,
+    "REFLEX_UI_OR_RETIRE": 3,
+    "REFLEX_UI + LOCAL_DOCS": 2,
+    "REFLEX_UI + DOCS": 2,
+    "TECHNICAL": 2,
+    "REFLEX_UI + PYTHON": 1,
+    "SHEETS_EXPORT + FUTURE_PYTHON": 1,
+    "SHEETS_MANUAL": 1,
+    "PYTHON_SERVICE": 1
+  },
+  "by_module_family": {
+    "QAIC_BRIDGE": 1594,
+    "PROMPT_ENGINE": 749,
+    "KNOWLEDGE_SEARCH": 213,
+    "JOURNAL": 77,
+    "AUDIT_INVENTORY": 66,
+    "SCRIPT_REGISTRY": 47,
+    "SHEETS_OR_TARGET_PLATFORM": 19,
+    "SETUP_FOUNDATION": 10,
+    "FORMATTING": 7,
+    "IMPORT_SEEDS": 5,
+    "FUTURE_PLATFORM": 5,
+    "MANIFEST": 2
+  },
+  "source_csv_rows": 3235,
+  "script_inventory_count": 22,
+  "function_index_count": 2738
+}

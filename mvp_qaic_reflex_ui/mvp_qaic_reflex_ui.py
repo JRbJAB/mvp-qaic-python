@@ -90,3 +90,12 @@ def _p12e_r2d_register_safe_routes() -> None:
 
 _p12e_r2d_register_safe_routes()
 # P_REFLEX_12E_R2D_END_SAFE_ROUTE_WIRING
+
+# P_REFLEX_12F_BEGIN_GLOBAL_MIGRATION_ROUTE
+try:
+    from mvp_qaic_reflex_ui.global_migration_page import global_migration_page
+
+    app.add_page(global_migration_page, route="/migration/global", title="Migration globale")
+except Exception:
+    pass
+# P_REFLEX_12F_END_GLOBAL_MIGRATION_ROUTE

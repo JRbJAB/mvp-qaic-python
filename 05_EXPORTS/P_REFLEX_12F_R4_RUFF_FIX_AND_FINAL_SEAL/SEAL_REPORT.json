@@ -1,0 +1,11 @@
+﻿{
+    "step":  "P_REFLEX_12F_R4_RUFF_FIX_AND_FINAL_SEAL",
+    "status":  "VALIDATED_READY_FOR_COMMIT",
+    "generated_at":  "2026-06-26T09:58:54Z",
+    "head_before":  "172fe00f1e32542f160d59b3b4703bd45964a945",
+    "branch":  "master",
+    "supersedes_false_p12f_head":  "172fe00f1e32542f160d59b3b4703bd45964a945",
+    "p12f_r3_failure":  "RUFF_E401_ONLY",
+    "no_server_start_by_batch":  true,
+    "full_pytest":  "SKIPPED_FAST_MODE_LAST_SEAL_REUSED"
+}

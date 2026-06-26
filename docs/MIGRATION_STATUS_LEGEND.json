@@ -1,0 +1,42 @@
+{
+  "MIGRATE_NOW": {
+    "fr": "À migrer maintenant",
+    "meaning": "Important pour le MVP privé Reflex/Python."
+  },
+  "MIGRATE_LATER": {
+    "fr": "À migrer plus tard",
+    "meaning": "Utile mais non bloquant."
+  },
+  "KEEP_SHEETS_MANUAL": {
+    "fr": "Garder dans Sheets en contrôle manuel",
+    "meaning": "Sheets garde une valeur de revue humaine/export."
+  },
+  "KEEP_AS_EXPORT_SOURCE": {
+    "fr": "Garder comme source d’export lecture seule",
+    "meaning": "Alimente Python/Reflex sans mutation automatique."
+  },
+  "PYTHON_REWRITE": {
+    "fr": "Réécrire en Python",
+    "meaning": "Sortir la logique d’Apps Script."
+  },
+  "REFLEX_UI_BINDING": {
+    "fr": "Brancher dans l’interface Reflex",
+    "meaning": "Créer route/panneau/filtre UI."
+  },
+  "BIGQUERY_FUTURE_CANDIDATE": {
+    "fr": "Candidat BigQuery futur",
+    "meaning": "Logs, historiques, snapshots, analytics."
+  },
+  "RETIRE_NO_VALUE": {
+    "fr": "Ne pas migrer / sans intérêt confirmé",
+    "meaning": "Legacy, doublon ou faible valeur."
+  },
+  "NO_MIGRATION_NEEDED": {
+    "fr": "Pas de migration nécessaire",
+    "meaning": "Fichier technique ou déjà couvert."
+  },
+  "REVIEW_REQUIRED": {
+    "fr": "Revue nécessaire",
+    "meaning": "Risque/couverture/dépendance à vérifier."
+  }
+}
