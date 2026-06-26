@@ -1,337 +1,387 @@
-"""Mission Control migration tracker for Sheets and Apps Script migration."""
-
 from __future__ import annotations
 
-from collections.abc import Mapping
+import json
+from pathlib import Path
+from typing import Any
 
 import reflex as rx
 
-from .theme import status_pill
 
-MIGRATION_TRACKER_DOCS = {
-    "json": "docs/MIGRATION_TRACKER.json",
-    "markdown": "docs/MIGRATION_TRACKER.md",
+STATUS_LABELS_FR: dict[str, str] = {
+    "MIGRATE_NOW": "A migrer maintenant",
+    "MIGRATE_LATER": "A migrer plus tard",
+    "KEEP_SHEETS_MANUAL": "Garder dans Sheets en controle manuel",
+    "KEEP_AS_EXPORT_SOURCE": "Garder comme source export / inventaire",
+    "PYTHON_REWRITE": "Reecriture Python",
+    "REFLEX_UI_BINDING": "Brancher a l'interface Reflex",
+    "BIGQUERY_FUTURE_CANDIDATE": "Candidat BigQuery futur",
+    "RETIRE_NO_VALUE": "Ne pas migrer / faible valeur",
+    "NO_MIGRATION_NEEDED": "Pas de migration necessaire",
+    "REVIEW_REQUIRED": "Revue humaine necessaire",
 }
 
-MIGRATION_TRACKER_ROWS = [
-    {
-        "migration_id": "MIG-001",
-        "source_type": "SHEET_TAB",
-        "source_name": "LEXIQUE_CRYPTO_APPROVED",
-        "target": "/lexique-knowledge",
-        "scope": "Lexique KB",
-        "status": "STRUCTURE_READY",
-        "progress_percent": 40,
-        "priority": "P0",
-        "next_action": "Brancher export lexique validé + catégories + recherche.",
-    },
-    {
-        "migration_id": "MIG-002",
-        "source_type": "SHEET_TAB",
-        "source_name": "GPT_QUALITY_DASHBOARD",
-        "target": "/prompt-lab",
-        "scope": "Prompt quality",
-        "status": "TO_MIGRATE",
-        "progress_percent": 30,
-        "priority": "P0",
-        "next_action": "Migrer métriques qualité prompt/GEM en cockpit Reflex.",
-    },
-    {
-        "migration_id": "MIG-003",
-        "source_type": "SHEET_TAB",
-        "source_name": "PROMPT_IMPROVEMENT_QUEUE",
-        "target": "/prompt-lab",
-        "scope": "Prompt correction loop",
-        "status": "TO_MIGRATE",
-        "progress_percent": 30,
-        "priority": "P0",
-        "next_action": "Lister corrections, statuts, priorités et human review.",
-    },
-    {
-        "migration_id": "MIG-004",
-        "source_type": "SHEET_TAB",
-        "source_name": "DECISION_JOURNAL",
-        "target": "/cdc-tracker",
-        "scope": "Decision journal",
-        "status": "PARTIAL",
-        "progress_percent": 45,
-        "priority": "P0",
-        "next_action": "Créer journal web read-only avec décisions, blockers, evidence.",
-    },
-    {
-        "migration_id": "MIG-005",
-        "source_type": "SHEET_TAB",
-        "source_name": "QAIC_RUNTIME_COCKPIT_VIEW",
-        "target": "/admin/runtime",
-        "scope": "Runtime cockpit",
-        "status": "PARTIAL",
-        "progress_percent": 70,
-        "priority": "P0",
-        "next_action": "Brancher historique smoke/runtime et incidents.",
-    },
-    {
-        "migration_id": "MIG-006",
-        "source_type": "SHEET_TAB",
-        "source_name": "QAIC_RUNTIME_BRIDGE_STATUS",
-        "target": "/qaic-bridge",
-        "scope": "MVP/QAIC bridge",
-        "status": "REVIEW_ONLY",
-        "progress_percent": 35,
-        "priority": "P1",
-        "next_action": "Contrat read-only, pas de broker/order/sizing.",
-    },
-    {
-        "migration_id": "MIG-007",
-        "source_type": "SHEET_TAB",
-        "source_name": "🎛️ BENCHMARK_AI_TRADE",
-        "target": "/prompt-lab",
-        "scope": "Benchmark prompt/GEM",
-        "status": "TO_MIGRATE",
-        "progress_percent": 30,
-        "priority": "P1",
-        "next_action": "Migrer benchmark en lecture locale avec scoring compact.",
-    },
-    {
-        "migration_id": "MIG-008",
-        "source_type": "APPS_SCRIPT_FILE",
-        "source_name": "mvpqaic_09_p1_journal_core.gs",
-        "target": "/cdc-tracker",
-        "scope": "Journal core",
-        "status": "PARTIAL",
-        "progress_percent": 50,
-        "priority": "P0",
-        "next_action": "Porter logique idempotence/journal en Python local review-only.",
-    },
-    {
-        "migration_id": "MIG-009",
-        "source_type": "APPS_SCRIPT_FUNCTION",
-        "source_name": "Decision journal append / duplicate guard",
-        "target": "/cdc-tracker",
-        "scope": "Journal idempotence",
-        "status": "PARTIAL",
-        "progress_percent": 45,
-        "priority": "P0",
-        "next_action": "Formaliser tests duplicate guard côté Python.",
-    },
-    {
-        "migration_id": "MIG-010",
-        "source_type": "FUNCTIONALITY",
-        "source_name": "P132/P133 GEM portfolio multimodal prompt",
-        "target": "/gem-portfolio",
-        "scope": "GEM portfolio review",
-        "status": "STRUCTURE_READY",
-        "progress_percent": 55,
-        "priority": "P0",
-        "next_action": "UI import capture + réponse GEM + revue humaine.",
-    },
-    {
-        "migration_id": "MIG-011",
-        "source_type": "FUNCTIONALITY",
-        "source_name": "Prompt correction loop P153/P154/P155/P159",
-        "target": "/prompt-lab",
-        "scope": "Prompt workbench",
-        "status": "STRUCTURE_READY",
-        "progress_percent": 50,
-        "priority": "P0",
-        "next_action": "Brancher actions correction + apply gate review-only.",
-    },
-    {
-        "migration_id": "MIG-012",
-        "source_type": "FUNCTIONALITY",
-        "source_name": "Safety gates no-order/no-sizing/no-public-deploy",
-        "target": "/settings-safety",
-        "scope": "Safety cockpit",
-        "status": "PRIVATE_READY",
-        "progress_percent": 80,
-        "priority": "P0",
-        "next_action": "Centraliser affichage et audit sécurité.",
-    },
-    {
-        "migration_id": "MIG-013",
-        "source_type": "DOC_EXPORT",
-        "source_name": "WEB_ARCHITECTURE_CDC.md / SITEMAP.json / SCHEMA.svg",
-        "target": "/architecture-web",
-        "scope": "Architecture CDC",
-        "status": "ACTIVE",
-        "progress_percent": 85,
-        "priority": "P0",
-        "next_action": "Review visuelle + enrichissement data contracts.",
-    },
-    {
-        "migration_id": "MIG-014",
-        "source_type": "INVENTORY",
-        "source_name": "MVPQAIC_CLASP_IMPORTS_ALL.csv",
-        "target": "/architecture-registry",
-        "scope": "Apps Script inventory",
-        "status": "TO_BIND",
-        "progress_percent": 20,
-        "priority": "P0",
-        "next_action": "Importer inventaire scripts/fonctions pour tracker exhaustif.",
-    },
-    {
-        "migration_id": "MIG-015",
-        "source_type": "INVENTORY",
-        "source_name": "MVPQAIC_CLASP_IMPORTS_ALL_HEADERS.csv",
-        "target": "/architecture-registry",
-        "scope": "Headers/contracts",
-        "status": "TO_BIND",
-        "progress_percent": 20,
-        "priority": "P1",
-        "next_action": "Mapper headers Sheets vers contrats Reflex/Python.",
-    },
+ESSENTIAL_STATUS_ORDER = [
+    "MIGRATE_NOW",
+    "PYTHON_REWRITE",
+    "BIGQUERY_FUTURE_CANDIDATE",
+    "REVIEW_REQUIRED",
+    "REFLEX_UI_BINDING",
+    "MIGRATE_LATER",
+    "KEEP_SHEETS_MANUAL",
+    "KEEP_AS_EXPORT_SOURCE",
 ]
 
+SCOPE_LIMITS = {
+    "SHEETS_COCKPIT": 19,
+    "APPS_SCRIPT_FILE": 22,
+    "APPS_SCRIPT_FUNCTION": 30,
+    "FEATURE_CLUSTER": 10,
+    "FUTURE_ARCHITECTURE": 5,
+}
 
-def migration_average_progress() -> float:
-    return round(
-        sum(row["progress_percent"] for row in MIGRATION_TRACKER_ROWS)
-        / len(MIGRATION_TRACKER_ROWS),
-        2,
+KEY_FAMILIES = {
+    "QAIC_BRIDGE",
+    "PROMPT_ENGINE",
+    "KNOWLEDGE_SEARCH",
+    "JOURNAL",
+    "AUDIT_INVENTORY",
+    "SCRIPT_REGISTRY",
+    "FUTURE_PLATFORM",
+}
+
+SHOW_ONLY_ESSENTIAL = True
+
+
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def _docs_root() -> Path:
+    return _repo_root() / "docs"
+
+
+def _load_json_file(path: Path, default: Any) -> Any:
+    try:
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8-sig"))
+    except Exception:
+        return default
+    return default
+
+
+def _summary() -> dict[str, Any]:
+    data = _load_json_file(_docs_root() / "MIGRATION_GLOBAL_MATRIX_SUMMARY.json", {})
+    return data if isinstance(data, dict) else {}
+
+
+def _matrix_rows() -> list[dict[str, Any]]:
+    data = _load_json_file(_docs_root() / "MIGRATION_GLOBAL_MATRIX.json", [])
+    if isinstance(data, list):
+        return [row for row in data if isinstance(row, dict)]
+    if isinstance(data, dict):
+        for key in ("rows", "items", "matrix", "records"):
+            rows = data.get(key)
+            if isinstance(rows, list):
+                return [row for row in rows if isinstance(row, dict)]
+    return []
+
+
+def _text_value(row: dict[str, Any], *keys: str, fallback: str = "") -> str:
+    for key in keys:
+        value = row.get(key)
+        if value is not None and str(value).strip():
+            return str(value).strip()
+    return fallback
+
+
+def _status(row: dict[str, Any]) -> str:
+    return _text_value(row, "status", "migration_status", fallback="REVIEW_REQUIRED")
+
+
+def _scope(row: dict[str, Any]) -> str:
+    return _text_value(row, "scope", "item_scope", "migration_scope")
+
+
+def _module_family(row: dict[str, Any]) -> str:
+    return _text_value(row, "module_family", "family")
+
+
+def _priority_rank(row: dict[str, Any]) -> tuple[int, int, str]:
+    status = _status(row)
+    family = _module_family(row)
+    status_rank = ESSENTIAL_STATUS_ORDER.index(status) if status in ESSENTIAL_STATUS_ORDER else 99
+    family_rank = 0 if family in KEY_FAMILIES else 1
+    source = _text_value(
+        row, "source", "source_name", "source_key", "script_name", "function_name", "name"
     )
+    return (status_rank, family_rank, source)
 
 
-def _status_level(status: object) -> str:
-    value = str(status)
-    if value in {"ACTIVE", "PRIVATE_READY"}:
-        return "ok"
-    if value in {"PARTIAL", "STRUCTURE_READY", "REVIEW_ONLY", "TO_BIND"}:
-        return "warning"
-    if value in {"TO_MIGRATE"}:
-        return "info"
-    return "info"
+def _is_essential(row: dict[str, Any]) -> bool:
+    scope = _scope(row)
+    status = _status(row)
+    if scope in {"SHEETS_COCKPIT", "FEATURE_CLUSTER", "FUTURE_ARCHITECTURE"}:
+        return True
+    if scope == "APPS_SCRIPT_FILE":
+        return status in {
+            "MIGRATE_NOW",
+            "PYTHON_REWRITE",
+            "KEEP_AS_EXPORT_SOURCE",
+            "BIGQUERY_FUTURE_CANDIDATE",
+            "REVIEW_REQUIRED",
+            "MIGRATE_LATER",
+        }
+    if scope == "APPS_SCRIPT_FUNCTION":
+        return (
+            status
+            in {
+                "MIGRATE_NOW",
+                "PYTHON_REWRITE",
+                "BIGQUERY_FUTURE_CANDIDATE",
+                "REVIEW_REQUIRED",
+                "REFLEX_UI_BINDING",
+            }
+            and _module_family(row) in KEY_FAMILIES
+        )
+    return False
 
 
-def build_migration_tracker_payload() -> dict[str, object]:
-    return {
-        "tracker_status": "READY_COMPACT_MISSION_PANEL",
-        "row_count": len(MIGRATION_TRACKER_ROWS),
-        "average_progress": migration_average_progress(),
-        "source_scope": "Sheets + Apps Script + exported docs",
-        "mission_route": "/",
-        "public_deploy": False,
-        "broker_order_sizing": False,
-        "sheet_write": False,
-        "bigquery_write": False,
-        "rows": [dict(row) for row in MIGRATION_TRACKER_ROWS],
-    }
+def _essential_rows_for_scope(rows: list[dict[str, Any]], scope: str) -> list[dict[str, Any]]:
+    limit = SCOPE_LIMITS.get(scope, 10)
+    selected = [row for row in rows if _scope(row) == scope and _is_essential(row)]
+    return sorted(selected, key=_priority_rank)[:limit]
 
 
-def migration_tracker_summary_rows() -> dict[str, object]:
-    payload = build_migration_tracker_payload()
-    return {
-        "tracker_status": payload["tracker_status"],
-        "row_count": payload["row_count"],
-        "average_progress": f"{payload['average_progress']}%",
-        "source_scope": payload["source_scope"],
-        "sheet_write": payload["sheet_write"],
-        "bigquery_write": payload["bigquery_write"],
-    }
-
-
-def _progress_bar(value: object) -> rx.Component:
-    pct = int(value)
+def _metric_card(label: str, value: Any, detail: str = "") -> rx.Component:
     return rx.box(
-        rx.box(
-            height="8px",
-            width=f"{pct}%",
-            background="var(--accent-9)",
-            border_radius="999px",
-        ),
-        width="100%",
-        background="var(--gray-4)",
-        border_radius="999px",
-        overflow="hidden",
+        rx.text(str(value), size="6", weight="bold"),
+        rx.text(label, size="2", weight="medium"),
+        rx.cond(detail != "", rx.text(detail, size="1", color="gray"), rx.fragment()),
+        padding="0.75rem",
+        border="1px solid var(--gray-5)",
+        border_radius="0.75rem",
+        min_width="11rem",
     )
 
 
-def _migration_grid_header() -> rx.Component:
-    return rx.grid(
-        rx.text("Type", size="1", weight="bold"),
-        rx.text("Source", size="1", weight="bold"),
-        rx.text("Cible", size="1", weight="bold"),
-        rx.text("%", size="1", weight="bold"),
-        rx.text("Statut", size="1", weight="bold"),
-        columns="5",
-        spacing="2",
+def _count_row(code: str, count: Any, label: str) -> rx.Component:
+    return rx.hstack(
+        rx.badge(code, variant="soft"),
+        rx.text(str(count), weight="bold"),
+        rx.text(label, color="gray"),
+        justify="between",
         width="100%",
-        padding="0.5rem",
-        background="var(--gray-3)",
-        border_radius="12px",
+        padding_y="0.25rem",
     )
 
 
-def _migration_grid_row(row: Mapping[str, object]) -> rx.Component:
-    return rx.grid(
-        rx.text(str(row["source_type"]), size="1", color="var(--gray-11)"),
-        rx.vstack(
-            rx.text(str(row["source_name"]), size="1", weight="bold"),
-            rx.text(str(row["scope"]), size="1", color="var(--gray-11)"),
-            spacing="1",
-            align="start",
-        ),
-        rx.link(str(row["target"]), href=str(row["target"]), size="1"),
-        rx.vstack(
-            rx.text(f"{row['progress_percent']}%", size="1", weight="bold"),
-            _progress_bar(row["progress_percent"]),
-            spacing="1",
-            align="start",
+def _matrix_item(row: dict[str, Any]) -> rx.Component:
+    source = _text_value(
+        row,
+        "source",
+        "source_name",
+        "source_key",
+        "script_name",
+        "function_name",
+        "name",
+        fallback="source inconnue",
+    )
+    target = _text_value(
+        row, "target", "target_layer", "target_route", "target_view", fallback="cible a confirmer"
+    )
+    status = _status(row)
+    family = _module_family(row)
+    label = STATUS_LABELS_FR.get(status, "Statut a confirmer")
+    return rx.box(
+        rx.hstack(
+            rx.text(source, weight="medium"),
+            rx.badge(status, variant="soft"),
+            align="center",
+            justify="between",
             width="100%",
         ),
-        status_pill(str(row["status"]), _status_level(row["status"])),
-        columns="5",
-        spacing="2",
+        rx.text(label, size="1", color="gray"),
+        rx.text(target, size="1", color="gray"),
+        rx.cond(family != "", rx.text(family, size="1", color="gray"), rx.fragment()),
+        padding="0.55rem",
+        border="1px solid var(--gray-4)",
+        border_radius="0.6rem",
         width="100%",
-        padding="0.5rem",
-        border_bottom="1px solid var(--gray-5)",
-        align_items="center",
     )
 
 
-def migration_tracker_compact_panel() -> rx.Component:
+def _scope_preview(
+    title: str, rows: list[dict[str, Any]], empty: str, note: str = ""
+) -> rx.Component:
+    return rx.box(
+        rx.hstack(
+            rx.text(title, size="3", weight="bold"),
+            rx.cond(note != "", rx.text(note, size="1", color="gray"), rx.fragment()),
+            justify="between",
+            align="center",
+            width="100%",
+        ),
+        rx.cond(
+            len(rows) > 0,
+            rx.vstack(*[_matrix_item(row) for row in rows], spacing="2", width="100%"),
+            rx.text(empty, color="gray"),
+        ),
+        padding="0.75rem",
+        border="1px solid var(--gray-5)",
+        border_radius="0.75rem",
+        width="100%",
+    )
+
+
+def migration_tracker_panel() -> rx.Component:
+    summary = _summary()
+    rows = _matrix_rows()
+    by_scope = summary.get("by_scope", {}) if isinstance(summary.get("by_scope", {}), dict) else {}
+    by_status = (
+        summary.get("by_status", {}) if isinstance(summary.get("by_status", {}), dict) else {}
+    )
+    total_rows = summary.get("total_rows", len(rows))
+    source_csv_rows = summary.get("source_csv_rows", "?")
+    script_inventory_count = summary.get(
+        "script_inventory_count", by_scope.get("APPS_SCRIPT_FILE", "?")
+    )
+    function_index_count = summary.get(
+        "function_index_count", by_scope.get("APPS_SCRIPT_FUNCTION", "?")
+    )
+
+    cockpit_rows = _essential_rows_for_scope(rows, "SHEETS_COCKPIT")
+    script_rows = _essential_rows_for_scope(rows, "APPS_SCRIPT_FILE")
+    function_rows = _essential_rows_for_scope(rows, "APPS_SCRIPT_FUNCTION")
+    feature_rows = _essential_rows_for_scope(rows, "FEATURE_CLUSTER")
+    future_rows = _essential_rows_for_scope(rows, "FUTURE_ARCHITECTURE")
+    essential_visible_count = (
+        len(cockpit_rows)
+        + len(script_rows)
+        + len(function_rows)
+        + len(feature_rows)
+        + len(future_rows)
+    )
+    status_rows = [
+        _count_row(status, by_status.get(status, 0), STATUS_LABELS_FR.get(status, status))
+        for status in ESSENTIAL_STATUS_ORDER
+        if by_status.get(status, 0)
+    ]
+
     return rx.box(
         rx.vstack(
             rx.hstack(
                 rx.vstack(
-                    rx.heading("Migration Tracker — Sheets / Apps Script → Reflex", size="5"),
                     rx.text(
-                        "Onglets, scripts, fonctions et fonctionnalités essentielles à migrer.",
-                        size="2",
-                        color="var(--gray-11)",
+                        "Migration Tracker — vision essentielle vivante", size="5", weight="bold"
                     ),
+                    rx.text(
+                        "Vue Mission Control: uniquement les cockpits, scripts, fonctions et fonctionnalites utiles au pilotage.",
+                        color="gray",
+                    ),
+                    rx.text(
+                        "Les fonctions brutes non essentielles restent agregees dans l'inventaire et accessibles en drill-down.",
+                        size="1",
+                        color="gray",
+                    ),
+                    align_items="start",
                     spacing="1",
-                    align="start",
                 ),
-                rx.spacer(),
-                status_pill(f"AVG={migration_average_progress()}%", "info"),
-                status_pill(f"ROWS={len(MIGRATION_TRACKER_ROWS)}", "info"),
+                rx.link("Detail complet", href="/migration/global"),
+                justify="between",
+                align="start",
                 width="100%",
-                align="center",
+            ),
+            rx.hstack(
+                _metric_card(
+                    "Inventaire analyse", total_rows, "lignes techniques, non affichees en vrac"
+                ),
+                _metric_card("Essentiels affiches", essential_visible_count, "vue Mission Control"),
+                _metric_card(
+                    "Cockpits Sheets", by_scope.get("SHEETS_COCKPIT", 0), "source globale"
+                ),
+                _metric_card("Scripts Apps Script", script_inventory_count, "inventaire"),
+                _metric_card(
+                    "Fonctions Apps Script",
+                    function_index_count,
+                    "agregees, top essentiel seulement",
+                ),
+                _metric_card("Lignes CSV source", source_csv_rows, "CLASP imports"),
+                wrap="wrap",
+                spacing="3",
+                width="100%",
             ),
             rx.box(
-                rx.vstack(
-                    _migration_grid_header(),
-                    *[_migration_grid_row(row) for row in MIGRATION_TRACKER_ROWS],
-                    spacing="0",
-                    width="100%",
-                ),
+                rx.text("Statuts migration principaux", size="3", weight="bold"),
+                *status_rows,
                 width="100%",
-                overflow_x="hidden",
+                padding="0.75rem",
+                border="1px solid var(--gray-5)",
+                border_radius="0.75rem",
             ),
-            rx.hstack(
-                status_pill("NO_SHEET_WRITE", "ok"),
-                status_pill("NO_BIGQUERY_WRITE", "ok"),
-                status_pill("NO_BROKER", "ok"),
-                status_pill("HUMAN_REVIEW", "ok"),
-                spacing="2",
-                wrap="wrap",
+            _scope_preview(
+                "Cockpits Sheets essentiels", cockpit_rows, "Aucun cockpit trouve dans la matrice."
             ),
+            _scope_preview(
+                "Scripts Apps Script essentiels",
+                script_rows,
+                "Aucun script essentiel trouve dans la matrice.",
+            ),
+            _scope_preview(
+                "Fonctions Apps Script essentielles",
+                function_rows,
+                "Aucune fonction essentielle trouvee dans la matrice.",
+                "top limite, pas les 2738 brutes",
+            ),
+            _scope_preview(
+                "Fonctionnalites metier",
+                feature_rows,
+                "Aucune fonctionnalite trouvee dans la matrice.",
+            ),
+            _scope_preview(
+                "Architecture future / BigQuery",
+                future_rows,
+                "Aucune cible future trouvee dans la matrice.",
+            ),
+            rx.text(
+                "Refresh: lancer la commande R8C/R8+, puis rafraichir Mission Control. Pas de liste brute 2794 dans le cockpit principal.",
+                size="1",
+                color="gray",
+            ),
+            align_items="stretch",
             spacing="4",
-            align="start",
             width="100%",
         ),
-        border="1px solid var(--gray-6)",
-        border_radius="20px",
-        padding="1rem",
         width="100%",
-        background="var(--gray-1)",
     )
+
+
+def migration_tracker() -> rx.Component:
+    return migration_tracker_panel()
+
+
+def migration_tracker_view() -> rx.Component:
+    return migration_tracker_panel()
+
+
+def migration_tracker_section() -> rx.Component:
+    return migration_tracker_panel()
+
+
+def render_migration_tracker() -> rx.Component:
+    return migration_tracker_panel()
+
+
+def migration_average_progress(*args: object, **kwargs: object) -> rx.Component:
+    return migration_tracker_panel()
+
+
+def build_migration_tracker_payload(*args: object, **kwargs: object) -> rx.Component:
+    return migration_tracker_panel()
+
+
+def migration_tracker_summary_rows(*args: object, **kwargs: object) -> rx.Component:
+    return migration_tracker_panel()
+
+
+def migration_tracker_compact_panel(*args: object, **kwargs: object) -> rx.Component:
+    return migration_tracker_panel()

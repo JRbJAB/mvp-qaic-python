@@ -1,0 +1,12 @@
+﻿{
+    "step":  "P_REFLEX_12F_R9B_VISIBLE_TRACKER_ESSENTIAL_ONLY",
+    "status":  "VALIDATED_READY_FOR_COMMIT",
+    "generated_at":  "2026-06-26T10:48:07Z",
+    "head_before":  "42e58e12f2ed87ad13ebfb8d59141f2a2ee656c3",
+    "branch":  "master",
+    "policy":  "VISIBLE_TRACKER_ESSENTIAL_ONLY_NOT_RAW_MATRIX",
+    "show_only_essential":  true,
+    "raw_matrix_drilldown_only":  true,
+    "runtime_hot_sync":  true,
+    "no_server_start_by_batch":  true
+}
