@@ -1,0 +1,182 @@
+{
+  "schema_version": "migration_tracker.v1",
+  "project": "MVP_QAIC",
+  "mission_route": "/",
+  "source_scope": "Sheets + Apps Script + exported docs",
+  "tracker_status": "READY_COMPACT_MISSION_PANEL",
+  "row_count": 15,
+  "safety": {
+    "public_deploy": false,
+    "broker_order_sizing": false,
+    "sheet_write": false,
+    "bigquery_write": false,
+    "live_action": false
+  },
+  "rows": [
+    {
+      "migration_id": "MIG-001",
+      "source_type": "SHEET_TAB",
+      "source_name": "LEXIQUE_CRYPTO_APPROVED",
+      "target": "/lexique-knowledge",
+      "scope": "Lexique KB",
+      "status": "STRUCTURE_READY",
+      "progress_percent": 40,
+      "priority": "P0",
+      "next_action": "Brancher export lexique validé + catégories + recherche."
+    },
+    {
+      "migration_id": "MIG-002",
+      "source_type": "SHEET_TAB",
+      "source_name": "GPT_QUALITY_DASHBOARD",
+      "target": "/prompt-lab",
+      "scope": "Prompt quality",
+      "status": "TO_MIGRATE",
+      "progress_percent": 30,
+      "priority": "P0",
+      "next_action": "Migrer métriques qualité prompt/GEM en cockpit Reflex."
+    },
+    {
+      "migration_id": "MIG-003",
+      "source_type": "SHEET_TAB",
+      "source_name": "PROMPT_IMPROVEMENT_QUEUE",
+      "target": "/prompt-lab",
+      "scope": "Prompt correction loop",
+      "status": "TO_MIGRATE",
+      "progress_percent": 30,
+      "priority": "P0",
+      "next_action": "Lister corrections, statuts, priorités et human review."
+    },
+    {
+      "migration_id": "MIG-004",
+      "source_type": "SHEET_TAB",
+      "source_name": "DECISION_JOURNAL",
+      "target": "/cdc-tracker",
+      "scope": "Decision journal",
+      "status": "PARTIAL",
+      "progress_percent": 45,
+      "priority": "P0",
+      "next_action": "Créer journal web read-only avec décisions, blockers, evidence."
+    },
+    {
+      "migration_id": "MIG-005",
+      "source_type": "SHEET_TAB",
+      "source_name": "QAIC_RUNTIME_COCKPIT_VIEW",
+      "target": "/admin/runtime",
+      "scope": "Runtime cockpit",
+      "status": "PARTIAL",
+      "progress_percent": 70,
+      "priority": "P0",
+      "next_action": "Brancher historique smoke/runtime et incidents."
+    },
+    {
+      "migration_id": "MIG-006",
+      "source_type": "SHEET_TAB",
+      "source_name": "QAIC_RUNTIME_BRIDGE_STATUS",
+      "target": "/qaic-bridge",
+      "scope": "MVP/QAIC bridge",
+      "status": "REVIEW_ONLY",
+      "progress_percent": 35,
+      "priority": "P1",
+      "next_action": "Contrat read-only, pas de broker/order/sizing."
+    },
+    {
+      "migration_id": "MIG-007",
+      "source_type": "SHEET_TAB",
+      "source_name": "🎛️ BENCHMARK_AI_TRADE",
+      "target": "/prompt-lab",
+      "scope": "Benchmark prompt/GEM",
+      "status": "TO_MIGRATE",
+      "progress_percent": 30,
+      "priority": "P1",
+      "next_action": "Migrer benchmark en lecture locale avec scoring compact."
+    },
+    {
+      "migration_id": "MIG-008",
+      "source_type": "APPS_SCRIPT_FILE",
+      "source_name": "mvpqaic_09_p1_journal_core.gs",
+      "target": "/cdc-tracker",
+      "scope": "Journal core",
+      "status": "PARTIAL",
+      "progress_percent": 50,
+      "priority": "P0",
+      "next_action": "Porter logique idempotence/journal en Python local review-only."
+    },
+    {
+      "migration_id": "MIG-009",
+      "source_type": "APPS_SCRIPT_FUNCTION",
+      "source_name": "Decision journal append / duplicate guard",
+      "target": "/cdc-tracker",
+      "scope": "Journal idempotence",
+      "status": "PARTIAL",
+      "progress_percent": 45,
+      "priority": "P0",
+      "next_action": "Formaliser tests duplicate guard côté Python."
+    },
+    {
+      "migration_id": "MIG-010",
+      "source_type": "FUNCTIONALITY",
+      "source_name": "P132/P133 GEM portfolio multimodal prompt",
+      "target": "/gem-portfolio",
+      "scope": "GEM portfolio review",
+      "status": "STRUCTURE_READY",
+      "progress_percent": 55,
+      "priority": "P0",
+      "next_action": "UI import capture + réponse GEM + revue humaine."
+    },
+    {
+      "migration_id": "MIG-011",
+      "source_type": "FUNCTIONALITY",
+      "source_name": "Prompt correction loop P153/P154/P155/P159",
+      "target": "/prompt-lab",
+      "scope": "Prompt workbench",
+      "status": "STRUCTURE_READY",
+      "progress_percent": 50,
+      "priority": "P0",
+      "next_action": "Brancher actions correction + apply gate review-only."
+    },
+    {
+      "migration_id": "MIG-012",
+      "source_type": "FUNCTIONALITY",
+      "source_name": "Safety gates no-order/no-sizing/no-public-deploy",
+      "target": "/settings-safety",
+      "scope": "Safety cockpit",
+      "status": "PRIVATE_READY",
+      "progress_percent": 80,
+      "priority": "P0",
+      "next_action": "Centraliser affichage et audit sécurité."
+    },
+    {
+      "migration_id": "MIG-013",
+      "source_type": "DOC_EXPORT",
+      "source_name": "WEB_ARCHITECTURE_CDC.md / SITEMAP.json / SCHEMA.svg",
+      "target": "/architecture-web",
+      "scope": "Architecture CDC",
+      "status": "ACTIVE",
+      "progress_percent": 85,
+      "priority": "P0",
+      "next_action": "Review visuelle + enrichissement data contracts."
+    },
+    {
+      "migration_id": "MIG-014",
+      "source_type": "INVENTORY",
+      "source_name": "MVPQAIC_CLASP_IMPORTS_ALL.csv",
+      "target": "/architecture-registry",
+      "scope": "Apps Script inventory",
+      "status": "TO_BIND",
+      "progress_percent": 20,
+      "priority": "P0",
+      "next_action": "Importer inventaire scripts/fonctions pour tracker exhaustif."
+    },
+    {
+      "migration_id": "MIG-015",
+      "source_type": "INVENTORY",
+      "source_name": "MVPQAIC_CLASP_IMPORTS_ALL_HEADERS.csv",
+      "target": "/architecture-registry",
+      "scope": "Headers/contracts",
+      "status": "TO_BIND",
+      "progress_percent": 20,
+      "priority": "P1",
+      "next_action": "Mapper headers Sheets vers contrats Reflex/Python."
+    }
+  ]
+}

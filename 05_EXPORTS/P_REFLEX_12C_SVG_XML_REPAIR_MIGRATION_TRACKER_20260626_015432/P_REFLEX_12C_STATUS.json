@@ -1,0 +1,23 @@
+﻿{
+    "sheet_write":  false,
+    "source_modified":  true,
+    "next_recommended_batch":  "P_REFLEX_12D_RUNTIME_VISUAL_SMOKE_AFTER_SVG_REPAIR",
+    "targeted_pytest_passed":  true,
+    "svg_xml_repaired":  true,
+    "live_action":  false,
+    "import_smoke_ok":  true,
+    "bigquery_write":  false,
+    "migration_tracker_added_to_mission":  true,
+    "migration_tracker_scope":  "Sheets + Apps Script + exported docs",
+    "svg_xml_parse_test":  true,
+    "broker_order_sizing":  false,
+    "public_deploy":  false,
+    "project":  "MVP_QAIC_ONLY",
+    "server_started_by_batch":  false,
+    "migration_tracker_rows":  15,
+    "STATUS":  "OK_P_REFLEX_12C_SVG_XML_REPAIR_MIGRATION_TRACKER",
+    "ruff_ok":  true,
+    "unescaped_ampersand_guard":  true,
+    "full_pytest_passed":  true,
+    "browser_opened_by_batch":  false
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 import reflex as rx
 
 from .layout import page_shell, placeholder_body
+from .migration_tracker import migration_tracker_compact_panel
 from .theme import LANDING_SECTIONS, get_landing_sections, safety_panel, section_card
 from .visual_theme import metric_grid, mission_control_hero
 from .web_architecture_cdc import architecture_web_cdc_body, sitemap_page_body
@@ -52,6 +53,7 @@ def home() -> rx.Component:
         rx.vstack(
             mission_control_hero(),
             metric_grid(metrics),
+            migration_tracker_compact_panel(),
             safety_panel(),
             rx.heading("Sections prioritaires", size="5"),
             rx.grid(

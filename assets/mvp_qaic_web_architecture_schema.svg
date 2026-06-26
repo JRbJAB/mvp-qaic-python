@@ -27,7 +27,7 @@
   </defs>
 
   <rect width="1680" height="1040" fill="url(#bg)"/>
-  <text x="70" y="70" class="title">MVP QAIC — Web Architecture CDC & Visual Sitemap</text>
+  <text x="70" y="70" class="title">MVP QAIC — Web Architecture CDC &amp; Visual Sitemap</text>
   <text x="70" y="106" class="subtitle">Private Reflex app · SitemapPlugin enabled · LocalStorage theme persistence · No broker/order/sizing · No public deploy</text>
 
   <rect x="70" y="150" width="330" height="250" class="box"/>
