@@ -1,0 +1,11 @@
+﻿{
+    "step":  "P_REFLEX_12F_R7_ENRICH_EXISTING_MC_LIST_FIXED",
+    "status":  "VALIDATED_READY_FOR_COMMIT",
+    "generated_at":  "2026-06-26T10:17:40Z",
+    "head_before":  "c9a5308ab8040cada5c9e782b58838f951b6fccd",
+    "branch":  "master",
+    "integration_policy":  "ENRICH_EXISTING_MISSION_CONTROL_LIST",
+    "new_mission_control_panel_created":  false,
+    "separate_route_retained_as_drilldown":  true,
+    "no_server_start_by_batch":  true
+}
