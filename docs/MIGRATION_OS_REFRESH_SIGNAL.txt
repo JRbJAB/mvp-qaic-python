@@ -1,7 +1,9 @@
 {
   "status": "OK_MIGRATION_OS_REFRESH",
-  "data_hash": "d5ebdb69cd361454",
+  "data_hash": "ac9e7b7917cfffc7",
   "row_count": 78,
   "function_index_count": 2738,
-  "refreshed_at_utc": "2026-06-26T13:44:44.375289+00:00"
+  "decision_overlay_count": 0,
+  "decision_overlay_applied_count": 0,
+  "refreshed_at_utc": "2026-06-26T14:03:14.063539+00:00"
 }
