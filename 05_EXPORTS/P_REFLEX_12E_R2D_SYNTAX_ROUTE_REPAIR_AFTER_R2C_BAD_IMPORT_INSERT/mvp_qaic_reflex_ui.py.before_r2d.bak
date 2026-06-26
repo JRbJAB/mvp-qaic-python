@@ -13,6 +13,10 @@ from .pages_admin import (
     admin_theme,
 )
 from .pages_landing import (
+# P_REFLEX_12E_R2C_BEGIN_IMPORTS
+from mvp_qaic_reflex_ui.auto_update_trackers_page import auto_update_trackers_page
+from mvp_qaic_reflex_ui.svg_schema_viewer import schema_large_page
+# P_REFLEX_12E_R2C_END_IMPORTS
     architecture_registry,
     architecture_web,
     web_sitemap,
@@ -62,31 +66,21 @@ app.add_page(gem_portfolio, route="/gem-portfolio", title="GEM Portfolio")
 app.add_page(qaic_bridge, route="/qaic-bridge", title="QAIC Bridge")
 app.add_page(settings_safety, route="/settings-safety", title="Settings Safety")
 
-
-# P_REFLEX_12E_R2D_BEGIN_SAFE_ROUTE_WIRING
-def _p12e_r2d_register_safe_routes() -> None:
-    try:
-        _schema_mod = __import__(
-            "mvp_qaic_reflex_ui.svg_schema_viewer",
-            fromlist=["schema_large_page"],
-        )
-        _trackers_mod = __import__(
-            "mvp_qaic_reflex_ui.auto_update_trackers_page",
-            fromlist=["auto_update_trackers_page"],
-        )
-        app.add_page(
-            _schema_mod.schema_large_page,
-            route="/architecture-web/schema",
-            title="Architecture Web Schema",
-        )
-        app.add_page(
-            _trackers_mod.auto_update_trackers_page,
-            route="/trackers/auto-update",
-            title="Auto-update Trackers",
-        )
-    except Exception:  # noqa: BLE001
-        pass
-
-
-_p12e_r2d_register_safe_routes()
-# P_REFLEX_12E_R2D_END_SAFE_ROUTE_WIRING
+# P_REFLEX_12E_R2C_BEGIN_ROUTES
+try:
+    app.add_page(
+        schema_large_page,
+        route="/architecture-web/schema",
+        title="Architecture Web Schema",
+    )
+except Exception:
+    pass
+try:
+    app.add_page(
+        auto_update_trackers_page,
+        route="/trackers/auto-update",
+        title="Auto-update Trackers",
+    )
+except Exception:
+    pass
+# P_REFLEX_12E_R2C_END_ROUTES

@@ -1,0 +1,43 @@
+{
+  "step": "P_REFLEX_12E_R2_AUTO_TRACKERS_SVG_VIEWER_REPO_LOCATOR_HARD_FIX",
+  "status": "PATCH_APPLIED",
+  "repo": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\MVP_QAIC_PY",
+  "pack_root": "C:\\Users\\Julie",
+  "generated_at": "2026-06-26T08:21:42+00:00",
+  "safety_flags": {
+    "NO_PUBLIC_DEPLOY": true,
+    "NO_LIVE_ACTION": true,
+    "NO_BROKER_ORDER_SIZING": true,
+    "NO_SHEET_WRITE": true,
+    "NO_BIGQUERY_WRITE": true,
+    "HUMAN_REVIEW_ONLY": true
+  },
+  "file_actions": {
+    "mvp_qaic_reflex_ui/tracker_auto_update.py": "created",
+    "mvp_qaic_reflex_ui/svg_schema_viewer.py": "created",
+    "mvp_qaic_reflex_ui/mission_control_auto_update_panel.py": "created",
+    "mvp_qaic_reflex_ui/auto_update_trackers_page.py": "created",
+    "tests/test_p_reflex_12e_r2_tracker_auto_update.py": "created",
+    "tests/test_p_reflex_12e_r2_svg_schema_viewer.py": "created",
+    "tests/test_p_reflex_12e_r2_safety_contract.py": "created",
+    "docs/P_REFLEX_12E_R2_AUTO_TRACKERS_SVG_VIEWER.md": "created",
+    "scripts/RUN_P_REFLEX_12E_R2_PERMANENT_LOCAL_SERVER_WITH_SYNC.ps1": "created"
+  },
+  "app_route_patch": [
+    "NOT_PATCHED_NO_SAFE_APP_FILE_FOUND"
+  ],
+  "touched_files": [
+    "05_EXPORTS/P_REFLEX_12E_R2_AUTO_TRACKERS_SVG_VIEWER_REPO_LOCATOR_HARD_FIX/PATCH_REPORT.json",
+    "05_EXPORTS/P_REFLEX_12E_R2_AUTO_TRACKERS_SVG_VIEWER_REPO_LOCATOR_HARD_FIX/SUMMARY.md",
+    "05_EXPORTS/P_REFLEX_12E_R2_AUTO_TRACKERS_SVG_VIEWER_REPO_LOCATOR_HARD_FIX/TOUCHED_FILES.txt",
+    "docs/P_REFLEX_12E_R2_AUTO_TRACKERS_SVG_VIEWER.md",
+    "mvp_qaic_reflex_ui/auto_update_trackers_page.py",
+    "mvp_qaic_reflex_ui/mission_control_auto_update_panel.py",
+    "mvp_qaic_reflex_ui/svg_schema_viewer.py",
+    "mvp_qaic_reflex_ui/tracker_auto_update.py",
+    "scripts/RUN_P_REFLEX_12E_R2_PERMANENT_LOCAL_SERVER_WITH_SYNC.ps1",
+    "tests/test_p_reflex_12e_r2_safety_contract.py",
+    "tests/test_p_reflex_12e_r2_svg_schema_viewer.py",
+    "tests/test_p_reflex_12e_r2_tracker_auto_update.py"
+  ]
+}

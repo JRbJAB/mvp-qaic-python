@@ -1,0 +1,7 @@
+﻿# P_REFLEX_12E_R2F_FINAL_SEAL_PARSER_SAFE
+
+status: VALIDATED_READY_FOR_COMMIT
+import_smoke: OK_WITH_REPO_PATH_FIX
+full_pytest: REUSED_FROM_R2D_1026_PASSED
+no_server_start_by_batch: True
+

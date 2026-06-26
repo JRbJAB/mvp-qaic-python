@@ -1,0 +1,13 @@
+﻿{
+    "step":  "P_REFLEX_12E_R2F_FINAL_SEAL_PARSER_SAFE",
+    "status":  "VALIDATED_READY_FOR_COMMIT",
+    "generated_at":  "2026-06-26T08:48:57Z",
+    "head_before":  "60ded7e64ef36a8b0eca2614e5dd4d773c8868ab",
+    "branch":  "master",
+    "full_pytest":  "REUSED_FROM_R2D_1026_PASSED",
+    "copied_optional":  [
+
+                        ],
+    "import_smoke":  "OK_WITH_REPO_PATH_FIX",
+    "no_server_start_by_batch":  true
+}
