@@ -1,0 +1,19 @@
+﻿{
+    "status":  "OK_MVP_QAIC_UI_CDC_DEV_TRACKER_MIGRATION_STYLE_R1C_READY",
+    "phase":  "MVP_UI_CDC_DEV_TRACKER_MIGRATION_STYLE_R1C",
+    "head_start":  "b9bda2c4db03",
+    "branch":  "master",
+    "no_runtime":  true,
+    "no_archive":  true,
+    "ui_style_source":  "MIGRATION_TRACKER",
+    "cdc_tracker":  true,
+    "dev_tracker":  true,
+    "same_columns":  true,
+    "summary_kpi_bar":  true,
+    "filter_bar":  true,
+    "tracker_table":  true,
+    "detail_panel":  true,
+    "next_actions_panel":  true,
+    "must_use_qait_handoff_files":  true,
+    "next":  "MVP_UI_WIRE_CDC_DEV_TRACKER_SCREEN_MIGRATION_STYLE_R2"
+}

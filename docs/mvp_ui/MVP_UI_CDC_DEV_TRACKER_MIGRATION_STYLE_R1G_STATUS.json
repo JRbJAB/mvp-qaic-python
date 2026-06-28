@@ -1,0 +1,10 @@
+{
+  "status": "OK_MVP_QAIC_UI_CDC_DEV_TRACKER_MIGRATION_STYLE_R1G_REAPPLY_READY",
+  "step": "R1G",
+  "priority": "CDC_DEV_TRACKER_UI_IDENTICAL_MIGRATION_TRACKER",
+  "no_runtime": true,
+  "no_archive": true,
+  "targeted_commit_only": true,
+  "ui_style_source": "MIGRATION_TRACKER",
+  "next": "MVP_UI_WIRE_CDC_DEV_TRACKER_SCREEN_MIGRATION_STYLE_R2"
+}

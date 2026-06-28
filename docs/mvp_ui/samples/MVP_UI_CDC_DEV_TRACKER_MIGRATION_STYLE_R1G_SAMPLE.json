@@ -1,0 +1,31 @@
+{
+  "ui_style_source": "MIGRATION_TRACKER",
+  "trackers": [
+    {
+      "tracker_id": "CDC-001",
+      "tracker_kind": "CDC_TRACKER",
+      "domain": "MVP_UI",
+      "scope": "cdc_dev_tracker",
+      "source": "migration_tracker_style",
+      "target": "cdc_tracker_screen",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "owner": "operator",
+      "evidence": "MVP_UI_CDC_DEV_TRACKER_MIGRATION_STYLE_R1G",
+      "next_action": "wire_reflex_screen"
+    },
+    {
+      "tracker_id": "DEV-001",
+      "tracker_kind": "DEV_TRACKER",
+      "domain": "MVP_UI",
+      "scope": "developer_execution_tracker",
+      "source": "migration_tracker_style",
+      "target": "dev_tracker_screen",
+      "status": "TODO",
+      "priority": "HIGH",
+      "owner": "developer",
+      "evidence": "MVP_UI_CDC_DEV_TRACKER_MIGRATION_STYLE_R1G",
+      "next_action": "connect_to_existing_ui_navigation"
+    }
+  ]
+}

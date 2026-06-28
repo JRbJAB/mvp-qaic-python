@@ -1,0 +1,33 @@
+{
+  "screen_id": "MVP_UI_CDC_DEV_TRACKER",
+  "ui_style_source": "MIGRATION_TRACKER",
+  "trackers": ["CDC_TRACKER", "DEV_TRACKER"],
+  "columns": [
+    "tracker_id",
+    "tracker_kind",
+    "domain",
+    "scope",
+    "source",
+    "target",
+    "status",
+    "priority",
+    "owner",
+    "evidence",
+    "next_action"
+  ],
+  "panels": {
+    "summary_kpi_bar": true,
+    "filter_bar": true,
+    "tracker_table": true,
+    "detail_panel": true,
+    "next_actions_panel": true
+  },
+  "safety": {
+    "no_runtime": true,
+    "no_archive": true,
+    "no_broker_order": true,
+    "no_sizing": true,
+    "no_sheet_write": true,
+    "no_bq_write": true
+  }
+}
