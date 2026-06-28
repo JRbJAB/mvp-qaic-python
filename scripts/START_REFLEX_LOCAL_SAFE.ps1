@@ -1,6 +1,6 @@
 # START_REFLEX_LOCAL_SAFE.ps1
 # MVP QAIC Reflex local runtime starter - Windows PowerShell 5.1 safe
-# R5J: npm-first frontend repair for rolldown native binding failures on Windows ARM64/x64.
+# R5K: npm-first frontend repair; no PowerShell stop on npm warnings; rolldown native binding repair.
 # Local/private only. No deploy, no broker, no Sheet/BQ write.
 [CmdletBinding()]
 param(
@@ -35,7 +35,6 @@ if ($UseBun) {
     Remove-Item Env:\REFLEX_USE_NPM -ErrorAction SilentlyContinue
 } else {
     $env:REFLEX_USE_NPM = "true"
-    $env:NPM_CONFIG_OPTIONAL = "true"
     $env:NPM_CONFIG_INCLUDE = "optional"
 }
 
@@ -209,11 +208,28 @@ if (-not (Test-Path -LiteralPath (Join-Path $RuntimeRoot "rxconfig.py"))) {
 Set-Location -LiteralPath $RuntimeRoot
 Write-Log "RUNTIME_ROOT=$RuntimeRoot"
 
+function Invoke-VersionCheck([string]$Label, [scriptblock]$Command) {
+    Write-Log "CHECK=$Label"
+    $old = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    try {
+        & $Command 2>&1 | ForEach-Object {
+            $line = [string]$_
+            Write-Log $line
+        }
+        Write-Log "CHECK_EXIT_$Label=$LASTEXITCODE"
+    } catch {
+        Write-Log "CHECK_WARN_$Label=$($_.Exception.Message)"
+    } finally {
+        $ErrorActionPreference = $old
+    }
+}
+
 Write-Step "PYTHON NODE REFLEX CHECK"
-python --version 2>&1 | Tee-Object -FilePath $LogFile -Append
-python -c "import importlib.metadata as m; print('REFLEX_VERSION=' + m.version('reflex'))" 2>&1 | Tee-Object -FilePath $LogFile -Append
-node --version 2>&1 | Tee-Object -FilePath $LogFile -Append
-npm --version 2>&1 | Tee-Object -FilePath $LogFile -Append
+Invoke-VersionCheck -Label "PYTHON_VERSION" -Command { python --version }
+Invoke-VersionCheck -Label "REFLEX_VERSION" -Command { python -c "import importlib.metadata as m; print('REFLEX_VERSION=' + m.version('reflex'))" }
+Invoke-VersionCheck -Label "NODE_VERSION" -Command { node --version }
+Invoke-VersionCheck -Label "NPM_VERSION" -Command { npm --version }
 Write-Log "NODE_PLATFORM_ARCH=$(Get-NodePlatformArch)"
 
 if (-not $NoKillPorts) {

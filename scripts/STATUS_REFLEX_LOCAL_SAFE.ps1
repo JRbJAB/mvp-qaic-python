@@ -1,6 +1,6 @@
 # STATUS_REFLEX_LOCAL_SAFE.ps1
 # Show local Reflex port/process status, latest logs and known frontend dependency failures.
-# R5J: detects rolldown native binding failures.
+# R5K: detects rolldown native binding failures.
 [CmdletBinding()]
 param(
     [int]$FrontendPort = 3000,
