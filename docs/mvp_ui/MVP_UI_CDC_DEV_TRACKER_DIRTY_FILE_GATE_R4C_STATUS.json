@@ -1,0 +1,18 @@
+﻿{
+  "status": "OK_MVP_QAIC_UI_CDC_DEV_TRACKER_DIRTY_FILE_GATE_R4C_DIRECT_READY",
+  "step": "R4C",
+  "mode": "DIRECT_NO_ZIP_NO_RUNTIME_NO_PYTHON_NO_RUFF",
+  "head_start": "
+99afe6b1efbe
+",
+  "r3h_required": true,
+  "dirty_file_gate": true,
+  "no_patch_to_dirty_files": true,
+  "dirty_files_reviewed": [
+    "mvp_qaic_reflex_ui/global_migration_page.py",
+    "mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py",
+    "scripts/START_REFLEX_LOCAL_SAFE.ps1",
+    "tests/test_p_reflex_12h1d_r4_runtime_route_fallback.py"
+  ],
+  "next": "MVP_UI_ATTACH_CDC_DEV_TRACKER_TO_NAVIGATION_DIRTY_FILE_DECISION_R4D_OR_RUNTIME_SMOKE_R5"
+}
