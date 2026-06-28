@@ -1,0 +1,21 @@
+﻿{
+    "step":  "R6A",
+    "files":  [
+                  "scripts/REFLEX_FAST_GATE.ps1",
+                  "docs/mvp_ui/MVP_QAIC_REFLEX_DEV_FACTORY_R6A_FINAL_INSTRUCTIONS.md",
+                  "docs/mvp_ui/MVP_QAIC_REFLEX_FAST_GATE_R6A_RUNBOOK.md",
+                  "docs/mvp_ui/MVP_QAIC_REFLEX_DEV_FACTORY_R6A_STATUS.json"
+              ],
+    "rules":  {
+                  "fresh_head_runtime_required":  true,
+                  "no_public_deploy":  true,
+                  "no_sheet_bq_write":  true,
+                  "no_false_ok_commit":  true,
+                  "no_old_runtime_default":  true,
+                  "reflex_kept":  true,
+                  "no_broker_order_sizing":  true
+              },
+    "mode":  "fusion_correction_docs_finales_and_fast_gate",
+    "status":  "OK_MVP_QAIC_REFLEX_DEV_FACTORY_R6A_READY",
+    "next":  "RUN_REFLEX_FAST_GATE_ROUTE_CDC_DEV_TRACKER"
+}
