@@ -15,13 +15,13 @@ Il liste uniquement les documents finaux principaux. Les résiduels et ZIP reste
 
 | Statut | Document | Repo | Miroir principal |
 |---|---|---|---|
-| ✅ READY | `📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
-| ✅ READY | `🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
+| ✅ READY | `📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.3.md` | `True` | `True` |
+| ✅ READY | `🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.3.md` | `True` | `True` |
 | ✅ READY | `🗺️ MVP_QAIC_ROADMAP_PLANNING_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
 | ✅ READY | `🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
 | ✅ READY | `💎 MVP_QAIC_PROMPT_GEM_WORKFLOW_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
 | ✅ READY | `📊 MVP_QAIC_SHEETS_COCKPITS_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
-| ✅ READY | `🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
+| ✅ READY | `🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.3.md` | `True` | `True` |
 | ✅ READY | `🎨 MVP_QAIC_UI_UX_STITCH_FINAL_FUSED_v0.2.2.md` | `True` | `True` |
 | ✅ READY | `🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md` | `True` | `True` |
 
@@ -39,13 +39,13 @@ Il liste uniquement les documents finaux principaux. Les résiduels et ZIP reste
 
 Dans l'interface MVP, référencer uniquement :
 
-- `📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.2.md`
-- `🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.2.md`
+- `📘 MVP_QAIC_CDC_CONTRACT_FINAL_FUSED_v0.2.3.md`
+- `🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.3.md`
 - `🗺️ MVP_QAIC_ROADMAP_PLANNING_FINAL_FUSED_v0.2.2.md`
 - `🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md`
 - `💎 MVP_QAIC_PROMPT_GEM_WORKFLOW_FINAL_FUSED_v0.2.2.md`
 - `📊 MVP_QAIC_SHEETS_COCKPITS_FINAL_FUSED_v0.2.2.md`
-- `🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.2.md`
+- `🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.3.md`
 - `🎨 MVP_QAIC_UI_UX_STITCH_FINAL_FUSED_v0.2.2.md`
 - `🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md`
 
