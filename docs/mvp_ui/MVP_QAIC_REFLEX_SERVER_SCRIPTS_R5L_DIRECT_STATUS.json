@@ -1,0 +1,15 @@
+﻿{
+    "scripts":  [
+                    "scripts/START_REFLEX_LOCAL_SAFE.ps1",
+                    "scripts/STOP_REFLEX_LOCAL_SAFE.ps1",
+                    "scripts/STATUS_REFLEX_LOCAL_SAFE.ps1"
+                ],
+    "local_only":  true,
+    "no_broker_order_sizing":  true,
+    "no_deploy":  true,
+    "step":  "R5L_DIRECT",
+    "next":  "RUN_START_REFLEX_LOCAL_SAFE_CLEANWEB",
+    "reason":  "bypass_broken_installer_parser_error",
+    "fix":  "copy_server_scripts_directly",
+    "status":  "OK_MVP_QAIC_REFLEX_SERVER_SCRIPTS_R5L_DIRECT_READY"
+}

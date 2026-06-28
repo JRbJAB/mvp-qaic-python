@@ -1,66 +1,54 @@
 # STOP_REFLEX_LOCAL_SAFE.ps1
-# Stop only safe local Reflex-related processes listening on ports 3000/8000 by default.
-# R5J: also cleans known local Reflex child processes if explicitly requested.
+# MVP QAIC Reflex local runtime stop R5L - Windows PowerShell 5.1 safe
 [CmdletBinding()]
 param(
-    [int]$FrontendPort = 3000,
-    [int]$BackendPort = 8000,
-    [switch]$KillKnownChildren
+    [int[]]$Ports = @(3000,8000),
+    [switch]$KillLocalRuntimeChildren
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 chcp 65001 | Out-Null
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $OutputEncoding = [Text.Encoding]::UTF8
 
-function Get-ListenerPids([int]$Port) {
-    $rows = netstat -ano -p tcp 2>$null
-    $pids = @()
-    foreach ($line in $rows) {
-        if ($line -match "^\s*TCP\s+\S+:$Port\s+\S+\s+LISTENING\s+(\d+)\s*$") {
-            $pids += [int]$Matches[1]
-        }
+Write-Host "===== MVP QAIC REFLEX LOCAL STOP R5L ====="
+
+foreach ($port in $Ports) {
+  try {
+    $owners = Get-NetTCPConnection -LocalPort $port -ErrorAction SilentlyContinue |
+      Select-Object -ExpandProperty OwningProcess -Unique
+    if (-not $owners) {
+      Write-Host "PORT_$port=FREE"
+      continue
     }
-    $pids | Sort-Object -Unique
+    foreach ($owner in $owners) {
+      $p = Get-Process -Id $owner -ErrorAction SilentlyContinue
+      if (-not $p) { continue }
+      if ($p.ProcessName -match '^(python|pythonw|node|bun|reflex)$') {
+        Stop-Process -Id $owner -Force -ErrorAction SilentlyContinue
+        Write-Host "STOPPED_PORT_$port PID=$owner PROCESS=$($p.ProcessName)"
+      } else {
+        Write-Host "SKIPPED_PORT_$port PID=$owner PROCESS=$($p.ProcessName)"
+      }
+    }
+  } catch {
+    Write-Host "PORT_STOP_ERROR_$port=$($_.Exception.Message)"
+  }
 }
 
-function Stop-PidIfSafe([int]$PidToStop, [string]$Reason) {
-    $proc = Get-Process -Id $PidToStop -ErrorAction SilentlyContinue
-    if (-not $proc) { return }
-    $name = $proc.ProcessName
-    if ($name -match '^(python|pythonw|node|bun|reflex|granian)$') {
-        Write-Host "STOP PID=$PidToStop PROCESS=$name REASON=$Reason"
-        Stop-Process -Id $PidToStop -Force -ErrorAction SilentlyContinue
-    } else {
-        Write-Host "SKIP PID=$PidToStop PROCESS=$name REASON=$Reason NOT_SAFE_TO_KILL"
+if ($KillLocalRuntimeChildren) {
+  $runtime = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_RUNTIME"
+  Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {
+      $_.CommandLine -and
+      ($_.CommandLine -like "*MVP_QAIC_REFLEX_RUNTIME*" -or $_.CommandLine -like "*reflex run*")
+    } |
+    ForEach-Object {
+      try {
+        Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+        Write-Host "STOPPED_RUNTIME_CHILD PID=$($_.ProcessId)"
+      } catch {}
     }
 }
 
-function Stop-PortIfSafe([int]$Port) {
-    $pids = @(Get-ListenerPids -Port $Port)
-    if ($pids.Count -eq 0) {
-        Write-Host "PORT_$Port=FREE"
-        return
-    }
-    foreach ($listenerPid in $pids) {
-        Stop-PidIfSafe -PidToStop $listenerPid -Reason "PORT_$Port"
-    }
-}
-
-Stop-PortIfSafe -Port $FrontendPort
-Stop-PortIfSafe -Port $BackendPort
-
-if ($KillKnownChildren) {
-    Write-Host "===== KILL_KNOWN_CHILDREN ====="
-    Get-Process -ErrorAction SilentlyContinue |
-        Where-Object { $_.ProcessName -match '^(python|pythonw|node|bun|granian)$' } |
-        ForEach-Object {
-            $path = ""
-            try { $path = $_.Path } catch {}
-            if ($path -match 'MVP_QAIC_REFLEX_RUNTIME|MVP_QAIC_REFLEX_STATE|AppData\\Local\\reflex') {
-                Stop-PidIfSafe -PidToStop $_.Id -Reason "KNOWN_MVP_QAIC_REFLEX_PATH"
-            }
-        }
-}
-
-Write-Host "STOP_DONE"
+Write-Host "DONE"

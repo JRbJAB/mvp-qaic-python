@@ -1,6 +1,5 @@
 # STATUS_REFLEX_LOCAL_SAFE.ps1
-# Show local Reflex port/process status, latest logs and known frontend dependency failures.
-# R5K: detects rolldown native binding failures.
+# MVP QAIC Reflex local runtime status R5L - Windows PowerShell 5.1 safe
 [CmdletBinding()]
 param(
     [int]$FrontendPort = 3000,
@@ -8,67 +7,59 @@ param(
     [int]$Tail = 120
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 chcp 65001 | Out-Null
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $OutputEncoding = [Text.Encoding]::UTF8
 
-function Show-Port([int]$Port) {
-    Write-Host "===== PORT $Port ====="
-    $rows = netstat -ano -p tcp 2>$null | Where-Object { $_ -match "^\s*TCP\s+\S+:$Port\s+\S+\s+LISTENING\s+(\d+)\s*$" }
-    if (-not $rows) {
-        Write-Host "PORT_$Port=NOT_LISTENING"
-        return
-    }
-    foreach ($line in $rows) {
-        $null = $line -match "LISTENING\s+(\d+)\s*$"
-        $listenerPid = [int]$Matches[1]
-        $proc = Get-Process -Id $listenerPid -ErrorAction SilentlyContinue
-        if ($proc) {
-            $path = ""
-            try { $path = $proc.Path } catch {}
-            Write-Host "PORT_$Port=LISTENING PID=$listenerPid PROCESS=$($proc.ProcessName) PATH=$path"
-        } else {
-            Write-Host "PORT_$Port=LISTENING PID=$listenerPid PROCESS=UNKNOWN"
-        }
-    }
-}
-
-function Show-LatestLog([string]$LogDir) {
-    Write-Host "===== LATEST REFLEX LOG ====="
-    if (Test-Path -LiteralPath $LogDir) {
-        $latest = Get-ChildItem -LiteralPath $LogDir -Filter "reflex_local_*.log" -File | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-        if ($latest) {
-            Write-Host "LOG_FILE=$($latest.FullName)"
-            $tailLines = Get-Content -LiteralPath $latest.FullName -Tail $Tail
-            $tailLines
-            $txt = ($tailLines -join "`n")
-            Write-Host "===== DIAG ====="
-            if ($txt -match "Cannot find native binding" -or $txt -match "@rolldown/binding-win32" -or $txt -match "rolldown-binding\.win32") {
-                Write-Host "DIAG=ROLLDOWN_NATIVE_BINDING_MISSING"
-                Write-Host "ACTION=Run START_REFLEX_LOCAL_SAFE.ps1 without -UseBun, preferably with -CleanWeb once."
-            } elseif ($txt -match "App Running" -or $txt -match "Listening at: http://127.0.0.1") {
-                Write-Host "DIAG=BACKEND_OR_APP_STARTED"
-            } else {
-                Write-Host "DIAG=CHECK_LOG_MANUALLY"
-            }
-        } else {
-            Write-Host "NO_LOG_FOUND_IN=$LogDir"
-        }
-    } else {
-        Write-Host "LOG_DIR_NOT_FOUND=$LogDir"
-    }
-}
-
-Show-Port -Port $FrontendPort
-Show-Port -Port $BackendPort
-
 $LogDir = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_LOGS"
-Show-LatestLog -LogDir $LogDir
+Write-Host "===== MVP QAIC REFLEX LOCAL STATUS R5L ====="
 
-Write-Host "===== TOOLCHAIN ====="
-try { python --version } catch {}
-try { python -c "import importlib.metadata as m; print('REFLEX_VERSION=' + m.version('reflex'))" } catch {}
-try { node --version } catch {}
-try { npm --version } catch {}
-try { node -p "'NODE_PLATFORM_ARCH=' + process.platform + '-' + process.arch" } catch {}
+function Test-PortOpen {
+  param([int]$Port)
+  try {
+    $client = New-Object Net.Sockets.TcpClient
+    $iar = $client.BeginConnect("127.0.0.1", $Port, $null, $null)
+    $ok = $iar.AsyncWaitHandle.WaitOne(800, $false)
+    if ($ok) { $client.EndConnect($iar) }
+    $client.Close()
+    return [bool]$ok
+  } catch { return $false }
+}
+
+$front = Test-PortOpen -Port $FrontendPort
+$back = Test-PortOpen -Port $BackendPort
+Write-Host "FRONTEND_$FrontendPort=$front"
+Write-Host "BACKEND_$BackendPort=$back"
+Write-Host "URL=http://127.0.0.1:$FrontendPort/cdc-dev-tracker"
+
+Write-Host "===== PORT OWNERS ====="
+Get-NetTCPConnection -LocalPort $FrontendPort,$BackendPort -ErrorAction SilentlyContinue |
+  Select-Object LocalAddress,LocalPort,State,OwningProcess |
+  Format-Table -AutoSize
+
+Write-Host "===== LATEST LOG ====="
+$latest = $null
+if (Test-Path -LiteralPath $LogDir) {
+  $latest = Get-ChildItem -LiteralPath $LogDir -Filter "reflex_local_*.log" |
+    Sort-Object LastWriteTime -Descending |
+    Select-Object -First 1
+}
+if (-not $latest) {
+  Write-Host "NO_LOG_FOUND=$LogDir"
+  exit 0
+}
+
+Write-Host "LOG_FILE=$($latest.FullName)"
+$content = Get-Content -LiteralPath $latest.FullName -Tail $Tail
+$content
+
+$s = ($content -join "`n")
+if ($s -match "react-router.*n.?est pas reconnu") {
+  Write-Host "DETECTED=FRONTEND_REACT_ROUTER_BIN_MISSING"
+  Write-Host "ACTION=Run START_REFLEX_LOCAL_SAFE.ps1 -CleanWeb -MaxRestarts 2"
+}
+if ($s -match "Cannot find native binding" -or $s -match "@rolldown/binding-win32") {
+  Write-Host "DETECTED=FRONTEND_ROLLDOWN_NATIVE_BINDING_MISSING"
+  Write-Host "ACTION=Run START_REFLEX_LOCAL_SAFE.ps1 -CleanWeb -MaxRestarts 2"
+}

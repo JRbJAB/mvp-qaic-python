@@ -1,6 +1,5 @@
 # START_REFLEX_LOCAL_SAFE.ps1
-# MVP QAIC Reflex local runtime starter - Windows PowerShell 5.1 safe
-# R5K: npm-first frontend repair; no PowerShell stop on npm warnings; rolldown native binding repair.
+# MVP QAIC Reflex local runtime starter R5L - Windows PowerShell 5.1 safe
 # Local/private only. No deploy, no broker, no Sheet/BQ write.
 [CmdletBinding()]
 param(
@@ -10,9 +9,8 @@ param(
     [int]$BackendPort = 8000,
     [int]$MaxRestarts = 2,
     [switch]$NoKillPorts,
-    [switch]$UseBun,
-    [switch]$NoFrontendRepair,
-    [switch]$CleanWeb
+    [switch]$CleanWeb,
+    [switch]$NoFrontendPreinstall
 )
 
 $ErrorActionPreference = "Stop"
@@ -26,17 +24,17 @@ $env:NO_BROKER_ORDER_SIZING = "true"
 $env:NO_SHEET_WRITE = "true"
 $env:NO_BIGQUERY_WRITE = "true"
 $env:HUMAN_REVIEW_ONLY = "true"
-$env:PYTHONUTF8 = "1"
 $env:BROWSER = "none"
-$env:REFLEX_DIR = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_STATE"
+$env:PYTHONUTF8 = "1"
+$env:GIT_TERMINAL_PROMPT = "0"
+$env:REFLEX_USE_NPM = "true"
+$env:NPM_CONFIG_INCLUDE = "optional"
+$env:NPM_CONFIG_AUDIT = "false"
+$env:NPM_CONFIG_FUND = "false"
+Remove-Item Env:\NPM_CONFIG_OPTIONAL -ErrorAction SilentlyContinue
+Remove-Item Env:\PYTHONNOUSERSITE -ErrorAction SilentlyContinue
 
-# Default to npm. Bun has repeatedly failed on Windows with missing rolldown native bindings.
-if ($UseBun) {
-    Remove-Item Env:\REFLEX_USE_NPM -ErrorAction SilentlyContinue
-} else {
-    $env:REFLEX_USE_NPM = "true"
-    $env:NPM_CONFIG_INCLUDE = "optional"
-}
+$env:REFLEX_DIR = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_STATE"
 
 $LogDir = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_LOGS"
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
@@ -52,6 +50,21 @@ function Write-Step([string]$Text) {
 function Write-Log([string]$Text) {
     Write-Host $Text
     Add-Content -LiteralPath $LogFile -Encoding UTF8 -Value $Text
+}
+
+function Invoke-NativeSafe {
+    param(
+        [Parameter(Mandatory=$true)][string]$File,
+        [Parameter(ValueFromRemainingArguments=$true)][string[]]$Args
+    )
+    $old = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    try {
+        & $File @Args 2>&1 | Tee-Object -FilePath $LogFile -Append
+        return $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $old
+    }
 }
 
 function Get-ListenerPids([int]$Port) {
@@ -71,127 +84,129 @@ function Stop-PortIfSafe([int]$Port) {
         Write-Log "PORT_$Port=FREE"
         return
     }
-    foreach ($listenerPid in $pids) {
-        $proc = Get-Process -Id $listenerPid -ErrorAction SilentlyContinue
+    foreach ($pid in $pids) {
+        $proc = Get-Process -Id $pid -ErrorAction SilentlyContinue
         if (-not $proc) { continue }
         $name = $proc.ProcessName
-        if ($name -match '^(python|pythonw|node|bun|reflex|granian)$') {
-            Write-Log "STOP_PORT_$Port PID=$listenerPid PROCESS=$name"
-            Stop-Process -Id $listenerPid -Force -ErrorAction SilentlyContinue
+        if ($name -match '^(python|pythonw|node|bun|reflex)$') {
+            Write-Log "STOP_PORT_$Port PID=$pid PROCESS=$name"
+            Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
             Start-Sleep -Milliseconds 500
         } else {
-            throw "Port $Port already used by PID=$listenerPid PROCESS=$name. Stop it manually or run with another port."
+            throw "Port $Port already used by PID=$pid PROCESS=$name. Stop it manually or run with another port."
         }
     }
 }
 
-function Get-NodePlatformArch() {
+function Get-NodeArch {
     try {
-        $v = (& node -p "process.platform + '-' + process.arch" 2>$null)
-        if ($LASTEXITCODE -eq 0 -and $v) { return $v.Trim() }
+        $arch = & "C:\Program Files\nodejs\node.exe" -p "process.arch" 2>$null
+        if ($arch) { return [string]($arch | Select-Object -First 1).Trim() }
     } catch {}
     return "unknown"
 }
 
-function Get-RolldownBindingPackage() {
-    $arch = Get-NodePlatformArch
-    if ($arch -eq "win32-arm64") { return "@rolldown/binding-win32-arm64-msvc" }
-    if ($arch -eq "win32-x64") { return "@rolldown/binding-win32-x64-msvc" }
-    return ""
-}
+function Repair-FrontendDeps {
+    param([switch]$ForceClean)
 
-function Get-RolldownVersion() {
-    $pkg = Join-Path $RuntimeRoot ".web\node_modules\rolldown\package.json"
-    if (Test-Path -LiteralPath $pkg) {
-        try {
-            $obj = Get-Content -LiteralPath $pkg -Raw -Encoding UTF8 | ConvertFrom-Json
-            if ($obj.version) { return [string]$obj.version }
-        } catch {}
-    }
-    return "1.0.3"
-}
-
-function Invoke-NpmInWeb([string[]]$Args) {
     $web = Join-Path $RuntimeRoot ".web"
-    if (-not (Test-Path -LiteralPath $web)) { throw ".web not found: $web" }
+    $pkg = Join-Path $web "package.json"
+    $npm = "C:\Program Files\nodejs\npm.CMD"
+
+    if (-not (Test-Path -LiteralPath $pkg)) {
+        Write-Log "FRONTEND_REPAIR_SKIPPED=.web/package.json missing; Reflex will initialize it first"
+        return
+    }
+
+    Write-Step "FRONTEND DEPS REPAIR R5L"
+
+    if ($ForceClean) {
+        $nodeModules = Join-Path $web "node_modules"
+        $packageLock = Join-Path $web "package-lock.json"
+        $viteCache = Join-Path $web ".vite"
+        if (Test-Path -LiteralPath $nodeModules) {
+            Write-Log "REMOVE=.web/node_modules"
+            Remove-Item -LiteralPath $nodeModules -Recurse -Force -ErrorAction SilentlyContinue
+        }
+        if (Test-Path -LiteralPath $packageLock) {
+            Write-Log "REMOVE=.web/package-lock.json"
+            Remove-Item -LiteralPath $packageLock -Force -ErrorAction SilentlyContinue
+        }
+        if (Test-Path -LiteralPath $viteCache) {
+            Write-Log "REMOVE=.web/.vite"
+            Remove-Item -LiteralPath $viteCache -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    }
+
     Push-Location -LiteralPath $web
     try {
-        Write-Log ("NPM_CMD=npm " + ($Args -join " "))
-        $old = $ErrorActionPreference
-        $ErrorActionPreference = "Continue"
-        & npm @Args 2>&1 | Tee-Object -FilePath $LogFile -Append
-        $code = $LASTEXITCODE
-        $ErrorActionPreference = $old
-        Write-Log "NPM_EXIT_CODE=$code"
-        return $code
+        Write-Log "NPM_INSTALL_BASE=true"
+        $code = Invoke-NativeSafe -File $npm -Args @("install","--legacy-peer-deps","--include=optional","--no-audit","--fund=false")
+        Write-Log "NPM_INSTALL_BASE_EXIT=$code"
+
+        $reactRouterCmd = Join-Path $web "node_modules\.bin\react-router.cmd"
+        if (-not (Test-Path -LiteralPath $reactRouterCmd)) {
+            Write-Log "REACT_ROUTER_BIN_MISSING=True"
+            $devPkgs = @(
+                "@react-router/dev@7.15.0",
+                "@react-router/fs-routes@7.15.0",
+                "vite@8.0.16",
+                "autoprefixer@10.5.0",
+                "postcss@8.5.14",
+                "postcss-import@16.1.1",
+                "@emotion/react@11.14.0"
+            )
+            $args = @("install","--legacy-peer-deps","--include=optional","--no-audit","--fund=false","--save-dev") + $devPkgs
+            $code = Invoke-NativeSafe -File $npm -Args $args
+            Write-Log "NPM_INSTALL_DEV_EXIT=$code"
+        }
+
+        $basePkgs = @(
+            "react-router-dom@7.15.0",
+            "react-router@7.15.0",
+            "react@19.2.6",
+            "react-dom@19.2.6",
+            "@react-router/node@7.15.0",
+            "@radix-ui/themes@3.3.0",
+            "lucide-react@1.14.0",
+            "react-error-boundary@6.1.1",
+            "universal-cookie@7.2.2",
+            "isbot@5.1.40",
+            "sonner@2.0.7",
+            "react-helmet@6.1.0",
+            "socket.io-client@4.8.3"
+        )
+        $args = @("install","--legacy-peer-deps","--include=optional","--no-audit","--fund=false") + $basePkgs
+        $code = Invoke-NativeSafe -File $npm -Args $args
+        Write-Log "NPM_INSTALL_RUNTIME_EXIT=$code"
+
+        $arch = Get-NodeArch
+        Write-Log "NODE_ARCH=$arch"
+        if ($arch -eq "arm64" -or $arch -eq "x64") {
+            $bindingPkg = "@rolldown/binding-win32-$arch-msvc@1.0.3"
+            Write-Log "ENSURE_ROLLDOWN_BINDING=$bindingPkg"
+            $code = Invoke-NativeSafe -File $npm -Args @("install","--legacy-peer-deps","--include=optional","--no-audit","--fund=false",$bindingPkg)
+            Write-Log "NPM_INSTALL_ROLLDOWN_BINDING_EXIT=$code"
+        }
+
+        if (Test-Path -LiteralPath $reactRouterCmd) {
+            Write-Log "REACT_ROUTER_BIN_OK=True"
+        } else {
+            Write-Log "REACT_ROUTER_BIN_OK=False"
+        }
     } finally {
         Pop-Location
     }
 }
 
-function Repair-FrontendNativeDeps() {
-    Write-Step "FRONTEND NATIVE DEPS REPAIR"
-    $web = Join-Path $RuntimeRoot ".web"
-    $nodeModules = Join-Path $web "node_modules"
-    $packageLock = Join-Path $web "package-lock.json"
-    $npmShrink = Join-Path $web "npm-shrinkwrap.json"
-
-    Write-Log "NODE_PLATFORM_ARCH=$(Get-NodePlatformArch)"
-    Write-Log "PACKAGE_MANAGER_DEFAULT=$(if ($UseBun) { 'bun' } else { 'npm' })"
-
-    if (-not (Test-Path -LiteralPath $web)) {
-        Write-Log "WEB_DIR_NOT_FOUND_SKIP_REPAIR=$web"
-        return
-    }
-
-    if ($CleanWeb -and (Test-Path -LiteralPath $nodeModules)) {
-        Write-Log "REMOVE_NODE_MODULES=$nodeModules"
-        Remove-Item -LiteralPath $nodeModules -Recurse -Force -ErrorAction SilentlyContinue
-    }
-    if (Test-Path -LiteralPath $packageLock) {
-        Write-Log "REMOVE_PACKAGE_LOCK=$packageLock"
-        Remove-Item -LiteralPath $packageLock -Force -ErrorAction SilentlyContinue
-    }
-    if (Test-Path -LiteralPath $npmShrink) {
-        Write-Log "REMOVE_NPM_SHRINKWRAP=$npmShrink"
-        Remove-Item -LiteralPath $npmShrink -Force -ErrorAction SilentlyContinue
-    }
-
-    if ($UseBun) {
-        Write-Log "REPAIR_SKIPPED_FOR_BUN_MODE=True"
-        return
-    }
-
-    $code = Invoke-NpmInWeb -Args @("install", "--legacy-peer-deps", "--include=optional", "--no-audit", "--prefer-online")
-    if ($code -ne 0) { Write-Log "WARN_NPM_INSTALL_FAILED=$code" }
-
-    $binding = Get-RolldownBindingPackage
-    if ($binding) {
-        $version = Get-RolldownVersion
-        $pkgSpec = "$binding@$version"
-        Write-Log "ROLldown_BINDING_TARGET=$pkgSpec"
-        $code2 = Invoke-NpmInWeb -Args @("install", "--legacy-peer-deps", "--include=optional", "--no-audit", "--prefer-online", $pkgSpec)
-        if ($code2 -ne 0) { Write-Log "WARN_ROLLDOWN_BINDING_INSTALL_FAILED=$code2" }
-
-        $bindingDir = Join-Path $web ("node_modules\" + $binding.Replace("/", "\"))
-        if (Test-Path -LiteralPath $bindingDir) {
-            Write-Log "ROLLDOWN_BINDING_PRESENT=True PATH=$bindingDir"
-        } else {
-            Write-Log "ROLLDOWN_BINDING_PRESENT=False PATH=$bindingDir"
-        }
-    } else {
-        Write-Log "ROLLDOWN_BINDING_TARGET=UNKNOWN_ARCH"
-    }
-}
-
-function Test-LastLogLooksLikeRolldownBindingFailure() {
+function Has-FrontendMissingDepsError {
     if (-not (Test-Path -LiteralPath $LogFile)) { return $false }
-    $tail = Get-Content -LiteralPath $LogFile -Tail 220 -ErrorAction SilentlyContinue
-    $txt = ($tail -join "`n")
-    return ($txt -match "Cannot find native binding" -or $txt -match "@rolldown/binding-win32" -or $txt -match "rolldown-binding\.win32")
+    $tail = Get-Content -LiteralPath $LogFile -Tail 240 -ErrorAction SilentlyContinue
+    $s = ($tail -join "`n")
+    return ($s -match "react-router.*n.?est pas reconnu" -or $s -match "Cannot find native binding" -or $s -match "@rolldown/binding-win32")
 }
 
-Write-Step "MVP QAIC REFLEX LOCAL START R5J"
+Write-Step "MVP QAIC REFLEX LOCAL START R5L"
 Write-Log "NO_PUBLIC_DEPLOY=$env:NO_PUBLIC_DEPLOY"
 Write-Log "NO_LIVE_ACTION=$env:NO_LIVE_ACTION"
 Write-Log "REFLEX_DIR=$env:REFLEX_DIR"
@@ -208,29 +223,11 @@ if (-not (Test-Path -LiteralPath (Join-Path $RuntimeRoot "rxconfig.py"))) {
 Set-Location -LiteralPath $RuntimeRoot
 Write-Log "RUNTIME_ROOT=$RuntimeRoot"
 
-function Invoke-VersionCheck([string]$Label, [scriptblock]$Command) {
-    Write-Log "CHECK=$Label"
-    $old = $ErrorActionPreference
-    $ErrorActionPreference = "Continue"
-    try {
-        & $Command 2>&1 | ForEach-Object {
-            $line = [string]$_
-            Write-Log $line
-        }
-        Write-Log "CHECK_EXIT_$Label=$LASTEXITCODE"
-    } catch {
-        Write-Log "CHECK_WARN_$Label=$($_.Exception.Message)"
-    } finally {
-        $ErrorActionPreference = $old
-    }
-}
-
 Write-Step "PYTHON NODE REFLEX CHECK"
-Invoke-VersionCheck -Label "PYTHON_VERSION" -Command { python --version }
-Invoke-VersionCheck -Label "REFLEX_VERSION" -Command { python -c "import importlib.metadata as m; print('REFLEX_VERSION=' + m.version('reflex'))" }
-Invoke-VersionCheck -Label "NODE_VERSION" -Command { node --version }
-Invoke-VersionCheck -Label "NPM_VERSION" -Command { npm --version }
-Write-Log "NODE_PLATFORM_ARCH=$(Get-NodePlatformArch)"
+Invoke-NativeSafe -File "C:\Python314\python.exe" -Args @("--version") | Out-Null
+Invoke-NativeSafe -File "C:\Python314\python.exe" -Args @("-c","import importlib.metadata as m; print('REFLEX_VERSION=' + m.version('reflex'))") | Out-Null
+Invoke-NativeSafe -File "C:\Program Files\nodejs\node.exe" -Args @("--version") | Out-Null
+Invoke-NativeSafe -File "C:\Program Files\nodejs\npm.CMD" -Args @("--version","--loglevel","error") | Out-Null
 
 if (-not $NoKillPorts) {
     Write-Step "PORT CLEANUP SAFE"
@@ -240,8 +237,10 @@ if (-not $NoKillPorts) {
     Write-Step "PORT CLEANUP SKIPPED"
 }
 
-if ($CleanWeb -and -not $NoFrontendRepair) {
-    Repair-FrontendNativeDeps
+if ($CleanWeb -and -not $NoFrontendPreinstall) {
+    Repair-FrontendDeps -ForceClean
+} elseif (-not $NoFrontendPreinstall) {
+    Repair-FrontendDeps
 }
 
 Write-Step "START REFLEX FOREGROUND"
@@ -251,17 +250,19 @@ Write-Log "BACKEND=http://127.0.0.1:$BackendPort"
 Write-Log "KEEP THIS POWERSHELL WINDOW OPEN. CTRL+C stops the server."
 
 $attempt = 0
-$repaired = $false
 while ($attempt -le $MaxRestarts) {
     $attempt++
     Write-Step "REFLEX_ATTEMPT_$attempt"
     $started = Get-Date
 
-    $oldErrorActionPreference = $ErrorActionPreference
+    $old = $ErrorActionPreference
     $ErrorActionPreference = "Continue"
-    & python -u -m reflex run --frontend-port $FrontendPort --backend-port $BackendPort --backend-host 127.0.0.1 --loglevel debug 2>&1 | Tee-Object -FilePath $LogFile -Append
-    $exit = $LASTEXITCODE
-    $ErrorActionPreference = $oldErrorActionPreference
+    try {
+        & "C:\Python314\python.exe" -u -m reflex run --frontend-port $FrontendPort --backend-port $BackendPort --backend-host 127.0.0.1 --loglevel debug 2>&1 | Tee-Object -FilePath $LogFile -Append
+        $exit = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $old
+    }
 
     $seconds = [int](((Get-Date) - $started).TotalSeconds)
     Write-Log "REFLEX_EXIT_CODE=$exit"
@@ -269,13 +270,9 @@ while ($attempt -le $MaxRestarts) {
 
     if ($exit -eq 0) { break }
 
-    if ((-not $NoFrontendRepair) -and (-not $UseBun) -and (-not $repaired) -and (Test-LastLogLooksLikeRolldownBindingFailure)) {
-        Write-Log "DETECTED_ROLLDOWN_NATIVE_BINDING_FAILURE=True"
-        $repaired = $true
-        Repair-FrontendNativeDeps
-        Write-Log "REFLEX_RESTART_AFTER_REPAIR=True"
-        Start-Sleep -Seconds 2
-        continue
+    if (Has-FrontendMissingDepsError) {
+        Write-Step "DETECTED_FRONTEND_DEPS_ERROR_REPAIR_AND_RETRY"
+        Repair-FrontendDeps -ForceClean
     }
 
     if ($attempt -gt $MaxRestarts) { break }
@@ -285,4 +282,4 @@ while ($attempt -le $MaxRestarts) {
 
 Write-Step "REFLEX STOPPED"
 Write-Log "LOG_FILE=$LogFile"
-Write-Log "If this was unexpected, run STATUS_REFLEX_LOCAL_SAFE.ps1 and copy the last error block."
+Write-Log "If this was unexpected, run STATUS_REFLEX_LOCAL_SAFE.ps1 or copy the last error block from the log."
