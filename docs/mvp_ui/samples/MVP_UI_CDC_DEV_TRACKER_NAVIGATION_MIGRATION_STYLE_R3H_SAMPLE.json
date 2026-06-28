@@ -1,0 +1,13 @@
+{
+  "navigation_item": {
+    "item_id": "cdc_dev_tracker",
+    "label": "CDC + Dev Tracker",
+    "route": "/cdc-dev-tracker",
+    "group": "trackers",
+    "ui_style_source": "MIGRATION_TRACKER",
+    "enabled": true,
+    "runtime_free_default": true,
+    "dirty_file_gate_required": true
+  },
+  "next": "MVP_UI_ATTACH_CDC_DEV_TRACKER_TO_NAVIGATION_DIRTY_FILE_GATE_R4"
+}

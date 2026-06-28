@@ -1,0 +1,18 @@
+{
+  "status": "READY_FOR_DIRTY_FILE_GATE_R4",
+  "step": "R3H",
+  "feature": "MVP_UI_CDC_DEV_TRACKER_NAVIGATION_MIGRATION_STYLE",
+  "screen_route": "/cdc-dev-tracker",
+  "ui_style_source": "MIGRATION_TRACKER",
+  "reapply_contract": true,
+  "reapply_screen": true,
+  "add_navigation_contract": true,
+  "no_runtime": true,
+  "no_archive": true,
+  "no_python_interactive": true,
+  "no_ruff_subprocess": true,
+  "no_broker_order_sizing": true,
+  "no_sheet_bq_write": true,
+  "targeted_commit_only": true,
+  "next": "MVP_UI_ATTACH_CDC_DEV_TRACKER_TO_NAVIGATION_DIRTY_FILE_GATE_R4"
+}
