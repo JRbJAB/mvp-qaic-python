@@ -1,15 +1,17 @@
-"""Landing and priority pages for MVP QAIC Reflex."""
+﻿"""Landing and priority pages for MVP QAIC Reflex."""
 
 from __future__ import annotations
 
 import reflex as rx
 
 from .layout import page_shell, placeholder_body
+from .cdc_dev_tracker_reflex_page import cdc_dev_tracker_reflex_page
 from .migration_tracker import migration_tracker_compact_panel
 from .migration_decision_workbench import migration_decision_workbench_compact_panel
 from .theme import LANDING_SECTIONS, get_landing_sections, safety_panel, section_card
 from .visual_theme import metric_grid, mission_control_hero
 from .web_architecture_cdc import architecture_web_cdc_body, sitemap_page_body
+from .cdc_dev_tracker_reflex_page import cdc_tracker_reflex_page, dev_tracking_reflex_page
 
 
 def _section_by_id(section_id: str) -> dict[str, str]:
@@ -77,32 +79,10 @@ def mission_control() -> rx.Component:
 
 
 def dev_tracking() -> rx.Component:
-    section = _section_by_id("dev_tracking")
-    return page_shell(
-        section["title"],
-        "Suivi des lots, gates, tests, tags et dette technique.",
-        placeholder_body(
-            section["title"],
-            section["route"],
-            "Cette page consolidera HEAD Git, statut remote, tags, tests, Ruff, runtime Reflex et prochaines actions.",
-        ),
-        section["route"],
-    )
-
+    return dev_tracking_reflex_page()
 
 def cdc_tracker() -> rx.Component:
-    section = _section_by_id("cdc_tracker")
-    return page_shell(
-        section["title"],
-        "Pilotage CDC WebApp / MVP / QAIC liaison.",
-        placeholder_body(
-            section["title"],
-            section["route"],
-            "Cette page consolidera les exigences, décisions, livrables, gaps et validations CDC.",
-        ),
-        section["route"],
-    )
-
+    return cdc_tracker_reflex_page()
 
 def architecture_web() -> rx.Component:
     section = _section_by_id("architecture_web")
