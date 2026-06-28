@@ -216,7 +216,16 @@ try {
 
   $argumentLine = Join-R6FStartProcessArgs -Items $startProcessArgs
   Write-Host "START_PROCESS_ARGUMENT_LINE=$argumentLine"
-  Start-Process -FilePath "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList $argumentLine
+  # R6G_SAFE_WORKDIR_FIX
+  $safeWorkingDirectory = $RuntimeRoot
+  if ([string]::IsNullOrWhiteSpace($safeWorkingDirectory)) {
+    $safeWorkingDirectory = Join-Path $env:LOCALAPPDATA "MVP_QAIC_REFLEX_RUNTIME"
+  }
+  if (-not [IO.Directory]::Exists($safeWorkingDirectory)) {
+    [IO.Directory]::CreateDirectory($safeWorkingDirectory) | Out-Null
+  }
+  Write-Host "START_PROCESS_SAFE_WORKDIR=$safeWorkingDirectory"
+  Start-Process -FilePath "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList $argumentLine -WorkingDirectory $safeWorkingDirectory
   Write-Step "GATE 7 HTTP PROBE"
   $ok = $false
   $rootStatus = "NA"
