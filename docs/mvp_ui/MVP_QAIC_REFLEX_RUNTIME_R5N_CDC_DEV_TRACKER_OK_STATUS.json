@@ -1,0 +1,15 @@
+﻿{
+    "frontend_url":  "http://127.0.0.1:3000/",
+    "no_deploy":  true,
+    "next":  "UX_POLISH_OR_CDC_SCREEN_REVIEW",
+    "no_sheet_bq_write":  true,
+    "no_broker_order_sizing":  true,
+    "frontend_running":  true,
+    "route_http_status":  200,
+    "status":  "OK_MVP_QAIC_REFLEX_RUNTIME_R5N_CDC_DEV_TRACKER_UP",
+    "cdc_dev_tracker_url":  "http://127.0.0.1:3000/cdc-dev-tracker",
+    "backend_running":  true,
+    "step":  "R5N",
+    "local_only":  true,
+    "backend_url":  "http://127.0.0.1:8000"
+}
