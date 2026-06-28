@@ -194,3 +194,15 @@ def settings_safety() -> rx.Component:
         ),
         "/settings-safety",
     )
+
+# BEGIN_R6M_R7_AUTO_LIVE_DEV_TRACKING_OVERRIDE
+from mvp_qaic_reflex_ui.dev_lifecycle_tracker import (
+    dev_lifecycle_tracker_page as _r6m_r7_dev_lifecycle_tracker_page,
+)
+
+
+def dev_tracking_page():
+    return _r6m_r7_dev_lifecycle_tracker_page()
+
+
+# END_R6M_R7_AUTO_LIVE_DEV_TRACKING_OVERRIDE

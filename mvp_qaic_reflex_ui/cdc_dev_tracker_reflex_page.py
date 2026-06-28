@@ -299,3 +299,36 @@ def dev_tracking_reflex_page() -> rx.Component:
         cdc_dev_tracker_cockpit_body("dev"),
         "/dev-tracking",
     )
+
+# BEGIN_R6M_R7_AUTO_LIVE_CDC_LIFECYCLE_PANEL
+try:
+    import reflex as _r6m_r7_rx
+except Exception:  # pragma: no cover - Reflex optional in unit tests
+    _r6m_r7_rx = None
+
+from mvp_qaic_reflex_ui.dev_lifecycle_tracker import (
+    dev_lifecycle_tracker_panel as _r6m_r7_dev_lifecycle_tracker_panel,
+)
+
+
+_r6m_r7_base_cdc_dev_tracker_reflex_page = cdc_dev_tracker_reflex_page
+_r6m_r7_base_cdc_tracker_reflex_page = cdc_tracker_reflex_page
+
+
+def _r6m_r7_with_lifecycle(base_page):
+    panel = _r6m_r7_dev_lifecycle_tracker_panel(compact=True)
+    base = base_page()
+    if _r6m_r7_rx is None:
+        return {"lifecycle": panel, "cdc": base}
+    return _r6m_r7_rx.vstack(panel, base, spacing="4", align="stretch", width="100%")
+
+
+def cdc_dev_tracker_reflex_page():
+    return _r6m_r7_with_lifecycle(_r6m_r7_base_cdc_dev_tracker_reflex_page)
+
+
+def cdc_tracker_reflex_page():
+    return _r6m_r7_with_lifecycle(_r6m_r7_base_cdc_tracker_reflex_page)
+
+
+# END_R6M_R7_AUTO_LIVE_CDC_LIFECYCLE_PANEL

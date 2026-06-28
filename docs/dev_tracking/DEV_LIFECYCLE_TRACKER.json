@@ -1,0 +1,109 @@
+{
+  "schema_version": "R6M_R7_AUTO_LIVE_CDC_DEV_TRACKER",
+  "status": "READY_AUTO_LIVE_CDC_DEV_TRACKER",
+  "policy": "local_private_git_live_plus_versioned_json_no_sheet_bq_apps_script_write",
+  "updated_at": "2026-06-28T14:57:49+00:00",
+  "views": {
+    "dev_tracking": "/dev-tracking",
+    "cdc_dev_tracker": "/cdc-dev-tracker",
+    "cdc_tracker": "/cdc-tracker"
+  },
+  "required_coverage": [
+    "past_phases",
+    "active_phases",
+    "future_phases",
+    "blocked_or_parked_phases",
+    "head_tag_test_evidence",
+    "automatic_git_live_refresh_on_page_render"
+  ],
+  "phases": [
+    {
+      "phase_id": "FOUNDATION_HISTORY",
+      "status": "DONE",
+      "workstream": "FOUNDATION",
+      "title": "Historical MVP QAIC foundation",
+      "head": "pre-R6J-history",
+      "tag": "multiple-prior-tags",
+      "tests": "Historical sealed packs and prior QA gates",
+      "evidence": "Baseline project context, CLASP import inventory, CDC tracker exports, prior Reflex cockpit foundations and MVP QAIC source contracts.",
+      "next_action": "Keep visible as historical context and do not edit blindly."
+    },
+    {
+      "phase_id": "R6J",
+      "status": "DONE",
+      "workstream": "CDC_DEV_TRACKER",
+      "title": "Real CDC / Dev Tracker Cockpit",
+      "head": "d94256b1b4a6",
+      "tag": "mvp-qaic-reflex-r6j-real-cdc-dev-tracker-cockpit-20260628-155407",
+      "tests": "tests/test_r6j5_real_cdc_dev_tracker_cockpit.py: 4 passed",
+      "evidence": "d94256b1b4a6 /cdc-dev-tracker, /cdc-tracker and /dev-tracking active with real V25 CDC Delivery Tracker data, not route-only validation.",
+      "next_action": "Keep as regression gate for CDC and Dev Tracker views."
+    },
+    {
+      "phase_id": "R6K",
+      "status": "DONE",
+      "workstream": "GLOBAL_MIGRATION_DECISION",
+      "title": "Global Migration + Decision Workbench",
+      "head": "b4556e1c4fff",
+      "tag": "mvp-qaic-reflex-r6k-global-migration-decision-workbench-20260628-160112",
+      "tests": "py_compile OK, import smoke OK, R6J regression 4 passed",
+      "evidence": "b4556e1c4fff global_migration_page.py wires Migration Decision Workbench and preserves R6J cockpit evidence.",
+      "next_action": "Use Decision Workbench as migration decision support, not as a replacement for CDC/Dev tracking."
+    },
+    {
+      "phase_id": "R6L",
+      "status": "DONE",
+      "workstream": "REPO_HYGIENE",
+      "title": "Classify and park obsolete R3/R4 untracked files",
+      "head": "b4556e1c4fff",
+      "tag": "no-commit-readonly-park",
+      "tests": "Read-only audit and clean status after park",
+      "evidence": "Five obsolete non-tracked R3/R4 files parked outside repo; KEEP=0 PARK=5 DELETE=0; working tree clean before R6M.",
+      "next_action": "Do not reintroduce route/fallback-only tests unless tied to real content evidence."
+    },
+    {
+      "phase_id": "R6M",
+      "status": "ACTIVE",
+      "workstream": "AUTO_LIVE_CDC_DEV_TRACKER",
+      "title": "Auto-live CDC + Dev Tracker lifecycle cockpit",
+      "head": "live-git-head-at-render",
+      "tag": "pending-r6m-r7-seal",
+      "tests": "tests/test_r6m_r7_auto_live_cdc_dev_tracker.py plus R6J regression",
+      "evidence": "Both /dev-tracking and CDC tracker views read this lifecycle contract and live Git state so past, active and future phases stay visible during development.",
+      "next_action": "Seal R6M-R7 only after UI source has no shell-only status and tests prove real content model."
+    },
+    {
+      "phase_id": "R6N",
+      "status": "NEXT",
+      "workstream": "SOURCE_OF_TRUTH_MIGRATION",
+      "title": "Source of Truth Migration Cockpit integration",
+      "head": "future",
+      "tag": "future",
+      "tests": "Must verify CLASP imports, CDC static source and optional decision journal source availability.",
+      "evidence": "Use real CSV inventory to classify keep Sheets, keep Apps Script, rewrite Python/Reflex and future BigQuery targets.",
+      "next_action": "Build only after CDC and Dev Tracker lifecycle is sealed."
+    },
+    {
+      "phase_id": "R6P",
+      "status": "NEXT",
+      "workstream": "PROMPT_GEM_PORTFOLIO",
+      "title": "Prompt / GEM Portfolio human-review module",
+      "head": "future",
+      "tag": "future",
+      "tests": "Human-review-only prompt tests, image/copy-paste portfolio input tests, no execution path tests.",
+      "evidence": "Prepare private local prompt cockpit without broker, order, sizing, secret or live Revolut X action.",
+      "next_action": "Start after migration cockpit traceability is reliable."
+    },
+    {
+      "phase_id": "PRIVATE_RC",
+      "status": "NEXT",
+      "workstream": "PRIVATE_RELEASE",
+      "title": "Private release candidate",
+      "head": "future",
+      "tag": "future",
+      "tests": "Full targeted regression and manual visual smoke.",
+      "evidence": "All prior phases must be visible and traceable in CDC and Dev Tracker before private release candidate.",
+      "next_action": "Prepare only after R6N/R6P are stable."
+    }
+  ]
+}
