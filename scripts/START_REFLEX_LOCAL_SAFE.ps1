@@ -1,3 +1,6 @@
+﻿# MVP_QAIC_R6H_PID_VARIABLE_FIX
+# Lower/mixed-case $pid local variables are renamed to $listenerPid.
+# The automatic readonly $PID variable remains preserved when explicitly uppercase.
 # START_REFLEX_LOCAL_SAFE.ps1
 # MVP QAIC Reflex local runtime starter R5L - Windows PowerShell 5.1 safe
 # Local/private only. No deploy, no broker, no Sheet/BQ write.
@@ -84,16 +87,16 @@ function Stop-PortIfSafe([int]$Port) {
         Write-Log "PORT_$Port=FREE"
         return
     }
-    foreach ($pid in $pids) {
-        $proc = Get-Process -Id $pid -ErrorAction SilentlyContinue
+    foreach ($listenerPid in $pids) {
+        $proc = Get-Process -Id $listenerPid -ErrorAction SilentlyContinue
         if (-not $proc) { continue }
         $name = $proc.ProcessName
         if ($name -match '^(python|pythonw|node|bun|reflex)$') {
-            Write-Log "STOP_PORT_$Port PID=$pid PROCESS=$name"
-            Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+            Write-Log "STOP_PORT_$Port PID=$listenerPid PROCESS=$name"
+            Stop-Process -Id $listenerPid -Force -ErrorAction SilentlyContinue
             Start-Sleep -Milliseconds 500
         } else {
-            throw "Port $Port already used by PID=$pid PROCESS=$name. Stop it manually or run with another port."
+            throw "Port $Port already used by PID=$listenerPid PROCESS=$name. Stop it manually or run with another port."
         }
     }
 }
