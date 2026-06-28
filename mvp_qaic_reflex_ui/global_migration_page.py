@@ -2,6 +2,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 from mvp_qaic_reflex_ui.migration_global_matrix import build_matrix
+from mvp_qaic_reflex_ui.migration_decision_workbench import (
+    migration_decision_workbench_compact_panel,
+)
 
 try:
     import reflex as rx
@@ -66,6 +69,8 @@ def global_migration_page() -> Any:
                 spacing="3",
                 flex_wrap="wrap",
             ),
+            reflex.heading("Migration Decision Workbench", size="4"),
+            migration_decision_workbench_compact_panel(limit=8),
             reflex.heading("Cockpits Sheets / vues essentielles", size="4"),
             *[card(r) for r in cockpit],
             reflex.heading("Scripts Apps Script prioritaires", size="4"),
