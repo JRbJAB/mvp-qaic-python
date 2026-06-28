@@ -181,8 +181,7 @@ try {
   if (-not [IO.File]::Exists($startScript)) {
     throw "Missing START_REFLEX_LOCAL_SAFE.ps1: $startScript"
   }
-
-  $args = @(
+  $startProcessArgs = @(
     "-NoProfile",
     "-ExecutionPolicy", "Bypass",
     "-NoExit",
@@ -193,8 +192,31 @@ try {
     "-FrontendPort", [string]$FrontendPort,
     "-BackendPort", [string]$BackendPort
   )
-  Start-Process -FilePath "powershell.exe" -ArgumentList $args
+  function Join-R6FStartProcessArgs {
+    param([string[]]$Items)
 
+    $out = New-Object System.Collections.Generic.List[string]
+
+    foreach ($item in $Items) {
+      if ([string]::IsNullOrWhiteSpace($item)) {
+        throw "EMPTY_START_PROCESS_ARGUMENT_IN_REFLEX_FAST_GATE"
+      }
+
+      $escaped = $item.Replace('"', '\"')
+
+      if ($escaped -match '[\s\(\)\[\]&]') {
+        $out.Add('"' + $escaped + '"')
+      } else {
+        $out.Add($escaped)
+      }
+    }
+
+    return ($out -join ' ')
+  }
+
+  $argumentLine = Join-R6FStartProcessArgs -Items $startProcessArgs
+  Write-Host "START_PROCESS_ARGUMENT_LINE=$argumentLine"
+  Start-Process -FilePath "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList $argumentLine
   Write-Step "GATE 7 HTTP PROBE"
   $ok = $false
   $rootStatus = "NA"
