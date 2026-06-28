@@ -1,0 +1,17 @@
+{
+  "screen_route": "/cdc-dev-tracker",
+  "screen_title": "CDC + Dev Tracker",
+  "sections": [
+    "SUMMARY_KPI_BAR",
+    "FILTER_BAR",
+    "CDC_TRACKER_TABLE",
+    "DEV_TRACKER_TABLE",
+    "DETAIL_PANEL",
+    "NEXT_ACTIONS_PANEL"
+  ],
+  "qait_handoff_guard": {
+    "required": true,
+    "status": "FULLY_APPROVED_AND_GITIGNORE_RESOLVED"
+  },
+  "runtime_free_default": true
+}

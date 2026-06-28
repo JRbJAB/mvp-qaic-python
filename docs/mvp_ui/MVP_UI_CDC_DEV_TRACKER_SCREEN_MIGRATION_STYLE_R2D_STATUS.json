@@ -1,0 +1,14 @@
+{
+  "status": "OK_MVP_QAIC_UI_CDC_DEV_TRACKER_SCREEN_MIGRATION_STYLE_R2D_READY_FOR_COMMIT",
+  "step": "R2D",
+  "fix": "replace_missing_tracker_rows_as_dicts_import_with_local_adapter",
+  "ui_style_source": "MIGRATION_TRACKER",
+  "screen_route": "/cdc-dev-tracker",
+  "runtime_free_default": true,
+  "must_use_qait_handoff_files": true,
+  "no_runtime": true,
+  "no_archive": true,
+  "no_broker_order_sizing": true,
+  "no_sheet_bq_write": true,
+  "next": "MVP_UI_ATTACH_CDC_DEV_TRACKER_TO_NAVIGATION_R3"
+}
