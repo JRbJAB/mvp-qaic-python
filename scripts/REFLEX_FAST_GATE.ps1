@@ -50,9 +50,12 @@ if (-not [IO.Directory]::Exists($RepoRoot)) {
   throw "RepoRoot not found: $RepoRoot"
 }
 
-$runtimeName = "HEAD_REFLEX_FAST_GATE_R6A"
+# R6I_UNIQUE_RUNTIME_ROOT_NO_LOCK
+# Never reuse/delete the same runtime folder: a previous PowerShell/server can keep it locked.
+$runtimeStamp = Get-Date -Format "yyyyMMdd_HHmmss_ffff"
+$runtimeName = "HEAD_REFLEX_FAST_GATE_R6A_$runtimeStamp"
 $runtimeRoot = [IO.Path]::Combine($env:LOCALAPPDATA, "MVP_QAIC_REFLEX_RUNTIME", $runtimeName)
-$archivePath = [IO.Path]::Combine($env:TEMP, "MVP_QAIC_REFLEX_FAST_GATE_R6A_HEAD.zip")
+$archivePath = [IO.Path]::Combine($env:TEMP, ("MVP_QAIC_REFLEX_FAST_GATE_R6A_HEAD_{0}.zip" -f $runtimeStamp))
 $startScript = [IO.Path]::Combine($RepoRoot, "scripts", "START_REFLEX_LOCAL_SAFE.ps1")
 $stopScript = [IO.Path]::Combine($RepoRoot, "scripts", "STOP_REFLEX_LOCAL_SAFE.ps1")
 
@@ -133,6 +136,16 @@ try {
       & "C:\Python314\python.exe" -m py_compile $file
       if ($LASTEXITCODE -ne 0) { throw "py_compile failed: $file" }
       Write-Host "PY_COMPILE_OK=$file"
+    }
+  }
+
+  # R6I_PRESTOP_BEFORE_RUNTIME_BUILD
+  Write-Step "GATE 2B PRESTOP OLD LOCAL SERVERS BEFORE RUNTIME BUILD"
+  if (-not $NoKillPorts) {
+    if ([IO.File]::Exists($stopScript)) {
+      powershell -NoProfile -ExecutionPolicy Bypass -File $stopScript -KillLocalRuntimeChildren
+    } else {
+      Stop-PortOwners -Ports @($FrontendPort, $BackendPort)
     }
   }
 
