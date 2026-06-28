@@ -2139,3 +2139,64 @@ Only:
 - `FINAL_CANDIDATE_READY` : oui, pour les sources textuelles lisibles.
 - `ARCHIVE_ALLOWED` : non dans P203B2-R3.
 - `NEXT` : `P203B3_ARCHIVE_GATE_AND_FINAL_REFERENCE_INDEX`.
+
+
+<!-- BEGIN MVP_QAIC_REFLEX_FACTORY_R6C_WEB_ARCHI_CDC -->
+## MVP QAIC Reflex Web Architecture CDC R6C — Fusion FINAL
+
+### Architecture cible
+
+La WebApp Reflex est organisée autour d'un app shell, d'un routing contrôlé et de pages cockpit isolées.
+
+### App shell
+
+`mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py`
+
+Responsabilités :
+
+- initialiser `rx.App` ;
+- appliquer le thème/plugin ;
+- enregistrer les routes ;
+- ne pas contenir la logique métier des cockpits.
+
+### Route registry recommandé
+
+`mvp_qaic_reflex_ui/routes_registry.py`
+
+Objectif :
+
+- centraliser les routes ;
+- éviter les `app.add_page` dispersés ;
+- permettre un audit source sans serveur ;
+- éviter les 404 silencieux.
+
+### Contrat page cockpit
+
+Chaque cockpit expose :
+
+```python
+ROUTE = "/route"
+TITLE = "Titre Cockpit"
+
+def page() -> rx.Component:
+    ...
+```
+
+### Routes prioritaires
+
+- `/cdc-dev-tracker`
+- `/migration-matrix`
+- `/prompt-review`
+- `/portfolio-review`
+
+### Critère d'acceptation
+
+Une route cockpit est valide uniquement si :
+
+- route présente dans le source HEAD ;
+- page Python compile ;
+- runtime frais HEAD contient la route ;
+- `/` répond ;
+- route cible répond 2xx/3xx ;
+- aucun interdit sécurité.
+<!-- END MVP_QAIC_REFLEX_FACTORY_R6C_WEB_ARCHI_CDC -->

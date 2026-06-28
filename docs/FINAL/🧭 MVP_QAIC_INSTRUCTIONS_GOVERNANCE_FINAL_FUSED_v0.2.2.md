@@ -1769,3 +1769,34 @@ After manual edit, run P079C validation before P080.
 - `FINAL_CANDIDATE_READY` : oui, pour les sources textuelles lisibles.
 - `ARCHIVE_ALLOWED` : non dans P203B2-R3.
 - `NEXT` : `P203B3_ARCHIVE_GATE_AND_FINAL_REFERENCE_INDEX`.
+
+<!-- BEGIN MVP_QAIC_REFLEX_FACTORY_R6C_MASTER -->
+## MVP QAIC Reflex Factory R6C — Instructions fusionnées
+
+### Décision
+
+Reflex est conservé pour la WebApp MVP QAIC. Le problème à corriger n'est pas Reflex lui-même, mais le process de migration/runtime.
+
+### Règles obligatoires
+
+- Ne jamais tester une route récente sur un vieux runtime.
+- Toujours tester depuis `git archive HEAD` vers un runtime frais hors Drive.
+- Toute route cockpit doit être détectable dans le source HEAD avant runtime.
+- Toute page cockpit doit compiler avant runtime.
+- Toute activation cockpit passe par `scripts/REFLEX_FAST_GATE.ps1`.
+- Commit/tag/push uniquement après gate OK.
+- `404` avec `/` en `200` = patch route/app registry, pas serveur/npm.
+- Erreur frontend deps = clean `.web`/npm/optional native deps, pas page Python.
+- Erreur syntax/import = patch Python, pas scripts serveur.
+- Pas de faux OK.
+
+### Sécurité
+
+- No public deploy.
+- No Apps Script execution.
+- No clasp push.
+- No Sheet write.
+- No BigQuery write.
+- No broker/order/sizing.
+- Human-review only.
+<!-- END MVP_QAIC_REFLEX_FACTORY_R6C_MASTER -->

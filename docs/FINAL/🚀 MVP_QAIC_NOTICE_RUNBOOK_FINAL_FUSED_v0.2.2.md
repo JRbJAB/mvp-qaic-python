@@ -2913,3 +2913,57 @@ P15G_EXTERNAL_TOOL_RUNBOOK_LOCAL_ONLY
 - `FINAL_CANDIDATE_READY` : oui, pour les sources textuelles lisibles.
 - `ARCHIVE_ALLOWED` : non dans P203B2-R3.
 - `NEXT` : `P203B3_ARCHIVE_GATE_AND_FINAL_REFERENCE_INDEX`.
+
+
+<!-- BEGIN MVP_QAIC_REFLEX_FACTORY_R6C_PROCESS_RUNBOOK -->
+## MVP QAIC Reflex Speed Process & Runtime Runbook R6C — Fusion FINAL
+
+### Process cockpit rapide
+
+Un cockpit = trois étapes :
+
+1. Patch source page + route.
+2. Fast gate source/runtime.
+3. Seal commit/tag/push seulement si OK.
+
+### Commande gate standard
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "$repo\scripts\REFLEX_FAST_GATE.ps1" -Route "/cdc-dev-tracker"
+```
+
+### Commande gate sans démarrage runtime
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "$repo\scripts\REFLEX_FAST_GATE.ps1" -Route "/cdc-dev-tracker" -NoRuntimeStart
+```
+
+### Matrice anti-galère
+
+| Symptôme | Diagnostic | Correction |
+|---|---|---|
+| `/` 200 + route 404 | route absente/non enregistrée | patch route/app registry |
+| `react-router` absent | `.web/node_modules` incomplet | clean `.web` + npm install |
+| `rolldown binding` absent | optional native deps absentes | installer binding win32 arch |
+| syntax/import error | source Python cassée | patch Python |
+| vieux contenu/route absente | vieux runtime | fresh HEAD runtime |
+| port occupé | ancien process local | stop safe ports |
+
+### Runtime
+
+Interdit de tester les routes récentes sur :
+
+```text
+%LOCALAPPDATA%\MVP_QAIC_REFLEX_RUNTIME\P_REFLEX_06C_20260625_200632
+```
+
+Ce dossier est historique, pas runtime courant.
+
+### Definition of Done
+
+- Gate source OK.
+- Gate runtime OK.
+- HTTP probe route OK.
+- Statut cohérent.
+- Commit/tag/push OK.
+<!-- END MVP_QAIC_REFLEX_FACTORY_R6C_PROCESS_RUNBOOK -->
