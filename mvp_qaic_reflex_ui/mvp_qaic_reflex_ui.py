@@ -1,3 +1,4 @@
+﻿from mvp_qaic_reflex_ui.cdc_dev_tracker_reflex_page import cdc_dev_tracker_reflex_page
 """MVP QAIC local private Reflex UI."""
 
 from __future__ import annotations
@@ -26,6 +27,10 @@ from .pages_landing import (
     prompt_lab,
     qaic_bridge,
     settings_safety,
+)
+from .migration_decision_workbench import (
+    MIGRATION_DECISION_WORKBENCH_ROUTE,
+    migration_decision_workbench_page,
 )
 
 index = home
@@ -61,6 +66,11 @@ app.add_page(prompt_lab, route="/prompt-lab", title="Prompt Lab")
 app.add_page(gem_portfolio, route="/gem-portfolio", title="GEM Portfolio")
 app.add_page(qaic_bridge, route="/qaic-bridge", title="QAIC Bridge")
 app.add_page(settings_safety, route="/settings-safety", title="Settings Safety")
+app.add_page(
+    migration_decision_workbench_page,
+    route=MIGRATION_DECISION_WORKBENCH_ROUTE,
+    title="Migration Decision Workbench",
+)
 
 
 # P_REFLEX_12E_R2D_BEGIN_SAFE_ROUTE_WIRING
@@ -100,18 +110,5 @@ except Exception:
     pass
 # P_REFLEX_12F_END_GLOBAL_MIGRATION_ROUTE
 
-# P_REFLEX_12H1B_BEGIN_DECISION_WORKBENCH_ROUTE
-try:
-    from mvp_qaic_reflex_ui.migration_decision_workbench import (
-        MIGRATION_DECISION_WORKBENCH_ROUTE,
-        migration_decision_workbench_page,
-    )
-
-    app.add_page(
-        migration_decision_workbench_page,
-        route=MIGRATION_DECISION_WORKBENCH_ROUTE,
-        title="Migration Decision Workbench",
-    )
-except Exception:
-    pass
-# P_REFLEX_12H1B_END_DECISION_WORKBENCH_ROUTE
+# MVP UI CDC + Dev Tracker route
+app.add_page(cdc_dev_tracker_reflex_page, route="/cdc-dev-tracker", title="CDC + Dev Tracker")
