@@ -1,0 +1,18 @@
+{
+  "status": "ACTIVE",
+  "version": "R1",
+  "date": "2026-06-29",
+  "standard_path": "docs/dev_tracking/runner_quality/RUNNER_REFERENCE_STANDARD_R1.md",
+  "instructions_path": "AGENTS.md",
+  "incident": "MVP_R2A_REFLEX_PRIVATE_PREFLIGHT_RUNNER_DEFECTS",
+  "binding_rules": [
+    "NO_INTERACTIVE_PYTHON",
+    "NO_GIT_WITHOUT_SUBCOMMAND",
+    "NO_EMPTY_ARGS_SILENT",
+    "NO_NEW_ITEM_LITERALPATH_FOR_DIRECTORIES",
+    "NO_UNTESTED_GENERIC_GIT_PYTHON_WRAPPERS",
+    "INFORMATIONAL_METRICS_DO_NOT_BLOCK",
+    "RUNNER_PREFLIGHT_REQUIRED",
+    "STOP_AFTER_TWO_SHELL_GLUE_DEFECTS"
+  ]
+}
