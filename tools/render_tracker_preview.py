@@ -101,7 +101,15 @@ def render_preview(out_dir: Path) -> Path:
         "phase_count": len(dev_items),
         "cdc_step_count": len(cdc_items),
         "visual_oracle": "migration_tracker",
-        "render_types": ["migration_tracker_oracle", "cdc_tracker", "dev_tracker"],
+        "render_types": [
+            "migration_tracker_reference",
+            "migration_tracker_oracle",
+            "cdc_dev_tracker",
+            "cdc_tracker",
+            "dev_tracker",
+            "tool_registry_cdc",
+            "tool_registry_tracker",
+        ],
         "requires_browser_runtime_before_deploy": True,
     }
     (out_dir / "tracker_ui_common_preview_audit.json").write_text(

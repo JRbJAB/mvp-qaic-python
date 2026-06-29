@@ -6,6 +6,17 @@ from typing import Iterable, Mapping, Sequence
 
 
 REFERENCE_RENDER_TYPES: dict[str, dict[str, object]] = {
+    "migration_tracker_reference": {
+        "title": "Migration Tracker Reference",
+        "purpose": "Reference rendering type for tracker progress, badges, and evidence links.",
+        "tokens": [
+            "blue progress bars",
+            "phase percentages",
+            "status badges",
+            "operator cards",
+            "route and evidence links",
+        ],
+    },
     "migration_tracker_oracle": {
         "title": "Migration Tracker Visual Oracle",
         "purpose": "Reference style for tracker pages.",
@@ -22,10 +33,20 @@ REFERENCE_RENDER_TYPES: dict[str, dict[str, object]] = {
         "purpose": "CDC delivery and route readiness tracking.",
         "tokens": ["CDC", "routes", "source contract", "progress"],
     },
+    "cdc_dev_tracker": {
+        "title": "CDC Dev Tracker",
+        "purpose": "Combined CDC delivery and development priority tracker.",
+        "tokens": ["CDC", "Dev Tracker", "priority", "readiness", "cockpit"],
+    },
     "dev_tracker": {
         "title": "Dev Tracker",
         "purpose": "Development lifecycle tracking by phase.",
         "tokens": ["phase", "status", "evidence", "progress"],
+    },
+    "tool_registry_cdc": {
+        "title": "Tool Registry CDC",
+        "purpose": "Tool registry CDC route and cockpit contract tracking.",
+        "tokens": ["tool registry", "cockpit", "surface", "contract"],
     },
     "tool_registry_tracker": {
         "title": "Tool Registry Tracker",
@@ -44,7 +65,7 @@ COCKPIT_RENDER_BINDINGS: tuple[dict[str, str], ...] = (
     {
         "cockpit": "Migration Tracker",
         "route": "/global-migration",
-        "render_type": "migration_tracker_oracle",
+        "render_type": "migration_tracker_reference",
         "role": "visual oracle",
     },
     {
@@ -56,7 +77,7 @@ COCKPIT_RENDER_BINDINGS: tuple[dict[str, str], ...] = (
     {
         "cockpit": "CDC Dev Tracker",
         "route": "/cdc-dev-tracker",
-        "render_type": "cdc_tracker",
+        "render_type": "cdc_dev_tracker",
         "role": "operator CDC tracker page",
     },
     {
@@ -68,7 +89,7 @@ COCKPIT_RENDER_BINDINGS: tuple[dict[str, str], ...] = (
     {
         "cockpit": "Tool Registry CDC",
         "route": "/tool-registry-cdc",
-        "render_type": "tool_registry_tracker",
+        "render_type": "tool_registry_cdc",
         "role": "tool registry contract tracking",
     },
 )

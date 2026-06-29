@@ -12,6 +12,7 @@ from typing import Any
 import reflex as rx
 
 from .layout import page_shell
+from .common.tracker_reflex_kit import tracker_body, tracker_items_from_rows
 from .dev_lifecycle_tracker import (
     cdc_lifecycle_tracker_panel as _r6n_vertical_cdc_lifecycle_tracker_panel,
     dev_lifecycle_tracker_panel as _r6m_r7_dev_lifecycle_tracker_panel,
@@ -246,68 +247,40 @@ def _priority_table() -> rx.Component:
 
 def cdc_dev_tracker_cockpit_body(view: str = "combined") -> rx.Component:
     kpis = cdc_kpis()
-    show_phase = view in ("combined", "cdc")
-    show_details = view in ("combined", "dev")
-    return rx.vstack(
-        rx.box(
-            rx.vstack(
-                rx.hstack(
-                    rx.vstack(
-                        rx.heading("📊 V25 CDC Delivery Tracker", size="6"),
-                        rx.text(
-                            "Source réelle : Sheets / Apps Script → Reflex · Migration cockpit",
-                            opacity="0.76",
-                        ),
-                        rx.text(
-                            f"{REAL_COCKPIT_MARKER} · {SOURCE_SHEET}",
-                            font_size="0.76em",
-                            opacity="0.62",
-                        ),
-                        spacing="1",
-                        align="start",
-                    ),
-                    rx.spacer(),
-                    _status_pill(kpis["status"]),
-                    spacing="3",
-                    align="center",
-                    width="100%",
-                ),
-                rx.hstack(
-                    _kpi("Global", kpis["realized_pct"], "réalisé"),
-                    _kpi("Estimé", kpis["estimated_h"], "heures"),
-                    _kpi("Reste", kpis["remaining_h"], "heures"),
-                    _kpi("Done", kpis["done_h"], "heures done"),
-                    _kpi("Blocked", kpis["blocked"], "à lever"),
-                    _kpi("At risk", kpis["at_risk"], "lignes"),
-                    wrap="wrap",
-                    spacing="3",
-                    width="100%",
-                ),
-                rx.box(_progress_bar(kpis["realized_pct"], width="260px"), padding="0.7rem 0"),
-                rx.text(str(kpis["decision"]), font_size="0.86em"),
-                rx.text(str(kpis["guardrail"]), font_size="0.78em", opacity="0.72"),
-                spacing="4",
-                align="start",
-                width="100%",
-            ),
-            padding="1rem",
-            border="1px solid var(--gray-a4)",
-            border_radius="16px",
-            background="white",
-            width="100%",
+    cdc_items = tracker_items_from_rows(
+        SUMMARY_ROWS,
+        id_keys=("phase_id",),
+        title_keys=("phase_name",),
+        percent_keys=("realized_num", "realized_pct"),
+        status_key="status",
+        description_keys=("next_action",),
+        route="/cdc-tracker",
+        default_priority="P0",
+    )
+    dev_items = tracker_items_from_rows(
+        critical_detail_rows(16),
+        id_keys=("module_id", "phase_id"),
+        title_keys=("deliverable_name", "module_name"),
+        percent_keys=("realized_pct",),
+        status_key="decision_status",
+        description_keys=("module_name", "deliverable_name"),
+        route="/dev-tracking",
+        default_priority="P1",
+    )
+    source_detail = (
+        f"{REAL_COCKPIT_MARKER} · {SOURCE_SHEET} · "
+        f"{len(SUMMARY_ROWS)} CDC phases · {len(DETAIL_ROWS)} detail rows · "
+        "No Sheet/BQ write, no trigger, no broker/order/sizing."
+    )
+    return tracker_body(
+        cdc_items=cdc_items,
+        dev_items=dev_items,
+        source_label=(
+            "V25 CDC delivery tracker rendered through the UI common tracker kit. "
+            f"Global {kpis['realized_pct']} realized, status {kpis['status']}."
         ),
-        rx.heading("Phases CDC / migration", size="5") if show_phase else rx.fragment(),
-        _phase_table() if show_phase else rx.fragment(),
-        rx.heading("Priorités Dev à traiter", size="5") if show_details else rx.fragment(),
-        _priority_table() if show_details else rx.fragment(),
-        rx.text(
-            f"Payload statique readonly : {len(SUMMARY_ROWS)} phases, {len(DETAIL_ROWS)} lignes détail. No Sheet/BQ write, no trigger, no broker/order/sizing.",
-            font_size="0.78em",
-            opacity="0.68",
-        ),
-        spacing="4",
-        align="stretch",
-        width="100%",
+        source_detail=source_detail,
+        view=view,
     )
 
 
