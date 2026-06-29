@@ -26,7 +26,8 @@ def test_r6m_r7_lifecycle_contract_covers_past_active_future() -> None:
     assert "R6M" in model["done_phase_ids"]
     assert "R6N" in model["done_phase_ids"]
     assert "R6P" in model["done_phase_ids"]
-    assert "R6Q" in model["next_phase_ids"]
+    assert "R6Q" in model["done_phase_ids"]
+    assert "R6R" in model["next_phase_ids"]
 
 
 def test_r6m_r7_evidence_contains_real_heads_tags_and_no_shell_status() -> None:
@@ -97,4 +98,5 @@ def test_r6m_r7_panel_is_content_model_not_shell() -> None:
     assert "R6M" in model["done_phase_ids"]
     assert "R6N" in model["done_phase_ids"]
     assert "R6P" in model["done_phase_ids"]
-    assert "R6Q" in model["next_phase_ids"]
+    assert "R6Q" in model["done_phase_ids"]
+    assert "R6R" in model["next_phase_ids"]

@@ -36,9 +36,9 @@ def test_r6n_r5_lifecycle_has_all_past_active_next_future_phases() -> None:
     assert "R6N" in model["done_phase_ids"]
     assert "R6P" in model["done_phase_ids"]
     assert "R6P" not in model["next_phase_ids"]
-    assert {"R6Q", "R6R", "PRIVATE_RC", "PUBLIC_READY_FUTURE"}.issubset(
-        set(model["next_phase_ids"])
-    )
+    assert "R6Q" in model["done_phase_ids"]
+    assert "R6Q" not in model["next_phase_ids"]
+    assert {"R6R", "PRIVATE_RC", "PUBLIC_READY_FUTURE"}.issubset(set(model["next_phase_ids"]))
 
 
 def test_r6n_r5_evidence_contains_real_sealed_heads_and_tags() -> None:
