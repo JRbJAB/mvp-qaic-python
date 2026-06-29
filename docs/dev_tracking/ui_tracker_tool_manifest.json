@@ -1,0 +1,20 @@
+{
+  "tool_id": "ui_common_tracker_kit",
+  "tool_name": "UI Common Tracker Kit",
+  "tool_version": "R1M",
+  "status": "INTERNAL_TOOL_DEPLOYED",
+  "routes": [
+    "/dev-tracking",
+    "/cdc-dev-tracker",
+    "/cdc-tracker"
+  ],
+  "approved_visual_oracle": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\dev_tracking\\visual_oracle\\APPROVED_TRACKER_PREVIEW.html",
+  "approved_visual_oracle_exists": true,
+  "operator_entrypoints": {
+    "manifest_module": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\mvp_qaic_reflex_ui\\common\\tracker_ui_tool_manifest.py",
+    "operator_launcher_cli": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\tools\\ui_tracker_operator_launcher.py",
+    "deploy_gate_cli": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\tools\\ui_tracker_deploy_gate.py"
+  },
+  "public_reflex_deploy_allowed": false,
+  "public_reflex_deploy_status": "BLOCKED_UNTIL_REAL_REFLEX_BROWSER_RUNTIME_VISUAL_MATCH"
+}
