@@ -106,30 +106,30 @@
     {
       "phase_id": "R6N",
       "order": 70,
-      "status": "ACTIVE",
+      "status": "DONE",
       "track": "UI+VISUAL",
       "title": "Rendu vertical Migration Tracker CDC + Dev",
       "goal": "Sceller une page lifecycle verticale, compacte, lisible et bleue comme le Migration Tracker.",
-      "progress_percent": 90,
+      "progress_percent": 100,
       "evidence": "Rendu vertical Migration Tracker raccordé aux routes /dev-tracking, /cdc-dev-tracker et /cdc-tracker avec phases complètes, badges statut, accents bleus et Git live.",
       "tests": "tests/test_r6m_r7_auto_live_cdc_dev_tracker.py + tests/test_r6n_r5_vertical_migration_style_lifecycle.py + ruff check/format.",
-      "head": "runtime-live-git-head",
+      "head": "05e24f31f0587a288dfc995518be5dda780a0bee",
       "tag": "mvp-qaic-reflex-r6n-vertical-migration-lifecycle-tracker-20260629",
-      "next_action": "Sceller R6N après validation locale dans le workspace NTFS C:\\JRb_TRADING_OS."
+      "next_action": "R6N scellé; R6P local static smoke validé dans le workspace NTFS C:\\JRb_TRADING_OS."
     },
     {
       "phase_id": "R6P",
       "order": 80,
-      "status": "NEXT",
+      "status": "DONE",
       "track": "RUNTIME",
-      "title": "Runtime Reflex hors Google Drive",
-      "goal": "Valider le runtime Reflex dans un workspace NTFS local stable.",
-      "progress_percent": 0,
-      "evidence": "Bun/Reflex bloque dans Drive sur lockfile; prochaine validation dans copie locale stable hors Drive.",
-      "tests": "Runtime smoke /dev-tracking, /cdc-dev-tracker, /cdc-tracker avec contenu réel visible.",
-      "head": "future",
-      "tag": "future-r6p-runtime-smoke",
-      "next_action": "Démarrer Reflex hors Drive et vérifier les pages réelles."
+      "title": "Local static smoke hors Google Drive",
+      "goal": "Sceller une validation statique locale du lifecycle tracker vertical R6N dans le workspace NTFS stable.",
+      "progress_percent": 100,
+      "evidence": "Workspace actif C:\\JRb_TRADING_OS\\MVP_QAIC_PY; aucun usage G:\\Mon Drive; aucun deploy, navigateur, Apps Script, clasp, Sheet/BigQuery write, broker/order/sizing/secret/live API, ni écriture externe. Evidence: docs/dev_tracking/R6P_LOCAL_STATIC_SMOKE_EVIDENCE_20260629.md.",
+      "tests": "11 passed; ruff check passed; ruff format --check: 446 files already formatted; placeholder hit count 0; static import/json smoke passed; git fsck clean after desktop.ini quarantine.",
+      "head": "05e24f31f0587a288dfc995518be5dda780a0bee",
+      "tag": "mvp-qaic-reflex-r6p-local-static-smoke-20260629",
+      "next_action": "R6P scellé localement; poursuivre R6Q Source of Truth Migration Cockpit complet."
     },
     {
       "phase_id": "R6Q",

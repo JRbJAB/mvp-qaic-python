@@ -33,8 +33,10 @@ def test_r6n_r5_lifecycle_has_all_past_active_next_future_phases() -> None:
         < ids.index("R6N")
     )
     assert "R6M" in model["done_phase_ids"]
-    assert model["active_phase_ids"] == ["R6N"]
-    assert {"R6P", "R6Q", "R6R", "PRIVATE_RC", "PUBLIC_READY_FUTURE"}.issubset(
+    assert "R6N" in model["done_phase_ids"]
+    assert "R6P" in model["done_phase_ids"]
+    assert "R6P" not in model["next_phase_ids"]
+    assert {"R6Q", "R6R", "PRIVATE_RC", "PUBLIC_READY_FUTURE"}.issubset(
         set(model["next_phase_ids"])
     )
 
