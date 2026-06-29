@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>MVP QAIC CDC Dev Tracker - UI Common Tracker Kit Preview</title><style>
+:root {
+  --bg: #f6f8fc;
+  --panel: #ffffff;
+  --ink: #172033;
+  --muted: #64748b;
+  --line: #dbe4f0;
+  --blue: #2563eb;
+  --blue-soft: #dbeafe;
+  --green: #16a34a;
+  --amber: #d97706;
+  --red: #dc2626;
+}
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+header {
+  padding: 28px 36px;
+  background: linear-gradient(135deg, #0f2f68, #2563eb);
+  color: white;
+}
+main { padding: 26px 36px; }
+h1 { margin: 0 0 8px 0; }
+h2 { margin: 0 0 12px 0; }
+h3 { margin: 6px 0 10px 0; }
+.tracker-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 0 0 18px 0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+.tracker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.tracker-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+.card-kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+.kpi {
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.24);
+  border-radius: 16px;
+  padding: 16px;
+}
+.kpi strong { display: block; font-size: 28px; }
+.progress-track {
+  height: 11px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  overflow: hidden;
+  margin-top: 12px;
+}
+.progress-bar.blue {
+  height: 100%;
+  background: linear-gradient(90deg, #1d4ed8, #60a5fa);
+  border-radius: 999px;
+}
+.progress-label {
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+.status-done { background: var(--green); }
+.status-active { background: var(--blue); }
+.status-next { background: var(--blue); }
+.status-blocked { background: var(--red); }
+.status-parked { background: var(--amber); }
+.status-future { background: #64748b; }
+.route-pill {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-weight: 800;
+}
+.section-subtitle, .muted { color: var(--muted); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+th, td {
+  border-top: 1px solid var(--line);
+  padding: 10px;
+  vertical-align: top;
+  text-align: left;
+}
+th { color: var(--blue); }
+a { color: var(--blue); font-weight: 800; }
+</style></head><body data-ui-kit="tracker-common" data-visual-oracle="migration-tracker"><header><h1>MVP QAIC CDC Dev Tracker - UI Common Tracker Kit Preview</h1><p>Migration Tracker Visual Oracle alignment preview. This preview is not a Reflex deployment proof.</p><div class="kpi-row"><div class="kpi"><span>CDC Tracker progress</span><strong>67%</strong><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="67" style="width:67%"></div></div><div class="progress-label">67%</div></div><div class="kpi"><span>Dev Tracker progress</span><strong>92%</strong><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="92" style="width:92%"></div></div><div class="progress-label">92%</div></div><div class="kpi"><span>Source</span><strong>DEV_LIFECYCLE_TRACKER.json</strong></div></div></header><main><section class="tracker-panel" data-panel="reference-render-types"><h2>Reference render types</h2><div class="tracker-grid"><article class="tracker-card reference-card" id="render-type-migration_tracker_reference" data-render-type="migration_tracker_reference"><div class="card-kicker">migration_tracker_reference</div><h3>Migration Tracker Reference</h3><p>Reference rendering type for tracker progress, badges, and evidence links.</p><p class="muted">Tokens: blue progress bars, phase percentages, status badges, operator cards, route and evidence links</p></article><article class="tracker-card reference-card" id="render-type-migration_tracker_oracle" data-render-type="migration_tracker_oracle"><div class="card-kicker">migration_tracker_oracle</div><h3>Migration Tracker Visual Oracle</h3><p>Reference style for tracker pages.</p><p class="muted">Tokens: blue progress bars, phase percentages, status badges, operator cards, route and evidence links</p></article><article class="tracker-card reference-card" id="render-type-cdc_tracker" data-render-type="cdc_tracker"><div class="card-kicker">cdc_tracker</div><h3>CDC Tracker</h3><p>CDC delivery and route readiness tracking.</p><p class="muted">Tokens: CDC, routes, source contract, progress</p></article><article class="tracker-card reference-card" id="render-type-cdc_dev_tracker" data-render-type="cdc_dev_tracker"><div class="card-kicker">cdc_dev_tracker</div><h3>CDC Dev Tracker</h3><p>Combined CDC delivery and development priority tracker.</p><p class="muted">Tokens: CDC, Dev Tracker, priority, readiness, cockpit</p></article><article class="tracker-card reference-card" id="render-type-dev_tracker" data-render-type="dev_tracker"><div class="card-kicker">dev_tracker</div><h3>Dev Tracker</h3><p>Development lifecycle tracking by phase.</p><p class="muted">Tokens: phase, status, evidence, progress</p></article><article class="tracker-card reference-card" id="render-type-tool_registry_cdc" data-render-type="tool_registry_cdc"><div class="card-kicker">tool_registry_cdc</div><h3>Tool Registry CDC</h3><p>Tool registry CDC route and cockpit contract tracking.</p><p class="muted">Tokens: tool registry, cockpit, surface, contract</p></article><article class="tracker-card reference-card" id="render-type-tool_registry_tracker" data-render-type="tool_registry_tracker"><div class="card-kicker">tool_registry_tracker</div><h3>Tool Registry Tracker</h3><p>Tool registry CDC and cockpit coverage.</p><p class="muted">Tokens: tool registry, cockpit, scope, contract</p></article><article class="tracker-card reference-card" id="render-type-runtime_browser_visual_smoke_future" data-render-type="runtime_browser_visual_smoke_future"><div class="card-kicker">runtime_browser_visual_smoke_future</div><h3>Runtime Browser Visual Smoke Future</h3><p>Future browser/runtime smoke proof required before any public deployment.</p><p class="muted">Tokens: browser, runtime, visual smoke, deploy blocked</p></article><article class="tracker-card reference-card" id="render-type-benchmark_tracker" data-render-type="benchmark_tracker"><div class="card-kicker">benchmark_tracker</div><h3>Benchmark Tracker</h3><p>Benchmark cockpit status tracking.</p><p class="muted">Tokens: benchmark, AI trade, metrics, status</p></article></div></section><section class="tracker-panel" data-panel="cockpit-bindings"><h2>Cockpit coverage</h2><table><thead><tr><th>Cockpit</th><th>Route</th><th>Render type</th><th>Role</th></tr></thead><tbody><tr><td>Migration Tracker</td><td><code>/global-migration</code></td><td><a href="#render-type-migration_tracker_reference">migration_tracker_reference</a></td><td>visual oracle</td></tr><tr><td>CDC Tracker</td><td><code>/cdc-tracker</code></td><td><a href="#render-type-cdc_tracker">cdc_tracker</a></td><td>CDC source and delivery status</td></tr><tr><td>CDC Dev Tracker</td><td><code>/cdc-dev-tracker</code></td><td><a href="#render-type-cdc_dev_tracker">cdc_dev_tracker</a></td><td>operator CDC tracker page</td></tr><tr><td>Dev Tracker</td><td><code>/dev-tracking</code></td><td><a href="#render-type-dev_tracker">dev_tracker</a></td><td>development lifecycle cockpit</td></tr><tr><td>Tool Registry CDC</td><td><code>/tool-registry-cdc</code></td><td><a href="#render-type-tool_registry_cdc">tool_registry_cdc</a></td><td>tool registry contract tracking</td></tr><tr><td>Lifecycle Tracker</td><td><code>/dev-tracking</code></td><td><a href="#render-type-dev_tracker">dev_tracker</a></td><td>lifecycle status mapping</td></tr></tbody></table></section><section class="tracker-panel tracker-section" data-render-type="cdc_tracker" data-route="/cdc-tracker"><h2>CDC Tracker</h2><p class="section-subtitle">CDC delivery tracker view with route/source readiness steps.</p><div class="route-pill">/cdc-tracker</div><div class="tracker-grid"><article class="tracker-card phase-card" data-phase-id="cdc_route_dev_tracking"><div class="card-kicker">cdc_route_dev_tracking</div><h3>/dev-tracking route</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted">Dev tracking route registered for operator cockpit.</p></article><article class="tracker-card phase-card" data-phase-id="cdc_route_cdc_dev_tracker"><div class="card-kicker">cdc_route_cdc_dev_tracker</div><h3>/cdc-dev-tracker route</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted">CDC Dev Tracker route registered.</p></article><article class="tracker-card phase-card" data-phase-id="cdc_route_cdc_tracker"><div class="card-kicker">cdc_route_cdc_tracker</div><h3>/cdc-tracker route</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted">CDC Tracker route registered.</p></article><article class="tracker-card phase-card" data-phase-id="cdc_source_v25_delivery_tracker"><div class="card-kicker">cdc_source_v25_delivery_tracker</div><h3>V25_CDC_DELIVERY_TRACKER source contract</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted">CDC source data contract is referenced by architecture docs.</p></article><article class="tracker-card phase-card" data-phase-id="cdc_visual_oracle"><div class="card-kicker">cdc_visual_oracle</div><h3>Migration Tracker visual oracle</h3><div><span class="status-badge status-active">ACTIVE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="70" style="width:70%"></div></div><div class="progress-label">70%</div><p class="muted">Preview must match Migration Tracker visual semantics.</p></article><article class="tracker-card phase-card" data-phase-id="cdc_browser_runtime_gate"><div class="card-kicker">cdc_browser_runtime_gate</div><h3>Browser/runtime visual proof</h3><div><span class="status-badge status-blocked">BLOCKED</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="15" style="width:15%"></div></div><div class="progress-label">15%</div><p class="muted">Blocked until Reflex frontend runtime is proven.</p></article></div><table><thead><tr><th>ID</th><th>Title</th><th>Status</th><th>Progress</th><th>Priority</th><th>Description</th></tr></thead><tbody><tr><td><code>cdc_route_dev_tracking</code></td><td>/dev-tracking route</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td>P0</td><td>Dev tracking route registered for operator cockpit.</td></tr><tr><td><code>cdc_route_cdc_dev_tracker</code></td><td>/cdc-dev-tracker route</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td>P0</td><td>CDC Dev Tracker route registered.</td></tr><tr><td><code>cdc_route_cdc_tracker</code></td><td>/cdc-tracker route</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td>P0</td><td>CDC Tracker route registered.</td></tr><tr><td><code>cdc_source_v25_delivery_tracker</code></td><td>V25_CDC_DELIVERY_TRACKER source contract</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td>P0</td><td>CDC source data contract is referenced by architecture docs.</td></tr><tr><td><code>cdc_visual_oracle</code></td><td>Migration Tracker visual oracle</td><td><span class="status-badge status-active">ACTIVE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="70" style="width:70%"></div></div><div class="progress-label">70%</div></td><td>P0</td><td>Preview must match Migration Tracker visual semantics.</td></tr><tr><td><code>cdc_browser_runtime_gate</code></td><td>Browser/runtime visual proof</td><td><span class="status-badge status-blocked">BLOCKED</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="15" style="width:15%"></div></div><div class="progress-label">15%</div></td><td>P0</td><td>Blocked until Reflex frontend runtime is proven.</td></tr></tbody></table></section><section class="tracker-panel tracker-section" data-render-type="dev_tracker" data-route="/dev-tracking"><h2>Dev Tracker</h2><p class="section-subtitle">Development lifecycle tracker view with all known phases.</p><div class="route-pill">/dev-tracking</div><div class="tracker-grid"><article class="tracker-card phase-card" data-phase-id="FOUNDATION_HISTORY"><div class="card-kicker">FOUNDATION_HISTORY</div><h3>Fondation historique MVP QAIC</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="P59_P100_FOUNDATION"><div class="card-kicker">P59_P100_FOUNDATION</div><h3>Fondations cockpit, metrics et benchmark</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6J"><div class="card-kicker">R6J</div><h3>Real CDC / Dev Tracker Cockpit</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6K"><div class="card-kicker">R6K</div><h3>Global Migration + Decision Workbench</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6L"><div class="card-kicker">R6L</div><h3>Classification et park des non-trackés R3/R4</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6M"><div class="card-kicker">R6M</div><h3>Auto-live CDC + Dev Tracker</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6N"><div class="card-kicker">R6N</div><h3>Rendu vertical Migration Tracker CDC + Dev</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6P"><div class="card-kicker">R6P</div><h3>Local static smoke hors Google Drive</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6Q"><div class="card-kicker">R6Q</div><h3>Reflex runtime diagnostic local</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="R6R"><div class="card-kicker">R6R</div><h3>CDC + Dev Tracker final static seal</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="PRIVATE_RC"><div class="card-kicker">PRIVATE_RC</div><h3>Private Release Candidate</h3><div><span class="status-badge status-done">DONE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div><p class="muted"></p></article><article class="tracker-card phase-card" data-phase-id="PUBLIC_READY_FUTURE"><div class="card-kicker">PUBLIC_READY_FUTURE</div><h3>Préparation accès public futur</h3><div><span class="status-badge status-future">FUTURE</span></div><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="5" style="width:5%"></div></div><div class="progress-label">5%</div><p class="muted"></p></article></div><table><thead><tr><th>ID</th><th>Title</th><th>Status</th><th>Progress</th><th>Priority</th><th>Description</th></tr></thead><tbody><tr><td><code>FOUNDATION_HISTORY</code></td><td>Fondation historique MVP QAIC</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>P59_P100_FOUNDATION</code></td><td>Fondations cockpit, metrics et benchmark</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6J</code></td><td>Real CDC / Dev Tracker Cockpit</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6K</code></td><td>Global Migration + Decision Workbench</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6L</code></td><td>Classification et park des non-trackés R3/R4</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6M</code></td><td>Auto-live CDC + Dev Tracker</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6N</code></td><td>Rendu vertical Migration Tracker CDC + Dev</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6P</code></td><td>Local static smoke hors Google Drive</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6Q</code></td><td>Reflex runtime diagnostic local</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>R6R</code></td><td>CDC + Dev Tracker final static seal</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>PRIVATE_RC</code></td><td>Private Release Candidate</td><td><span class="status-badge status-done">DONE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="100" style="width:100%"></div></div><div class="progress-label">100%</div></td><td></td><td></td></tr><tr><td><code>PUBLIC_READY_FUTURE</code></td><td>Préparation accès public futur</td><td><span class="status-badge status-future">FUTURE</span></td><td><div class="progress-track" data-progress-track="true"><div class="progress-bar blue" data-progress="5" style="width:5%"></div></div><div class="progress-label">5%</div></td><td></td><td></td></tr></tbody></table></section><section class="tracker-panel"><h2>Gate warning</h2><p>Visual tests are mandatory before Reflex deployment. Browser/runtime visual proof is still required before deploy.</p></section><section class="tracker-panel"><h2>Generated</h2><p>2026-06-29T14:08:20</p></section></main></body></html>
