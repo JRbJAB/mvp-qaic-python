@@ -1,0 +1,30 @@
+﻿{
+    "status":  "OK_P237C_R2_ROOT_LOCK_EXPORT_HYGIENE_UTF8_FIX_READY",
+    "batch":  "P237C_R2_ROOT_LOCK_EXPORT_HYGIENE_GUARD_UTF8_FIX",
+    "project_key":  "MVP_QAIC",
+    "repo_root":  "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+    "expected_root":  "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+    "branch":  "master",
+    "head_start":  "9eb8921",
+    "head_end":  "9eb8921",
+    "reflex_touched":  false,
+    "tracked_desktop_ini_count":  0,
+    "utf8_subprocess_fix":  true,
+    "files_written":  [
+                          "docs\\P237C_ROOT_LOCK_EXPORT_HYGIENE_POLICY.md",
+                          "docs\\TOOL_REGISTRY_CHANGELOG.md",
+                          ".gitignore",
+                          "tests\\test_p237c_repository_hygiene_contract.py"
+                      ],
+    "safety":  {
+                   "no_apps_script_execution":  true,
+                   "no_clasp_push":  true,
+                   "no_sheet_write":  true,
+                   "no_bigquery_write":  true,
+                   "no_public_publish":  true,
+                   "no_broker":  true,
+                   "no_order":  true,
+                   "no_sizing":  true,
+                   "no_reflex_modification":  true
+               }
+}
