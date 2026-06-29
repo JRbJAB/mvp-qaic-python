@@ -53,6 +53,11 @@ REFERENCE_RENDER_TYPES: dict[str, dict[str, object]] = {
         "purpose": "Tool registry CDC and cockpit coverage.",
         "tokens": ["tool registry", "cockpit", "scope", "contract"],
     },
+    "runtime_browser_visual_smoke_future": {
+        "title": "Runtime Browser Visual Smoke Future",
+        "purpose": "Future browser/runtime smoke proof required before any public deployment.",
+        "tokens": ["browser", "runtime", "visual smoke", "deploy blocked"],
+    },
     "benchmark_tracker": {
         "title": "Benchmark Tracker",
         "purpose": "Benchmark cockpit status tracking.",
@@ -69,7 +74,7 @@ COCKPIT_RENDER_BINDINGS: tuple[dict[str, str], ...] = (
         "role": "visual oracle",
     },
     {
-        "cockpit": "CDC Delivery Tracker",
+        "cockpit": "CDC Tracker",
         "route": "/cdc-tracker",
         "render_type": "cdc_tracker",
         "role": "CDC source and delivery status",
@@ -81,7 +86,7 @@ COCKPIT_RENDER_BINDINGS: tuple[dict[str, str], ...] = (
         "role": "operator CDC tracker page",
     },
     {
-        "cockpit": "Dev Tracking",
+        "cockpit": "Dev Tracker",
         "route": "/dev-tracking",
         "render_type": "dev_tracker",
         "role": "development lifecycle cockpit",
@@ -91,6 +96,12 @@ COCKPIT_RENDER_BINDINGS: tuple[dict[str, str], ...] = (
         "route": "/tool-registry-cdc",
         "render_type": "tool_registry_cdc",
         "role": "tool registry contract tracking",
+    },
+    {
+        "cockpit": "Lifecycle Tracker",
+        "route": "/dev-tracking",
+        "render_type": "dev_tracker",
+        "role": "lifecycle status mapping",
     },
 )
 

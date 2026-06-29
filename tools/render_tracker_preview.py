@@ -104,6 +104,7 @@ def render_preview(out_dir: Path) -> Path:
         "render_types": [
             "migration_tracker_reference",
             "migration_tracker_oracle",
+            "runtime_browser_visual_smoke_future",
             "cdc_dev_tracker",
             "cdc_tracker",
             "dev_tracker",
