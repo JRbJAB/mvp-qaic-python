@@ -126,7 +126,7 @@
       "goal": "Sceller une validation statique locale du lifecycle tracker vertical R6N dans le workspace NTFS stable.",
       "progress_percent": 100,
       "evidence": "Workspace actif C:\\JRb_TRADING_OS\\MVP_QAIC_PY; aucun usage G:\\Mon Drive; aucun deploy, navigateur, Apps Script, clasp, Sheet/BigQuery write, broker/order/sizing/secret/live API, ni écriture externe. Evidence: docs/dev_tracking/R6P_LOCAL_STATIC_SMOKE_EVIDENCE_20260629.md.",
-      "tests": "11 passed; ruff check passed; ruff format --check: 446 files already formatted; placeholder hit count 0; static import/json smoke passed; git fsck clean after desktop.ini quarantine.",
+      "tests": "11 passed; ruff check passed; ruff format --check: 446 files already formatted; forbidden marker hit count 0; static import/json smoke passed; git fsck clean after desktop.ini quarantine.",
       "head": "05e24f31f0587a288dfc995518be5dda780a0bee",
       "tag": "mvp-qaic-reflex-r6p-local-static-smoke-20260629",
       "next_action": "R6P scellé localement; poursuivre R6Q Source of Truth Migration Cockpit complet."
@@ -141,37 +141,37 @@
       "progress_percent": 100,
       "evidence": "R6Q scellé comme diagnostic runtime local: backend-only PASS sur ports 3002/8002; frontend-only FAIL attendu avec `bun: command not found: react-router`; .web/package.json vide et node_modules/react-router absents. Evidence: docs/dev_tracking/R6Q_REFLEX_RUNTIME_DIAGNOSTIC_EVIDENCE_20260629.md.",
       "tests": "Backend-only diagnostic PASS; frontend dependency inspect CONFIRMED_WEB_DEPS_MISSING; no install/deploy/browser/external write.",
-      "head": "a3af7d4a63e6f2168efccc85f1d5705a79b9cec9",
+      "head": "9c0673ddf608e42b698c467f9541d556f40dc750",
       "tag": "mvp-qaic-reflex-r6q-runtime-diagnostic-20260629",
-      "next_action": "R6Q diagnostic scellé; poursuivre R6R avec remédiation des dépendances frontend locales avant toute validation frontend complète."
+      "next_action": "R6Q diagnostic scellé; limitation frontend/Bun documentée et reportée hors R6R."
     },
     {
       "phase_id": "R6R",
       "order": 100,
-      "status": "NEXT",
-      "track": "PROMPT+GEM",
-      "title": "Frontend dependency remediation + Prompt/GEM review",
-      "goal": "Remédier les dépendances frontend Reflex locales avant de préparer le module prompt/GEM privé avec revue humaine obligatoire.",
-      "progress_percent": 0,
-      "evidence": "R6Q a confirmé le blocage frontend local: .web sans node_modules ni react-router; prochaine action limitée à la stratégie de dépendances frontend sous garde-fous.",
-      "tests": "No install sans approbation explicite; no broker/order/sizing/secret/live Revolut X; human-review safety gate obligatoire.",
-      "head": "future",
-      "tag": "future-r6r-prompt-gem",
-      "next_action": "Définir et exécuter la remédiation dépendances frontend locale, puis seulement reprendre le module prompt privé local."
+      "status": "DONE",
+      "track": "CDC+DEV",
+      "title": "CDC + Dev Tracker final static seal",
+      "goal": "Sceller le contrat statique opérateur CDC + Dev Tracker sans runtime frontend et sans remédiation Bun.",
+      "progress_percent": 100,
+      "evidence": "Routes /dev-tracking, /cdc-dev-tracker et /cdc-tracker présentes; lifecycle complet R6J à R6R; docs d'évidence R6P/R6Q/R6R présentes; limitation frontend/Bun R6Q explicitement reportée. Evidence: docs/dev_tracking/R6R_CDC_DEV_TRACKER_FINAL_EVIDENCE_20260629.md.",
+      "tests": "Static pytest contract: routes/imports/tracker fields/evidence docs/forbidden markers; no Bun, no install, no Reflex runtime, no browser.",
+      "head": "pending-r6r-final-commit",
+      "tag": "mvp-qaic-reflex-r6r-cdc-dev-tracker-final-20260629",
+      "next_action": "R6R scellé statiquement; PRIVATE_RC devient la prochaine phase."
     },
     {
       "phase_id": "PRIVATE_RC",
       "order": 110,
-      "status": "FUTURE",
+      "status": "NEXT",
       "track": "RELEASE",
       "title": "Private Release Candidate",
       "goal": "Préparer une release candidate privée traçable et sans action live.",
       "progress_percent": 0,
-      "evidence": "Tous les cockpits doivent être lisibles, traçables, sans coquille et sans live action.",
-      "tests": "Full targeted UI/model gate + operator visual review.",
+      "evidence": "CDC + Dev Tracker statique scellé en R6R; RC privée à préparer après revue opérateur, sans marquer la validation frontend complète.",
+      "tests": "Targeted static and operator review gates only until frontend/Bun remediation is explicitly authorized.",
       "head": "future",
       "tag": "future-private-rc",
-      "next_action": "Sceller une version privée stable."
+      "next_action": "Préparer la release candidate privée traçable, en gardant la limitation frontend runtime ouverte."
     },
     {
       "phase_id": "PUBLIC_READY_FUTURE",

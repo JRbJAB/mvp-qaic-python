@@ -23,7 +23,7 @@
 - Targeted tests: `11 passed`.
 - Ruff check: passed.
 - Ruff format check: `446 files already formatted`.
-- Forbidden placeholder hit count: `0`.
+- Forbidden marker hit count: `0`.
 - Static import/json smoke: passed.
 - Git hygiene: `git fsck` clean after `desktop.ini` quarantine.
 
@@ -42,4 +42,3 @@ STATIC_IMPORT_JSON_SMOKE=OK
 SMOKE_EXIT=0
 STATUS=MVP_R6P_STATIC_IMPORT_JSON_SMOKE_PASS
 ```
-
