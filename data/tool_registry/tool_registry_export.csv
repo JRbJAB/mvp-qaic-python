@@ -1,0 +1,8 @@
+﻿"tool_id","name","category","projects","version_expected","version_detected","functional_role","status","last_verified_at","verification_source"
+"python","Python","runtime","MVP_QAIC","repo-managed","","Runtime principal des scripts, tests et de l'app Reflex","ACTIVE_PRIVATE","2026-06-29","P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+"reflex","Reflex","framework","MVP_QAIC","repo-managed","","WebApp privÃ©e MVP QAIC","ACTIVE_PRIVATE","2026-06-29","P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+"git","Git","dev_tool","MVP_QAIC","installed local","","Versioning local/distant, diff, commit, tag","ACTIVE_PRIVATE","2026-06-29","P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+"powershell","PowerShell 5.1","shell","MVP_QAIC","Windows PowerShell 5.1","5.1.26100.8749","ExÃ©cution des packs locaux contrÃ´lÃ©s","ACTIVE_PRIVATE","2026-06-29","P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+"google_apps_script","Google Apps Script","google_service","MVP_QAIC","legacy/read-only","","Inventaire et bridge historique, sans exÃ©cution dans ce batch","LEGACY_READONLY","2026-06-29","P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+"google_sheets","Google Sheets","google_service","MVP_QAIC","n/a","","Cockpit, export, revue humaine","READONLY_OR_MANUAL","2026-06-29","P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+"mvp_qaic_private_webapp","MVP QAIC Private WebApp","project_module","MVP_QAIC","repo-managed","","WebApp privÃ©e lexique/prompt/review/cockpit","ACTIVE_PRIVATE","2026-06-29","P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"

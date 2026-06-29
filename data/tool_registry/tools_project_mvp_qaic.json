@@ -1,0 +1,33 @@
+{
+    "tool_id":  "mvp_qaic_private_webapp",
+    "name":  "MVP QAIC Private WebApp",
+    "category":  "project_module",
+    "projects":  [
+                     "MVP_QAIC"
+                 ],
+    "version_expected":  "repo-managed",
+    "version_detected":  "",
+    "functional_role":  "WebApp privÃ©e lexique/prompt/review/cockpit",
+    "features_used":  [
+                          "human review",
+                          "content workbench",
+                          "private preview"
+                      ],
+    "settings":  {
+                     "public_deploy":  false,
+                     "broker_access":  false,
+                     "order_access":  false,
+                     "sizing_access":  false,
+                     "reflex_page_write_in_this_batch":  false
+                 },
+    "safety_flags":  {
+                         "human_review_only":  true,
+                         "no_broker":  true,
+                         "no_order":  true,
+                         "no_sizing":  true,
+                         "no_secret":  true
+                     },
+    "status":  "ACTIVE_PRIVATE",
+    "last_verified_at":  "2026-06-29",
+    "verification_source":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+}

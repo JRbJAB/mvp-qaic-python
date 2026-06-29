@@ -162,16 +162,16 @@
     {
       "phase_id": "PRIVATE_RC",
       "order": 110,
-      "status": "NEXT",
+      "status": "DONE",
       "track": "RELEASE",
       "title": "Private Release Candidate",
-      "goal": "Préparer une release candidate privée traçable et sans action live.",
-      "progress_percent": 0,
-      "evidence": "CDC + Dev Tracker statique scellé en R6R; RC privée à préparer après revue opérateur, sans marquer la validation frontend complète.",
-      "tests": "Targeted static and operator review gates only until frontend/Bun remediation is explicitly authorized.",
-      "head": "future",
-      "tag": "future-private-rc",
-      "next_action": "Préparer la release candidate privée traçable, en gardant la limitation frontend runtime ouverte."
+      "goal": "Sceller une release candidate privée traçable par rendu statique des arbres Reflex CDC + Dev Tracker, sans action live.",
+      "progress_percent": 100,
+      "evidence": "PRIVATE_RC static render smoke: /dev-tracking, /cdc-dev-tracker et /cdc-tracker importés, instanciés et sérialisés via rx.Component.render(); contenu opérateur CDC, Dev Tracker, lifecycle, R6R, PRIVATE_RC et routes confirmé; aucun marqueur interdit dans les arbres rendus. Evidence: docs/dev_tracking/PRIVATE_RC_STATIC_RENDER_SMOKE_EVIDENCE_20260629.md.",
+      "tests": "tests/test_private_rc_static_render_smoke.py; targeted R6M/R6N/R6R regressions; ruff check; ruff format --check. No Bun, npm, install, node_modules, Reflex runtime server, browser, deploy, external write, broker/order/sizing/secrets/live API.",
+      "head": "pending-private-rc-static-render-smoke-commit",
+      "tag": "mvp-qaic-private-rc-static-render-smoke-20260629",
+      "next_action": "PRIVATE_RC statique scellé; garder la limitation frontend runtime ouverte avant tout passage public."
     },
     {
       "phase_id": "PUBLIC_READY_FUTURE",

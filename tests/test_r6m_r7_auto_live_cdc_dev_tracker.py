@@ -19,7 +19,7 @@ def test_r6m_r7_lifecycle_contract_covers_past_active_future() -> None:
     assert model["status"] == STATUS_READY
     assert model["counts"]["done"] >= 3
     assert model["counts"]["active"] == 0
-    assert model["counts"]["next"] >= 2
+    assert model["counts"]["next"] >= 1
     assert "R6J" in model["done_phase_ids"]
     assert "R6K" in model["done_phase_ids"]
     assert "R6L" in model["done_phase_ids"]
@@ -28,6 +28,7 @@ def test_r6m_r7_lifecycle_contract_covers_past_active_future() -> None:
     assert "R6P" in model["done_phase_ids"]
     assert "R6Q" in model["done_phase_ids"]
     assert "R6R" in model["done_phase_ids"]
+    assert "PRIVATE_RC" in model["done_phase_ids"]
 
 
 def test_r6m_r7_evidence_contains_real_heads_tags_and_no_shell_status() -> None:

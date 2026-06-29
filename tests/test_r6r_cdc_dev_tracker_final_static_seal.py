@@ -70,7 +70,7 @@ def test_r6r_lifecycle_is_complete_from_r6j_to_r6r() -> None:
     assert list(phases)[:2] == ["FOUNDATION_HISTORY", "P59_P100_FOUNDATION"]
     assert all(phase_id in phases for phase_id in expected_ids)
     assert [phases[phase_id]["status"] for phase_id in expected_ids] == ["DONE"] * len(expected_ids)
-    assert phases["PRIVATE_RC"]["status"] == "NEXT"
+    assert phases["PRIVATE_RC"]["status"] == "DONE"
 
 
 def test_r6r_tracker_fields_statuses_and_evidence_docs_are_valid() -> None:
@@ -88,7 +88,7 @@ def test_r6r_tracker_fields_statuses_and_evidence_docs_are_valid() -> None:
     assert phases["R6P"]["status"] == "DONE"
     assert phases["R6Q"]["status"] == "DONE"
     assert phases["R6R"]["status"] == "DONE"
-    assert phases["PRIVATE_RC"]["status"] == "NEXT"
+    assert phases["PRIVATE_RC"]["status"] == "DONE"
     for path in EVIDENCE_PATHS:
         assert path.exists()
         assert path.read_text(encoding="utf-8").strip()

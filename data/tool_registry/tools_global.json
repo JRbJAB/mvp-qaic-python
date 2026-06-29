@@ -1,0 +1,164 @@
+[
+    {
+        "tool_id":  "python",
+        "name":  "Python",
+        "category":  "runtime",
+        "projects":  [
+                         "MVP_QAIC"
+                     ],
+        "version_expected":  "repo-managed",
+        "version_detected":  "",
+        "functional_role":  "Runtime principal des scripts, tests et de l\u0027app Reflex",
+        "features_used":  [
+                              "scripts",
+                              "tests",
+                              "data export",
+                              "Reflex runtime"
+                          ],
+        "settings":  {
+                         "local_only":  true
+                     },
+        "safety_flags":  {
+                             "no_external_write":  true,
+                             "no_secret":  true
+                         },
+        "status":  "ACTIVE_PRIVATE",
+        "last_verified_at":  "2026-06-29",
+        "verification_source":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+    },
+    {
+        "tool_id":  "reflex",
+        "name":  "Reflex",
+        "category":  "framework",
+        "projects":  [
+                         "MVP_QAIC"
+                     ],
+        "version_expected":  "repo-managed",
+        "version_detected":  "",
+        "functional_role":  "WebApp privÃ©e MVP QAIC",
+        "features_used":  [
+                              "routing",
+                              "components",
+                              "assets",
+                              "private preview"
+                          ],
+        "settings":  {
+                         "public_deploy":  false,
+                         "auto_browser_open":  false,
+                         "page_write_in_this_batch":  false
+                     },
+        "safety_flags":  {
+                             "no_public_publish":  true,
+                             "no_broker":  true,
+                             "no_order":  true,
+                             "no_sizing":  true
+                         },
+        "status":  "ACTIVE_PRIVATE",
+        "last_verified_at":  "2026-06-29",
+        "verification_source":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+    },
+    {
+        "tool_id":  "git",
+        "name":  "Git",
+        "category":  "dev_tool",
+        "projects":  [
+                         "MVP_QAIC"
+                     ],
+        "version_expected":  "installed local",
+        "version_detected":  "",
+        "functional_role":  "Versioning local/distant, diff, commit, tag",
+        "features_used":  [
+                              "status",
+                              "diff",
+                              "commit",
+                              "tag"
+                          ],
+        "settings":  {
+                         "push_requires_explicit_flag":  true
+                     },
+        "safety_flags":  {
+                             "no_push_by_default":  true
+                         },
+        "status":  "ACTIVE_PRIVATE",
+        "last_verified_at":  "2026-06-29",
+        "verification_source":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+    },
+    {
+        "tool_id":  "powershell",
+        "name":  "PowerShell 5.1",
+        "category":  "shell",
+        "projects":  [
+                         "MVP_QAIC"
+                     ],
+        "version_expected":  "Windows PowerShell 5.1",
+        "version_detected":  "5.1.26100.8749",
+        "functional_role":  "ExÃ©cution des packs locaux contrÃ´lÃ©s",
+        "features_used":  [
+                              "batch execution",
+                              "path guards",
+                              "git orchestration"
+                          ],
+        "settings":  {
+                         "literal_path_required":  true,
+                         "root_locked":  true
+                     },
+        "safety_flags":  {
+                             "no_background_work":  true,
+                             "no_external_write_by_default":  true
+                         },
+        "status":  "ACTIVE_PRIVATE",
+        "last_verified_at":  "2026-06-29",
+        "verification_source":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+    },
+    {
+        "tool_id":  "google_apps_script",
+        "name":  "Google Apps Script",
+        "category":  "google_service",
+        "projects":  [
+                         "MVP_QAIC"
+                     ],
+        "version_expected":  "legacy/read-only",
+        "version_detected":  "",
+        "functional_role":  "Inventaire et bridge historique, sans exÃ©cution dans ce batch",
+        "features_used":  [
+                              "read-only inventory",
+                              "legacy mirror"
+                          ],
+        "settings":  {
+                         "execution_allowed":  false,
+                         "clasp_push_allowed":  false
+                     },
+        "safety_flags":  {
+                             "no_apps_script_execution":  true,
+                             "no_clasp_push":  true
+                         },
+        "status":  "LEGACY_READONLY",
+        "last_verified_at":  "2026-06-29",
+        "verification_source":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+    },
+    {
+        "tool_id":  "google_sheets",
+        "name":  "Google Sheets",
+        "category":  "google_service",
+        "projects":  [
+                         "MVP_QAIC"
+                     ],
+        "version_expected":  "n/a",
+        "version_detected":  "",
+        "functional_role":  "Cockpit, export, revue humaine",
+        "features_used":  [
+                              "manual review",
+                              "cockpit",
+                              "exports"
+                          ],
+        "settings":  {
+                         "write_allowed_in_this_batch":  false
+                     },
+        "safety_flags":  {
+                             "no_sheet_write":  true
+                         },
+        "status":  "READONLY_OR_MANUAL",
+        "last_verified_at":  "2026-06-29",
+        "verification_source":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START"
+    }
+]

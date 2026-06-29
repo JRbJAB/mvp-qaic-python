@@ -1,0 +1,38 @@
+{
+    "batch":  "P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START",
+    "generated_at":  "2026-06-29 11:37:10",
+    "repo_root":  "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+    "project":  "MVP_QAIC",
+    "head_start":  "b3c2746",
+    "branch":  "master",
+    "docs_written":  [
+                         "docs/TOOL_REGISTRY_CDC.md",
+                         "docs/TOOL_REGISTRY_SCHEMA.md",
+                         "docs/TOOL_REGISTRY_CHANGELOG.md"
+                     ],
+    "data_written":  [
+                         "data/tool_registry/tools_global.json",
+                         "data/tool_registry/tools_project_mvp_qaic.json",
+                         "data/tool_registry/tool_registry_snapshot.json",
+                         "data/tool_registry/tool_registry_export.csv"
+                     ],
+    "tests_written":  [
+                          "tests/test_p237b_tool_registry_contract.py"
+                      ],
+    "export_dir":  "05_EXPORTS\\P237B_R4_TOOL_REGISTRY_ROOT_LOCKED_CLEAN_START_20260629_113710",
+    "reflex_page_written":  false,
+    "reflex_routing_modified":  false,
+    "external_writes":  false,
+    "userprofile_write":  false,
+    "safety":  {
+                   "apps_script_execution":  false,
+                   "clasp_push":  false,
+                   "sheet_write":  false,
+                   "bigquery_write":  false,
+                   "public_publish":  false,
+                   "broker":  false,
+                   "order":  false,
+                   "sizing":  false,
+                   "secret":  false
+               }
+}
