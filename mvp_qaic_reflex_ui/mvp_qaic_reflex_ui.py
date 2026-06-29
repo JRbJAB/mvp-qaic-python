@@ -1,4 +1,4 @@
-﻿"""MVP QAIC local private Reflex UI."""
+"""MVP QAIC local private Reflex UI."""
 
 from __future__ import annotations
 from mvp_qaic_reflex_ui.cdc_dev_tracker_reflex_page import cdc_dev_tracker_reflex_page

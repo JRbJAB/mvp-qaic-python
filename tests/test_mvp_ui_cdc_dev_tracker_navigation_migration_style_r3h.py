@@ -48,8 +48,7 @@ def test_navigation_contract_is_runtime_free() -> None:
 
 def test_status_json_is_valid() -> None:
     status_path = Path(
-        "docs/mvp_ui/"
-        "MVP_UI_CDC_DEV_TRACKER_NAVIGATION_MIGRATION_STYLE_R3H_STATUS.json"
+        "docs/mvp_ui/MVP_UI_CDC_DEV_TRACKER_NAVIGATION_MIGRATION_STYLE_R3H_STATUS.json"
     )
     data = json.loads(status_path.read_text(encoding="utf-8"))
     assert data["status"] == "READY_FOR_DIRTY_FILE_GATE_R4"
@@ -59,8 +58,7 @@ def test_status_json_is_valid() -> None:
 
 def test_sample_json_is_valid() -> None:
     sample_path = Path(
-        "docs/mvp_ui/samples/"
-        "MVP_UI_CDC_DEV_TRACKER_NAVIGATION_MIGRATION_STYLE_R3H_SAMPLE.json"
+        "docs/mvp_ui/samples/MVP_UI_CDC_DEV_TRACKER_NAVIGATION_MIGRATION_STYLE_R3H_SAMPLE.json"
     )
     data = json.loads(sample_path.read_text(encoding="utf-8"))
     assert data["navigation_item"]["route"] == "/cdc-dev-tracker"

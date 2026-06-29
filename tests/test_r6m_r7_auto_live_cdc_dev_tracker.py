@@ -10,6 +10,9 @@ from mvp_qaic_reflex_ui.dev_lifecycle_tracker import (
 )
 
 
+FORBIDDEN_MARKERS = ("structure" + "_ready", "content" + "_to_connect")
+
+
 def test_r6m_r7_lifecycle_contract_covers_past_active_future() -> None:
     model = build_dev_lifecycle_model()
 
@@ -20,8 +23,8 @@ def test_r6m_r7_lifecycle_contract_covers_past_active_future() -> None:
     assert "R6J" in model["done_phase_ids"]
     assert "R6K" in model["done_phase_ids"]
     assert "R6L" in model["done_phase_ids"]
-    assert "R6M" in model["active_phase_ids"]
-    assert "R6N" in model["next_phase_ids"]
+    assert "R6M" in model["done_phase_ids"]
+    assert "R6N" in model["active_phase_ids"]
 
 
 def test_r6m_r7_evidence_contains_real_heads_tags_and_no_shell_status() -> None:
@@ -39,8 +42,8 @@ def test_r6m_r7_evidence_contains_real_heads_tags_and_no_shell_status() -> None:
     assert "b4556e1c4fff" in joined
     assert "mvp-qaic-reflex-r6j-real-cdc-dev-tracker-cockpit" in joined
     assert "mvp-qaic-reflex-r6k-global-migration-decision-workbench" in joined
-    assert "structure_ready" not in lowered
-    assert "content_to_connect" not in lowered
+    for marker in FORBIDDEN_MARKERS:
+        assert marker not in lowered
     assert "route-only" in lowered
 
 
@@ -59,13 +62,13 @@ def test_r6m_r7_json_source_is_versioned_and_clean() -> None:
     payload = json.loads(path.read_text(encoding="utf-8"))
     text = path.read_text(encoding="utf-8").lower()
 
-    assert payload["schema_version"] == "R6M_R7_AUTO_LIVE_CDC_DEV_TRACKER"
+    assert payload["schema_version"] == "R6N_VERTICAL_MIGRATION_STYLE_LIFECYCLE"
     assert payload["status"] == STATUS_READY
     assert "past_phases" in payload["required_coverage"]
     assert "active_phases" in payload["required_coverage"]
     assert "future_phases" in payload["required_coverage"]
-    assert "structure_ready" not in text
-    assert "content_to_connect" not in text
+    for marker in FORBIDDEN_MARKERS:
+        assert marker not in text
 
 
 def test_r6m_r7_dev_tracking_page_is_overridden_by_live_model() -> None:
@@ -89,5 +92,5 @@ def test_r6m_r7_panel_is_content_model_not_shell() -> None:
     panel = dev_lifecycle_tracker_panel(compact=True)
     assert panel is not None
     model = build_dev_lifecycle_model()
-    assert model["active_phase_ids"] == ["R6M"]
-    assert "R6N" in model["next_phase_ids"]
+    assert "R6M" in model["done_phase_ids"]
+    assert model["active_phase_ids"] == ["R6N"]

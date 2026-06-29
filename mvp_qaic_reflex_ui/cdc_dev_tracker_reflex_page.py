@@ -12,9 +12,12 @@ from typing import Any
 import reflex as rx
 
 from .layout import page_shell
+from .dev_lifecycle_tracker import (
+    cdc_lifecycle_tracker_panel as _r6n_vertical_cdc_lifecycle_tracker_panel,
+    dev_lifecycle_tracker_panel as _r6m_r7_dev_lifecycle_tracker_panel,
+)
 from .v25_cdc_delivery_tracker_static import (
     DETAIL_ROWS,
-    GLOBAL_META,
     REAL_COCKPIT_MARKER,
     SOURCE_SHEET,
     SUMMARY_ROWS,
@@ -41,7 +44,14 @@ def _style_for(status: object) -> dict[str, str]:
     return _STATUS_STYLES.get(str(status), {"bg": "#f3f4f6", "fg": "#111827", "border": "#d1d5db"})
 
 
-def _text(value: object, *, weight: str = "regular", size: str = "0.84em", opacity: str = "1", nowrap: bool = False) -> rx.Component:
+def _text(
+    value: object,
+    *,
+    weight: str = "regular",
+    size: str = "0.84em",
+    opacity: str = "1",
+    nowrap: bool = False,
+) -> rx.Component:
     return rx.text(
         str(value),
         font_weight=weight,
@@ -72,7 +82,9 @@ def _progress_bar(value: object, width: str = "118px") -> rx.Component:
     return rx.vstack(
         rx.text(f"{progress}%", font_weight="bold", font_size="0.86em"),
         rx.box(
-            rx.box(height="100%", width=f"{progress}%", background="#2563eb", border_radius="999px"),
+            rx.box(
+                height="100%", width=f"{progress}%", background="#2563eb", border_radius="999px"
+            ),
             width=width,
             height="8px",
             background="var(--gray-a4)",
@@ -127,12 +139,21 @@ def _phase_header() -> rx.Component:
 
 def _phase_row(row: dict[str, Any]) -> rx.Component:
     blocked = str(row.get("blocked", "0")).replace(",", ".")
-    status = "BLOCKED" if blocked not in ("", "0", "0.0", "0,0%") and row.get("phase_id") != "TOTAL" else "REVIEW"
+    status = (
+        "BLOCKED"
+        if blocked not in ("", "0", "0.0", "0,0%") and row.get("phase_id") != "TOTAL"
+        else "REVIEW"
+    )
     if str(row.get("remaining_h", "0")).replace(",", ".") in ("0", "0.0", "0.00"):
         status = "DONE"
     return rx.box(
         _text(row.get("phase_id", ""), weight="bold", size="0.78em", nowrap=True),
-        rx.vstack(_text(row.get("phase_name", ""), weight="medium", size="0.83em"), _status_pill(status), spacing="1", align="start"),
+        rx.vstack(
+            _text(row.get("phase_name", ""), weight="medium", size="0.83em"),
+            _status_pill(status),
+            spacing="1",
+            align="start",
+        ),
         _text(row.get("items", ""), size="0.8em", nowrap=True),
         _progress_bar(row.get("realized_pct", "0")),
         _text(row.get("done", ""), size="0.8em", nowrap=True),
@@ -177,7 +198,12 @@ def _detail_row(row: dict[str, Any]) -> rx.Component:
         _status_pill(row.get("decision_status", "REVIEW")),
         _text(row.get("priority", ""), weight="bold", size="0.78em", nowrap=True),
         _text(row.get("phase_id", ""), size="0.78em", nowrap=True),
-        rx.vstack(_text(row.get("module_name", ""), weight="medium"), _text(row.get("module_id", ""), size="0.72em", opacity="0.68"), spacing="1", align="start"),
+        rx.vstack(
+            _text(row.get("module_name", ""), weight="medium"),
+            _text(row.get("module_id", ""), size="0.72em", opacity="0.68"),
+            spacing="1",
+            align="start",
+        ),
         _text(row.get("deliverable_name", ""), size="0.78em"),
         _progress_bar(row.get("realized_pct", "0"), width="96px"),
         _text(row.get("remaining_effort_hours", ""), weight="bold", size="0.78em", nowrap=True),
@@ -193,7 +219,9 @@ def _detail_row(row: dict[str, Any]) -> rx.Component:
 
 def _phase_table() -> rx.Component:
     return rx.box(
-        rx.vstack(_phase_header(), *[_phase_row(row) for row in SUMMARY_ROWS], width="100%", spacing="0"),
+        rx.vstack(
+            _phase_header(), *[_phase_row(row) for row in SUMMARY_ROWS], width="100%", spacing="0"
+        ),
         width="100%",
         overflow_x="auto",
         border="1px solid var(--gray-a4)",
@@ -205,7 +233,9 @@ def _phase_table() -> rx.Component:
 def _priority_table() -> rx.Component:
     rows = critical_detail_rows(16)
     return rx.box(
-        rx.vstack(_details_header(), *[_detail_row(row) for row in rows], width="100%", spacing="0"),
+        rx.vstack(
+            _details_header(), *[_detail_row(row) for row in rows], width="100%", spacing="0"
+        ),
         width="100%",
         overflow_x="auto",
         border="1px solid var(--gray-a4)",
@@ -224,8 +254,15 @@ def cdc_dev_tracker_cockpit_body(view: str = "combined") -> rx.Component:
                 rx.hstack(
                     rx.vstack(
                         rx.heading("📊 V25 CDC Delivery Tracker", size="6"),
-                        rx.text("Source réelle : Sheets / Apps Script → Reflex · Migration cockpit", opacity="0.76"),
-                        rx.text(f"{REAL_COCKPIT_MARKER} · {SOURCE_SHEET}", font_size="0.76em", opacity="0.62"),
+                        rx.text(
+                            "Source réelle : Sheets / Apps Script → Reflex · Migration cockpit",
+                            opacity="0.76",
+                        ),
+                        rx.text(
+                            f"{REAL_COCKPIT_MARKER} · {SOURCE_SHEET}",
+                            font_size="0.76em",
+                            opacity="0.62",
+                        ),
                         spacing="1",
                         align="start",
                     ),
@@ -300,16 +337,12 @@ def dev_tracking_reflex_page() -> rx.Component:
         "/dev-tracking",
     )
 
+
 # BEGIN_R6M_R7_AUTO_LIVE_CDC_LIFECYCLE_PANEL
 try:
     import reflex as _r6m_r7_rx
 except Exception:  # pragma: no cover - Reflex optional in unit tests
     _r6m_r7_rx = None
-
-from mvp_qaic_reflex_ui.dev_lifecycle_tracker import (
-    dev_lifecycle_tracker_panel as _r6m_r7_dev_lifecycle_tracker_panel,
-)
-
 
 _r6m_r7_base_cdc_dev_tracker_reflex_page = cdc_dev_tracker_reflex_page
 _r6m_r7_base_cdc_tracker_reflex_page = cdc_tracker_reflex_page
@@ -332,3 +365,42 @@ def cdc_tracker_reflex_page():
 
 
 # END_R6M_R7_AUTO_LIVE_CDC_LIFECYCLE_PANEL
+
+# R6N-R5_BEGIN_VERTICAL_MIGRATION_STYLE_CDC_TRACKER
+_r6n_original_cdc_dev_tracker_reflex_page = cdc_dev_tracker_reflex_page
+_r6n_original_cdc_tracker_reflex_page = cdc_tracker_reflex_page
+
+
+def cdc_dev_tracker_reflex_page() -> Any:
+    base = _r6n_original_cdc_dev_tracker_reflex_page()
+    if rx is None:
+        return {
+            "lifecycle": _r6n_vertical_cdc_lifecycle_tracker_panel(compact=False),
+            "base": base,
+        }
+    return rx.vstack(
+        _r6n_vertical_cdc_lifecycle_tracker_panel(compact=False),
+        base,
+        spacing="4",
+        align="stretch",
+        width="100%",
+    )
+
+
+def cdc_tracker_reflex_page() -> Any:
+    base = _r6n_original_cdc_tracker_reflex_page()
+    if rx is None:
+        return {
+            "lifecycle": _r6n_vertical_cdc_lifecycle_tracker_panel(compact=False),
+            "base": base,
+        }
+    return rx.vstack(
+        _r6n_vertical_cdc_lifecycle_tracker_panel(compact=False),
+        base,
+        spacing="4",
+        align="stretch",
+        width="100%",
+    )
+
+
+# R6N-R5_END_VERTICAL_MIGRATION_STYLE_CDC_TRACKER

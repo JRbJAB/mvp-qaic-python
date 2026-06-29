@@ -1,17 +1,43 @@
-﻿"""Landing and priority pages for MVP QAIC Reflex."""
+"""Landing and priority pages for MVP QAIC Reflex."""
 
 from __future__ import annotations
 
+from typing import Any
+
 import reflex as rx
 
-from .layout import page_shell, placeholder_body
-from .cdc_dev_tracker_reflex_page import cdc_dev_tracker_reflex_page
+from .layout import page_shell
 from .migration_tracker import migration_tracker_compact_panel
 from .migration_decision_workbench import migration_decision_workbench_compact_panel
 from .theme import LANDING_SECTIONS, get_landing_sections, safety_panel, section_card
 from .visual_theme import metric_grid, mission_control_hero
 from .web_architecture_cdc import architecture_web_cdc_body, sitemap_page_body
 from .cdc_dev_tracker_reflex_page import cdc_tracker_reflex_page, dev_tracking_reflex_page
+from .dev_lifecycle_tracker import (
+    dev_lifecycle_tracker_panel as _r6n_vertical_dev_lifecycle_tracker_panel,
+)
+
+
+def _registry_body(label: str, route: str, description: str) -> rx.Component:
+    return rx.vstack(
+        rx.box(
+            rx.vstack(
+                rx.heading(label, size="5"),
+                rx.text(description, size="3"),
+                rx.text(f"Route: {route}", size="2"),
+                spacing="3",
+                align="start",
+            ),
+            border="1px solid rgba(0, 0, 0, 0.10)",
+            border_radius="14px",
+            padding="1rem",
+            width="100%",
+            background="white",
+        ),
+        spacing="4",
+        align="start",
+        width="100%",
+    )
 
 
 def _section_by_id(section_id: str) -> dict[str, str]:
@@ -81,8 +107,10 @@ def mission_control() -> rx.Component:
 def dev_tracking() -> rx.Component:
     return dev_tracking_reflex_page()
 
+
 def cdc_tracker() -> rx.Component:
     return cdc_tracker_reflex_page()
+
 
 def architecture_web() -> rx.Component:
     section = _section_by_id("architecture_web")
@@ -108,7 +136,7 @@ def documentation_registry() -> rx.Component:
     return page_shell(
         section["title"],
         "Registre documentation, exports, prompts et packs de décision.",
-        placeholder_body(
+        _registry_body(
             section["title"],
             section["route"],
             "Cette page listera docs, versions, sources, usages et statut d'intégration.",
@@ -122,7 +150,7 @@ def architecture_registry() -> rx.Component:
     return page_shell(
         section["title"],
         "Réconciliation architecture, registry technique et modules actifs.",
-        placeholder_body(
+        _registry_body(
             section["title"],
             section["route"],
             "Cette page finalisera les registres Architecture & Registry : routes, modules, docs, exports, runtime et sécurité.",
@@ -135,7 +163,7 @@ def lexique_knowledge() -> rx.Component:
     return page_shell(
         "Lexique Knowledge",
         "Knowledge base lexique-first.",
-        placeholder_body(
+        _registry_body(
             "Lexique Knowledge",
             "/lexique-knowledge",
             "Structure prête pour termes, catégories, méthodes et signaux.",
@@ -148,7 +176,7 @@ def prompt_lab() -> rx.Component:
     return page_shell(
         "Prompt Lab",
         "Atelier prompt / GEM / human review.",
-        placeholder_body(
+        _registry_body(
             "Prompt Lab",
             "/prompt-lab",
             "Structure prête pour prompts, context packs, réponse GEM et review queue.",
@@ -161,7 +189,7 @@ def gem_portfolio() -> rx.Component:
     return page_shell(
         "GEM Portfolio",
         "Capture portefeuille et revue multimodale.",
-        placeholder_body(
+        _registry_body(
             "GEM Portfolio",
             "/gem-portfolio",
             "Structure prête pour captures, JSON, résumé lisible et human review.",
@@ -174,7 +202,7 @@ def qaic_bridge() -> rx.Component:
     return page_shell(
         "QAIC Bridge",
         "Liaison future read-only vers backend QAIC privé.",
-        placeholder_body(
+        _registry_body(
             "QAIC Bridge",
             "/qaic-bridge",
             "Structure prête pour statut, contrats et liaison read-only. Aucun ordre.",
@@ -187,7 +215,7 @@ def settings_safety() -> rx.Component:
     return page_shell(
         "Settings Safety",
         "Thèmes, sécurité, plugins et garde-fous.",
-        placeholder_body(
+        _registry_body(
             "Settings Safety",
             "/settings-safety",
             "Structure prête pour light/dark/system, accent, density, safety flags et plugins Reflex.",
@@ -195,14 +223,21 @@ def settings_safety() -> rx.Component:
         "/settings-safety",
     )
 
+
 # BEGIN_R6M_R7_AUTO_LIVE_DEV_TRACKING_OVERRIDE
-from mvp_qaic_reflex_ui.dev_lifecycle_tracker import (
-    dev_lifecycle_tracker_page as _r6m_r7_dev_lifecycle_tracker_page,
-)
-
-
-def dev_tracking_page():
-    return _r6m_r7_dev_lifecycle_tracker_page()
-
-
+# R6M used dev_lifecycle_tracker_page before R6N promoted the vertical panel.
 # END_R6M_R7_AUTO_LIVE_DEV_TRACKING_OVERRIDE
+
+
+# R6N-R5_BEGIN_VERTICAL_MIGRATION_STYLE_DEV_TRACKING
+def dev_tracking_page() -> Any:
+    if rx is None:
+        return _r6n_vertical_dev_lifecycle_tracker_panel(compact=False, context="dev")
+    return rx.box(
+        _r6n_vertical_dev_lifecycle_tracker_panel(compact=False, context="dev"),
+        padding="1em",
+        width="100%",
+    )
+
+
+# R6N-R5_END_VERTICAL_MIGRATION_STYLE_DEV_TRACKING

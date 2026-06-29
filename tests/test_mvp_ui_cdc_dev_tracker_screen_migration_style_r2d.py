@@ -37,13 +37,9 @@ def test_detail_panel_can_select_a_tracker_row() -> None:
 
 
 def test_status_and_sample_json_are_valid() -> None:
-    status_path = Path(
-        "docs/mvp_ui/"
-        "MVP_UI_CDC_DEV_TRACKER_SCREEN_MIGRATION_STYLE_R2D_STATUS.json"
-    )
+    status_path = Path("docs/mvp_ui/MVP_UI_CDC_DEV_TRACKER_SCREEN_MIGRATION_STYLE_R2D_STATUS.json")
     sample_path = Path(
-        "docs/mvp_ui/samples/"
-        "MVP_UI_CDC_DEV_TRACKER_SCREEN_MIGRATION_STYLE_R2D_SAMPLE.json"
+        "docs/mvp_ui/samples/MVP_UI_CDC_DEV_TRACKER_SCREEN_MIGRATION_STYLE_R2D_SAMPLE.json"
     )
     status = json.loads(status_path.read_text(encoding="utf-8"))
     sample = json.loads(sample_path.read_text(encoding="utf-8"))
