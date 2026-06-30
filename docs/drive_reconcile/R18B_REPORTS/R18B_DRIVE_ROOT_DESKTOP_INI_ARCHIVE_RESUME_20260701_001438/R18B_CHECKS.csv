@@ -1,0 +1,11 @@
+check,required,ok,detail
+repo_exists,TRUE,TRUE,C:\JRb_TRADING_OS\MVP_QAIC_PY
+inside_work_tree,TRUE,TRUE,true
+branch_master,TRUE,TRUE,master
+r17b_tag_present,TRUE,TRUE,34cf19802be94e9c7b88fecc7560efdfa7fb9264
+head_at_or_after_r17b,TRUE,TRUE,head=34cf19802be94e9c7b88fecc7560efdfa7fb9264 r17b=34cf19802be94e9c7b88fecc7560efdfa7fb9264
+status_before_clean_or_allowed_ui_config_or_r18_report_residue,TRUE,TRUE,?? docs/drive_reconcile/R18_REPORTS/
+signal_os_root_found,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS
+archives_folder_exists,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\99_ARCHIVES
+desktop_ini_absent_or_already_moved,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\desktop.ini
+root_desktop_ini_absent_after_move,FALSE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\desktop.ini

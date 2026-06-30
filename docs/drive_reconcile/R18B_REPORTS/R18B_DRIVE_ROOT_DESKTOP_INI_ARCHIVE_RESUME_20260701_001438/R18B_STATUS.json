@@ -1,0 +1,16 @@
+{
+  "branch": "master",
+  "head_before": "34cf19802be94e9c7b88fecc7560efdfa7fb9264",
+  "subject_before": "MVP QAIC drive root taxonomy readout R17B",
+  "status_before": "?? docs/drive_reconcile/R18_REPORTS/",
+  "signal_os_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "desktop_ini_before_exists": false,
+  "archive_target": "",
+  "desktop_ini_sha256": "",
+  "desktop_ini_size": 0,
+  "move_method_success": true,
+  "move_error": "",
+  "desktop_ini_after_exists": false,
+  "report_dir": "docs\\drive_reconcile\\R18B_REPORTS\\R18B_DRIVE_ROOT_DESKTOP_INI_ARCHIVE_RESUME_20260701_001438",
+  "final_status_expected": "OK_MVP_QAIC_R18B_DRIVE_ROOT_DESKTOP_INI_ARCHIVE_RESUME_COMMITTED_TAGGED_PUSHED_CLEAN"
+}
