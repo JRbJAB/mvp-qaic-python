@@ -1,0 +1,79 @@
+{
+  "status": "PENDING_COMMIT",
+  "mode": "LOCAL_FINAL_DOCS_SUPPORTING_ASSETS_TAXONOMY_APPLY",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "branch": "master",
+  "head_before": "2c197bdb64921e65f9e774815772f4be7594e984",
+  "subject_before": "MVP QAIC recover R15D superseded webapp architecture pack R15F",
+  "support_dir": "docs/FINAL/_SUPPORTING_ASSETS_REFERENCE_v0.2.6",
+  "super_dir": "docs/FINAL/99_SUPERSEDED_BY_REFERENCE_v0.2.6_20260630",
+  "move_action_count": 7,
+  "checks": [
+    {
+      "check": "repo_exists",
+      "required": "True",
+      "ok": "True",
+      "detail": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY"
+    },
+    {
+      "check": "final_exists",
+      "required": "True",
+      "ok": "True",
+      "detail": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\FINAL"
+    },
+    {
+      "check": "inside_work_tree",
+      "required": "True",
+      "ok": "True",
+      "detail": "true"
+    },
+    {
+      "check": "branch_master",
+      "required": "True",
+      "ok": "True",
+      "detail": "master"
+    },
+    {
+      "check": "r15f_tag_present",
+      "required": "True",
+      "ok": "True",
+      "detail": "2c197bdb64921e65f9e774815772f4be7594e984"
+    },
+    {
+      "check": "head_at_or_after_r15f",
+      "required": "True",
+      "ok": "True",
+      "detail": "head=2c197bdb64921e65f9e774815772f4be7594e984 r15f=2c197bdb64921e65f9e774815772f4be7594e984"
+    },
+    {
+      "check": "status_before_clean_or_allowed_ui_config_only",
+      "required": "True",
+      "ok": "True",
+      "detail": " M mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py\n?? config/\n?? mvp_qaic_reflex_ui/runtime_config_registry.py"
+    },
+    {
+      "check": "support_dir_exists",
+      "required": "True",
+      "ok": "True",
+      "detail": "docs/FINAL/_SUPPORTING_ASSETS_REFERENCE_v0.2.6"
+    },
+    {
+      "check": "support_expected_items_present",
+      "required": "True",
+      "ok": "True",
+      "detail": ""
+    },
+    {
+      "check": "root_final_taxonomy_allowed_only",
+      "required": "True",
+      "ok": "True",
+      "detail": ""
+    },
+    {
+      "check": "desktop_ini_remaining_under_FINAL",
+      "required": "True",
+      "ok": "True",
+      "detail": ""
+    }
+  ]
+}

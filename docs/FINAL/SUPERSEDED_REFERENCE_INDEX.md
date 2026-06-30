@@ -134,3 +134,21 @@ Superseded and working-input files were moved here by R15D; no content deletion 
 - `docs/FINAL/99_SUPERSEDED_BY_REFERENCE_v0.2.6_20260630/🧱 MVP_QAIC_ARCHITECTURE_MIGRATION_FINAL_FUSED_v0.2.2.md`
 - `docs/FINAL/99_SUPERSEDED_BY_REFERENCE_v0.2.6_20260630/🧾 MVP_QAIC_FINAL_DOCS_INDEX_v0.2.2.md`
 - `docs/FINAL/99_SUPERSEDED_BY_REFERENCE_v0.2.6_20260630/🧾 MVP_QAIC_FINAL_REFERENCE_INDEX_v0.3.0.md`
+
+<!-- R16_SUPPORTING_ASSETS_TAXONOMY_START -->
+
+## R16 — Distinction `superseded` vs `supporting assets`
+
+`99_SUPERSEDED_BY_REFERENCE_v0.2.6_20260630` contient les versions remplacées, sources historiques, drafts et anciennes sorties absorbées par la référence v0.2.6.
+
+Les éléments techniques encore utiles au fonctionnement documentaire ou à la vérification webapp ont été déplacés vers `_SUPPORTING_ASSETS_REFERENCE_v0.2.6` pour éviter de les qualifier à tort de `superseded`.
+
+Déplacés hors superseded :
+
+- `WEBAPP_ARCHITECTURE_CDC/`
+- `MVP_QAIC_NOTICE_UTILISATION.css`
+- `MVP_QAIC_NOTICE_UTILISATION.html`
+- `MVP_QAIC_SHEETS_COCKPIT_BLUEPRINT.csv`
+- `MVP_QAIC_SHEETS_COCKPIT_BLUEPRINT.md`
+
+<!-- R16_SUPPORTING_ASSETS_TAXONOMY_END -->

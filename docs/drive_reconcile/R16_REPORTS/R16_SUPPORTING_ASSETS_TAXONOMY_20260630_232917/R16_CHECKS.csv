@@ -1,0 +1,14 @@
+check,required,ok,detail
+repo_exists,True,True,C:\JRb_TRADING_OS\MVP_QAIC_PY
+final_exists,True,True,C:\JRb_TRADING_OS\MVP_QAIC_PY\docs\FINAL
+inside_work_tree,True,True,true
+branch_master,True,True,master
+r15f_tag_present,True,True,2c197bdb64921e65f9e774815772f4be7594e984
+head_at_or_after_r15f,True,True,head=2c197bdb64921e65f9e774815772f4be7594e984 r15f=2c197bdb64921e65f9e774815772f4be7594e984
+status_before_clean_or_allowed_ui_config_only,True,True," M mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py
+?? config/
+?? mvp_qaic_reflex_ui/runtime_config_registry.py"
+support_dir_exists,True,True,docs/FINAL/_SUPPORTING_ASSETS_REFERENCE_v0.2.6
+support_expected_items_present,True,True,
+root_final_taxonomy_allowed_only,True,True,
+desktop_ini_remaining_under_FINAL,True,True,
