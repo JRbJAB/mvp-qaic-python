@@ -1,0 +1,16 @@
+{
+  "status": "OK_MVP_QAIC_R19B_SOURCE_FOLDER_READOUT_PENDING_COMMIT",
+  "head_before": "b8ed90f680ab11c5f2ebafda1aabf518ba148e0b",
+  "subject_before": "MVP QAIC source folder readonly audit R19",
+  "source_report_dir": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R19_REPORTS\\R19_SOURCE_FOLDER_AUDIT_20260701_002028",
+  "classification_counts": {
+    "MOVE_TO_99_ARCHIVES_CANDIDATE": 11,
+    "WINDOWS_NOISE_ARCHIVE_CANDIDATE": 2,
+    "HOLD_REVIEW": 1,
+    "MOVE_TO_DOMAIN_FOLDER_CANDIDATE": 11
+  },
+  "inventory_rows": 25,
+  "plan_rows": 25,
+  "verdict": "R20_APPLY_NOT_AUTOMATIC_REQUIRES_HUMAN_VALIDATION",
+  "timestamp_utc": "2026-06-30T22:27:50.473566+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PENDING_COMMIT",
+  "mode": "READONLY_LOCAL_SYNC_SOURCE_FOLDER_DEEP_AUDIT",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "signal_os_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "source_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\source",
+  "head_before": "5ffb0f288d7a5f523dfc641cd0597d2d96cf129f",
+  "subject_before": "MVP QAIC drive root desktop ini archive resume R18B",
+  "source_file_count": 25,
+  "total_bytes": 19359067,
+  "classification_counts": {
+    "MOVE_TO_99_ARCHIVES_CANDIDATE": 11,
+    "WINDOWS_NOISE_ARCHIVE_CANDIDATE": 2,
+    "HOLD_REVIEW": 1,
+    "MOVE_TO_DOMAIN_FOLDER_CANDIDATE": 11
+  },
+  "duplicate_hash_rows": 10,
+  "verdict": "R20_APPLY_NOT_AUTOMATIC_REQUIRES_HUMAN_VALIDATION",
+  "report_dir": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R19_REPORTS\\R19_SOURCE_FOLDER_AUDIT_20260701_002028"
+}
