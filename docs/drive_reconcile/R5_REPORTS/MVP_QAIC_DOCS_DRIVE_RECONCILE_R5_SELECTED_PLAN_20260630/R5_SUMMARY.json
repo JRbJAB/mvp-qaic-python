@@ -1,0 +1,49 @@
+{
+  "mode": "R5_SELECTED_PLAN_READ_ONLY",
+  "input_zip": "/mnt/data/MVP_QAIC_DOCS_DRIVE_RECONCILE_R4_DIGEST_PY_SAFE_20260630_180906.zip",
+  "source_file_count": 8420,
+  "target_docs_file_count": 284,
+  "proposed_action_count": 8637,
+  "selected_action_count": 128,
+  "selected_import_source_only_count": 85,
+  "selected_conflict_review_count": 28,
+  "selected_duplicate_archive_review_count": 15,
+  "excluded_deferred_count": 8509,
+  "selected_folder_count": 118,
+  "selected_by_bucket": {
+    "REVIEW_DRIVE_SHORTCUT_EXPORT_REQUIRED": 3,
+    "SELECT_00_ADMIN_INSTRUCTIONS_METADATA": 5,
+    "SELECT_MISC_FINAL_DOCS_CANDIDATE": 4,
+    "REVIEW_CONFLICT_SAME_NAME_DIFFERENT_HASH": 28,
+    "SELECT_01_DOCS_CDC_CANDIDATE": 4,
+    "SELECT_01_DOCS_PLANNING_CANDIDATE": 2,
+    "SELECT_01_DOCS_INSTRUCTIONS_CANDIDATE": 5,
+    "SELECT_01_DOCS_RUNBOOK_CANDIDATE": 30,
+    "SELECT_01_DOCS_PROMPTS_CANDIDATE": 7,
+    "SELECT_01_DOCS_ARCHITECTURE_CANDIDATE": 3,
+    "SELECT_01_DOCS_MANIFEST_CANDIDATE": 4,
+    "SELECT_01_DOCS_README_CANDIDATE": 12,
+    "SELECT_01_DOCS_NOTICE_UTILISATION_CANDIDATE": 1,
+    "SELECT_01_DOCS_SYNTHESE_CANDIDATE": 1,
+    "SELECT_01_DOCS_LEXIQUE_CANDIDATE": 1,
+    "ARCHIVE_SOURCE_DUPLICATE_EXACT_HASH_REVIEW": 15,
+    "SELECT_FINAL_FUSED_CANDIDATE": 3
+  },
+  "selected_by_source_top": {
+    "🧭 MVP_QAIC_FINAL_DOCS_FUSION_REFLEX_UI_PROCESS_R16E.md.gdoc": 1,
+    "00_ADMIN": 5,
+    "01_DOCS": 120,
+    "04_APPSHEET": 1,
+    "🧭 R16E — FUSION MAJ Docs Finales CDC Archi Web Instructions": 1
+  },
+  "selected_by_action": {
+    "IMPORT_SOURCE_ONLY_CANDIDATE": 85,
+    "REVIEW_SAME_NAME_DIFFERENT_HASH_OR_PATH": 28,
+    "ARCHIVE_SOURCE_ALREADY_PRESENT_BY_HASH": 15
+  },
+  "requires_validation_before_apply": true,
+  "no_write_source": true,
+  "no_write_target_docs": true,
+  "no_git_action": true,
+  "recommended_next": "R6_APPLY_SELECTED_FINAL_DOCS_TO_FUSION_INBOX_AFTER_VALIDATION"
+}

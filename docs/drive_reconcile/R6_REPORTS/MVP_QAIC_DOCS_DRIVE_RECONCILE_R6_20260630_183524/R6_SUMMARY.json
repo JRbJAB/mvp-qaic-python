@@ -1,0 +1,23 @@
+{
+  "status": "R6_LOCAL_FUSION_INBOX_PLUS_REPORTS_APPLIED_PENDING_GIT_PUSH",
+  "source_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "target_repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "target_docs": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs",
+  "selected_import_rows": 85,
+  "copied_or_present_count": 82,
+  "copied_count": 82,
+  "already_present_same_hash_count": 0,
+  "deferred_native_drive_export_count": 3,
+  "skipped_or_failed_count": 0,
+  "r5_reports_copied_count": 10,
+  "r6_report_dir": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R6_REPORTS\\MVP_QAIC_DOCS_DRIVE_RECONCILE_R6_20260630_183524",
+  "tag_name": "mvp-qaic-docs-drive-reconcile-r6-local-fusion-inbox-plus-reports-20260630",
+  "commit_message": "MVP QAIC docs drive reconcile R6 local fusion inbox",
+  "safety": {
+    "no_write_source_drive": true,
+    "no_drive_move": true,
+    "no_target_overwrite": true,
+    "no_git_add_dot": true,
+    "targeted_staging_only": true
+  }
+}

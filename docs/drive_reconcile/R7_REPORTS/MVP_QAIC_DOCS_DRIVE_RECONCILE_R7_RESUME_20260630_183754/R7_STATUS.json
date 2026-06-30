@@ -1,0 +1,23 @@
+{
+  "status": "R7_RESUME_READY_FOR_TARGETED_STAGE_COMMIT_TAG_PUSH",
+  "timestamp": "20260630_183754",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "tag": "mvp-qaic-docs-drive-reconcile-r6-local-fusion-inbox-plus-reports-20260630",
+  "commit_message": "MVP QAIC docs drive reconcile R6 local fusion inbox plus reports",
+  "allowed_stage_prefixes": [
+    "docs/FINAL/fusion_inbox_R6",
+    "docs/drive_reconcile/R5_REPORTS",
+    "docs/drive_reconcile/R6_REPORTS",
+    "docs/drive_reconcile/R7_REPORTS",
+    "docs/imported_from_crypto_signal_os"
+  ],
+  "counts": {
+    "fusion_inbox_R6_file_count": 78,
+    "r5_reports_file_count": 10,
+    "r6_reports_file_count": 6,
+    "imported_from_crypto_signal_os_file_count": 1
+  },
+  "drive_moves": false,
+  "target_overwrite": false,
+  "git_add_dot": false
+}

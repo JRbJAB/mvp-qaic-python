@@ -1,0 +1,82 @@
+{
+  "project": "🛠️ MVP QAIC — Crypto Signal OS",
+  "version": "0.6.2_REAL_FUSION_REPAIR",
+  "date": "2026-06-16",
+  "status": "DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR",
+  "verdict_previous_pack": "0.6.1_NOT_REAL_FUSION_REJECTED_REWORK_REQUIRED",
+  "source_documents": [
+    {
+      "title": "📘 CDC_MVP_QAIC_WEB_APP_LEXIQUE_FIRST_0.3.1_FULL_FUSION.md",
+      "lines": 705,
+      "bytes": 21874
+    },
+    {
+      "title": "🗓️ PLANNING_MVP_QAIC_WEB_APP_TRANSITION_QAIC_0.3.1_FULL_FUSION.md",
+      "lines": 827,
+      "bytes": 19641
+    },
+    {
+      "title": "🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.5.0_UI_FULL_FUSION_AND_SMART_CONSOLIDATION.md",
+      "lines": 1440,
+      "bytes": 38071
+    }
+  ],
+  "generated_files": [
+    {
+      "title": "README_VALIDATION_PACK_MVP_QAIC_0.6.2_REAL_FUSION_REPAIR.md",
+      "lines": 33,
+      "bytes": 1260
+    },
+    {
+      "title": "📘 CDC_MVP_QAIC_WEB_APP_LEXIQUE_FIRST_0.6.2_REAL_FUSION_REPAIR.md",
+      "lines": 828,
+      "bytes": 27670
+    },
+    {
+      "title": "🔎 AUDIT_MVPQAIC_REFERENCE_DOCS_0.6.1_TO_0.6.2.md",
+      "lines": 52,
+      "bytes": 2503
+    },
+    {
+      "title": "🗓️ PLANNING_MVP_QAIC_WEB_APP_TRANSITION_QAIC_0.6.2_REAL_FUSION_REPAIR.md",
+      "lines": 1003,
+      "bytes": 26933
+    },
+    {
+      "title": "🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.6.2_REAL_FUSION_REPAIR.md",
+      "lines": 1601,
+      "bytes": 45827
+    },
+    {
+      "title": "🧠 SYNTHESE_MVP_QAIC_PROJECT_CONTEXT_0.6.2_REAL_FUSION_REPAIR.md",
+      "lines": 22,
+      "bytes": 1057
+    },
+    {
+      "title": "🧪 PLAN_TRANSITION_PORTFOLIO_BROKER_AUTOMATION_MVP_0.6.2.md",
+      "lines": 66,
+      "bytes": 2021
+    },
+    {
+      "title": "🧭 RUNBOOK_MVP_QAIC_APPSHEET_MANUAL_BUILD_0.6.2.md",
+      "lines": 61,
+      "bytes": 2234
+    },
+    {
+      "title": "🧱 ARCHITECTURE_MVP_QAIC_LEXIQUE_FIRST_APPSHEET_QAIC_PYTHON_0.6.2.md",
+      "lines": 137,
+      "bytes": 5112
+    },
+    {
+      "title": "🧾 CHANGELOG_MVP_QAIC_REFERENCE_DOCS_0.6.2.md",
+      "lines": 11,
+      "bytes": 793
+    }
+  ],
+  "rules_added": [
+    "No FULL_FUSION claim without source audit",
+    "Portfolio Revolut X read-only then controlled execution transition",
+    "Automation orders/TP/SL/trailing not excluded; prepared and tested via QAIC Python under gates",
+    "Live broker execution forbidden by default until explicit gated validation"
+  ]
+}
