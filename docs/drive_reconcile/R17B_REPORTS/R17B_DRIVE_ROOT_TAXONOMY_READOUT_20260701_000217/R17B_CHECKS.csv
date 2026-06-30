@@ -1,0 +1,15 @@
+check,required,ok,detail
+repo_exists,True,True,C:\JRb_TRADING_OS\MVP_QAIC_PY
+inside_work_tree,True,True,true
+branch_master,True,True,master
+r17_tag_present,True,True,895aa02af00b4f496552410945e593ab43568b72
+status_before_clean_or_allowed_ui_config_only,True,True,CLEAN
+r17_reports_dir_exists,True,True,C:\JRb_TRADING_OS\MVP_QAIC_PY\docs\drive_reconcile\R17_REPORTS
+r17_report_candidate_found,True,True,count=1
+plan_nonempty,True,True,rows=13
+inventory_nonempty,True,True,rows=13
+taxonomy_classification_column_detected,False,True,classification
+item_name_column_detected,False,True,name
+read_only_no_drive_write,True,True,R17B generated local reports only
+taxonomy_counts_available,True,True,rows=4
+verdict_available,True,True,R18_APPLY_NOT_AUTOMATIC_REQUIRES_HUMAN_VALIDATION

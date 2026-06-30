@@ -1,0 +1,29 @@
+{
+  "status": "READY_FOR_HUMAN_DECISION",
+  "mode": "READONLY_R17_REPORTS_TAXONOMY_SUMMARY",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "head_before": "895aa02af00b4f496552410945e593ab43568b72",
+  "subject_before": "MVP QAIC drive root taxonomy audit R17",
+  "r17_source_report_dir": "docs\\drive_reconcile\\R17_REPORTS\\R17_DRIVE_ROOT_TAXONOMY_AUDIT_20260630_235017",
+  "inventory_rows": 13,
+  "plan_rows": 13,
+  "classification_column": "classification",
+  "item_column": "name",
+  "counts": {
+    "KEEP_ROOT_ACTIVE": 11,
+    "HOLD_REVIEW": 1,
+    "MOVE_TO_99_ARCHIVES_CANDIDATE": 1
+  },
+  "expected_counts": {
+    "KEEP_ROOT_ACTIVE": 11,
+    "MOVE_TO_99_ARCHIVES_CANDIDATE": 1,
+    "MOVE_TO_DOMAIN_FOLDER_CANDIDATE": 0,
+    "HOLD_REVIEW": 1
+  },
+  "verdict": "R18_APPLY_NOT_AUTOMATIC_REQUIRES_HUMAN_VALIDATION",
+  "no_drive_write": true,
+  "no_delete": true,
+  "no_reset": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true
+}
