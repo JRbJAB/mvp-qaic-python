@@ -1,0 +1,12 @@
+{
+  "status": "OK_MVP_QAIC_DOCS_DRIVE_RECONCILE_R9D_LOCAL_SYNC_REMAINING_MOVES_COMMITTED_TAGGED_PUSHED",
+  "timestamp": "20260630_192303",
+  "source_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "archive_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\99_ARCHIVES\\R9_EXTERNAL_RANGEMENT_ARCHIVE_CANDIDATES_20260630",
+  "already_moved_by_connector_count": 6,
+  "remaining_move_count": 3,
+  "failure_count": 0,
+  "failures": [],
+  "no_delete": true,
+  "no_git_add_dot": true
+}
