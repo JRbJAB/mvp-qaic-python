@@ -1,0 +1,2 @@
+path,action,reason,source_drive_write,reset,target_size_bytes
+docs/drive_reconcile/R13_REPORTS/desktop.ini,git_rm_tracked_windows_noise,desktop.ini is Windows Explorer metadata noise and must not remain tracked in docs reports,FALSE,FALSE,106

@@ -1,0 +1,12 @@
+{
+  "status": "PRE_COMMIT_R13B_CLEANUP_READY",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "head_before": "4f6e1afbca333dcf35c583301410a87560924195",
+  "subject_before": "MVP QAIC finalize R12B UI dirty carryover restored initial render",
+  "r13_tag": "mvp-qaic-r13-ui-dirty-carryover-finalize-20260630",
+  "target": "docs/drive_reconcile/R13_REPORTS/desktop.ini",
+  "no_delete_source_drive": true,
+  "no_reset": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true
+}
