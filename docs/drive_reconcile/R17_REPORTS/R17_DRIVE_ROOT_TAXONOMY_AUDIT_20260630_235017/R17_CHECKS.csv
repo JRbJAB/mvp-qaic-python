@@ -1,0 +1,12 @@
+check,required,ok,detail
+repo_exists,True,True,C:\JRb_TRADING_OS\MVP_QAIC_PY
+inside_work_tree,True,True,
+branch_master,True,True,master
+r16c_tag_present,True,True,8659fb37914c67cd8ddd511e3ab8238bb22f27db
+status_before_clean_or_allowed_ui_config_only,True,True,CLEAN
+signal_os_root_found,True,True,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS
+inventory_nonempty,True,True,rows=13
+expected_domain_folder_presence_review,False,True,missing_expected=NONE extra=NONE
+read_only_no_drive_write,True,True,R17 generated reports only
+targeted_staging_only,True,True,
+staged_nonempty,True,True,count=8

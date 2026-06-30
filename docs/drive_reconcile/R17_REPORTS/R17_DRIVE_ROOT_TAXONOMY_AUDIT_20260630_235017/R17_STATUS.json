@@ -1,0 +1,21 @@
+{
+  "status": "READY_TO_COMMIT_R17_REPORTS",
+  "mode": "READONLY_LOCAL_SYNC_DRIVE_ROOT_TAXONOMY_AUDIT",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "drive_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "drive_url": "https://drive.google.com/drive/folders/17m43SesFa13gXbiWBoAYXYvi-1X0h9ds",
+  "head_before": "8659fb37914c67cd8ddd511e3ab8238bb22f27db",
+  "subject_before": "MVP QAIC recover R16 supporting webapp architecture pack R16C",
+  "status_before": "CLEAN",
+  "taxonomy_counts": {
+    "KEEP_ROOT_ACTIVE": 11,
+    "HOLD_REVIEW": 1,
+    "MOVE_TO_99_ARCHIVES_CANDIDATE": 1
+  },
+  "report_dir": "docs\\drive_reconcile\\R17_REPORTS\\R17_DRIVE_ROOT_TAXONOMY_AUDIT_20260630_235017",
+  "no_drive_write": true,
+  "no_delete": true,
+  "no_reset": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true
+}
