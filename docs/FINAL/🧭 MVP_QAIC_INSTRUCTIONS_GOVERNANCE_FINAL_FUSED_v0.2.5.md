@@ -1,11 +1,83 @@
-﻿# 🧭 Instructions & Gouvernance — Version finale fusionnée
+# 🧭 MVP QAIC — Instructions & Gouvernance finales
 
-**Version :** `0.2.2`
-**Statut :** `P203B2_R3_FINAL_FUSION_CONTENT_CANDIDATE`
-**Date :** `2026-06-24 17:10:59`
-**Theme :** `INSTRUCTIONS_GOVERNANCE`
-**Source P203A :** `G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P203A_R2_EXACT_3_ROOTS_DOCS_AUDIT_20260624_161358`
-**Source P203B1 :** `G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P203B1_R2_DOC_LEGITIMACY_GATE_MD_20260624_163254`
+| Champ | Valeur |
+|---|---|
+| **Version** | `0.2.5` |
+| **Statut** | `MVP_DOCS_FINAL_GOVERNANCE_AUDITED_FORMATTED_R1` |
+| **Date** | `2026-06-29` |
+| **Format livrable** | `.md` — Markdown + emoji + mise en forme professionnelle |
+| **Dossier canonique** | `C:\JRb_TRADING_OS\MVP_QAIC_PY\docs\FINAL` |
+| **Fichier cible** | `🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.5.md` |
+| **Thème** | `INSTRUCTIONS_GOVERNANCE` |
+| **Source P203A** | `G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P203A_R2_EXACT_3_ROOTS_DOCS_AUDIT_20260624_161358` |
+| **Source P203B1** | `G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P203B1_R2_DOC_LEGITIMACY_GATE_MD_20260624_163254` |
+
+## 🚨 Règles live prioritaires
+
+### 🔒 Source unique
+
+La source unique des instructions finales MVP QAIC est :
+
+`C:\JRb_TRADING_OS\MVP_QAIC_PY\docs\FINAL`
+
+Les documents de ce dossier priment sur la mémoire, les anciens échanges, les packs précédents, les notes temporaires et tout document résiduel.
+
+### 🧠 Obligation assistant / Codex
+
+Avant toute réponse projet, proposition de pack, correction, versioning, conclusion de statut, décision de séquence ou action sur runner, l'assistant ou Codex doit lire les instructions live disponibles dans `docs/FINAL`.
+
+Il est interdit de partir de mémoire ou de supposer que les instructions connues précédemment suffisent.
+
+### ⛔ Interdits documentaires
+
+- Ne pas créer d'instructions finales ailleurs sans demande explicite.
+- Ne pas faire de `docs/dev_tracking/runner_quality` une source canonique d'instructions finales.
+- Ne pas utiliser `AGENTS.md` comme source canonique ; il ne peut servir que de pointeur vers `docs/FINAL`.
+- Ne pas lancer ni annoncer un audit complet quand une fusion ciblée dans le document final suffit.
+- Ne pas accumuler de documents résiduels pour contourner la fusion dans `docs/FINAL`.
+- Ne pas produire de Google Doc natif comme livrable final quand le contrat impose `.md`.
+
+### 🛡️ Règles runner intégrées
+
+- Aucun Python interactif : jamais de lancement `python` / `python.exe` sans script `.py` ou `-m module`.
+- Aucun Git sans sous-commande explicite.
+- Aucun argument vide silencieux.
+- Pas de `New-Item -LiteralPath` pour créer un dossier ; utiliser une méthode compatible PS5.1/PS7, idéalement `[System.IO.Directory]::CreateDirectory(...)`.
+- Pas de wrapper Git/Python générique non préflighté.
+- Les métriques informatives ne bloquent pas, notamment le volume total de `.web`.
+- Le statut final doit séparer `EVIDENCE_OK`, `RUNNER_OK` et `FINAL_STATUS`.
+- Après deux défauts de glue shell, arrêter les correctifs en chaîne et produire d'abord une cause racine, puis une fusion ciblée des instructions.
+
+### 🧪 Décision R2A Reflex
+
+Les runs R2A/R3/R5 ont montré que Reflex backend-only privé, route binding, readiness, handoff, pytest, Ruff, format et forbidden shim étaient OK. Les blocages successifs provenaient de défauts de runners et de critères de validation, pas de Reflex lui-même.
+
+## ✅ Audit de remise en forme v0.2.5
+
+| Contrôle | Résultat |
+|---|---:|
+| Lignes source auditées | `1844` |
+| Caractères source audités | `98657` |
+| Sections source détectées | `195` |
+| Titres H1 source détectés avant normalisation | `29` |
+| Items source fusionnés détectés | `60` |
+| Lignes de tableaux détectées | `122` |
+| Fences backtick source détectées | `189` |
+| Hiérarchie Markdown normalisée | `oui` |
+| Extraits source conservés sous blocs `~~~~text` | `oui` |
+| Source canonique rappelée en tête | `oui` |
+| Livrable final `.md` | `oui` |
+| Google Doc natif canonique | `non` |
+
+## 📚 Sommaire opérationnel
+
+1. 🎯 Finalité
+2. 📌 Synthèse de fusion
+3. ✅ Sources intégrées dans la candidate
+4. 🧩 Contenu fusionné par source
+5. 🧊 Sources conservées hors fusion
+6. 🚦 Décision
+7. 🏭 Reflex Factory R6C — instructions fusionnées
 
 ## 1. 🎯 Finalité
 
@@ -90,13 +162,18 @@ Elle ne supprime aucun fichier source et n'autorise pas encore l'archivage autom
 
 ## 4. 🧩 Contenu fusionné par source
 
-### ITEM-002485 — `01_DOCS\FINAL_FUSED\MVP_QAIC_PY\MVP_QAIC_DOC_GOVERNANCE.md`
+> Les contenus source historiques sont conservés intégralement comme extraits textuels sous chaque item. Les titres internes et fences d'origine sont neutralisés dans des blocs `~~~~text` pour préserver une hiérarchie Markdown propre.
+
+### 📎 ITEM-002485 — `01_DOCS\FINAL_FUSED\MVP_QAIC_PY\MVP_QAIC_DOC_GOVERNANCE.md`
 
 - **Légitimité :** `INCLUDE_FINAL_CANDIDATE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `FINAL_CURRENT_OR_CANDIDATE`
 - **Dernière modification :** `2026-06-24T14:48:47`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # MVP QAIC — Gouvernance documentaire
 
@@ -105,14 +182,18 @@ Elle ne supprime aucun fichier source et n'autorise pas encore l'archivage autom
 - Dossier principal = miroir opérateur.
 - Aucune suppression automatique.
 ```
+~~~~
 
-### ITEM-001297 — `00_ADMIN\CHANGELOG_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
+### 📎 ITEM-001297 — `00_ADMIN\CHANGELOG_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T21:04:56`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🧾 CHANGELOG — MVP QAIC Instructions 0.4.9
 
@@ -129,14 +210,18 @@ Le MVP QAIC reprend la discipline QAIC, pas son runtime complet.
 Le développement se fait par batchs fonctionnels complets.
 ```
 ```
+~~~~
 
-### ITEM-001295 — `00_ADMIN\MANIFEST_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
+### 📎 ITEM-001295 — `00_ADMIN\MANIFEST_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T21:04:56`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 📦 MANIFEST — MVP QAIC Instructions 0.4.9
 
@@ -164,14 +249,18 @@ VERSION_COURTE_PROJET_CHATGPT_MVP_QAIC_0.4.9.md
 PROJECT_INSTRUCTIONS_CURATED_BATCH_DEV_GOVERNANCE_READY_FOR_REVIEW
 ```
 ```
+~~~~
 
-### ITEM-001296 — `00_ADMIN\README_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
+### 📎 ITEM-001296 — `00_ADMIN\README_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T21:04:56`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 📘 README — MVP QAIC Instructions 0.4.9
 
@@ -215,14 +304,18 @@ broker execution
 portefeuille réel comme dépendance MVP
 ```
 ```
+~~~~
 
-### ITEM-002456 — `01_DOCS\CHANGELOG\CHANGELOG_MVP_QAIC_INSTRUCTIONS_0.5.0.md`
+### 📎 ITEM-002456 — `01_DOCS\CHANGELOG\CHANGELOG_MVP_QAIC_INSTRUCTIONS_0.5.0.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-12T12:52:30`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🧾 CHANGELOG — MVP QAIC Instructions 0.5.0
 
@@ -247,14 +340,18 @@ portefeuille réel comme dépendance MVP
 - L’addendum UI est absorbé dans le master.
 - Les prochaines livraisons doivent partir du document complet, pas d’un addendum court.
 ```
+~~~~
 
-### ITEM-001330 — `01_DOCS\INSTRUCTIONS\INSTRUCTIONS_UI_IMPERATIVE_MVP_QAIC_1.0.2.md`
+### 📎 ITEM-001330 — `01_DOCS\INSTRUCTIONS\INSTRUCTIONS_UI_IMPERATIVE_MVP_QAIC_1.0.2.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-12T12:40:04`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🧭 Instructions impératives UI — MVP QAIC — 1.0.2
 
@@ -292,14 +389,18 @@ Chaque onglet visible du MVP QAIC doit être un cockpit opérationnel lisible, p
 ## Règle spéciale mémoire projet
 Cette règle UI est prioritaire pour tous les futurs scripts MVP QAIC / QAIC / QAIT : pas de livraison “fonctionnelle mais illisible”.
 ```
+~~~~
 
-### ITEM-001333 — `01_DOCS\INSTRUCTIONS\PROCESS_GOVERNANCE_073\INSTRUCTIONS_PROCESS_GOVERNANCE_BATCH_MAXI_FAST_FUSE_0.7.3.md`
+### 📎 ITEM-001333 — `01_DOCS\INSTRUCTIONS\PROCESS_GOVERNANCE_073\INSTRUCTIONS_PROCESS_GOVERNANCE_BATCH_MAXI_FAST_FUSE_0.7.3.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T10:38:16`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🚀 Instructions Projet — MVP QAIC Process Governance 0.7.3
 ## 1. Règle ferme de développement
@@ -417,14 +518,18 @@ NO_HALF_SCRIPT = TRUE
 NO_LONG_DOC_INLINE_IF_ZIP_BETTER = TRUE
 ```
 ```
+~~~~
 
-### ITEM-001329 — `01_DOCS\INSTRUCTIONS\VERSION_COURTE_PROJET_CHATGPT_MVP_QAIC_0.4.9.md`
+### 📎 ITEM-001329 — `01_DOCS\INSTRUCTIONS\VERSION_COURTE_PROJET_CHATGPT_MVP_QAIC_0.4.9.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T21:04:56`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 📋 Version courte Projet ChatGPT — MVP QAIC 0.4.9
 
@@ -449,14 +554,18 @@ Outils : PowerShell pour actions simples ; Codex uniquement pour tâches multi-f
 
 Drive : respecter la racine 📈 QAIC/🛠️ MVP QAIC — Cryp
 ```
+~~~~
 
-### ITEM-001331 — `01_DOCS\INSTRUCTIONS\🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.6.2_REAL_FUSION_REPAIR.md`
+### 📎 ITEM-001331 — `01_DOCS\INSTRUCTIONS\🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.6.2_REAL_FUSION_REPAIR.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T01:40:04`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🚀 Instructions Projet — MVP QAIC Web App Lexique-first — 0.5.0
 ## 0. 🧾 Historique des changements
@@ -511,14 +620,18 @@ Ta mission est d’aider à construire rapidement une **Web App crypto Lexique-f
 - les playbooks de risque ;
 - les checklists quoti
 ```
+~~~~
 
-### ITEM-001332 — `01_DOCS\INSTRUCTIONS\🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.7.2_REAL_FULL_SOURCE_FUSION.md`
+### 📎 ITEM-001332 — `01_DOCS\INSTRUCTIONS\🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.7.2_REAL_FULL_SOURCE_FUSION.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T09:40:42`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🚀 Instructions Projet — MVP QAIC Web App Lexique-first — 0.5.0
 ## 0. 🧾 Historique des changements
@@ -572,14 +685,18 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 ## 1. 🎯
 ```
+~~~~
 
-### ITEM-002441 — `01_DOCS\MANIFEST\MANIFEST_MVP_QAIC_INSTRUCTIONS_0.5.0_UI_FULL_FUSION.md`
+### 📎 ITEM-002441 — `01_DOCS\MANIFEST\MANIFEST_MVP_QAIC_INSTRUCTIONS_0.5.0_UI_FULL_FUSION.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-12T12:52:30`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 📦 MANIFEST — MVP QAIC Instructions 0.5.0 UI Full Fusion
 
@@ -626,14 +743,18 @@ PROMPT_IMPROVEMENT_QUEUE ouvert après boucle qualité
 PROMPT_LIBRARY ouvert après application draft
 ```
 ```
+~~~~
 
-### ITEM-002450 — `01_DOCS\README\README_MVP_QAIC_INSTRUCTIONS_0.5.0.md`
+### 📎 ITEM-002450 — `01_DOCS\README\README_MVP_QAIC_INSTRUCTIONS_0.5.0.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-12T12:52:30`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 📘 README — MVP QAIC Instructions 0.5.0
 
@@ -667,14 +788,18 @@ UI_COCKPIT_OBLIGATOIRE
 01_DOCS/INSTRUCTIONS/
 ```
 ```
+~~~~
 
-### ITEM-002449 — `01_DOCS\README\README_MVP_QAIC_P2L_JOURNAL_UI_AND_INSTRUCTIONS_1.0.2_SAFE.md`
+### 📎 ITEM-002449 — `01_DOCS\README\README_MVP_QAIC_P2L_JOURNAL_UI_AND_INSTRUCTIONS_1.0.2_SAFE.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-12T12:40:04`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # MVP QAIC P2-L — Journal UI & Instructions 1.0.2 SAFE
 
@@ -699,36 +824,48 @@ Remplacer uniquement :
 - No broker/order/sizing/secret.
 - Journal append bloqué si champs essentiels vides.
 ```
+~~~~
 
-### ITEM-002460 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\00_ORIGINAL_SOURCES_UNMODIFIED\ORIGINAL__🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.6.2_REAL_FUSION_REPAIR.md`
+### 📎 ITEM-002460 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\00_ORIGINAL_SOURCES_UNMODIFIED\ORIGINAL__🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.6.2_REAL_FUSION_REPAIR.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T09:49:23`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 _Contenu non lisible ou vide._
 ```
+~~~~
 
-### ITEM-002466 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\01_FUSED_DOCS_0.7.2\🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.7.2_REAL_FULL_SOURCE_FUSION.md`
+### 📎 ITEM-002466 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\01_FUSED_DOCS_0.7.2\🚀 INSTRUCTIONS_PROJET_MVP_QAIC_0.7.2_REAL_FULL_SOURCE_FUSION.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T09:47:41`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 _Contenu non lisible ou vide._
 ```
+~~~~
 
-### ITEM-002472 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\02_AUDIT_AND_DIFF_NOTES\AUDIT_INSTRUCTIONS_PROCESS_PATCH_0.7.3.md`
+### 📎 ITEM-002472 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\02_AUDIT_AND_DIFF_NOTES\AUDIT_INSTRUCTIONS_PROCESS_PATCH_0.7.3.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T11:58:01`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🧾 Audit résiduel instructions — MVP QAIC 0.7.3
 
@@ -780,14 +917,18 @@ NO_ORDER
 NO_SIZING
 ```
 ```
+~~~~
 
-### ITEM-002473 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\02_AUDIT_AND_DIFF_NOTES\GOVERNANCE_AUDIT_073\AUDIT_RESIDUAL_DOCS_PROCESS_0.7.3.md`
+### 📎 ITEM-002473 — `01_DOCS\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\02_AUDIT_AND_DIFF_NOTES\GOVERNANCE_AUDIT_073\AUDIT_RESIDUAL_DOCS_PROCESS_0.7.3.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T10:39:07`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🧾 Audit résiduel instructions/docs — MVP QAIC 0.7.3
 ## 1. Résumé
@@ -845,14 +986,18 @@ Les documents 0.7.2 sont bien présents, mais des documents résiduels 0.6.2 res
   > 0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT
   > 0.6.2
 ```
+~~~~
 
-### ITEM-001363 — `01_DOCS\RUNBOOK\CHAT_DEV_RULES_073\RUNBOOK_CHAT_DEV_DELIVERY_RULES_0.7.3.md`
+### 📎 ITEM-001363 — `01_DOCS\RUNBOOK\CHAT_DEV_RULES_073\RUNBOOK_CHAT_DEV_DELIVERY_RULES_0.7.3.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T10:38:51`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🧭 Runbook — Chat & Dev Delivery Rules 0.7.3
 
@@ -918,14 +1063,18 @@ LIENS / EMPLACEMENTS
 NEXT ACTION
 ```
 ```
+~~~~
 
-### ITEM-001975 — `01_DOCS\VALIDATION\P11C_KICKOFF_20260616-200914\P11C_RULES_20260616-200914.csv`
+### 📎 ITEM-001975 — `01_DOCS\VALIDATION\P11C_KICKOFF_20260616-200914\P11C_RULES_20260616-200914.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T20:09:18`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","rule_id","rule_name","value","apply_now"
 "P11C-DEV-KICKOFF-20260616-200914","RULE_01","NO_LIVE_APPLY_BY_DEFAULT","ACTIVE","NO"
@@ -937,14 +1086,18 @@ NEXT ACTION
 "P11C-DEV-KICKOFF-20260616-200914","RULE_07","ZIP_DELIVERABLES","ACTIVE","NO"
 "P11C-DEV-KICKOFF-20260616-200914","RULE_08","ASCII_PS51_SAFE","ACTIVE","NO"
 ```
+~~~~
 
-### ITEM-001982 — `01_DOCS\VALIDATION\P12A_DEV_20260616-201345\P12A_RULES_20260616-201345.csv`
+### 📎 ITEM-001982 — `01_DOCS\VALIDATION\P12A_DEV_20260616-201345\P12A_RULES_20260616-201345.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T20:13:49`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","rule","status","apply_now"
 "P12A-ARCH-BACKLOG-20260616-201345","Complete scripts only, no patch fragments","ACTIVE","NO"
@@ -954,14 +1107,18 @@ NEXT ACTION
 "P12A-ARCH-BACKLOG-20260616-201345","No broker, order, sizing, or secrets","ACTIVE","NO"
 "P12A-ARCH-BACKLOG-20260616-201345","ASCII PowerShell 5.1 safe, short names, ZIP deliverables","ACTIVE","NO"
 ```
+~~~~
 
-### ITEM-001989 — `01_DOCS\VALIDATION\P12B_DEV_20260616-202158\P12B_RULES_20260616-202158.csv`
+### 📎 ITEM-001989 — `01_DOCS\VALIDATION\P12B_DEV_20260616-202158\P12B_RULES_20260616-202158.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T20:22:01`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","rule","status","apply_now"
 "P12B-FIRST-DEV-20260616-202158","Generated Apps Script file is local review only","ACTIVE","NO"
@@ -971,14 +1128,18 @@ NEXT ACTION
 "P12B-FIRST-DEV-20260616-202158","No AppSheet API","ACTIVE","NO"
 "P12B-FIRST-DEV-20260616-202158","No broker, order, sizing, or secrets","ACTIVE","NO"
 ```
+~~~~
 
-### ITEM-002006 — `01_DOCS\VALIDATION\P12D_ARCH_20260617-003850\P12D_RULES_20260617-003850.csv`
+### 📎 ITEM-002006 — `01_DOCS\VALIDATION\P12D_ARCH_20260617-003850\P12D_RULES_20260617-003850.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-17T00:38:53`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","rule","status","apply_now"
 "P12D-ARCH-HANDOFF-20260617-003850","Human review only","ACTIVE","NO"
@@ -990,14 +1151,18 @@ NEXT ACTION
 "P12D-ARCH-HANDOFF-20260617-003850","No broker, order, sizing, or secrets","ACTIVE","NO"
 "P12D-ARCH-HANDOFF-20260617-003850","Complete scripts only, ZIP deliverables","ACTIVE","NO"
 ```
+~~~~
 
-### ITEM-002048 — `01_DOCS\VALIDATION\P12J_EXP_PLAN_20260617-013209\P12J_EXPANSION_RULES_20260617-013209.csv`
+### 📎 ITEM-002048 — `01_DOCS\VALIDATION\P12J_EXP_PLAN_20260617-013209\P12J_EXPANSION_RULES_20260617-013209.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-17T01:32:12`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","rule_id","rule","severity","apply_now"
 "P12J-EXP-SEED-PLAN-20260617-013209","R01","All expanded terms stay DRAFT until human review","HIGH","NO"
@@ -1006,14 +1171,18 @@ NEXT ACTION
 "P12J-EXP-SEED-PLAN-20260617-013209","R04","No Sheet write, no Apps Script execution, no clasp push","BLOCKING","NO"
 "P12J-EXP-SEED-PLAN-20260617-013209","R05","Expanded seed source must be reviewed before any future import decision","HIGH","NO"
 ```
+~~~~
 
-### ITEM-002081 — `01_DOCS\VALIDATION\P12O_WORKBENCH_20260617-101344\P12O_REVIEW_INSTRUCTIONS_20260617-101344.csv`
+### 📎 ITEM-002081 — `01_DOCS\VALIDATION\P12O_WORKBENCH_20260617-101344\P12O_REVIEW_INSTRUCTIONS_20260617-101344.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-17T10:13:50`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","step","instruction","allowed_values","apply_now"
 "P12O-WORKBENCH-20260617-101344","1","Review P0 risk rules first","VALIDATE|EDIT|REJECT|DEFER","NO"
@@ -1021,14 +1190,18 @@ NEXT ACTION
 "P12O-WORKBENCH-20260617-101344","3","Keep unresolved terms as REVIEW_REQUIRED","REVIEW_REQUIRED","NO"
 "P12O-WORKBENCH-20260617-101344","4","Never authorize live import from this pack","NO","NO"
 ```
+~~~~
 
-### ITEM-002233 — `01_DOCS\VALIDATION\P16S_20260617_132229\P16S_BROWSER_OPEN_INSTRUCTIONS.md`
+### 📎 ITEM-002233 — `01_DOCS\VALIDATION\P16S_20260617_132229\P16S_BROWSER_OPEN_INSTRUCTIONS.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-17T13:22:29`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # MVP QAIC P16S - Browser Smoke Test
 
@@ -1053,14 +1226,18 @@ Use P16S_HUMAN_BROWSER_CHECKLIST.csv.
 ## Next
 P16T_HUMAN_BROWSER_CONFIRMATION_DECISION_LOCAL_ONLY
 ```
+~~~~
 
-### ITEM-001633 — `01_DOCS\VALIDATION\P7B_APP_ARCHITECTURE_BLUEPRINT_MAXI_20260616-131045\P7B_SAFETY_AND_VALIDATION_RULES_MAXI_20260616-131045.csv`
+### 📎 ITEM-001633 — `01_DOCS\VALIDATION\P7B_APP_ARCHITECTURE_BLUEPRINT_MAXI_20260616-131045\P7B_SAFETY_AND_VALIDATION_RULES_MAXI_20260616-131045.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T13:10:47`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","rule","status","applies_to"
 "P7B-BLUEPRINT-20260616-131045","HUMAN_REVIEW_ONLY","ACTIVE","ALL_MODULES"
@@ -1071,14 +1248,18 @@ P16T_HUMAN_BROWSER_CONFIRMATION_DECISION_LOCAL_ONLY
 "P7B-BLUEPRINT-20260616-131045","NO_APPLY","ACTIVE","P7B"
 "P7B-BLUEPRINT-20260616-131045","NO_DELETE_HIDE_RENAME","ACTIVE","ALL_TABLES"
 ```
+~~~~
 
-### ITEM-001645 — `01_DOCS\VALIDATION\P7B_APP_ARCHITECTURE_BLUEPRINT_MAXI_20260616-131312\P7B_SAFETY_AND_VALIDATION_RULES_MAXI_20260616-131312.csv`
+### 📎 ITEM-001645 — `01_DOCS\VALIDATION\P7B_APP_ARCHITECTURE_BLUEPRINT_MAXI_20260616-131312\P7B_SAFETY_AND_VALIDATION_RULES_MAXI_20260616-131312.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T13:13:15`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","rule","status","applies_to"
 "P7B-BLUEPRINT-20260616-131312","HUMAN_REVIEW_ONLY","ACTIVE","ALL_MODULES"
@@ -1089,14 +1270,18 @@ P16T_HUMAN_BROWSER_CONFIRMATION_DECISION_LOCAL_ONLY
 "P7B-BLUEPRINT-20260616-131312","NO_APPLY","ACTIVE","P7B"
 "P7B-BLUEPRINT-20260616-131312","NO_DELETE_HIDE_RENAME","ACTIVE","ALL_TABLES"
 ```
+~~~~
 
-### ITEM-001661 — `01_DOCS\VALIDATION\P8A_QAIC_REVOLUT_X_COMPATIBILITY_AUDIT_NO_APPLY_20260616-152359\P8A_REVOLUT_X_EXECUTION_POLICY_MATRIX_20260616-152359.csv`
+### 📎 ITEM-001661 — `01_DOCS\VALIDATION\P8A_QAIC_REVOLUT_X_COMPATIBILITY_AUDIT_NO_APPLY_20260616-152359\P8A_REVOLUT_X_EXECUTION_POLICY_MATRIX_20260616-152359.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T15:24:06`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "run_id","capability","current_status","required_gate","notes"
 "P8A-QAIC-REVX-AUDIT-20260616-152359","CSV_IMPORT_PORTFOLIO","ALLOWED","HUMAN_IMPORT","No API, no secret"
@@ -1110,14 +1295,18 @@ P16T_HUMAN_BROWSER_CONFIRMATION_DECISION_LOCAL_ONLY
 "P8A-QAIC-REVX-AUDIT-20260616-152359","AUTO_SIZING","BLOCKED_ALWAYS","NONE","Human sizing only"
 "P8A-QAIC-REVX-AUDIT-20260616-152359","SECRET_IN_SHEET_OR_APPS_SCRIPT","BLOCKED_ALWAYS","NONE","Use local secret folder or future Secret Manager"
 ```
+~~~~
 
-### ITEM-001731 — `01_DOCS\VALIDATION\P8E_REVOLUT_X_QAIC_DOCS_PACK_NO_APPLY_20260616-160712\MVPQAIC_REVOLUT_X_SAFETY_POLICY_20260616-160712.md`
+### 📎 ITEM-001731 — `01_DOCS\VALIDATION\P8E_REVOLUT_X_QAIC_DOCS_PACK_NO_APPLY_20260616-160712\MVPQAIC_REVOLUT_X_SAFETY_POLICY_20260616-160712.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-16T16:07:15`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # MVP QAIC - Revolut X Safety Policy
 
@@ -1144,14 +1333,18 @@ They require official API documentation, rights confirmation, security governanc
 ## Kill switch
 A KILL_SWITCH object is required before any future broker execution design can move beyond documentation.
 ```
+~~~~
 
-### ITEM-001395 — `01_DOCS\VALIDATION\VALIDATION_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
+### 📎 ITEM-001395 — `01_DOCS\VALIDATION\VALIDATION_MVP_QAIC_INSTRUCTIONS_0.4.9.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T21:04:56`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # 🧪 VALIDATION — MVP QAIC Instructions 0.4.9
 
@@ -1182,14 +1375,18 @@ final_0.4.9_lines = 1216
 0.4.9 = curated MVP governance, not raw QAIC Master merge.
 ```
 ```
+~~~~
 
-### ITEM-001405 — `01_DOCS\VALIDATION\VALIDATION_MVP_QAIC_INSTRUCTIONS_0.5.0.md`
+### 📎 ITEM-001405 — `01_DOCS\VALIDATION\VALIDATION_MVP_QAIC_INSTRUCTIONS_0.5.0.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-12T12:52:30`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # ✅ VALIDATION — MVP QAIC Instructions 0.5.0
 
@@ -1211,14 +1408,18 @@ final_0.4.9_lines = 1216
 GO_FOR_DRIVE_REVIEW
 ```
 ```
+~~~~
 
-### ITEM-002806 — `02_BUILD\LEXIQUE_READER_MVP\00_RUNBOOK\P16A_FAST_OPERATOR_INSTRUCTIONS.md`
+### 📎 ITEM-002806 — `02_BUILD\LEXIQUE_READER_MVP\00_RUNBOOK\P16A_FAST_OPERATOR_INSTRUCTIONS.md`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-17T13:10:40`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # MVP QAIC P16A - Fast Operator Instructions
 
@@ -1242,25 +1443,33 @@ Safety:
 - No write UI.
 - No order/sizing/trading execution.
 ```
+~~~~
 
-### ITEM-002791 — `02_DELIVERABLES_ZIP\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\SHA256\MVP_QAIC_INSTRUCTIONS_REAL_FULL_SOURCE_FUSION_PROCESS_SAFE_0.7.3_20260620-095223.sha256.txt`
+### 📎 ITEM-002791 — `02_DELIVERABLES_ZIP\REFERENCE_DOCS_REAL_FULL_SOURCE_FUSION_0.7.2_20260620\SHA256\MVP_QAIC_INSTRUCTIONS_REAL_FULL_SOURCE_FUSION_PROCESS_SAFE_0.7.3_20260620-095223.sha256.txt`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-20T11:56:35`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 _Contenu non lisible ou vide._
 ```
+~~~~
 
-### ITEM-002567 — `03_APPS_SCRIPT\DEV\P0B3_INSTITUTIONAL_READINESS_0.2.5\csv_seed_p0b3\SIGNAL_EVALUATION_RULES.csv`
+### 📎 ITEM-002567 — `03_APPS_SCRIPT\DEV\P0B3_INSTITUTIONAL_READINESS_0.2.5\csv_seed_p0b3\SIGNAL_EVALUATION_RULES.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T15:15:08`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 stable_id,signal_id,signal_family,direction,score_target,default_weight,blocking_signal,confirmation_required,timeframe,applies_to_asset_type,data_required,fallback_if_missing,qaic_future_metric,risk_notes,priority,validation_status
 ser_sig_fomo_entry_risk,sig_fomo_entry_risk,psychology_risk,bearish_risk,risk_score,-20,yes_if_after_pump,pump/retest context,intraday/daily,all,"price action, pump %, RSI",REVIEW_REQUIRED,risk_actionability,Anti impulsivité prioritaire.,P0,VALIDATED
@@ -1273,14 +1482,18 @@ ser_sig_open_interest_spike,sig_open_interest_spike,derivatives,risk_or_momentum
 ser_sig_exchange_inflow_spike,sig_exchange_inflow_spike,onchain_flow,bearish_risk,fundamental_score,-15,no,exchange inflow source,daily,major/midcap,exchange_inflow,REVIEW_REQUIRED,onchain_flow_score,Possibles ventes à venir.,P1,VALIDATED
 ser_sig_tvl_growth,sig_tvl_growth,fundamental,bullish_con
 ```
+~~~~
 
-### ITEM-002584 — `03_APPS_SCRIPT\DEV\P0B5_TRADE_PLAN_METHODS_TRAILING_LOGIC_0.2.9\csv_seed_p0b5\POSITION_FOLLOWUP_RULES.csv`
+### 📎 ITEM-002584 — `03_APPS_SCRIPT\DEV\P0B5_TRADE_PLAN_METHODS_TRAILING_LOGIC_0.2.9\csv_seed_p0b5\POSITION_FOLLOWUP_RULES.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T16:01:46`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 stable_id,event,condition,recommended_review_action,decision_status,risk_level,journal_required,gpt_output_instruction,related_trailing_mode,fallback_if_missing,qaic_guard,priority,validation_status
 follow_tp1_hit,TP1_HIT,price reaches TP1,review derisk / move SL to break-even if structure valid,REVIEW_DERISK,MED,YES,state TP1 hit and proposed manual follow-up,TRAIL_AFTER_TP1_BREAK_EVEN,REVIEW_REQUIRED,no automatic action,P0,VALIDATED
@@ -1290,14 +1503,18 @@ follow_btc_risk_off,BTC_RISK_OFF,BTC breakdown / risk-off regime,freeze buys; re
 follow_liquidity_degrade,LIQUIDITY_DEGRADES,spread high/order book thin/volume dries up,avoid new entry; review exit risk manually,AVOID_OR_RISK_REVIEW,HIGH,YES,state liquidity risk and avoid market order suggestion,MANUAL_VOLATILE_AFTER_TP1,REVIEW_REQUIRED,liquidity score gate,P0,VALIDATED
 follow_signal_degrade,SIGNAL_DEGRADES,bullish setup loses confirmations / bearish divergence,review position; do not add; consider derisk review,NO_ADD_OR_REDUCE_RISK_REVIEW,MED_HIGH,YES,list degraded signals and impact on scores,STRUCTURE_TRAILING/NO_TRAILING,REVIEW_REQUIRED,confidence score must fall,P1,VALIDATED
 ```
+~~~~
 
-### ITEM-002586 — `03_APPS_SCRIPT\DEV\P0B5_TRADE_PLAN_METHODS_TRAILING_LOGIC_0.2.9\csv_seed_p0b5\TP_SL_CALCULATION_RULES.csv`
+### 📎 ITEM-002586 — `03_APPS_SCRIPT\DEV\P0B5_TRADE_PLAN_METHODS_TRAILING_LOGIC_0.2.9\csv_seed_p0b5\TP_SL_CALCULATION_RULES.csv`
 
 - **Légitimité :** `REVIEW_REQUIRED`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `DOC_SOURCE_TO_COMPARE`
 - **Dernière modification :** `2026-06-11T16:01:46`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 stable_id,token_type,method_id,horizon,entry_calc_method,tp1_calc_method,tp2_calc_method,tp3_calc_method,sl_calc_method,rr_requirement,trailing_mode,required_data,fallback_if_missing,output_fields_required,qaic_guard,priority,validation_status
 calc_btc_retest_swing,BTC_ETH_CORE,method_retest_breakout,swing,broken resistance retest or support reclaim,nearest resistance or 1R,next daily resistance or 2R,weekly resistance / runner,below retest/support + ATR buffer,">=1.5 preferred, REVIEW if lower",TRAIL_AFTER_TP1_STRUCTURE_OR_EMA,"price,support,resistance,ATR,volume",REVIEW_REQUIRED,"token_type,method,entry_calc,tp_calc,sl_calc,trailing_mode,missing_data",risk_score overrides alpha_score,P0,VALIDATED
@@ -1306,14 +1523,18 @@ calc_midcap_scaled,MID_CAP,method_scaled_entry,swing,split entries across valida
 calc_microcap_fast_derisk,MICROCAP_MEME,method_fast_derisk_volatile,short/intraday,only after retest/compression + acceptable spread,fast TP nearest resistance or 0.8R-1R,only if liquidity remains acceptable,very small runner or none,strict structure SL; if no SL -> BLOCKED,not valid if spread/liquidity unknown,MANUAL_AFTER_TP1_ONLY,"spread,order book,price,volume,SL,BTC regime",BLOCKED_OR_REVIEW_REQUIRED,"liquidity status, no-trade status, SL justification",default AVOID if data quality low,P0,VALIDATED
 calc_defi_confluence,DEFI_PROTOCOL,method_fundamental_technical_confluen
 ```
+~~~~
 
-### ITEM-007918 — `03_EXPORTS\P081C_DOCS_FUSION_REPAIR_DECISION_WORKBENCH_READONLY_20260621_135616\P081C_HUMAN_DECISION_INSTRUCTIONS.md`
+### 📎 ITEM-007918 — `03_EXPORTS\P081C_DOCS_FUSION_REPAIR_DECISION_WORKBENCH_READONLY_20260621_135616\P081C_HUMAN_DECISION_INSTRUCTIONS.md`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-21T13:56:20`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # P081C Human Decision Instructions
 
@@ -1360,14 +1581,18 @@ NO_DELETE=TRUE
 NO_SOURCE_OVERWRITE=TRUE
 NO_LIVE_MUTATION=TRUE
 ```
+~~~~
 
-### ITEM-007924 — `03_EXPORTS\P081D_DOCS_REPAIR_DECISION_COMPRESSION_READONLY_20260621_140741\P081D_BULK_DEFAULT_POLICY.csv`
+### 📎 ITEM-007924 — `03_EXPORTS\P081D_DOCS_REPAIR_DECISION_COMPRESSION_READONLY_20260621_140741\P081D_BULK_DEFAULT_POLICY.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-21T14:07:43`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "category","row_count","proposed_default","blocks_seal","apply_now"
 "P2_REPAIR_ROWS","117","KEEP_TRACE_OR_REVIEW_LATER","NO_IF_P0_P1_REPAIRED","NO"
@@ -1376,14 +1601,18 @@ NO_LIVE_MUTATION=TRUE
 "KEEP_RESIDUAL_ROWS","12","KEEP_ACTIVE_OR_TRACE","NO","NO"
 "ROOT_P1_P2_ROWS","20","HANDLE_IN_SEPARATE_ROOT_CLEANUP_APPLY_BATCH","NO","NO"
 ```
+~~~~
 
-### ITEM-007943 — `03_EXPORTS\P081F_DOCS_REPAIR_DRAFT_READONLY_20260621_161422\P081F_BULK_POLICY_CARRIED_FORWARD.csv`
+### 📎 ITEM-007943 — `03_EXPORTS\P081F_DOCS_REPAIR_DRAFT_READONLY_20260621_161422\P081F_BULK_POLICY_CARRIED_FORWARD.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-21T16:14:23`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "category","row_count","proposed_default","blocks_seal","apply_now"
 "P2_REPAIR_ROWS","117","KEEP_TRACE_OR_REVIEW_LATER","NO_IF_P0_P1_REPAIRED","NO"
@@ -1392,14 +1621,18 @@ NO_LIVE_MUTATION=TRUE
 "KEEP_RESIDUAL_ROWS","12","KEEP_ACTIVE_OR_TRACE","NO","NO"
 "ROOT_P1_P2_ROWS","20","HANDLE_IN_SEPARATE_ROOT_CLEANUP_APPLY_BATCH","NO","NO"
 ```
+~~~~
 
-### ITEM-007949 — `03_EXPORTS\P081F2_REPAIR_DRAFT_HOTFIX_READONLY_20260621_163438\P081F2_BULK_POLICY_CARRIED_FORWARD.csv`
+### 📎 ITEM-007949 — `03_EXPORTS\P081F2_REPAIR_DRAFT_HOTFIX_READONLY_20260621_163438\P081F2_BULK_POLICY_CARRIED_FORWARD.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-21T16:34:41`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "category","row_count","proposed_default","blocks_seal","apply_now"
 "P2_REPAIR_ROWS","117","KEEP_TRACE_OR_REVIEW_LATER","NO_IF_P0_P1_REPAIRED","NO"
@@ -1408,14 +1641,18 @@ NO_LIVE_MUTATION=TRUE
 "KEEP_RESIDUAL_ROWS","12","KEEP_ACTIVE_OR_TRACE","NO","NO"
 "ROOT_P1_P2_ROWS","20","HANDLE_IN_SEPARATE_ROOT_CLEANUP_APPLY_BATCH","NO","NO"
 ```
+~~~~
 
-### ITEM-007955 — `03_EXPORTS\P081F3_REPAIR_DRAFT_CSV_TXT_READONLY_20260621_165606\P081F3_BULK_POLICY_CARRIED_FORWARD.csv`
+### 📎 ITEM-007955 — `03_EXPORTS\P081F3_REPAIR_DRAFT_CSV_TXT_READONLY_20260621_165606\P081F3_BULK_POLICY_CARRIED_FORWARD.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-21T16:56:07`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "category","row_count","proposed_default","blocks_seal","apply_now"
 "P2_REPAIR_ROWS","117","KEEP_TRACE_OR_REVIEW_LATER","NO_IF_P0_P1_REPAIRED","NO"
@@ -1424,14 +1661,18 @@ NO_LIVE_MUTATION=TRUE
 "KEEP_RESIDUAL_ROWS","12","KEEP_ACTIVE_OR_TRACE","NO","NO"
 "ROOT_P1_P2_ROWS","20","HANDLE_IN_SEPARATE_ROOT_CLEANUP_APPLY_BATCH","NO","NO"
 ```
+~~~~
 
-### ITEM-004921 — `03_EXPORTS\P50E_LEXIQUE_REQ_MAPPING_20260619_235529\_ZIP_CONTENT\LEXIQUE_PROMPT_RULES.csv`
+### 📎 ITEM-004921 — `03_EXPORTS\P50E_LEXIQUE_REQ_MAPPING_20260619_235529\_ZIP_CONTENT\LEXIQUE_PROMPT_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:55:31`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","rule_name","rule","severity","output_behavior","live_apply"
 "P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","NO"
@@ -1440,14 +1681,18 @@ NO_LIVE_MUTATION=TRUE
 "P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","NO"
 "P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","NO"
 ```
+~~~~
 
-### ITEM-004894 — `03_EXPORTS\P50E_LEXIQUE_REQ_MAPPING_20260619_235529\LEXIQUE_PROMPT_RULES.csv`
+### 📎 ITEM-004894 — `03_EXPORTS\P50E_LEXIQUE_REQ_MAPPING_20260619_235529\LEXIQUE_PROMPT_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:55:31`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","rule_name","rule","severity","output_behavior","live_apply"
 "P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","NO"
@@ -1456,14 +1701,18 @@ NO_LIVE_MUTATION=TRUE
 "P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","NO"
 "P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","NO"
 ```
+~~~~
 
-### ITEM-004964 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\_ZIP_CONTENT\P50E_LEXIQUE_PROMPT_RULES.csv`
+### 📎 ITEM-004964 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\_ZIP_CONTENT\P50E_LEXIQUE_PROMPT_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:55:31`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","rule_name","rule","severity","output_behavior","live_apply"
 "P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","NO"
@@ -1472,14 +1721,18 @@ NO_LIVE_MUTATION=TRUE
 "P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","NO"
 "P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","NO"
 ```
+~~~~
 
-### ITEM-004979 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\_ZIP_CONTENT\PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-004979 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\_ZIP_CONTENT\PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1488,14 +1741,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-004934 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\P50E_LEXIQUE_PROMPT_RULES.csv`
+### 📎 ITEM-004934 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\P50E_LEXIQUE_PROMPT_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:55:31`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","rule_name","rule","severity","output_behavior","live_apply"
 "P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","NO"
@@ -1504,14 +1761,18 @@ NO_LIVE_MUTATION=TRUE
 "P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","NO"
 "P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","NO"
 ```
+~~~~
 
-### ITEM-004949 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-004949 — `03_EXPORTS\P50F_HUMAN_REVIEW_PACK_20260619_235854\PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1520,14 +1781,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-005032 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\_ZIP_CONTENT\P50F_P50E_LEXIQUE_PROMPT_RULES.csv`
+### 📎 ITEM-005032 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\_ZIP_CONTENT\P50F_P50E_LEXIQUE_PROMPT_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:55:31`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","rule_name","rule","severity","output_behavior","live_apply"
 "P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","NO"
@@ -1536,14 +1801,18 @@ NO_LIVE_MUTATION=TRUE
 "P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","NO"
 "P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","NO"
 ```
+~~~~
 
-### ITEM-005023 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\_ZIP_CONTENT\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-005023 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\_ZIP_CONTENT\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1552,14 +1821,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-005002 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\P50F_P50E_LEXIQUE_PROMPT_RULES.csv`
+### 📎 ITEM-005002 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\P50F_P50E_LEXIQUE_PROMPT_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:55:31`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","rule_name","rule","severity","output_behavior","live_apply"
 "P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","NO"
@@ -1568,14 +1841,18 @@ NO_LIVE_MUTATION=TRUE
 "P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","NO"
 "P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","NO"
 ```
+~~~~
 
-### ITEM-004993 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-004993 — `03_EXPORTS\P50G_UI_SCRIPT_IMPACT_20260620_000352\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1584,14 +1861,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-005091 — `03_EXPORTS\P50H_SCRIPT_DRY_RUN_20260620_001522\_ZIP_CONTENT\P50G_P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-005091 — `03_EXPORTS\P50H_SCRIPT_DRY_RUN_20260620_001522\_ZIP_CONTENT\P50G_P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1600,14 +1881,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-005061 — `03_EXPORTS\P50H_SCRIPT_DRY_RUN_20260620_001522\P50G_P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-005061 — `03_EXPORTS\P50H_SCRIPT_DRY_RUN_20260620_001522\P50G_P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1616,14 +1901,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-005204 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\_ZIP_CONTENT\HUMAN_DECISION_RULES.csv`
+### 📎 ITEM-005204 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\_ZIP_CONTENT\HUMAN_DECISION_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-20T00:42:40`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","field","allowed_values","required","blocker_if_invalid"
 "P51A_RULE_001","human_decision","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","YES","YES"
@@ -1632,14 +1921,18 @@ NO_LIVE_MUTATION=TRUE
 "P51A_RULE_004","live_apply","NO","YES","YES"
 "P51A_RULE_005","script_update_allowed","NO","YES","YES"
 ```
+~~~~
 
-### ITEM-005200 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\_ZIP_CONTENT\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-005200 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\_ZIP_CONTENT\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1648,14 +1941,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-005175 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\HUMAN_DECISION_RULES.csv`
+### 📎 ITEM-005175 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\HUMAN_DECISION_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-20T00:42:40`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","field","allowed_values","required","blocker_if_invalid"
 "P51A_RULE_001","human_decision","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","YES","YES"
@@ -1664,14 +1961,18 @@ NO_LIVE_MUTATION=TRUE
 "P51A_RULE_004","live_apply","NO","YES","YES"
 "P51A_RULE_005","script_update_allowed","NO","YES","YES"
 ```
+~~~~
 
-### ITEM-005171 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
+### 📎 ITEM-005171 — `03_EXPORTS\P51A_PROMPT_REVIEW_DECISION_20260620_004239\P50F_PROMPT_RULES_HUMAN_REVIEW_WORKBENCH.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-19T23:58:55`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "review_id","review_area","source_id","rule_name","rule","severity","output_behavior","human_decision","allowed_decisions","decision_reason","reviewer","reviewed_at","apply_now","live_apply","script_update_needed_later","safety"
 "P50F_RULE_001","PROMPT_RULES","P50E_RULE_001","NO_TERM_INVENTION","Do not invent lexique terms, categories, definitions, prices, TP, SL, trailing rules, quantities, or exposures.","BLOCKING_IF_VIOLATED","BLOCKED_OR_REVIEW_REQUIRED","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
@@ -1680,14 +1981,18 @@ NO_LIVE_MUTATION=TRUE
 "P50F_RULE_004","PROMPT_RULES","P50E_RULE_004","LOCAL_REFERENCE_ONLY","Use local review artifacts as evidence references; do not call web/network at runtime.","CORE","HUMAN_REVIEW_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 "P50F_RULE_005","PROMPT_RULES","P50E_RULE_005","SCRIPT_UPDATE_LANE","Any script update must be inventoried and prepared as a later dry-run patch pack, never applied here.","GOVERNANCE","SCRIPT_UPDATE_DRY_RUN_ONLY","PENDING","ACCEPT|EDIT|REJECT|MERGE|NEEDS_MORE_INFO|PENDING","","","","NO","NO","REVIEW_AFTER_APPROVAL","HUMAN_REVIEW_ONLY_NO_LIVE_APPLY"
 ```
+~~~~
 
-### ITEM-005315 — `03_EXPORTS\P51C_SCRIPT_PATCH_SELECTOR_20260620_012621\_ZIP_CONTENT\SCRIPT_PATCH_REVIEW_RULES.csv`
+### 📎 ITEM-005315 — `03_EXPORTS\P51C_SCRIPT_PATCH_SELECTOR_20260620_012621\_ZIP_CONTENT\SCRIPT_PATCH_REVIEW_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-20T01:26:25`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","field","allowed_values","required","blocker_if_invalid"
 "P51C_RULE_001","human_decision","PATCH_LATER|KEEP_AS_IS|IGNORE|NEEDS_MORE_INFO|PENDING","YES","YES"
@@ -1696,14 +2001,18 @@ NO_LIVE_MUTATION=TRUE
 "P51C_RULE_004","apps_script_execution","NO","YES","YES"
 "P51C_RULE_005","clasp_push","NO","YES","YES"
 ```
+~~~~
 
-### ITEM-005286 — `03_EXPORTS\P51C_SCRIPT_PATCH_SELECTOR_20260620_012621\SCRIPT_PATCH_REVIEW_RULES.csv`
+### 📎 ITEM-005286 — `03_EXPORTS\P51C_SCRIPT_PATCH_SELECTOR_20260620_012621\SCRIPT_PATCH_REVIEW_RULES.csv`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-20T01:26:25`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 "rule_id","field","allowed_values","required","blocker_if_invalid"
 "P51C_RULE_001","human_decision","PATCH_LATER|KEEP_AS_IS|IGNORE|NEEDS_MORE_INFO|PENDING","YES","YES"
@@ -1712,14 +2021,18 @@ NO_LIVE_MUTATION=TRUE
 "P51C_RULE_004","apps_script_execution","NO","YES","YES"
 "P51C_RULE_005","clasp_push","NO","YES","YES"
 ```
+~~~~
 
-### ITEM-000078 — `05_EXPORTS\P079B_HUMAN_REVIEW_WORKING_COPY_READONLY_20260620_194923\P079B_HUMAN_REVIEW_INSTRUCTIONS.md`
+### 📎 ITEM-000078 — `05_EXPORTS\P079B_HUMAN_REVIEW_WORKING_COPY_READONLY_20260620_194923\P079B_HUMAN_REVIEW_INSTRUCTIONS.md`
 
 - **Légitimité :** `REVIEW_FOR_INTEGRATION_OR_ARCHIVE`
 - **Actualité :** `CURRENT_OR_RECENT`
 - **Classe :** `EVIDENCE_EXPORT_RESIDUAL`
 - **Dernière modification :** `2026-06-20T19:49:25`
 
+#### 📄 Extrait source intégré
+
+~~~~text
 ```text
 # P079B Human Review Instructions
 
@@ -1752,6 +2065,7 @@ NO_SIZING=TRUE
 ## Next
 After manual edit, run P079C validation before P080.
 ```
+~~~~
 
 ## 5. 🧊 Sources conservées hors fusion
 
@@ -1771,7 +2085,7 @@ After manual edit, run P079C validation before P080.
 - `NEXT` : `P203B3_ARCHIVE_GATE_AND_FINAL_REFERENCE_INDEX`.
 
 <!-- BEGIN MVP_QAIC_REFLEX_FACTORY_R6C_MASTER -->
-## MVP QAIC Reflex Factory R6C — Instructions fusionnées
+## 🏭 MVP QAIC Reflex Factory R6C — Instructions fusionnées
 
 ### Décision
 
