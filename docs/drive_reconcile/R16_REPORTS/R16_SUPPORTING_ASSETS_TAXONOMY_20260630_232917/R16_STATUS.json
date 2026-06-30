@@ -1,5 +1,5 @@
 {
-  "status": "PENDING_COMMIT",
+  "status": "OK_MVP_QAIC_R16_SUPPORTING_ASSETS_TAXONOMY_COMMITTED_TAGGED_PUSHED_ALLOWED_UI_CONFIG_DIRTY_REMAINS",
   "mode": "LOCAL_FINAL_DOCS_SUPPORTING_ASSETS_TAXONOMY_APPLY",
   "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
   "branch": "master",
@@ -74,6 +74,34 @@
       "required": "True",
       "ok": "True",
       "detail": ""
+    },
+    {
+      "check": "targeted_staging_only",
+      "required": "True",
+      "ok": "True",
+      "detail": ""
+    },
+    {
+      "check": "staged_nonempty",
+      "required": "True",
+      "ok": "True",
+      "detail": "count=23"
+    },
+    {
+      "check": "tag_not_preexisting",
+      "required": "True",
+      "ok": "True",
+      "detail": ""
+    },
+    {
+      "check": "post_status_clean_or_allowed_ui_config_only",
+      "required": "True",
+      "ok": "True",
+      "detail": " M mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py\n?? config/\n?? mvp_qaic_reflex_ui/runtime_config_registry.py"
     }
-  ]
+  ],
+  "head": "e0664db7b73d273c9249ef0f8c240d2976d18d56",
+  "subject": "MVP QAIC final docs support assets taxonomy R16",
+  "tag": "mvp-qaic-r16-final-docs-support-assets-taxonomy-20260630",
+  "post_status": " M mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py\n?? config/\n?? mvp_qaic_reflex_ui/runtime_config_registry.py"
 }
