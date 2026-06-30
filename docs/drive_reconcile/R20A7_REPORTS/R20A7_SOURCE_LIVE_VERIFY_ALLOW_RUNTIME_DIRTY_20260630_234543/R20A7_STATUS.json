@@ -1,0 +1,20 @@
+{
+  "status": "OK_MVP_QAIC_R20A7_SOURCE_LIVE_VERIFY_COMMITTED_TAGGED_PUSHED_ALLOWED_RUNTIME_READINESS_DIRTY_REMAINS",
+  "mode": "READONLY_AFTER_R20A5_SOURCE_LIVE_STATE_VERIFY_ALLOW_RUNTIME_DIRTY",
+  "head_before": "38840f4b311ab89d8b586b3ffcff82a049d0b817",
+  "subject_before": "MVP QAIC R16F2H6 lock Reflex readiness and process docs",
+  "r20a5_tag": "mvp-qaic-r20a5-source-archive-only-live-safe-20260701",
+  "signal_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "source_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\source",
+  "live_source_file_count": 16,
+  "selected_archive_noise_still_in_source": 4,
+  "protected_domain_hold_still_in_source": 12,
+  "unknown_still_in_source": 0,
+  "verdict": "R20A8_SELECTED_ARCHIVE_NOISE_STILL_IN_SOURCE_REVIEW_REQUIRED",
+  "report_dir": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R20A7_REPORTS\\R20A7_SOURCE_LIVE_VERIFY_ALLOW_RUNTIME_DIRTY_20260630_234543",
+  "no_drive_write": true,
+  "no_delete": true,
+  "no_reset": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true
+}

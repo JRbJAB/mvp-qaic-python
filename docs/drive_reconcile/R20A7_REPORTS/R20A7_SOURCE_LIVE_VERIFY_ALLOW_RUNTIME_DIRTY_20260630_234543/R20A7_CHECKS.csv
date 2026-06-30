@@ -1,0 +1,18 @@
+check,required,ok,detail
+repo_exists,True,True,C:\JRb_TRADING_OS\MVP_QAIC_PY
+inside_work_tree,True,True,true
+branch_master,True,True,master
+r20a5_tag_present,True,True,3cb5d6f0e5b8cf1ef23951c059faea3c6c78ba8a
+head_at_or_after_r20a5,True,True,head=38840f4b311ab89d8b586b3ffcff82a049d0b817 r20a5=3cb5d6f0e5b8cf1ef23951c059faea3c6c78ba8a
+r19b_tag_present,False,True,b6b79df41e6334b3c80971c6ce9a60ba0cbf19a4
+status_before_clean_or_allowed_runtime_readiness_dirty,True,True,CLEAN
+signal_os_root_found,True,True,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS
+source_dir_exists,True,True,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\source
+archives_folder_exists,False,True,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\99_ARCHIVES
+r19b_action_list_found,True,True,C:\JRb_TRADING_OS\MVP_QAIC_PY\docs\drive_reconcile\R19B_REPORTS\R19B_SOURCE_FOLDER_READOUT_20260701_002750\R19B_ACTION_LIST.csv
+r19b_plan_rows_nonempty,True,True,rows=25
+source_live_inventory_written,False,True,files=16
+selected_archive_noise_remaining_count,False,False,count=4
+protected_remaining_count,False,True,count=12
+unknown_remaining_count,False,True,count=0
+verdict_available,True,True,R20A8_SELECTED_ARCHIVE_NOISE_STILL_IN_SOURCE_REVIEW_REQUIRED
