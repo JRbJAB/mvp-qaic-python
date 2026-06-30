@@ -1,0 +1,21 @@
+{
+  "status": "OK_MVP_QAIC_DOCS_DRIVE_RECONCILE_R8_NUMERATED_FOLDERS_EXTERNAL_RANGEMENT_PLAN_READY",
+  "mode": "READ_ONLY_EXTERNAL_RANGEMENT_PLAN",
+  "source_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "target_docs_root": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs",
+  "out_root": "C:\\Users\\Julie\\Downloads\\MVP_QAIC_DOCS_DRIVE_RECONCILE_R8_NUMERATED_FOLDERS_EXTERNAL_RANGEMENT_PLAN_20260630_185346",
+  "root_folder_count": 22,
+  "total_source_files_in_root_summaries": 8279,
+  "errors_count": 0,
+  "latest_reconcile_report_dirs": {
+    "R5_REPORTS": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R5_REPORTS",
+    "R6_REPORTS": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R6_REPORTS",
+    "R7_REPORTS": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R7_REPORTS",
+    "R7B_REPORTS": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R7B_REPORTS",
+    "R6_SELECTED_FINAL_DOCS": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R6_SELECTED_FINAL_DOCS"
+  },
+  "no_write_source_drive": true,
+  "no_write_target_docs": true,
+  "no_drive_move": true,
+  "no_git_action": true
+}

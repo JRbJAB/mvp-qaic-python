@@ -1,0 +1,10 @@
+{
+  "status": "OK_MVP_QAIC_DOCS_DRIVE_RECONCILE_R8C_COMMIT_REPORTS_READY_TO_COMMIT",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "branch": "master",
+  "r8_source_out": "C:\\Users\\Julie\\Downloads\\MVP_QAIC_DOCS_DRIVE_RECONCILE_R8_NUMERATED_FOLDERS_EXTERNAL_RANGEMENT_PLAN_20260630_185346",
+  "r8_reports_dst": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R8_REPORTS\\MVP_QAIC_DOCS_DRIVE_RECONCILE_R8_NUMERATED_FOLDERS_EXTERNAL_RANGEMENT_PLAN_20260630_185346",
+  "copied_file_count": 6,
+  "no_drive_move": true,
+  "no_target_docs_final_write": true
+}
