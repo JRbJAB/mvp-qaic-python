@@ -1,0 +1,287 @@
+diff --git a/mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py b/mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py
+index f198122..3286e12 100644
+--- a/mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py
++++ b/mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py
+@@ -1,32 +1,114 @@
++"""MVP QAIC local private Reflex UI."""
++
+ from __future__ import annotations
++from mvp_qaic_reflex_ui.cdc_dev_tracker_reflex_page import cdc_dev_tracker_reflex_page
+ 
+-import re
+ import reflex as rx
+ 
+-from .restored_initial_render import make_restored_initial_route_page
++from .pages_admin import (
++    admin_center,
++    admin_data_binding,
++    admin_routes,
++    admin_runtime,
++    admin_safety,
++    admin_theme,
++)
++from .pages_landing import (
++    architecture_registry,
++    architecture_web,
++    web_sitemap,
++    cdc_tracker,
++    dev_tracking,
++    documentation_registry,
++    gem_portfolio,
++    home,
++    lexique_knowledge,
++    mission_control,
++    prompt_lab,
++    qaic_bridge,
++    settings_safety,
++)
++from .migration_decision_workbench import (
++    MIGRATION_DECISION_WORKBENCH_ROUTE,
++    migration_decision_workbench_page,
++)
++
++index = home
+ 
+-# R16F2G1_SOURCE_REFLEX_RENDER_REPAIR_ONLY
+-app = rx.App()
++app = rx.App(
++    theme=rx.theme(
++        appearance="inherit",
++        accent_color="blue",
++        gray_color="slate",
++        panel_background="solid",
++        radius="large",
++        scaling="100%",
++    )
++)
++app.add_page(index, route="/", title="MVP QAIC — Mission Control")
++app.add_page(mission_control, route="/mission-control", title="Mission Control")
++app.add_page(dev_tracking, route="/dev-tracking", title="Dev Tracking")
++app.add_page(cdc_tracker, route="/cdc-tracker", title="CDC Tracker")
++app.add_page(architecture_web, route="/architecture-web", title="Architecture Web")
++app.add_page(web_sitemap, route="/sitemap", title="MVP QAIC — Visual Sitemap")
++app.add_page(
++    documentation_registry, route="/documentation-registry", title="Documentation Registry"
++)
++app.add_page(architecture_registry, route="/architecture-registry", title="Architecture & Registry")
++app.add_page(admin_center, route="/admin", title="Admin Center")
++app.add_page(admin_runtime, route="/admin/runtime", title="Admin Runtime")
++app.add_page(admin_theme, route="/admin/theme", title="Admin Theme")
++app.add_page(admin_safety, route="/admin/safety", title="Admin Safety")
++app.add_page(admin_routes, route="/admin/routes", title="Admin Routes")
++app.add_page(admin_data_binding, route="/admin/data-binding", title="Admin Data Binding")
++app.add_page(lexique_knowledge, route="/lexique-knowledge", title="Lexique Knowledge")
++app.add_page(prompt_lab, route="/prompt-lab", title="Prompt Lab")
++app.add_page(gem_portfolio, route="/gem-portfolio", title="GEM Portfolio")
++app.add_page(qaic_bridge, route="/qaic-bridge", title="QAIC Bridge")
++app.add_page(settings_safety, route="/settings-safety", title="Settings Safety")
++app.add_page(
++    migration_decision_workbench_page,
++    route=MIGRATION_DECISION_WORKBENCH_ROUTE,
++    title="Migration Decision Workbench",
++)
+ 
+-ROUTES = [('/', 'Mission Control'), ('/mission-control', 'Mission Control'), ('/dev-tracking', 'Dev Tracking'), ('/cdc-tracker', 'Cdc Tracker'), ('/cdc-dev-tracker', 'Cdc Dev Tracker'), ('/architecture-web', 'Architecture Web'), ('/architecture-web/schema', 'Architecture Web / Schema'), ('/sitemap', 'Sitemap'), ('/documentation-registry', 'Documentation Registry'), ('/architecture-registry', 'Architecture Registry'), ('/admin', 'Admin'), ('/admin/runtime', 'Admin / Runtime'), ('/admin/theme', 'Admin / Theme'), ('/admin/safety', 'Admin / Safety'), ('/admin/routes', 'Admin / Routes'), ('/admin/data-binding', 'Admin / Data Binding'), ('/prompt-lab', 'Prompt Lab'), ('/gem-portfolio', 'Gem Portfolio'), ('/qaic-bridge', 'Qaic Bridge'), ('/lexique-knowledge', 'Lexique Knowledge'), ('/settings-safety', 'Settings Safety'), ('/migration/global', 'Migration / Global'), ('/migration/decisions', 'Migration / Decisions'), ('/trackers/auto-update', 'Trackers / Auto Update'), ('/architecture', 'Architecture'), ('/audit-runs', 'Audit Runs'), ('/base-python', 'Base Python'), ('/configuration', 'Configuration'), ('/documents', 'Documents'), ('/google-sheets', 'Google Sheets'), ('/prompt', 'Prompt'), ('/responses', 'Responses'), ('/workflow', 'Workflow')]
+ 
++# P_REFLEX_12E_R2D_BEGIN_SAFE_ROUTE_WIRING
++def _p12e_r2d_register_safe_routes() -> None:
++    try:
++        _schema_mod = __import__(
++            "mvp_qaic_reflex_ui.svg_schema_viewer",
++            fromlist=["schema_large_page"],
++        )
++        _trackers_mod = __import__(
++            "mvp_qaic_reflex_ui.auto_update_trackers_page",
++            fromlist=["auto_update_trackers_page"],
++        )
++        app.add_page(
++            _schema_mod.schema_large_page,
++            route="/architecture-web/schema",
++            title="Architecture Web Schema",
++        )
++        app.add_page(
++            _trackers_mod.auto_update_trackers_page,
++            route="/trackers/auto-update",
++            title="Auto-update Trackers",
++        )
++    except Exception:  # noqa: BLE001
++        pass
+ 
+-def _page_name(route: str) -> str:
+-    if route == "/":
+-        return "page_index"
+-    return "page_" + re.sub(r"[^a-zA-Z0-9_]+", "_", route.strip("/")).strip("_")
+ 
++_p12e_r2d_register_safe_routes()
++# P_REFLEX_12E_R2D_END_SAFE_ROUTE_WIRING
+ 
+-def _make_page(route: str, title: str):
+-    def page():
+-        return make_restored_initial_route_page(route, title)
+-    page.__name__ = _page_name(route)
+-    return page
++# P_REFLEX_12F_BEGIN_GLOBAL_MIGRATION_ROUTE
++try:
++    from mvp_qaic_reflex_ui.global_migration_page import global_migration_page
+ 
++    app.add_page(global_migration_page, route="/migration/global", title="Migration globale")
++except Exception:
++    pass
++# P_REFLEX_12F_END_GLOBAL_MIGRATION_ROUTE
+ 
+-_seen = set()
+-for _route, _title in ROUTES:
+-    if _route in _seen:
+-        continue
+-    _seen.add(_route)
+-    app.add_page(_make_page(_route, _title), route=_route, title="MVP QAIC — " + _title)
++# MVP UI CDC + Dev Tracker route
++app.add_page(cdc_dev_tracker_reflex_page, route="/cdc-dev-tracker", title="CDC + Dev Tracker")
+diff --git a/mvp_qaic_reflex_ui/restored_initial_render.py b/mvp_qaic_reflex_ui/restored_initial_render.py
+deleted file mode 100644
+index 55550da..0000000
+--- a/mvp_qaic_reflex_ui/restored_initial_render.py
++++ /dev/null
+@@ -1,142 +0,0 @@
+-from __future__ import annotations
+-
+-import reflex as rx
+-
+-RESTORED_RENDER_MARKER = "RESTORED_REFLEX_INITIAL_RENDER_R16F2G1"
+-ROUTE_ITEMS = [('/', 'Mission Control'), ('/mission-control', 'Mission Control'), ('/dev-tracking', 'Dev Tracking'), ('/cdc-tracker', 'Cdc Tracker'), ('/cdc-dev-tracker', 'Cdc Dev Tracker'), ('/architecture-web', 'Architecture Web'), ('/architecture-web/schema', 'Architecture Web / Schema'), ('/sitemap', 'Sitemap'), ('/documentation-registry', 'Documentation Registry'), ('/architecture-registry', 'Architecture Registry'), ('/admin', 'Admin'), ('/admin/runtime', 'Admin / Runtime'), ('/admin/theme', 'Admin / Theme'), ('/admin/safety', 'Admin / Safety'), ('/admin/routes', 'Admin / Routes'), ('/admin/data-binding', 'Admin / Data Binding'), ('/prompt-lab', 'Prompt Lab'), ('/gem-portfolio', 'Gem Portfolio'), ('/qaic-bridge', 'Qaic Bridge'), ('/lexique-knowledge', 'Lexique Knowledge'), ('/settings-safety', 'Settings Safety'), ('/migration/global', 'Migration / Global'), ('/migration/decisions', 'Migration / Decisions'), ('/trackers/auto-update', 'Trackers / Auto Update'), ('/architecture', 'Architecture'), ('/audit-runs', 'Audit Runs'), ('/base-python', 'Base Python'), ('/configuration', 'Configuration'), ('/documents', 'Documents'), ('/google-sheets', 'Google Sheets'), ('/prompt', 'Prompt'), ('/responses', 'Responses'), ('/workflow', 'Workflow')]
+-
+-
+-def _nav_item(route: str, label: str):
+-    return rx.link(
+-        rx.box(
+-            rx.text(label, font_size="13px", font_weight="600"),
+-            rx.text(route, font_size="10px", color="#8aa0c7"),
+-            padding="10px 12px",
+-            border_radius="12px",
+-            border="1px solid rgba(148,163,184,.18)",
+-            background="rgba(15,23,42,.72)",
+-            _hover={"background": "rgba(37,99,235,.22)", "border_color": "rgba(96,165,250,.55)"},
+-            width="100%",
+-        ),
+-        href=route,
+-        text_decoration="none",
+-        width="100%",
+-    )
+-
+-
+-def _metric(label: str, value: str, detail: str):
+-    return rx.box(
+-        rx.text(label, color="#93a4c7", font_size="12px", font_weight="700"),
+-        rx.heading(value, size="6", color="#f8fafc"),
+-        rx.text(detail, color="#a8b7d6", font_size="12px"),
+-        padding="16px",
+-        border="1px solid rgba(148,163,184,.18)",
+-        border_radius="18px",
+-        background="linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,41,59,.82))",
+-        box_shadow="0 14px 40px rgba(0,0,0,.24)",
+-        min_width="180px",
+-        flex="1",
+-    )
+-
+-
+-def _panel(title: str, body: str, accent: str):
+-    return rx.box(
+-        rx.hstack(
+-            rx.box(width="10px", height="10px", border_radius="99px", background=accent),
+-            rx.heading(title, size="4", color="#f8fafc"),
+-            align="center",
+-            spacing="3",
+-        ),
+-        rx.text(body, color="#b7c5df", font_size="14px", margin_top="10px", line_height="1.6"),
+-        padding="18px",
+-        border="1px solid rgba(148,163,184,.18)",
+-        border_radius="20px",
+-        background="rgba(15,23,42,.72)",
+-        box_shadow="0 12px 34px rgba(0,0,0,.22)",
+-    )
+-
+-
+-def make_restored_initial_route_page(route: str = "/", title: str | None = None):
+-    page_title = title or route
+-    nav = rx.vstack(
+-        rx.box(
+-            rx.text("JRb Trading OS", color="#93c5fd", font_size="12px", font_weight="800"),
+-            rx.heading("MVP QAIC", size="6", color="#f8fafc"),
+-            rx.text("Reflex restored runtime", color="#94a3b8", font_size="12px"),
+-            margin_bottom="16px",
+-        ),
+-        *[_nav_item(r, lbl) for r, lbl in ROUTE_ITEMS[:24]],
+-        spacing="2",
+-        align="stretch",
+-        width="100%",
+-    )
+-    return rx.box(
+-        rx.hstack(
+-            rx.box(
+-                nav,
+-                width="292px",
+-                min_width="292px",
+-                min_height="100vh",
+-                padding="22px",
+-                background="linear-gradient(180deg, #050816 0%, #0f172a 55%, #111827 100%)",
+-                border_right="1px solid rgba(148,163,184,.18)",
+-                overflow_y="auto",
+-                position="sticky",
+-                top="0",
+-            ),
+-            rx.box(
+-                rx.vstack(
+-                    rx.box(
+-                        rx.text(RESTORED_RENDER_MARKER, color="#60a5fa", font_size="11px", font_weight="800"),
+-                        rx.heading(page_title, size="8", color="#f8fafc", margin_top="8px"),
+-                        rx.text("Route active: " + route, color="#a8b7d6", font_size="14px", margin_top="6px"),
+-                        padding="22px",
+-                        border="1px solid rgba(96,165,250,.28)",
+-                        border_radius="24px",
+-                        background="radial-gradient(circle at top left, rgba(37,99,235,.34), rgba(15,23,42,.82) 42%, rgba(2,6,23,.96))",
+-                        box_shadow="0 22px 70px rgba(0,0,0,.33)",
+-                        width="100%",
+-                    ),
+-                    rx.hstack(
+-                        _metric("Runtime", "Docker pinned", "Python 3.12 / Node 22 / Reflex 0.9.6.post1"),
+-                        _metric("Routes", "Critical gate", "Mission Control, CDC, Prompt Lab, GEM Portfolio"),
+-                        _metric("Safety", "Human review", "No broker, no order, no sizing, no public deploy"),
+-                        spacing="4",
+-                        width="100%",
+-                    ),
+-                    rx.grid(
+-                        _panel("Mission Control", "Cockpit central restauré pour reprendre le pilotage MVP QAIC avec navigation verticale, statuts et preuves runtime.", "#38bdf8"),
+-                        _panel("CDC / Dev Tracker", "Suivi des contrats, routes critiques, trackers et décisions de migration dans le même shell Reflex.", "#22c55e"),
+-                        _panel("Prompt Lab", "Espace de travail pour prompts GEM portfolio, historique et réponses en human-review.", "#a78bfa"),
+-                        _panel("GEM Portfolio", "Module opérateur privé, sans exécution broker, sans sizing, sans action live.", "#f59e0b"),
+-                        columns="2",
+-                        spacing="4",
+-                        width="100%",
+-                    ),
+-                    rx.box(
+-                        rx.heading("Routes disponibles", size="4", color="#f8fafc"),
+-                        rx.text(", ".join([r for r, _ in ROUTE_ITEMS]), color="#b7c5df", font_size="12px", margin_top="8px"),
+-                        padding="16px",
+-                        border="1px solid rgba(148,163,184,.16)",
+-                        border_radius="18px",
+-                        background="rgba(15,23,42,.58)",
+-                        width="100%",
+-                    ),
+-                    spacing="5",
+-                    align="stretch",
+-                    width="100%",
+-                ),
+-                flex="1",
+-                padding="28px",
+-                min_height="100vh",
+-                background="linear-gradient(135deg, #020617 0%, #0b1220 46%, #111827 100%)",
+-            ),
+-            align="start",
+-            spacing="0",
+-            width="100%",
+-        ),
+-        min_height="100vh",
+-        background="#020617",
+-        color="#e5e7eb",
+-        font_family="Inter, Segoe UI, Arial, sans-serif",
+-    )
