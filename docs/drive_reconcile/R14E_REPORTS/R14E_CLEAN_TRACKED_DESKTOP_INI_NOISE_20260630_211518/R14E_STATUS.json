@@ -1,0 +1,17 @@
+{
+  "status": "PENDING_COMMIT_R14E",
+  "mode": "CLEAN_TRACKED_R14_REPORT_DESKTOP_INI_NOISE_FINAL_SEAL",
+  "head_before": "450bcc103d87d8076975d1da824e9052020858a8",
+  "subject_before": "MVP QAIC docs drive cleanup final reference closure R14D",
+  "required_r14d_tag": "mvp-qaic-docs-drive-cleanup-final-reference-closure-r14d-20260630",
+  "required_r14d_ref": "450bcc103d87d8076975d1da824e9052020858a8",
+  "tracked_desktop_ini_before": [
+    "docs/drive_reconcile/R14_REPORTS/R14_FINAL_CLOSURE_VERIFY_AND_SEAL_20260630_204958/desktop.ini",
+    "docs/drive_reconcile/R14_REPORTS/desktop.ini"
+  ],
+  "desktop_ini_count_before": 2,
+  "no_delete_source_drive": true,
+  "no_reset": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true
+}
