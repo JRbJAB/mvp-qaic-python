@@ -1,0 +1,3 @@
+path,status,action,note
+mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py,MODIFIED,COMMIT_EXISTING_WORKTREE_FILE,R12B audited diff; R13 py_compile/import/source invariants required before commit.
+mvp_qaic_reflex_ui/restored_initial_render.py,UNTRACKED,COMMIT_EXISTING_WORKTREE_FILE,R12B copied evidence; R13 commits helper only after required checks.

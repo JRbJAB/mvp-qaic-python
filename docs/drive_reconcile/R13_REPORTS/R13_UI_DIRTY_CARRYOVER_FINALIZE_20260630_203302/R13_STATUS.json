@@ -1,0 +1,18 @@
+{
+  "status": "READY_TO_COMMIT_R13_UI_DIRTY_CARRYOVER",
+  "mode": "FINALIZE_EXISTING_UI_DIRTY_CARRYOVER_IF_SAFE",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "head_before": "eb7146fafe2b2720db7cbcf9942ab099c3d1a46b",
+  "subject_before": "MVP QAIC docs final reference R12 dirty carryover audit",
+  "allowed_dirty": [
+    " M mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py",
+    "?? mvp_qaic_reflex_ui/restored_initial_render.py"
+  ],
+  "required_checks_passed": true,
+  "no_delete": true,
+  "no_reset": true,
+  "no_overwrite_dirty": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true,
+  "report_dir": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R13_REPORTS\\R13_UI_DIRTY_CARRYOVER_FINALIZE_20260630_203302"
+}

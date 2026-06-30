@@ -1,0 +1,26 @@
+check,required,exit_code,pass,output_excerpt
+py_compile_ui_dirty_files,TRUE,0,TRUE,
+source_route_invariants,TRUE,0,TRUE,"ROUTE_INVARIANTS_OK
+"
+import_reflex_ui_app,TRUE,0,TRUE,"IMPORT_OK ROUTE_COUNT=33
+"
+optional_targeted_pytest_route_ui,FALSE,2,FALSE,"
+=================================== ERRORS ====================================
+__ ERROR collecting tests/test_mvp_ui_cdc_dev_tracker_migration_style_r1c.py __
+ImportError while importing test module 'C:\JRb_TRADING_OS\MVP_QAIC_PY\tests\test_mvp_ui_cdc_dev_tracker_migration_style_r1c.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python314\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\tests\test_mvp_ui_cdc_dev_tracker_migration_style_r1c.py:1: in <module>
+    ???
+E   ImportError: cannot import name 'REQUIRED_QAIT_HANDOFF_FILES' from 'mvp_qaic_reflex_ui.cdc_dev_tracker_migration_style' (C:\JRb_TRADING_OS\MVP_QAIC_PY\mvp_qaic_reflex_ui\cdc_dev_tracker_migration_style.py)
+__ ERROR collecting tests/test_mvp_ui_cdc_dev_tracker_migration_style_r1g.py __
+ImportError while importing test module 'C:\JRb_TRADING_OS\MVP_QAIC_PY\tests\test_mvp_ui_cdc_dev_tracker_migration_style_r1g.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python314\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\tes"
