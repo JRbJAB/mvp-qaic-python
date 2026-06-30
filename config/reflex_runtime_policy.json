@@ -1,0 +1,70 @@
+{
+  "policy_id": "R16F2H4_REFLEX_RUNTIME_POLICY_LOCK",
+  "status": "LOCKED_FOR_MVP_QAIC_REFLEX_PREVIEW",
+  "created_utc": "2026-07-01T00:00:00Z",
+  "scope": "MVP_QAIC_PY Reflex private UI preview/runtime governance",
+  "official_reflex_docs_required": true,
+  "official_reflex_docs_checked": [
+    {
+      "name": "Reflex CLI",
+      "url": "https://reflex.dev/docs/api-reference/cli/"
+    },
+    {
+      "name": "Reflex Config",
+      "url": "https://reflex.dev/docs/api-reference/config/"
+    }
+  ],
+  "runtime": {
+    "framework": "Reflex",
+    "reflex_version": "0.9.6.post1",
+    "docker_image": "jrb-reflex-pinned-hub:py312-node22-reflex096p1",
+    "mode": "dev",
+    "copy_strategy": "FULL_TRACKED_HEAD_COPY_OUTSIDE_REPO",
+    "source_patch_strategy": "PATCH_RUNTIME_COPY_FIRST_NO_REPO_PATCH_BEFORE_VISUAL_VALIDATION",
+    "repo_write_allowed_before_visual_validation": false
+  },
+  "ports": {
+    "container_frontend": 3000,
+    "container_backend": 8000,
+    "reference_frontend_host": 3035,
+    "reference_backend_host": 8035,
+    "preview_frontend_host": 3055,
+    "preview_backend_host": 8055,
+    "sandbox_frontend_host": 3060,
+    "sandbox_backend_host": 8060,
+    "dynamic_port_fallback_allowed": false
+  },
+  "commands": {
+    "primary_preview_container_command": "python -m reflex run --env dev --backend-host 0.0.0.0 --backend-port 8000 --frontend-port 3000",
+    "docker_preview_mapping": "-p 3055:3000 -p 8055:8000",
+    "docker_reference_mapping": "-p 3035:3000 -p 8035:8000"
+  },
+  "forbidden_for_ui_preview": [
+    "--env prod",
+    "--single-port",
+    "reflex export as primary UI preview",
+    "minimal allowlist runtime copy",
+    "patching the real repo before preview",
+    "silent dynamic port fallback",
+    "commit/tag/push before DOM+PNG+human validation",
+    "NiceGUI",
+    ".web source patch"
+  ],
+  "required_gates_before_any_ui_commit": [
+    "REFLEX_POLICY_GUARD_OK=True",
+    "FULL_TRACKED_HEAD_COPY=True",
+    "REFLEX_DEV_DOCKER_READY=True",
+    "HTTP_ROOT_READY=True",
+    "ROUTE_GATE_OK=True",
+    "DOM_CAPTURE_OK=True",
+    "PNG_CAPTURE_OK=True",
+    "HUMAN_VISUAL_APPROVAL=True"
+  ],
+  "assistant_response_contract": {
+    "must_state_policy_id_for_reflex_work": true,
+    "must_cite_official_reflex_docs_for_new_reflex_command_or_config_change": true,
+    "must_not_propose_prod_single_port_export_or_minimal_allowlist_as_primary_preview": true,
+    "must_output_reflex_policy_guard_line_before_any_runner": "REFLEX_POLICY_GUARD_REQUIRED=True",
+    "if_policy_conflict": "STOP_AND_AUDIT_READONLY"
+  }
+}
