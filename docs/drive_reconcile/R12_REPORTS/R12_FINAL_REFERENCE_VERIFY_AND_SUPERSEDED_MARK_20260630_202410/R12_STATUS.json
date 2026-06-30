@@ -1,0 +1,14 @@
+{
+  "status": "OK_FINAL_REFERENCE_v0.2.6_VERIFIED_AND_SUPERSEDED_MARKED",
+  "timestamp": "20260630_202410",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "ref_dir": "docs/FINAL/REFERENCE_v0.2.6",
+  "checked_files": 8,
+  "failed_checks": 0,
+  "superseded_candidate_count": 12,
+  "no_delete": true,
+  "no_write_source_drive": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true,
+  "report_dir": "docs/drive_reconcile/R12_REPORTS/R12_FINAL_REFERENCE_VERIFY_AND_SUPERSEDED_MARK_20260630_202410"
+}
