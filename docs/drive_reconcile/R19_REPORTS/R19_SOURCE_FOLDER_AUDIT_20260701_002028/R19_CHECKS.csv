@@ -1,0 +1,11 @@
+﻿name,required,ok,detail
+repo_exists,TRUE,TRUE,C:\JRb_TRADING_OS\MVP_QAIC_PY
+inside_work_tree,TRUE,TRUE,true
+branch_master,TRUE,TRUE,master
+r18b_tag_present,TRUE,TRUE,5ffb0f288d7a5f523dfc641cd0597d2d96cf129f
+head_at_or_after_r18b,TRUE,TRUE,head=5ffb0f288d7a5f523dfc641cd0597d2d96cf129f r18b=5ffb0f288d7a5f523dfc641cd0597d2d96cf129f
+status_before_clean_or_allowed_ui_config_only,TRUE,TRUE,CLEAN
+signal_os_root_found,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS
+source_dir_exists,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\source
+archives_folder_exists,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\99_ARCHIVES
+source_inventory_nonempty,FALSE,TRUE,files=25
