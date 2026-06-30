@@ -1,0 +1,32 @@
+check,required,ok,detail
+repo_exists,TRUE,TRUE,C:\JRb_TRADING_OS\MVP_QAIC_PY
+inside_work_tree,TRUE,TRUE,true
+branch_master,TRUE,TRUE,master
+r19b_tag_present,TRUE,TRUE,b6b79df41e6334b3c80971c6ce9a60ba0cbf19a4
+head_at_or_after_r19b,TRUE,TRUE,head=21c4b05725113286240dbcac1bad62e8e6ef96ed r19b=b6b79df41e6334b3c80971c6ce9a60ba0cbf19a4
+status_before_clean_or_allowed_runtime_policy_or_r20a_residue,TRUE,TRUE,?? docs/drive_reconcile/R20A4_REPORTS/
+signal_os_root_found,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS
+source_dir_exists,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\source
+archives_folder_exists,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\99_ARCHIVES
+r19b_action_list_found,TRUE,TRUE,C:\JRb_TRADING_OS\MVP_QAIC_PY\docs\drive_reconcile\R19B_REPORTS\R19B_SOURCE_FOLDER_READOUT_20260701_002750\R19B_ACTION_LIST.csv
+selected_archive_or_noise_count,TRUE,TRUE,count=13
+domain_or_hold_not_selected_count,TRUE,TRUE,count=12
+move_errors_zero,TRUE,TRUE,move_errors=0
+protected_count_not_touched,TRUE,TRUE,count=12
+remaining_selected_report_written,FALSE,TRUE,remaining=4
+archive_root_exists,FALSE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\99_ARCHIVES\R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037
+report_stage_paths_nonempty,TRUE,TRUE,docs/drive_reconcile/R20A2_REPORTS;docs/drive_reconcile/R20A4_REPORTS;docs/drive_reconcile/R20A5_REPORTS
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A4_REPORTS/R20A4_SOURCE_ARCHIVE_ONLY_RESUME_20260701_011647/R20A4_CHECKS.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A4_REPORTS/R20A4_SOURCE_ARCHIVE_ONLY_RESUME_20260701_011647/R20A4_ERROR.txt
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A4_REPORTS/R20A4_SOURCE_ARCHIVE_ONLY_RESUME_20260701_011647/R20A4_MOVE_ACTIONS.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A4_REPORTS/R20A4_SOURCE_ARCHIVE_ONLY_RESUME_20260701_011647/R20A4_SOURCE_INVENTORY_BEFORE.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A4_REPORTS/R20A4_SOURCE_ARCHIVE_ONLY_RESUME_20260701_011647/R20A4_STATUS_BEFORE.txt
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_CHECKS.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_MOVE_ACTIONS.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_REMAINING_SELECTED_IN_SOURCE.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_SCOPE_MEMO.md
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_SOURCE_INVENTORY_AFTER.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_SOURCE_INVENTORY_BEFORE.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_STATUS.json
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A5_REPORTS/R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037/R20A5_STATUS_BEFORE.txt
+staged_nonempty,TRUE,TRUE,count=13

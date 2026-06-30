@@ -1,0 +1,12 @@
+{
+  "status": "OK_MVP_QAIC_R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_APPLY_PENDING_COMMIT",
+  "head_before": "21c4b05725113286240dbcac1bad62e8e6ef96ed",
+  "subject_before": "MVP QAIC R16F2H4 lock Reflex runtime preview policy",
+  "archive_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\99_ARCHIVES\\R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037",
+  "moved_count": 9,
+  "missing_or_already_moved_count": 4,
+  "remaining_selected_count": 4,
+  "move_errors": 0,
+  "protected_not_touched_count": 12,
+  "report_dir": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R20A5_REPORTS\\R20A5_SOURCE_ARCHIVE_ONLY_LIVE_SAFE_20260701_012037"
+}
