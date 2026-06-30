@@ -1,0 +1,11 @@
+{
+  "status": "PENDING_COMMIT",
+  "head_before": "dcbaabd4681e66a415c158e07d9ea31a1048a382",
+  "subject_before": "MVP QAIC local final docs deep cleanup R15D",
+  "r15d_tag": "mvp-qaic-r15d-local-final-docs-deep-cleanup-20260630",
+  "old_path": "docs/FINAL/WEBAPP_ARCHITECTURE_CDC/CURRENT/MVP_QAIC_WEBAPP_ARCHITECTURE_CDC_v0_1_2_PRO_PACK_REPAIRED.zip",
+  "new_path": "docs/FINAL/99_SUPERSEDED_BY_REFERENCE_v0.2.6_20260630/WEBAPP_ARCHITECTURE_CDC/CURRENT/MVP_QAIC_WEBAPP_ARCHITECTURE_CDC_v0_1_2_PRO_PACK_REPAIRED.zip",
+  "sha256": "b3e0598fe66fc6ecad63628f57dc06ecca21dc7aa98ad9c1afc11110f5676379",
+  "bytes": 763148,
+  "status_before": "CLEAN"
+}
