@@ -34,7 +34,7 @@ DATA = {
         "charte/mvp-qaic-charte-graphique-v0.png",
         "brand-assets.html",
         "charte/index.html",
-        "mvp-qaic-web-assets-index.json"
+        "mvp-qaic-web-assets-index.json",
     ],
     "required_docs": [
         "README.md",
@@ -43,8 +43,8 @@ DATA = {
         "charte_graphique/mvp-qaic-charte-graphique-v0.png",
         "source/mvp-qaic-logo-validated-source.png",
         "source/README_SOURCE.md",
-        "web/WEB_INTEGRATION.md"
-    ]
+        "web/WEB_INTEGRATION.md",
+    ],
 }
 DOCS = ROOT / "docs" / "brand_assets" / DATA["docs_scope"]
 PUBLIC = ROOT / "public" / "brand" / DATA["public_scope"]
