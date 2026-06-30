@@ -1,0 +1,6 @@
+check,ok,detail
+canonical_missing_count,True,
+root_bad_count,True,
+desktop_ini_remaining_under_FINAL,True,
+superseded_dir_exists,True,docs/FINAL/99_SUPERSEDED_BY_REFERENCE_v0.2.6_20260630
+deep_compare_rows,True,106

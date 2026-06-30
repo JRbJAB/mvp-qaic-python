@@ -1,0 +1,13 @@
+{
+  "status": "READY_TO_COMMIT",
+  "head_before": "4709da294010cdb18e22744199b3583ca943892b",
+  "subject_before": "MVP QAIC emergency restore confirmed Reflex render ab80671",
+  "canonical_missing": [],
+  "root_bad": [],
+  "desktop_ini_remaining": [],
+  "report_dir": "docs/drive_reconcile/R15D_REPORTS/R15D_RESUME_UTF8_LOCAL_FINAL_DOCS_CLEANUP_20260630_225528",
+  "no_delete": true,
+  "no_reset": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true
+}
