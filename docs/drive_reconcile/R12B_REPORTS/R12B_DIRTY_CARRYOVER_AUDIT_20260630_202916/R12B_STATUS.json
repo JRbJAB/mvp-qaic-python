@@ -1,0 +1,31 @@
+{
+  "status": "OK_MVP_QAIC_DOCS_R12B_DIRTY_CARRYOVER_AUDIT_READY",
+  "repo": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY",
+  "head": "7cac649c212f288d9f67558b44f2d611ef947fc8",
+  "subject": "MVP QAIC docs final reference verify and superseded mark R12",
+  "r12_tag": "mvp-qaic-docs-final-reference-verify-superseded-mark-r12-20260630",
+  "r12_tag_present": true,
+  "dirty_count_before": 2,
+  "allowed_dirty_carryover_only": true,
+  "dirty_rows": [
+    {
+      "status": "M",
+      "path": "mvp_qaic_reflex_ui/mvp_qaic_reflex_ui.py",
+      "allowed_dirty_carryover": "TRUE",
+      "classification": "ALLOWED_UI_CARRYOVER_NOT_DOCS_SCOPE",
+      "evidence_path": "docs/drive_reconcile/R12B_REPORTS/R12B_DIRTY_CARRYOVER_AUDIT_20260630_202916/evidence/diff_mvp_qaic_reflex_ui_mvp_qaic_reflex_ui.py.patch"
+    },
+    {
+      "status": "??",
+      "path": "mvp_qaic_reflex_ui/restored_initial_render.py",
+      "allowed_dirty_carryover": "TRUE",
+      "classification": "ALLOWED_UI_CARRYOVER_NOT_DOCS_SCOPE",
+      "evidence_path": "docs/drive_reconcile/R12B_REPORTS/R12B_DIRTY_CARRYOVER_AUDIT_20260630_202916/evidence/untracked_copy_mvp_qaic_reflex_ui_restored_initial_render.py"
+    }
+  ],
+  "no_delete": true,
+  "no_reset": true,
+  "no_overwrite_dirty": true,
+  "no_git_add_dot": true,
+  "targeted_staging_only": true
+}
