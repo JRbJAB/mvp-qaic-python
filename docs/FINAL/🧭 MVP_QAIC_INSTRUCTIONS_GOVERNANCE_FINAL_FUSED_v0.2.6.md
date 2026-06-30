@@ -5627,3 +5627,23 @@ Remplacer uniquement :
 - No menu mutation.
 - No broker/order/sizing/secret.
 - Journal append bloqué si champs essentiels vides.
+
+<!-- R16F2H6_PROCESS_LOCK_START -->
+## 🛠️ R16F2H6 — Reflex runtime/process live lock
+
+Live version: v0.2.7  
+Policy ID: `R16F2H4_REFLEX_RUNTIME_POLICY_LOCK`  
+Readiness Policy ID: `R16F2H6_REFLEX_READINESS_ANTI_LOOP_POLICY`  
+Updated: 2026-06-30 23:41:31 UTC
+
+Validated process now locked:
+
+- Reflex-only runtime preview.
+- Docker pinned preview with full tracked HEAD copy outside repo.
+- Container ports `3000/8000`; Windows preview ports `3055/8055`.
+- Mandatory `REFLEX_POLICY_GUARD_OK=True` and `REFLEX_READINESS_POLICY_GUARD_OK=True` before future runners.
+- Anti-loop readiness: max wait, max two identical log tails, internal/host port diagnostic, stop container on failure.
+- Reference `.md` generated for validated technical process.
+- Relevant `docs/FINAL` deliverables updated through marked fusion blocks.
+- Transient logs/reports remain in `_RUN_REPORTS`; FINAL receives only promoted reference content.
+<!-- R16F2H6_PROCESS_LOCK_END -->

@@ -66,5 +66,49 @@
     "must_not_propose_prod_single_port_export_or_minimal_allowlist_as_primary_preview": true,
     "must_output_reflex_policy_guard_line_before_any_runner": "REFLEX_POLICY_GUARD_REQUIRED=True",
     "if_policy_conflict": "STOP_AND_AUDIT_READONLY"
+  },
+  "readiness": {
+    "policy_id": "R16F2H6_REFLEX_READINESS_ANTI_LOOP_POLICY",
+    "status": "LOCKED_FOR_H4_RUNNERS",
+    "max_wait_seconds": 420,
+    "poll_interval_seconds": 3,
+    "log_summary_interval_seconds": 60,
+    "max_identical_log_tail_repeats": 2,
+    "required_log_markers": [
+      "App Running",
+      "App running at:",
+      "Backend running at:"
+    ],
+    "phase_order": [
+      "IMPORT_AUDIT",
+      "REFLEX_START",
+      "COMPILE",
+      "APP_RUNNING_MARKER",
+      "HTTP_ROOT",
+      "ROUTE_GATE",
+      "CAPTURE_GATE"
+    ],
+    "if_compile_done_but_http_not_ready": [
+      "inspect_container_state",
+      "inspect_internal_listening_ports_3000_8000",
+      "test_internal_http_3000_8000",
+      "test_host_http_3055_8055",
+      "write_single_diagnostic_report",
+      "stop_container_on_failure"
+    ],
+    "forbidden_runner_behavior": [
+      "unbounded_log_tail_loop",
+      "printing_identical_log_tail_more_than_two_times",
+      "waiting_after_app_running_without_internal_port_diagnostic",
+      "silent_remote_disconnected_spam",
+      "dynamic_port_fallback"
+    ],
+    "success_requires": [
+      "REFLEX_POLICY_GUARD_OK=True",
+      "APP_RUNNING_MARKER=True",
+      "HTTP_ROOT_READY=True",
+      "ROUTE_GATE_OK=True",
+      "REPO_STATUS_LINE_COUNT_AFTER=0"
+    ]
   }
 }
