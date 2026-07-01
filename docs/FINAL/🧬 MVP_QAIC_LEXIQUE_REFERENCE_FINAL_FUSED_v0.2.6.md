@@ -39,25 +39,25 @@ Canonical lexique, methods, signals and project synthesis reference.
 
 ## 📌 Table des matières
 
-1. 🧠 Philosophie générale  
-2. ₿ Lexique crypto essentiel  
-3. 📈 Lexique trading & market structure  
-4. 🧬 Lexique DeFi, Web3, NFT, on-chain  
-5. 🔥 Types de tokens et profils de risque  
-6. 🗓️ Méthode d’analyse quotidienne  
-7. 📊 Indicateurs techniques à afficher  
-8. 🎯 Méthodes de signaux trading  
-9. ⚡ Signaux sur tokens très volatils  
-10. 🛡️ Gestion du risque et position sizing  
-11. 🧮 Scoring crypto sur 100  
-12. 🧾 Templates opérationnels  
-13. 🏗️ Architecture d’un outil fonctionnel de support  
-14. 🧱 Schémas de données  
-15. 🤖 Pseudo-code moteur de signaux  
-16. 🧪 Backtesting conceptuel  
-17. 🖥️ Dashboard idéal  
-18. ✅ Checklists quotidiennes  
-19. ⚠️ Disclaimers  
+1. 🧠 Philosophie générale
+2. ₿ Lexique crypto essentiel
+3. 📈 Lexique trading & market structure
+4. 🧬 Lexique DeFi, Web3, NFT, on-chain
+5. 🔥 Types de tokens et profils de risque
+6. 🗓️ Méthode d’analyse quotidienne
+7. 📊 Indicateurs techniques à afficher
+8. 🎯 Méthodes de signaux trading
+9. ⚡ Signaux sur tokens très volatils
+10. 🛡️ Gestion du risque et position sizing
+11. 🧮 Scoring crypto sur 100
+12. 🧾 Templates opérationnels
+13. 🏗️ Architecture d’un outil fonctionnel de support
+14. 🧱 Schémas de données
+15. 🤖 Pseudo-code moteur de signaux
+16. 🧪 Backtesting conceptuel
+17. 🖥️ Dashboard idéal
+18. ✅ Checklists quotidiennes
+19. ⚠️ Disclaimers
 
 ---
 
@@ -929,7 +929,7 @@ Mode : Cash dominant + micro-trades
 
 # 20. ⚠️ Disclaimers
 
-Ce document est fourni à des fins **éducatives, analytiques et informatives** uniquement.  
+Ce document est fourni à des fins **éducatives, analytiques et informatives** uniquement.
 Il ne constitue pas un conseil financier, une recommandation personnalisée, une incitation à acheter/vendre, ni une garantie de performance.
 
 Les marchés crypto sont volatils. Les performances passées ne préjugent pas des performances futures. Toute décision d’investissement doit être prise après recherche personnelle, gestion du risque et compréhension des pertes potentielles.
@@ -955,10 +955,10 @@ Pour les graphiques, alertes et indicateurs avancés, un outil comme [TradingVie
 
 ## 🧠 Mantra
 
-> **Cash = optionnalité.  
-> SL = survie.  
-> TP = discipline.  
-> Journal = progression.  
+> **Cash = optionnalité.
+> SL = survie.
+> TP = discipline.
+> Journal = progression.
 > Taille = contrôle.**
 
 ## Source 2: `docs/FINAL/fusion_inbox_R6/LEXIQUE/lexique_crypto_methodes_signaux_trading_pro_0.7.2_REAL_FULL_SOURCE_FUSION.md`
@@ -982,25 +982,25 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 ## 📌 Table des matières
 
-1. 🧠 Philosophie générale  
-2. ₿ Lexique crypto essentiel  
-3. 📈 Lexique trading & market structure  
-4. 🧬 Lexique DeFi, Web3, NFT, on-chain  
-5. 🔥 Types de tokens et profils de risque  
-6. 🗓️ Méthode d’analyse quotidienne  
-7. 📊 Indicateurs techniques à afficher  
-8. 🎯 Méthodes de signaux trading  
-9. ⚡ Signaux sur tokens très volatils  
-10. 🛡️ Gestion du risque et position sizing  
-11. 🧮 Scoring crypto sur 100  
-12. 🧾 Templates opérationnels  
-13. 🏗️ Architecture d’un outil fonctionnel de support  
-14. 🧱 Schémas de données  
-15. 🤖 Pseudo-code moteur de signaux  
-16. 🧪 Backtesting conceptuel  
-17. 🖥️ Dashboard idéal  
-18. ✅ Checklists quotidiennes  
-19. ⚠️ Disclaimers  
+1. 🧠 Philosophie générale
+2. ₿ Lexique crypto essentiel
+3. 📈 Lexique trading & market structure
+4. 🧬 Lexique DeFi, Web3, NFT, on-chain
+5. 🔥 Types de tokens et profils de risque
+6. 🗓️ Méthode d’analyse quotidienne
+7. 📊 Indicateurs techniques à afficher
+8. 🎯 Méthodes de signaux trading
+9. ⚡ Signaux sur tokens très volatils
+10. 🛡️ Gestion du risque et position sizing
+11. 🧮 Scoring crypto sur 100
+12. 🧾 Templates opérationnels
+13. 🏗️ Architecture d’un outil fonctionnel de support
+14. 🧱 Schémas de données
+15. 🤖 Pseudo-code moteur de signaux
+16. 🧪 Backtesting conceptuel
+17. 🖥️ Dashboard idéal
+18. ✅ Checklists quotidiennes
+19. ⚠️ Disclaimers
 
 ---
 
@@ -1872,7 +1872,7 @@ Mode : Cash dominant + micro-trades
 
 # 20. ⚠️ Disclaimers
 
-Ce document est fourni à des fins **éducatives, analytiques et informatives** uniquement.  
+Ce document est fourni à des fins **éducatives, analytiques et informatives** uniquement.
 Il ne constitue pas un conseil financier, une recommandation personnalisée, une incitation à acheter/vendre, ni une garantie de performance.
 
 Les marchés crypto sont volatils. Les performances passées ne préjugent pas des performances futures. Toute décision d’investissement doit être prise après recherche personnelle, gestion du risque et compréhension des pertes potentielles.
@@ -1898,20 +1898,20 @@ Pour les graphiques, alertes et indicateurs avancés, un outil comme [TradingVie
 
 ## 🧠 Mantra
 
-> **Cash = optionnalité.  
-> SL = survie.  
-> TP = discipline.  
-> Journal = progression.  
+> **Cash = optionnalité.
+> SL = survie.
+> TP = discipline.
+> Journal = progression.
 > Taille = contrôle.**
 ---
 
 # ✅ FUSION 0.7.2 — Scope Split MVP / QAIC Engine
 
-> **Patch fusionnel ajouté au document original complet**  
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS  
-> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`  
-> **Date :** 2026-06-20  
-> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`  
+> **Patch fusionnel ajouté au document original complet**
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
+> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`
+> **Date :** 2026-06-20
+> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`
 > **Méthode :** contenu original 0.6.2 conservé intégralement, puis correction de doctrine ajoutée sans suppression.
 
 ## 0. Décision de programme validée
@@ -2017,7 +2017,7 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 # 📚🚀 Synthèse Projet Crypto — Lexique & MVP uniquement
 
-> **Objectif du document :** fournir une synthèse propre, exploitable et prête à intégrer dans un Projet ChatGPT, centrée uniquement sur la partie **Lexique Crypto Méthodes & Signaux Trading Pro** et **Architecture MVP Crypto Lexique-first**.  
+> **Objectif du document :** fournir une synthèse propre, exploitable et prête à intégrer dans un Projet ChatGPT, centrée uniquement sur la partie **Lexique Crypto Méthodes & Signaux Trading Pro** et **Architecture MVP Crypto Lexique-first**.
 > Cette synthèse exclut volontairement la partie portefeuille, positions, achats/ventes et suivi de marché personnel.
 
 ---
@@ -2056,7 +2056,7 @@ Dashboard
 Journal + Alertes
 ```
 
-Le MVP doit rester utile même sans automatisation complète des prix en temps réel.  
+Le MVP doit rester utile même sans automatisation complète des prix en temps réel.
 Dès le Jour 1, l’utilisateur doit pouvoir consulter les termes, méthodes, signaux, règles de risque et playbooks de décision.
 
 ---
@@ -2083,7 +2083,7 @@ Il doit couvrir :
 
 ## 4. 🧩 Transformation du lexique en base structurée
 
-Le lexique Markdown ne doit pas rester un simple document statique.  
+Le lexique Markdown ne doit pas rester un simple document statique.
 Il doit être transformé en **Knowledge Base exploitable**.
 
 ### Tables / onglets recommandés
@@ -2531,18 +2531,18 @@ permettre à l’utilisateur de rechercher un terme, comprendre une méthode, id
 
 ## 18. ⚠️ Cadre d’utilisation
 
-Ce projet est un **outil éducatif et analytique**.  
-Il ne doit pas être présenté comme un système garantissant des performances.  
+Ce projet est un **outil éducatif et analytique**.
+Il ne doit pas être présenté comme un système garantissant des performances.
 Les signaux et scores servent à structurer la décision, pas à prédire avec certitude le marché.
 ---
 
 # ✅ FUSION 0.7.2 — Scope Split MVP / QAIC Engine
 
-> **Patch fusionnel ajouté au document original complet**  
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS  
-> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`  
-> **Date :** 2026-06-20  
-> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`  
+> **Patch fusionnel ajouté au document original complet**
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
+> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`
+> **Date :** 2026-06-20
+> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`
 > **Méthode :** contenu original 0.6.2 conservé intégralement, puis correction de doctrine ajoutée sans suppression.
 
 ## 0. Décision de programme validée
@@ -2658,10 +2658,10 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 # 🧱 Architecture — MVP QAIC Lexique-first, AppSheet & Transition QAIC Python — 0.6.2 REAL FUSION REPAIR
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`
 > **Source :** consolidation réelle CDC 0.3.1 + Planning 0.3.1 + Instructions 0.5.0 + décisions AppSheet/P5 + corrections Portfolio/Broker.
 
 ## 1. Architecture cible par couches
@@ -2797,11 +2797,11 @@ Tout signal est croisé avec Data Quality + Portfolio + Risk Guard + Human Revie
 
 # ✅ FUSION 0.7.2 — Scope Split MVP / QAIC Engine
 
-> **Patch fusionnel ajouté au document original complet**  
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS  
-> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`  
-> **Date :** 2026-06-20  
-> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`  
+> **Patch fusionnel ajouté au document original complet**
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
+> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`
+> **Date :** 2026-06-20
+> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`
 > **Méthode :** contenu original 0.6.2 conservé intégralement, puis correction de doctrine ajoutée sans suppression.
 
 ## 0. Décision de programme validée
@@ -2898,10 +2898,10 @@ QAIC_BRIDGE_IN_MVP = OUTPUT_IMPORT_AND_DISPLAY_ONLY
 
 # 🧱 Architecture — MVP QAIC Lexique-first, AppSheet & Transition QAIC Python — 0.6.2 REAL FUSION REPAIR
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`
 > **Source :** consolidation réelle CDC 0.3.1 + Planning 0.3.1 + Instructions 0.5.0 + décisions AppSheet/P5 + corrections Portfolio/Broker.
 
 ## 1. Architecture cible par couches
@@ -3038,11 +3038,11 @@ Tout signal est croisé avec Data Quality + Portfolio + Risk Guard + Human Revie
 
 # 📘 CDC — MVP QAIC Web App Lexique-first
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -3611,8 +3611,8 @@ Le batch P0-A est accepté seulement si :
 
 ## 18. 🧭 P0-B6 — Documentation Update & Project Governance
 
-> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`  
-> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`  
+> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`
+> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`
 > **Règle appliquée :** cette section est une **extension** du CDC `0.2.2`, pas une réécriture résumée.
 
 ### 18.1 État runtime validé avant P0-B6
@@ -3878,11 +3878,11 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 # 📘 CDC — MVP QAIC Web App Lexique-first
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -4451,8 +4451,8 @@ Le batch P0-A est accepté seulement si :
 
 ## 18. 🧭 P0-B6 — Documentation Update & Project Governance
 
-> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`  
-> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`  
+> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`
+> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`
 > **Règle appliquée :** cette section est une **extension** du CDC `0.2.2`, pas une réécriture résumée.
 
 ### 18.1 État runtime validé avant P0-B6
@@ -4708,11 +4708,11 @@ Ce CDC conserve le corps source du fichier `📘 CDC_MVP_QAIC_WEB_APP_LEXIQUE_FI
 
 # ✅ FUSION 0.7.2 — Scope Split MVP / QAIC Engine
 
-> **Patch fusionnel ajouté au document original complet**  
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS  
-> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`  
-> **Date :** 2026-06-20  
-> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`  
+> **Patch fusionnel ajouté au document original complet**
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
+> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`
+> **Date :** 2026-06-20
+> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`
 > **Méthode :** contenu original 0.6.2 conservé intégralement, puis correction de doctrine ajoutée sans suppression.
 
 ## 0. Décision de programme validée
@@ -4929,3 +4929,20 @@ MVPQAIC_LexiqueRunAllFast()
 6. Optional: enter a query in `🔎 LEXIQUE_SEARCH!B3`, then run `MVPQAIC_LexiqueSearch()`.
 
 Safety: no broker, no order, no sizing, no external network, no secret, no delete/hide/menu/trigger mutation.
+
+<!-- BEGIN_R21F_DRIVE_FIRST_REFERENCE_LOCK -->
+## R21F_DRIVE_FIRST_REFERENCE_LOCK - 2026-07-01
+
+- DRIVE_LIVE_ACCESS=True
+- DRIVE_SOURCE_OF_TRUTH_REQUIRED=True
+- READ_CURRENT_REFERENCE_INDEX_BEFORE_PROJECT_BATCH=True
+- READ_FINAL_DOCS_BEFORE_PROJECT_BATCH=True
+- READ_CDC_TOOL_REGISTRY_UI_TRACKER_REFERENCES_BEFORE_PATCH=True
+- NO_MEMORY_ONLY=True
+- NO_APPROXIMATION=True
+- NO_BATCH_WITHOUT_REFERENTIAL_AUDIT=True
+- NO_RUNTIME_OR_CODEX_RUNNER_BEFORE_RELEVANT_REFERENCES_AUDITED=True
+- REQUIRED_ORDER=Drive source of truth -> CURRENT_REFERENCE_INDEX -> active final docs -> CDC/tool registry/UI tracker references -> batch plan
+- Scope: MVP QAIC / QAIC / QAIT project work.
+- Memo: docs/FINAL/R21F_DRIVE_FIRST_REFERENCE_LOCK_MEMO_20260701.md
+<!-- END_R21F_DRIVE_FIRST_REFERENCE_LOCK -->

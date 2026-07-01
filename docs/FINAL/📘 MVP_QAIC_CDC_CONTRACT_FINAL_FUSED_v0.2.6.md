@@ -40,10 +40,10 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 # 🧱 Architecture — MVP QAIC Lexique-first, AppSheet & Transition QAIC Python — 0.6.2 REAL FUSION REPAIR
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`
 > **Source :** consolidation réelle CDC 0.3.1 + Planning 0.3.1 + Instructions 0.5.0 + décisions AppSheet/P5 + corrections Portfolio/Broker.
 
 ## 1. Architecture cible par couches
@@ -179,11 +179,11 @@ Tout signal est croisé avec Data Quality + Portfolio + Risk Guard + Human Revie
 
 # ✅ FUSION 0.7.2 — Scope Split MVP / QAIC Engine
 
-> **Patch fusionnel ajouté au document original complet**  
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS  
-> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`  
-> **Date :** 2026-06-20  
-> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`  
+> **Patch fusionnel ajouté au document original complet**
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
+> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`
+> **Date :** 2026-06-20
+> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`
 > **Méthode :** contenu original 0.6.2 conservé intégralement, puis correction de doctrine ajoutée sans suppression.
 
 ## 0. Décision de programme validée
@@ -280,10 +280,10 @@ QAIC_BRIDGE_IN_MVP = OUTPUT_IMPORT_AND_DISPLAY_ONLY
 
 # 🧱 Architecture — MVP QAIC Lexique-first, AppSheet & Transition QAIC Python — 0.6.2 REAL FUSION REPAIR
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_ARCHITECTURE_0.6.2_REAL_FUSION_REPAIR`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION`
 > **Source :** consolidation réelle CDC 0.3.1 + Planning 0.3.1 + Instructions 0.5.0 + décisions AppSheet/P5 + corrections Portfolio/Broker.
 
 ## 1. Architecture cible par couches
@@ -420,9 +420,9 @@ Tout signal est croisé avec Data Quality + Portfolio + Risk Guard + Human Revie
 
 # 🛠️ MVP QAIC — Mémo CDC de situation vers version finale livrable
 
-**Version :** `MVP_QAIC_CDC_SITUATION_TO_FINAL_MEMO_1.4.2`  
-**Date :** 2026-06-13  
-**Statut :** `PHASE_4_LEXIQUE_USEFUL_DEV_RESUMED`  
+**Version :** `MVP_QAIC_CDC_SITUATION_TO_FINAL_MEMO_1.4.2`
+**Date :** 2026-06-13
+**Statut :** `PHASE_4_LEXIQUE_USEFUL_DEV_RESUMED`
 **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
 
 ---
@@ -645,11 +645,11 @@ Prochaine étape après P3-B : enrichissement contrôlé, puis rebuild frontend,
 
 # 📘 CDC — MVP QAIC Web App Lexique-first
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -1218,8 +1218,8 @@ Le batch P0-A est accepté seulement si :
 
 ## 18. 🧭 P0-B6 — Documentation Update & Project Governance
 
-> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`  
-> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`  
+> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`
+> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`
 > **Règle appliquée :** cette section est une **extension** du CDC `0.2.2`, pas une réécriture résumée.
 
 ### 18.1 État runtime validé avant P0-B6
@@ -1485,11 +1485,11 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 # 📘 CDC — MVP QAIC Web App Lexique-first
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -2058,8 +2058,8 @@ Le batch P0-A est accepté seulement si :
 
 ## 18. 🧭 P0-B6 — Documentation Update & Project Governance
 
-> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`  
-> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`  
+> **Version ajoutée :** `0.3.1_FULL_FUSION_DRIVE_ALIGNED`
+> **Statut :** `P0B6_GOVERNANCE_READY_FOR_DRIVE_REVIEW`
 > **Règle appliquée :** cette section est une **extension** du CDC `0.2.2`, pas une réécriture résumée.
 
 ### 18.1 État runtime validé avant P0-B6
@@ -2315,11 +2315,11 @@ Ce CDC conserve le corps source du fichier `📘 CDC_MVP_QAIC_WEB_APP_LEXIQUE_FI
 
 # ✅ FUSION 0.7.2 — Scope Split MVP / QAIC Engine
 
-> **Patch fusionnel ajouté au document original complet**  
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS  
-> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`  
-> **Date :** 2026-06-20  
-> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`  
+> **Patch fusionnel ajouté au document original complet**
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
+> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`
+> **Date :** 2026-06-20
+> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`
 > **Méthode :** contenu original 0.6.2 conservé intégralement, puis correction de doctrine ajoutée sans suppression.
 
 ## 0. Décision de programme validée
@@ -2416,11 +2416,11 @@ QAIC_BRIDGE_IN_MVP = OUTPUT_IMPORT_AND_DISPLAY_ONLY
 
 # 📘 CDC & Contrats — Version finale fusionnée
 
-**Version :** `0.2.2`  
-**Statut :** `P203B2_R3_FINAL_FUSION_CONTENT_CANDIDATE`  
-**Date :** `2026-06-24 17:10:57`  
-**Theme :** `CDC_CONTRACT`  
-**Source P203A :** `G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P203A_R2_EXACT_3_ROOTS_DOCS_AUDIT_20260624_161358`  
+**Version :** `0.2.2`
+**Statut :** `P203B2_R3_FINAL_FUSION_CONTENT_CANDIDATE`
+**Date :** `2026-06-24 17:10:57`
+**Theme :** `CDC_CONTRACT`
+**Source P203A :** `G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P203A_R2_EXACT_3_ROOTS_DOCS_AUDIT_20260624_161358`
 **Source P203B1 :** `G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\MVP_QAIC_PY\05_EXPORTS\P203B1_R2_DOC_LEGITIMACY_GATE_MD_20260624_163254`
 
 ## 1. 🎯 Finalité
@@ -2516,7 +2516,7 @@ Elle ne supprime aucun fichier source et n'autorise pas encore l'archivage autom
 ```text
 # 🧾 Changelog — MVP QAIC P1-G Prompt Library Contract
 
-**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`  
+**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`
 **Date :** 2026-06-11
 
 ## Ajouts
@@ -2762,9 +2762,9 @@ entrée portfolio/capture, prompt GEM, réponse GEM, review queue, entrée journ
 --- extrait ---
 # 🛠️ MVP QAIC — Mémo CDC de situation vers version finale livrable
 
-**Version :** `MVP_QAIC_CDC_SITUATION_TO_FINAL_MEMO_1.4.2`  
-**Date :** 2026-06-13  
-**Statut :** `PHASE_4_LEXIQUE_USEFUL_DEV_RESUMED`  
+**Version :** `MVP_QAIC_CDC_SITUATION_TO_FINAL_MEMO_1.4.2`
+**Date :** 2026-06-13
+**Statut :** `PHASE_4_LEXIQUE_USEFUL_DEV_RESUMED`
 **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
 
 ---
@@ -2873,8 +2873,8 @@ Les sources métier restent les tables spécialisées :
 --- extrait ---
 # 🛠️ MVP QAIC — Mémo situation Phase 4 → Version finale livrable
 
-**Date :** 2026-06-13  
-**Statut :** `PHASE_4_LEXIQUE_EXISTING_CONSOLIDATION_IN_PROGRESS`  
+**Date :** 2026-06-13
+**Statut :** `PHASE_4_LEXIQUE_EXISTING_CONSOLIDATION_IN_PROGRESS`
 **Priorité projet :** batchs complets, scripts fusionnés, dev utile, zéro empilement inutile.
 
 ---
@@ -2950,7 +2950,7 @@ Onglets cœur :
 - variante `prompt_05_full_trading_review__Crypto_Trading_Investing__v20260612211346` prête ;
 - tests Gem gelés ;
 - cockpit principal stabilisé ;
-- 
+-
 ```
 
 ### ITEM-000018 — `01_DOCS\CDC\📘 CDC_MVP_QAIC_OPERATIONAL_ROADMAP.md`
@@ -3029,11 +3029,11 @@ entrée portfolio/capture, prompt GEM, réponse GEM, review queue, entrée journ
 --- extrait ---
 # 📘 CDC — MVP QAIC Web App Lexique-first
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -3102,11 +3102,11 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 # 📘 CDC — MVP QAIC Web App Lexique-first
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_CDC_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -3162,9 +3162,9 @@ _Contenu non lisible ou vide._
 ```text
 # 🛠️ MVP QAIC — P1-G Prompt Library / Contract Update — Runbook
 
-**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`  
-**Date :** 2026-06-11  
-**Statut :** `READY_FOR_RUNTIME_VALIDATION`  
+**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`
+**Date :** 2026-06-11
+**Statut :** `READY_FOR_RUNTIME_VALIDATION`
 
 ## Objectif
 
@@ -3555,7 +3555,7 @@ Gate: P15C_WEB_APP_READ_MODEL_AND_SCREEN_SPEC_READY_LOCAL_ONLY
 - Source tab: LEXIQUE_CRYPTO_APPROVED
 - Category field: category
 - Term field: term
-- Definition field: 
+- Definition field:
 - Definition display mode: DETAIL_FALLBACK_ALL_NON_CORE_FIELDS
 
 ## Screens
@@ -4639,8 +4639,8 @@ Aucune décision ne devient exploitable sans entrée journal et audit.
 
 # 🛠️ MVP QAIC — Mémo situation Phase 4 → Version finale livrable
 
-**Date :** 2026-06-13  
-**Statut :** `PHASE_4_LEXIQUE_EXISTING_CONSOLIDATION_IN_PROGRESS`  
+**Date :** 2026-06-13
+**Statut :** `PHASE_4_LEXIQUE_EXISTING_CONSOLIDATION_IN_PROGRESS`
 **Priorité projet :** batchs complets, scripts fusionnés, dev utile, zéro empilement inutile.
 
 ---
@@ -5169,11 +5169,11 @@ Prochaine action : P3-B queue enrichment status + prepare, pas apply direct.
 
 # 🗓️ Planning — MVP QAIC Web App Lexique-first & Transition QAIC
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_PLANNING_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_PLANNING_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -6184,11 +6184,11 @@ No Drive overwrite. No Apps Script run. No clasp push.
 
 # 🗓️ Planning — MVP QAIC Web App Lexique-first & Transition QAIC
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_PLANNING_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`  
-> **Date :** 2026-06-16  
-> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`  
-> **Format :** Markdown `.md`  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_PLANNING_0.6.2_REAL_FUSION_REPAIR_APPSHEET_PORTFOLIO_BROKER_TRANSITION`
+> **Date :** 2026-06-16
+> **Statut :** `DRAFT_FOR_HUMAN_VALIDATION_REAL_FUSION_REPAIR`
+> **Format :** Markdown `.md`
 
 ---
 
@@ -7189,11 +7189,11 @@ DECISION_JOURNAL
 
 # ✅ FUSION 0.7.2 — Scope Split MVP / QAIC Engine
 
-> **Patch fusionnel ajouté au document original complet**  
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS  
-> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`  
-> **Date :** 2026-06-20  
-> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`  
+> **Patch fusionnel ajouté au document original complet**
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS
+> **Version fusionnée :** `0.7.2_REAL_FULL_SOURCE_FUSION_SCOPE_SPLIT`
+> **Date :** 2026-06-20
+> **Statut :** `READY_FOR_HUMAN_REVIEW_NON_DESTRUCTIVE`
 > **Méthode :** contenu original 0.6.2 conservé intégralement, puis correction de doctrine ajoutée sans suppression.
 
 ## 0. Décision de programme validée
@@ -7290,9 +7290,9 @@ QAIC_BRIDGE_IN_MVP = OUTPUT_IMPORT_AND_DISPLAY_ONLY
 
 # 🛠️ MVP QAIC — P1-G Prompt Library / Contract Update — Runbook
 
-**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`  
-**Date :** 2026-06-11  
-**Statut :** `READY_FOR_RUNTIME_VALIDATION`  
+**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`
+**Date :** 2026-06-11
+**Statut :** `READY_FOR_RUNTIME_VALIDATION`
 
 ## Objectif
 
@@ -7389,3 +7389,20 @@ ou decision_status = REVIEW_REQUIRED / BLOCKED
 ```
 
 Jamais d’invention de prix, PRU, quantité, PnL, TP, SL, exposition ou score.
+
+<!-- BEGIN_R21F_DRIVE_FIRST_REFERENCE_LOCK -->
+## R21F_DRIVE_FIRST_REFERENCE_LOCK - 2026-07-01
+
+- DRIVE_LIVE_ACCESS=True
+- DRIVE_SOURCE_OF_TRUTH_REQUIRED=True
+- READ_CURRENT_REFERENCE_INDEX_BEFORE_PROJECT_BATCH=True
+- READ_FINAL_DOCS_BEFORE_PROJECT_BATCH=True
+- READ_CDC_TOOL_REGISTRY_UI_TRACKER_REFERENCES_BEFORE_PATCH=True
+- NO_MEMORY_ONLY=True
+- NO_APPROXIMATION=True
+- NO_BATCH_WITHOUT_REFERENTIAL_AUDIT=True
+- NO_RUNTIME_OR_CODEX_RUNNER_BEFORE_RELEVANT_REFERENCES_AUDITED=True
+- REQUIRED_ORDER=Drive source of truth -> CURRENT_REFERENCE_INDEX -> active final docs -> CDC/tool registry/UI tracker references -> batch plan
+- Scope: MVP QAIC / QAIC / QAIT project work.
+- Memo: docs/FINAL/R21F_DRIVE_FIRST_REFERENCE_LOCK_MEMO_20260701.md
+<!-- END_R21F_DRIVE_FIRST_REFERENCE_LOCK -->

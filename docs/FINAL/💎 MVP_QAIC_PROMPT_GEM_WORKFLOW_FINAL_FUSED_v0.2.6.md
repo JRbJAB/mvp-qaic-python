@@ -278,8 +278,8 @@ Prompts Stitch, Antigravity et Apps Script à déposer ici.
 
 # ✅ Antigravity P0-A — Critères de validation
 
-> **Version :** `ANTIGRAVITY_P0A_ACCEPTANCE_CRITERIA_0.2.2`  
-> **Date :** 2026-06-11  
+> **Version :** `ANTIGRAVITY_P0A_ACCEPTANCE_CRITERIA_0.2.2`
+> **Date :** 2026-06-11
 > **Statut :** `READY`
 
 ## Validation obligatoire
@@ -311,8 +311,8 @@ Prompts Stitch, Antigravity et Apps Script à déposer ici.
 
 # 📝 Prompt — Générer une entrée Decision Journal MVP QAIC 0.4.0
 
-> **Version :** `MVP_QAIC_DECISION_JOURNAL_ENTRY_PROMPT_0.4.0`  
-> **Statut :** `P1_GPT_RESPONSE_AUDIT_DECISION_JOURNAL_READY_FOR_DRIVE_REVIEW`  
+> **Version :** `MVP_QAIC_DECISION_JOURNAL_ENTRY_PROMPT_0.4.0`
+> **Statut :** `P1_GPT_RESPONSE_AUDIT_DECISION_JOURNAL_READY_FOR_DRIVE_REVIEW`
 
 ---
 
@@ -360,9 +360,9 @@ Analyse à convertir :
 
 # 🤖 Antigravity Prompt — P0-A Knowledge Base CSV
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `ANTIGRAVITY_P0A_PROMPT_0.2.2`  
-> **Date :** 2026-06-11  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `ANTIGRAVITY_P0A_PROMPT_0.2.2`
+> **Date :** 2026-06-11
 > **Statut :** `READY_TO_RUN_AFTER_USER_VALIDATION`
 
 ## Prompt à coller dans Antigravity
@@ -444,8 +444,8 @@ Acceptance criteria:
 
 # 🧠 PROMPT — First Real GPT Response Audit Test MVP QAIC 0.4.1
 
-> **Version :** `MVP_QAIC_P1B_REAL_GPT_RESPONSE_AUDIT_PROMPT_0.4.1`  
-> **Statut :** `P1B_FIRST_REAL_GPT_RESPONSE_AUDIT_TEST_READY_FOR_DRIVE_REVIEW`  
+> **Version :** `MVP_QAIC_P1B_REAL_GPT_RESPONSE_AUDIT_PROMPT_0.4.1`
+> **Statut :** `P1B_FIRST_REAL_GPT_RESPONSE_AUDIT_TEST_READY_FOR_DRIVE_REVIEW`
 
 ---
 
@@ -510,8 +510,8 @@ Réponse GPT à auditer :
 
 # 🧠 Prompt — Audit d’une réponse GPT Crypto MVP QAIC 0.4.0
 
-> **Version :** `MVP_QAIC_GPT_RESPONSE_AUDIT_PROMPT_0.4.0`  
-> **Statut :** `P1_GPT_RESPONSE_AUDIT_DECISION_JOURNAL_READY_FOR_DRIVE_REVIEW`  
+> **Version :** `MVP_QAIC_GPT_RESPONSE_AUDIT_PROMPT_0.4.0`
+> **Statut :** `P1_GPT_RESPONSE_AUDIT_DECISION_JOURNAL_READY_FOR_DRIVE_REVIEW`
 
 Copier ce prompt après une réponse GPT pour l’auditer.
 
@@ -560,8 +560,8 @@ Réponse GPT à auditer :
 
 # 🧱 Workspace Antigravity P0 — Arborescence cible
 
-> **Version :** `ANTIGRAVITY_WORKSPACE_TREE_0.2.2`  
-> **Date :** 2026-06-11  
+> **Version :** `ANTIGRAVITY_WORKSPACE_TREE_0.2.2`
+> **Date :** 2026-06-11
 > **Statut :** `READY`
 
 ```text
@@ -713,8 +713,8 @@ Dans `PROMPT_IMPROVEMENT_QUEUE`, ligne `queue_type = ADAPTIVE_NEXT_PROMPT_DRAFT`
 
 # 🛠️ MVP QAIC — Runbook P1 Prompt Quality Core Fusion 0.5.0
 
-> **Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.5.0_SAFE_FULL_FUSION_P1E_P1F`  
-> **Date :** 2026-06-11  
+> **Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.5.0_SAFE_FULL_FUSION_P1E_P1F`
+> **Date :** 2026-06-11
 > **Statut :** `SAFE_RUNTIME_READY_FOR_VALIDATION`
 
 ## 🎯 Objectif
@@ -906,9 +906,9 @@ P1-G — Prompt Library / Prompt Contract Update
 
 # 🛠️ MVP QAIC — P1-G Prompt Library / Contract Update — Runbook
 
-**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`  
-**Date :** 2026-06-11  
-**Statut :** `READY_FOR_RUNTIME_VALIDATION`  
+**Version :** `MVP_QAIC_P1_PROMPT_QUALITY_CORE_0.6.0_SAFE_FULL_FUSION_P1E_P1F_P1G`
+**Date :** 2026-06-11
+**Statut :** `READY_FOR_RUNTIME_VALIDATION`
 
 ## Objectif
 
@@ -1371,11 +1371,11 @@ Expected:
 
 # 🧪 FIRST REAL GPT RESPONSE AUDIT TEST RUNBOOK — MVP QAIC P1-B 0.4.1
 
-> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App  
-> **Version :** `MVP_QAIC_P1B_FIRST_REAL_GPT_RESPONSE_AUDIT_TEST_RUNBOOK_0.4.1`  
-> **Date :** 2026-06-11  
-> **Statut :** `P1B_FIRST_REAL_GPT_RESPONSE_AUDIT_TEST_READY_FOR_DRIVE_REVIEW`  
-> **Base :** P1 0.4.0 Full Fusion  
+> **Projet :** 🛠️ MVP QAIC — Crypto Signal OS Web App
+> **Version :** `MVP_QAIC_P1B_FIRST_REAL_GPT_RESPONSE_AUDIT_TEST_RUNBOOK_0.4.1`
+> **Date :** 2026-06-11
+> **Statut :** `P1B_FIRST_REAL_GPT_RESPONSE_AUDIT_TEST_READY_FOR_DRIVE_REVIEW`
+> **Base :** P1 0.4.0 Full Fusion
 
 ---
 
@@ -1484,3 +1484,20 @@ donne TP/SL sans base
 omet le SL mais recommande un trade
 ignore risk_score ou data_quality_score
 ```
+
+<!-- BEGIN_R21F_DRIVE_FIRST_REFERENCE_LOCK -->
+## R21F_DRIVE_FIRST_REFERENCE_LOCK - 2026-07-01
+
+- DRIVE_LIVE_ACCESS=True
+- DRIVE_SOURCE_OF_TRUTH_REQUIRED=True
+- READ_CURRENT_REFERENCE_INDEX_BEFORE_PROJECT_BATCH=True
+- READ_FINAL_DOCS_BEFORE_PROJECT_BATCH=True
+- READ_CDC_TOOL_REGISTRY_UI_TRACKER_REFERENCES_BEFORE_PATCH=True
+- NO_MEMORY_ONLY=True
+- NO_APPROXIMATION=True
+- NO_BATCH_WITHOUT_REFERENTIAL_AUDIT=True
+- NO_RUNTIME_OR_CODEX_RUNNER_BEFORE_RELEVANT_REFERENCES_AUDITED=True
+- REQUIRED_ORDER=Drive source of truth -> CURRENT_REFERENCE_INDEX -> active final docs -> CDC/tool registry/UI tracker references -> batch plan
+- Scope: MVP QAIC / QAIC / QAIT project work.
+- Memo: docs/FINAL/R21F_DRIVE_FIRST_REFERENCE_LOCK_MEMO_20260701.md
+<!-- END_R21F_DRIVE_FIRST_REFERENCE_LOCK -->
