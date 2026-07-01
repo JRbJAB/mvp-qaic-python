@@ -54,9 +54,14 @@ Context: MVP QAIC reference final seal
 - aucun docker run sans image preflight.
 - aucun docker run sans port preflight.
 - aucun docker exec si container non running.
-- aucune full copy avec Copy-Item fichier par fichier.
-- aucun ZIP sans self-check de structure.
-- aucun rapport transitoire dans docs/.
+- aucune full copy avec Copy-Item fichier par fichier.
+- aucun ZIP sans self-check de structure.
+- aucun rapport transitoire dans docs/.
+- aucun commit/tag/push apres tests echoues.
+- aucun runner pack sans self-test.
+- aucun chemin payload ZIP avec emoji.
+- aucun patch PowerShell inline long.
+- Codex requis apres deux echecs repetes sur le meme workstream.
 
 ### Contrat d'exécution
 
@@ -64,14 +69,24 @@ Context: MVP QAIC reference final seal
 - `docker run` doit être précédé d'un contrôle image pinned + contrôle ports host.
 - `docker exec` est interdit si le container n'est pas `running`.
 - La copie full HEAD doit utiliser `git archive HEAD` + extraction tar, jamais `Copy-Item` fichier par fichier.
-- Chaque ZIP livré doit contenir un self-check de structure avant action réelle.
-- Les rapports de run et diagnostics transitoires vont sous `_RUN_REPORTS`, jamais sous `docs/`.
-- Les docs de référence et docs FINAL ne reçoivent que du contenu validé/fusionné.
-
-### Guards requis
-
-- `REFLEX_POLICY_GUARD_OK=True`
-- `REFLEX_READINESS_POLICY_GUARD_OK=True`
-- `REFLEX_RUNNER_HARDENING_POLICY_GUARD_OK=True`
-<!-- R16F2H7I_RUNNER_HARDENING_END -->
+- Chaque ZIP livré doit contenir un self-check de structure avant action réelle.
+- Les rapports de run et diagnostics transitoires vont sous `_RUN_REPORTS`, jamais sous `docs/`.
+- Les docs de référence et docs FINAL ne reçoivent que du contenu validé/fusionné.
+- Aucun commit/tag/push n'est autorisé après tests échoués.
+- Aucun runner pack généré ne peut être livré sans self-test.
+- Aucun chemin payload ZIP ne doit contenir un emoji.
+- Aucun patch PowerShell inline long n'est autorisé.
+- Codex est requis après deux échecs répétés sur le même workstream.
+
+### Guards requis
+
+- `REFLEX_POLICY_GUARD_OK=True`
+- `REFLEX_READINESS_POLICY_GUARD_OK=True`
+- `REFLEX_RUNNER_HARDENING_POLICY_GUARD_OK=True`
+- `NO_COMMIT_TAG_PUSH_AFTER_FAILED_TESTS_REQUIRED=True`
+- `RUNNER_PACK_SELF_TEST_REQUIRED=True`
+- `ZIP_PAYLOAD_PATHS_EMOJI_FREE_REQUIRED=True`
+- `INLINE_LONG_POWERSHELL_PATCH_FORBIDDEN=True`
+- `CODEX_REQUIRED_AFTER_TWO_REPEATED_WORKSTREAM_FAILURES=True`
+<!-- R16F2H7I_RUNNER_HARDENING_END -->
 

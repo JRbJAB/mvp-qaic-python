@@ -15,9 +15,14 @@ Les erreurs répétées de wrappers, ports, Docker, `Copy-Item`, chemins spécia
 - aucun docker run sans image preflight.
 - aucun docker run sans port preflight.
 - aucun docker exec si container non running.
-- aucune full copy avec Copy-Item fichier par fichier.
-- aucun ZIP sans self-check de structure.
-- aucun rapport transitoire dans docs/.
+- aucune full copy avec Copy-Item fichier par fichier.
+- aucun ZIP sans self-check de structure.
+- aucun rapport transitoire dans docs/.
+- aucun commit/tag/push apres tests echoues.
+- aucun runner pack sans self-test.
+- aucun chemin payload ZIP avec emoji.
+- aucun patch PowerShell inline long.
+- Codex requis apres deux echecs repetes sur le meme workstream.
 
 ## Implémentation attendue
 
@@ -27,10 +32,15 @@ Les erreurs répétées de wrappers, ports, Docker, `Copy-Item`, chemins spécia
 | Docker image | Preflight image pinned avant `docker run` |
 | Docker ports | Preflight ports host avant `docker run` |
 | Docker exec | Autorisé uniquement si container `running` |
-| Full HEAD copy | `git archive HEAD` + tar extract uniquement |
-| ZIP | Self-check structure avant action |
-| Rapports | `_RUN_REPORTS` uniquement pour tout transitoire |
-| Docs | `docs/` réservé aux références/final docs validées |
+| Full HEAD copy | `git archive HEAD` + tar extract uniquement |
+| ZIP | Self-check structure avant action |
+| Rapports | `_RUN_REPORTS` uniquement pour tout transitoire |
+| Docs | `docs/` réservé aux références/final docs validées |
+| Git release | Aucun commit/tag/push apres tests echoues |
+| Runner pack | Self-test obligatoire avant livraison |
+| ZIP payload | Chemins payload sans emoji |
+| PowerShell patch | Pas de patch inline long |
+| Repeated failures | Codex requis apres deux echecs repetes sur le meme workstream |
 
 ## Sorties minimales futures
 
@@ -43,9 +53,14 @@ DOCKER_IMAGE_PREFLIGHT_REQUIRED=True
 DOCKER_PORT_PREFLIGHT_REQUIRED=True
 DOCKER_EXEC_RUNNING_REQUIRED=True
 FULL_HEAD_COPY_METHOD=git_archive_head_tar_extract
-ZIP_STRUCTURE_SELF_CHECK_REQUIRED=True
-TRANSIENT_REPORTS_FORBIDDEN_UNDER_DOCS=True
-```
+ZIP_STRUCTURE_SELF_CHECK_REQUIRED=True
+TRANSIENT_REPORTS_FORBIDDEN_UNDER_DOCS=True
+NO_COMMIT_TAG_PUSH_AFTER_FAILED_TESTS_REQUIRED=True
+RUNNER_PACK_SELF_TEST_REQUIRED=True
+ZIP_PAYLOAD_PATHS_EMOJI_FREE_REQUIRED=True
+INLINE_LONG_POWERSHELL_PATCH_FORBIDDEN=True
+CODEX_REQUIRED_AFTER_TWO_REPEATED_WORKSTREAM_FAILURES=True
+```
 
 ## Décision opérationnelle
 

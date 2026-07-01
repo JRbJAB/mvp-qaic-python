@@ -120,19 +120,29 @@
       "native_subcommand_timeout_required": true,
       "docker_image_preflight_required": true,
       "docker_port_preflight_required": true,
-      "docker_exec_running_container_required": true,
-      "full_head_copy_git_archive_required": true,
-      "zip_structure_self_check_required": true,
-      "transient_reports_forbidden_under_docs": true
+      "docker_exec_running_container_required": true,
+      "full_head_copy_git_archive_required": true,
+      "zip_structure_self_check_required": true,
+      "transient_reports_forbidden_under_docs": true,
+      "no_commit_tag_push_after_failed_tests_required": true,
+      "runner_pack_self_test_required": true,
+      "zip_payload_paths_emoji_free_required": true,
+      "inline_long_powershell_patch_forbidden": true,
+      "codex_required_after_two_repeated_workstream_failures": true
     },
     "forbidden": [
       "runner_without_hard_timeout_per_native_subcommand",
       "docker_run_without_image_preflight",
       "docker_run_without_port_preflight",
       "docker_exec_when_container_not_running",
-      "copy_item_file_by_file_for_full_head_copy",
-      "zip_without_structure_self_check",
-      "transient_report_under_docs"
+      "copy_item_file_by_file_for_full_head_copy",
+      "zip_without_structure_self_check",
+      "transient_report_under_docs",
+      "commit_tag_push_after_failed_tests",
+      "generated_runner_pack_without_self_test",
+      "emoji_filename_in_zip_payload_path",
+      "inline_long_powershell_patch",
+      "third_non_codex_attempt_after_two_repeated_workstream_failures"
     ],
     "final_docs_fusion_required": true,
     "live_markdown_required": true

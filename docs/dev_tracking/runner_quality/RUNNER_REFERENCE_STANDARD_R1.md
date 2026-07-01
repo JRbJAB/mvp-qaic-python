@@ -26,6 +26,11 @@ No future runner pack may be delivered unless it respects this contract.
 8. Informational metrics must not block.
 9. Every runner must run its own preflight before touching the project.
 10. Do not launch a new full run when the previous run already proved the business point.
+11. No commit, tag, or push may occur after failed tests.
+12. No generated runner pack may be delivered without a self-test.
+13. ZIP payload paths must not contain emoji filenames.
+14. Do not use long inline PowerShell patches; use tracked scripts or small reviewed patches.
+15. After two repeated failures on the same workstream, Codex is required before another attempt.
 
 ## 3. Required runner structure
 
@@ -222,6 +227,11 @@ Before any ZIP delivery:
 [ ] Informational metrics cannot block.
 [ ] Final status separates evidence from runner health.
 [ ] No commit, tag, push, public deploy, or broker action occurs unless explicitly requested.
+[ ] No commit, tag, or push occurs after a failed test gate.
+[ ] Generated runner pack self-test passed.
+[ ] ZIP payload paths contain no emoji filenames.
+[ ] No long inline PowerShell patch is embedded in the runner.
+[ ] Codex handoff is required after two repeated failures on the same workstream.
 [ ] Double-click command targets the intended script.
 [ ] Report path includes the pack version.
 ```
