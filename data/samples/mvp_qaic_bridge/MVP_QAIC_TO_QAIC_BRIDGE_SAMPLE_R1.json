@@ -1,0 +1,70 @@
+{
+  "contract_id": "MVP_QAIC_TO_QAIC_BRIDGE_R1",
+  "contract_version": "R1",
+  "mode": "REVIEW_ONLY_LOCAL_HANDOFF",
+  "source_system": "MVP_QAIC",
+  "target_system": "QAIC_PY",
+  "created_by": "P_R16F2H9A_R3",
+  "created_at_utc": "2026-07-01T15:10:04Z",
+  "safety": {
+    "no_runtime": true,
+    "no_provider_call": true,
+    "no_broker_order_sizing": true,
+    "no_sheet_bq_write": true,
+    "human_review_required": true,
+    "qaic_execution_allowed": false,
+    "scope_modules": [
+      "P112_GEM_PORTFOLIO_PROMPT_MODULE",
+      "P113_PORTFOLIO_INPUT_NORMALIZER_IMAGE_REVIEW",
+      "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+      "P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE",
+      "P121_DAILY_GEM_LOOP_E2E_LOCAL_SMOKE",
+      "P196_REAL_CASE_PORTFOLIO_GEM_INPUTS"
+    ],
+    "forbidden_actions": [
+      "broker action",
+      "order action",
+      "sizing action",
+      "provider live call",
+      "Sheet/BQ write",
+      "Apps Script execution",
+      "runtime launch",
+      "public deploy"
+    ]
+  },
+  "portfolio_input": {
+    "source_module": "P196_REAL_CASE_PORTFOLIO_GEM_INPUTS",
+    "reference_path": "01_OPERATOR_INPUTS/P196_REAL_CASE_PORTFOLIO_GEM_INPUTS/TEXT/README_INPUTS.md",
+    "capture_mode": "local_operator_supplied_read_only"
+  },
+  "gem_prompt": {
+    "source_module": "P112_GEM_PORTFOLIO_PROMPT_MODULE",
+    "artifact_role": "portfolio_prompt_source",
+    "handoff_state": "review_ready"
+  },
+  "gem_response": {
+    "source_module": "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+    "artifact_role": "captured_response_source",
+    "handoff_state": "review_queue_ready"
+  },
+  "review_queue": {
+    "source_module": "P119_GEM_RESPONSE_CAPTURE_REVIEW_QUEUE",
+    "required_review_state": "human_review_required"
+  },
+  "decision_journal": {
+    "source_module": "P120_GEM_RESPONSE_DECISION_JOURNAL_BRIDGE",
+    "artifact_role": "decision_journal_candidate",
+    "write_policy": "local_candidate_only"
+  },
+  "qaic_import": {
+    "import_mode": "review_only_import_ready",
+    "target_system": "QAIC_PY",
+    "accepted_payload_state": "analysis_ready_read_only",
+    "execution_allowed": false
+  },
+  "evidence": {
+    "contract_doc": "docs/BRIDGE/MVP_QAIC_TO_QAIC_BRIDGE_CONTRACT_R1.md",
+    "status_doc": "docs/BRIDGE/MVP_QAIC_TO_QAIC_BRIDGE_STATUS_R1.md",
+    "sample_json": "data/samples/mvp_qaic_bridge/MVP_QAIC_TO_QAIC_BRIDGE_SAMPLE_R1.json"
+  }
+}
