@@ -8,11 +8,23 @@ AUTHORIZED_COMMAND = (
     "--backend-port 8000 --frontend-port 3000"
 )
 
+VERSIONED_FINAL_DOCS = {
+    Path("docs/FINAL/🛠️ MVP_QAIC_REFLEX_RUNTIME_PROCESS_LIVE_v0.2.7.md"): Path(
+        "docs/FINAL/🛠️ MVP_QAIC_REFLEX_RUNTIME_PROCESS_LIVE_v0.2.8.md"
+    ),
+    Path("docs/FINAL/🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.6.md"): Path(
+        "docs/FINAL/🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.7.md"
+    ),
+    Path("docs/FINAL/🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.6.md"): Path(
+        "docs/FINAL/🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.7.md"
+    ),
+    Path("docs/FINAL/✅ REFERENCE_v0.2.6_FINAL_SEAL.md"): Path(
+        "docs/FINAL/✅ REFERENCE_v0.2.7_FINAL_SEAL.md"
+    ),
+}
+
 MANDATORY_DOCS = [
-    Path("docs/FINAL/🛠️ MVP_QAIC_REFLEX_RUNTIME_PROCESS_LIVE_v0.2.7.md"),
-    Path("docs/FINAL/🧭 MVP_QAIC_INSTRUCTIONS_GOVERNANCE_FINAL_FUSED_v0.2.6.md"),
-    Path("docs/FINAL/🚀 MVP_QAIC_NOTICE_RUNBOOK_FINAL_FUSED_v0.2.6.md"),
-    Path("docs/FINAL/✅ REFERENCE_v0.2.6_FINAL_SEAL.md"),
+    *VERSIONED_FINAL_DOCS.values(),
     Path("docs/RUNTIME/REFLEX_CLI_CONTRACT_H8I.md"),
 ]
 
@@ -46,6 +58,9 @@ GUARD_FILES = [
     Path("tests/test_reflex_runner_hardening_policy_r16f2h7i.py"),
 ]
 
+CURRENT_INDEX = Path("docs/FINAL/CURRENT_REFERENCE_INDEX.md")
+CURRENT_MANIFEST = Path("docs/FINAL/REFERENCE_SOURCES_MANIFEST_v0.2.7.csv")
+
 
 def _lock_block(text: str) -> str:
     assert text.count(BEGIN) == 1
@@ -56,7 +71,13 @@ def _lock_block(text: str) -> str:
     return text[start:end]
 
 
-def test_h8i_contract_docs_exist_and_contain_single_complete_lock_block():
+def test_new_versioned_final_docs_exist_and_old_final_docs_remain_present():
+    for old_path, new_path in VERSIONED_FINAL_DOCS.items():
+        assert old_path.exists(), f"Old final doc must remain present: {old_path}"
+        assert new_path.exists(), f"Missing new versioned final doc: {new_path}"
+
+
+def test_h8i_contract_docs_contain_single_complete_lock_block():
     for path in MANDATORY_DOCS:
         assert path.exists(), f"Missing mandatory H8I contract doc: {path}"
         block = _lock_block(path.read_text(encoding="utf-8"))
@@ -76,6 +97,19 @@ def test_frontend_host_is_forbidden_and_not_in_authorized_command():
                     term in lowered
                     for term in ("forbidden", "absent", "never", "not appear")
                 ), f"{path} has non-forbidden --frontend-host context: {line}"
+
+
+def test_current_index_and_manifest_reference_new_versioned_docs():
+    index_text = CURRENT_INDEX.read_text(encoding="utf-8")
+    manifest_text = CURRENT_MANIFEST.read_text(encoding="utf-8")
+
+    for new_path in VERSIONED_FINAL_DOCS.values():
+        assert new_path.name in index_text
+
+    assert "REFERENCE_SOURCES_MANIFEST_v0.2.7.csv" in index_text
+    assert "MVP QAIC Instructions Governance Final Fused v0.2.7" in manifest_text
+    assert "MVP QAIC Notice Runbook Final Fused v0.2.7" in manifest_text
+    assert "REFERENCE_v0.2.7_FINAL_SEAL.md" in manifest_text
 
 
 def test_prior_reflex_guard_files_still_exist():
