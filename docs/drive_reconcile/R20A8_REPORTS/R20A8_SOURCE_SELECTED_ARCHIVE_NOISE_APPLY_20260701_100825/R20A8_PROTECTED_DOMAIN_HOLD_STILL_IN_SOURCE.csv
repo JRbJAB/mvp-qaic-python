@@ -1,0 +1,13 @@
+﻿row_no,item,classification,row_relative_path,live_relative_path,status
+,MVP QAIC — Mémo d’intégration Revolut X.pdf,HOLD_REVIEW,Revolut X/MVP QAIC — Mémo d’intégration Revolut X.pdf,Revolut X/MVP QAIC — Mémo d’intégration Revolut X.pdf,PRESENT_IN_SOURCE
+,v25_17_portfolio_alpha_bridge.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_17_portfolio_alpha_bridge.js,Revolut X/v25_17_portfolio_alpha_bridge.js,PRESENT_IN_SOURCE
+,v25_20_portfolio_exposure_engine.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_20_portfolio_exposure_engine.js,Revolut X/v25_20_portfolio_exposure_engine.js,PRESENT_IN_SOURCE
+,v25_21_portfolio_risk_decision_engine.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_21_portfolio_risk_decision_engine.js,Revolut X/v25_21_portfolio_risk_decision_engine.js,PRESENT_IN_SOURCE
+,v25_22_portfolio_decision_control_center.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_22_portfolio_decision_control_center.js,Revolut X/v25_22_portfolio_decision_control_center.js,PRESENT_IN_SOURCE
+,v25_23_portfolio_execution_queue.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_23_portfolio_execution_queue.js,Revolut X/v25_23_portfolio_execution_queue.js,PRESENT_IN_SOURCE
+,v25_24_portfolio_pre_trade_guard.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_24_portfolio_pre_trade_guard.js,Revolut X/v25_24_portfolio_pre_trade_guard.js,PRESENT_IN_SOURCE
+,v25_26_manual_order_lifecycle_tracker.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_26_manual_order_lifecycle_tracker.js,Revolut X/v25_26_manual_order_lifecycle_tracker.js,PRESENT_IN_SOURCE
+,v25_30_revolut_x_readonly_connector.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_30_revolut_x_readonly_connector.js,Revolut X/v25_30_revolut_x_readonly_connector.js,PRESENT_IN_SOURCE
+,v25_35_portfolio_intelligence.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_35_portfolio_intelligence.js,Revolut X/v25_35_portfolio_intelligence.js,PRESENT_IN_SOURCE
+,v25_agent_control_core.js,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/v25_agent_control_core.js,Revolut X/v25_agent_control_core.js,PRESENT_IN_SOURCE
+,📈 QAIC Crypto - V25 DEV.xlsx,MOVE_TO_DOMAIN_FOLDER_CANDIDATE,Revolut X/📈 QAIC Crypto - V25 DEV.xlsx,Revolut X/📈 QAIC Crypto - V25 DEV.xlsx,PRESENT_IN_SOURCE

@@ -1,0 +1,16 @@
+{
+  "status": "OK_MVP_QAIC_R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_COMMITTED_TAGGED_PUSHED",
+  "head_before": "26f9b0dae10e3b6b688321c123c0fe492f87542d",
+  "subject_before": "MVP QAIC source live verify R20A7",
+  "r20a7_tag": "mvp-qaic-r20a7-source-live-verify-allow-runtime-dirty-20260701",
+  "signal_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS",
+  "source_dir": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\source",
+  "archive_root": "G:\\Mon Drive\\👥 JULIEN [Perso]\\📈 Trading JRb\\Solutions & Dev (Trading JRb)\\📈 QAIC\\🛠️ MVP QAIC — Crypto Signal OS\\99_ARCHIVES\\R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825",
+  "selected_rows": 4,
+  "moved_count": 0,
+  "missing_or_already_moved_count": 4,
+  "selected_remaining_after": 4,
+  "protected_remaining_after": 12,
+  "unknown_after": 2,
+  "verdict": "R20A9_SELECTED_STILL_PRESENT_REVIEW_REQUIRED"
+}

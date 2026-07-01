@@ -1,0 +1,30 @@
+﻿check,required,ok,detail
+repo_exists,TRUE,TRUE,C:\JRb_TRADING_OS\MVP_QAIC_PY
+inside_work_tree,TRUE,TRUE,true
+branch_master,TRUE,TRUE,master
+r20a7_tag_present,TRUE,TRUE,26f9b0dae10e3b6b688321c123c0fe492f87542d
+head_at_or_after_r20a7,TRUE,TRUE,head=26f9b0dae10e3b6b688321c123c0fe492f87542d r20a7=26f9b0dae10e3b6b688321c123c0fe492f87542d
+status_before_clean_or_allowed_runtime_readiness_dirty,TRUE,TRUE,CLEAN
+signal_os_root_found,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS
+source_dir_exists,TRUE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\source
+archives_folder_exists,FALSE,TRUE,G:\Mon Drive\👥 JULIEN [Perso]\📈 Trading JRb\Solutions & Dev (Trading JRb)\📈 QAIC\🛠️ MVP QAIC — Crypto Signal OS\99_ARCHIVES
+r20a7_selected_rows_loaded,TRUE,TRUE,rows=4
+r20a7_protected_rows_loaded,FALSE,TRUE,rows=12
+selected_present_before_nonnegative,FALSE,TRUE,count=4
+protected_present_before_count,FALSE,TRUE,count=12
+move_errors_zero,TRUE,TRUE,move_errors=0
+protected_still_present,FALSE,TRUE,count=12
+verdict_available,TRUE,TRUE,R20A9_SELECTED_STILL_PRESENT_REVIEW_REQUIRED
+no_preexisting_staged_changes,TRUE,TRUE,NONE
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_CHECKS.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_MOVE_ACTIONS.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_PROTECTED_DOMAIN_HOLD_STILL_IN_SOURCE.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_SCOPE_MEMO.md
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_SELECTED_PRESENCE_BEFORE.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_SELECTED_REMAINING_AFTER.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_SOURCE_INVENTORY_AFTER.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_SOURCE_INVENTORY_BEFORE.csv
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_STATUS.json
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_STATUS_BEFORE.txt
+targeted_staging_only,TRUE,TRUE,docs/drive_reconcile/R20A8_REPORTS/R20A8_SOURCE_SELECTED_ARCHIVE_NOISE_APPLY_20260701_100825/R20A8_UNKNOWN_STILL_IN_SOURCE.csv
+staged_nonempty,TRUE,TRUE,count=11
