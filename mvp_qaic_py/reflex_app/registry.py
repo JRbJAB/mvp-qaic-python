@@ -5,6 +5,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+from mvp_qaic_reflex_ui.qaic_bridge_operator_binding import (
+    build_qaic_bridge_operator_card,
+)
+
 PROJECT = "MVP_QAIC"
 SHELL_ID = "P_REFLEX_01_MVP_GLOBAL_WEBAPP_SHELL_FOUNDATION"
 DOCS_CANONICAL_FORMAT = "markdown_md_with_emoji"
@@ -176,6 +180,8 @@ DOCS_REGISTRY = [
     },
 ]
 
+QAIC_BRIDGE_OPERATOR_CARD = build_qaic_bridge_operator_card()
+
 
 def list_routes() -> list[str]:
     return [page.route for page in PAGES]
@@ -224,3 +230,7 @@ def current_cdc_exists() -> bool:
 
 def no_live_action_policy() -> bool:
     return all(SAFETY_FLAGS.values())
+
+
+def qaic_bridge_operator_card() -> dict[str, object]:
+    return dict(QAIC_BRIDGE_OPERATOR_CARD)

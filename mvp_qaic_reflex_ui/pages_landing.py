@@ -9,6 +9,7 @@ import reflex as rx
 from .layout import page_shell
 from .migration_tracker import migration_tracker_compact_panel
 from .migration_decision_workbench import migration_decision_workbench_compact_panel
+from .qaic_bridge_operator_binding import build_qaic_bridge_operator_card
 from .theme import LANDING_SECTIONS, get_landing_sections, safety_panel, section_card
 from .visual_theme import metric_grid, mission_control_hero
 from .web_architecture_cdc import architecture_web_cdc_body, sitemap_page_body
@@ -198,15 +199,54 @@ def gem_portfolio() -> rx.Component:
     )
 
 
+def _qaic_bridge_body() -> rx.Component:
+    card = build_qaic_bridge_operator_card()
+    safety = card["safety"]
+    return rx.vstack(
+        rx.box(
+            rx.vstack(
+                rx.heading(card["title"], size="5"),
+                rx.text(card["contract_id"], size="3"),
+                rx.text("Route: " + card["route"], size="2"),
+                rx.text("Mode: " + card["mode"], size="2"),
+                rx.text("Status: " + card["status"], size="2"),
+                rx.text(
+                    "Source: "
+                    + card["source_system"]
+                    + " / Target: "
+                    + card["target_system"],
+                    size="2",
+                ),
+                rx.text("Human review required: " + str(safety["human_review_required"]).lower(), size="2"),
+                rx.text("QAIC execution allowed: " + str(safety["qaic_execution_allowed"]).lower(), size="2"),
+                rx.text("No runtime: " + str(safety["no_runtime"]).lower(), size="2"),
+                rx.text("No provider call: " + str(safety["no_provider_call"]).lower(), size="2"),
+                rx.text(
+                    "No broker/order sizing: "
+                    + str(safety["no_broker_order_sizing"]).lower(),
+                    size="2",
+                ),
+                rx.text("No Sheet/BQ write: " + str(safety["no_sheet_bq_write"]).lower(), size="2"),
+                spacing="3",
+                align="start",
+            ),
+            border="1px solid rgba(0, 0, 0, 0.10)",
+            border_radius="14px",
+            padding="1rem",
+            width="100%",
+            background="white",
+        ),
+        spacing="4",
+        align="start",
+        width="100%",
+    )
+
+
 def qaic_bridge() -> rx.Component:
     return page_shell(
         "QAIC Bridge",
-        "Liaison future read-only vers backend QAIC privé.",
-        _registry_body(
-            "QAIC Bridge",
-            "/qaic-bridge",
-            "Structure prête pour statut, contrats et liaison read-only. Aucun ordre.",
-        ),
+        "Liaison future read-only vers backend QAIC prive.",
+        _qaic_bridge_body(),
         "/qaic-bridge",
     )
 
