@@ -1,0 +1,15 @@
+{
+  "status": "OK_MVP_QAIC_R20A9_SOURCE_SELECTED_UNKNOWN_INSPECTION_COMMITTED_TAGGED_PUSHED",
+  "head_before": "d39d0caa2ef739b53bd997aaa967a14434b8fc6a",
+  "subject_before": "MVP QAIC source selected archive noise apply R20A8",
+  "live_source_file_count": 18,
+  "selected_rows": 4,
+  "selected_exact_present": 0,
+  "selected_basename_present": 4,
+  "unknown_rows": 2,
+  "unknown_exact_present": 2,
+  "protected_rows": 12,
+  "protected_exact_present": 0,
+  "verdict": "R20A10_MANUAL_OR_CONNECTOR_REVIEW_REQUIRED_SELECTED_STILL_LIVE",
+  "report_root": "C:\\JRb_TRADING_OS\\MVP_QAIC_PY\\docs\\drive_reconcile\\R20A9_REPORTS\\R20A9_SOURCE_SELECTED_UNKNOWN_INSPECTION_20260701_101742"
+}
