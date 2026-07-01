@@ -87,3 +87,26 @@ R21K should define the cockpit queue data contract without runtime, using this r
 - preserve_q_candlesticks_signal_line=True
 - qaic_execution_allowed=False
 - UI runtime command remains prohibited.
+
+## R21J_R6 docs-only supersede seal
+
+- R21J_ORIGINAL_SEAL_VALID=False
+- R21J_R4_SEAL_VALID=False
+- R21J_R5_SEAL_VALID=False
+- R21J_R6_SUPERSEDES_R21J_R4_R5=True
+- R21J_R5_SUPERSEDES_R21J_AND_R4=True
+- BRAND_CONFIG_TRACE_COCKPIT_READY=True
+- UI_TRACKER_TRACE_COCKPIT_READY=True
+- TOOL_REGISTRY_CDC_TRACE_COCKPIT_READY=True
+- CDC_CONTRACT_TRACE_COCKPIT_READY=True
+- QAIC_BRIDGE_TRACE_COCKPIT_READY=True
+- QAIT_CHARTE_TEMPLATE=BOUND
+- MVP_QAIC_LOGO_VALIDATED=BOUND
+- preserve_q_candlesticks_signal_line=True
+- qaic_execution_allowed=False
+- NO_RUNTIME=True
+- NO_DOCKER=True
+- NO_PROVIDER_CALL=True
+- NO_BROKER_ORDER_SIZING=True
+- NO_SHEET_BQ_WRITE=True
+- NEXT=R21K_COCKPIT_QUEUE_DATA_CONTRACT_NO_RUNTIME
