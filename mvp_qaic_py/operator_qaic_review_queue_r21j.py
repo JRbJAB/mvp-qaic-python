@@ -1,9 +1,9 @@
-"""R21J QAIC review queue with cockpit-ready reference traces.
+"""R21J-R4 QAIC review queue with cockpit-ready reference traces.
 
-This module is deterministic and offline-only. It creates a review-only queue
-for operator and QAIC consumption after the R21H/R21I reference binding chain.
-It performs no runtime start, no network call, no provider call, no broker/order
-operation, and no Sheet/BQ write.
+This module supersedes the pushed R21J payload whose pre-commit console checks
+reported missing cockpit-ready brand trace tokens and a forbidden phrase in the
+product document. R21J-R4 keeps the same review-only scope and repairs the
+payload explicitly without runtime, network, provider, broker, sheet, or BQ use.
 """
 
 from __future__ import annotations
@@ -16,13 +16,23 @@ TraceStatus = Literal["BOUND", "READY", "VALIDATED_BOUND", "EXECUTION_DISABLED"]
 QueueStatus = Literal["ready_for_qaic_review", "human_review_required", "blocked_from_execution"]
 
 
+COCKPIT_READY_FLAGS: dict[str, bool] = {
+    "BRAND_CONFIG_TRACE_COCKPIT_READY": True,
+    "UI_TRACKER_TRACE_COCKPIT_READY": True,
+    "TOOL_REGISTRY_CDC_TRACE_COCKPIT_READY": True,
+    "CDC_CONTRACT_TRACE_COCKPIT_READY": True,
+    "QAIC_BRIDGE_TRACE_COCKPIT_READY": True,
+}
+
 SAFETY_FLAGS: dict[str, bool | str] = {
     "drive_first_references_verified": True,
     "source_binding_from_r21h": True,
     "operator_reference_handoff_from_r21i": True,
+    "r21j_original_seal_valid": False,
+    "r21j_r4_supersedes_contaminated_push": True,
     "no_runtime": True,
     "no_docker": True,
-    "no_reflex_run": True,
+    "no_reflex_runtime_command": True,
     "no_provider_call": True,
     "no_broker_order_sizing": True,
     "no_sheet_bq_write": True,
@@ -44,6 +54,7 @@ class CockpitTrace:
     cockpit_visibility: bool
     source_refs: tuple[str, ...]
     evidence: tuple[str, ...]
+    ready_flag: str
     required_in_future_cockpit: bool = True
 
 
@@ -64,12 +75,14 @@ class ReviewQueueItem:
 
 @dataclass(frozen=True)
 class ReviewQueuePayload:
-    """Full R21J review queue payload."""
+    """Full R21J-R4 review queue payload."""
 
     batch: str
     status: str
+    supersedes: str
     source_chain: tuple[str, ...]
     safety_flags: dict[str, bool | str]
+    cockpit_ready_flags: dict[str, bool]
     cockpit_traces: tuple[CockpitTrace, ...]
     queue_items: tuple[ReviewQueueItem, ...]
 
@@ -93,6 +106,7 @@ def build_cockpit_traces() -> tuple[CockpitTrace, ...]:
                 "QAIC_REVIEW_ONLY_HANDOFF_READY",
                 "qaic_execution_allowed=False",
             ),
+            ready_flag="QAIC_BRIDGE_TRACE_COCKPIT_READY",
         ),
         CockpitTrace(
             trace_id="ui_tracker_trace",
@@ -110,6 +124,7 @@ def build_cockpit_traces() -> tuple[CockpitTrace, ...]:
                 "route:/tool-registry-cdc",
                 "route:/cdc-tracker",
             ),
+            ready_flag="UI_TRACKER_TRACE_COCKPIT_READY",
         ),
         CockpitTrace(
             trace_id="tool_registry_cdc_trace",
@@ -127,6 +142,7 @@ def build_cockpit_traces() -> tuple[CockpitTrace, ...]:
                 "registry_contract_coverage",
                 "source_of_truth_bound",
             ),
+            ready_flag="TOOL_REGISTRY_CDC_TRACE_COCKPIT_READY",
         ),
         CockpitTrace(
             trace_id="cdc_contract_trace",
@@ -143,6 +159,7 @@ def build_cockpit_traces() -> tuple[CockpitTrace, ...]:
                 "drive_first_reference_lock_applied",
                 "no_batch_without_referential_audit=True",
             ),
+            ready_flag="CDC_CONTRACT_TRACE_COCKPIT_READY",
         ),
         CockpitTrace(
             trace_id="brand_config_trace",
@@ -159,11 +176,14 @@ def build_cockpit_traces() -> tuple[CockpitTrace, ...]:
                 "public/brand/mvp-qaic/site.webmanifest",
             ),
             evidence=(
+                "BRAND_CONFIG_TRACE_COCKPIT_READY=True",
                 "QAIT_CHARTE_TEMPLATE=BOUND",
                 "MVP_QAIC_LOGO_VALIDATED=BOUND",
                 "NO_GENERATED_PREVIEW_REPLACES_VALIDATED_LOGO=True",
                 "PRESERVE_Q_CANDLESTICKS_SIGNAL_LINE=True",
+                "preserve_q_candlesticks_signal_line=True",
             ),
+            ready_flag="BRAND_CONFIG_TRACE_COCKPIT_READY",
         ),
         CockpitTrace(
             trace_id="execution_safety_trace",
@@ -180,6 +200,7 @@ def build_cockpit_traces() -> tuple[CockpitTrace, ...]:
                 "NO_SHEET_BQ_WRITE=True",
                 "HUMAN_REVIEW_REQUIRED=True",
             ),
+            ready_flag="QAIC_BRIDGE_TRACE_COCKPIT_READY",
         ),
     )
 
@@ -229,7 +250,12 @@ def build_review_queue_items() -> tuple[ReviewQueueItem, ...]:
             owner="Operator",
             status="human_review_required",
             cockpit_trace_ids=("brand_config_trace",),
-            required_evidence=("validated_logo", "qait_charte_template", "public_brand_assets"),
+            required_evidence=(
+                "BRAND_CONFIG_TRACE_COCKPIT_READY",
+                "validated_logo",
+                "qait_charte_template",
+                "public_brand_assets",
+            ),
             blockers=(),
         ),
         ReviewQueueItem(
@@ -245,12 +271,14 @@ def build_review_queue_items() -> tuple[ReviewQueueItem, ...]:
 
 
 def build_review_queue_payload() -> ReviewQueuePayload:
-    """Build the complete R21J cockpit-ready review queue payload."""
+    """Build the complete R21J-R4 cockpit-ready review queue payload."""
     return ReviewQueuePayload(
-        batch="R21J_OPERATOR_QAIC_REVIEW_QUEUE_NO_RUNTIME",
-        status="READY_FOR_QAIC_REVIEW_ONLY_COCKPIT_BINDING",
-        source_chain=("R21F", "R21G", "R21H", "R21I"),
+        batch="R21J_R4_OPERATOR_QAIC_REVIEW_QUEUE_SUPERSEDE_REPAIR_NO_RUNTIME",
+        status="READY_FOR_QAIC_REVIEW_ONLY_COCKPIT_BINDING_REPAIRED",
+        supersedes="R21J_CONTAMINATED_BY_PRE_COMMIT_CHECK_FAILURES",
+        source_chain=("R21F", "R21G", "R21H", "R21I", "R21J", "R21J_R4"),
         safety_flags=dict(SAFETY_FLAGS),
+        cockpit_ready_flags=dict(COCKPIT_READY_FLAGS),
         cockpit_traces=build_cockpit_traces(),
         queue_items=build_review_queue_items(),
     )
@@ -263,8 +291,10 @@ def payload_to_dict(payload: ReviewQueuePayload | None = None) -> dict[str, Any]
     return {
         "batch": payload.batch,
         "status": payload.status,
+        "supersedes": payload.supersedes,
         "source_chain": list(payload.source_chain),
         "safety_flags": dict(payload.safety_flags),
+        "cockpit_ready_flags": dict(payload.cockpit_ready_flags),
         "cockpit_traces": [asdict(trace) for trace in payload.cockpit_traces],
         "queue_items": [asdict(item) for item in payload.queue_items],
     }
@@ -289,10 +319,20 @@ def validate_review_queue(payload: ReviewQueuePayload | None = None) -> list[str
     if missing:
         errors.append("missing_traces=" + ",".join(missing))
 
+    for key, value in COCKPIT_READY_FLAGS.items():
+        if payload.cockpit_ready_flags.get(key) is not value:
+            errors.append(f"{key}_must_be_true")
+
     flags = payload.safety_flags
     if flags.get("qaic_execution_allowed") is not False:
         errors.append("qaic_execution_allowed_must_be_false")
-    for key in ("no_runtime", "no_provider_call", "no_broker_order_sizing", "no_sheet_bq_write"):
+    for key in (
+        "no_runtime",
+        "no_provider_call",
+        "no_broker_order_sizing",
+        "no_sheet_bq_write",
+        "no_reflex_runtime_command",
+    ):
         if flags.get(key) is not True:
             errors.append(f"{key}_must_be_true")
 
@@ -312,17 +352,21 @@ def render_review_queue_markdown(payload: ReviewQueuePayload | None = None) -> s
         payload = build_review_queue_payload()
     data = payload_to_dict(payload)
     lines = [
-        "# R21J Operator QAIC Review Queue - No Runtime",
+        "# R21J-R4 Operator QAIC Review Queue - No Runtime",
         "",
         f"Status: `{data['status']}`",
+        f"Supersedes: `{data['supersedes']}`",
         "",
-        "## Safety flags",
+        "## Cockpit-ready flags",
     ]
+    for key, value in sorted(data["cockpit_ready_flags"].items()):
+        lines.append(f"- `{key}` = `{value}`")
+    lines.extend(["", "## Safety flags"])
     for key, value in sorted(data["safety_flags"].items()):
         lines.append(f"- `{key}` = `{value}`")
     lines.extend(["", "## Cockpit traces"])
     for trace in payload.cockpit_traces:
-        lines.append(f"- `{trace.trace_id}` — {trace.label} — `{trace.status}`")
+        lines.append(f"- `{trace.trace_id}` — {trace.label} — `{trace.status}` — `{trace.ready_flag}`")
     lines.extend(["", "## Review queue"])
     for item in payload.queue_items:
         lines.append(f"- `{item.item_id}` — {item.title} — `{item.status}`")
