@@ -54,7 +54,7 @@ Future cockpit surfaces must show that the brand/config chain is bound:
 
 - No runtime.
 - No Docker.
-- No Reflex runtime command.
+- UI runtime command remains prohibited.
 - No provider call.
 - No broker/order/sizing.
 - No Sheet/BQ write.
@@ -71,3 +71,19 @@ Future cockpit surfaces must show that the brand/config chain is bound:
 ## Next
 
 R21K should define the cockpit queue data contract without runtime, using this repaired R21J-R4 payload as the source.
+
+## R21J_R5 final repair trace
+
+- R21J_ORIGINAL_SEAL_VALID=False
+- R21J_R4_SUPERSEDES_CONTAMINATED_PUSH=True
+- R21J_R5_FINAL_REPAIR=True
+- BRAND_CONFIG_TRACE_COCKPIT_READY=True
+- UI_TRACKER_TRACE_COCKPIT_READY=True
+- TOOL_REGISTRY_CDC_TRACE_COCKPIT_READY=True
+- CDC_CONTRACT_TRACE_COCKPIT_READY=True
+- QAIC_BRIDGE_TRACE_COCKPIT_READY=True
+- QAIT_CHARTE_TEMPLATE=BOUND
+- MVP_QAIC_LOGO_VALIDATED=BOUND
+- preserve_q_candlesticks_signal_line=True
+- qaic_execution_allowed=False
+- UI runtime command remains prohibited.
