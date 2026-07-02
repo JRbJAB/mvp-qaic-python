@@ -1,0 +1,182 @@
+from __future__ import annotations
+
+import re
+import subprocess
+from pathlib import Path
+
+from mvp_qaic_py.reflex_private_preview_runner_build_review_r21t_c import (
+    BUILD_REVIEW_PHASES,
+    NEXT_STEP,
+    REFLEX_VERSION,
+    REQUIRED_BUILD_ENTRY_IDS,
+    REVIEW_ID,
+    build_private_preview_runner_build_review,
+    build_private_preview_runner_build_review_with_sources,
+    render_private_preview_runner_build_markdown,
+    runner_build_review_to_dict,
+    validate_private_preview_runner_build_review,
+)
+
+
+R21T_C_FILES = (
+    Path("mvp_qaic_py/reflex_private_preview_runner_build_review_r21t_c.py"),
+    Path("docs/PRODUCT/R21T_C_PRIVATE_PREVIEW_RUNNER_BUILD_REVIEW_ONLY.md"),
+    Path("tests/test_r21t_c_private_preview_runner_build_review.py"),
+)
+
+
+def test_r21t_c_required_files_and_imports_exist() -> None:
+    for target in R21T_C_FILES:
+        assert target.exists()
+
+    review = build_private_preview_runner_build_review()
+    payload = runner_build_review_to_dict(review)
+
+    assert payload["review_id"] == REVIEW_ID
+    assert payload["R21T_C_PRIVATE_PREVIEW_RUNNER_BUILD_REVIEW"] == "READY"
+    assert validate_private_preview_runner_build_review(payload) == ()
+
+
+def test_r21t_c_binds_r21t_b_help_version_capture_review() -> None:
+    payload = build_private_preview_runner_build_review_with_sources()
+    bindings = payload["source_bindings"]
+    summaries = payload["source_summaries"]
+
+    assert bindings["SOURCE_R21T_B_HELP_VERSION_CAPTURE_BOUND"] is True
+    assert summaries["r21t_b_help_version_review"] == (
+        "R21T_B_OPERATOR_APPROVED_HELP_VERSION_CAPTURE_REVIEW_ONLY"
+    )
+    assert summaries["r21t_b_status"] == "READY"
+    assert summaries["r21t_b_reflex_version"] == REFLEX_VERSION
+    assert summaries["r21t_b_next_step"] == REVIEW_ID
+
+
+def test_r21t_c_contains_required_runner_build_review_tokens() -> None:
+    tokens = build_private_preview_runner_build_review_with_sources()["build_review_tokens"]
+
+    assert tokens["R21T_C_PRIVATE_PREVIEW_RUNNER_BUILD_REVIEW"] == "READY"
+    assert tokens["SOURCE_R21T_B_HELP_VERSION_CAPTURE_BOUND"] is True
+    assert tokens["HUMAN_APPROVED_PRIVATE_PREVIEW"] is True
+    assert tokens["HELP_VERSION_CAPTURE_PASSED"] is True
+    assert tokens["REFLEX_VERSION"] == "0.9.6.post1"
+    assert tokens["HELP_FORBIDDEN_FRONTEND_HOST_FOUND"] is False
+    assert tokens["BUILD_REVIEW_ONLY"] is True
+    assert tokens["RUNNER_FILE_CREATED"] is False
+    assert tokens["PS1_CREATED"] is False
+    assert tokens["RUNNER_EXECUTED"] is False
+    assert tokens["NO_RUNTIME_EXECUTION"] is True
+    assert tokens["NO_DOCKER_CALL"] is True
+    assert tokens["NO_REFLEX_APP_START"] is True
+    assert tokens["NO_PREVIEW_ATTEMPT"] is True
+    assert tokens["NO_PORTS"] is True
+    assert tokens["NO_BROWSER"] is True
+    assert tokens["REFLEX_RUNTIME_STATUS"] == "PAUSED"
+    assert tokens["REFLEX_RUNTIME_RUNNER_CHAIN"] == "STOPPED_AFTER_RUNNER_BUILD_REVIEW"
+    assert tokens["PRIVATE_MAPPING_REQUIRED"] is True
+    assert tokens["HTTP_FRONTEND_NON_EMPTY_REQUIRED"] is True
+    assert tokens["TCP_ONLY_NOT_PREVIEW_READY"] is True
+    assert tokens["PREVIEW_ONLY_AFTER_HTTP_PASS"] is True
+    assert tokens["NO_FRONTEND_HOST_FLAG"] is True
+    assert tokens["NO_PUBLIC_DEPLOY"] is True
+    assert tokens["NO_REFLEX_DEPLOY"] is True
+    assert tokens["NO_PROVIDER_CALL"] is True
+    assert tokens["NO_BROKER_ORDER_SIZING"] is True
+    assert tokens["NO_SHEET_BQ_WRITE"] is True
+    assert tokens["NO_HTML_OUTPUT"] is True
+    assert tokens["TARGETED_STAGING_ONLY"] is True
+    assert tokens["NO_GIT_ADD_DOT"] is True
+    assert tokens["NO_RESET"] is True
+    assert tokens["NEXT"] == NEXT_STEP
+
+
+def test_r21t_c_required_future_runner_phases_are_metadata_only() -> None:
+    payload = build_private_preview_runner_build_review_with_sources()
+
+    assert tuple(payload["build_review_phases"]) == BUILD_REVIEW_PHASES
+    assert payload["build_review_phases"] == [
+        "PREFLIGHT",
+        "HELP_VERSION_EVIDENCE_REUSE",
+        "SOURCE_COPY_STRATEGY",
+        "POLICY_GUARD_CHECKS",
+        "PRIVATE_ONLY_PREVIEW_READINESS_CHECKS",
+        "HTTP_NON_EMPTY_FRONTEND_EVIDENCE_REQUIREMENT",
+        "FAILURE_STOP_CONDITIONS",
+        "SUMMARY",
+    ]
+
+
+def test_r21t_c_build_map_is_deterministic_review_only_and_complete() -> None:
+    first = build_private_preview_runner_build_review_with_sources()
+    second = build_private_preview_runner_build_review_with_sources()
+    entries = first["build_entries"]
+
+    assert first == second
+    assert [entry["ordinal"] for entry in entries] == sorted(entry["ordinal"] for entry in entries)
+    assert [entry["build_entry_id"] for entry in entries] == list(REQUIRED_BUILD_ENTRY_IDS)
+    assert all(entry["metadata_only"] is True for entry in entries)
+    assert all(entry["runtime_action_allowed"] is False for entry in entries)
+    assert all(entry["preview_readiness_claimed"] is False for entry in entries)
+
+
+def test_r21t_c_markdown_is_text_only_and_names_next_step() -> None:
+    markdown = render_private_preview_runner_build_markdown()
+
+    assert "R21T-C Private Preview Runner Build" in markdown
+    assert "R21T_C_PRIVATE_PREVIEW_RUNNER_BUILD_REVIEW=READY" in markdown
+    assert "SOURCE_R21T_B_HELP_VERSION_CAPTURE_BOUND" in markdown
+    assert "`HUMAN_APPROVED_PRIVATE_PREVIEW` = `True`" in markdown
+    assert "HELP_VERSION_CAPTURE_PASSED" in markdown
+    assert "HELP_FORBIDDEN_FRONTEND_HOST_FOUND" in markdown
+    assert "BUILD_REVIEW_ONLY" in markdown
+    assert "RUNNER_FILE_CREATED" in markdown
+    assert "PS1_CREATED" in markdown
+    assert "RUNNER_EXECUTED" in markdown
+    assert "NO_RUNTIME_EXECUTION" in markdown
+    assert "NO_DOCKER_CALL" in markdown
+    assert "NO_REFLEX_APP_START" in markdown
+    assert "NO_PREVIEW_ATTEMPT" in markdown
+    assert "HTTP_FRONTEND_NON_EMPTY_REQUIRED" in markdown
+    assert "TCP_ONLY_NOT_PREVIEW_READY" in markdown
+    assert "PREVIEW_ONLY_AFTER_HTTP_PASS" in markdown
+    assert "NO_FRONTEND_HOST_FLAG" in markdown
+    assert f"NEXT={NEXT_STEP}" in markdown
+    assert "<html" not in markdown.lower()
+
+
+def test_r21t_c_files_have_no_forbidden_runtime_or_write_strings() -> None:
+    forbidden_patterns = (
+        r"\b" + "reflex" + r"\s+" + "run" + r"\b",
+        r"\b" + "docker" + r"\s+" + "run" + r"\b",
+        "--frontend" + "-host",
+        "provider_call_allowed" + "=true",
+        "broker_order_sizing_allowed" + "=true",
+        "sheet_bq_write_allowed" + "=true",
+        "execution_allowed" + "=true",
+        "git" + r"\s+" + "add" + r"\s+\.",
+        r"\b" + "re" + "set" + r"\b",
+        "reflex" + r"\s+" + "deploy",
+        "public" + r"\s+" + "deploy",
+        "browser" + r"\s+" + "open",
+        "05" + "_EXPORTS",
+    )
+
+    for target in R21T_C_FILES:
+        text = target.read_text(encoding="utf-8").lower()
+        for pattern in forbidden_patterns:
+            assert re.search(pattern.lower(), text) is None
+
+
+def test_no_r21t_c_script_html_runtime_or_export_file_is_tracked() -> None:
+    tracked = subprocess.run(
+        ["git", "ls-files"],
+        check=True,
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace",
+    ).stdout.splitlines()
+
+    r21t_c_paths = [path.lower() for path in tracked if "r21t_c" in path.lower()]
+
+    assert all(not path.endswith(".html") for path in r21t_c_paths)
+    assert all(not path.endswith(".ps1") for path in r21t_c_paths)
+    assert all("export" not in path for path in r21t_c_paths)
