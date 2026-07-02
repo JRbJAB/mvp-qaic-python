@@ -1,0 +1,60 @@
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version 2.0
+
+$ReportRoot = "C:\JRb_TRADING_OS\_RUN_REPORTS\MVP_QAIC_PY"
+$ReportName = "r21t_e_private_preview_operator_script_dry_build_no_run.txt"
+$ReportPath = Join-Path -Path $ReportRoot -ChildPath $ReportName
+
+[System.IO.Directory]::CreateDirectory($ReportRoot) | Out-Null
+
+$Lines = @(
+    "R21T_E_PRIVATE_PREVIEW_OPERATOR_SCRIPT_DRY_BUILD_NO_RUN=READY",
+    "SOURCE_R21T_D_OPERATOR_SCRIPT_REVIEW_BOUND=True",
+    "SCRIPT_DRY_BUILD_ONLY=True",
+    "SCRIPT_FILE_CREATED=True",
+    "PS1_CREATED=True",
+    "SCRIPT_EXECUTED=False",
+    "RUNNER_EXECUTED=False",
+    "RUNTIME_EXECUTION_ALLOWED=False",
+    "NO_RUNTIME_EXECUTION=True",
+    "NO_DOCKER_EXECUTION=True",
+    "NO_REFLEX_APP_START=True",
+    "NO_PREVIEW_ATTEMPT=True",
+    "NO_PORTS_OPENED=True",
+    "NO_BROWSER=True",
+    "REFLEX_VERSION=0.9.6.post1",
+    "HELP_VERSION_CAPTURE_PASSED=True",
+    "HELP_FORBIDDEN_FRONTEND_HOST_FOUND=False",
+    "NO_FRONTEND_HOST_FLAG=True",
+    "PRIVATE_MAPPING_REQUIRED=True",
+    "HTTP_FRONTEND_NON_EMPTY_REQUIRED=True",
+    "TCP_ONLY_NOT_PREVIEW_READY=True",
+    "PREVIEW_ONLY_AFTER_HTTP_PASS=True",
+    "REFLEX_RUNTIME_STATUS=PAUSED",
+    "REFLEX_RUNTIME_RUNNER_CHAIN=STOPPED_AFTER_OPERATOR_SCRIPT_DRY_BUILD",
+    "PS51_COMPATIBLE=True",
+    "HARD_TIMEOUT_REQUIRED=True",
+    "IMAGE_PREFLIGHT_REQUIRED=True",
+    "PORT_PREFLIGHT_REQUIRED=True",
+    "GIT_ARCHIVE_HEAD_COPY_REQUIRED=True",
+    "POLICY_GUARDS_REQUIRED=True",
+    "TRANSIENT_REPORTS_UNDER_RUN_REPORTS=True",
+    "TARGETED_STAGING_ONLY=True",
+    "NO_GIT_ADD_DOT=True",
+    "NO_RESET=True",
+    "NO_PUBLIC_DEPLOY=True",
+    "NO_REFLEX_DEPLOY=True",
+    "NO_PROVIDER_CALL=True",
+    "NO_BROKER_ORDER_SIZING=True",
+    "NO_SHEET_BQ_WRITE=True",
+    "NO_HTML_OUTPUT=True",
+    "NEXT=R21T_F_PRIVATE_PREVIEW_OPERATOR_SCRIPT_REVIEW_AND_ARMING_NO_RUN",
+    "EVIDENCE_OK=True",
+    "RUNNER_OK=True",
+    "FINAL_STATUS=R21T_E_OPERATOR_SCRIPT_DRY_BUILD_NO_RUN_ONLY"
+)
+
+Set-Content -LiteralPath $ReportPath -Value $Lines -Encoding ASCII
+foreach ($Line in $Lines) {
+    Write-Output $Line
+}
